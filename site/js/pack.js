@@ -7,7 +7,7 @@
       title: "A1",
       subtitle: "Start here · telc A1",
       exam: "telc Deutsch A1",
-      blurb: "Absolute beginners: greetings, cases intro, present tense, short dialogues.",
+      blurb: "Start Deutsch 1: official A1 topics, forms, ~30-word messages, group speaking.",
       book: "/books/a1.html",
       weeks: 8,
       color: "a1",
@@ -17,7 +17,7 @@
       title: "A2",
       subtitle: "Build fluency · telc A2",
       exam: "telc Deutsch A2",
-      blurb: "Everyday German: Perfekt, connectors, letters, longer listening.",
+      blurb: "Start Deutsch 2: official A2 topics, Perfekt, connectors, short letters. Not DTZ A2·B1.",
       book: "/books/a2.html",
       weeks: 8,
       color: "a2",
@@ -27,7 +27,7 @@
       title: "B1",
       subtitle: "Pass comfortably · telc B1",
       exam: "telc Deutsch B1",
-      blurb: "Independent user: exam gym, formal letters, Sprachbausteine, oral Teil 3.",
+      blurb: "Zertifikat Deutsch: official B1 topics, 90-min Lesen+SB, formal letters, oral Teil 3.",
       book: "/books/b1.html",
       weeks: 8,
       color: "b1",
@@ -35,7 +35,18 @@
   ];
 
   window.registerPack = function (id, partial) {
-    DP.packs[id] = Object.assign(DP.packs[id] || {}, partial || {});
+    const prev = DP.packs[id] || {};
+    const next = Object.assign({}, prev);
+    Object.keys(partial || {}).forEach(function (k) {
+      const incoming = partial[k];
+      const existing = prev[k];
+      if ((k === "vocab" || k === "questions" || k === "drills") && Array.isArray(existing) && Array.isArray(incoming)) {
+        next[k] = existing.concat(incoming);
+      } else {
+        next[k] = incoming;
+      }
+    });
+    DP.packs[id] = next;
   };
 
   window.getPack = function (id) {
@@ -57,6 +68,8 @@
     window.QUESTIONS = p.questions || [];
     window.DRILLS = p.drills || [];
     window.EXAM = p.exam || { lesen: [], sprachbausteine: [], hoeren: [], schreiben: [], sprechen: {}, mocks: [], tips: [] };
+    window.TOPICS = p.topics || [];
+    window.EXAM_FORMAT = p.examFormat || null;
     if (window.Progress && Progress.setLevel) Progress.setLevel(id);
     return true;
   };

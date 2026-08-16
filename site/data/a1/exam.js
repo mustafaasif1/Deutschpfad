@@ -3,679 +3,661 @@ registerPack("a1", {
   "lesen": [
     {
       "id": "lesen-1",
-      "title": "A1 Lesen paper 1 — signs & short texts",
+      "title": "A1 Lesen 1 — Nachrichten, Anzeigen, Schilder",
       "timeMin": 25,
       "parts": [
         {
-          "kind": "headlines",
-          "instruction": "Match A–D to the correct sign meaning. One extra.",
-          "headlines": [
-            {
-              "id": "1",
-              "text": "No smoking"
-            },
-            {
-              "id": "2",
-              "text": "Open on Sunday"
-            },
-            {
-              "id": "3",
-              "text": "Please wait here"
-            },
-            {
-              "id": "4",
-              "text": "Entrance free"
-            },
-            {
-              "id": "5",
-              "text": "Closed today"
-            }
-          ],
-          "texts": [
-            {
-              "id": "A",
-              "text": "Heute geschlossen. Morgen wieder ab 9 Uhr."
-            },
-            {
-              "id": "B",
-              "text": "Rauchen verboten."
-            },
-            {
-              "id": "C",
-              "text": "Eintritt frei."
-            },
-            {
-              "id": "D",
-              "text": "Sonntag geöffnet 10–16 Uhr."
-            }
-          ],
-          "answer": {
-            "A": "5",
-            "B": "1",
-            "C": "4",
-            "D": "2"
-          }
-        },
-        {
-          "kind": "detail",
-          "instruction": "Read. Choose a, b or c.",
-          "text": "Hallo, ich heiße Sara. Ich komme aus Spanien und wohne in Hamburg. Ich bin 24 Jahre alt und lerne Deutsch. Am Montag und Mittwoch gehe ich zum Kurs. Ich trinke gern Kaffee.",
+          "kind": "tf",
+          "instruction": "Lesen Sie die Nachrichten. Sind die Aussagen richtig oder falsch?",
           "items": [
             {
-              "q": "Woher kommt Sara?",
-              "options": [
-                "Hamburg",
-                "Spanien",
-                "Deutschland"
-              ],
-              "answer": 1
+              "text": "Hallo Lisa, hast du am Samstag Zeit? Wir können um 15 Uhr Kaffee trinken. Liebe Grüße, Tom",
+              "q": "Tom möchte am Samstag Kaffee trinken.",
+              "answer": true
             },
             {
-              "q": "Wo wohnt sie?",
-              "options": [
-                "In Spanien",
-                "In Hamburg",
-                "Im Kurs"
-              ],
-              "answer": 1
+              "text": "Liebe Frau Meier, ich bin krank. Morgen komme ich nicht zum Kurs. Omar",
+              "q": "Omar kommt morgen zum Kurs.",
+              "answer": false
             },
             {
-              "q": "Wann hat sie Kurs?",
-              "options": [
-                "Jeden Tag",
-                "Mo und Mi",
-                "Nur Sonntag"
-              ],
-              "answer": 1
+              "text": "Hallo, die Bäckerei ist heute zu. Wir öffnen morgen um 7 Uhr.",
+              "q": "Die Bäckerei öffnet heute um 7 Uhr.",
+              "answer": false
             },
             {
-              "q": "Was trinkt sie gern?",
-              "options": [
-                "Tee",
-                "Wasser",
-                "Kaffee"
-              ],
-              "answer": 2
+              "text": "Anna, der Bus fährt um 8:15 vom Hauptbahnhof. Bis bald, Paul",
+              "q": "Der Bus fährt um Viertel nach acht.",
+              "answer": true
+            },
+            {
+              "text": "Guten Tag, Ihr Termin beim Arzt ist Dienstag, 10 Uhr.",
+              "q": "Der Termin ist am Dienstag.",
+              "answer": true
             }
           ]
         },
         {
           "kind": "ads",
-          "instruction": "Match person → notice. One unused.",
+          "instruction": "Welche Anzeige passt? Zwei Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Tom wants cheap lunch."
+              "text": "Tom sucht ein billiges Mittagessen."
             },
             {
               "id": "2",
-              "text": "Mia needs a German course for beginners."
+              "text": "Mia braucht einen Deutschkurs für Anfänger."
             },
             {
               "id": "3",
-              "text": "Omar wants a room near the station."
+              "text": "Omar sucht ein Zimmer in Bahnhofsnähe."
+            },
+            {
+              "id": "4",
+              "text": "Sara möchte am Abend schwimmen."
+            },
+            {
+              "id": "5",
+              "text": "Ben sucht ein gebrauchtes Fahrrad unter 100 Euro."
             }
           ],
           "ads": [
             {
               "id": "A",
-              "text": "Deutsch A1, VHS, Mo+Mi 18 Uhr."
+              "text": "Deutsch A1, VHS, Mo+Mi 18 Uhr, Anfänger."
             },
             {
               "id": "B",
-              "text": "Mittagstisch 5 €, Kantine Uni."
+              "text": "Mittagstisch 5 €, Kantine Uni, 12–14 Uhr."
             },
             {
               "id": "C",
-              "text": "Yoga für Fortgeschrittene."
+              "text": "Yoga für Fortgeschrittene, 20 €."
             },
             {
               "id": "D",
-              "text": "Zimmer am Bahnhof, 350 €."
+              "text": "Zimmer am Bahnhof, 350 €, ab sofort."
+            },
+            {
+              "id": "E",
+              "text": "Stadtbad, Bahn 19:30–21:00, Eintritt 4 €."
+            },
+            {
+              "id": "F",
+              "text": "Fahrrad 80 €, gebraucht, Abholung Samstag."
+            },
+            {
+              "id": "G",
+              "text": "Klavierunterricht, 40 €/Stunde."
             }
           ],
           "answer": {
             "1": "B",
             "2": "A",
-            "3": "D"
+            "3": "D",
+            "4": "E",
+            "5": "F"
           }
+        },
+        {
+          "kind": "signs",
+          "instruction": "Lesen Sie die Schilder. Richtig oder falsch?",
+          "items": [
+            {
+              "sign": "Heute geschlossen. Morgen wieder ab 9 Uhr.",
+              "q": "Das Geschäft ist heute offen.",
+              "answer": false
+            },
+            {
+              "sign": "Rauchen verboten.",
+              "q": "Hier darf man nicht rauchen.",
+              "answer": true
+            },
+            {
+              "sign": "Eintritt frei.",
+              "q": "Man muss bezahlen.",
+              "answer": false
+            },
+            {
+              "sign": "Bitte warten.",
+              "q": "Man soll hier warten.",
+              "answer": true
+            },
+            {
+              "sign": "Sonntag geöffnet 10–16 Uhr.",
+              "q": "Am Sonntag ist das Museum zu.",
+              "answer": false
+            }
+          ]
         }
       ]
     },
     {
       "id": "lesen-2",
-      "title": "A1 Lesen paper 2 — emails & notices",
+      "title": "A1 Lesen 2 — Arzt, Bus, Einladung",
       "timeMin": 25,
       "parts": [
         {
-          "kind": "headlines",
-          "instruction": "Match A–D. One extra.",
-          "headlines": [
-            {
-              "id": "1",
-              "text": "Doctor appointment reminder"
-            },
-            {
-              "id": "2",
-              "text": "Bus delay"
-            },
-            {
-              "id": "3",
-              "text": "Party invitation"
-            },
-            {
-              "id": "4",
-              "text": "Supermarket job"
-            },
-            {
-              "id": "5",
-              "text": "Library closed"
-            }
-          ],
-          "texts": [
-            {
-              "id": "A",
-              "text": "Der Bus Linie 5 hat 15 Minuten Verspätung."
-            },
-            {
-              "id": "B",
-              "text": "Erinnerung: Termin bei Dr. Klein, Dienstag 10 Uhr."
-            },
-            {
-              "id": "C",
-              "text": "Wir suchen Hilfe an der Kasse, ab 16 Uhr."
-            },
-            {
-              "id": "D",
-              "text": "Kommst du am Samstag zu meiner Party? Ab 19 Uhr."
-            }
-          ],
-          "answer": {
-            "A": "2",
-            "B": "1",
-            "C": "4",
-            "D": "3"
-          }
-        },
-        {
-          "kind": "detail",
-          "instruction": "Read. Choose a, b or c.",
-          "text": "Lieber Ali, am Freitag kann ich nicht kommen, weil ich arbeiten muss. Können wir uns am Sonntag um 15 Uhr im Café treffen? Bring bitte dein Buch mit. Liebe Grüße, Nora",
+          "kind": "tf",
+          "instruction": "Lesen Sie die Nachrichten. Richtig oder falsch?",
           "items": [
             {
-              "q": "Warum kommt Nora am Freitag nicht?",
-              "options": [
-                "Sie ist krank",
-                "Sie muss arbeiten",
-                "Das Café ist zu"
-              ],
-              "answer": 1
+              "text": "Hallo Ken, die Party ist am Samstag um 20 Uhr bei mir. Nora",
+              "q": "Die Party ist am Freitag.",
+              "answer": false
             },
             {
-              "q": "Wann will sie sich treffen?",
-              "options": [
-                "Freitag 15 Uhr",
-                "Sonntag 15 Uhr",
-                "Samstag"
-              ],
-              "answer": 1
+              "text": "Der Bus 12 hat 10 Minuten Verspätung.",
+              "q": "Der Bus kommt später.",
+              "answer": true
             },
             {
-              "q": "Wo?",
-              "options": [
-                "Im Büro",
-                "Im Café",
-                "Bei Ali"
-              ],
-              "answer": 1
+              "text": "Bibliothek heute geschlossen.",
+              "q": "Man kann heute in der Bibliothek lernen.",
+              "answer": false
             },
             {
-              "q": "Was soll Ali mitbringen?",
-              "options": [
-                "Geld",
-                "Ein Buch",
-                "Kaffee"
-              ],
-              "answer": 1
+              "text": "Supermarkt sucht Aushilfe an der Kasse, Abend.",
+              "q": "Der Job ist am Abend.",
+              "answer": true
+            },
+            {
+              "text": "Arzttermin: Dienstag, 10 Uhr, bitte 10 Minuten früher kommen.",
+              "q": "Der Termin ist um zehn Uhr.",
+              "answer": true
             }
           ]
         },
         {
           "kind": "ads",
-          "instruction": "Match. One unused.",
+          "instruction": "Welche Anzeige passt? Zwei Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Lena: swimming for beginners"
+              "text": "Lena sucht Schwimmen für Anfänger."
             },
             {
               "id": "2",
-              "text": "Ben: used bike under 100 €"
+              "text": "Ben möchte ein gebrauchtes Fahrrad unter 100 Euro."
             },
             {
               "id": "3",
-              "text": "Aya: evening supermarket open late"
+              "text": "Aya braucht einen Supermarkt, der abends lange offen ist."
+            },
+            {
+              "id": "4",
+              "text": "Paul sucht Arbeit an der Kasse am Abend."
+            },
+            {
+              "id": "5",
+              "text": "Nora möchte am Samstag feiern gehen."
             }
           ],
           "ads": [
             {
               "id": "A",
-              "text": "Fahrrad 80 €, Abholung Sa."
+              "text": "Schwimmkurs Anfänger, Mi 18 Uhr, 6 €."
             },
             {
               "id": "B",
-              "text": "Schwimmkurs Anfänger, Di 17 Uhr."
+              "text": "Rad 90 €, Abholung heute."
             },
             {
               "id": "C",
-              "text": "MarktPlus offen bis 22 Uhr."
+              "text": "Markt bis 22 Uhr, auch Sonntag."
             },
             {
               "id": "D",
-              "text": "Klavierunterricht Fortgeschrittene."
+              "text": "Kasse Abendschicht, 18–22 Uhr, ab sofort."
+            },
+            {
+              "id": "E",
+              "text": "Disco Samstag 21 Uhr, Eintritt 8 €."
+            },
+            {
+              "id": "F",
+              "text": "Museum montags geschlossen."
+            },
+            {
+              "id": "G",
+              "text": "Zahnarzt nur mit Termin."
             }
           ],
           "answer": {
-            "1": "B",
-            "2": "A",
-            "3": "C"
+            "1": "A",
+            "2": "B",
+            "3": "C",
+            "4": "D",
+            "5": "E"
           }
+        },
+        {
+          "kind": "signs",
+          "instruction": "Schilder. Richtig oder falsch?",
+          "items": [
+            {
+              "sign": "Parken verboten.",
+              "q": "Hier darf man parken.",
+              "answer": false
+            },
+            {
+              "sign": "Bitte warten. Nächste Nummer: 12.",
+              "q": "Man soll warten.",
+              "answer": true
+            },
+            {
+              "sign": "WLAN frei für Gäste.",
+              "q": "Das Internet kostet extra.",
+              "answer": false
+            },
+            {
+              "sign": "Nur Personal.",
+              "q": "Kunden dürfen hier nicht rein.",
+              "answer": true
+            },
+            {
+              "sign": "Geöffnet bis 20 Uhr.",
+              "q": "Um 21 Uhr ist noch offen.",
+              "answer": false
+            }
+          ]
         }
       ]
     },
     {
       "id": "lesen-3",
-      "title": "A1 Lesen paper 3 — signs",
+      "title": "A1 Lesen 3 — Stadt, Kurs, Wohnung",
       "timeMin": 25,
       "parts": [
         {
-          "kind": "headlines",
-          "instruction": "Match each text to one headline. Extra headlines are unused (telc Lesen Teil 1).",
-          "headlines": [
-            {
-              "id": "1",
-              "text": "Please wait here"
-            },
-            {
-              "id": "2",
-              "text": "No parking"
-            },
-            {
-              "id": "3",
-              "text": "Open until 20:00"
-            },
-            {
-              "id": "4",
-              "text": "Staff only"
-            },
-            {
-              "id": "5",
-              "text": "Free Wi‑Fi"
-            }
-          ],
-          "texts": [
-            {
-              "id": "A",
-              "text": "Parken verboten."
-            },
-            {
-              "id": "B",
-              "text": "Bitte hier warten."
-            },
-            {
-              "id": "C",
-              "text": "Heute geöffnet bis 20 Uhr."
-            },
-            {
-              "id": "D",
-              "text": "WLAN gratis."
-            }
-          ],
-          "answer": {
-            "A": "2",
-            "B": "1",
-            "C": "3",
-            "D": "5"
-          }
-        },
-        {
-          "kind": "detail",
-          "instruction": "Read the text. Choose a, b or c (telc Lesen Teil 2).",
-          "text": "Hallo, ich heiße Ben. Ich bin 30 und komme aus England. Ich wohne in Bonn und lerne Deutsch. Am Samstag gehe ich einkaufen.",
+          "kind": "tf",
+          "instruction": "Kurze Texte. Richtig oder falsch?",
           "items": [
             {
-              "q": "Woher?",
-              "options": [
-                "Bonn",
-                "England",
-                "Kurs"
-              ],
-              "answer": 1
+              "text": "Hallo Sam, der A1-Kurs beginnt am Montag um 18 Uhr, Raum 4. VHS",
+              "q": "Der Kurs ist am Montag Abend.",
+              "answer": true
             },
             {
-              "q": "Wo wohnt?",
-              "options": [
-                "England",
-                "Bonn",
-                "Kurs"
-              ],
-              "answer": 1
+              "text": "Zimmer frei ab 1. Mai, Nähe Bahnhof, 380 €.",
+              "q": "Das Zimmer ist am Flughafen.",
+              "answer": false
             },
             {
-              "q": "Samstag?",
-              "options": [
-                "Sportverein",
-                "Einkaufen",
-                "Nichts"
-              ],
-              "answer": 1
+              "text": "Mittagstisch heute 6,50 €, inkl. Wasser.",
+              "q": "Das Mittagessen kostet unter 7 Euro.",
+              "answer": true
+            },
+            {
+              "text": "Katze entlaufen, grau, Name Mimi, Tel. 0151 222.",
+              "q": "Jemand sucht eine Katze.",
+              "answer": true
+            },
+            {
+              "text": "Sonntag geschlossen.",
+              "q": "Am Sonntag kann man einkaufen.",
+              "answer": false
             }
           ]
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Extra notices unused (telc Lesen Teil 3).",
+          "instruction": "Welche Anzeige passt? Zwei bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Ana: free Wi‑Fi"
+              "text": "Sam sucht einen A1-Kurs."
             },
             {
               "id": "2",
-              "text": "Leo: open late"
+              "text": "Yara möchte zu Mittag essen, maximal 7 Euro."
             },
             {
               "id": "3",
-              "text": "Mia: no parking"
+              "text": "Paul sucht ein Zimmer am Bahnhof."
+            },
+            {
+              "id": "4",
+              "text": "Ana braucht kostenloses WLAN."
+            },
+            {
+              "id": "5",
+              "text": "Leo möchte bis 20 Uhr einkaufen."
             }
           ],
           "ads": [
             {
               "id": "A",
-              "text": "WLAN gratis"
+              "text": "Deutsch A1, Di+Do 18 Uhr, VHS."
             },
             {
               "id": "B",
-              "text": "Offen bis 20 Uhr"
+              "text": "Kantinenessen 6 €, 12–14 Uhr."
             },
             {
               "id": "C",
-              "text": "Parken verboten"
+              "text": "Zimmer Bahnhof, 380 €, Küche mitbenutzen."
             },
             {
               "id": "D",
-              "text": "Nur Personal"
+              "text": "Café: WLAN frei, Kaffee 2,50 €."
+            },
+            {
+              "id": "E",
+              "text": "Supermarkt täglich 7–22 Uhr."
+            },
+            {
+              "id": "F",
+              "text": "Hunde verboten im Park."
+            },
+            {
+              "id": "G",
+              "text": "Klavier zu verkaufen, 400 €."
             }
           ],
           "answer": {
             "1": "A",
             "2": "B",
-            "3": "C"
+            "3": "C",
+            "4": "D",
+            "5": "E"
           }
+        },
+        {
+          "kind": "signs",
+          "instruction": "Schilder. Richtig oder falsch?",
+          "items": [
+            {
+              "sign": "Ausfahrt freihalten.",
+              "q": "Man darf hier nicht parken.",
+              "answer": true
+            },
+            {
+              "sign": "Kinderwagen: bitte Aufzug benutzen.",
+              "q": "Mit Kinderwagen soll man die Treppe nehmen.",
+              "answer": false
+            },
+            {
+              "sign": "Fundbüro 1. Stock.",
+              "q": "Verlorene Sachen sind im ersten Stock.",
+              "answer": true
+            },
+            {
+              "sign": "Kartenzahlung ab 10 €.",
+              "q": "Mit 5 Euro kann man mit Karte zahlen.",
+              "answer": false
+            },
+            {
+              "sign": "Ruhe bitte. Prüfung.",
+              "q": "Hier ist eine Prüfung. Man soll leise sein.",
+              "answer": true
+            }
+          ]
         }
       ]
     },
     {
       "id": "lesen-4",
-      "title": "A1 Lesen paper 4 — ads & mail",
+      "title": "A1 Lesen 4 — Einkaufen, Gesundheit, Freizeit",
       "timeMin": 25,
       "parts": [
         {
-          "kind": "headlines",
-          "instruction": "Match each text to one headline. Extra headlines are unused (telc Lesen Teil 1).",
-          "headlines": [
-            {
-              "id": "1",
-              "text": "German beginners course"
-            },
-            {
-              "id": "2",
-              "text": "Cheap lunch"
-            },
-            {
-              "id": "3",
-              "text": "Room near station"
-            },
-            {
-              "id": "4",
-              "text": "Lost cat"
-            },
-            {
-              "id": "5",
-              "text": "Closed Sunday"
-            }
-          ],
-          "texts": [
-            {
-              "id": "A",
-              "text": "Deutsch A1 Mo+Mi 18 Uhr VHS."
-            },
-            {
-              "id": "B",
-              "text": "Mittagessen 6 € Mensa."
-            },
-            {
-              "id": "C",
-              "text": "Zimmer am Bahnhof 320 €."
-            },
-            {
-              "id": "D",
-              "text": "Sonntag geschlossen."
-            }
-          ],
-          "answer": {
-            "A": "1",
-            "B": "2",
-            "C": "3",
-            "D": "5"
-          }
-        },
-        {
-          "kind": "detail",
-          "instruction": "Read the text. Choose a, b or c (telc Lesen Teil 2).",
-          "text": "Liebe Anna, ich bin krank und komme heute nicht. Können wir uns morgen um 10 Uhr treffen? Ruf mich bitte an. Omar",
+          "kind": "tf",
+          "instruction": "E-Mails und Zettel. Richtig oder falsch?",
           "items": [
             {
-              "q": "Warum nicht heute?",
-              "options": [
-                "Arbeit",
-                "Krank",
-                "Urlaub"
-              ],
-              "answer": 1
+              "text": "Liebe Mira, das Kino beginnt um 19:30. Ich warte vor der Tür. Ali",
+              "q": "Der Film beginnt um halb acht.",
+              "answer": false
             },
             {
-              "q": "Wann treffen?",
-              "options": [
-                "Heute",
-                "Morgen 10",
-                "Nie"
-              ],
-              "answer": 1
+              "text": "Apotheke Notdienst heute Nacht.",
+              "q": "Die Apotheke hat heute Nacht auf.",
+              "answer": true
             },
             {
-              "q": "Anna soll?",
-              "options": [
-                "Nur schreiben",
-                "Anrufen",
-                "Nichts"
-              ],
-              "answer": 1
+              "text": "Kurs fällt aus. Nächste Stunde: Donnerstag.",
+              "q": "Heute ist Deutschunterricht.",
+              "answer": false
+            },
+            {
+              "text": "Markt: Tomaten 1,50 € / kg.",
+              "q": "Die Tomaten kosten eineinhalb Euro pro Kilo.",
+              "answer": true
+            },
+            {
+              "text": "Schwimmbad: montags geschlossen.",
+              "q": "Am Montag kann man schwimmen.",
+              "answer": false
             }
           ]
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Extra notices unused (telc Lesen Teil 3).",
+          "instruction": "Welche Anzeige passt? Zwei bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Sam: A1 course"
+              "text": "Mia darf hier nicht parken und sucht einen Parkplatz."
             },
             {
               "id": "2",
-              "text": "Yara: lunch under 7€"
+              "text": "Omar möchte abends an der Kasse jobben."
             },
             {
               "id": "3",
-              "text": "Paul: room by station"
+              "text": "Ken braucht Infos, wenn der Bus Verspätung hat."
+            },
+            {
+              "id": "4",
+              "text": "Frau Klein sucht den Notdienst der Apotheke."
+            },
+            {
+              "id": "5",
+              "text": "Leila möchte am Abend ins Kino."
             }
           ],
           "ads": [
             {
               "id": "A",
-              "text": "A1 VHS Mo+Mi"
+              "text": "Parkhaus Bahnhof, 1 € / Stunde, bis 23 Uhr."
             },
             {
               "id": "B",
-              "text": "Mensa 6€"
+              "text": "Supermarkt: Kassierer/in Abend, 18–22 Uhr."
             },
             {
               "id": "C",
-              "text": "Zimmer Bahnhof 320€"
+              "text": "Fahrplanänderungen: App oder Lautsprecher am Steig."
             },
             {
               "id": "D",
-              "text": "Katze weg"
+              "text": "Notdienst-Apotheke: Liste an der Tür / 0800-Notdienst."
+            },
+            {
+              "id": "E",
+              "text": "Kino: Vorstellungen 17:00, 19:30, 22:00."
+            },
+            {
+              "id": "F",
+              "text": "Hundesalon, nur mit Termin."
+            },
+            {
+              "id": "G",
+              "text": "Klavierkonzert 80 €."
             }
           ],
           "answer": {
             "1": "A",
             "2": "B",
-            "3": "C"
+            "3": "C",
+            "4": "D",
+            "5": "E"
           }
+        },
+        {
+          "kind": "signs",
+          "instruction": "Schilder. Richtig oder falsch?",
+          "items": [
+            {
+              "sign": "Bargeld only / Nur bar.",
+              "q": "Man kann mit Karte zahlen.",
+              "answer": false
+            },
+            {
+              "sign": "Ziehen / Push — Ziehen.",
+              "q": "Man soll die Tür ziehen.",
+              "answer": true
+            },
+            {
+              "sign": "WC 2. Stock.",
+              "q": "Die Toilette ist im zweiten Stock.",
+              "answer": true
+            },
+            {
+              "sign": "Kein Durchgang.",
+              "q": "Man darf hier durchgehen.",
+              "answer": false
+            },
+            {
+              "sign": "Kinder bis 12 Jahre frei.",
+              "q": "Ein Kind von 10 Jahren muss bezahlen.",
+              "answer": false
+            }
+          ]
         }
       ]
     },
     {
       "id": "lesen-5",
-      "title": "A1 Lesen paper 5 — notices",
+      "title": "A1 Lesen 5 — Arbeit, Treffen, Wetter",
       "timeMin": 25,
       "parts": [
         {
-          "kind": "headlines",
-          "instruction": "Match each text to one headline. Extra headlines are unused (telc Lesen Teil 1).",
-          "headlines": [
-            {
-              "id": "1",
-              "text": "Doctor Tuesday 10"
-            },
-            {
-              "id": "2",
-              "text": "Bus delay"
-            },
-            {
-              "id": "3",
-              "text": "Party Saturday"
-            },
-            {
-              "id": "4",
-              "text": "Library closed"
-            },
-            {
-              "id": "5",
-              "text": "Job at till"
-            }
-          ],
-          "texts": [
-            {
-              "id": "A",
-              "text": "Termin Dr. Klein Dienstag 10 Uhr."
-            },
-            {
-              "id": "B",
-              "text": "Bus Linie 5: 15 Minuten Verspätung."
-            },
-            {
-              "id": "C",
-              "text": "Party Samstag ab 19 Uhr."
-            },
-            {
-              "id": "D",
-              "text": "Hilfe an der Kasse ab 16 Uhr gesucht."
-            }
-          ],
-          "answer": {
-            "A": "1",
-            "B": "2",
-            "C": "3",
-            "D": "5"
-          }
-        },
-        {
-          "kind": "detail",
-          "instruction": "Read the text. Choose a, b or c (telc Lesen Teil 2).",
-          "text": "Ich heiße Ayla. Ich komme aus der Türkei und wohne in Berlin. Ich bin 19 und lerne Deutsch. Ich trinke gern Tee.",
+          "kind": "tf",
+          "instruction": "Nachrichten. Richtig oder falsch?",
           "items": [
             {
-              "q": "Name?",
-              "options": [
-                "Berlin",
-                "Ayla",
-                "Türkei"
-              ],
-              "answer": 1
+              "text": "Hallo, morgen Regen. Das Fußballspiel fällt aus. Trainer",
+              "q": "Das Spiel ist morgen.",
+              "answer": false
             },
             {
-              "q": "Wohnort?",
-              "options": [
-                "Türkei",
-                "Berlin",
-                "Kursraum"
-              ],
-              "answer": 1
+              "text": "Café Sonne: Kaffee und Kuchen 6 €.",
+              "q": "Kaffee und Kuchen zusammen kosten 6 Euro.",
+              "answer": true
             },
             {
-              "q": "Alter?",
-              "options": [
-                "91",
-                "19",
-                "9"
-              ],
-              "answer": 1
+              "text": "Ich warte um 12 Uhr am Eingang vom Museum. Aya",
+              "q": "Aya wartet vor dem Museum.",
+              "answer": true
+            },
+            {
+              "text": "Deutschkurs: bitte Heft und Stift mitbringen.",
+              "q": "Man braucht ein Buch über Geschichte.",
+              "answer": false
+            },
+            {
+              "text": "Der Zug nach Köln fährt von Gleis 3.",
+              "q": "Der Zug fährt von Gleis drei.",
+              "answer": true
             }
           ]
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Extra notices unused (telc Lesen Teil 3).",
+          "instruction": "Welche Anzeige passt? Zwei bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Ken: bus delay info"
+              "text": "Omar sucht einen Abendjob an der Kasse."
             },
             {
               "id": "2",
-              "text": "Nora: party Sat"
+              "text": "Nora möchte am Samstag zu einer Party."
             },
             {
               "id": "3",
-              "text": "Omar: evening till job"
+              "text": "Ken braucht aktuelle Infos zur Busverspätung."
+            },
+            {
+              "id": "4",
+              "text": "Sara sucht ein Café mit Kuchen."
+            },
+            {
+              "id": "5",
+              "text": "Luis möchte nach Köln fahren."
             }
           ],
           "ads": [
             {
               "id": "A",
-              "text": "Bus 5 Verspätung"
+              "text": "Abendkasse Supermarkt, Mo–Fr 17–21 Uhr."
             },
             {
               "id": "B",
-              "text": "Party Sa 19"
+              "text": "Geburtstagsparty Samstag 20 Uhr, Café Dach."
             },
             {
               "id": "C",
-              "text": "Kasse ab 16 Uhr"
+              "text": "Bus 5: Verspätungen heute auf der Anzeige am Steig."
             },
             {
               "id": "D",
-              "text": "Bibliothek zu"
+              "text": "Café Sonne, Kuchen täglich, WLAN frei."
+            },
+            {
+              "id": "E",
+              "text": "RE nach Köln, Gleis 3, stündlich."
+            },
+            {
+              "id": "F",
+              "text": "Klavier zu verschenken, nur Abholung."
+            },
+            {
+              "id": "G",
+              "text": "Hundeschule, 90 €."
             }
           ],
           "answer": {
             "1": "A",
             "2": "B",
-            "3": "C"
+            "3": "C",
+            "4": "D",
+            "5": "E"
           }
+        },
+        {
+          "kind": "signs",
+          "instruction": "Schilder. Richtig oder falsch?",
+          "items": [
+            {
+              "sign": "Gleisänderung: Zug nach Hamburg jetzt Gleis 7.",
+              "q": "Der Zug nach Hamburg fährt von Gleis 7.",
+              "answer": true
+            },
+            {
+              "sign": "Nicht betreten. Frisch gestrichen.",
+              "q": "Man darf die Bank benutzen.",
+              "answer": false
+            },
+            {
+              "sign": "Fundbüro neben der Information.",
+              "q": "Verlorene Sachen sind bei der Information / daneben.",
+              "answer": true
+            },
+            {
+              "sign": "Pause 13–14 Uhr.",
+              "q": "Um 13:30 bekommt man Hilfe an diesem Schalter.",
+              "answer": false
+            },
+            {
+              "sign": "Hunde anleinen.",
+              "q": "Hunde müssen an der Leine sein.",
+              "answer": true
+            }
+          ]
         }
       ]
     }
@@ -1288,6 +1270,83 @@ registerPack("a1", {
   ],
   "schreiben": [
     {
+      "id": "a1-form-kurs",
+      "kind": "form",
+      "register": "Sie",
+      "title": "A1 Schreiben Teil 1 — Formular: Deutschkurs",
+      "situation": "Sie möchten einen Deutschkurs machen. Füllen Sie das Formular aus.",
+      "situationEn": "You want to take a German course. Fill in the form.",
+      "fields": [
+        {
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "id": "vorname",
+          "label": "Vorname"
+        },
+        {
+          "id": "land",
+          "label": "Land"
+        },
+        {
+          "id": "telefon",
+          "label": "Telefon"
+        },
+        {
+          "id": "kurs",
+          "label": "Welcher Kurs? (A1 / Abend / Samstag)"
+        }
+      ],
+      "points": [
+        "Name",
+        "Vorname",
+        "Land",
+        "Telefon",
+        "Kurs"
+      ],
+      "model": "Mustafa Asif · Land: Pakistan · Tel. 0151 000000 · Kurs: A1 Abend"
+    },
+    {
+      "id": "a1-form-arzt",
+      "kind": "form",
+      "register": "Sie",
+      "title": "A1 Schreiben Teil 1 — Formular: Arzttermin",
+      "situation": "Sie möchten einen Termin beim Arzt. Füllen Sie das Formular aus.",
+      "situationEn": "You want a doctor’s appointment. Fill in the form.",
+      "fields": [
+        {
+          "id": "name",
+          "label": "Name, Vorname"
+        },
+        {
+          "id": "geburt",
+          "label": "Geburtsdatum"
+        },
+        {
+          "id": "krankenkasse",
+          "label": "Krankenkasse"
+        },
+        {
+          "id": "problem",
+          "label": "Was ist das Problem?"
+        },
+        {
+          "id": "zeit",
+          "label": "Wann können Sie? (Tag / Uhrzeit)"
+        }
+      ],
+      "points": [
+        "Name",
+        "Datum",
+        "Kasse",
+        "Problem",
+        "Zeit"
+      ],
+      "model": "Mustafa Asif · 01.01.1994 · AOK · Kopfschmerzen seit gestern · Dienstag Nachmittag"
+    },
+
+    {
       "id": "a1-cafe",
       "register": "Sie",
       "title": "A1: order in a café (write)",
@@ -1596,7 +1655,7 @@ registerPack("a1", {
     }
   ],
   "tips": [
-    "telc A1 is short and practical: survival German, not essays.",
+    "Official telc A1: Hören ~20 min (15 items), Lesen+Schreiben 45 min (form + ~30-word message), group Sprechen ~15. No Sprachbausteine paper.",
     "Always learn article + noun: der Tisch, not just Tisch.",
     "Speak every day for 5 minutes — intro + 5 questions.",
     "Pass both written and oral halves (check your centre's rules).",

@@ -8,7 +8,7 @@ registerPack("b1", {
       "parts": [
         {
           "kind": "headlines",
-          "instruction": "Match texts A–E to five headlines. Two headlines are unused.",
+          "instruction": "Ordnen Sie den Texten A–E die passende Überschrift zu. Zwei Überschriften bleiben übrig.",
           "headlines": [
             {
               "id": "1",
@@ -71,7 +71,7 @@ registerPack("b1", {
         },
         {
           "kind": "detail",
-          "instruction": "Read the text. Choose a, b or c.",
+          "instruction": "Lesen Sie den Text. Wählen Sie a, b oder c.",
           "text": "Seit drei Jahren lebt Amina (28) in Leipzig. In Syrien hat sie als Krankenschwester gearbeitet. In Deutschland musste sie zuerst auf die Anerkennung ihrer Papiere warten und hat in einer Bäckerei gejobbt. Heute arbeitet sie in einem Klinikum in Teilzeit und macht eine Nachqualifizierung. Sport im Verein hat sie ausprobiert, aber die Zeiten passten nicht zu ihren Schichten. Deshalb joggt sie allein. Leipzig gefällt ihr, nur die Miete findet sie zu hoch. Sie sucht eine WG näher an der Arbeit.",
           "items": [
             {
@@ -123,39 +123,47 @@ registerPack("b1", {
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Two notices are unused.",
+          "instruction": "Welche Anzeige passt zu welcher Person? Zwei Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Marta: used sofa, max 80 €, pickup this weekend."
+              "text": "Marta sucht ein gebrauchtes Sofa, maximal 80 Euro. Abholung am Wochenende ist möglich."
             },
             {
               "id": "2",
-              "text": "Kenji: beginner swimming after 19:00, north of the city."
+              "text": "Kenji sucht einen Schwimmkurs für Anfänger nach 19 Uhr, im Norden der Stadt."
             },
             {
               "id": "3",
-              "text": "Frau Otto: piano teacher who comes home, 30-minute lessons."
+              "text": "Frau Otto sucht eine Klavierlehrerin, die nach Hause kommt. Unterricht: 30 Minuten."
             },
             {
               "id": "4",
-              "text": "Ali & Noor: vegan lunch on Monday, city centre."
+              "text": "Ali und Noor möchten am Montag vegan zu Mittag essen, in der Innenstadt."
             },
             {
               "id": "5",
-              "text": "Laura: free German conversation, not a paid course."
+              "text": "Laura sucht kostenloses Deutschsprechen, keinen bezahlten Kurs."
             },
             {
               "id": "6",
-              "text": "Pavel: bike repair on Saturday morning."
+              "text": "Pavel braucht eine Fahrradreparatur am Samstag Vormittag."
             },
             {
               "id": "7",
-              "text": "Sofia: cheap room for two weeks while she looks for a flat."
+              "text": "Sofia sucht ein günstiges Zimmer für zwei Wochen, bis sie eine Wohnung findet."
             },
             {
               "id": "8",
-              "text": "Jonas: evening yoga for beginners, max 10 €."
+              "text": "Jonas sucht Yoga für Anfänger am Abend, maximal 10 Euro."
+            },
+            {
+              "id": "9",
+              "text": "Elena braucht Hundesitting am Wochenende, am besten mit Garten."
+            },
+            {
+              "id": "10",
+              "text": "Hassan sucht eine funktionierende Waschmaschine, maximal 100 Euro, Abholung am Wochenende."
             }
           ],
           "ads": [
@@ -198,6 +206,14 @@ registerPack("b1", {
             {
               "id": "J",
               "text": "Yoga Anfänger, Do 20 Uhr, 8 €, max. 12 Personen."
+            },
+            {
+              "id": "K",
+              "text": "Hundesitting Sa/So, Garten vorhanden, 20 €."
+            },
+            {
+              "id": "L",
+              "text": "Waschmaschine 85 €, funktioniert, Abholung Wochenende."
             }
           ],
           "answer": {
@@ -208,7 +224,9 @@ registerPack("b1", {
             "5": "E",
             "6": "F",
             "7": "I",
-            "8": "J"
+            "8": "J",
+            "9": "K",
+            "10": "L"
           }
         }
       ]
@@ -220,7 +238,7 @@ registerPack("b1", {
       "parts": [
         {
           "kind": "headlines",
-          "instruction": "Match texts A–E to five headlines. Two headlines are unused.",
+          "instruction": "Ordnen Sie den Texten A–E die passende Überschrift zu. Zwei Überschriften bleiben übrig.",
           "headlines": [
             {
               "id": "1",
@@ -283,7 +301,7 @@ registerPack("b1", {
         },
         {
           "kind": "detail",
-          "instruction": "Read the text. Choose a, b or c.",
+          "instruction": "Lesen Sie den Text. Wählen Sie a, b oder c.",
           "text": "Tomás (34) kommt aus Portugal und arbeitet seit einem Jahr in einer Logistikfirma in Köln. Er möchte gern Schichtleiter werden, deshalb besucht er abends einen B1-Kurs und lernt zusätzlich mit einer App. Sein Chef hat ihm versprochen, die Prüfungskosten zu übernehmen, wenn Tomás besteht. Am Wochenende hilft Tomás manchmal seinem Nachbarn, der schlecht mobil ist, beim Einkaufen. Sport macht er selten, weil er nach der Spätschicht zu müde ist. Er überlegt, in eine Wohnung näher am Betrieb zu ziehen, obwohl die Miete dort höher wäre. Seine Freundin lebt noch in Porto und besucht ihn alle zwei Monate.",
           "items": [
             {
@@ -335,39 +353,47 @@ registerPack("b1", {
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Two notices are unused.",
+          "instruction": "Welche Anzeige passt zu welcher Person? Zwei Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Elena: needs a cheap used laptop for school, under 200 €."
+              "text": "Elena braucht ein günstiges gebrauchtes Laptop für die Schule, unter 200 Euro."
             },
             {
               "id": "2",
-              "text": "Mark: wants a dog-sitting weekend while he travels."
+              "text": "Mark braucht Hundesitting am Wochenende, weil er verreist."
             },
             {
               "id": "3",
-              "text": "Yara: looking for a German tandem partner evenings."
+              "text": "Yara sucht abends eine Tandem-Partnerin / einen Tandem-Partner für Deutsch."
             },
             {
               "id": "4",
-              "text": "Herr Berg: needs help carrying furniture on Saturday morning."
+              "text": "Herr Berg braucht Hilfe beim Möbeltragen am Samstag Vormittag."
             },
             {
               "id": "5",
-              "text": "Lina: wants an outdoor swimming pool open late."
+              "text": "Lina sucht ein Freibad, das abends lange geöffnet hat."
             },
             {
               "id": "6",
-              "text": "Omar: needs a photocopier / print shop near the station."
+              "text": "Omar braucht ein Copyshop / einen Drucker in Bahnhofsnähe."
             },
             {
               "id": "7",
-              "text": "Nina: vegetarian cooking class on a weekday evening."
+              "text": "Nina sucht einen vegetarischen Kochkurs an einem Wochentagabend."
             },
             {
               "id": "8",
-              "text": "Paul: free legal advice for tenants."
+              "text": "Paul sucht kostenlose Rechtsberatung für Mieter."
+            },
+            {
+              "id": "9",
+              "text": "Rita sucht einen Erste-Hilfe-Kurs an einem Wochentagabend."
+            },
+            {
+              "id": "10",
+              "text": "Samir sucht ein gebrauchtes Stadtrad unter 120 Euro, Abholung in der Stadt."
             }
           ],
           "ads": [
@@ -410,6 +436,14 @@ registerPack("b1", {
             {
               "id": "J",
               "text": "Mieterberatung kostenlos, Do 17–19 Uhr, Bürgerbüro."
+            },
+            {
+              "id": "K",
+              "text": "Erste-Hilfe-Kurs Mi 18 Uhr, DRK, 25 €."
+            },
+            {
+              "id": "L",
+              "text": "Fahrrad 90 €, 28 Zoll, Abholung Innenstadt."
             }
           ],
           "answer": {
@@ -420,7 +454,9 @@ registerPack("b1", {
             "5": "F",
             "6": "A",
             "7": "I",
-            "8": "J"
+            "8": "J",
+            "9": "K",
+            "10": "L"
           }
         }
       ]
@@ -432,7 +468,7 @@ registerPack("b1", {
       "parts": [
         {
           "kind": "headlines",
-          "instruction": "Match texts A–E to five headlines. Two headlines are unused.",
+          "instruction": "Ordnen Sie den Texten A–E die passende Überschrift zu. Zwei Überschriften bleiben übrig.",
           "headlines": [
             {
               "id": "1",
@@ -495,7 +531,7 @@ registerPack("b1", {
         },
         {
           "kind": "detail",
-          "instruction": "Read the text. Choose a, b or c.",
+          "instruction": "Lesen Sie den Text. Wählen Sie a, b oder c.",
           "text": "Familie Nguyen wohnt seit fünf Jahren in einer Dreizimmerwohnung am Stadtrand. Die Kinder gehen in die Grundschule zu Fuß. Herr Nguyen pendelt mit der S-Bahn in die Innenstadt; Frau Nguyen arbeitet in Teilzeit in einer Apotheke und macht gerade eine Weiterbildung zur PTA. Letztes Jahr hat die Familie ein gebrauchtes E-Bike gekauft, weil Benzin und Parken teuer wurden. Im Sommer fahren sie oft an den See, im Winter besuchen sie Verwandte in einer anderen Stadt. Sie möchten nächstes Jahr umziehen, weil das dritte Kind unterwegs ist — idealerweise in eine ruhigere Straße mit einem kleinen Garten. Die Mieten steigen jedoch stark, deshalb prüfen sie auch Wohnungen etwas weiter draußen mit besserer Anbindung.",
           "items": [
             {
@@ -547,39 +583,47 @@ registerPack("b1", {
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Two notices are unused.",
+          "instruction": "Welche Anzeige passt zu welcher Person? Zwei Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Sara: evening bus from airport after 22:00."
+              "text": "Sara braucht einen Bus vom Flughafen nach 22 Uhr."
             },
             {
               "id": "2",
-              "text": "Leo: second-hand children’s bike, under 60 €."
+              "text": "Leo sucht ein gebrauchtes Kinderfahrrad unter 60 Euro."
             },
             {
               "id": "3",
-              "text": "Mrs. Klein: someone to walk her dog weekday mornings."
+              "text": "Frau Klein sucht jemanden, der unter der Woche morgens mit dem Hund Gassi geht."
             },
             {
               "id": "4",
-              "text": "Diego: cheap double room near university for exam week."
+              "text": "Diego sucht ein günstiges Doppelzimmer in Uninähe in der Prüfungswoche."
             },
             {
               "id": "5",
-              "text": "Anika: beginner guitar lessons on Saturday."
+              "text": "Anika sucht Gitarrenunterricht für Anfänger am Samstag."
             },
             {
               "id": "6",
-              "text": "Farid: needs a tool library / drill for one day."
+              "text": "Farid braucht eine Bohr-Maschine / Werkzeugverleih für einen Tag."
             },
             {
               "id": "7",
-              "text": "Helen: organic vegetables delivered weekly."
+              "text": "Helen möchte jede Woche Bio-Gemüse geliefert bekommen."
             },
             {
               "id": "8",
-              "text": "Ben: indoor climbing for beginners this evening."
+              "text": "Ben möchte heute Abend Indoorklettern für Anfänger."
+            },
+            {
+              "id": "9",
+              "text": "Clara sucht Klavierunterricht zu Hause, 30 Minuten."
+            },
+            {
+              "id": "10",
+              "text": "Oleg möchte am Montag vegan in der Innenstadt essen."
             }
           ],
           "ads": [
@@ -622,6 +666,14 @@ registerPack("b1", {
             {
               "id": "J",
               "text": "Airport-Taxi Festpreis 55 €, Tag und Nacht."
+            },
+            {
+              "id": "K",
+              "text": "Klavierunterricht zu Hause, 30 Min., 22 €."
+            },
+            {
+              "id": "L",
+              "text": "Veganes Mittagessen Mo, Innenstadt, 9 €."
             }
           ],
           "answer": {
@@ -632,7 +684,9 @@ registerPack("b1", {
             "5": "E",
             "6": "F",
             "7": "H",
-            "8": "I"
+            "8": "I",
+            "9": "K",
+            "10": "L"
           }
         }
       ]
@@ -707,7 +761,7 @@ registerPack("b1", {
         },
         {
           "kind": "detail",
-          "instruction": "Read the text. Choose a, b or c (telc Lesen Teil 2).",
+          "instruction": "Lesen Sie den Text. Wählen Sie a, b oder c.",
           "text": "Lina (31) lebt seit zwei Jahren in Stuttgart. Sie arbeitet in einer Bank und macht abends einen B1-Kurs. Am Wochenende spielt sie Volleyball. Ihre Eltern wohnen in der Türkei. Sie möchte eine Weiterbildung in Buchhaltung beginnen, wenn sie B1 bestanden hat. Die Miete ist hoch, deshalb teilt sie die Wohnung. Auto braucht sie nicht, weil die Bahn gut ist.",
           "items": [
             {
@@ -759,39 +813,47 @@ registerPack("b1", {
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Extra notices unused (telc Lesen Teil 3).",
+          "instruction": "Welche Anzeige passt zu welcher Person? Zwei Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Marta: evening yoga under 12€"
+              "text": "Marta sucht Yoga am Abend unter 12 Euro."
             },
             {
               "id": "2",
-              "text": "Ken: used desk max 50€ weekend"
+              "text": "Ken sucht einen gebrauchten Schreibtisch, maximal 50 Euro, Abholung am Wochenende."
             },
             {
               "id": "3",
-              "text": "Frau Berg: German tandem evenings"
+              "text": "Frau Berg sucht abends ein Deutsch-Tandem."
             },
             {
               "id": "4",
-              "text": "Ali: vegan café Mondays"
+              "text": "Ali sucht ein veganes Café, das montags geöffnet hat."
             },
             {
               "id": "5",
-              "text": "Sofia: cheap hostel near station"
+              "text": "Sofia sucht ein günstiges Hostel in Bahnhofsnähe."
             },
             {
               "id": "6",
-              "text": "Paul: Saturday bike repair"
+              "text": "Paul braucht am Samstag eine Fahrradreparatur."
             },
             {
               "id": "7",
-              "text": "Nina: free tenant legal advice"
+              "text": "Nina sucht kostenlose Mietrechtsberatung."
             },
             {
               "id": "8",
-              "text": "Omar: beginner swim after 19:00"
+              "text": "Omar sucht Schwimmen für Anfänger nach 19 Uhr."
+            },
+            {
+              "id": "9",
+              "text": "Lea braucht Kopien und Passfotos in Bahnhofsnähe."
+            },
+            {
+              "id": "10",
+              "text": "Ines möchte eine wöchentliche Bio-Gemüsekiste."
             }
           ],
           "ads": [
@@ -834,6 +896,14 @@ registerPack("b1", {
             {
               "id": "J",
               "text": "Schwimmkurs Anfänger Nordbad 19:30"
+            },
+            {
+              "id": "K",
+              "text": "Copy-Shop Bahnhof, auch Passfotos"
+            },
+            {
+              "id": "L",
+              "text": "Ökokiste wöchentlich, Lieferung Di"
             }
           ],
           "answer": {
@@ -844,7 +914,9 @@ registerPack("b1", {
             "5": "E",
             "6": "F",
             "7": "I",
-            "8": "J"
+            "8": "J",
+            "9": "K",
+            "10": "L"
           }
         }
       ]
@@ -919,7 +991,7 @@ registerPack("b1", {
         },
         {
           "kind": "detail",
-          "instruction": "Read the text. Choose a, b or c (telc Lesen Teil 2).",
+          "instruction": "Lesen Sie den Text. Wählen Sie a, b oder c.",
           "text": "Diego (27) aus Spanien arbeitet in einem Callcenter in Frankfurt. Er hat A2 und lernt B1 für bessere Kundenberatung. Morgens joggt er, abends lernt er in der Bahn. Freitags hilft er im Sprachcafé. Seine Freundin studiert in Madrid. Frankfurt ist teuer, aber die Jobchancen sind gut. Er will später IT-Support lernen.",
           "items": [
             {
@@ -971,39 +1043,47 @@ registerPack("b1", {
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Extra notices unused (telc Lesen Teil 3).",
+          "instruction": "Welche Anzeige passt zu welcher Person? Zwei Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Helen: organic veg weekly"
+              "text": "Helen möchte jede Woche Bio-Gemüse."
             },
             {
               "id": "2",
-              "text": "Ben: climbing intro tonight"
+              "text": "Ben möchte heute Abend einen Kletterkurs für Anfänger."
             },
             {
               "id": "3",
-              "text": "Yara: cheap DZ exam week near uni"
+              "text": "Yara sucht ein günstiges Doppelzimmer in der Prüfungswoche, Nähe Uni."
             },
             {
               "id": "4",
-              "text": "Leo: kids bike under 60€"
+              "text": "Leo sucht ein Kinderfahrrad unter 60 Euro."
             },
             {
               "id": "5",
-              "text": "Mrs Klein: dog walking weekday mornings"
+              "text": "Frau Klein sucht Gassi-Service unter der Woche morgens."
             },
             {
               "id": "6",
-              "text": "Sara: airport bus after 22:00"
+              "text": "Sara braucht nach 22 Uhr einen Bus vom Flughafen."
             },
             {
               "id": "7",
-              "text": "Farid: drill one day"
+              "text": "Farid braucht für einen Tag eine Bohrmaschine."
             },
             {
               "id": "8",
-              "text": "Anika: beginner guitar Saturday"
+              "text": "Anika sucht Gitarre für Anfänger am Samstag."
+            },
+            {
+              "id": "9",
+              "text": "Pia sucht kostenloses Deutschsprechen, keinen bezahlten Kurs."
+            },
+            {
+              "id": "10",
+              "text": "Nico sucht Yoga für Anfänger am Abend, maximal 10 Euro."
             }
           ],
           "ads": [
@@ -1046,6 +1126,14 @@ registerPack("b1", {
             {
               "id": "J",
               "text": "Taxi Flughafen 55€"
+            },
+            {
+              "id": "K",
+              "text": "Sprachcafé frei, Mi 18 Uhr"
+            },
+            {
+              "id": "L",
+              "text": "Yoga Anfänger Do 20 Uhr 8€"
             }
           ],
           "answer": {
@@ -1056,7 +1144,9 @@ registerPack("b1", {
             "5": "E",
             "6": "F",
             "7": "G",
-            "8": "H"
+            "8": "H",
+            "9": "K",
+            "10": "L"
           }
         }
       ]
@@ -1131,7 +1221,7 @@ registerPack("b1", {
         },
         {
           "kind": "detail",
-          "instruction": "Read the text. Choose a, b or c (telc Lesen Teil 2).",
+          "instruction": "Lesen Sie den Text. Wählen Sie a, b oder c.",
           "text": "Frau Okonkwo (45) arbeitet Teilzeit in einer Apotheke und pflegt abends ihren Vater. Sie liest Nachrichten auf dem Handy und hört Podcasts. Sonntags geht sie spazieren. Sie möchte einen Erste-Hilfe-Kurs. Nachbarn helfen beim Einkaufen. Die Buslinie zum Klinikum findet sie praktisch.",
           "items": [
             {
@@ -1183,39 +1273,47 @@ registerPack("b1", {
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Extra notices unused (telc Lesen Teil 3).",
+          "instruction": "Welche Anzeige passt zu welcher Person? Zwei Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Tom: free first-aid"
+              "text": "Tom sucht einen kostenlosen Erste-Hilfe-Kurs."
             },
             {
               "id": "2",
-              "text": "Lina: repair café toaster"
+              "text": "Lina möchte im Repair-Café einen Toaster reparieren lassen."
             },
             {
               "id": "3",
-              "text": "Ahmed: vaccination Saturday"
+              "text": "Ahmed möchte sich am Samstag impfen lassen."
             },
             {
               "id": "4",
-              "text": "Eva: neighbourhood party"
+              "text": "Eva sucht ein Nachbarschaftsfest."
             },
             {
               "id": "5",
-              "text": "Chris: bus to hospital"
+              "text": "Chris braucht einen Bus zum Krankenhaus."
             },
             {
               "id": "6",
-              "text": "Maya: evening photo course"
+              "text": "Maya sucht einen Fotokurs am Abend."
             },
             {
               "id": "7",
-              "text": "Jonas: free tenant advice"
+              "text": "Jonas sucht kostenlose Beratung für Mieter."
             },
             {
               "id": "8",
-              "text": "Ruth: quiet room 2 weeks"
+              "text": "Ruth sucht ein ruhiges Zimmer für zwei Wochen."
+            },
+            {
+              "id": "9",
+              "text": "Omar sucht Schwimmen für Anfänger nach 19 Uhr im Nordbad."
+            },
+            {
+              "id": "10",
+              "text": "Sara möchte am Montag vegan in der Innenstadt essen."
             }
           ],
           "ads": [
@@ -1258,6 +1356,14 @@ registerPack("b1", {
             {
               "id": "J",
               "text": "Taxi Klinikum 40€"
+            },
+            {
+              "id": "K",
+              "text": "Schwimmkurs Anfänger Nordbad 19:30"
+            },
+            {
+              "id": "L",
+              "text": "Veganes Mittagessen Mo, Innenstadt"
             }
           ],
           "answer": {
@@ -1268,7 +1374,9 @@ registerPack("b1", {
             "5": "E",
             "6": "F",
             "7": "G",
-            "8": "H"
+            "8": "H",
+            "9": "K",
+            "10": "L"
           }
         }
       ]
@@ -1645,7 +1753,7 @@ registerPack("b1", {
       "id": "sb-7",
       "title": "Paper 4 · Teil 1 — course request (10)",
       "kind": "cloze",
-      "text": "Sehr geehrte Frau Hartmann, ich möchte mich für Ihren Abendkurs (1). (2) Sie mir bitte sagen, ob noch Plätze frei sind? Ich arbeite bis 17 Uhr, (3) ich einen Kurs nach 18 Uhr brauche. Ich habe A2 (4) und möchte B1 (5). Über eine Antwort (6) ich mich. Schreiben Sie mir bitte (7) E-Mail. Vielen Dank für Ihre (8). Mit freundlichen (9)",
+      "text": "Sehr geehrte Frau Hartmann, ich möchte mich für Ihren Abendkurs (1). (2) Sie mir bitte sagen, ob noch Plätze frei sind? Ich arbeite bis 17 Uhr, (3) ich einen Kurs nach 18 Uhr brauche. Ich habe A2 (4) und möchte B1 (5). Über eine Antwort (6) ich mich. Schreiben Sie mir bitte (7) E-Mail. Vielen Dank für Ihre (8). Mit freundlichen (9). Ich (10) auf Ihre Nachricht.",
       "gaps": [
         {
           "options": [
@@ -1718,6 +1826,14 @@ registerPack("b1", {
             "grüß"
           ],
           "answer": "Grüßen"
+        },
+        {
+          "options": [
+            "hoffe",
+            "hofft",
+            "hoffen"
+          ],
+          "answer": "hoffe"
         }
       ]
     },
@@ -1757,7 +1873,7 @@ registerPack("b1", {
       "id": "sb-9",
       "title": "Paper 5 · Teil 1 — informal invite (10)",
       "kind": "cloze",
-      "text": "Lieber Marko, am Samstag (1) ich Geburtstag. (2) du kommen? Wir grillen ab 16 Uhr, (3) das Wetter gut ist. Wenn es regnet, bleiben wir (4). Sag mir, (5) du kommst, (6) ich genug Essen kaufe. Du kannst etwas (7). Ich (8) mich. Viele (9)",
+      "text": "Lieber Marko, am Samstag (1) ich Geburtstag. (2) du kommen? Wir grillen ab 16 Uhr, (3) das Wetter gut ist. Wenn es regnet, bleiben wir (4). Sag mir, (5) du kommst, (6) ich genug Essen kaufe. Du kannst etwas (7). Ich (8) mich. Viele (9) und bis (10)!",
       "gaps": [
         {
           "options": [
@@ -1830,6 +1946,14 @@ registerPack("b1", {
             "grüß"
           ],
           "answer": "Grüße"
+        },
+        {
+          "options": [
+            "bald",
+            "weil",
+            "dann"
+          ],
+          "answer": "bald"
         }
       ]
     },
@@ -2729,12 +2853,13 @@ registerPack("b1", {
       "id": "informal-invite",
       "register": "du",
       "title": "Informal: invitation",
-      "situation": "Your friend Julia invites you to a barbecue on Saturday.",
+      "situation": "Deine Freundin Julia lädt dich zum Grillen am Samstag ein.",
+      "situationEn": "Your friend Julia invites you to a barbecue on Saturday.",
       "points": [
-        "Thank her.",
-        "Say if you can come and why / why not.",
-        "Suggest an alternative time if needed.",
-        "Ask what you should bring."
+        "Danke sagen.",
+        "Sag, ob du kommen kannst, und warum / warum nicht.",
+        "Schlage eine andere Zeit vor, wenn nötig.",
+        "Frag, was du mitbringen sollst."
       ],
       "model": "Liebe Julia, vielen Dank für deine Einladung zum Grillen am Samstag. Das klingt wirklich toll. Leider kann ich am Samstag Nachmittag nicht, weil ich bis 16 Uhr arbeiten muss. Danach hätte ich Zeit. Wäre es möglich, dass ich gegen 17 Uhr komme? Soll ich einen Salat mitbringen? Liebe Grüße"
     },
@@ -2742,12 +2867,13 @@ registerPack("b1", {
       "id": "course-office",
       "register": "Sie",
       "title": "Formal: course office",
-      "situation": "You cannot attend your evening German course next week.",
+      "situation": "Sie können nächste Woche nicht zum Abendkurs kommen.",
+      "situationEn": "You cannot attend your evening German course next week.",
       "points": [
-        "Explain why.",
-        "Ask about missed material.",
-        "Ask if you can take the test later.",
-        "Say how they can contact you."
+        "Erklären Sie warum.",
+        "Fragen Sie nach dem Stoff.",
+        "Fragen Sie, ob Sie den Test später schreiben können.",
+        "Sagen Sie, wie man Sie erreichen kann."
       ],
       "model": "Sehr geehrte Frau Berger, leider kann ich nächste Woche nicht zum B1-Kurs kommen, weil ich beruflich nach Hamburg fahren muss. Könnten Sie mir bitte sagen, welchen Stoff die Klasse behandelt? Wäre es möglich, den Test in der folgenden Woche zu schreiben? Sie können mich per E-Mail erreichen. Mit freundlichen Grüßen"
     },
@@ -2755,12 +2881,13 @@ registerPack("b1", {
       "id": "complaint",
       "register": "Sie",
       "title": "Formal: complaint (washing machine)",
-      "situation": "The washing machine in your rented flat is broken.",
+      "situation": "Die Waschmaschine in Ihrer Mietwohnung ist kaputt.",
+      "situationEn": "The washing machine in your rented flat is broken.",
       "points": [
-        "Describe the problem.",
-        "Since when.",
-        "What you already tried.",
-        "What you want the landlord to do, with a time."
+        "Beschreiben Sie das Problem.",
+        "Seit wann?",
+        "Was haben Sie schon versucht?",
+        "Was soll der Vermieter tun — mit einer Uhrzeit."
       ],
       "model": "Sehr geehrter Herr Krause, die Waschmaschine funktioniert seit Samstag nicht. Nach dem Start bleibt sie stehen. Ich habe das Gerät aus- und eingeschaltet, aber es hat nicht geholfen. Könnten Sie bitte einen Techniker schicken, am besten nach 16 Uhr? Mit freundlichen Grüßen"
     },
@@ -2768,12 +2895,13 @@ registerPack("b1", {
       "id": "info-job",
       "register": "Sie",
       "title": "Formal: internship information",
-      "situation": "You saw an ad for a Praktikum.",
+      "situation": "Sie haben eine Anzeige für ein Praktikum gelesen.",
+      "situationEn": "You saw an ad for a Praktikum.",
       "points": [
-        "Say why you are writing.",
-        "Ask about hours and dates.",
-        "Ask about tasks and pay.",
-        "Give a phone number."
+        "Sagen Sie, warum Sie schreiben.",
+        "Fragen Sie nach Zeiten und Dauer.",
+        "Fragen Sie nach Aufgaben und Bezahlung.",
+        "Geben Sie eine Telefonnummer."
       ],
       "model": "Sehr geehrte Damen und Herren, ich interessiere mich für ein Praktikum in Ihrer Firma. Könnten Sie mir bitte mitteilen, wie lange es dauert und ob Teilzeit möglich ist? Welche Aufgaben würde ich übernehmen, und ist eine Vergütung vorgesehen? Meine Nummer ist 0176 000000. Mit freundlichen Grüßen"
     },
@@ -2781,12 +2909,13 @@ registerPack("b1", {
       "id": "online-shop",
       "register": "Sie",
       "title": "Formal: wrong-size jacket",
-      "situation": "You ordered a jacket. Wrong size, a button is missing.",
+      "situation": "Sie haben eine Jacke bestellt. Die Größe stimmt nicht, ein Knopf fehlt.",
+      "situationEn": "You ordered a jacket. Wrong size, a button is missing.",
       "points": [
-        "Give the order number (invent one).",
-        "Describe both problems.",
-        "Say what you want (exchange or refund).",
-        "Ask how to send it back."
+        "Nennen Sie eine Bestellnummer (erfinden Sie eine).",
+        "Beschreiben Sie beide Probleme.",
+        "Sagen Sie, was Sie möchten (Umtausch oder Geld zurück).",
+        "Fragen Sie, wie Sie den Artikel zurückschicken."
       ],
       "model": "Sehr geehrte Damen und Herren, ich schreibe wegen der Bestellung 45821. Die Jacke ist eine Nummer zu klein, und ein Knopf fehlt. Ich möchte die Jacke umtauschen oder das Geld zurück. Könnten Sie mir bitte sagen, wie ich den Artikel zurückschicken kann? Mit freundlichen Grüßen"
     },
@@ -2794,12 +2923,13 @@ registerPack("b1", {
       "id": "visit-city",
       "register": "du",
       "title": "Informal: friend visits your city",
-      "situation": "A friend wants to visit.",
+      "situation": "Ein Freund / eine Freundin möchte dich in deiner Stadt besuchen.",
+      "situationEn": "A friend wants to visit.",
       "points": [
-        "When they should come.",
-        "What to see.",
-        "Where to stay.",
-        "How you will meet."
+        "Wann soll die Person kommen?",
+        "Was soll man sehen?",
+        "Wo kann man schlafen?",
+        "Wie trefft ihr euch?"
       ],
       "model": "Lieber Samir, am besten kommst du im Mai, weil das Wetter dann freundlich ist. Du solltest die Altstadt sehen. Ein Hotel ist teuer — du kannst bei mir schlafen. Schreib mir, wann dein Zug ankommt, dann hole ich dich ab. Bis bald"
     },
@@ -2807,12 +2937,13 @@ registerPack("b1", {
       "id": "doctor-sick",
       "register": "Sie",
       "title": "Formal: sick leave / doctor note",
-      "situation": "You were sick and missed two days of your language course / job training.",
+      "situation": "Sie waren krank und haben zwei Tage im Sprachkurs / in der Ausbildung gefehlt.",
+      "situationEn": "You were sick and missed two days of your language course / job training.",
       "points": [
-        "Explain why you were absent.",
-        "Say from when to when.",
-        "Ask what you missed.",
-        "Offer to catch up and give contact details."
+        "Erklären Sie die Abwesenheit.",
+        "Von wann bis wann?",
+        "Fragen Sie, was Sie verpasst haben.",
+        "Bieten Sie an nachzuarbeiten und geben Sie Kontakt."
       ],
       "model": "Sehr geehrte Frau Lang, leider konnte ich Montag und Dienstag nicht zum Kurs kommen, weil ich Grippe hatte. Der Arzt hat mir Ruhe empfohlen. Könnten Sie mir bitte sagen, welchen Stoff ich nachholen muss? Ich arbeite gerne zu Hause nach. Sie erreichen mich per E-Mail. Mit freundlichen Grüßen"
     },
@@ -2820,12 +2951,13 @@ registerPack("b1", {
       "id": "neighbour-noise",
       "register": "Sie",
       "title": "Formal: noise complaint to Hausverwaltung",
-      "situation": "Neighbours play loud music after 22:00.",
+      "situation": "Die Nachbarn hören nach 22 Uhr laute Musik.",
+      "situationEn": "Neighbours play loud music after 22:00.",
       "points": [
-        "Describe the problem and times.",
-        "Say how long it has been happening.",
-        "What you already did (spoke to them).",
-        "What you want the management to do."
+        "Beschreiben Sie das Problem und die Uhrzeiten.",
+        "Seit wann passiert das?",
+        "Was haben Sie schon gemacht (mit den Nachbarn gesprochen)?",
+        "Was soll die Hausverwaltung tun?"
       ],
       "model": "Sehr geehrte Damen und Herren, seit drei Wochen höre ich nach 22 Uhr laute Musik aus Wohnung 12. Ich habe die Nachbarn höflich gebeten, leiser zu sein, aber es hat sich kaum geändert. Könnten Sie bitte mit den Bewohnern sprechen? Ich bitte um eine kurze Rückmeldung. Mit freundlichen Grüßen"
     },
@@ -2833,12 +2965,13 @@ registerPack("b1", {
       "id": "friend-move",
       "register": "du",
       "title": "Informal: help with moving",
-      "situation": "You are moving next Saturday and need help.",
+      "situation": "Du ziehst nächsten Samstag um und brauchst Hilfe.",
+      "situationEn": "You are moving next Saturday and need help.",
       "points": [
-        "Say when and where.",
-        "What you need help with.",
-        "Offer food / thanks.",
-        "Ask if they can come and until when."
+        "Wann und wo?",
+        "Wobei brauchst du Hilfe?",
+        "Essen / Danke anbieten.",
+        "Fragen, ob die Person kommen kann und bis wann."
       ],
       "model": "Lieber Alex, am Samstag ziehe ich um, und ich brauche Hilfe beim Tragen. Wir starten um 10 Uhr an der Alten Straße 5. Es gibt Pizza und Getränke. Kannst du bis etwa 15 Uhr bleiben? Schreib mir bitte kurz Bescheid. Liebe Grüße"
     },
@@ -2846,12 +2979,13 @@ registerPack("b1", {
       "id": "club-membership",
       "register": "Sie",
       "title": "Formal: sports club membership",
-      "situation": "You want to join a sports club.",
+      "situation": "Sie möchten in einen Sportverein.",
+      "situationEn": "You want to join a sports club.",
       "points": [
-        "Say why you are writing.",
-        "Ask about times and levels.",
-        "Ask about price and trial training.",
-        "Give your phone number."
+        "Warum schreiben Sie?",
+        "Fragen Sie nach Zeiten und Niveau.",
+        "Fragen Sie nach Preis und Probetraining.",
+        "Geben Sie Ihre Telefonnummer."
       ],
       "model": "Sehr geehrte Damen und Herren, ich interessiere mich für eine Mitgliedschaft in Ihrem Verein. Könnten Sie mir bitte die Trainingszeiten für Anfänger nennen? Was kostet der Beitrag, und gibt es ein Probetraining? Meine Nummer ist 0151 000000. Mit freundlichen Grüßen"
     },
@@ -2859,12 +2993,13 @@ registerPack("b1", {
       "id": "hotel-problem",
       "register": "Sie",
       "title": "Formal: hotel booking problem",
-      "situation": "Your hotel reservation shows the wrong dates.",
+      "situation": "In Ihrer Hotelbuchung stehen die falschen Daten.",
+      "situationEn": "Your hotel reservation shows the wrong dates.",
       "points": [
-        "Give booking number.",
-        "Explain the mistake.",
-        "Say the dates you need.",
-        "Ask for confirmation in writing."
+        "Nennen Sie die Buchungsnummer.",
+        "Erklären Sie den Fehler.",
+        "Welche Daten brauchen Sie?",
+        "Bitten Sie um eine schriftliche Bestätigung."
       ],
       "model": "Sehr geehrte Damen und Herren, meine Buchungsnummer ist H-3391. In der Bestätigung steht der 12.–14. Mai, aber ich brauche den 14.–16. Mai. Könnten Sie die Daten bitte ändern und mir eine neue Bestätigung schicken? Vielen Dank. Mit freundlichen Grüßen"
     },
@@ -2872,12 +3007,13 @@ registerPack("b1", {
       "id": "exam-thanks",
       "register": "du",
       "title": "Informal: thank a classmate",
-      "situation": "A classmate helped you prepare for B1.",
+      "situation": "Ein Mitschüler / eine Mitschülerin hat dir bei der B1-Vorbereitung geholfen.",
+      "situationEn": "A classmate helped you prepare for B1.",
       "points": [
-        "Thank them.",
-        "Say what helped most.",
-        "Suggest celebrating after the exam.",
-        "Ask about their plans."
+        "Danke sagen.",
+        "Was hat am meisten geholfen?",
+        "Nach der Prüfung etwas unternehmen.",
+        "Nach den Plänen der anderen Person fragen."
       ],
       "model": "Liebe Mira, vielen Dank für deine Hilfe vor der Prüfung. Besonders die Sprechen-Übungen haben mir Sicherheit gegeben. Wenn wir bestanden haben, lade ich dich auf einen Kaffee ein. Was machst du danach — Urlaub oder weiterlernen? Liebe Grüße"
     },
@@ -2885,12 +3021,13 @@ registerPack("b1", {
       "id": "b1-bank",
       "register": "Sie",
       "title": "Formal: bank appointment",
-      "situation": "Open a bank account appointment.",
+      "situation": "Sie möchten einen Termin, um ein Girokonto zu eröffnen.",
+      "situationEn": "Open a bank account appointment.",
       "points": [
-        "Why",
-        "Possible times",
-        "Documents",
-        "Phone"
+        "Warum Sie schreiben.",
+        "Welche Zeiten möglich sind.",
+        "Welche Unterlagen nötig sind.",
+        "Telefonnummer."
       ],
       "model": "Sehr geehrte Damen und Herren, ich möchte ein Girokonto eröffnen. Welche Termine gibt es nächste Woche? Welche Unterlagen brauche ich? Tel. 0151 111111. Mit freundlichen Grüßen"
     },
@@ -2898,12 +3035,13 @@ registerPack("b1", {
       "id": "b1-vhs",
       "register": "Sie",
       "title": "Formal: change course time",
-      "situation": "Morning to evening course.",
+      "situation": "Sie müssen vom Morgenkurs in einen Abendkurs wechseln.",
+      "situationEn": "Morning to evening course.",
       "points": [
-        "Situation",
-        "Ask change",
-        "Fees",
-        "Contact"
+        "Ihre Situation.",
+        "Um den Wechsel bitten.",
+        "Nach Kosten fragen.",
+        "Kontakt angeben."
       ],
       "model": "Sehr geehrte Frau Abel, ich kann den Morgenkurs nicht mehr besuchen, weil ich eine neue Schicht habe. Ist ein Abendkurs möglich? Entstehen Kosten? Per E-Mail erreichbar. Mit freundlichen Grüßen"
     },
@@ -2911,12 +3049,13 @@ registerPack("b1", {
       "id": "b1-party",
       "register": "du",
       "title": "Informal: cancel party",
-      "situation": "Cannot host.",
+      "situation": "Du kannst die Party nicht bei dir machen.",
+      "situationEn": "Cannot host.",
       "points": [
-        "Sorry",
-        "Reason",
-        "New date",
-        "Who hosts"
+        "Entschuldigung.",
+        "Grund.",
+        "Neuer Termin.",
+        "Wer hat Platz?"
       ],
       "model": "Liebe Freunde, die Party muss ausfallen, weil ich krank bin. Nächster Samstag? Wer hat Platz? Liebe Grüße"
     },
@@ -2924,12 +3063,13 @@ registerPack("b1", {
       "id": "b1-lost",
       "register": "Sie",
       "title": "Formal: lost bag on train",
-      "situation": "Lost property.",
+      "situation": "Sie haben im Zug eine Tasche verloren.",
+      "situationEn": "Lost property.",
       "points": [
-        "When/where",
-        "Describe",
-        "Contents",
-        "Contact"
+        "Wann und welcher Zug?",
+        "Was war in der Tasche?",
+        "Wohin soll man sie schicken?",
+        "Telefonnummer."
       ],
       "model": "Sehr geehrte Damen und Herren, gestern 18 Uhr habe ich in der S-Bahn eine schwarze Tasche verloren. Darin Buch und Schal. Bitte 0176 222222. Mit freundlichen Grüßen"
     },
@@ -2937,12 +3077,13 @@ registerPack("b1", {
       "id": "b1-volunteer",
       "register": "Sie",
       "title": "Formal: language café volunteer",
-      "situation": "Volunteer interest.",
+      "situation": "Sie möchten im Sprachcafé ehrenamtlich helfen.",
+      "situationEn": "Volunteer interest.",
       "points": [
-        "Who",
-        "Why",
-        "Times",
-        "Level needed"
+        "Warum Sie schreiben.",
+        "Wann Sie Zeit haben.",
+        "Welche Sprachen Sie sprechen.",
+        "Kontakt."
       ],
       "model": "Sehr geehrte Damen und Herren, ich heiße Samira (B1) und möchte im Sprachcafé helfen. Wann brauchen Sie Freiwillige? Mit freundlichen Grüßen"
     },
@@ -2950,12 +3091,13 @@ registerPack("b1", {
       "id": "b1-mould",
       "register": "Sie",
       "title": "Formal: mould in bathroom",
-      "situation": "Housing problem.",
+      "situation": "Im Bad Ihrer Mietwohnung ist Schimmel.",
+      "situationEn": "Housing problem.",
       "points": [
-        "Problem",
-        "Since when",
-        "Tried",
-        "Repair date"
+        "Problem beschreiben.",
+        "Seit wann?",
+        "Was Sie schon getan haben.",
+        "Was Sie vom Vermieter wollen."
       ],
       "model": "Sehr geehrter Herr Brandt, seit zwei Wochen ist Schimmel im Bad. Lüften hilft nicht. Bitte Reparaturtermin. Mit freundlichen Grüßen"
     }
@@ -3020,11 +3162,36 @@ registerPack("b1", {
         "spine": "Wohnungen sind teuer. WG oder Stadtrand kann helfen."
       },
       {
+        "t": "Bewerbung und Praktikum",
+        "spine": "Ein Praktikum zeigt den Betrieb. Man muss pünktlich sein und Fragen stellen."
+      },
+      {
+        "t": "Beim Amt Termine machen",
+        "spine": "Ohne Termin wartet man lange. Online buchen spart Zeit, aber nicht jeder kann das."
+      },
+      {
+        "t": "Arztbesuch und Krankenkasse",
+        "spine": "Man braucht einen Termin und die Versichertenkarte. Prävention ist günstiger als spät zum Arzt."
+      },
+      {
+        "t": "Wohnung suchen in der Stadt",
+        "spine": "Die Mieten sind hoch. WG, Stadtrand oder mehr Pendeln — man muss entscheiden."
+      },
+      {
         "t": "Fleisch oder vegetarisch",
         "spine": "Weniger Fleisch ist besser für Klima und oft gesünder."
       }
     ],
     "planning": [
+
+      {
+        "t": "Wohnungsbesichtigung zu zweit",
+        "points": ["Tag und Uhrzeit", "Wer fragt den Vermieter", "Checkliste (Schimmel, Lärm, Küche)", "Anfahrt", "Plan B wenn die Wohnung weg ist"]
+      },
+      {
+        "t": "Ausflug der Deutschklasse",
+        "points": ["Ziel", "Bahn oder Bus", "Kosten", "Essen", "Treffpunkt", "Wetterplan"]
+      },
       {
         "t": "Abschiedsfest für eine Kollegin",
         "points": [
@@ -3231,15 +3398,15 @@ registerPack("b1", {
     }
   ],
   "tips": [
-    "Pass rule: at least 60% of the written total AND 60% of the oral. Strong Lesen cannot save a failed letter.",
+    "telc B1 pass: 135/225 written AND 45/75 oral. Lesen 5+5+10, SB 10+10, Hören 5 (once)+10+5, one letter with 4 Leitpunkte. The oral cannot save a failed written paper.",
     "Lesen: read the question before the text. Synonyms beat word-spotting.",
     "Hören Teil 1: one play only. Read the statement first, then listen for the trap.",
     "Sprachbausteine: weil/dass/wenn → verb to the end; denn/deshalb → verb second.",
-    "Schreiben: four Leitpunkte = four short paragraphs. 100–120 words. One Konjunktiv II in formal letters.",
-    "Sprechen Teil 3: you must agree on a plan. Soft no + counter-proposal beats silence.",
-    "Weeks 7–8: download official telc sample audio. Browser TTS trains method, not exam acoustics.",
+    "Schreiben from memory: four Leitpunkte, 30 minutes, model locked. Formal letters need one Könnten / würde / wäre.",
+    "Sprechen: do the 15-minute run. Teil 3 only counts if you write a decision.",
+    "Weeks 7–8: Official exam ears — play the telc MP3 on this device. TTS trains method, not acoustics.",
     "Official B1 written: Reading + Language Elements (~90), Listening (~30), Writing (30).",
-    "Do mocks D–F without a dictionary. Check every Leitpunkt in Schreiben."
+    "Do mocks D–F without a dictionary. Redo any paper under 80%."
   ]
 }
 });

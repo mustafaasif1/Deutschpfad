@@ -63,7 +63,7 @@
           : "What does “" + label + "” mean?",
         options: options,
         answer: i % 3 === 0 ? [label.trim(), w.de] : w.en,
-        explain: "German: " + label + (w.pl ? " · plural hint: " + w.pl : "") + " — English: " + w.en,
+        explain: "German: " + label + (w.pl ? " · plural hint: " + w.pl : "") + " — English: " + w.en + (w.ex ? " · e.g. " + w.ex : ""),
         level: w.level,
         vocabId: w.id,
       };

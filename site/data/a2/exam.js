@@ -8,35 +8,35 @@ registerPack("a2", {
       "parts": [
         {
           "kind": "headlines",
-          "instruction": "Match A–E. Two unused.",
+          "instruction": "Ordnen Sie A–E zu. Zwei Überschriften bleiben übrig.",
           "headlines": [
             {
               "id": "1",
-              "text": "Evening German course for parents"
+              "text": "Abend-Deutschkurs für Eltern"
             },
             {
               "id": "2",
-              "text": "Free museum Sunday"
+              "text": "Museum sonntags kostenlos"
             },
             {
               "id": "3",
-              "text": "Flatshare seeks quiet roommate"
+              "text": "WG sucht ruhige Mitbewohnerin"
             },
             {
               "id": "4",
-              "text": "Train strike tomorrow"
+              "text": "Bahnstreik morgen"
             },
             {
               "id": "5",
-              "text": "Cheap bikes for students"
+              "text": "Günstige Fahrräder für Studierende"
             },
             {
               "id": "6",
-              "text": "Hospital needs blood donors"
+              "text": "Krankenhaus sucht Blutspender"
             },
             {
               "id": "7",
-              "text": "New supermarket opens 24/7"
+              "text": "Neuer Supermarkt rund um die Uhr"
             }
           ],
           "texts": [
@@ -71,7 +71,7 @@ registerPack("a2", {
         },
         {
           "kind": "detail",
-          "instruction": "Read. Choose a/b/c.",
+          "instruction": "Lesen Sie den Text. Wählen Sie a, b oder c.",
           "text": "Seit einem Jahr wohnt Jamal in Dresden. Er macht eine Ausbildung zum Elektriker und besucht zweimal pro Woche einen A2-Kurs. Am Wochenende jobbt er in einem Café, weil die Miete hoch ist. Seine Familie lebt noch in Marokko; sie telefonieren oft. Nächstes Jahr möchte er den B1-Kurs beginnen, wenn er A2 bestanden hat.",
           "items": [
             {
@@ -127,23 +127,23 @@ registerPack("a2", {
           "people": [
             {
               "id": "1",
-              "text": "Sara: used sofa under 100€, weekend pickup"
+              "text": "Sara sucht ein gebrauchtes Sofa unter 100 Euro, Abholung am Wochenende."
             },
             {
               "id": "2",
-              "text": "Leo: beginner swimming after 18:00"
+              "text": "Leo sucht Schwimmen für Anfänger nach 18 Uhr."
             },
             {
               "id": "3",
-              "text": "Nora: free conversation meetup"
+              "text": "Nora sucht ein kostenloses Sprachcafé."
             },
             {
               "id": "4",
-              "text": "Paul: bike repair Saturday morning"
+              "text": "Paul braucht am Samstag Vormittag eine Fahrradreparatur."
             },
             {
               "id": "5",
-              "text": "Yara: vegetarian lunch downtown"
+              "text": "Yara möchte vegetarisch in der Innenstadt zu Mittag essen."
             }
           ],
           "ads": [
@@ -193,35 +193,35 @@ registerPack("a2", {
       "parts": [
         {
           "kind": "headlines",
-          "instruction": "Match A–E. Two unused.",
+          "instruction": "Ordnen Sie A–E zu. Zwei Überschriften bleiben übrig.",
           "headlines": [
             {
               "id": "1",
-              "text": "Pharmacy Sunday service"
+              "text": "Apotheke mit Sonntagsdienst"
             },
             {
               "id": "2",
-              "text": "Lost phone at station"
+              "text": "Handy am Bahnhof verloren"
             },
             {
               "id": "3",
-              "text": "Cooking class for students"
+              "text": "Kochkurs für Studierende"
             },
             {
               "id": "4",
-              "text": "City bikes now electric"
+              "text": "Stadträder jetzt elektrisch"
             },
             {
               "id": "5",
-              "text": "Night bus every hour"
+              "text": "Nachtbus stündlich"
             },
             {
               "id": "6",
-              "text": "Job in supermarket warehouse"
+              "text": "Job im Supermarkt-Lager"
             },
             {
               "id": "7",
-              "text": "Park closed for storm"
+              "text": "Park wegen Sturm geschlossen"
             }
           ],
           "texts": [
@@ -256,7 +256,7 @@ registerPack("a2", {
         },
         {
           "kind": "detail",
-          "instruction": "Read. Choose a/b/c.",
+          "instruction": "Lesen Sie den Text. Wählen Sie a, b oder c.",
           "text": "Liebe Mira, danke für deine Einladung zum Grillen. Leider kann ich am Samstag nicht, weil ich bis 17 Uhr arbeiten muss. Danach hätte ich Zeit. Wäre 18 Uhr okay? Ich bringe einen Salat mit. Viele Grüße, Sam",
           "items": [
             {
@@ -303,23 +303,23 @@ registerPack("a2", {
           "people": [
             {
               "id": "1",
-              "text": "Ken: guitar lessons Saturday"
+              "text": "Ken sucht Gitarrenunterricht am Samstag."
             },
             {
               "id": "2",
-              "text": "Amina: room for 2 weeks near uni"
+              "text": "Amina sucht ein Zimmer für zwei Wochen in Uninähe."
             },
             {
               "id": "3",
-              "text": "Joel: dog walking weekday mornings"
+              "text": "Joel sucht Gassi-Service unter der Woche morgens."
             },
             {
               "id": "4",
-              "text": "Eva: print shop near station"
+              "text": "Eva braucht ein Copyshop in Bahnhofsnähe."
             },
             {
               "id": "5",
-              "text": "Omar: organic veg box delivery"
+              "text": "Omar möchte eine Bio-Gemüsekiste geliefert bekommen."
             }
           ],
           "ads": [
@@ -369,7 +369,7 @@ registerPack("a2", {
       "parts": [
         {
           "kind": "headlines",
-          "instruction": "Match each text to one headline. Extra headlines are unused (telc Lesen Teil 1).",
+          "instruction": "Ordnen Sie den Texten die passende Überschrift zu. Extra-Überschriften bleiben übrig.",
           "headlines": [
             {
               "id": "1",
@@ -475,27 +475,27 @@ registerPack("a2", {
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Extra notices unused (telc Lesen Teil 3).",
+          "instruction": "Welche Anzeige passt zu welcher Person? Extra-Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Igor: weekend café job"
+              "text": "Igor sucht einen Café-Job am Wochenende."
             },
             {
               "id": "2",
-              "text": "Sara: free Sunday tour"
+              "text": "Sara sucht eine kostenlose Stadtführung am Sonntag."
             },
             {
               "id": "3",
-              "text": "Lena: quiet study WLAN"
+              "text": "Lena sucht einen ruhigen Lernplatz mit WLAN."
             },
             {
               "id": "4",
-              "text": "Tom: swim while hall closed"
+              "text": "Tom möchte schwimmen, während die Halle zu ist."
             },
             {
               "id": "5",
-              "text": "Aya: Friday market"
+              "text": "Aya möchte am Freitag auf den Markt."
             }
           ],
           "ads": [
@@ -545,7 +545,7 @@ registerPack("a2", {
       "parts": [
         {
           "kind": "headlines",
-          "instruction": "Match each text to one headline. Extra headlines are unused (telc Lesen Teil 1).",
+          "instruction": "Ordnen Sie den Texten die passende Überschrift zu. Extra-Überschriften bleiben übrig.",
           "headlines": [
             {
               "id": "1",
@@ -651,27 +651,27 @@ registerPack("a2", {
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Extra notices unused (telc Lesen Teil 3).",
+          "instruction": "Welche Anzeige passt zu welcher Person? Extra-Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Nina: free furniture Sat"
+              "text": "Nina sucht kostenlose Möbel, Abholung Samstag."
             },
             {
               "id": "2",
-              "text": "Paul: free gym trial"
+              "text": "Paul möchte ein kostenloses Probetraining im Fitnessstudio."
             },
             {
               "id": "3",
-              "text": "Rita: emergency pharmacy"
+              "text": "Rita braucht eine Notdienst-Apotheke."
             },
             {
               "id": "4",
-              "text": "Ken: quiet WG"
+              "text": "Ken sucht eine ruhige WG."
             },
             {
               "id": "5",
-              "text": "Mila: doctor via app"
+              "text": "Mila möchte einen Arzttermin über eine App."
             }
           ],
           "ads": [
@@ -721,7 +721,7 @@ registerPack("a2", {
       "parts": [
         {
           "kind": "headlines",
-          "instruction": "Match each text to one headline. Extra headlines are unused (telc Lesen Teil 1).",
+          "instruction": "Ordnen Sie den Texten die passende Überschrift zu. Extra-Überschriften bleiben übrig.",
           "headlines": [
             {
               "id": "1",
@@ -827,27 +827,27 @@ registerPack("a2", {
         },
         {
           "kind": "ads",
-          "instruction": "Match each person to one notice. Extra notices unused (telc Lesen Teil 3).",
+          "instruction": "Welche Anzeige passt zu welcher Person? Extra-Anzeigen bleiben übrig.",
           "people": [
             {
               "id": "1",
-              "text": "Sam: Sunday hike"
+              "text": "Sam möchte sonntags wandern."
             },
             {
               "id": "2",
-              "text": "Ola: cheap Tuesday cinema"
+              "text": "Ola möchte dienstags günstig ins Kino."
             },
             {
               "id": "3",
-              "text": "Ben: free language meetup"
+              "text": "Ben sucht ein kostenloses Sprachtreffen."
             },
             {
               "id": "4",
-              "text": "Ira: museum not Monday"
+              "text": "Ira möchte ins Museum, aber nicht montags."
             },
             {
               "id": "5",
-              "text": "Gus: cheaper train tickets"
+              "text": "Gus sucht günstigere Zugtickets."
             }
           ],
           "ads": [
@@ -1640,6 +1640,45 @@ registerPack("a2", {
   ],
   "schreiben": [
     {
+      "id": "a2-form-konto",
+      "kind": "form",
+      "register": "Sie",
+      "title": "A2 Schreiben Teil 1 — Formular: Bankkonto",
+      "situation": "Sie möchten ein Konto eröffnen. Füllen Sie das Formular aus.",
+      "situationEn": "You want to open a bank account. Fill in the form.",
+      "fields": [
+        {
+          "id": "name",
+          "label": "Name, Vorname"
+        },
+        {
+          "id": "adresse",
+          "label": "Adresse"
+        },
+        {
+          "id": "geburt",
+          "label": "Geburtsdatum"
+        },
+        {
+          "id": "ausweis",
+          "label": "Ausweisnummer"
+        },
+        {
+          "id": "termin",
+          "label": "Wunschtermin"
+        }
+      ],
+      "points": [
+        "Name",
+        "Adresse",
+        "Datum",
+        "Ausweis",
+        "Termin"
+      ],
+      "model": "Mustafa Asif · Musterstraße 1, 50667 Köln · 01.01.1994 · Ausweis … · Dienstag 16 Uhr"
+    },
+
+    {
       "id": "a2-invite",
       "register": "du",
       "title": "A2: reply to invitation",
@@ -1996,7 +2035,7 @@ registerPack("a2", {
     }
   ],
   "tips": [
-    "A2 pass still needs both written and oral halves — check telc rules at your centre.",
+    "Official telc A2: Hören ~20 min, Lesen 3 parts (~50 min with language elements), Schreiben 2 parts, pair Sprechen ~15. Not the DTZ A2·B1 paper.",
     "Perfekt is your storytelling tense: practise 10 sentences every day.",
     "weil/dass verb-final must be automatic before B1.",
     "Write every letter with four clear points.",

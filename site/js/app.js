@@ -22,10 +22,6 @@
       if (el.querySelector(".speak-btn")) return;
       const text = (el.textContent || "").replace(/\s+/g, " ").trim();
       if (!text || text.length < 2 || text.length > 400) return;
-      const wrap = document.createElement("span");
-      wrap.className = "speak-wrap";
-      el.parentNode.insertBefore(wrap, el);
-      wrap.appendChild(el);
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "speak-btn";
@@ -33,7 +29,17 @@
       btn.title = "Speak German";
       btn.setAttribute("aria-label", "Speak German");
       btn.innerHTML = SPEAK_SVG;
-      wrap.appendChild(btn);
+      const block = /^(DIV|P|LI|TD|H1|H2|H3|DT|DD)$/.test(el.tagName);
+      if (block) {
+        if (el.querySelector(":scope > .speak-btn")) return;
+        el.appendChild(btn);
+      } else {
+        const wrap = document.createElement("span");
+        wrap.className = "speak-wrap";
+        el.parentNode.insertBefore(wrap, el);
+        wrap.appendChild(el);
+        wrap.appendChild(btn);
+      }
     });
     root.querySelectorAll("[data-speak]").forEach(function (b) {
       if (b.getAttribute("data-speak-bound") === "1") return;
@@ -74,7 +80,7 @@
       return;
     }
     if (brand) brand.textContent = m.exam + " · 8 weeks";
-    if (goal) goal.innerHTML = "Pass <strong>" + esc(m.exam) + "</strong>. Progress for this level is saved separately.";
+    if (goal) goal.innerHTML = "Pass <strong>" + esc(m.exam) + "</strong>. Cover the official topics, then drill the real paper shape.";
     if (bookOpen) {
       bookOpen.hidden = false;
       bookOpen.href = m.book;
@@ -136,8 +142,44 @@
 
   let quiz = null;
   let hoerenRun = null;
+  let drillClock = null;
+  let extraInterval = null;
+  let localEars = { url: null, name: "" };
+
+  function stopDrillClock() {
+    if (drillClock) {
+      clearInterval(drillClock);
+      drillClock = null;
+    }
+    if (extraInterval) {
+      clearInterval(extraInterval);
+      extraInterval = null;
+    }
+  }
+
+  function formatClock(sec) {
+    const n = Math.max(0, sec);
+    const mm = Math.floor(n / 60);
+    const ss = n % 60;
+    return mm + ":" + (ss < 10 ? "0" : "") + ss;
+  }
+
+  function startDrillClock(sec, onTick, onEnd) {
+    stopDrillClock();
+    let left = sec;
+    onTick(left);
+    drillClock = setInterval(function () {
+      left -= 1;
+      onTick(left);
+      if (left <= 0) {
+        stopDrillClock();
+        if (onEnd) onEnd();
+      }
+    }, 1000);
+  }
 
   function stopHoerenRun() {
+    stopDrillClock();
     if (hoerenRun) {
       hoerenRun.aborted = true;
       if (hoerenRun.timer) clearInterval(hoerenRun.timer);
@@ -195,18 +237,23 @@
     else if (a === "vocab" && p[1] && p[2] === "quiz") startVocabQuiz(p[1]);
     else if (a === "vocab" && p[1]) renderVocabTopic(p[1]);
     else if (a === "vocab") renderVocab();
+    else if (a === "topics" && p[1] && p[2] === "quiz") startTopicChunkQuiz(p[1]);
+    else if (a === "topics" && p[1]) renderTopic(p[1]);
+    else if (a === "topics") renderTopics();
     else if (a === "drill" && p[1]) startDrill(p[1]);
     else if (a === "exam" && p[1] === "lesen" && p[2]) renderLesen(p[2]);
     else if (a === "exam" && p[1] === "lesen") renderLesenList();
     else if (a === "exam" && p[1] === "sprachbausteine") renderSB();
     else if (a === "exam" && p[1] === "hoeren" && p[2]) renderHoerenPaper(p[2], p[3]);
     else if (a === "exam" && p[1] === "hoeren") renderHoeren();
+    else if (a === "exam" && p[1] === "ears") renderExamEars();
     else if (a === "exam" && p[1] === "schreiben") renderSchreibenList();
+    else if (a === "exam" && p[1] === "sprechen" && p[2] === "run") renderSprechenRun();
     else if (a === "exam" && p[1] === "sprechen") renderSprechen();
     else if (a === "exam" && p[1] === "mock" && p[2]) renderMock(p[2]);
     else if (a === "exam" && p[1] === "mock") renderMockList();
     else if (a === "exam") renderExamHub();
-    else if (a === "schreiben" && p[1]) renderSchreiben(p[1]);
+    else if (a === "schreiben" && p[1]) renderSchreiben(p[1], p[2]);
     else if (a === "b2") renderB2();
     else if (a === "progress") renderProgress();
     else renderHome();
@@ -258,6 +305,7 @@
       '<p class="kicker">8 weeks · ' + esc(m.exam) + "</p>" +
       "<h1>" + esc(m.subtitle) + "</h1>" +
       '<p class="lead">Day <strong>' + day + "</strong> (week " + weekN + "). This level has <strong>" +
+      (window.TOPICS || []).length + " official topics</strong>, <strong>" +
       (pack.vocab || []).length + " vocab</strong>, <strong>" + (pack.grammar || []).length + " grammar lessons</strong>, <strong>" +
       ((pack.exam && pack.exam.lesen) || []).length + " Lesen papers</strong>, <strong>" +
       ((pack.exam && pack.exam.schreiben) || []).length + " writing tasks</strong>. Progress is tracked only for " + m.title + ".</p>" +
@@ -270,16 +318,18 @@
       "</div>" +
       "<h2>Jump in</h2>" +
       '<div class="grid grid-3">' +
+        '<a class="card clickable" href="#/topics"><h3>Official topics</h3><p>Everything ' + m.title + " actually tests — linked to vocab, grammar, and exam tasks.</p></a>" +
         '<a class="card clickable" href="#/grammar"><h3>Grammar</h3><p>Lessons + quizzes for ' + m.title + ".</p></a>" +
         '<a class="card clickable" href="#/vocab"><h3>Vocabulary</h3><p>Flashcards with articles + quizzes.</p></a>' +
-        '<a class="card clickable" href="#/exam"><h3>Exam gym</h3><p>Lesen, Hören exam sitting (German audio), letters, speaking.</p></a>' +
+        '<a class="card clickable" href="#/exam"><h3>Exam gym</h3><p>Same task types as telc ' + m.title + ".</p></a>" +
       "</div>" +
       "<h2>Daily minimum</h2>" +
       '<div class="card"><ol>' +
+        "<li>One official topic: say the chunks aloud, then the linked letter or oral spine.</li>" +
         "<li>One grammar quiz until 80%.</li>" +
         "<li>20–25 vocabulary cards — always with the article.</li>" +
-        "<li>Letter, listening, or 10 minutes speaking aloud.</li>" +
-      "</ol><p>Weeks 7–8: official telc sample audio for your level on telc.net. Browser voice trains method; exam audio trains ears.</p></div>";
+        "<li>Letter from memory, exam-sitting Hören, or a timed oral run.</li>" +
+      "</ol><p>Ease comes from covering every official topic in production. <a href=\"#/topics\">Topics</a> · <a href=\"#/exam/schreiben\">Hide-model letter</a> · <a href=\"#/exam/sprechen/run\">15-min oral</a> · <a href=\"#/exam/ears\">Official MP3</a>.</p></div>";
   }
 
   function renderPlan() {
@@ -315,7 +365,7 @@
     crumb.textContent = "Grammar";
     const m = meta();
     view.innerHTML = "<h1>Grammar academy</h1>" +
-      '<p class="lead">Do the lesson, then the quiz until 80%. Every example has a speaker — tap it and repeat aloud. This is ' + esc(m.title) + " grammar only.</p>" +
+      '<p class="lead">These are full lessons now — tables, traps, and a produce list. Do the lesson, say every German example, then the quiz until 80%. This is ' + esc(m.title) + " grammar only.</p>" +
       '<div class="grid grid-2">' +
       GRAMMAR.map(function (g) {
         const qs = Engine.bySet(g.id);
@@ -338,8 +388,9 @@
     if (!g) { view.innerHTML = "<p>Lesson not found.</p>"; return; }
     crumb.textContent = g.title;
     const n = Engine.bySet(g.id).length;
-    view.innerHTML = '<p class="kicker">Grammar · ' + g.level.toUpperCase() + "</p>" +
+    view.innerHTML = '<p class="kicker">Grammar · ' + g.level.toUpperCase() + " · ~" + g.minutes + " min</p>" +
       "<h1>" + esc(g.title) + "</h1>" +
+      '<p class="lead">Read the whole lesson, say every <span class="de">grey German</span> example aloud, then take the quiz to 80%. This is the grammar telc ' + esc(meta().title) + " actually uses.</p>" +
       '<article class="lesson">' + g.html + "</article>" +
       '<div class="btn-row">' +
         (n ? '<button class="btn btn-primary" id="start-q">Quiz this topic (' + n + ")</button>" : "") +
@@ -356,7 +407,8 @@
     crumb.textContent = "Vocabulary";
     const m = meta();
     view.innerHTML = "<h1>Vocabulary trainer</h1>" +
-      '<p class="lead">Always learn <strong>article + word</strong>. Tap the speaker next to every German word. ' + esc(m.title) + " words only — do not skip to another level’s list.</p>" +
+      '<p class="lead">Always learn <strong>article + word</strong>. Tap the speaker. This list is built around official telc ' + esc(m.title) + " topic areas — " +
+      (VOCAB || []).length + " words and phrases. Do not skip to another level.</p>" +
       '<div class="grid grid-2">' +
       VOCAB_TOPICS.map(function (t) {
         const n = Engine.vocabByTopic(t.id).length;
@@ -375,10 +427,12 @@
     function cardHtml() {
       const w = words[i];
       const label = (w.art ? w.art + " " : "") + w.de;
+      const ex = w.ex ? '<p class="vocab-ex de">' + esc(w.ex) + "</p>" : "";
+      const note = w.note ? '<p class="q-meta">' + esc(w.note) + "</p>" : "";
       return '<div class="card flash" id="flash">' +
         (front
-          ? '<div class="flash-head"><div class="big de">' + esc(label) + "</div></div><div class=\"sub\">Tap card for English · tap speaker to hear it" + (w.pl ? " · " + esc(w.pl) : "") + "</div>"
-          : '<div><div class="big">' + esc(w.en) + '</div><div class="sub"><span class="de">' + esc(label) + "</span></div></div>") +
+          ? '<div class="flash-head"><div class="big de">' + esc(label) + "</div></div><div class=\"sub\">Tap card for English · tap speaker to hear it" + (w.pl ? " · plural: " + esc(w.pl) : "") + "</div>" + ex + note
+          : '<div><div class="big">' + esc(w.en) + '</div><div class="sub"><span class="de">' + esc(label) + "</span>" + (w.pl ? " · " + esc(w.pl) : "") + "</div>" + ex + note + "</div>") +
         "</div>" +
         '<p class="q-meta">' + (i + 1) + " / " + words.length + " " + badge(w.level) + "</p>";
     }
@@ -388,7 +442,9 @@
           const label = (w.art ? w.art + " " : "") + w.de;
           return '<div class="vocab-row">' +
             '<span class="de">' + esc(label) + "</span>" +
-            '<span class="vocab-en">' + esc(w.en) + (w.pl ? " · " + esc(w.pl) : "") + "</span></div>";
+            '<span class="vocab-en">' + esc(w.en) + (w.pl ? " · " + esc(w.pl) : "") +
+            (w.ex ? "<br><em class=\"de\">" + esc(w.ex) + "</em>" : "") +
+            "</span></div>";
         }).join("");
     }
     view.innerHTML = "<h1>" + esc(topic.title) + "</h1>" +
@@ -397,7 +453,7 @@
       '<div class="btn-row">' +
         '<button class="btn" id="prev">Previous</button>' +
         '<button class="btn" id="next">Next</button>' +
-        '<button class="btn btn-primary" id="quiz">Quiz 12</button>' +
+        '<button class="btn btn-primary" id="quiz">Quiz ' + Math.min(20, words.length) + "</button>" +
       "</div>" +
       '<div class="card" style="margin-top:1.2rem" id="word-list">' + listHtml() + "</div>";
     function paint() {
@@ -415,9 +471,142 @@
     document.getElementById("quiz").onclick = function () { location.hash = "#/vocab/" + id + "/quiz"; };
   }
 
+  function topicList() {
+    return window.TOPICS || [];
+  }
+
+  function formatCardHtml() {
+    const fmt = window.EXAM_FORMAT;
+    if (!fmt) return "";
+    const rows = (fmt.written || []).map(function (p) {
+      return "<tr><td><strong>" + esc(p.name) + "</strong><br><span class='q-meta'>" + (p.parts || "") + " parts · " + (p.items || "") + "</span></td>" +
+        "<td>" + (p.minutes ? p.minutes + " min" : "—") + "</td>" +
+        "<td>" + (p.points != null ? p.points : "—") + "</td>" +
+        "<td>" + esc(p.note || "") + "</td></tr>";
+    }).join("");
+    const oral = fmt.oral || {};
+    return '<div class="card" style="margin-bottom:1rem"><p class="kicker">Official format</p><h3>' + esc(fmt.name) + "</h3>" +
+      "<p>" + esc(fmt.passRule || "") + "</p>" +
+      (fmt.notThisExam ? "<p class='q-meta'>" + esc(fmt.notThisExam) + "</p>" : "") +
+      '<table class="format-table"><tr><th>Subtest</th><th>Time</th><th>Points</th><th>What it looks like</th></tr>' +
+      rows +
+      "<tr><td><strong>Sprechen</strong><br><span class='q-meta'>" + (oral.parts || 3) + " parts" + (oral.prep ? " · " + oral.prep + " min prep" : "") + "</span></td>" +
+      "<td>~" + (oral.minutes || 15) + " min</td><td>" + (oral.points != null ? oral.points : "—") + "</td>" +
+      "<td>" + esc(oral.note || "") + "</td></tr></table>" +
+      (fmt.officialUrl ? '<p style="margin-top:0.7rem"><a href="' + fmt.officialUrl + '" target="_blank" rel="noopener">telc.net — official page + Modelltest</a></p>' : "") +
+      "</div>";
+  }
+
+  function renderTopics() {
+    setNav("topics");
+    crumb.textContent = "Topics";
+    const m = meta();
+    const list = topicList();
+    view.innerHTML = "<h1>Official " + esc(m.title) + " topics</h1>" +
+      '<p class="lead">These are the official theme areas ' + esc(m.exam) + " tests (GER inventories used by telc). Each topic is a short course: can-do statements, how the paper tests it, traps, chunks, then vocab/grammar/letters. Tick a topic only when you can produce it without English notes.</p>" +
+      formatCardHtml() +
+      '<div class="grid grid-2">' +
+      list.map(function (t) {
+        const done = Progress.isDone("topic-" + t.id);
+        const core = t.weight === "exam-core" || t.weight === "always";
+        return '<a class="card clickable" href="#/topics/' + t.id + '">' +
+          '<p class="kicker"><span class="weight-pill' + (core ? " is-core" : "") + '">' + esc(t.weight || "topic") + "</span>" +
+          (done ? " · can produce" : "") + "</p>" +
+          "<h3>" + esc(t.titleDe) + "</h3><p>" + esc(t.title) + " — " + esc(t.blurb) + "</p></a>";
+      }).join("") + "</div>";
+  }
+
+  function renderTopic(id) {
+    const t = topicList().find(function (x) { return x.id === id; });
+    if (!t) { view.innerHTML = "<p>Topic not found. <a href='#/topics'>All topics</a></p>"; return; }
+    setNav("topics");
+    crumb.textContent = t.titleDe;
+    const m = meta();
+    const gById = {};
+    (GRAMMAR || []).forEach(function (g) { gById[g.id] = g; });
+    const vById = {};
+    (VOCAB_TOPICS || []).forEach(function (v) { vById[v.id] = v; });
+    const writeById = {};
+    ((EXAM && EXAM.schreiben) || []).forEach(function (w) { writeById[w.id] = w; });
+    function linkCard(href, title, blurb) {
+      return '<a class="card clickable" href="' + href + '"><h3>' + esc(title) + "</h3><p>" + esc(blurb || "") + "</p></a>";
+    }
+    const vocabHtml = (t.vocab || []).map(function (vid) {
+      const v = vById[vid];
+      return linkCard("#/vocab/" + vid, v ? v.title : vid, v ? v.blurb : "Vocabulary");
+    }).join("");
+    const grammarHtml = (t.grammar || []).map(function (gid) {
+      const g = gById[gid];
+      if (!g) return "";
+      return linkCard("#/grammar/" + gid, g.title, "Lesson + quiz");
+    }).join("");
+    const writeHtml = (t.schreiben || []).map(function (wid) {
+      const w = writeById[wid];
+      return linkCard("#/schreiben/" + wid, w ? w.title : wid, w ? (w.register + " · " + (w.situationEn || "letter")) : "Writing task");
+    }).join("");
+    const lesenHtml = (t.lesen || []).map(function (lid) {
+      return linkCard("#/exam/lesen/" + lid, "Lesen " + lid, "Paper in exam shape");
+    }).join("");
+    view.innerHTML = '<p class="kicker">' + esc(t.weight || "topic") + (t.official ? " · official inventory" : "") + "</p>" +
+      "<h1>" + esc(t.titleDe) + "</h1>" +
+      "<p class='lead'>" + esc(t.blurb) + "</p>" +
+      (t.exam ? "<p><strong>In the exam:</strong> " + esc(t.exam) + "</p>" : "") +
+      (t.explain ? '<article class="lesson topic-explain">' + t.explain + "</article>" : "") +
+      ((t.canDo && t.canDo.length) ? "<h2>GER / telc can-do (this topic)</h2><ul>" + t.canDo.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "") +
+      ((t.examHow && t.examHow.length) ? "<h2>How it appears in telc " + esc(m.title) + "</h2><ul>" + t.examHow.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "") +
+      ((t.subtopics && t.subtopics.length) ? "<h2>Cover these subtopics</h2><ul>" + t.subtopics.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "") +
+      "<h2>You must be able to</h2><ul>" + (t.youMust || []).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" +
+      ((t.traps && t.traps.length) ? '<div class="warn" style="margin:1rem 0"><span class="label-s">Exam traps</span><ul>' + t.traps.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>" : "") +
+      "<h2>Say these without looking</h2>" +
+      (t.chunks || []).map(function (c) {
+        return '<div class="chunk-row"><div class="de">' + esc(c.de) + '</div><div class="en-hint">' + esc(c.en || "") + "</div></div>";
+      }).join("") +
+      '<div class="btn-row" style="margin-top:1rem">' +
+        ((t.chunks && t.chunks.length) ? '<a class="btn btn-primary" href="#/topics/' + t.id + '/quiz">Quiz these chunks</a>' : "") +
+        (t.sprechen ? '<a class="btn" href="#/exam/sprechen/run">Oral run</a>' : "") +
+      "</div>" +
+      (vocabHtml ? "<h2>Vocabulary</h2><div class='grid grid-2'>" + vocabHtml + "</div>" : "") +
+      (grammarHtml ? "<h2>Grammar that unlocks this topic</h2><div class='grid grid-2'>" + grammarHtml + "</div>" : "") +
+      (writeHtml ? "<h2>Write it</h2><div class='grid grid-2'>" + writeHtml + "</div>" : "") +
+      (lesenHtml ? "<h2>Read it</h2><div class='grid grid-2'>" + lesenHtml + "</div>" : "") +
+      '<div class="card" style="margin-top:1.2rem"><p>Tick only when you can speak and write this topic without English notes.</p>' +
+      '<div class="btn-row"><button class="btn btn-warm" id="topic-done">' + (Progress.isDone("topic-" + t.id) ? "Ticked — I can produce this" : "I can produce this topic") + "</button>" +
+      '<a class="btn" href="#/topics">All topics</a></div></div>';
+    enhanceGerman(view);
+    document.getElementById("topic-done").onclick = function () {
+      Progress.markDone("topic-" + t.id);
+      toast("Topic ticked. Next: a letter or oral run on the same theme.");
+      refreshStats();
+      renderTopic(id);
+    };
+  }
+
+  function startTopicChunkQuiz(id) {
+    const t = topicList().find(function (x) { return x.id === id; });
+    if (!t || !t.chunks || !t.chunks.length) {
+      view.innerHTML = "<p>No chunks to quiz. <a href='#/topics/" + esc(id) + "'>Back</a></p>";
+      return;
+    }
+    const qs = t.chunks.map(function (c, i) {
+      const others = t.chunks.filter(function (x) { return x.de !== c.de; });
+      const opts = Engine.shuffle([c.de].concat(Engine.shuffle(others).slice(0, 2).map(function (x) { return x.de; })));
+      return {
+        id: "chunk-" + id + "-" + i,
+        set: "topic-" + id,
+        type: "mcq",
+        prompt: c.en || "Choose the German sentence.",
+        options: opts,
+        answer: c.de,
+        explain: c.de,
+        level: DP.level
+      };
+    });
+    beginQuiz(Engine.shuffle(qs), (t.titleDe || t.title) + " — chunks", "topic-" + id);
+  }
+
   function startVocabQuiz(topic) {
     const words = Engine.vocabByTopic(topic);
-    beginQuiz(Engine.makeVocabQuiz(words, 12), "Vocab quiz", "vocab-" + topic);
+    beginQuiz(Engine.makeVocabQuiz(words, Math.min(20, Math.max(12, words.length))), "Vocab quiz", "vocab-" + topic);
   }
 
   function startDrill(id) {
@@ -637,11 +826,11 @@
     }
     return {
       minutes: 30,
-      lesenMin: 45,
-      sbMin: 20,
+      lesenMin: 90,
+      sbMin: 0,
       writeMin: 30,
       mockMin: 150,
-      lead: "telc B1 Hörverstehen is about 30 minutes and 20 items. Teil 1 plays once. Teil 2 (interview) twice. Teil 3 (everyday scenes) twice.",
+      lead: "telc B1 Hörverstehen is about 30 minutes and 20 items. Teil 1 plays once. Teil 2 (interview) twice. Teil 3 (everyday scenes) twice. Lesen + Sprachbausteine share one 90-minute booklet.",
     };
   }
 
@@ -652,6 +841,8 @@
   }
 
   function officialTelcUrl() {
+    const fmt = window.EXAM_FORMAT;
+    if (fmt && fmt.officialUrl) return fmt.officialUrl;
     const id = DP.level || "b1";
     return "https://www.telc.net/en/language-examinations/certificate-exams/german/certificate-german-telc-german-" + id + "/";
   }
@@ -720,16 +911,21 @@
     const papers = groupHoerenPapers();
     const tips = (EXAM.tips || []).map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
     const mix = mixDrill();
+    const fmt = window.EXAM_FORMAT;
     view.innerHTML = "<h1>" + esc(m.exam) + " exam gym</h1>" +
-      '<p class="lead">Same shape as the real ' + esc(m.title) + " exam: Lesen, Hören with German audio (exam sitting), Schreiben, Sprechen. Writing and speaking still decide the pass line.</p>" +
+      '<p class="lead">Same task types as the real ' + esc(m.title) + " paper. Use <a href='#/topics'>official topics</a> for what to say; use this gym for how the booklet looks.</p>" +
+      formatCardHtml() +
       '<div class="grid grid-2">' +
-        '<a class="card clickable" href="#/exam/mock"><h3>Timed mocks</h3><p>' + (EXAM.mocks || []).length + " training papers (Lesen + SB + Hören + letter).</p></a>" +
-        '<a class="card clickable" href="#/exam/lesen"><h3>Lesen</h3><p>' + (EXAM.lesen || []).length + " papers.</p></a>" +
-        '<a class="card clickable" href="#/exam/sprachbausteine"><h3>Sprachbausteine</h3><p>' + (EXAM.sprachbausteine || []).length +
-          (DP.level === "a1" ? " extra grammar drills (not a separate A1 exam part)." : " cloze / bank sets.") + "</p></a>" +
-        '<a class="card clickable" href="#/exam/hoeren"><h3>Hören</h3><p>' + papers.length + " full papers · ~" + hm.minutes + " min · exam-mode audio.</p></a>" +
-        '<a class="card clickable" href="#/exam/schreiben"><h3>Schreiben</h3><p>' + (EXAM.schreiben || []).length + " guided letters with models.</p></a>" +
-        '<a class="card clickable" href="#/exam/sprechen"><h3>Sprechen</h3><p>Intro, Teil 2 spines, Teil 3 engine.</p></a>' +
+        '<a class="card clickable" href="#/exam/schreiben"><h3>Schreiben from memory</h3><p>' + (EXAM.schreiben || []).length + " tasks · hide the model · " + hm.writeMin + " min" + (DP.level === "a1" ? " · form + short message" : DP.level === "a2" ? " · form + short letter" : " · four Leitpunkte") + ".</p></a>" +
+        '<a class="card clickable" href="#/exam/sprechen/run"><h3>Oral run (~' + ((fmt && fmt.oral && fmt.oral.minutes) || 15) + " min)</h3><p>" + (fmt && fmt.oral ? esc(fmt.oral.note) : "Teil 1–3 with a clock.") + "</p></a>" +
+        '<a class="card clickable" href="#/exam/ears"><h3>Official exam ears</h3><p>Play your telc MP3 on this device. Browser voice trains method; this trains acoustics.</p></a>' +
+        '<a class="card clickable" href="#/exam/mock"><h3>Timed mocks</h3><p>' + (EXAM.mocks || []).length + " training papers in official order.</p></a>" +
+        '<a class="card clickable" href="#/exam/lesen"><h3>Lesen</h3><p>' + (EXAM.lesen || []).length + " papers · " + ((fmt && fmt.written && fmt.written[0] && fmt.written[0].items) || "exam shape") + ".</p></a>" +
+        ((DP.level === "a1" || DP.level === "a2")
+          ? '<a class="card clickable" href="#/exam/sprachbausteine"><h3>Extra grammar cloze</h3><p>Not a separate ' + DP.level.toUpperCase() + " exam part — useful practice only.</p></a>"
+          : '<a class="card clickable" href="#/exam/sprachbausteine"><h3>Sprachbausteine</h3><p>' + (EXAM.sprachbausteine || []).length + " cloze / bank sets (same 90-min booklet as Lesen).</p></a>") +
+        '<a class="card clickable" href="#/exam/hoeren"><h3>Hören (method)</h3><p>' + papers.length + " full papers · ~" + hm.minutes + " min · exam-mode TTS.</p></a>" +
+        '<a class="card clickable" href="#/exam/sprechen"><h3>Sprechen phrases</h3><p>Intro, Teil 2 spines, Teil 3 engine — then do the timed run.</p></a>' +
         (mix ? '<a class="card clickable" href="#/drill/' + mix.id + '"><h3>' + esc(mix.title) + "</h3><p>" + esc(mix.blurb || "Mixed grammar.") + "</p></a>" : "") +
       "</div>" +
       '<div class="card" style="margin-top:1rem"><h3>Pass smarter</h3><ul>' + tips + "</ul>" +
@@ -767,11 +963,13 @@
       '<div class="card"><p class="q-meta">Timer (optional)</p><p id="mock-timer" class="de" style="font-size:1.6rem">' + clock(left) + "</p>" +
       '<div class="btn-row"><button class="btn btn-primary" id="mock-start">Start / resume</button>' +
       '<button class="btn" id="mock-pause">Pause</button></div></div>' +
-      "<h2>Run order</h2><ol>" +
-        '<li><a href="#/exam/lesen/' + m.lesen + '">Lesen</a> (~' + hm.lesenMin + " min)</li>" +
-        "<li>Sprachbausteine: " + m.sb.map(function (s) { return esc(s); }).join(" + ") + ' → <a href="#/exam/sprachbausteine">open SB gym</a> (~' + hm.sbMin + " min)</li>" +
+      "<h2>Run order (same as the real booklet)</h2><ol>" +
+        (DP.level === "b1"
+          ? '<li><a href="#/exam/lesen/' + m.lesen + '">Lesen</a> + Sprachbausteine ' + m.sb.map(function (s) { return esc(s); }).join(" + ") + ' <a href="#/exam/sprachbausteine">(SB gym)</a> — one 90-minute block, no break</li>'
+          : '<li><a href="#/exam/lesen/' + m.lesen + '">Lesen</a> (~' + hm.lesenMin + " min)</li>" +
+            ((DP.level === "a1" || DP.level === "a2") ? "" : "<li>Sprachbausteine: " + m.sb.map(function (s) { return esc(s); }).join(" + ") + ' → <a href="#/exam/sprachbausteine">open SB gym</a></li>')) +
         "<li>Hören" + (hPaper ? " paper " + hPaper.id : "") + ' → <a href="#/exam/hoeren/' + (hPaper ? hPaper.id : "") + '">exam sitting with audio</a> (~' + hm.minutes + " min)</li>" +
-        '<li><a href="#/schreiben/' + m.schreiben + '">Schreiben letter</a> (' + hm.writeMin + " min)</li>" +
+        '<li><a href="#/schreiben/' + m.schreiben + '">Schreiben</a> (' + hm.writeMin + " min)</li>" +
       "</ol>" +
       '<div class="btn-row"><button class="btn btn-warm" id="mock-done">Mark mock session done</button>' +
       '<a class="btn" href="#/exam/mock">All mocks</a></div>';
@@ -800,14 +998,25 @@
     };
   }
 
+  function countLesenItems(set) {
+    let n = 0;
+    (set.parts || []).forEach(function (part) {
+      if (part.kind === "headlines" || part.kind === "ads") n += Object.keys(part.answer || {}).length;
+      else if (part.items) n += part.items.length;
+    });
+    return n;
+  }
+
   function renderLesenList() {
     setNav("exam");
     crumb.textContent = "Lesen";
+    const fmt = window.EXAM_FORMAT;
+    const shape = fmt && fmt.written && fmt.written[0] ? fmt.written[0].note : "Aim for 80%+ before exam week.";
     view.innerHTML = "<h1>Lesen papers</h1>" +
-      '<p class="lead">' + EXAM.lesen.length + " training papers. Aim for 80%+ before exam week.</p>" +
+      '<p class="lead">' + EXAM.lesen.length + " training papers. " + esc(shape) + "</p>" +
       '<div class="grid grid-2">' +
       EXAM.lesen.map(function (set) {
-        const n = Object.keys(set.parts[0].answer).length + set.parts[1].items.length + Object.keys(set.parts[2].answer).length;
+        const n = countLesenItems(set);
         return '<a class="card clickable" href="#/exam/lesen/' + set.id + '"><h3>' + esc(set.title) + "</h3><p>~" +
           (set.timeMin || 45) + " min · " + n + " items</p></a>";
       }).join("") + "</div>";
@@ -825,7 +1034,7 @@
         html += "<ol>" + part.headlines.map(function (h) { return "<li>" + esc(h.id) + " · " + esc(h.text) + "</li>"; }).join("") + "</ol>";
         part.texts.forEach(function (t) {
           html += "<p><strong>" + t.id + ".</strong> " + esc(t.text) + "</p>";
-          html += '<p>Headline for ' + t.id + ': <select data-lesen="' + t.id + '"><option value="">—</option>' +
+          html += '<p>Überschrift zu ' + t.id + ': <select data-lesen="' + t.id + '"><option value="">—</option>' +
             part.headlines.map(function (h) { return '<option value="' + h.id + '">' + h.id + "</option>"; }).join("") +
             "</select></p>";
         });
@@ -835,17 +1044,29 @@
         part.items.forEach(function (it, ii) {
           html += "<p><strong>" + (ii + 1) + ".</strong> " + esc(it.q) + "</p><div class='options'>";
           it.options.forEach(function (o, oi) {
-            html += '<label class="opt" style="display:block;margin-bottom:0.35rem"><input type="radio" name="d' + ii + '" value="' + oi + '" /> ' + esc(o) + "</label>";
+            html += '<label class="opt" style="display:block;margin-bottom:0.35rem"><input type="radio" name="d' + pi + '-' + ii + '" value="' + oi + '" /> ' + esc(o) + "</label>";
           });
           html += "</div>";
         });
       }
       if (part.kind === "ads") {
-        html += "<p><strong>People</strong></p>" + part.people.map(function (p) { return "<p>" + p.id + ". " + esc(p.text) + "</p>"; }).join("");
-        html += "<p><strong>Notices</strong></p>" + part.ads.map(function (a) { return "<p>" + a.id + ". " + esc(a.text) + "</p>"; }).join("");
+        html += "<p><strong>Personen</strong></p>" + part.people.map(function (p) { return "<p>" + p.id + ". " + esc(p.text) + "</p>"; }).join("");
+        html += "<p><strong>Anzeigen</strong></p>" + part.ads.map(function (a) { return "<p>" + a.id + ". " + esc(a.text) + "</p>"; }).join("");
         part.people.forEach(function (p) {
           html += '<p>' + p.id + ' → <select data-ad="' + p.id + '"><option value="">—</option>' +
             part.ads.map(function (a) { return '<option value="' + a.id + '">' + a.id + "</option>"; }).join("") + "</select></p>";
+        });
+      }
+      if (part.kind === "tf" || part.kind === "signs") {
+        part.items.forEach(function (it, ii) {
+          html += '<div class="tf-item">';
+          if (it.sign) html += '<div class="sign-box de">' + esc(it.sign) + "</div>";
+          if (it.text) html += '<p class="de">' + esc(it.text) + "</p>";
+          html += "<p><strong>" + (ii + 1) + ".</strong> " + esc(it.q) + "</p>";
+          html += '<div class="rf-row">' +
+            '<label class="rf"><input type="radio" name="tf' + pi + '-' + ii + '" value="true" /> Richtig</label>' +
+            '<label class="rf"><input type="radio" name="tf' + pi + '-' + ii + '" value="false" /> Falsch</label>' +
+            "</div></div>";
         });
       }
       html += "</section>";
@@ -854,29 +1075,39 @@
     view.innerHTML = html;
     document.getElementById("mark-lesen").onclick = function () {
       let right = 0, total = 0;
-      const part0 = set.parts[0];
-      Object.keys(part0.answer).forEach(function (k) {
-        total++;
-        const sel = view.querySelector('[data-lesen="' + k + '"]');
-        if (sel && sel.value === part0.answer[k]) right++;
+      const unusedBits = [];
+      set.parts.forEach(function (part, pi) {
+        if (part.kind === "headlines") {
+          Object.keys(part.answer || {}).forEach(function (k) {
+            total++;
+            const sel = view.querySelector('[data-lesen="' + k + '"]');
+            if (sel && sel.value === part.answer[k]) right++;
+          });
+          unusedBits.push("Unused headlines: " + unusedKeys(part.headlines.map(function (h) { return h.id; }), part.answer).join(", "));
+        } else if (part.kind === "detail") {
+          part.items.forEach(function (it, ii) {
+            total++;
+            const r = view.querySelector('input[name="d' + pi + '-' + ii + '"]:checked');
+            if (r && Number(r.value) === it.answer) right++;
+          });
+        } else if (part.kind === "ads") {
+          Object.keys(part.answer || {}).forEach(function (k) {
+            total++;
+            const sel = view.querySelector('[data-ad="' + k + '"]');
+            if (sel && sel.value === part.answer[k]) right++;
+          });
+          unusedBits.push("Unused ads: " + unusedKeys(part.ads.map(function (a) { return a.id; }), part.answer).join(", "));
+        } else if (part.kind === "tf" || part.kind === "signs") {
+          part.items.forEach(function (it, ii) {
+            total++;
+            const r = view.querySelector('input[name="tf' + pi + '-' + ii + '"]:checked');
+            if (r && (r.value === "true") === !!it.answer) right++;
+          });
+        }
       });
-      const part1 = set.parts[1];
-      part1.items.forEach(function (it, ii) {
-        total++;
-        const r = view.querySelector('input[name="d' + ii + '"]:checked');
-        if (r && Number(r.value) === it.answer) right++;
-      });
-      const part2 = set.parts[2];
-      Object.keys(part2.answer).forEach(function (k) {
-        total++;
-        const sel = view.querySelector('[data-ad="' + k + '"]');
-        if (sel && sel.value === part2.answer[k]) right++;
-      });
-      const unusedH = unusedKeys(part0.headlines.map(function (h) { return h.id; }), part0.answer);
-      const unusedA = unusedKeys(part2.ads.map(function (a) { return a.id; }), part2.answer);
       Progress.record(set.id, right, total);
       document.getElementById("lesen-res").innerHTML = '<div class="explain">Score: <strong>' + right + " / " + total +
-        "</strong>. Unused headlines: " + unusedH.join(", ") + ". Unused ads: " + unusedA.join(", ") + ".</div>";
+        "</strong>" + (unusedBits.length ? ". " + unusedBits.join(". ") : "") + ".</div>";
       refreshStats();
     };
   }
@@ -951,7 +1182,7 @@
         "<li>A German announcer says Teil and Text numbers, then the clip plays.</li>" +
         "<li>Teil 1 with “once” cannot be replayed in exam mode.</li>" +
         "<li>Longer talks and Teil 3 play twice, with a pause, like telc.</li>" +
-      "</ul><p>Browser voice trains method. In weeks 7–8 add the official telc MP3 for room acoustics: <a href=\"" + officialTelcUrl() + "\" target=\"_blank\" rel=\"noopener\">telc.net " + esc(m.title) + "</a></p></div>" +
+      "</ul><p>Browser voice trains <strong>method</strong>. For exam ears, play the official telc MP3 on this device: <a href=\"#/exam/ears\">Official exam ears</a> · <a href=\"" + officialTelcUrl() + "\" target=\"_blank\" rel=\"noopener\">telc.net " + esc(m.title) + "</a></p></div>" +
       '<div class="btn-row"><a class="btn" href="#/exam">Back to exam gym</a></div>';
   }
 
@@ -1281,51 +1512,210 @@
     setNav("exam");
     crumb.textContent = "Schreiben";
     const hm = hoerenMeta();
-    const aim = DP.level === "a1" ? "about 30 words, greeting + closing" : DP.level === "a2" ? "about 60–80 words, all points" : "30 minutes, four Leitpunkte, 100–120 words";
-    view.innerHTML = "<h1>Schreiben — " + aim + "</h1>" +
-      '<p class="lead">Open a task, write in the box, then tick the checklist and compare the model. Aim ~' + hm.writeMin + " minutes.</p>" +
+    const aim = DP.level === "a1" ? "Teil 1 form (5 fields) + Teil 2 ~30 words, greeting + closing" : DP.level === "a2" ? "form or note + short letter, all points" : "30 minutes, four Leitpunkte, 100–120 words";
+    view.innerHTML = "<h1>Schreiben from memory</h1>" +
+      '<p class="lead">The model stays locked until you finish or the timer ends. Cover all points, then compare. Aim ~' + hm.writeMin + " min · " + aim + ".</p>" +
       '<div class="grid grid-2">' +
-      EXAM.schreiben.map(function (t) {
+      (EXAM.schreiben || []).map(function (t) {
         const lv = t.register === "Sie" ? (DP.level === "a1" ? "a1" : DP.level) : "a2";
-        return '<a class="card clickable" href="#/schreiben/' + t.id + '"><h3>' + esc(t.title) + "</h3><p>" + badge(lv) + " " + esc(t.register) + "</p></a>";
+        const kind = t.kind === "form" ? "form" : "memory";
+        return '<a class="card clickable" href="#/schreiben/' + t.id + '"><h3>' + esc(t.title) + "</h3><p>" + badge(lv) + " " + esc(t.register) + " · " + kind + "</p></a>";
       }).join("") + "</div>";
   }
 
-  function renderSchreiben(id) {
+  function renderSchreibenForm(t) {
+    const fields = t.fields || [];
+    view.innerHTML = '<p class="kicker">' + esc(t.register) + " · Formular</p>" +
+      "<h1>" + esc(t.title) + "</h1>" +
+      "<p>" + esc(t.situation) + "</p>" +
+      (t.situationEn ? '<p class="en-hint">' + esc(t.situationEn) + "</p>" : "") +
+      '<div class="card form-grid">' +
+      fields.map(function (f) {
+        return '<label>' + esc(f.label) + '<input data-field="' + f.id + '" autocomplete="off" /></label>';
+      }).join("") + "</div>" +
+      '<div class="btn-row"><button class="btn btn-primary" id="save-form" disabled>Mark form done</button>' +
+      '<button class="btn" id="show-form-model">Show sample</button></div>' +
+      (t.model ? '<div class="ex" id="form-model" hidden><span class="label-s">Sample — yours will be your own details</span><p class="de">' + esc(t.model) + "</p></div>" : "");
+    function filled() {
+      return fields.every(function (f) {
+        const el = view.querySelector('[data-field="' + f.id + '"]');
+        return el && el.value.trim();
+      });
+    }
+    view.querySelectorAll("[data-field]").forEach(function (inp) {
+      inp.addEventListener("input", function () {
+        document.getElementById("save-form").disabled = !filled();
+      });
+    });
+    document.getElementById("save-form").onclick = function () {
+      if (!filled()) return;
+      Progress.markDone("schreiben-" + t.id);
+      toast("Form ticked. Now write the short message too.");
+      refreshStats();
+    };
+    const show = document.getElementById("show-form-model");
+    if (show) show.onclick = function () {
+      const el = document.getElementById("form-model");
+      if (el) el.hidden = false;
+    };
+  }
+
+  function renderSchreiben(id, mode) {
     setNav("exam");
-    const t = EXAM.schreiben.find(function (x) { return x.id === id; });
+    const t = (EXAM.schreiben || []).find(function (x) { return x.id === id; });
     if (!t) { view.innerHTML = "<p>Task not found.</p>"; return; }
     crumb.textContent = t.title;
-    const wordAim = DP.level === "a1" ? "Aim ~30 words. Timer is on you: about 15–20 minutes." : DP.level === "a2" ? "Aim ~60–80 words. Timer is on you: about 25–30 minutes." : "Aim 100–120 words. Timer is on you: 30 minutes.";
-    const checks = DP.level === "a1"
-      ? ["Greeting + closing", "Every content point in a short sentence", "sein / haben / present tense", "Nouns capitalised", "du or Sie — pick one and stay"]
-      : DP.level === "a2"
-      ? ["Greeting + closing match " + t.register, "All points covered in full sentences", "At least one weil or dann", "At least one Perfekt sentence", "Nouns capitalised, du/Sie consistent"]
-      : ["Greeting + closing match " + t.register, "All four Leitpunkte are full sentences", "At least one weil / dass / wenn", "Formal letters: one Könnten / würde / wäre", "Nouns capitalised, Sie/du consistent"];
-    view.innerHTML = '<p class="kicker">' + esc(t.register) + "</p><h1>" + esc(t.title) + "</h1>" +
-      "<p>" + esc(t.situation) + "</p>" +
-      "<ol>" + t.points.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ol>" +
-      '<p class="q-meta">' + wordAim + "</p>" +
-      '<textarea id="letter" placeholder="Write the letter here…"></textarea>' +
-      '<p id="wc" class="q-meta">0 words</p>' +
-      '<div class="checklist card">' +
-        checks.map(function (c) { return '<label><input type="checkbox" /> ' + esc(c) + "</label>"; }).join("") +
+    if (t.kind === "form") {
+      renderSchreibenForm(t);
+      return;
+    }
+    const hm = hoerenMeta();
+    const minWords = DP.level === "a1" ? 20 : DP.level === "a2" ? 50 : 80;
+    const wordAim = DP.level === "a1" ? "Aim ~30 words." : DP.level === "a2" ? "Aim ~60–80 words." : "Aim 100–120 words.";
+    const peek = mode === "model";
+    let unlocked = peek;
+    const formal = t.register === "Sie" && DP.level === "b1";
+    view.innerHTML = '<p class="kicker">' + esc(t.register) + " · " + (peek ? "model allowed" : "memory") + "</p>" +
+      '<div class="exam-player" id="letter-player">' +
+        '<div class="exam-player-top"><p class="kicker">Timer</p>' +
+        '<p class="exam-status exam-clock" id="letter-clock">' + formatClock(hm.writeMin * 60) + "</p>" +
+        '<p class="exam-sub" id="letter-sub">' + wordAim + " Model locked until you finish.</p></div>" +
       "</div>" +
-      '<div class="btn-row"><button class="btn" id="show-model">Show model</button>' +
-      '<button class="btn btn-primary" id="save-letter">Mark task done</button></div>' +
-      '<div class="ex" id="model" hidden><span class="label-s">Model — do not copy blindly</span><p class="de">' + esc(t.model) + "</p></div>";
+      "<h1>" + esc(t.title) + "</h1>" +
+      "<p>" + esc(t.situation) + "</p>" +
+      (t.situationEn ? '<p class="en-hint">' + esc(t.situationEn) + "</p>" : "") +
+      "<ol>" + t.points.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ol>" +
+      '<p class="letter-lock" id="letter-lock">Write from memory. Do not open the model until the four points are in the letter.</p>' +
+      '<textarea id="letter" placeholder="Write the letter here…"></textarea>' +
+      '<p id="wc" class="q-meta">0 words · need at least ' + minWords + "</p>" +
+      '<div class="checklist card" id="lp-checks">' +
+        t.points.map(function (p, i) {
+          return '<label><input type="checkbox" data-lp="' + i + '" /> Leitpunkt ' + (i + 1) + " is a full sentence in my letter</label>";
+        }).join("") +
+        (formal ? '<label><input type="checkbox" id="chk-k2" /> I used Könnten / würde / wäre once</label>' : "") +
+        '<label><input type="checkbox" id="chk-reg" /> Greeting and closing match ' + esc(t.register) + "</label>" +
+      "</div>" +
+      '<div class="btn-row">' +
+        '<button class="btn btn-warm" id="finish-letter">I am finished — unlock model</button>' +
+        '<button class="btn" id="show-model" ' + (unlocked ? "" : "disabled") + ">Show model</button>" +
+        '<button class="btn btn-primary" id="save-letter" disabled>Mark task done</button>' +
+        (peek ? "" : '<a class="btn btn-ghost" href="#/schreiben/' + id + '/model">Practice with model</a>') +
+      "</div>" +
+      '<div class="ex" id="model" hidden><span class="label-s">Model — compare, do not copy</span><p class="de">' + esc(t.model) + "</p></div>";
+
     const ta = document.getElementById("letter");
-    ta.addEventListener("input", function () {
-      const n = ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
-      document.getElementById("wc").textContent = n + " words";
+    const clockEl = document.getElementById("letter-clock");
+    const subEl = document.getElementById("letter-sub");
+    const showBtn = document.getElementById("show-model");
+    const saveBtn = document.getElementById("save-letter");
+
+    function wordCount() {
+      return ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
+    }
+    function hasK2() {
+      return /könnten|würde|wäre|hätte/i.test(ta.value);
+    }
+    function allLp() {
+      const boxes = view.querySelectorAll("[data-lp]");
+      for (let i = 0; i < boxes.length; i++) if (!boxes[i].checked) return false;
+      if (document.getElementById("chk-reg") && !document.getElementById("chk-reg").checked) return false;
+      if (formal && document.getElementById("chk-k2") && !document.getElementById("chk-k2").checked) return false;
+      return true;
+    }
+    function refreshLetterUi() {
+      const n = wordCount();
+      document.getElementById("wc").textContent = n + " words · need at least " + minWords;
+      const k2 = document.getElementById("chk-k2");
+      if (k2 && hasK2()) k2.checked = true;
+      saveBtn.disabled = !(unlocked && n >= minWords && allLp());
+      showBtn.disabled = !unlocked;
+    }
+    function unlock(why) {
+      unlocked = true;
+      showBtn.disabled = false;
+      if (subEl) subEl.textContent = why || "Model unlocked. Compare, then tick the points you actually wrote.";
+      refreshLetterUi();
+    }
+
+    ta.addEventListener("input", refreshLetterUi);
+    view.querySelectorAll("#lp-checks input").forEach(function (box) {
+      box.addEventListener("change", refreshLetterUi);
     });
-    document.getElementById("show-model").onclick = function () {
+    document.getElementById("finish-letter").onclick = function () {
+      stopDrillClock();
+      unlock("Finished. Unlock the model and tick only what is really in the letter.");
+    };
+    showBtn.onclick = function () {
+      if (!unlocked) return;
       document.getElementById("model").hidden = false;
       enhanceGerman(document.getElementById("model"));
     };
-    document.getElementById("save-letter").onclick = function () {
+    saveBtn.onclick = function () {
+      if (saveBtn.disabled) return;
       Progress.markDone("schreiben-" + id);
-      toast("Letter task saved on your plan.");
+      toast("Letter saved. Redo it later with the model still hidden.");
+      refreshStats();
+    };
+    startDrillClock(hm.writeMin * 60, function (left) {
+      if (!clockEl) return;
+      clockEl.textContent = formatClock(left);
+      clockEl.classList.toggle("is-low", left <= 120);
+    }, function () {
+      unlock("Time. Unlock the model. Missing Leitpunkte can zero the letter in telc.");
+    });
+    refreshLetterUi();
+  }
+
+  function renderExamEars() {
+    setNav("exam");
+    crumb.textContent = "Official ears";
+    const m = meta();
+    const hm = hoerenMeta();
+    view.innerHTML = "<h1>Official exam ears</h1>" +
+      '<p class="lead">Browser TTS trains the question type. The real paper is a room, a loudspeaker, and one play for Teil 1. Download the official ' +
+      esc(m.title) + " sample from telc, then play the MP3 here — it never leaves this device.</p>" +
+      '<div class="card"><h3>Do this once in weeks 7–8</h3><ol>' +
+        "<li>Open <a href=\"" + officialTelcUrl() + "\" target=\"_blank\" rel=\"noopener\">telc.net · " + esc(m.title) + "</a> and download the Modelltest PDF + MP3.</li>" +
+        "<li>Print or screenshot the Hören questions. Sit ~" + hm.minutes + " minutes. Do not pause Teil 1.</li>" +
+        "<li>Load the MP3 below and start the timer. Mark answers on the official paper, not on this site.</li>" +
+      "</ol></div>" +
+      '<div class="exam-player" style="margin-top:1rem">' +
+        '<p class="kicker">Local MP3</p>' +
+        '<p class="exam-status exam-clock" id="ears-clock">' + formatClock(hm.minutes * 60) + "</p>" +
+        '<p class="exam-sub" id="ears-file">' + (localEars.name ? esc(localEars.name) : "No file yet.") + "</p>" +
+        '<input type="file" id="ears-input" accept="audio/*" />' +
+        '<audio id="ears-audio" controls style="width:100%;margin-top:0.7rem"></audio>' +
+        '<div class="btn-row">' +
+          '<button type="button" class="btn btn-primary" id="ears-start">Start ' + hm.minutes + " min</button>" +
+          '<button type="button" class="btn" id="ears-done">Mark ears practice done</button>' +
+        "</div></div>" +
+      '<div class="btn-row"><a class="btn" href="#/exam/hoeren">Back to method papers</a></div>';
+
+    const audio = document.getElementById("ears-audio");
+    if (localEars.url) audio.src = localEars.url;
+    document.getElementById("ears-input").onchange = function (ev) {
+      const file = ev.target.files && ev.target.files[0];
+      if (!file) return;
+      if (localEars.url) URL.revokeObjectURL(localEars.url);
+      localEars.url = URL.createObjectURL(file);
+      localEars.name = file.name;
+      audio.src = localEars.url;
+      document.getElementById("ears-file").textContent = file.name;
+    };
+    document.getElementById("ears-start").onclick = function () {
+      const clockEl = document.getElementById("ears-clock");
+      startDrillClock(hm.minutes * 60, function (left) {
+        clockEl.textContent = formatClock(left);
+        clockEl.classList.toggle("is-low", left <= 120);
+      }, function () {
+        clockEl.textContent = "0:00";
+        toast("Listening time is up. Mark the official paper.");
+      });
+      if (audio.src) audio.play().catch(function () {});
+    };
+    document.getElementById("ears-done").onclick = function () {
+      Progress.markDone("official-ears");
+      toast("Official ears ticked. Repeat if under 80% on the sample.");
       refreshStats();
     };
   }
@@ -1334,9 +1724,14 @@
     setNav("exam");
     crumb.textContent = "Sprechen";
     const sp = EXAM.sprechen;
+    if (!sp) {
+      view.innerHTML = "<h1>Sprechen</h1><p>No speaking pack for this level yet.</p>";
+      return;
+    }
     view.innerHTML = "<h1>Sprechen</h1>" +
-      '<p class="lead">Talk to a partner if you can. If not, record both roles on your phone.</p>' +
-      '<div class="card"><h3>Teil 1 — intro (memorise, then throw the paper away)</h3>' +
+      '<p class="lead">Phrases first, then a timed 15-minute run. Teil 3 only counts if you actually decide. A human partner is better than both roles on your phone — but the run still beats reading silently.</p>' +
+      '<div class="btn-row"><a class="btn btn-primary" href="#/exam/sprechen/run">Start 15-min oral run</a></div>' +
+      '<div class="card" style="margin-top:1rem"><h3>Teil 1 — intro (memorise, then throw the paper away)</h3>' +
       '<p class="de">' + esc(sp.intro) + "</p>" +
       "<p>Follow-up questions — tap the speaker, then answer aloud.</p><ul>" + sp.questions.map(function (q) {
         return "<li><span class=\"de\">" + esc(q) + "</span></li>";
@@ -1362,6 +1757,112 @@
       sp.planning.map(function (p) {
         return "<p><strong>" + esc(p.t) + "</strong> — " + p.points.map(esc).join(" · ") + "</p>";
       }).join("") + "</div>";
+  }
+
+  function renderSprechenRun() {
+    setNav("exam");
+    crumb.textContent = "Oral run";
+    const sp = EXAM.sprechen;
+    if (!sp) {
+      view.innerHTML = "<h1>Oral run</h1><p>No speaking pack for this level yet.</p>";
+      return;
+    }
+    const topic = (sp.topics && sp.topics[Math.floor(Math.random() * sp.topics.length)]) || { t: "Freizeit", spine: "Hier geht es um Freizeit." };
+    const plan = (sp.planning && sp.planning[Math.floor(Math.random() * sp.planning.length)]) || { t: "Wochenende", points: ["Wann?", "Wo?", "Kosten?"] };
+    view.innerHTML = '<p class="kicker">telc pair exam · ~15 minutes</p>' +
+      '<div class="exam-player"><p class="kicker">Clock</p>' +
+        '<p class="exam-status exam-clock" id="oral-clock">15:00</p>' +
+        '<p class="exam-sub" id="oral-phase">Teil 1 — Kontakt. Answer out loud. A partner is better.</p>' +
+        '<div class="btn-row">' +
+          '<button type="button" class="btn btn-primary" id="oral-start">Start 15:00</button>' +
+          '<button type="button" class="btn" data-oral-teil="1">Teil 1</button>' +
+          '<button type="button" class="btn" data-oral-teil="2">Teil 2</button>' +
+          '<button type="button" class="btn" data-oral-teil="3">Teil 3</button>' +
+        "</div></div>" +
+      '<section class="card teil-block is-active-teil" id="oral-t1" style="margin-top:1rem"><h3>Teil 1 · 3–4 min</h3>' +
+        '<p class="de">' + esc(sp.intro) + "</p>" +
+        "<p>Examiner questions — hear, then speak.</p><ul>" +
+        (sp.questions || []).map(function (q, i) {
+          return '<li><button type="button" class="btn" data-ask="' + i + '">Ask</button> <span class="de">' + esc(q) + "</span></li>";
+        }).join("") + "</ul></section>" +
+      '<section class="card teil-block" id="oral-t2" style="margin-top:0.8rem"><h3>Teil 2 · 5–6 min</h3>' +
+        "<p><strong>" + esc(topic.t) + "</strong></p>" +
+        '<p class="de">' + esc(topic.spine) + "</p>" +
+        "<p>90 seconds, then ask your partner. Spine: Hier geht es um… / Meiner Meinung nach…, weil… / Zum Beispiel… / Allerdings… / Deshalb…</p>" +
+        '<button type="button" class="btn" id="oral-90">Start 90s</button> <span id="oral-90c" class="q-meta"></span>' +
+      "</section>" +
+      '<section class="card teil-block" id="oral-t3" style="margin-top:0.8rem"><h3>Teil 3 · plan and agree</h3>' +
+        "<p><strong>" + esc(plan.t) + "</strong> — " + plan.points.map(esc).join(" · ") + "</p>" +
+        '<div class="phrase-list">' + (sp.engine || []).map(function (e) {
+          return '<div class="phrase-line"><span class="de">' + esc(e.de) + "</span></div>";
+        }).join("") + "</div>" +
+        '<label class="q-meta" for="oral-decision">Unsere Entscheidung (required)</label>' +
+        '<textarea id="oral-decision" placeholder="z.B. Wir treffen uns am Samstag um 15 Uhr im Park. Jeder bringt etwas zu essen mit."></textarea>' +
+        '<p class="q-meta">If this box is empty, Teil 3 did not happen. Examiners listen for a clear plan.</p>' +
+      "</section>" +
+      '<div class="btn-row"><button type="button" class="btn btn-primary" id="oral-save" disabled>Mark oral run done</button>' +
+      '<a class="btn" href="#/exam/sprechen">Phrases</a></div>';
+
+    function showTeil(n) {
+      ["1", "2", "3"].forEach(function (k) {
+        const el = document.getElementById("oral-t" + k);
+        if (el) el.classList.toggle("is-active-teil", k === String(n));
+      });
+      const labels = {
+        1: "Teil 1 — Kontakt. Answer out loud.",
+        2: "Teil 2 — 90-second opinion, then ask back.",
+        3: "Teil 3 — plan together. Write the decision before time ends.",
+      };
+      document.getElementById("oral-phase").textContent = labels[n] || "";
+    }
+    function refreshOral() {
+      const d = (document.getElementById("oral-decision").value || "").trim();
+      document.getElementById("oral-save").disabled = d.length < 20;
+    }
+    document.getElementById("oral-decision").addEventListener("input", refreshOral);
+    document.querySelectorAll("[data-oral-teil]").forEach(function (btn) {
+      btn.onclick = function () { showTeil(btn.getAttribute("data-oral-teil")); };
+    });
+    document.querySelectorAll("[data-ask]").forEach(function (btn) {
+      btn.onclick = function () {
+        const q = sp.questions[Number(btn.getAttribute("data-ask"))];
+        if (q && Engine.speak) Engine.speak(q, { role: "announcer" });
+      };
+    });
+    document.getElementById("oral-start").onclick = function () {
+      showTeil(1);
+      startDrillClock(15 * 60, function (left) {
+        const el = document.getElementById("oral-clock");
+        if (!el) return;
+        el.textContent = formatClock(left);
+        el.classList.toggle("is-low", left <= 60);
+        if (left === 11 * 60) showTeil(2);
+        if (left === 6 * 60) showTeil(3);
+      }, function () {
+        toast("15 minutes. If the decision box is empty, run Teil 3 again.");
+        refreshOral();
+      });
+    };
+    document.getElementById("oral-90").onclick = function () {
+      const c = document.getElementById("oral-90c");
+      let n = 90;
+      c.textContent = "1:30";
+      extraInterval = setInterval(function () {
+        n -= 1;
+        c.textContent = formatClock(n);
+        if (n <= 0) {
+          clearInterval(extraInterval);
+          extraInterval = null;
+          c.textContent = "Stop. Ask: Und du?";
+        }
+      }, 1000);
+    };
+    document.getElementById("oral-save").onclick = function () {
+      if (document.getElementById("oral-save").disabled) return;
+      Progress.markDone("sprechen-run");
+      toast("Oral run saved. Do this 4–6 times with a human if you can.");
+      refreshStats();
+    };
   }
 
   function renderB2() {
@@ -1400,10 +1901,17 @@
     const all = Progress.summaryAll().map(function (row) {
       return "<tr><td>" + row.id.toUpperCase() + "</td><td>" + row.xp + "</td><td>" + row.checks + "</td><td>" + row.done + "</td><td>" + row.streak + "</td></tr>";
     }).join("");
+    const topicRows = (window.TOPICS || []).map(function (t) {
+      const done = Progress.isDone("topic-" + t.id);
+      return "<tr><td><a href='#/topics/" + t.id + "'>" + esc(t.titleDe) + "</a></td><td>" + (done ? "can produce" : "open") + "</td></tr>";
+    }).join("");
+    const topicDone = (window.TOPICS || []).filter(function (t) { return Progress.isDone("topic-" + t.id); }).length;
     view.innerHTML = "<h1>Progress · " + esc(m.title) + "</h1>" +
       "<p>Started " + esc(s.started) + " · " + s.xp + " XP · streak " + (s.streak.count || 0) + "</p>" +
       "<h2>All levels</h2>" +
       '<table class="table"><tr><th>Level</th><th>XP</th><th>Plan ticks</th><th>Done</th><th>Streak</th></tr>' + all + "</table>" +
+      "<h2>Official topics " + topicDone + " / " + (window.TOPICS || []).length + "</h2>" +
+      (topicRows ? '<table class="table"><tr><th>Topic</th><th>Produce?</th></tr>' + topicRows + "</table>" : "<p>No topic catalog loaded.</p>") +
       "<h2>Scores in " + esc(m.title) + "</h2>" +
       (rows ? '<table class="table"><tr><th>Set</th><th>Score</th><th>%</th></tr>' + rows + "</table>" : "<p>No quizzes yet in this level.</p>") +
       '<div class="btn-row"><button class="btn" id="reset-level">Reset ' + esc(m.title) + " progress</button>" +
