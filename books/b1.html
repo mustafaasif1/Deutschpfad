@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>telc Deutsch B1 — Deutschpfad Exam Book</title>
   <style>
 /* telc Deutsch B1 — print-first book */
@@ -93,6 +93,14 @@ tr:nth-child(even) td { background: #fafafa; }
 
 .de { font-weight: 600; }
 .en { color: #555; font-style: italic; }
+.gloss {
+  display: block;
+  font-weight: 400;
+  font-style: italic;
+  color: #555;
+  font-size: .88em;
+  margin-top: .12rem;
+}
 .tiny { font-size: .82rem; color: #555; }
 .center { text-align: center; }
 
@@ -181,21 +189,91 @@ tr { break-inside: avoid; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: .6rem;
+  flex-wrap: wrap;
 }
-.screen-bar button, .screen-bar a {
+.screen-bar a, .screen-bar button, .screen-bar select {
   background: #fff;
   color: var(--accent);
   border: 0;
   padding: .35rem .7rem;
   border-radius: 4px;
   font-weight: 700;
+  font-family: inherit;
+  font-size: .85rem;
   text-decoration: none;
   cursor: pointer;
 }
+.screen-bar select {
+  max-width: min(18rem, 70vw);
+  font-weight: 600;
+}
 
 @media screen {
-  body { padding: 0 0 4rem; }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 3.5rem;
+  }
+  body { padding: 0 0 4rem; overflow-x: hidden; }
+  .toc a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: .15em;
+  }
+}
+
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: .45rem 0 .85rem;
+}
+.table-scroll table { margin: 0; }
+
+@media screen and (max-width: 800px) {
+  html { font-size: 16px; }
+  body { padding: 0 0 2rem; }
+  .book-wrap {
+    max-width: 100%;
+    box-shadow: none;
+  }
+  .page-pad {
+    padding: 1.15rem 0.95rem 2.4rem;
+    padding-left: max(0.95rem, env(safe-area-inset-left));
+    padding-right: max(0.95rem, env(safe-area-inset-right));
+    padding-bottom: max(2.4rem, env(safe-area-inset-bottom));
+  }
+  .cover {
+    min-height: auto;
+    padding: 1.4rem 0.95rem 2rem;
+  }
+  .cover h1 { font-size: 1.85rem; }
+  .cover .subtitle { font-size: 1.05rem; }
+  .two-col { grid-template-columns: 1fr; }
+  .chapter-title { font-size: 1.4rem; }
+  th, td {
+    padding: .28rem .32rem;
+    overflow-wrap: anywhere;
+  }
+  table { font-size: .8rem; }
+  .screen-bar {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    padding: .55rem .8rem;
+    padding-top: max(.55rem, env(safe-area-inset-top));
+  }
+  .screen-bar select {
+    flex: 1 1 12rem;
+    max-width: none;
+  }
+  .screen-bar button, .screen-bar a, .screen-bar select {
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 @media print {
@@ -219,10 +297,9 @@ tr { break-inside: avoid; }
 </head>
 <body>
   <div class="screen-bar">
-    <span>telc Deutsch B1 — Deutschpfad Exam Book</span>
-    <span>
-      <button type="button" onclick="window.print()">Print / Save PDF</button>
-    </span>
+    <a href="/site/">Study site</a>
+    <select id="book-jump" aria-label="Jump to chapter"></select>
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
   </div>
   <div class="book-wrap">
     <div class="page-pad">
@@ -231,12 +308,15 @@ tr { break-inside: avoid; }
     <p class="chapter-kicker">One book · A2 → B1 · Print me</p>
     <h1>telc Deutsch B1</h1>
     <p class="subtitle">The complete exam book: grammar, vocabulary, templates, tricks, and practice.</p>
-    <p class="lead">Written for a learner at German A2 who does not yet have enough words or structures — and who needs to pass <strong>telc Deutsch B1</strong> (Zertifikat Deutsch).</p>
+    <p class="lead">Written for a learner at German A2 who does not yet have enough words or structures — and who needs to pass <strong>telc Deutsch B1</strong> (Zertifikat Deutsch) comfortably, not scrape 60%.</p>
   </div>
   <div class="meta">
-    <p><strong>What this book is:</strong> everything you must know and can memorise so the exam feels familiar: the four skills, Sprachbausteine, letter formulas, speaking scripts, the grammar that actually appears, and the vocabulary of everyday life in Germany.</p>
+    <p><strong>This exam is:</strong> classic adult Zertifikat Deutsch / telc Deutsch B1 — 225 written + 75 oral, both 60% required.</p>
+    <p><strong>This exam is not:</strong> telc A2·B1 DTZ (different Lesen/Hören shape) and not Goethe modular B1. Do not mix those papers into this book.</p>
+    <p><strong>What this book is:</strong> everything you must know and can memorise so the exam feels familiar: the four skills, Sprachbausteine, letter formulas, speaking scripts, the grammar that actually appears, and the vocabulary of everyday life in Germany. Grey German = say it; italic English = meaning only.</p>
     <p><strong>What this book cannot replace:</strong> real listening audio. After you learn the method here, download the free official telc mock exam and its MP3s and sit them under exam time. Speaking still needs a partner or a phone recording of yourself.</p>
-    <p>Study plan inside: 8 weeks from A2 to exam-ready. Read, highlight, memorise the grey boxes, then write and speak every day.</p>
+    <p>Study plan inside: 8 weeks from A2 to exam-ready. Read, highlight, memorise the grey boxes, then write and speak every day. Aim 80% here so 135/225 and 45/75 feel slow.</p>
+    <p class="tiny">Original teaching material. Not affiliated with telc gGmbH or the Goethe-Institut. No pass guarantee.</p>
   </div>
 </section>
 
@@ -244,29 +324,33 @@ tr { break-inside: avoid; }
   <p class="chapter-kicker">Contents</p>
   <h1 class="chapter-title">What is in this book</h1>
   <ol>
-    <li>How to use this book and an 8-week plan</li>
-    <li>The exam: timing, points, pass rules, exam-day tricks</li>
-    <li>Sounds, spelling, and survival German</li>
-    <li>Nouns, gender, plural, the four cases</li>
-    <li>Articles, pronouns, adjective endings</li>
-    <li>Verbs: tenses, modals, separable verbs, passive, Konjunktiv II</li>
-    <li>Word order, connectors, relative clauses, infinitive with zu</li>
-    <li>Prepositions and verbs with prepositions</li>
-    <li>Vocabulary by topic (the words you must own)</li>
-    <li>Official B1 exam topics (Wohnen, Amt, Arbeit, Gesundheit, Briefe)</li>
-    <li>Lesen — reading: method and practice</li>
-    <li>Sprachbausteine — grammar and vocab gaps</li>
-    <li>Hören — listening: method and practice</li>
-    <li>Schreiben — the letter/email that scores</li>
-    <li>Sprechen — pair exam scripts</li>
-    <li>Redemittel — phrase bank to memorise</li>
-    <li>The mistakes that lose points</li>
-    <li>Practice papers and answer key</li>
-    <li>Appendix: irregular verbs, endings, cheat sheets</li>
+    <li><a href="#ch-01">How to use this book and an 8-week plan</a></li>
+    <li><a href="#ch-02">The exam: timing, points, pass rules, exam-day tricks</a></li>
+    <li><a href="#ch-03">Sounds, spelling, and survival German</a></li>
+    <li><a href="#ch-04">Nouns, gender, plural, the four cases</a></li>
+    <li><a href="#ch-05">Articles, pronouns, adjective endings</a></li>
+    <li><a href="#ch-06">Verbs: tenses, modals, separable verbs, passive, Konjunktiv II</a></li>
+    <li><a href="#ch-07">Word order, connectors, relative clauses, infinitive with zu</a></li>
+    <li><a href="#ch-08">Prepositions and verbs with prepositions</a></li>
+    <li><a href="#ch-09">Vocabulary by topic (the words you must own)</a></li>
+    <li><a href="#ch-09d">Official B1 exam topics (Wohnen, Amt, Arbeit, Gesundheit, Briefe)</a></li>
+    <li><a href="#ch-10">Lesen — reading: method and practice</a></li>
+    <li><a href="#ch-11">Sprachbausteine — grammar and vocab gaps</a></li>
+    <li><a href="#ch-12">Hören — listening: method and practice</a></li>
+    <li><a href="#ch-13">Schreiben — the letter/email that scores</a></li>
+    <li><a href="#ch-14">Sprechen — pair exam scripts</a></li>
+    <li><a href="#ch-15">Redemittel — phrase bank to memorise</a></li>
+    <li><a href="#ch-16">The mistakes that lose points</a></li>
+    <li><a href="#ch-17">Practice papers and answer key</a></li>
+    <li><a href="#ch-18">Appendix: irregular verbs, endings, cheat sheets</a></li>
   </ol>
   <div class="mem">
     <strong class="label">The deal</strong>
-    If you can (1) decline articles and adjectives, (2) use weil / dass / obwohl / damit / wenn with the verb at the end, (3) write a 100–120 word letter covering four points, (4) speak for 15 minutes with a partner using the scripts, and (5) know the topic vocabulary in Chapter 9 — you can pass. Perfection is not required. 60% in writing <em>and</em> 60% in speaking is the pass line.
+    If you can (1) decline articles and adjectives, (2) use weil / dass / obwohl / damit / wenn with the verb at the end, (3) write a 100–120 word letter covering four points, (4) speak for 15 minutes with a partner using the scripts, and (5) know the topic vocabulary in Chapter 9 — you can pass. Perfection is not required. 60% in writing <em>and</em> 60% in speaking is the pass line. Train to <strong>80%</strong> so exam day is not a coin flip.
+  </div>
+  <div class="tip">
+    <strong class="label">How to read a page</strong>
+    <span class="de">Bold grey German</span> = say it aloud. Italic English = meaning only. Blue MEMORISE = copy by hand. Orange Danger = the trap that steals marks. Green Trick = what examiners reward.
   </div>
 </section>
 
@@ -284,10 +368,15 @@ tr { break-inside: avoid; }
     <li><strong>Copy the MEMORISE tables by hand</strong> into a notebook. Hand memory beats highlighting.</li>
     <li><strong>Say every example aloud.</strong> B1 speaking rewards mouths that have already said the sentence.</li>
     <li><strong>Learn vocabulary in chunks of 20–25 words</strong>, with article + plural. Never learn <em>Tisch</em> — learn <em>der Tisch, die Tische</em>.</li>
-    <li><strong>Write one letter every two days</strong> from Chapter 13, then check it against the model.</li>
+    <li><strong>Write one letter every two days</strong> from Chapter 13 with the model covered, then check it against the model.</li>
     <li><strong>Record yourself</strong> doing Sprechen Teil 2 for two minutes, three times a week.</li>
     <li><strong>From week 4:</strong> timed reading and listening practice. Guessing is allowed. Blank answers are stupid — there is no penalty for wrong answers.</li>
   </ol>
+
+  <div class="mem">
+    <strong class="label">High marks path</strong>
+    Six timed pair runs (20 min prep, live Teil 1). Eight hide-model letters with four Leitpunkte. Hören trap paper 7 (Gleis, erst/schon, 14 vs 40). Official telc MP3. Website Exam gym has the same card. The oral cannot rescue a failed 135/225 written paper — train both halves.
+  </div>
 
   <div class="warn">
     <strong class="label">Do not</strong>
@@ -306,8 +395,8 @@ tr { break-inside: avoid; }
       <tr><td>3</td><td><span class="de">Arbeit</span> + <span class="de">Gesundheit</span> + Konjunktiv II</td><td>Ch. 8 polite forms + work/health words</td><td>Praktikum letter + sick letter</td></tr>
       <tr><td>4</td><td><span class="de">Reisen</span> + <span class="de">Amt</span> + Lesen</td><td>Ch. 9–10 method; Amt notices</td><td>Lesen paper 1 (5 texts/7 headlines; 10 people/12 ads)</td></tr>
       <tr><td>5</td><td>Briefe + Sprachbausteine (90 min with Lesen)</td><td>Ch. 11 + 13 templates by heart</td><td>2 timed letters; SB both parts</td></tr>
-      <tr><td>6</td><td>Hören + Sprechen (Medien, Umwelt, Freizeit)</td><td>Ch. 12, 14; Teil 1 once</td><td>Record Teil 2; Teil 3 must decide</td></tr>
-      <tr><td>7</td><td>Mocks + remaining topics (Gesellschaft)</td><td>Two timed written mocks</td><td>Full oral 15 min + 20 min prep</td></tr>
+      <tr><td>6</td><td>Hören + Sprechen (Medien, Umwelt, Freizeit, Feste)</td><td>Ch. 12, 14; Teil 1 once</td><td>Record Teil 2; Teil 3 must decide</td></tr>
+      <tr><td>7</td><td>Mocks + remaining topics (Gesellschaft)</td><td>Two timed written mocks + trap Hören</td><td>Full oral 15 min + 20 min prep</td></tr>
       <tr><td>8</td><td>Polish + official telc MP3</td><td>Cheat sheets; redo under 80%</td><td>Mock C; two letters from memory; real sample audio</td></tr>
     </tbody>
   </table>
@@ -325,6 +414,22 @@ tr { break-inside: avoid; }
   <p class="chapter-kicker">Chapter 2</p>
   <h1 class="chapter-title">The telc Deutsch B1 exam</h1>
   <p>This chapter is the map of the test. Learn the map before you practise, or you will train the wrong muscle.</p>
+
+  <h2>Official names — what they mean</h2>
+  <table>
+    <thead>
+      <tr><th>On the paper</th><th>English</th><th>What scores</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="de">Leseverstehen</span></td><td>Reading (90 min with SB)</td><td>Teil 1: 5 texts / 7 headlines (2 unused). Teil 2: 5 MCQ. Teil 3: 10 people / 12 ads (2 unused).</td></tr>
+      <tr><td><span class="de">Sprachbausteine</span></td><td>Language elements</td><td>10 grammar gaps + 10 word-bank gaps in the same 90 minutes. 30 of 225 points.</td></tr>
+      <tr><td><span class="de">Hörverstehen</span></td><td>Listening ~30 min</td><td>5 once + 10 twice + 5 twice. Hunt nicht/kein/erst/schon/Gleis/14 vs 40.</td></tr>
+      <tr><td><span class="de">Schriftlicher Ausdruck</span></td><td>One letter, 30 min</td><td>Four Leitpunkte, 100–120 words, du or Sie, one Könnten in Sie letters.</td></tr>
+      <tr><td><span class="de">Mündlicher Ausdruck</span></td><td>Pair oral 15 min + 20 min prep</td><td>Teil 1 live. Teil 2 ~90s each. Teil 3 must decide. 45/75 to pass.</td></tr>
+      <tr><td><span class="de">Leitpunkte</span></td><td>Guiding bullets</td><td>Each one is a full sentence with a reason, not a keyword.</td></tr>
+      <tr><td><span class="de">Antwortbogen</span></td><td>Answer sheet</td><td>Only this is marked. Transfer before the last 30 seconds.</td></tr>
+    </tbody>
+  </table>
 
   <h2>Two exams, two pass lines</h2>
   <p>telc Deutsch B1 is <strong>written + oral</strong>. You must pass <em>both</em>. Scoring well in reading cannot save a failed speaking exam, and the other way around.</p>
@@ -2102,28 +2207,28 @@ tr { break-inside: avoid; }
   <p>Number-one letter topic: rent, heating, mould, noise, moving, WG. Describe: rooms, floor, <span class="de">Miete plus Nebenkosten</span>, location. Complain: problem + <span class="de">seit</span> + what you tried + <span class="de">Könnten Sie bitte …?</span> + a time you are home. Lesen Teil 3 ads hide the same facts behind <span class="de">Warmmiete, möbliert, Nichtraucher</span>.</p>
   <div class="mem">
     <strong class="label">Complaint spine</strong>
-    <p><span class="de">Sehr geehrte Frau Lang, ich schreibe Ihnen, weil die Heizung seit Montag nicht funktioniert. Ich habe schon den Hausmeister informiert, aber es hat nicht geholfen. Könnten Sie bitte einen Techniker schicken, am besten nach 17 Uhr? Mit freundlichen Grüßen</span></p>
+    <p><span class="de">Sehr geehrte Frau Lang, ich schreibe Ihnen, weil die Heizung seit Montag nicht funktioniert. Ich habe schon den Hausmeister informiert, aber es hat nicht geholfen. Könnten Sie bitte einen Techniker schicken, am besten nach 17 Uhr? Mit freundlichen Grüßen</span><span class="gloss">Dear Ms Lang, I am writing because the heating has not worked since Monday. I have already informed the caretaker, but it did not help. Could you please send a technician, preferably after 5 p.m.? Kind regards</span></p>
   </div>
 
   <h3>Amt, Behörde, Stadt</h3>
   <p>Appointments and notices, not legal German. Make or change a <span class="de">Termin</span>, list <span class="de">Ausweis, Meldebescheinigung</span>, read <span class="de">ohne Termin</span> vs <span class="de">nur mit Termin</span>, <span class="de">Öffnungszeiten</span>, <span class="de">Frist</span>. Hören loves “closed Friday” and “bring your ID”.</p>
   <div class="mem">
     <strong class="label">Amt spine</strong>
-    <p><span class="de">Ich möchte einen Termin im Bürgeramt vereinbaren. Welche Unterlagen muss ich mitbringen? Leider kann ich den Termin am Mittwoch nicht wahrnehmen. Wäre ein Termin nach 16 Uhr möglich?</span></p>
+    <p><span class="de">Ich möchte einen Termin im Bürgeramt vereinbaren. Welche Unterlagen muss ich mitbringen? Leider kann ich den Termin am Mittwoch nicht wahrnehmen. Wäre ein Termin nach 16 Uhr möglich?</span><span class="gloss">I would like to make an appointment at the citizens’ office. Which documents must I bring? Unfortunately I cannot keep Wednesday. Would an appointment after 4 p.m. be possible?</span></p>
   </div>
 
   <h3>Arbeit, Praktikum, Bewerbung</h3>
   <p>Hours, tasks, commute, home office vs office. Letter: why you write, dates/hours, tasks/pay, phone number. Ads: <span class="de">Teilzeit, Schicht, Deutsch B1, Führerschein</span>. Oral: one example, one drawback, <span class="de">deshalb</span>. This is B1 work life, not B2 labour law.</p>
   <div class="mem">
     <strong class="label">Praktikum spine</strong>
-    <p><span class="de">Ich interessiere mich für ein Praktikum in Ihrer Firma. Könnten Sie mir bitte mitteilen, wie lange es dauert und ob Teilzeit möglich ist? Welche Aufgaben würde ich übernehmen, und ist eine Vergütung vorgesehen? Meine Nummer ist …</span></p>
+    <p><span class="de">Ich interessiere mich für ein Praktikum in Ihrer Firma. Könnten Sie mir bitte mitteilen, wie lange es dauert und ob Teilzeit möglich ist? Welche Aufgaben würde ich übernehmen, und ist eine Vergütung vorgesehen? Meine Nummer ist …</span><span class="gloss">I am interested in an internship at your company. Could you please tell me how long it lasts and whether part-time is possible? Which tasks would I take on, and is there pay? My number is …</span></p>
   </div>
 
   <h3>Gesundheit und Krankenkasse</h3>
   <p>Symptoms + since when + appointment + sick note. Recognise <span class="de">Krankenkasse, Rezept, Überweisung, Arbeitsunfähigkeit</span> — do not lecture insurance law. Hören: the item is usually the time, not the illness name. Letter: days you miss, reason, what you need, number.</p>
   <div class="mem">
     <strong class="label">Clinic spine</strong>
-    <p><span class="de">Ich habe seit gestern starke Kopfschmerzen. Könnte ich bitte einen Termin noch diese Woche bekommen? Brauche ich eine Krankschreibung für die Arbeit?</span></p>
+    <p><span class="de">Ich habe seit gestern starke Kopfschmerzen. Könnte ich bitte einen Termin noch diese Woche bekommen? Brauche ich eine Krankschreibung für die Arbeit?</span><span class="gloss">I have had a bad headache since yesterday. Could I please get an appointment still this week? Do I need a sick note for work?</span></p>
   </div>
 
   <h3>Formelle und informelle Briefe (the paper)</h3>
@@ -2144,10 +2249,18 @@ tr { break-inside: avoid; }
       <tr><td>Geld / Bank / Post</td><td>Karte sperren; Paket; fees</td></tr>
       <tr><td>Medien</td><td>Handy: plus, minus, example, deshalb, Und du?</td></tr>
       <tr><td>Freizeit</td><td>Hobby 90 sec; Teil 3 Tag/Ort/Kosten/Plan B/decide</td></tr>
+      <tr><td>Feste / Feiertage</td><td>Geburtstag, Weihnachten, 3. Oktober — 90 sec + invite</td></tr>
       <tr><td>Umwelt</td><td>Three everyday actions + honest limit + allerdings</td></tr>
       <tr><td>Gesellschaft / Ehrenamt</td><td>One activity + time problem — no politics essay</td></tr>
     </tbody>
   </table>
+
+  <h3>Feste und Feiertage (produce this too)</h3>
+  <p>Favourite oral card: what you celebrate, why, one German contrast, <span class="de">allerdings</span>, then a question. Invite letters need day, place, what to bring.</p>
+  <div class="mem">
+    <strong class="label">Feste spine</strong>
+    <p><span class="de">Das wichtigste Fest in meiner Familie ist … Wir feiern das, weil die Verwandten zusammenkommen. In Deutschland finde ich den Weihnachtsmarkt interessant. Allerdings arbeite ich an manchen Feiertagen. Und du?</span><span class="gloss">The most important celebration in my family is … We celebrate it because the relatives get together. In Germany I find the Christmas market interesting. However I work on some public holidays. And you?</span></p>
+  </div>
 
   <h2>How the paper uses topics (so you train the right muscle)</h2>
   <ul>
@@ -2380,7 +2493,7 @@ tr { break-inside: avoid; }
     </thead>
     <tbody>
       <tr><td>You wait for the exact word from the statement</td><td>Listen for synonyms: <span class="de">geschlossen</span> = <span class="de">macht zu / fällt aus / nicht geöffnet</span></td></tr>
-      <tr><td>A number flies by</td><td>Write digits immediately. Watch 13/30, 16/60, 17/70</td></tr>
+      <tr><td>A number flies by</td><td>Write digits immediately. Watch 13/30, 16/60, 17/70, and <strong>14 vs 40</strong> (<span class="de">vierzehn / vierzig</span>)</td></tr>
       <tr><td>The first sentence agrees, the last sentence cancels it</td><td>telc loves: “The museum is open on Monday… wait, next week it is closed for holidays.” The last relevant fact wins.</td></tr>
       <tr><td>Two people disagree</td><td>The statement is about one of them. Track names.</td></tr>
       <tr><td>You don’t know a word</td><td>Ignore it if the statement’s fact was already decided.</td></tr>
@@ -2876,7 +2989,7 @@ tr { break-inside: avoid; }
 <section class="chapter" id="ch-17">
   <p class="chapter-kicker">Chapter 17</p>
   <h1 class="chapter-title">Practice paper and answer key</h1>
-  <p>Do Lesen + Sprachbausteine in 90 minutes, then Schreiben in 30. Hören: read the statements, then read the transcripts only after you have answered from a friend reading them aloud — or after one attempt with your own recording. Speaking: 20 min notes, then 15 min with a partner.</p>
+  <p>Do Lesen + Sprachbausteine in 90 minutes, then Schreiben in 30. Hören: read the statements, then read the transcripts only after you have answered from a friend reading them aloud — or after one attempt with your own recording. Speaking: 20 min notes, then 15 min with a partner. Pass is 135/225 written <em>and</em> 45/75 oral. Train this chapter and the website to <strong>80%</strong>. Website trap paper 7 and mock G are extra sittings for 14 vs 40 / Gleis / erst.</p>
 
   <h2>A. Lesen Teil 1 — headlines</h2>
   <p>Match A–E to five headlines. Two headlines are extra.</p>
@@ -3084,8 +3197,50 @@ tr { break-inside: avoid; }
   <p><span class="de">Viel Erfolg. Du schaffst das.</span></p>
 </section>
 
-      <p class="footer-note">Deutschpfad personal study book for B1. Original teaching material. Not affiliated with telc gGmbH. Print → Save as PDF (A4, background graphics on).</p>
+      <p class="footer-note">Deutschpfad personal study book for B1. Original teaching material. Not affiliated with telc gGmbH or the Goethe-Institut. No pass guarantee. <a href="/site/impressum.html">Impressum</a> · <a href="/site/datenschutz.html">Datenschutz</a> · <a href="/site/nutzung.html">Nutzung</a>. Print → Save as PDF (A4, background graphics on).</p>
     </div>
   </div>
+  <script>
+    document.querySelectorAll("table").forEach(function (t) {
+      if (t.parentElement && t.parentElement.classList.contains("table-scroll")) return;
+      var w = document.createElement("div");
+      w.className = "table-scroll";
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    });
+    (function () {
+      var jump = document.getElementById("book-jump");
+      if (!jump) return;
+      var chapters = [];
+      var cover = document.querySelector(".cover");
+      if (cover && cover.id) chapters.push({ id: cover.id, title: "Cover" });
+      if (document.getElementById("toc")) chapters.push({ id: "toc", title: "Contents" });
+      document.querySelectorAll("section.chapter[id]").forEach(function (s) {
+        if (s.id === "toc") return;
+        var h = s.querySelector(".chapter-title, h1");
+        var title = (h && h.textContent ? h.textContent : s.id).replace(/\s+/g, " ").trim();
+        chapters.push({ id: s.id, title: title });
+      });
+      chapters.forEach(function (c) {
+        var o = document.createElement("option");
+        o.value = c.id;
+        o.textContent = c.title;
+        jump.appendChild(o);
+      });
+      function sync() {
+        var id = (location.hash || "").replace(/^#/, "");
+        if (id) jump.value = id;
+      }
+      jump.onchange = function () {
+        var id = jump.value;
+        if (!id) return;
+        history.replaceState(null, "", "#" + id);
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView();
+      };
+      window.addEventListener("hashchange", sync);
+      sync();
+    })();
+  </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>telc Deutsch A2 — Deutschpfad Builder Book</title>
   <style>
 /* telc Deutsch B1 — print-first book */
@@ -93,6 +93,14 @@ tr:nth-child(even) td { background: #fafafa; }
 
 .de { font-weight: 600; }
 .en { color: #555; font-style: italic; }
+.gloss {
+  display: block;
+  font-weight: 400;
+  font-style: italic;
+  color: #555;
+  font-size: .88em;
+  margin-top: .12rem;
+}
 .tiny { font-size: .82rem; color: #555; }
 .center { text-align: center; }
 
@@ -181,21 +189,91 @@ tr { break-inside: avoid; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: .6rem;
+  flex-wrap: wrap;
 }
-.screen-bar button, .screen-bar a {
+.screen-bar a, .screen-bar button, .screen-bar select {
   background: #fff;
   color: var(--accent);
   border: 0;
   padding: .35rem .7rem;
   border-radius: 4px;
   font-weight: 700;
+  font-family: inherit;
+  font-size: .85rem;
   text-decoration: none;
   cursor: pointer;
 }
+.screen-bar select {
+  max-width: min(18rem, 70vw);
+  font-weight: 600;
+}
 
 @media screen {
-  body { padding: 0 0 4rem; }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 3.5rem;
+  }
+  body { padding: 0 0 4rem; overflow-x: hidden; }
+  .toc a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: .15em;
+  }
+}
+
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: .45rem 0 .85rem;
+}
+.table-scroll table { margin: 0; }
+
+@media screen and (max-width: 800px) {
+  html { font-size: 16px; }
+  body { padding: 0 0 2rem; }
+  .book-wrap {
+    max-width: 100%;
+    box-shadow: none;
+  }
+  .page-pad {
+    padding: 1.15rem 0.95rem 2.4rem;
+    padding-left: max(0.95rem, env(safe-area-inset-left));
+    padding-right: max(0.95rem, env(safe-area-inset-right));
+    padding-bottom: max(2.4rem, env(safe-area-inset-bottom));
+  }
+  .cover {
+    min-height: auto;
+    padding: 1.4rem 0.95rem 2rem;
+  }
+  .cover h1 { font-size: 1.85rem; }
+  .cover .subtitle { font-size: 1.05rem; }
+  .two-col { grid-template-columns: 1fr; }
+  .chapter-title { font-size: 1.4rem; }
+  th, td {
+    padding: .28rem .32rem;
+    overflow-wrap: anywhere;
+  }
+  table { font-size: .8rem; }
+  .screen-bar {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    padding: .55rem .8rem;
+    padding-top: max(.55rem, env(safe-area-inset-top));
+  }
+  .screen-bar select {
+    flex: 1 1 12rem;
+    max-width: none;
+  }
+  .screen-bar button, .screen-bar a, .screen-bar select {
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 @media print {
@@ -219,10 +297,9 @@ tr { break-inside: avoid; }
 </head>
 <body>
   <div class="screen-bar">
-    <span>telc Deutsch A2 — Deutschpfad Builder Book</span>
-    <span>
-      <button type="button" onclick="window.print()">Print / Save PDF</button>
-    </span>
+    <a href="/site/">Study site</a>
+    <select id="book-jump" aria-label="Jump to chapter"></select>
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
   </div>
   <div class="book-wrap">
     <div class="page-pad">
@@ -234,9 +311,12 @@ tr { break-inside: avoid; }
     <p class="lead">Written for a learner who can already survive A1 — shop, introduce yourself, talk about today in the present — and who now needs <strong>connected past</strong>, <strong>dative</strong>, and a real telc A2 performance.</p>
   </div>
   <div class="meta">
-    <p><strong>What this book is:</strong> everything you must know and can memorise so the exam feels familiar: haben vs sein, articles in three cases, weil/dass/wenn, separable verbs, topic vocabulary, a 60–80 word message, pair-speaking scripts, and how each written and oral part actually looks.</p>
+    <p><strong>This exam is:</strong> adult telc Deutsch A2 / Start Deutsch 2 — Hören ~20 min, Lesen+Schreiben 50 min, pair oral ~15 min, typically no prep room.</p>
+    <p><strong>This exam is not:</strong> DTZ A2·B1 (different booklet), Goethe-only branding, or telc B1 (no 90-minute Sprachbausteine, no 100-word four-Leitpunkt letter as the main task).</p>
+    <p><strong>What this book is:</strong> everything you must know and can memorise so the exam feels familiar: haben vs sein, articles in three cases, weil/dass/wenn, separable verbs, topic vocabulary, a 60–80 word message, pair-speaking scripts. Grey German = say it; italic English = meaning only.</p>
     <p><strong>What this book cannot replace:</strong> real listening audio. After you learn the method here, sit the website mocks with a timer, then download a free official telc A2 sample and its MP3s. Speaking still needs a partner or a phone recording of yourself.</p>
-    <p>Study plan inside: 8 weeks from A1 survival to exam-ready. Read, highlight, memorise the grey boxes, then write and speak every day.</p>
+    <p>Study plan inside: 8 weeks from A1 survival to exam-ready. Read, highlight, memorise the grey boxes, then write and speak every day. Aim 80% here so 60% on the day feels slow.</p>
+    <p class="tiny">Original teaching material. Not affiliated with telc gGmbH or the Goethe-Institut. No pass guarantee.</p>
   </div>
 </section>
 
@@ -244,25 +324,29 @@ tr { break-inside: avoid; }
   <p class="chapter-kicker">Contents</p>
   <h1 class="chapter-title">What is in this book</h1>
   <ol>
-    <li>How to use this book and an 8-week plan</li>
-    <li>The exam: timing, pass rules, exam-day kit</li>
-    <li>Perfekt — the spoken past you must own</li>
-    <li>Cases: nominative, accusative, dative</li>
-    <li>Connectors and word order (weil / denn / deshalb)</li>
-    <li>Separable verbs, adjective endings, comparatives</li>
-    <li>Vocabulary by topic (housing, work, health, travel, shopping, people)</li>
-    <li>Official A2 topics and must-say chunks</li>
-    <li>Lesen — reading: method and worked examples</li>
-    <li>Hören — listening: method and announcement drills</li>
-    <li>Schreiben — the 60–80 word message that scores</li>
-    <li>Sprechen — pair exam scripts (no 20-minute prep)</li>
-    <li>The mistakes that lose points</li>
-    <li>Practice checklist (website mocks + official audio)</li>
-    <li>Appendix: numbers, irregulars, prepositions, exam day</li>
+    <li><a href="#ch-01">How to use this book and an 8-week plan</a></li>
+    <li><a href="#ch-02">The exam: timing, pass rules, exam-day kit</a></li>
+    <li><a href="#ch-03">Perfekt — the spoken past you must own</a></li>
+    <li><a href="#ch-04">Cases: nominative, accusative, dative</a></li>
+    <li><a href="#ch-05">Connectors and word order (weil / denn / deshalb)</a></li>
+    <li><a href="#ch-06">Separable verbs, adjective endings, comparatives</a></li>
+    <li><a href="#ch-07">Vocabulary by topic (housing, work, health, travel, shopping, people)</a></li>
+    <li><a href="#ch-07b">Official A2 topics and must-say chunks</a></li>
+    <li><a href="#ch-08">Lesen — reading: method and worked examples</a></li>
+    <li><a href="#ch-09">Hören — listening: method and announcement drills</a></li>
+    <li><a href="#ch-10">Schreiben — the 60–80 word message that scores</a></li>
+    <li><a href="#ch-11">Sprechen — pair exam scripts (no 20-minute prep)</a></li>
+    <li><a href="#ch-12">The mistakes that lose points</a></li>
+    <li><a href="#ch-13">Practice checklist (website mocks + official audio)</a></li>
+    <li><a href="#ch-14">Appendix: numbers, irregulars, prepositions, exam day</a></li>
   </ol>
   <div class="mem">
     <strong class="label">The deal</strong>
-    If you can (1) tell last weekend in Perfekt without <span class="de">ich habe gegangen</span>, (2) use dative after <span class="de">mit / zu / helfen / gefallen</span>, (3) put the verb last after <span class="de">weil / dass / wenn</span>, (4) write a connected 60–80 word message covering every guiding point, and (5) talk to a partner for 15 minutes using the scripts — you can pass. Perfection is not required. About 60% in the written half <em>and</em> 60% in the oral half is the pass line.
+    If you can (1) tell last weekend in Perfekt without <span class="de">ich habe gegangen</span>, (2) use dative after <span class="de">mit / zu / helfen / gefallen</span>, (3) put the verb last after <span class="de">weil / dass / wenn</span>, (4) write a connected 60–80 word message covering every guiding point, and (5) talk to a partner for 15 minutes using the scripts — you can pass. Perfection is not required. About 60% in the written half <em>and</em> 60% in the oral half is the pass line. Train to <strong>80%</strong> on this book and the website.
+  </div>
+  <div class="tip">
+    <strong class="label">How to read a page</strong>
+    <span class="de">Bold grey German</span> = say it aloud. Italic English = meaning, not a second line to memorise. Blue MEMORISE = copy by hand. Orange Danger = the trap. Green Trick = what examiners reward.
   </div>
 </section>
 
@@ -280,10 +364,15 @@ tr { break-inside: avoid; }
     <li><strong>Copy the MEMORISE tables by hand</strong> into a notebook. Hand memory beats highlighting.</li>
     <li><strong>Say every example aloud.</strong> A2 speaking rewards mouths that have already said the sentence.</li>
     <li><strong>Learn vocabulary as article + noun.</strong> Never learn <em>Wohnung</em> — learn <em>die Wohnung</em>. Never learn <em>Arzt</em> — learn <em>der Arzt</em>.</li>
-    <li><strong>Write ten true Perfekt sentences about yesterday</strong> every day in weeks 1–2. Then write one short message every two days from Chapter 10.</li>
+    <li><strong>Write ten true Perfekt sentences about yesterday</strong> every day in weeks 1–2. Then write one short message every two days from Chapter 10 with the model covered.</li>
     <li><strong>Record yourself</strong> doing the Teil 1 intro and one Teil 2 topic, three times a week from week 4.</li>
     <li><strong>From week 5:</strong> timed reading and listening on the website. Guessing is allowed. Blank answers are wasted — there is no penalty for wrong answers.</li>
   </ol>
+
+  <div class="mem">
+    <strong class="label">High marks path</strong>
+    Six pair oral runs (weil + Einverstanden in Teil 3). Eight hide-model letters (one du, one Sie). Hören trap paper 5 (14 vs 40, Gleis, erst/schon). Then the official telc A2 MP3. Website Exam gym has the same card.
+  </div>
 
   <div class="warn">
     <strong class="label">Do not</strong>
@@ -301,10 +390,10 @@ tr { break-inside: avoid; }
       <tr><td>2</td><td>Bank/Post/Amt + dative + landlord note</td><td>mit/zu/von + services words</td><td>Sie-message: problem + since when</td></tr>
       <tr><td>3</td><td><span class="de">Alltag</span> + <span class="de">Essen</span> + Meinungen</td><td>weil/dass vs denn/deshalb</td><td>Teil 2 conversation: opinion + Und du?</td></tr>
       <tr><td>4</td><td><span class="de">Arbeit</span> + <span class="de">Gesundheit</span> + first Sie-letters</td><td>separable verbs + health words</td><td>Course-office note 60–80 words</td></tr>
-      <tr><td>5</td><td><span class="de">Reisen</span> + Schreiben clock</td><td>holiday in Perfekt + one timed Lesen</td><td>Write inside a 50-minute Lesen+Schreiben block</td></tr>
-      <tr><td>6</td><td>Hören 20 min + pair oral Teil 2–3</td><td>15 min audio; speaking scripts</td><td>Negotiate and <em>decide</em> (time, place, Plan B)</td></tr>
+      <tr><td>5</td><td><span class="de">Reisen</span> + <span class="de">Einkaufen/Umtausch</span> + Schreiben clock</td><td>holiday in Perfekt + one timed Lesen</td><td>Write inside a 50-minute Lesen+Schreiben block</td></tr>
+      <tr><td>6</td><td>Hören 20 min + pair oral + <span class="de">Feste</span></td><td>15 min audio; invite with weil</td><td>Negotiate and <em>decide</em> (time, place, Plan B)</td></tr>
       <tr><td>7</td><td>Mocks + remaining topics (Medien, Briefe)</td><td>One timed written mock</td><td>Full 15-min pair oral; no extra SB booklet</td></tr>
-      <tr><td>8</td><td>Weak spots + mock B/C + official MP3</td><td>Cheat sheets; redo under 80%</td><td>One du letter + one Sie letter from memory</td></tr>
+      <tr><td>8</td><td>Weak spots + mock B/C + trap Hören + official MP3</td><td>Cheat sheets; redo under 80%</td><td>One du letter + one Sie letter from memory</td></tr>
     </tbody>
   </table>
 
@@ -343,6 +432,21 @@ tr { break-inside: avoid; }
   <p class="chapter-kicker">Chapter 2</p>
   <h1 class="chapter-title">The telc Deutsch A2 exam</h1>
   <p>This chapter is the map of the test. Learn the map before you practise, or you will train the wrong muscle — for example a B1 100-word formal complaint, or a 20-minute speaking prep that A2 usually does not give you.</p>
+
+  <h2>Official names — what they mean</h2>
+  <table>
+    <thead>
+      <tr><th>On the paper</th><th>English</th><th>What scores</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="de">Hörverstehen</span></td><td>Listening ~20 min</td><td>One fact per item. Teil 1 often once. Hunt <span class="de">nicht / erst / schon / Gleis / 14 vs 40</span>.</td></tr>
+      <tr><td><span class="de">Leseverstehen</span></td><td>Reading (same 50 min as writing)</td><td>Question first, then synonyms. Notices, emails, ads, one longer text.</td></tr>
+      <tr><td><span class="de">Schriftlicher Ausdruck</span></td><td>Writing inside those 50 min</td><td>60–80 words, all Leitpunkte, du or Sie, greeting + closing.</td></tr>
+      <tr><td><span class="de">Mündlicher Ausdruck</span></td><td>Pair speaking ~15 min</td><td>Contact + weil + actually agree. Typically no B1 prep room.</td></tr>
+      <tr><td><span class="de">Leitpunkte</span></td><td>Guiding bullets</td><td>Each one needs a full sentence, not a shopping list.</td></tr>
+      <tr><td><span class="de">Antwortbogen</span></td><td>Answer sheet</td><td>Only this is marked.</td></tr>
+    </tbody>
+  </table>
 
   <h2>60 points, pass typically 60%</h2>
   <p>telc Deutsch A2 / Start Deutsch 2 is a <strong>60-point</strong> exam: Hören 15, Lesen 15, Schreiben 15, Sprechen 15. Pass is typically <strong>60% overall (36/60)</strong>. Confirm at your centre whether they also want a pass in each half. This is <strong>not</strong> the DTZ A2·B1 exam and <strong>not</strong> telc B1 (no 90-minute Sprachbausteine, no 225-point written paper).</p>
@@ -824,6 +928,10 @@ tr { break-inside: avoid; }
   <h2>obwohl — recognition only</h2>
   <p>You will see <span class="de">obwohl</span> (“although”) in Lesen: <span class="de">Obwohl es regnet, gehen die Leute spazieren.</span> Verb last, like <span class="de">weil</span>. You do not need to produce long <span class="de">obwohl</span>-essays for A2. If you want one safe spoken line: <span class="de">Obwohl ich müde bin, lerne ich noch 20 Minuten.</span> Then stop. Do not collect B1 concessive piles.</p>
 
+  <h2>um … zu — purpose (same person)</h2>
+  <p>A2 letters: <span class="de">Ich schreibe, um den Termin zu ändern. Ich gehe zur Bank, um Geld abzuheben.</span> No <span class="de">zu</span> after a modal: <span class="de">Ich muss arbeiten</span>, never *muss zu arbeiten. Separable: <span class="de">anzurufen, abzuheben</span>. Different person → <span class="de">damit</span>: <span class="de">Ich rufe an, damit Sie Bescheid wissen.</span> Full lesson on the website: Grammar → zu + infinitive.</p>
+  <p>Politeness in the same letter: one <span class="de">Könnten Sie bitte …?</span> or <span class="de">Wäre … möglich?</span> — website lesson <em>Polite Konjunktiv II</em>.</p>
+
   <h2>Separable verbs + connectors</h2>
   <p>In a main clause the prefix goes to the end: <span class="de">Ich stehe um 7 Uhr auf.</span> In a <span class="de">weil</span>-clause the whole verb sits last, prefix attached: <span class="de">…, weil ich um 7 Uhr aufstehe.</span> Perfekt: <span class="de">…, weil ich um 7 Uhr aufgestanden bin.</span></p>
 
@@ -1044,6 +1152,8 @@ tr { break-inside: avoid; }
       <tr><td>das Geld</td><td>money</td><td>die Karte / die EC-Karte</td><td>card / debit card</td></tr>
       <tr><td>die Größe</td><td>size</td><td>die Farbe</td><td>colour</td></tr>
       <tr><td>die Ware</td><td>goods</td><td>die Reklamation</td><td>complaint (purchase)</td></tr>
+      <tr><td>der Umtausch</td><td>exchange (of goods)</td><td>die Bestellnummer</td><td>order number</td></tr>
+      <tr><td>der Kassenbon</td><td>till receipt</td><td>das Geld zurück</td><td>refund</td></tr>
       <tr><td>der Kunde</td><td>customer (m)</td><td>die Kundin</td><td>customer (f)</td></tr>
       <tr><td>die Öffnungszeiten (pl.)</td><td>opening hours</td><td>der Schlussverkauf</td><td>sale</td></tr>
       <tr><td>das Obst</td><td>fruit</td><td>das Gemüse</td><td>vegetables</td></tr>
@@ -1117,28 +1227,39 @@ tr { break-inside: avoid; }
       <tr><td><span class="de">Gesundheit</span></td><td>Symptoms + seit + cancel with a new time</td><td>Hören doctor; messages</td></tr>
       <tr><td><span class="de">Reisen und Urlaub</span></td><td>Holiday in Perfekt; Gleis / Verspätung</td><td>Hören station; hotel note</td></tr>
       <tr><td><span class="de">Bank, Post, Amt</span></td><td>Termin ändern; parcel; Konto</td><td>Notices; Sie-request</td></tr>
+      <tr><td><span class="de">Einkaufen / Umtausch</span></td><td>Wrong size + Bestellnummer + Könnten Sie</td><td>Shop letter; hours in Hören</td></tr>
       <tr><td><span class="de">Meinungen</span></td><td>finden + weil + aber + Und du?</td><td>Every Teil 2 card</td></tr>
       <tr><td><span class="de">Medien und Wetter</span></td><td>Handy habit; rain Plan B</td><td>Teil 3 outdoor vs museum</td></tr>
-      <tr><td>Nachrichten und Briefe (skill)</td><td>60–80 words, all bullets, du vs Sie</td><td>Schreiben in the 50-min block</td></tr>
+      <tr><td><span class="de">Nachrichten und Briefe</span> (skill)</td><td>60–80 words, all bullets, du vs Sie</td><td>Schreiben in the 50-min block</td></tr>
+      <tr><td><span class="de">Feste / Einladungen</span></td><td>Invite + weil decline + rain Plan B</td><td>du-letter; Teil 3 party</td></tr>
     </tbody>
   </table>
 
-  <h2>Must-say spines</h2>
+  <h2>Must-say spines (German first — English is only the meaning)</h2>
   <div class="mem">
     <strong class="label">Teil 1</strong>
-    <p><span class="de">Ich wohne seit einem Jahr in … und mache eine Ausbildung. Am Wochenende habe ich Freunde getroffen. Und du? Wie lange wohnst du schon hier?</span></p>
+    <p><span class="de">Ich wohne seit einem Jahr in … und mache eine Ausbildung. Am Wochenende habe ich Freunde getroffen. Und du? Wie lange wohnst du schon hier?</span><span class="gloss">I have been living in … for a year and I am doing an apprenticeship. At the weekend I met friends. And you? How long have you lived here?</span></p>
   </div>
   <div class="mem">
     <strong class="label">Wohnen / Amt</strong>
-    <p><span class="de">Die Heizung funktioniert seit Montag nicht. Könnten Sie bitte einen Techniker schicken? Ich bin nach 17 Uhr zu Hause. / Ich brauche einen Termin im Bürgeramt.</span></p>
+    <p><span class="de">Die Heizung funktioniert seit Montag nicht. Könnten Sie bitte einen Techniker schicken? Ich bin nach 17 Uhr zu Hause. / Ich brauche einen Termin im Bürgeramt.</span><span class="gloss">The heating has not worked since Monday. Could you please send a technician? I am home after 5 p.m. / I need an appointment at the citizens’ office.</span></p>
   </div>
   <div class="mem">
     <strong class="label">Meinungen (the A2 mark)</strong>
-    <p><span class="de">Ich finde das gut, weil … Allerdings … Zum Beispiel … Und du? Was meinst du?</span> Verb last after <span class="de">weil / dass / wenn</span>.</p>
+    <p><span class="de">Ich finde das gut, weil … Allerdings … Zum Beispiel … Und du? Was meinst du?</span><span class="gloss">I think that is good because … However … For example … And you? What do you think?</span> Verb last after <span class="de">weil / dass / wenn</span>.</p>
   </div>
   <div class="mem">
     <strong class="label">Teil 3 negotiate</strong>
-    <p><span class="de">Ich schlage vor, dass wir uns am Samstag treffen. Einverstanden. Dann um 19 Uhr vor dem Kino. Wenn es regnet, gehen wir ins Café.</span> A pair that never decides loses task points.</p>
+    <p><span class="de">Ich schlage vor, dass wir uns am Samstag treffen. Einverstanden. Dann um 19 Uhr vor dem Kino. Wenn es regnet, gehen wir ins Café.</span><span class="gloss">I suggest that we meet on Saturday. Agreed. Then at 7 p.m. in front of the cinema. If it rains, we go to the café.</span> A pair that never decides loses task points.</p>
+  </div>
+  <div class="mem">
+    <strong class="label">Einkaufen / Umtausch</strong>
+    <p><span class="de">Sehr geehrte Damen und Herren, Bestellnummer 5521: Die Schuhe sind zu klein. Ich möchte umtauschen. Könnten Sie mir bitte sagen, wie ich sie zurückschicke? Mit freundlichen Grüßen</span></p>
+  </div>
+  <div class="mem">
+    <strong class="label">Feste / Einladungen</strong>
+    <p><span class="de">Liebe Nora, am Samstag habe ich Geburtstag. Die Feier ist um 18 Uhr bei mir. Hast du Lust zu kommen? Bring bitte einen Salat mit. Wenn es regnet, treffen wir uns im Café. Schreib mir bitte bis Freitag.</span><span class="gloss">Dear Nora, Saturday is my birthday. The party is at 6 p.m. at my place. Do you feel like coming? Please bring a salad. If it rains, we meet in the café. Please write by Friday.</span></p>
+    <p><span class="de">Leider kann ich nicht, weil ich arbeiten muss. Wäre Sonntag möglich?</span><span class="gloss">Unfortunately I cannot because I have to work. Would Sunday be possible?</span></p>
   </div>
   <div class="mem">
     <strong class="label">Letter (not B1)</strong>
@@ -1301,6 +1422,7 @@ tr { break-inside: avoid; }
     <p><strong>Numbers:</strong> time, platform, price, room, date. Write 14:37 / Gleis 4 / 6 € the moment you hear them.</p>
     <p><strong>nicht / kein / ohne / nie:</strong> the statement is often the opposite of the first friendly sentence.</p>
     <p><strong>nur / erst / schon / noch:</strong> <span class="de">erst um 21 Uhr</span> is not 20 Uhr. <span class="de">nur samstags</span> is not “every day”.</p>
+    <p><strong>14 vs 40:</strong> <span class="de">vierzehn / vierzig</span>. Write digits. Same trap as Gleis 4 vs Gleis 14.</p>
   </div>
   <div class="tip">
     <strong class="label">Synonym radar (listening)</strong>
@@ -1679,9 +1801,9 @@ tr { break-inside: avoid; }
     <tbody>
       <tr><td>Grammar quizzes</td><td>You can hit about <strong>80%</strong> on Perfekt, dative, connectors, and the mix drill — twice, not once by luck.</td></tr>
       <tr><td>Vocab</td><td>Article + noun for the six Chapter 7 themes; website topic quizzes at 80%.</td></tr>
-      <tr><td>Hören</td><td>Every A2 listening paper on the site, at least once in <strong>exam mode</strong> (timer on, no endless pause).</td></tr>
-      <tr><td>Lesen + Schreiben</td><td>All <strong>six mocks</strong> (A–F) sat as papers, not as browsing.</td></tr>
-      <tr><td>Sprechen</td><td>Three full 15-minute pair runs (or phone recordings of both roles).</td></tr>
+      <tr><td>Hören</td><td>Every A2 listening paper on the site, at least once in <strong>exam mode</strong>, plus trap paper 5.</td></tr>
+      <tr><td>Lesen + Schreiben</td><td>All <strong>seven mocks</strong> (A–G) sat as papers, not as browsing. Model locked on letters.</td></tr>
+      <tr><td>Sprechen</td><td>Six full 15-minute pair runs (or phone recordings of both roles). New cards each time. Teil 3 ends with Einverstanden.</td></tr>
       <tr><td>Official telc</td><td>One free official A2 sample with <strong>real audio</strong>, weeks 7–8, exam timing.</td></tr>
     </tbody>
   </table>
@@ -1854,8 +1976,50 @@ tr { break-inside: avoid; }
   </div>
 </section>
 
-      <p class="footer-note">Deutschpfad personal study book for A2. Original teaching material. Not affiliated with telc gGmbH. Print → Save as PDF (A4, background graphics on).</p>
+      <p class="footer-note">Deutschpfad personal study book for A2. Original teaching material. Not affiliated with telc gGmbH or the Goethe-Institut. No pass guarantee. <a href="/site/impressum.html">Impressum</a> · <a href="/site/datenschutz.html">Datenschutz</a> · <a href="/site/nutzung.html">Nutzung</a>. Print → Save as PDF (A4, background graphics on).</p>
     </div>
   </div>
+  <script>
+    document.querySelectorAll("table").forEach(function (t) {
+      if (t.parentElement && t.parentElement.classList.contains("table-scroll")) return;
+      var w = document.createElement("div");
+      w.className = "table-scroll";
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    });
+    (function () {
+      var jump = document.getElementById("book-jump");
+      if (!jump) return;
+      var chapters = [];
+      var cover = document.querySelector(".cover");
+      if (cover && cover.id) chapters.push({ id: cover.id, title: "Cover" });
+      if (document.getElementById("toc")) chapters.push({ id: "toc", title: "Contents" });
+      document.querySelectorAll("section.chapter[id]").forEach(function (s) {
+        if (s.id === "toc") return;
+        var h = s.querySelector(".chapter-title, h1");
+        var title = (h && h.textContent ? h.textContent : s.id).replace(/\s+/g, " ").trim();
+        chapters.push({ id: s.id, title: title });
+      });
+      chapters.forEach(function (c) {
+        var o = document.createElement("option");
+        o.value = c.id;
+        o.textContent = c.title;
+        jump.appendChild(o);
+      });
+      function sync() {
+        var id = (location.hash || "").replace(/^#/, "");
+        if (id) jump.value = id;
+      }
+      jump.onchange = function () {
+        var id = jump.value;
+        if (!id) return;
+        history.replaceState(null, "", "#" + id);
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView();
+      };
+      window.addEventListener("hashchange", sync);
+      sync();
+    })();
+  </script>
 </body>
 </html>

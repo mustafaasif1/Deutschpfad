@@ -287,7 +287,8 @@ registerPack("b1", {
       ],
       vocab: ["daily", "function"],
       grammar: ["separable", "modals", "particles"],
-      lesen: ["lesen-1"]
+      lesen: ["lesen-1"],
+      schreiben: ["b1-late", "course-office"]
     },
     {
       id: "food",
@@ -697,7 +698,8 @@ registerPack("b1", {
       ],
       vocab: ["services", "examday", "civic"],
       grammar: ["konjunktiv2", "passive", "imperative", "dacom", "nogen"],
-      lesen: ["lesen-3"]
+      lesen: ["lesen-3"],
+      schreiben: ["b1-amt"]
     },
     {
       id: "money",
@@ -830,7 +832,8 @@ registerPack("b1", {
         { de: "Ein Film im Kino ist schöner als das Handy auf der Couch.", en: "A film at the cinema is nicer than the phone on the sofa." }
       ],
       vocab: ["media", "opinions"],
-      grammar: ["connectors", "advconn"]
+      grammar: ["connectors", "advconn"],
+      schreiben: ["b1-media"]
     },
     {
       id: "leisure",
@@ -896,7 +899,8 @@ registerPack("b1", {
         { de: "Was meinst du? Sollen wir das so machen?", en: "What do you think? Shall we do it that way?" }
       ],
       vocab: ["daily", "function"],
-      grammar: ["wordorder", "connectors", "imperative"]
+      grammar: ["wordorder", "connectors", "imperative"],
+      schreiben: ["informal-invite", "club-membership", "b1-feste"]
     },
     {
       id: "environment",
@@ -963,7 +967,8 @@ registerPack("b1", {
       ],
       vocab: ["media"],
       grammar: ["connectors", "partizip"],
-      lesen: ["lesen-1"]
+      lesen: ["lesen-1"],
+      schreiben: ["b1-umwelt"]
     },
     {
       id: "society",
@@ -1102,6 +1107,72 @@ registerPack("b1", {
       vocab: ["examday", "function", "letters"],
       grammar: ["konjunktiv2", "wordorder", "imperative", "verbplus", "negation", "questions", "pronouns"],
       schreiben: ["complaint", "course-office", "online-shop", "info-job", "b1-bank", "b1-vhs", "b1-lost", "neighbour-noise", "doctor-sick", "informal-invite"]
+    },
+    {
+      id: "feste",
+      title: "Festivals, holidays, traditions",
+      titleDe: "Feste, Feiertage, Traditionen",
+      weight: "high",
+      official: true,
+      blurb: "Geburtstag, Weihnachten, Feiertage in Deutschland — favourite Sprechen Teil 2 and informal letters.",
+      exam: "Sprechen: Feste in Ihrem Land / in Deutschland. Schreiben: party invite or thanks. Lesen: event ads.",
+      canDo: [
+        "I can talk 90 seconds about a celebration with because, example, and allerdings.",
+        "I can compare a feast in my country with one in Germany without a culture lecture.",
+        "I can write an informal invitation or a thank-you after a party.",
+        "I can plan Teil 3: a birthday, a picnic, a course party — Tag, Ort, Kosten, Plan B.",
+        "I can understand event notices: date, rain plan, bring food.",
+        "I can name public holidays at word level: Weihnachten, Ostern, Silvester, Tag der Deutschen Einheit."
+      ],
+      examHow: [
+        "Sprechen Teil 2: Feste, Traditionen, Geburtstag, Weihnachten.",
+        "Teil 3: plan a party or a gift — you must agree.",
+        "Schreiben: informal invite, thanks, or postpone a celebration.",
+        "Lesen Teil 3: festivals, markets, club parties.",
+        "Hoeren: the party moved from Saturday to Sunday."
+      ],
+      subtopics: [
+        "Geburtstag: einladen, danken, schenken",
+        "Weihnachten, Ostern, Silvester",
+        "Feiertage in Deutschland (recognition)",
+        "Feste in meinem Land",
+        "Was man isst und mitbringt",
+        "Oeffentliche Feste: Markt, Feuerwerk",
+        "Teil 3 Party: Budget und Plan B",
+        "Religioese Details — keep light and personal"
+      ],
+      explain: "<p>telc B1 oral cards love <span class=\"de\">Feste</span>. Leisure already trains the Teil 3 machine. This topic is the content: what you celebrate, why it matters to you, one contrast with Germany.</p><h3>90-second spine</h3><p><span class=\"de\">In meiner Familie ist das wichtigste Fest … Wir feiern das, weil die Verwandten zusammenkommen. Zum Beispiel essen wir … und schenken uns kleine Dinge. In Deutschland finde ich Weihnachten / den Weihnachtsmarkt interessant. Allerdings arbeite ich an manchen Feiertagen, deshalb feiere ich oft am Wochenende danach. Und du? Welches Fest magst du?</span> Four moves: what, why, example, allerdings, question.</p><h3>Germany at B1 depth</h3><p>Recognise <span class=\"de\">Weihnachten, Heiligabend, Ostern, Silvester, der 3. Oktober, der 1. Mai, Karneval/Fasching</span> in Lesen. You do not need a history essay. One honest sentence: <span class=\"de\">Am 3. Oktober haben viele Leute frei. Am Weihnachtsmarkt trinke ich Glühwein, obwohl es kalt ist.</span></p><h3>Letters</h3><p>Invite: when, where, what to bring, how to answer. Thanks: what you liked, a photo, a next date. Postpone: reason + new suggestion + <span class=\"de\">Wäre … möglich?</span></p><h3>Teil 3</h3><p>Budget, vegetarian food, rain plan, who buys the cake. Close with <span class=\"de\">Einverstanden</span>.</p><ul><li>Stay personal. Do not preach religion or politics.</li><li>If you do not celebrate: say so and describe a family meal or a public market instead.</li></ul>",
+      traps: [
+        "A Wikipedia talk on German history with no Ich.",
+        "Teil 3: listing cakes for six minutes and never deciding the time.",
+        "An invite with no Uhrzeit.",
+        "Mixing Sie and du in a friend thank-you."
+      ],
+      youMust: [
+        "Talk 90 seconds: what, why, example, allerdings, Und du?",
+        "Name one German holiday and one from your country.",
+        "Write an invite with Tag, Ort, mitbringen.",
+        "In Teil 3: budget + Plan B + Einverstanden.",
+        "Thank someone after a party in 80–100 words.",
+        "Read an event ad for date, price, and weather note."
+      ],
+      chunks: [
+        { de: "Das wichtigste Fest in meiner Familie ist …", en: "The most important celebration in my family is …" },
+        { de: "Wir feiern das, weil die Verwandten zusammenkommen.", en: "We celebrate that because the relatives get together." },
+        { de: "In Deutschland finde ich den Weihnachtsmarkt interessant.", en: "In Germany I find the Christmas market interesting." },
+        { de: "Allerdings arbeite ich an manchen Feiertagen.", en: "However I work on some public holidays." },
+        { de: "Am 3. Oktober haben viele Leute frei.", en: "On 3 October many people have the day off." },
+        { de: "Hast du Lust, am Samstag zu meiner Geburtstagsfeier zu kommen?", en: "Do you feel like coming to my birthday party on Saturday?" },
+        { de: "Bring bitte etwas zu essen mit. Vegetarisch wäre super.", en: "Please bring something to eat. Vegetarian would be great." },
+        { de: "Was machen wir, wenn es regnet — Wohnung oder Café?", en: "What do we do if it rains — flat or café?" },
+        { de: "Vielen Dank für die Einladung. Die Feier war wirklich schön.", en: "Thanks a lot for the invitation. The party was really nice." },
+        { de: "Leider kann ich nicht, weil ich arbeiten muss. Wäre Sonntag möglich?", en: "Unfortunately I cannot because I have to work. Would Sunday be possible?" },
+        { de: "Silvester feiern wir mit Freunden und einem Spaziergang.", en: "We celebrate New Year’s Eve with friends and a walk." },
+        { de: "Und du? Welches Fest magst du besonders?", en: "And you? Which celebration do you especially like?" }
+      ],
+      vocab: ["daily", "world"],
+      grammar: ["connectors", "konjunktiv2", "imperative"],
+      schreiben: ["informal-invite", "b1-feste", "b1-weather", "b1-neighbour"]
     }
   ]
 });

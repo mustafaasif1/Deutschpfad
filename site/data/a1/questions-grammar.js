@@ -78,9 +78,54 @@ registerPack("a1", {
 { id:"a1qg72", set:"a1-lite-past", type:"mcq", prompt:"du of hatte:", explain:"du hattest.", level:"a1", options:["hattest", "hatte", "hatten"], answer:"hattest" },
 { id:"a1qg73", set:"a1-lite-past", type:"gap", prompt:"Was hast du ___? (machen, Partizip)", explain:"gemacht.", level:"a1", answer:["gemacht"] },
 { id:"a1qg74", set:"a1-lite-past", type:"mcq", prompt:"Gestern ___ ich nichts gemacht.", explain:"Helper haben in position 2: habe.", level:"a1", options:["habe", "bin", "war"], answer:"habe" },
-{ id:"a1qg75", set:"a1-lite-past", type:"mcq", prompt:"She had a fever:", explain:"sie hatte Fieber.", level:"a1", options:["Sie hatte Fieber.", "Sie war Fieber.", "Sie ist Fieber gehabt."], answer:"Sie hatte Fieber." }
+{ id:"a1qg75", set:"a1-lite-past", type:"mcq", prompt:"She had a fever:", explain:"sie hatte Fieber.", level:"a1", options:["Sie hatte Fieber.", "Sie war Fieber.", "Sie ist Fieber gehabt."], answer:"Sie hatte Fieber." },
+
+{ id:"a1qg76", set:"a1-dative", type:"mcq", prompt:"Can you help me? (du)", explain:"helfen takes dative mir, not mich.", level:"a1", options:["Kannst du mir helfen?", "Kannst du mich helfen?", "Kannst du ich helfen?"], answer:"Kannst du mir helfen?" },
+{ id:"a1qg77", set:"a1-dative", type:"mcq", prompt:"This jacket belongs to me:", explain:"gehören + dative.", level:"a1", options:["Die Jacke gehört mir.", "Die Jacke gehört ich.", "Die Jacke gehört mich."], answer:"Die Jacke gehört mir." },
+{ id:"a1qg78", set:"a1-dative", type:"mcq", prompt:"How are you? (formal)", explain:"es geht + Ihnen.", level:"a1", options:["Wie geht es Ihnen?", "Wie geht es Sie?", "Wie gehen Sie es?"], answer:"Wie geht es Ihnen?" },
+{ id:"a1qg79", set:"a1-dative", type:"gap", prompt:"Geben Sie ___ bitte das Formular. (me)", explain:"person is dative: mir.", level:"a1", answer:["mir"] },
+{ id:"a1qg80", set:"a1-dative", type:"mcq", prompt:"by bus", explain:"mit + dem Bus.", level:"a1", options:["mit dem Bus", "mit den Bus", "mit der Bus"], answer:"mit dem Bus" },
+{ id:"a1qg81", set:"a1-dative", type:"mcq", prompt:"to the doctor", explain:"zum = zu dem.", level:"a1", options:["zum Arzt", "nach Arzt", "zu der Arzt"], answer:"zum Arzt" },
+{ id:"a1qg82", set:"a1-dative", type:"tf", prompt:"Kannst du mich helfen is correct A1 German.", explain:"helfen + mir.", level:"a1", answer:false },
+{ id:"a1qg83", set:"a1-dative", type:"mcq", prompt:"It belongs to her (the woman):", explain:"gehören + ihr.", level:"a1", options:["Es gehört ihr.", "Es gehört sie.", "Es gehört ihrn."], answer:"Es gehört ihr." },
+{ id:"a1qg84", set:"a1-dative", type:"mcq", prompt:"I like the flat (gefallen):", explain:"gefallen + dative mir.", level:"a1", options:["Die Wohnung gefällt mir.", "Die Wohnung gefällt ich.", "Ich gefälle die Wohnung."], answer:"Die Wohnung gefällt mir." },
+{ id:"a1qg85", set:"a1-dative", type:"mcq", prompt:"Thank you (formal):", explain:"danken + Ihnen.", level:"a1", options:["Ich danke Ihnen.", "Ich danke Sie.", "Ich danke ihr formal."], answer:"Ich danke Ihnen." },
+{ id:"a1qg86", set:"a1-dative", type:"gap", prompt:"Es geht ___ gut. (I)", explain:"mir.", level:"a1", answer:["mir"] },
+{ id:"a1qg87", set:"a1-dative", type:"mcq", prompt:"to work (with article)", explain:"zur = zu der Arbeit.", level:"a1", options:["zur Arbeit", "nach Arbeit", "zum Arbeit"], answer:"zur Arbeit" },
+
+{ id:"a1qg88", set:"a1-connectors", type:"mcq", prompt:"I stay home because I am ill (A1 denn):", explain:"denn does not move the verb.", level:"a1", options:["Ich bleibe zu Hause, denn ich bin krank.", "Ich bleibe zu Hause, denn ich krank bin.", "Ich bleibe zu Hause denn bin ich krank."], answer:"Ich bleibe zu Hause, denn ich bin krank." },
+{ id:"a1qg89", set:"a1-connectors", type:"mcq", prompt:"Then I go home:", explain:"dann in position 1, verb second.", level:"a1", options:["Dann gehe ich nach Hause.", "Dann ich gehe nach Hause.", "Ich dann gehe nach Hause."], answer:"Dann gehe ich nach Hause." },
+{ id:"a1qg90", set:"a1-connectors", type:"mcq", prompt:"Nice but expensive:", explain:"aber, verb still second.", level:"a1", options:["Sie ist schön, aber sie ist teuer.", "Sie ist schön, aber ist sie teuer.", "Sie ist schön aber teuer sie."], answer:"Sie ist schön, aber sie ist teuer." },
+{ id:"a1qg91", set:"a1-connectors", type:"mcq", prompt:"If you have time (wenn):", explain:"wenn sends the verb last.", level:"a1", options:["Wenn du Zeit hast, …", "Wenn du hast Zeit, …", "Wenn hast du Zeit, …"], answer:"Wenn du Zeit hast, …" },
+{ id:"a1qg92", set:"a1-connectors", type:"tf", prompt:"At A1, denn puts the verb last like weil.", explain:"denn keeps verb second. weil (A2) puts it last.", level:"a1", answer:false },
+{ id:"a1qg93", set:"a1-connectors", type:"mcq", prompt:"Tea or coffee?", explain:"oder for a choice.", level:"a1", options:["Tee oder Kaffee?", "Tee aber Kaffee?", "Tee denn Kaffee?"], answer:"Tee oder Kaffee?" },
+{ id:"a1qg94", set:"a1-connectors", type:"gap", prompt:"Ich lerne. ___ gehe ich nach Hause. (then)", explain:"Dann + verb.", level:"a1", answer:["Dann", "dann"] },
+{ id:"a1qg95", set:"a1-connectors", type:"mcq", prompt:"If it rains, we go to the café:", explain:"wenn + verb last in that clause.", level:"a1", options:["Wenn es regnet, gehen wir ins Café.", "Wenn es regnet wir gehen ins Café.", "Wenn regnet es, wir gehen ins Café."], answer:"Wenn es regnet, gehen wir ins Café." },
+{ id:"a1qg96", set:"a1-connectors", type:"mcq", prompt:"Question word for 'when?' (not if):", explain:"wann = question; wenn = if/when in a clause.", level:"a1", options:["wann", "wenn", "denn"], answer:"wann" },
+
+{ id:"a1qg97", set:"a1-adjectives", type:"mcq", prompt:"The flat is small (after sein):", explain:"No ending after sein.", level:"a1", options:["Die Wohnung ist klein.", "Die Wohnung ist kleines.", "Die Wohnung ist kleine."], answer:"Die Wohnung ist klein." },
+{ id:"a1qg98", set:"a1-adjectives", type:"mcq", prompt:"a large coffee (masculine Nom):", explain:"ein + großer.", level:"a1", options:["ein großer Kaffee", "ein groß Kaffee", "ein großes Kaffee"], answer:"ein großer Kaffee" },
+{ id:"a1qg99", set:"a1-adjectives", type:"mcq", prompt:"too expensive:", explain:"zu + adjective.", level:"a1", options:["zu teuer", "zu viel teuer", "teuer zu"], answer:"zu teuer" },
+{ id:"a1qg100", set:"a1-adjectives", type:"mcq", prompt:"cheaper than:", explain:"-er + als.", level:"a1", options:["billiger als", "billiger wie", "mehr billig als"], answer:"billiger als" },
+{ id:"a1qg101", set:"a1-adjectives", type:"mcq", prompt:"I prefer coffee (likes):", explain:"lieber, not besser, for preference.", level:"a1", options:["Ich trinke lieber Kaffee.", "Ich trinke besser Kaffee.", "Ich besser trinke Kaffee."], answer:"Ich trinke lieber Kaffee." },
+{ id:"a1qg102", set:"a1-adjectives", type:"tf", prompt:"Die Wohnung ist kleines is correct.", explain:"Predicative adjective: no ending.", level:"a1", answer:false },
+{ id:"a1qg103", set:"a1-adjectives", type:"mcq", prompt:"a small flat (feminine):", explain:"eine kleine Wohnung.", level:"a1", options:["eine kleine Wohnung", "eine klein Wohnung", "ein kleines Wohnung"], answer:"eine kleine Wohnung" },
+{ id:"a1qg104", set:"a1-adjectives", type:"mcq", prompt:"good → better:", explain:"gut, besser, am besten.", level:"a1", options:["besser", "güter", "mehr gut"], answer:"besser" },
+{ id:"a1qg105", set:"a1-adjectives", type:"gap", prompt:"Das T-Shirt ist ___ klein. (too)", explain:"zu.", level:"a1", answer:["zu"] },
+{ id:"a1qg106", set:"a1-adjectives", type:"mcq", prompt:"I'd like a large coffee (object):", explain:"einen großen Kaffee.", level:"a1", options:["Ich möchte einen großen Kaffee.", "Ich möchte ein großer Kaffee.", "Ich möchte einen groß Kaffee."], answer:"Ich möchte einen großen Kaffee." },
+
+{ id:"a1qg107", set:"a1-dieser", type:"mcq", prompt:"this man (Nom):", explain:"dieser + masculine.", level:"a1", options:["dieser Mann", "diese Mann", "dieses Mann"], answer:"dieser Mann" },
+{ id:"a1qg108", set:"a1-dieser", type:"mcq", prompt:"I take this coffee (Akk):", explain:"diesen like den.", level:"a1", options:["Ich nehme diesen Kaffee.", "Ich nehme dieser Kaffee.", "Ich nehme dieses Kaffee."], answer:"Ich nehme diesen Kaffee." },
+{ id:"a1qg109", set:"a1-dieser", type:"mcq", prompt:"People in general: ___ spricht hier Deutsch.", explain:"man + er-form.", level:"a1", options:["Man", "Mann", "Leute"], answer:"Man" },
+{ id:"a1qg110", set:"a1-dieser", type:"mcq", prompt:"Would you like something to drink?", explain:"etwas trinken.", level:"a1", options:["Möchten Sie etwas trinken?", "Möchten Sie nichts trinken etwas?", "Möchten Sie man trinken?"], answer:"Möchten Sie etwas trinken?" },
+{ id:"a1qg111", set:"a1-dieser", type:"mcq", prompt:"Which size?", explain:"welche + feminine Größe.", level:"a1", options:["Welche Größe?", "Was Größe?", "Welcher Größe?"], answer:"Welche Größe?" },
+{ id:"a1qg112", set:"a1-dieser", type:"tf", prompt:"Man sind müde is correct.", explain:"man ist — always singular er-form.", level:"a1", answer:false },
+{ id:"a1qg113", set:"a1-dieser", type:"mcq", prompt:"I understand nothing:", explain:"nichts.", level:"a1", options:["Ich verstehe nichts.", "Ich verstehe nicht etwas.", "Ich verstehe man nichts."], answer:"Ich verstehe nichts." },
+{ id:"a1qg114", set:"a1-dieser", type:"mcq", prompt:"Which platform? (neuter Gleis)", explain:"welches Gleis.", level:"a1", options:["Welches Gleis?", "Welcher Gleis?", "Welche Gleis?"], answer:"Welches Gleis?" },
+{ id:"a1qg115", set:"a1-dieser", type:"gap", prompt:"Hier darf ___ nicht rauchen.", explain:"man.", level:"a1", answer:["man"] },
+{ id:"a1qg116", set:"a1-dieser", type:"mcq", prompt:"this woman:", explain:"diese Frau.", level:"a1", options:["diese Frau", "dieser Frau", "dieses Frau"], answer:"diese Frau" }
   ],
   drills: [
-    { id:"a1-new-grammar", title:"A1 new grammar mix", blurb:"Separable, imperative, possessives, plurals, war/hatte.", sets:["a1-separable","a1-imperative","a1-possessives","a1-plurals","a1-lite-past"] }
+    { id:"a1-new-grammar", title:"A1 new grammar mix", blurb:"Separable, imperative, possessives, plurals, war/hatte, dative, connectors, adjectives.", sets:["a1-separable","a1-imperative","a1-possessives","a1-plurals","a1-lite-past","a1-dative","a1-connectors","a1-adjectives","a1-dieser"] }
   ]
 });

@@ -2,7 +2,7 @@ registerPack("a2", {
   examFormat: {
     name: "telc Deutsch A2 / Start Deutsch 2",
     notThisExam: "Classic adult A2 — not the scaled telc A2·B1 DTZ (that exam has a different Lesen/Hoeren-und-Schreiben booklet). Not Goethe-only branding; Start Deutsch 2 was jointly developed.",
-    officialUrl: "https://www.telc.net/sprachpruefungen/deutsch/start-deutsch-2-telc-deutsch-a2/",
+    officialUrl: "https://www.telc.net/sprachpruefungen/zertifikatspruefung/deutsch/start-deutsch-2-/-telc-deutsch-a2/",
     passRule: "Total 60 points (Hoeren 15, Lesen 15, Schreiben 15, Sprechen 15). Pass is typically 60 percent overall (36/60). Confirm at your centre whether they also require a pass in each half. Aim 80 percent in this gym so exam day feels slow.",
     points: { hoeren: 15, lesen: 15, schreiben: 15, sprechen: 15, total: 60, passPercent: 60, passRaw: 36 },
     written: [
@@ -118,11 +118,12 @@ registerPack("a2", {
         "Brief an den Vermieter (Sie)",
         "Umzug"
       ],
-      explain: "<p>A2 housing is description plus one problem. You are not writing a B1 four-point complaint, but the same words start here.</p><h3>Describe the flat</h3><p><span class=\"de\">Ich wohne in einer Dreizimmerwohnung im dritten Stock. Die Miete ist 650 Euro inklusive Nebenkosten. Die Lage ist gut, nah an der Bahn. Die Wohnung ist hell, aber klein.</span></p><h3>Read an ad</h3><p>Scan: price, rooms, from when, who (student, quiet, no pets). Synonyms: <span class=\"de\">ruhig ≈ wenig Lärm, zentral ≈ in der Stadt, Warmmiete ≈ inklusive Nebenkosten</span>.</p><h3>The problem message</h3><p>Four lines: greeting, problem + since when, what you want, closing. <span class=\"de\">Sehr geehrte Frau Lang, die Heizung funktioniert seit Montag nicht. Könnten Sie bitte einen Techniker schicken? Ich bin nach 17 Uhr zu Hause. Mit freundlichen Grüßen</span> One polite <span class=\"de\">Könnten Sie bitte</span> is enough A2 politeness.</p><ul><li>seit + time is the exam fact: since Monday, not just kaputt.</li><li>Stay at 60–80 words. Do not invent legal German.</li></ul>",
+      explain: "<p>A2 housing is description plus one problem. You are not writing a B1 four-point complaint, but the same words start here.</p><h3>Describe the flat</h3><p><span class=\"de\">Ich wohne in einer Dreizimmerwohnung im dritten Stock. Die Miete ist 650 Euro inklusive Nebenkosten. Die Lage ist gut, nah an der Bahn. Die Wohnung ist hell, aber klein.</span> Floor trap: <span class=\"de\">Erdgeschoss</span> is the ground floor (US first). <span class=\"de\">dritter Stock</span> is not 13 — Hören loves that swap.</p><h3>Read an ad</h3><p>Scan: price, rooms, from when, who (student, quiet, no pets). Synonyms: <span class=\"de\">ruhig ≈ wenig Lärm, zentral ≈ in der Stadt, Warmmiete ≈ inklusive Nebenkosten</span>.</p><h3>The problem message</h3><p>Four lines: greeting, problem + since when, what you want, closing. <span class=\"de\">Sehr geehrte Frau Lang, die Heizung funktioniert seit Montag nicht. Könnten Sie bitte einen Techniker schicken? Ich bin nach 17 Uhr zu Hause. Mit freundlichen Grüßen</span> One polite <span class=\"de\">Könnten Sie bitte</span> is enough A2 politeness.</p><ul><li>seit + time is the exam fact: since Monday, not just kaputt.</li><li>Stay at 60–80 words. Do not invent legal German.</li></ul>",
       traps: [
         "Writing 120 B1 words and missing since when.",
         "du to the landlord.",
         "Reading inkl. Nebenkosten as extra costs on top.",
+        "Hearing dritter Stock as 13, or mixing US and German floor numbers.",
         "Describing every piece of furniture instead of rooms + rent + problem."
       ],
       youMust: [
@@ -250,7 +251,7 @@ registerPack("a2", {
         "gesund / ungesund mit weil",
         "Einladung zum Essen"
       ],
-      explain: "<p>A2 food adds reasons and a polite complaint. A1 was <span class=\"de\">ich möchte einen Kaffee</span>. A2 is <span class=\"de\">ich esse kein Fleisch, weil ich Vegetarier bin</span> and <span class=\"de\">die Suppe ist kalt</span>.</p><h3>Reserve and order</h3><p><span class=\"de\">Ich möchte einen Tisch für zwei Personen um 19 Uhr reservieren. Auf den Namen … Haben Sie einen Tisch am Fenster? Ich nehme die Suppe und den Salat.</span></p><h3>When something is wrong</h3><p>Stay polite: <span class=\"de\">Entschuldigung, die Suppe ist kalt. Könnten Sie sie bitte noch einmal warm machen? Danke.</span> That is enough. No B1 lawyer letter to the restaurant chain.</p><h3>Opinions</h3><p><span class=\"de\">Ich koche oft selbst, weil es billiger und gesünder ist. Im Restaurant esse ich gern, aber es ist teuer. Fast Food ist schnell, allerdings nicht gut für die Gesundheit.</span> One <span class=\"de\">weil</span> and one <span class=\"de\">aber / allerdings</span> is the A2 target.</p><ul><li>Allergies: <span class=\"de\">Ich vertrage kein … / Ich habe eine Allergie gegen …</span></li><li>Adjective endings appear on menus: <span class=\"de\">einen großen Salat, eine kleine Cola</span>.</li></ul>",
+      explain: "<p>A2 food adds reasons and a polite complaint. A1 was <span class=\"de\">ich möchte einen Kaffee</span>. A2 is <span class=\"de\">ich esse kein Fleisch, weil ich Vegetarier / Vegetarierin bin</span> and <span class=\"de\">die Suppe ist kalt</span>.</p><h3>Reserve and order</h3><p><span class=\"de\">Ich möchte einen Tisch für zwei Personen um 19 Uhr reservieren. Auf den Namen … Haben Sie einen Tisch am Fenster? Ich nehme die Suppe und den Salat.</span></p><h3>When something is wrong</h3><p>Stay polite: <span class=\"de\">Entschuldigung, die Suppe ist kalt. Könnten Sie sie bitte noch einmal warm machen? Danke.</span> That is enough. No B1 lawyer letter to the restaurant chain.</p><h3>Opinions</h3><p><span class=\"de\">Ich koche oft selbst, weil es billiger und gesünder ist. Im Restaurant esse ich gern, aber es ist teuer. Fast Food ist schnell, allerdings nicht gut für die Gesundheit.</span> One <span class=\"de\">weil</span> and one <span class=\"de\">aber / allerdings</span> is the A2 target.</p><ul><li>Allergies: <span class=\"de\">Ich vertrage kein … / Ich habe eine Allergie gegen …</span></li><li>Adjective endings appear on menus: <span class=\"de\">einen großen Salat, eine kleine Cola</span>.</li></ul>",
       traps: [
         "Ordering without a number of people or a time when reserving.",
         "A rude complaint (Das ist scheiße) — the exam wants polite A2.",
@@ -268,7 +269,7 @@ registerPack("a2", {
       chunks: [
         { de: "Ich möchte einen Tisch für zwei Personen um 19 Uhr reservieren.", en: "I would like to book a table for two at 7 p.m." },
         { de: "Das Essen schmeckt gut, aber die Suppe ist kalt.", en: "The food tastes good, but the soup is cold." },
-        { de: "Ich esse kein Fleisch, weil ich Vegetarier bin.", en: "I do not eat meat because I am vegetarian." },
+        { de: "Ich esse kein Fleisch, weil ich Vegetarier / Vegetarierin bin.", en: "I do not eat meat because I am vegetarian." },
         { de: "Könnten Sie die Suppe bitte noch einmal warm machen?", en: "Could you please heat the soup again?" },
         { de: "Ich koche oft selbst, weil es billiger ist.", en: "I often cook myself because it is cheaper." },
         { de: "Haben Sie etwas ohne Milch? Ich habe eine Allergie.", en: "Do you have something without milk? I have an allergy." },
@@ -381,7 +382,7 @@ registerPack("a2", {
         "Kind ist krank",
         "Nachricht an Kurs oder Arbeit"
       ],
-      explain: "<p>A2 health adds <span class=\"de\">seit wann</span>, a cancel message, and a tiny opinion about healthy living. Still not a B1 insurance letter.</p><h3>At the doctor</h3><p><span class=\"de\">Ich habe Fieber und Husten seit zwei Tagen. Kann ich bitte einen Termin heute Nachmittag bekommen? Brauche ich eine Krankschreibung?</span> Listen for the time they give you — that is the Hoeren item.</p><h3>Pharmacy</h3><p><span class=\"de\">Ich brauche ein Medikament gegen Kopfschmerzen. Ist das rezeptfrei? Wie oft soll ich das nehmen?</span></p><h3>Cancel in writing</h3><p><span class=\"de\">Liebe Sara, ich bin krank und kann am Freitag nicht kommen. Geht es dir gut, wenn wir uns nächste Woche treffen? Gute Besserung auch an dich, falls du etwas brauchst. Liebe Grüße</span> Or Sie to the course: reason + what you need + number.</p><h3>Opinion</h3><p><span class=\"de\">Ich finde Sport wichtig, weil ich dann besser schlafe. Allerdings habe ich unter der Woche wenig Zeit.</span></p><ul><li>Recognition only: <span class=\"de\">Krankenkasse, Überweisung, Rezept</span>.</li><li>Do not invent diagnoses.</li></ul>",
+      explain: "<p>A2 health adds <span class=\"de\">seit wann</span>, a cancel message, and a tiny opinion about healthy living. Still not a B1 insurance letter.</p><h3>At the doctor</h3><p><span class=\"de\">Ich habe seit zwei Tagen Fieber und Husten. Kann ich bitte einen Termin heute Nachmittag bekommen? Brauche ich eine Krankschreibung?</span> Listen for the time they give you — that is the Hoeren item.</p><h3>Pharmacy</h3><p><span class=\"de\">Ich brauche ein Medikament gegen Kopfschmerzen. Ist das rezeptfrei? Wie oft soll ich das nehmen?</span></p><h3>Cancel in writing</h3><p><span class=\"de\">Liebe Sara, ich bin krank und kann am Freitag nicht kommen. Geht es dir gut, wenn wir uns nächste Woche treffen? Gute Besserung auch an dich, falls du etwas brauchst. Liebe Grüße</span> Or Sie to the course: reason + what you need + number.</p><h3>Opinion</h3><p><span class=\"de\">Ich finde Sport wichtig, weil ich dann besser schlafe. Allerdings habe ich unter der Woche wenig Zeit.</span></p><ul><li>Recognition only: <span class=\"de\">Krankenkasse, Überweisung, Rezept</span>.</li><li>Do not invent diagnoses.</li></ul>",
       traps: [
         "Missing since when — examiners listen for seit.",
         "A medical lecture. Name two symptoms and stop.",
@@ -397,7 +398,7 @@ registerPack("a2", {
         "Recognise Krankenkasse and Rezept."
       ],
       chunks: [
-        { de: "Ich habe Fieber und Husten seit zwei Tagen.", en: "I have had a fever and a cough for two days." },
+        { de: "Ich habe seit zwei Tagen Fieber und Husten.", en: "I have had a fever and a cough for two days." },
         { de: "Kann ich bitte einen Termin heute Nachmittag bekommen?", en: "Can I please get an appointment this afternoon?" },
         { de: "Ich brauche ein Medikament gegen Kopfschmerzen.", en: "I need medicine for a headache." },
         { de: "Brauche ich eine Krankschreibung für die Arbeit?", en: "Do I need a sick note for work?" },
@@ -642,7 +643,7 @@ registerPack("a2", {
         "falsche Nachrichten (recognition)",
         "Termin aendern wegen Wetter"
       ],
-      explain: "<p>A2 media is the phone in your pocket and the weather in your plan. It is not a B1 privacy essay.</p><h3>Phone</h3><p><span class=\"de\">Ich schaue Nachrichten auf dem Handy. Ich telefoniere mit meiner Familie, weil sie weit weg wohnt. Das Handy ist praktisch, aber ich brauche Pausen.</span></p><h3>Weather and plans</h3><p><span class=\"de\">Wenn es regnet, gehen wir ins Museum. Nimm einen Schirm mit. Morgen soll es warm sein, deshalb treffen wir uns im Park.</span> <span class=\"de\">wenn</span> + verb last is the grammar you show.</p><h3>News at A2</h3><p>You can say you read headlines, you do not understand everything, you prefer short videos. Do not analyse politics. A Lesen text might be four lines about a festival or a storm — hunt the time and the place.</p><ul><li>Change-of-plan messages are exam gold: weather + new place + time.</li><li>Stay personal: your habits, not society.</li></ul>",
+      explain: "<p>A2 media is the phone in your pocket and the weather in your plan. It is not a B1 privacy essay.</p><h3>Phone</h3><p><span class=\"de\">Ich schaue Nachrichten auf dem Handy. Ich telefoniere mit meiner Familie, weil sie weit weg wohnt. Das Handy ist praktisch, aber ich brauche Pausen.</span> Distinguish: <span class=\"de\">das Handy</span> (phone), <span class=\"de\">der Computer</span>, <span class=\"de\">das Fernsehen</span>. Hören often asks which one they use, not a speech about the internet.</p><h3>Weather and plans</h3><p><span class=\"de\">Wenn es regnet, gehen wir ins Museum. Nimm einen Schirm mit. Morgen soll es warm sein, deshalb treffen wir uns im Park.</span> <span class=\"de\">wenn</span> + verb last is the grammar you show. Change-of-plan SMS: <span class=\"de\">Hallo, es regnet. Treffen wir uns um 15 Uhr im Café statt im Park? Bis gleich</span> — new place + time.</p><h3>News at A2</h3><p>You can say you read headlines, you do not understand everything, you prefer short videos. Do not analyse politics. A Lesen text might be four lines about a festival or a storm — hunt the time and the place, not every noun.</p><ul><li>Change-of-plan messages are exam gold: weather + new place + time.</li><li>Stay personal: your habits, not society.</li></ul>",
       traps: [
         "A sociology talk about social media. One habit + one aber is enough.",
         "Forgetting Plan B when the card shows rain.",
@@ -737,8 +738,140 @@ registerPack("a2", {
         { de: "Anrede, alle Punkte, Gruß — dann ist der Brief fertig.", en: "Opening, all points, closing — then the letter is done." }
       ],
       vocab: ["connectors"],
-      grammar: ["a2-letters"],
-      schreiben: ["a2-invite", "a2-course", "a2-problem", "a2-bank", "a2-landlord"]
+      grammar: ["a2-letters", "a2-umzu", "a2-k2"],
+      schreiben: ["a2-invite", "a2-course", "a2-problem", "a2-bank", "a2-landlord", "a2-termin", "a2-birthday"]
+    },
+    {
+      id: "shopping",
+      title: "Shopping and returns",
+      titleDe: "Einkaufen und Umtausch",
+      weight: "exam-core",
+      official: true,
+      blurb: "A1 shop talk plus A2: wrong size, online order, Öffnungszeiten, a short Sie-complaint. Official inventory: Einkaufen.",
+      exam: "Schreiben wrong delivery. Lesen ads and hours. Hoeren: closed / only until 12. Sprechen: too expensive vs quality.",
+      canDo: [
+        "I can buy clothes with size, colour, and zu klein / zu teuer.",
+        "I can understand Öffnungszeiten, Sonderangebot, and nur bar.",
+        "I can write a 60-word Sie-message: order number, problem, wish, how to return.",
+        "I can change a purchase plan with weil and deshalb.",
+        "I can compare two shops with billiger / besser / allerdings.",
+        "I can ask for an exchange or a refund in polite German."
+      ],
+      examHow: [
+        "Schreiben: online order, wrong size, missing part — a2-shop in the gym.",
+        "Lesen: ads with price, hours, delivery, who it is for.",
+        "Hoeren: the shop is closed Monday / open only until 12.",
+        "Sprechen Teil 2: Online einkaufen, Markt vs Supermarkt.",
+        "Teil 3: who buys the gift, where, budget."
+      ],
+      subtopics: [
+        "Groesse, Farbe, zu klein / zu gross",
+        "Oeffnungszeiten und Feiertag",
+        "Online bestellen: Bestellnummer",
+        "Umtausch und Geld zurueck",
+        "Kasse, Karte, Rechnung",
+        "Markt vs Supermarkt vs Internet",
+        "Garantie at word level",
+        "Hoeefliche Beschwerde: Koennten Sie"
+      ],
+      explain: "<p>A1 Einkaufen was size and till. A2 Einkaufen is a short complaint you can write. The gym already has the letter <em>wrong delivery</em> — this topic is the production course for it.</p><h3>In the shop</h3><p><span class=\"de\">Ich brauche Größe 40 in Schwarz. Das ist zu klein. Haben Sie das in einer anderen Größe? Die rote ist schöner, aber sie ist teurer. Ich zahle mit Karte.</span></p><h3>Hours and ads</h3><p>Hunt: <span class=\"de\">Mo–Fr 9–18, Sa bis 14 Uhr, sonntags geschlossen, Feiertag, Abholung, Lieferung, nur mit Termin</span>. Hören loves “not today — tomorrow” and “only until twelve”.</p><h3>The return note (60–80 words)</h3><p><span class=\"de\">Sehr geehrte Damen und Herren, ich habe am 3. Mai Schuhe bestellt, Bestellnummer 5521. Die Schuhe sind eine Nummer zu klein. Ich möchte umtauschen. Könnten Sie mir bitte sagen, wie ich die Ware zurückschicke? Meine Nummer ist … Mit freundlichen Grüßen</span> Facts: number, fault, wish, contact. One <span class=\"de\">Könnten Sie</span>.</p><h3>Opinion</h3><p><span class=\"de\">Online ist praktisch, weil ich abends bestellen kann. Allerdings sehe ich die Qualität nicht. Deshalb kaufe ich Kleidung lieber im Geschäft, wenn ich Zeit habe.</span></p><ul><li>Invent a Bestellnummer if the task does not give one.</li><li>Stay A2: not a B1 lawyer letter about Gewährleistung.</li></ul>",
+      traps: [
+        "A return letter with no order number and no wish (exchange vs refund).",
+        "du to the online shop.",
+        "Matching an ad on the word Shop instead of the hours or the price.",
+        "Writing only keywords: zu klein. Umtausch. instead of sentences."
+      ],
+      youMust: [
+        "Ask for size, colour, and another size.",
+        "Read opening hours including Sunday closed.",
+        "Write: Bestellnummer + problem + Umtausch or Geld zurueck + how to send it back.",
+        "Use Koennten Sie bitte in the Sie-letter.",
+        "Compare online vs shop with weil and allerdings.",
+        "In Teil 3: agree who buys the gift and the budget."
+      ],
+      chunks: [
+        { de: "Die Schuhe sind eine Nummer zu klein.", en: "The shoes are one size too small." },
+        { de: "Ich möchte den Artikel umtauschen oder das Geld zurück.", en: "I would like to exchange the item or get a refund." },
+        { de: "Könnten Sie mir bitte sagen, wie ich die Ware zurückschicke?", en: "Could you please tell me how I send the goods back?" },
+        { de: "Die Bestellnummer ist 5521.", en: "The order number is 5521." },
+        { de: "Haben Sie das in einer anderen Größe / in Schwarz?", en: "Do you have that in another size / in black?" },
+        { de: "Wann haben Sie auf? Sonntags sind Sie geschlossen.", en: "When are you open? You are closed on Sundays." },
+        { de: "Online ist praktisch, allerdings sehe ich die Qualität nicht.", en: "Online is practical; however I do not see the quality." },
+        { de: "Im Markt ist das Obst frischer als im Supermarkt.", en: "At the market the fruit is fresher than in the supermarket." },
+        { de: "Ich zahle mit Karte. Kann ich die Rechnung bekommen?", en: "I pay by card. Can I have the receipt?" },
+        { de: "Das Angebot gilt nur bis Freitag.", en: "The offer is only valid until Friday." },
+        { de: "Leider haben wir das nicht mehr auf Lager.", en: "Unfortunately we do not have that in stock any more." },
+        { de: "Was kostet die Lieferung, und wann kommt das Paket?", en: "What does delivery cost, and when does the parcel come?" }
+      ],
+      vocab: ["food", "shopping"],
+      grammar: ["a2-comparative", "a2-adjectives", "a2-k2", "a2-letters"],
+      schreiben: ["a2-shop", "a2-problem", "a2-hours", "a2-parcel"]
+    },
+    {
+      id: "feste",
+      title: "Celebrations and invitations",
+      titleDe: "Feste und Einladungen",
+      weight: "high",
+      official: true,
+      blurb: "Geburtstag, Hochzeit, Feiertag — invite, accept, decline with weil, and a rain Plan B. Official inventory: Feste.",
+      exam: "Informal 60–80 word invite or thanks. Sprechen Teil 3: party. Hören: Saturday not Sunday.",
+      canDo: [
+        "I can invite someone with day, time, place, and what to bring.",
+        "I can accept or decline with a weil-reason and suggest another time.",
+        "I can thank someone after a party in Perfekt.",
+        "I can plan a small celebration in Teil 3 and actually agree.",
+        "I can name one German holiday at word level (Weihnachten, Ostern, Silvester).",
+        "I can change the plan when it rains."
+      ],
+      examHow: [
+        "Schreiben: a2-invite / a2-birthday / a2-thanks — all bullets, du.",
+        "Sprechen Teil 2: Feste in meiner Familie.",
+        "Teil 3: Geburtstagsbrunch — Tag, Ort, Geschenk, Plan B.",
+        "Lesen: party notice with time and RSVP.",
+        "Hoeren: the party is postponed, not cancelled."
+      ],
+      subtopics: [
+        "Geburtstag und Alter",
+        "Einladung, Zusage, Absage mit weil",
+        "Was bringe ich mit?",
+        "Hochzeit / Familienfeier at word level",
+        "Weihnachten, Ostern, Silvester",
+        "Danke nach der Feier (Perfekt)",
+        "Regenplan: Cafe statt Park",
+        "Budget for a gift"
+      ],
+      explain: "<p>A2 Feste is still not culture studies. It is a connected invite: reason, alternative time, what you bring. A1 wrote 30 words. A2 writes 60–80 with <span class=\"de\">weil</span> and one Perfekt.</p><h3>Invite</h3><p><span class=\"de\">Liebe Nora, am Samstag habe ich Geburtstag. Die Feier ist um 18 Uhr bei mir. Hast du Lust zu kommen? Du kannst gern einen Salat mitbringen. Wenn es regnet, treffen wir uns im Café Sonne. Schreib mir bitte bis Freitag.</span></p><h3>Yes / no</h3><p><span class=\"de\">Danke für die Einladung. Leider kann ich um 15 Uhr nicht, weil ich bis 18 Uhr arbeite. Ab 19 Uhr komme ich gerne. Soll ich einen Kuchen mitbringen?</span> That is the A2 mark: decline + reason + new time + question.</p><h3>After the party</h3><p><span class=\"de\">Gestern war die Feier wirklich schön. Ich habe mich sehr gefreut. Vielen Dank für das Geschenk.</span> Perfekt + feeling. Do not write a B1 essay about Traditionen.</p><ul><li>Always: Tag, Uhrzeit, Ort, mitbringen, Antwort.</li><li>One German holiday name is enough: <span class=\"de\">Weihnachten / Silvester / Ostern</span>.</li></ul>",
+      traps: [
+        "Invite with no time or no place.",
+        "Decline with no weil.",
+        "Sie to a close friend.",
+        "Planning three open options in Teil 3 and never deciding."
+      ],
+      youMust: [
+        "Write a 60–80 word invite with day, time, place, bring, question.",
+        "Decline with weil and offer another time.",
+        "Thank someone after a party in Perfekt.",
+        "In Teil 3: agree Tag, Ort, Geschenk, Plan B.",
+        "Say one holiday name.",
+        "Change park to café when it rains."
+      ],
+      chunks: [
+        { de: "Am Samstag habe ich Geburtstag. Die Feier ist um 18 Uhr bei mir.", en: "Saturday is my birthday. The party is at 6 p.m. at my place." },
+        { de: "Hast du Lust zu kommen? Bring bitte einen Salat mit.", en: "Do you feel like coming? Please bring a salad." },
+        { de: "Leider kann ich nicht, weil ich arbeiten muss. Wäre Sonntag möglich?", en: "Unfortunately I cannot because I have to work. Would Sunday be possible?" },
+        { de: "Danke für die Einladung. Ich komme gerne.", en: "Thanks for the invitation. I will gladly come." },
+        { de: "Gestern war die Feier schön. Ich habe mich sehr gefreut.", en: "Yesterday the party was nice. I was really pleased." },
+        { de: "Wenn es regnet, treffen wir uns im Café.", en: "If it rains, we meet in the café." },
+        { de: "Herzlichen Glückwunsch! Alles Gute zum Geburtstag!", en: "Congratulations! Happy birthday!" },
+        { de: "Wir feiern Weihnachten / Silvester in der Familie.", en: "We celebrate Christmas / New Year’s Eve with the family." },
+        { de: "Was sollen wir schenken? Maximal 15 Euro.", en: "What should we give? Maximum 15 euros." },
+        { de: "Schreib mir bitte bis Freitag, ob du kommst.", en: "Please write by Friday whether you are coming." },
+        { de: "Die Hochzeit ist am 12. Juni in der Stadt.", en: "The wedding is on 12 June in town." },
+        { de: "Also, dann sind wir uns einig: Samstag 18 Uhr bei dir.", en: "So then we agree: Saturday 6 p.m. at yours." }
+      ],
+      vocab: ["people", "daily"],
+      grammar: ["a2-connectors", "a2-perfekt", "a2-k2", "a2-letters"],
+      schreiben: ["a2-invite", "a2-birthday", "a2-thanks"]
     }
   ]
 });

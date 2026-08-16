@@ -2179,6 +2179,305 @@ registerPack("a1", {
         <li>Correct: Ich habe gegangen / Ich bin gegessen / Gestern ich hatte Zeit.</li>
       </ol>
     `,
+  },
+  {
+    id: "a1-dative",
+    title: "Dative: to whom / for whom (mir, helfen)",
+    level: "a1",
+    minutes: 55,
+    html: `
+      <p>The official Start Deutsch 1 / telc A1 grammar inventory already includes dative — not a full A2 case lecture, but the chunks you cannot survive without: <span class="de">mir / dir / Ihnen</span>, <span class="de">helfen, danken, gehören, geben</span>, and <span class="de">mit dem Bus / zum Arzt</span>. Hören and Sprechen use these every sitting. If you only own accusative <span class="de">einen</span>, you will say <em>Kannst du mich helfen?</em> and lose the request.</p>
+      <p>Ask <span class="de">wem?</span> — to whom / for whom. Learn the table, then lock the verb list. Do not wait for A2 to start this.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Find the person who receives help, thanks, a gift, or ownership. That person is dative, not accusative.</li>
+        <li>If the verb is <span class="de">helfen, danken, gehören, gefallen, antworten</span>, the person is always dative: <span class="de">Ich helfe dir. Das Buch gehört mir.</span></li>
+        <li>If the verb is <span class="de">geben, schicken, bringen, zeigen, sagen</span>, you usually have two objects: dative person + accusative thing. <span class="de">Ich gebe dem Mann den Schlüssel.</span></li>
+        <li>After <span class="de">mit, zu, von, bei, nach, aus</span> the next article is dative. You already use the chunks: <span class="de">mit dem Bus, zum Arzt, bei mir.</span></li>
+        <li>Replace the person with a pronoun only after you know the case: ich → <span class="de">mir</span>, du → <span class="de">dir</span>, Sie → <span class="de">Ihnen</span>.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <table>
+        <tr><th>English</th><th>German at A1</th></tr>
+        <tr><td>Can you help me? (me looks like the object)</td><td><span class="de">Kannst du mir helfen?</span> — helfen takes dative, not mich</td></tr>
+        <tr><td>This is for me / this belongs to me</td><td>für + Akk <span class="de">für mich</span> vs gehören + Dat <span class="de">Das gehört mir</span></td></tr>
+        <tr><td>Give him the key (him + key look the same)</td><td>Person dative, thing accusative: <span class="de">Gib ihm den Schlüssel</span></td></tr>
+        <tr><td>How are you? I am fine</td><td><span class="de">Wie geht es Ihnen? Es geht mir gut.</span> — dative, not ich</td></tr>
+      </table>
+      <h3>Pronouns you must own</h3>
+      <table>
+        <tr><th>Nominative</th><th>Accusative (wen?)</th><th>Dative (wem?)</th></tr>
+        <tr><td><span class="de">ich</span></td><td><span class="de">mich</span></td><td><span class="de">mir</span></td></tr>
+        <tr><td><span class="de">du</span></td><td><span class="de">dich</span></td><td><span class="de">dir</span></td></tr>
+        <tr><td><span class="de">er</span></td><td><span class="de">ihn</span></td><td><span class="de">ihm</span></td></tr>
+        <tr><td><span class="de">sie</span> (she)</td><td><span class="de">sie</span></td><td><span class="de">ihr</span></td></tr>
+        <tr><td><span class="de">es</span></td><td><span class="de">es</span></td><td><span class="de">ihm</span></td></tr>
+        <tr><td><span class="de">wir</span></td><td><span class="de">uns</span></td><td><span class="de">uns</span></td></tr>
+        <tr><td><span class="de">ihr</span></td><td><span class="de">euch</span></td><td><span class="de">euch</span></td></tr>
+        <tr><td><span class="de">sie / Sie</span></td><td><span class="de">sie / Sie</span></td><td><span class="de">ihnen / Ihnen</span></td></tr>
+      </table>
+      <p>Formal you is capital <span class="de">Ihnen</span>. <span class="de">Wie geht es Ihnen?</span> is the examiner/shop chunk.</p>
+      <h3>Articles — only a first map</h3>
+      <table>
+        <tr><th></th><th>M</th><th>F</th><th>N</th><th>Pl</th></tr>
+        <tr><td>the (Dat)</td><td><span class="de">dem</span></td><td><span class="de">der</span></td><td><span class="de">dem</span></td><td><span class="de">den</span> (+n on the noun)</td></tr>
+        <tr><td>a (Dat)</td><td><span class="de">einem</span></td><td><span class="de">einer</span></td><td><span class="de">einem</span></td><td>—</td></tr>
+      </table>
+      <p>Contractions: <span class="de">zum = zu dem, zur = zu der, am = an dem, im = in dem</span>. Memorise <span class="de">zum Arzt, zur Arbeit, zur Schule, mit dem Bus, mit der Bahn, bei mir</span> as wholes.</p>
+      <h3>A1 dative verbs</h3>
+      <table>
+        <tr><th>Verb</th><th>Chunk</th></tr>
+        <tr><td><span class="de">helfen</span></td><td><span class="de">Kannst du mir helfen? Können Sie mir bitte helfen?</span></td></tr>
+        <tr><td><span class="de">danken</span></td><td><span class="de">Ich danke Ihnen. Danke dir.</span></td></tr>
+        <tr><td><span class="de">gehören</span></td><td><span class="de">Wem gehört die Jacke? — Sie gehört mir.</span></td></tr>
+        <tr><td><span class="de">gefallen</span></td><td><span class="de">Das gefällt mir. Die Wohnung gefällt uns.</span></td></tr>
+        <tr><td><span class="de">geben / schicken</span></td><td><span class="de">Geben Sie mir bitte das Formular. Ich schicke Ihnen die Nummer.</span></td></tr>
+      </table>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Kannst du mir bitte helfen?</span> — Can you please help me? Why: helfen + mir, not mich.</li>
+        <li><span class="de">Das Handy gehört ihm, nicht ihr.</span> — The phone belongs to him, not her. Why: gehören + dative; ihm vs ihr.</li>
+        <li><span class="de">Ich fahre mit dem Bus zum Arzt.</span> — I go to the doctor by bus. Why: mit + dem; zum = zu dem.</li>
+        <li><span class="de">Wie geht es Ihnen? — Danke, mir geht es gut.</span> — How are you? Fine. Why: es geht + dative.</li>
+        <li><span class="de">Geben Sie mir bitte einen Kaffee.</span> — Please give me a coffee. Why: mir dative, einen Kaffee accusative.</li>
+        <li><span class="de">Die Tasche gehört der Frau.</span> — The bag belongs to the woman. Why: feminine dative article is der, not die.</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Typical A1 mistake</th><th>Correct</th></tr>
+        <tr><td><em>Kannst du mich helfen?</em></td><td><span class="de">Kannst du mir helfen?</span></td></tr>
+        <tr><td><em>Das gehört ich</em></td><td><span class="de">Das gehört mir</span></td></tr>
+        <tr><td><em>mit den Bus / zu der Arzt</em></td><td><span class="de">mit dem Bus / zum Arzt</span></td></tr>
+        <tr><td><em>Wie geht es Sie?</em></td><td><span class="de">Wie geht es Ihnen?</span></td></tr>
+        <tr><td><em>Gib mich das Formular</em></td><td><span class="de">Gib mir das Formular</span></td></tr>
+      </table>
+      <h3>Mini dialogue</h3>
+      <p>At the Bürgeramt window.</p>
+      <p><strong>Clerk:</strong> <span class="de">Kann ich Ihnen helfen?</span></p>
+      <p><strong>You:</strong> <span class="de">Ja bitte. Können Sie mir das Formular geben?</span></p>
+      <p><strong>Clerk:</strong> <span class="de">Natürlich. Wem gehört dieser Ausweis — Ihnen?</span></p>
+      <p><strong>You:</strong> <span class="de">Ja, er gehört mir. Danke, das hilft mir sehr.</span></p>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Kannst du mir helfen? Können Sie mir bitte helfen? Das gehört mir / dir / Ihnen. Wie geht es Ihnen? Es geht mir gut. Geben Sie mir bitte … Ich danke Ihnen. mit dem Bus / mit der Bahn / zum Arzt / zur Arbeit / bei mir. Das gefällt mir.</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        Hören: <span class="de">mir / mich</span> is a one-letter trap in a request. Sprechen Teil 3 pictures: you ask for help with <span class="de">mir</span>. Schreiben: a 30-word note can use <span class="de">Kannst du mir … schicken?</span> Feminine dative <span class="de">der Frau</span> looks like masculine nominative — check the verb. Do not build a full four-case essay; own the chunks and the five verbs.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Say the dative pronoun table aloud, both directions.</li>
+        <li>Ask for help three ways: du, ihr, Sie.</li>
+        <li>Say who a jacket, a form, and a key belong to.</li>
+        <li>Give someone a coffee / a form (person + thing).</li>
+        <li>Correct: Kannst du mich helfen? / Das gehört ich / mit den Bus.</li>
+        <li>Role-play Wie geht es Ihnen? and answer with mir.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a1-connectors",
+    title: "und / oder / aber / denn / dann / wenn",
+    level: "a1",
+    minutes: 48,
+    html: `
+      <p>Official A1 syntax includes sentence links: <span class="de">und, oder, aber, denn, dann</span> and a first <span class="de">wenn</span>. The 30-word message dies if every sentence is a list. One <span class="de">aber</span> or <span class="de">denn</span> already looks like Start Deutsch 1, not a word list.</p>
+      <p>At A1 the verb does <strong>not</strong> jump to the end after these coordinating words. That jump starts in earnest at A2 with <span class="de">weil</span>. Here you keep verb-second in the second mini-sentence.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Write sentence one as normal: subject or time, then verb.</li>
+        <li>Pick the link: extra fact <span class="de">und</span>, choice <span class="de">oder</span>, contrast <span class="de">aber</span>, reason <span class="de">denn</span>, next step <span class="de">dann</span>.</li>
+        <li>After <span class="de">und / oder / aber / denn</span> start a new mini-sentence: verb still second. <span class="de">Ich komme, denn ich habe Zeit.</span></li>
+        <li><span class="de">dann</span> often takes position 1: <span class="de">Ich lerne. Dann gehe ich nach Hause.</span></li>
+        <li>A1 <span class="de">wenn</span> is a chunk for “if / when” in plans: <span class="de">Wenn du Zeit hast, ruf mich an.</span> The verb in the wenn-clause goes last — this is the one exception to learn now, because invitations use it.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “because” does not move the verb. German A1 <span class="de">denn</span> also does not: <span class="de">Ich bleibe zu Hause, denn ich bin krank.</span> A2 <span class="de">weil</span> will move it. English “then” can sit anywhere; German <span class="de">dann</span> in position 1 kicks the subject behind the verb: <span class="de">Dann gehe ich</span>, not <em>dann ich gehe</em>. English “if you have time, call me” keeps “call” early; German <span class="de">wenn</span> parks the verb at the end of its clause.</p>
+      <h3>The A1 set</h3>
+      <table>
+        <tr><th>Word</th><th>Job</th><th>Verb</th><th>Example</th></tr>
+        <tr><td><span class="de">und</span></td><td>and / plus</td><td>no change</td><td><span class="de">Ich trinke Kaffee und ich esse Brot.</span></td></tr>
+        <tr><td><span class="de">oder</span></td><td>or (choice)</td><td>no change</td><td><span class="de">Tee oder Kaffee? Kommst du oder bleibst du?</span></td></tr>
+        <tr><td><span class="de">aber</span></td><td>but (contrast)</td><td>no change</td><td><span class="de">Die Wohnung ist schön, aber sie ist teuer.</span></td></tr>
+        <tr><td><span class="de">denn</span></td><td>because (reason)</td><td>no change — verb second</td><td><span class="de">Ich bleibe hier, denn ich bin krank.</span></td></tr>
+        <tr><td><span class="de">dann</span></td><td>then / next</td><td>dann often position 1, verb next</td><td><span class="de">Ich lerne. Dann gehe ich nach Hause.</span></td></tr>
+        <tr><td><span class="de">wenn</span></td><td>if / when (plan)</td><td>verb last in that clause</td><td><span class="de">Wenn du Zeit hast, komm vorbei.</span></td></tr>
+      </table>
+      <p>Do not use <span class="de">weil</span> yet unless you already own verb-last. The A1 exam mark is a clean <span class="de">denn</span> or <span class="de">aber</span>. <span class="de">sondern</span> can wait for A2.</p>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Ich möchte einen Kaffee und ein Wasser.</span> — Two things; und links nouns, no extra verb.</li>
+        <li><span class="de">Die Jacke ist schön, aber sie ist zu teuer.</span> — Contrast; aber does not move the verb.</li>
+        <li><span class="de">Ich komme nicht, denn ich muss arbeiten.</span> — Reason without weil.</li>
+        <li><span class="de">Wir treffen uns um 18 Uhr. Dann gehen wir ins Kino.</span> — Next step; dann + verb.</li>
+        <li><span class="de">Wenn es regnet, gehen wir ins Café, nicht in den Park.</span> — Plan B; wenn + hast/regnet last.</li>
+        <li><span class="de">Kommst du am Freitag oder am Samstag?</span> — Choice on a card.</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Typical A1 mistake</th><th>Correct</th></tr>
+        <tr><td><em>dann ich gehe nach Hause</em></td><td><span class="de">Dann gehe ich nach Hause</span></td></tr>
+        <tr><td><em>Ich bleibe, denn ich krank bin</em> (weil-order too early)</td><td><span class="de">Ich bleibe, denn ich bin krank</span></td></tr>
+        <tr><td>Ten und-sentences, no aber or reason</td><td>One aber or denn in the 30-word note</td></tr>
+        <tr><td><em>Wenn du hast Zeit</em></td><td><span class="de">Wenn du Zeit hast</span></td></tr>
+      </table>
+      <h3>Mini note — A1 Schreiben</h3>
+      <p><span class="de">Hallo Anna, ich habe am Freitag Zeit, aber am Samstag muss ich arbeiten. Wenn du möchtest, treffen wir uns um 18 Uhr im Café. Dann können wir in den Park gehen. Bis bald</span></p>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">und … oder … aber … denn ich bin / denn ich muss … Dann gehe ich … Wenn du Zeit hast, … Wenn es regnet, …</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        A 30-word message with only und looks like a shopping list. Add one aber or denn. dann in position 1 needs the verb immediately after it. wenn is not wann (question “when?”). Do not force weil until the verb-last habit is safe — a broken weil can cost the reason point. Hören: aber often flips the answer (nice but closed / cheap but too small).
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Write a 30-word invitation with aber and dann.</li>
+        <li>Give a reason with denn (not weil).</li>
+        <li>Make a rain Plan B with wenn.</li>
+        <li>Correct: dann ich komme / Wenn du hast Zeit / denn ich krank bin.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a1-adjectives",
+    title: "Adjectives: groß, zu teuer, billiger",
+    level: "a1",
+    minutes: 50,
+    html: `
+      <p>Official A1 lists attributive adjectives and comparison. telc A1 Einkaufen and Wohnen live on them: <span class="de">ein großer Kaffee, eine kleine Wohnung, zu teuer, billiger als</span>. You do not need the full B1 ending table. You need predicative adjectives after sein, a few frozen attributive chunks, <span class="de">zu + adjective</span>, and <span class="de">gern / lieber</span>.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>After <span class="de">sein / das ist</span> the adjective does <strong>not</strong> take an ending: <span class="de">Der Kaffee ist heiß. Die Wohnung ist klein.</span></li>
+        <li>Before a noun it needs an ending. At A1 memorise high-frequency chunks rather than 16 boxes: <span class="de">ein großer Kaffee, eine kleine Wohnung, das neue Handy, ein alter Mann</span>.</li>
+        <li>Too much: <span class="de">zu</span> + adjective. <span class="de">zu klein, zu groß, zu teuer, zu spät, zu weit</span>.</li>
+        <li>Compare two things with <span class="de">-er + als</span>: <span class="de">billiger als, größer als, besser als</span>. Superlative recognition: <span class="de">am besten, am liebsten</span>.</li>
+        <li>Likes: <span class="de">gern → lieber → am liebsten</span>. <span class="de">Ich trinke gern Tee. Ich trinke lieber Kaffee.</span></li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “a small flat” never changes “small”. German <span class="de">klein</span> stays bare after sein (<span class="de">Die Wohnung ist klein</span>) but grows an ending before the noun (<span class="de">eine kleine Wohnung</span>). English “too expensive” maps cleanly to <span class="de">zu teuer</span>. English “I like tea better” is <span class="de">ich trinke lieber Tee</span> — gern/lieber, not “besser like”.</p>
+      <h3>Predicative (no ending) vs attributive (ending)</h3>
+      <table>
+        <tr><th>After sein (easy)</th><th>Before the noun (A1 chunks)</th></tr>
+        <tr><td><span class="de">Der Kaffee ist heiß.</span></td><td><span class="de">ein großer Kaffee / einen großen Kaffee</span></td></tr>
+        <tr><td><span class="de">Die Wohnung ist klein.</span></td><td><span class="de">eine kleine Wohnung</span></td></tr>
+        <tr><td><span class="de">Das Handy ist neu.</span></td><td><span class="de">das neue Handy / ein neues Handy</span></td></tr>
+        <tr><td><span class="de">Die Schuhe sind teuer.</span></td><td><span class="de">teure Schuhe</span></td></tr>
+      </table>
+      <p>ein-words: masculine/neuter nominative need a strong ending on the adjective: <span class="de">ein großer Kaffee, ein neues Handy</span>. Feminine: <span class="de">eine kleine Jacke</span>. After der/die/das the adjective often takes -e in nominative: <span class="de">der große Kaffee, die kleine Jacke, das neue Handy</span>. That is enough A1 production.</p>
+      <h3>zu, comparison, gern</h3>
+      <table>
+        <tr><th>Pattern</th><th>Examples</th></tr>
+        <tr><td><span class="de">zu + Adj</span></td><td><span class="de">zu klein, zu groß, zu teuer, zu spät, zu weit, zu kalt</span></td></tr>
+        <tr><td><span class="de">Adj-er + als</span></td><td><span class="de">billiger als, größer als, kleiner als, besser als, schöner als</span></td></tr>
+        <tr><td>Irregular</td><td><span class="de">gut → besser → am besten; gern → lieber → am liebsten; viel → mehr → am meisten</span></td></tr>
+      </table>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Die Wohnung ist schön, aber sie ist zu klein.</span> — Predicative + zu.</li>
+        <li><span class="de">Ich möchte einen großen Kaffee, bitte.</span> — Attributive masculine accusative chunk for the café.</li>
+        <li><span class="de">Diese Jacke ist billiger als die rote Jacke.</span> — Comparison in the shop.</li>
+        <li><span class="de">Ich trinke gern Tee. Ich trinke lieber Kaffee. Am liebsten trinke ich Wasser.</span> — gern ladder.</li>
+        <li><span class="de">Das neue Handy ist teuer. Hast du ein billigeres?</span> — Recognition of comparative adjective.</li>
+        <li><span class="de">Der Bus ist schneller als das Auto heute.</span> — Travel small talk.</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Typical A1 mistake</th><th>Correct</th></tr>
+        <tr><td><em>Die Wohnung ist kleines</em></td><td><span class="de">Die Wohnung ist klein</span> (no ending after sein)</td></tr>
+        <tr><td><em>ein groß Kaffee</em></td><td><span class="de">ein großer Kaffee</span></td></tr>
+        <tr><td><em>zu viel klein</em></td><td><span class="de">zu klein</span></td></tr>
+        <tr><td><em>Ich besser trinke Tee</em></td><td><span class="de">Ich trinke lieber Tee</span></td></tr>
+        <tr><td><em>billiger wie</em></td><td><span class="de">billiger als</span></td></tr>
+      </table>
+      <h3>Mini dialogue — clothes shop</h3>
+      <p><strong>You:</strong> <span class="de">Die schwarze Jacke ist schön. Haben Sie die in einer kleineren Größe?</span></p>
+      <p><strong>Assistant:</strong> <span class="de">Ja. Die ist auch billiger.</span></p>
+      <p><strong>You:</strong> <span class="de">Super. Die rote ist zu teuer. Ich nehme die schwarze.</span></p>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Das ist gut / klein / teuer / neu. ein großer Kaffee, eine kleine Wohnung, das neue Handy. zu klein / zu groß / zu teuer / zu spät. billiger als … besser als … Ich … gern. Ich … lieber. Am liebsten …</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        After sein, do not add an ending. Shop cards want zu klein / zu teuer, not a speech. gern/lieber is about liking, besser is about quality. Hören: billiger vs teurer flips the buy/don’t-buy item. A1 Schreiben can say <span class="de">Die Wohnung ist klein, aber sie ist nicht teuer</span> — predicative only is enough if attributive endings still feel unsafe.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Describe your room with four predicative adjectives.</li>
+        <li>Order einen großen Kaffee and eine kleine Cola.</li>
+        <li>Compare two jackets with billiger als and zu teuer.</li>
+        <li>Say three likes with gern / lieber / am liebsten.</li>
+        <li>Correct: Die Wohnung ist kleines / ein groß Kaffee / billiger wie.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a1-dieser",
+    title: "dieser, man, etwas, nichts, welche",
+    level: "a1",
+    minutes: 46,
+    html: `
+      <p>The official A1 article/pronoun inventory is bigger than der/ein. Examiners use <span class="de">dieser</span> on signs and in the oral (“this one or that one?”), <span class="de">man</span> on rules, and <span class="de">etwas / nichts / alles</span> in café and shop talk. <span class="de">welche</span> asks “which?”. These are not B1 extras — they are Start Deutsch 1 reception and short production.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li><span class="de">dieser / diese / dieses</span> behaves like der/die/das: <span class="de">dieser Mann, diese Frau, dieses Kind, diese Sachen</span>. Accusative masculine: <span class="de">diesen</span>.</li>
+        <li><span class="de">man</span> means people in general. Verb = er-form. Not <span class="de">der Mann</span>.</li>
+        <li><span class="de">etwas</span> = something; <span class="de">nichts</span> = nothing; <span class="de">alles</span> = everything; <span class="de">mehr</span> = more.</li>
+        <li><span class="de">welch-</span> asks which: <span class="de">Welcher Zug? Welche Größe? Welches Gleis?</span> Endings copy der-words.</li>
+        <li>Zero article on mass nouns and languages: <span class="de">Ich esse gern Brot. Ich spreche Deutsch.</span></li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “this/that” is one word; German this-word shows gender: <span class="de">dieser / diese / dieses</span>. English “you can’t park here” is often German <span class="de">Hier darf man nicht parken</span>. English “which bus?” needs a German ending: <span class="de">Welchen Bus?</span> (masculine accusative).</p>
+      <h3>dieser like der</h3>
+      <table>
+        <tr><th></th><th>M</th><th>F</th><th>N</th><th>Pl</th></tr>
+        <tr><td>Nom</td><td><span class="de">dieser</span></td><td><span class="de">diese</span></td><td><span class="de">dieses</span></td><td><span class="de">diese</span></td></tr>
+        <tr><td>Akk</td><td><span class="de">diesen</span></td><td><span class="de">diese</span></td><td><span class="de">dieses</span></td><td><span class="de">diese</span></td></tr>
+      </table>
+      <p><span class="de">Ich nehme diesen Kaffee. Diese Jacke ist schön. Welches Formular? Dieses.</span></p>
+      <h3>man, etwas, nichts, welche</h3>
+      <table>
+        <tr><th>Word</th><th>Use</th><th>Example</th></tr>
+        <tr><td><span class="de">man</span></td><td>people / one / you in general</td><td><span class="de">Hier spricht man Deutsch. Hier darf man nicht rauchen.</span></td></tr>
+        <tr><td><span class="de">etwas</span></td><td>something</td><td><span class="de">Möchten Sie etwas trinken? Ich esse etwas.</span></td></tr>
+        <tr><td><span class="de">nichts</span></td><td>nothing</td><td><span class="de">Ich verstehe nichts. Ich habe nichts.</span></td></tr>
+        <tr><td><span class="de">alles</span></td><td>everything</td><td><span class="de">Alles klar. Das ist alles.</span></td></tr>
+        <tr><td><span class="de">mehr</span></td><td>more</td><td><span class="de">Möchten Sie noch mehr? Ich habe keine Milch mehr.</span></td></tr>
+        <tr><td><span class="de">welch-</span></td><td>which?</td><td><span class="de">Welcher Bus? Welche Größe? Welches Gleis? Welche?</span> (some / any leftover)</td></tr>
+      </table>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Diesen Zug nehmen wir. Dieser hier fährt nicht.</span> — Pointing on the platform.</li>
+        <li><span class="de">Hier darf man nicht parken.</span> — Sign language; man + darf.</li>
+        <li><span class="de">Möchten Sie etwas essen? — Nein danke, nichts.</span> — Café.</li>
+        <li><span class="de">Welche Größe haben Sie? — Größe M.</span> — Shop.</li>
+        <li><span class="de">Welches Gleis? — Gleis drei.</span> — Station Hören.</li>
+        <li><span class="de">Hast du Milch? — Ja, ich habe welche.</span> — welche = some (of it).</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Typical A1 mistake</th><th>Correct</th></tr>
+        <tr><td><em>dieser Frau / dieses Mann</em></td><td><span class="de">diese Frau / dieser Mann</span></td></tr>
+        <tr><td><em>Man sind müde / der Man darf nicht</em></td><td><span class="de">Man ist müde. Hier darf man nicht …</span></td></tr>
+        <tr><td><em>Ich möchte nichts trinken etwas</em></td><td><span class="de">Ich möchte etwas trinken. / Ich möchte nichts.</span></td></tr>
+        <tr><td><em>Was Größe?</em></td><td><span class="de">Welche Größe?</span></td></tr>
+      </table>
+      <h3>Mini dialogue</h3>
+      <p><strong>You:</strong> <span class="de">Welche Jacke meinen Sie — diese hier oder diese da?</span></p>
+      <p><strong>Assistant:</strong> <span class="de">Diese schwarze. Hier darf man die Sachen anprobieren.</span></p>
+      <p><strong>You:</strong> <span class="de">Gut. Haben Sie noch etwas in Blau? Sonst nehme ich nichts.</span></p>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">dieser / diese / dieses / diesen. Hier spricht man Deutsch. Hier darf man nicht … Möchten Sie etwas …? Ich habe nichts. Das ist alles. Noch mehr? Welche Größe / welcher Bus / welches Gleis? Ich habe welche.</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        man ≠ Mann. dieser follows gender; guessing dieses for everything is an article fail. Hören signs: nicht / kein / man darf nicht. Welche on a form or a shop card is “which”, not “what”. etwas + infinitive: <span class="de">etwas trinken</span>, not etwas + conjugated verb in the middle.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Point: dieser Kurs, diese Wohnung, dieses Formular, diesen Bus.</li>
+        <li>Read three signs with man darf nicht.</li>
+        <li>Order: something to drink / nothing / that’s all.</li>
+        <li>Ask Welche Größe? Welcher Zug? Welches Gleis?</li>
+        <li>Correct: Man sind / dieser Frau / Was Größe?</li>
+      </ol>
+    `,
   }
 ]
 });

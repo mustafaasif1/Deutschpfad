@@ -483,6 +483,12 @@ registerPack("a1", {
 { id:"a1x481", de:"kurz", art:"", pl:"", en:"short", topic:"adjectives", level:"a1" },
 { id:"a1x482", de:"lang", art:"", pl:"", en:"long", topic:"adjectives", level:"a1" },
 { id:"a1x483", de:"breit", art:"", pl:"", en:"wide", topic:"adjectives", level:"a1" },
-{ id:"a1x484", de:"eng", art:"", pl:"", en:"tight / narrow", topic:"adjectives", level:"a1" }
+{ id:"a1x484", de:"eng", art:"", pl:"", en:"tight / narrow", topic:"adjectives", level:"a1" },
+{ id:"a1x485", de:"Konto", art:"das", pl:"Konten", en:"bank account", topic:"shopping", level:"a1" },
+{ id:"a1x486", de:"PLZ", art:"die", pl:"", en:"postcode", topic:"shopping", level:"a1" },
+{ id:"a1x487", de:"Postleitzahl", art:"die", pl:"-en", en:"postcode (full word)", topic:"shopping", level:"a1" },
+{ id:"a1x488", de:"Möbel", art:"die", pl:"", en:"furniture", topic:"home", level:"a1" },
+{ id:"a1x489", de:"Straße", art:"die", pl:"-n", en:"street", topic:"home", level:"a1" },
+{ id:"a1x490", de:"Hausnummer", art:"die", pl:"-n", en:"house number", topic:"home", level:"a1" }
   ]
 });

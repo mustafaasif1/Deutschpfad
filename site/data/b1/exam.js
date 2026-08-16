@@ -2846,6 +2846,95 @@ registerPack("b1", {
           "answer": false
         }
       ]
+    },
+    {
+      "id": "h-19",
+      "title": "Paper 7 · Teil 1 — trap announcements (once)",
+      "once": true,
+      "paper": 7,
+      "teil": 1,
+      "items": [
+        {
+          "audio": "Achtung: Der Zug nach Frankfurt fährt heute nicht von Gleis 8, sondern von Gleis 12. Abfahrt erst um 14:40, nicht um 14:14.",
+          "statement": "Der Zug fährt pünktlich um 14:14 von Gleis 8.",
+          "answer": false
+        },
+        {
+          "audio": "Karten gibt es nur an der Abendkasse, und nur bar. Online ist der Verkauf schon geschlossen.",
+          "statement": "Man kann die Karten noch online kaufen.",
+          "answer": false
+        },
+        {
+          "audio": "Der Anschlusszug nach Bremen fällt heute aus. Reisende bitte erst den nächsten Zug um 16:05 nehmen, nicht den um 15:20.",
+          "statement": "Es gibt heute keinen Anschluss nach Bremen vor 16:05.",
+          "answer": true
+        },
+        {
+          "audio": "Die Bibliothek öffnet erst ab 11 Uhr, nicht schon um 9. Laptops nur mit Ausweis.",
+          "statement": "Man kann um 9 Uhr in der Bibliothek lernen.",
+          "answer": false
+        },
+        {
+          "audio": "Wegen Inventur bleiben wir heute schon um 15 Uhr geschlossen. Morgen wieder von 10 bis 19 Uhr. Reklamationen nicht vor Mittwoch.",
+          "statement": "Reklamationen sind schon morgen möglich.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "h-20",
+      "title": "Paper 7 · Teil 3 — trap scenes",
+      "once": false,
+      "paper": 7,
+      "teil": 3,
+      "items": [
+        {
+          "audio": "Die Heizung wird nicht heute repariert, sondern erst am Donnerstag nach 17 Uhr.",
+          "statement": "Die Reparatur ist noch heute.",
+          "answer": false
+        },
+        {
+          "audio": "Statt um acht treffen wir uns um zehn am Ausgang Ost, nicht am Haupteingang.",
+          "statement": "Treffen um 10 Uhr am Ausgang Ost.",
+          "answer": true
+        },
+        {
+          "audio": "Umtausch nur mit Kassenbon, und nur innerhalb von 14 Tagen, nicht 40.",
+          "statement": "Man hat 40 Tage Zeit zum Umtausch.",
+          "answer": false
+        },
+        {
+          "audio": "Der Kurs fällt nicht aus. Er beginnt aber erst um 18:15 in Raum 4, nicht in Raum 14.",
+          "statement": "Der Kurs ist in Raum 14 um 18:00.",
+          "answer": false
+        },
+        {
+          "audio": "Parken nur mit Ticket. Ohne Ticket 40 Euro, nicht 14.",
+          "statement": "Ohne Ticket muss man 40 Euro zahlen.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "h-21",
+      "title": "Paper 7 · Teil 2 — trap interview",
+      "once": false,
+      "paper": 7,
+      "teil": 2,
+      "intro": "A colleague explains a delayed delivery, a wrong size, and a new meeting time.",
+      "audio": "Die Lieferung kommt nicht heute, sondern erst am Donnerstag nach 17 Uhr. Die Jacke war eine Nummer zu klein, deshalb möchte ich umtauschen — aber nur mit Kassenbon, und die Frist ist 14 Tage, nicht 40. Danach treffen wir uns nicht um acht am Haupteingang, sondern um halb acht am Ausgang Ost.",
+      "items": [
+        { "statement": "Die Lieferung kommt noch heute.", "answer": false },
+        { "statement": "Die Jacke war zu klein.", "answer": true },
+        { "statement": "Umtausch geht 40 Tage ohne Bon.", "answer": false },
+        { "statement": "Treffen um 7:30 am Ausgang Ost.", "answer": true },
+        { "statement": "Treffen um 8:00 am Haupteingang.", "answer": false },
+        { "statement": "Die Frist zum Umtausch ist 14 Tage.", "answer": true },
+        { "statement": "Die Lieferung ist für Donnerstag nach 17 Uhr geplant.", "answer": true },
+        { "statement": "Ohne Kassenbon kann man trotzdem umtauschen.", "answer": false },
+        { "statement": "Ausgang Ost ist der Treffpunkt.", "answer": true },
+        { "statement": "Halb acht bedeutet 8:30.", "answer": false }
+      ]
     }
   ],
   "schreiben": [
@@ -3029,7 +3118,7 @@ registerPack("b1", {
         "Welche Unterlagen nötig sind.",
         "Telefonnummer."
       ],
-      "model": "Sehr geehrte Damen und Herren, ich möchte ein Girokonto eröffnen. Welche Termine gibt es nächste Woche? Welche Unterlagen brauche ich? Tel. 0151 111111. Mit freundlichen Grüßen"
+      "model": "Sehr geehrte Damen und Herren, ich möchte nächste Woche ein Girokonto eröffnen. Haben Sie am Dienstag oder Donnerstag nach 16 Uhr noch einen Termin frei? Welche Unterlagen muss ich mitbringen — Ausweis, Meldebescheinigung, Arbeitsvertrag? Meine Nummer ist 0151 111111, ich bin nach 17 Uhr erreichbar. Mit freundlichen Grüßen"
     },
     {
       "id": "b1-vhs",
@@ -3043,7 +3132,7 @@ registerPack("b1", {
         "Nach Kosten fragen.",
         "Kontakt angeben."
       ],
-      "model": "Sehr geehrte Frau Abel, ich kann den Morgenkurs nicht mehr besuchen, weil ich eine neue Schicht habe. Ist ein Abendkurs möglich? Entstehen Kosten? Per E-Mail erreichbar. Mit freundlichen Grüßen"
+      "model": "Sehr geehrte Frau Abel, ich kann den Morgenkurs leider nicht mehr besuchen, weil ich eine neue Schicht habe und erst um 15 Uhr Feierabend mache. Wäre ein Wechsel in den Abendkurs ab nächster Woche möglich? Entstehen dafür Extra-Kosten, und gibt es noch Plätze? Sie erreichen mich per E-Mail. Mit freundlichen Grüßen"
     },
     {
       "id": "b1-party",
@@ -3057,7 +3146,7 @@ registerPack("b1", {
         "Neuer Termin.",
         "Wer hat Platz?"
       ],
-      "model": "Liebe Freunde, die Party muss ausfallen, weil ich krank bin. Nächster Samstag? Wer hat Platz? Liebe Grüße"
+      "model": "Liebe Freunde, die Party bei mir am Samstag muss leider ausfallen, weil ich Fieber habe und der Arzt Ruhe empfohlen hat. Können wir uns nächsten Samstag um 18 Uhr treffen? Wer hat Platz für acht Leute, und soll jeder etwas zu essen mitbringen? Bitte schreibt mir bis Mittwoch Bescheid. Liebe Grüße"
     },
     {
       "id": "b1-lost",
@@ -3071,7 +3160,7 @@ registerPack("b1", {
         "Wohin soll man sie schicken?",
         "Telefonnummer."
       ],
-      "model": "Sehr geehrte Damen und Herren, gestern 18 Uhr habe ich in der S-Bahn eine schwarze Tasche verloren. Darin Buch und Schal. Bitte 0176 222222. Mit freundlichen Grüßen"
+      "model": "Sehr geehrte Damen und Herren, gestern um 18 Uhr bin ich mit der S-Bahn Linie 11 Richtung Hauptbahnhof gefahren und habe eine schwarze Tasche unter dem Sitz verloren. Darin waren ein Deutschbuch, ein Schal und ein Hausschlüssel, aber kein Ausweis. Könnten Sie die Tasche bitte an die Fundstelle Köln schicken oder mich anrufen? Tel. 0176 222222. Mit freundlichen Grüßen"
     },
     {
       "id": "b1-volunteer",
@@ -3085,7 +3174,7 @@ registerPack("b1", {
         "Welche Sprachen Sie sprechen.",
         "Kontakt."
       ],
-      "model": "Sehr geehrte Damen und Herren, ich heiße Samira (B1) und möchte im Sprachcafé helfen. Wann brauchen Sie Freiwillige? Mit freundlichen Grüßen"
+      "model": "Sehr geehrte Damen und Herren, ich heiße Samira, spreche Arabisch und Deutsch auf B1 und möchte im Sprachcafé ehrenamtlich helfen. Ich habe dienstags und donnerstags nach 17 Uhr Zeit. Welche Aufgaben gibt es, und brauchen Sie eine Anmeldung? Sie erreichen mich unter 0151 334455. Mit freundlichen Grüßen"
     },
     {
       "id": "b1-mould",
@@ -3099,10 +3188,119 @@ registerPack("b1", {
         "Was Sie schon getan haben.",
         "Was Sie vom Vermieter wollen."
       ],
-      "model": "Sehr geehrter Herr Brandt, seit zwei Wochen ist Schimmel im Bad. Lüften hilft nicht. Bitte Reparaturtermin. Mit freundlichen Grüßen"
+      "model": "Sehr geehrter Herr Brandt, seit zwei Wochen ist Schimmel in der Dusche, obwohl ich täglich lüfte und nach dem Duschen die Wände abtrockne. Das hilft nicht. Könnten Sie bitte einen Termin für einen Handwerker nach 16 Uhr vereinbaren? Die Wohnung ist sonst in Ordnung. Tel. 0151 778899. Mit freundlichen Grüßen"
+    },
+    {
+      "id": "b1-feste",
+      "register": "du",
+      "title": "B1: thanks after a holiday visit",
+      "situation": "You stayed with a friend over a public holiday. Write afterwards.",
+      "points": [
+        "Thank them for the stay",
+        "What you liked (food / walk / family)",
+        "A small problem (train delay) and how you got home",
+        "Suggest a visit the other way with a date"
+      ],
+      "model": "Liebe Anna, vielen Dank für das lange Wochenende bei dir. Das Essen und der Spaziergang am Feiertag haben mir sehr gut gefallen. Der Zug nach Hause hatte 40 Minuten Verspätung, aber ich bin gut angekommen. Magst du am 12. Oktober zu mir kommen? Liebe Grüße"
+    },
+    {
+      "id": "b1-neighbour",
+      "register": "Sie",
+      "title": "B1: courtyard party — invite the neighbour",
+      "situation": "The house organises a small Hof-Fest. Invite the neighbour downstairs.",
+      "points": [
+        "What and when",
+        "Why you write (new in the house / community)",
+        "What they can bring if they like",
+        "Ask them to say yes or no by Friday"
+      ],
+      "model": "Sehr geehrte Frau Keller, am Samstag um 16 Uhr gibt es ein kleines Hoffest im Innenhof. Wir möchten die Nachbarn kennenlernen, weil wir erst seit einem Monat hier wohnen. Wenn Sie möchten, bringen Sie gern etwas zu trinken oder einen Salat mit. Könnten Sie uns bitte bis Freitag Bescheid sagen, ob Sie kommen? Mit freundlichen Grüßen"
+    },
+    {
+      "id": "b1-weather",
+      "register": "du",
+      "title": "B1: rain — change the class outing",
+      "situation": "Sunday park picnic will not work. Write to a classmate.",
+      "points": [
+        "Weather problem",
+        "Suggest museum or café instead",
+        "New time and meeting point",
+        "Ask them to tell two other people"
+      ],
+      "model": "Hallo Marek, für Sonntag ist starker Regen gemeldet, deshalb ist das Picknick im Park keine gute Idee. Ich schlage vor, dass wir stattessen ins Stadtmuseum gehen. Treffpunkt 11 Uhr am Museumseingang, nicht an der Parkbank. Kannst du bitte auch Lea und Omar schreiben, damit niemand im Regen wartet? Liebe Grüße"
+    },
+    {
+      "id": "b1-amt",
+      "register": "Sie",
+      "title": "Formal: Bürgeramt — Termin ändern",
+      "situation": "Sie haben am Mittwoch um 9 Uhr einen Termin zur Anmeldung. Sie können nicht, weil Sie arbeiten.",
+      "situationEn": "Change a town-hall appointment; list documents.",
+      "points": [
+        "Welcher Termin (Tag, Uhrzeit, Grund des Besuchs).",
+        "Warum Sie nicht kommen können.",
+        "Bitten Sie um einen neuen Termin nach 16 Uhr.",
+        "Welche Unterlagen Sie mitbringen und Ihre Telefonnummer."
+      ],
+      "model": "Sehr geehrte Damen und Herren, ich habe am Mittwoch um 9 Uhr einen Termin im Bürgeramt zur Anmeldung. Leider kann ich ihn nicht wahrnehmen, weil ich bis 15 Uhr arbeiten muss. Wäre ein Termin nach 16 Uhr nächste Woche möglich, zum Beispiel Donnerstag? Ich bringe den Ausweis und die Meldebescheinigung mit. Tel. 0151 667788, ich bin nach 17 Uhr erreichbar. Mit freundlichen Grüßen"
+    },
+    {
+      "id": "b1-late",
+      "register": "Sie",
+      "title": "Formal: late to a meeting / course",
+      "situation": "Ihr Zug hat Verspätung. Sie kommen 20 Minuten später zum Kurs / Termin.",
+      "situationEn": "You will be 20 minutes late. Write to the office.",
+      "points": [
+        "Entschuldigung und neuer Ankunftszeitpunkt.",
+        "Grund (Zug, Gleis, Verspätung).",
+        "Bitten Sie, ohne Sie anzufangen bzw. den Platz zu halten.",
+        "Telefonnummer."
+      ],
+      "model": "Sehr geehrte Frau Berger, leider komme ich heute etwa 20 Minuten später zum B1-Kurs, weil der Zug nach Köln 14 Minuten Verspätung hat und von Gleis 12 fährt, nicht von Gleis 8. Bitte beginnen Sie ohne mich, ich hole den Stoff nach. Sie erreichen mich unter 0176 445566. Mit freundlichen Grüßen"
+    },
+    {
+      "id": "b1-umwelt",
+      "register": "Sie",
+      "title": "Formal: less plastic in the supermarket",
+      "situation": "Sie schreiben an einen Supermarkt: zu viel Plastik, Sie möchten lose Ware und Papiertüten.",
+      "situationEn": "Polite customer letter about packaging — B1 opinion, not a climate essay.",
+      "points": [
+        "Warum Sie schreiben (Kunde, Filiale).",
+        "Was das Problem ist.",
+        "Was Sie sich wünschen (lose Ware, Papiertüten, Pfand).",
+        "Um eine kurze Antwort bitten und Kontakt angeben."
+      ],
+      "model": "Sehr geehrte Damen und Herren, ich kaufe regelmäßig in Ihrer Filiale an der Bahnhofstraße ein. Leider ist Obst und Gemüse oft in Plastik verpackt, und an der Kasse gibt es nur Plastiktüten. Könnten Sie bitte mehr lose Ware und Papiertüten anbieten? Viele Kunden würden das nutzen. Bitte antworten Sie mir kurz per E-Mail. Tel. 0151 990011. Mit freundlichen Grüßen"
+    },
+    {
+      "id": "b1-media",
+      "register": "du",
+      "title": "Informal: evening without phones",
+      "situation": "Plant mit einer Freundin / einem Freund einen Abend ohne Handy: Film oder Spiel.",
+      "situationEn": "Plan a phone-free evening. Teil-3 energy in a letter.",
+      "points": [
+        "Vorschlag (Tag, was ihr macht).",
+        "Warum ohne Handy.",
+        "Treffpunkt, Uhrzeit, Plan B bei Regen.",
+        "Fragen, ob die Person einverstanden ist und was sie mitbringt."
+      ],
+      "model": "Liebe Mira, ich schlage vor, dass wir uns am Samstag um 19 Uhr bei mir treffen und einen Film schauen — ohne Handy auf dem Tisch, weil wir uns sonst nicht richtig unterhalten. Wenn du keine Lust auf Film hast, können wir ein Spiel spielen. Bei Regen bleibe ich zu Hause, Plan B ist das Café nebenan um 18:30. Bringst du Chips mit? Einverstanden? Liebe Grüße"
     }
+
   ],
   "sprechen": {
+    "lead": "B1 is a pair exam: 20 minutes prep with notes for Teil 2–3, then ~15 minutes live. Teil 1 is contact with no notes. Teil 2 is ~90 seconds each. Teil 3 only counts if you decide.",
+    "teil2Title": "Teil 2 — 90-second opinion",
+    "teil2Lead": "One card, about 90 seconds, then ask your partner. Do not read a speech. Use a reason, an example, and one Allerdings.",
+    "teil2Steps": [
+      "Hier geht es um…",
+      "Meiner Meinung nach…, weil…",
+      "Zum Beispiel…",
+      "Allerdings…",
+      "Deshalb… Und du?"
+    ],
+    "teil2Timer": 90,
+    "teil3Title": "Teil 3 — plan and agree",
+    "teil3Lead": "Cover Tag, Ort, Kosten, wer macht was, Plan B. In the last 45 seconds say Einverstanden and stop offering new ideas.",
     "intro": "Hallo, ich heiße … Ich komme aus … und wohne seit … in … Ich arbeite als … / Ich mache eine Ausbildung / Ich besuche einen Deutschkurs, weil ich die B1-Prüfung machen möchte. In meiner Freizeit … Und du?",
     "questions": [
       "Woher kommst du?",
@@ -3179,7 +3377,38 @@ registerPack("b1", {
       },
       {
         "t": "Fleisch oder vegetarisch",
-        "spine": "Weniger Fleisch ist besser für Klima und oft gesünder."
+        "spine": "Weniger Fleisch ist besser für Klima und oft gesünder.",
+        "ask": ["Isst du oft Fleisch?", "Was wäre ein Kompromiss in der Kantine?"]
+      },
+      {
+        "t": "Feste und Feiertage",
+        "spine": "Feste bringen Leute zusammen. Allerdings sind große Feiertage auch teuer und laut.",
+        "ask": ["Welches Fest magst du?", "Feiert ihr zu Hause oder in der Stadt?"]
+      },
+      {
+        "t": "Sport und Verein",
+        "spine": "Ein Verein gibt Struktur. Allerdings braucht man Zeit und oft Beitrag.",
+        "ask": ["Bist du in einem Verein?", "Sport allein oder in der Gruppe?"]
+      },
+      {
+        "t": "Nachbarschaft",
+        "spine": "Gute Nachbarn helfen im Alltag. Trotzdem muss man Grenzen respektieren, zum Beispiel bei Lärm.",
+        "ask": ["Kennst du deine Nachbarn?", "Was machst du bei Lärm?"]
+      },
+      {
+        "t": "Nachrichten und Medien",
+        "spine": "Nachrichten helfen, die Stadt zu verstehen. Allerdings sollte man nicht nur Überschriften lesen.",
+        "ask": ["Wo liest du Nachrichten?", "Glaubst du allem im Handy?"]
+      },
+      {
+        "t": "Lernen nach der Arbeit",
+        "spine": "Abendkurse sind praktisch, aber man ist müde. Ein fester Plan hilft mehr als Motivation allein.",
+        "ask": ["Wann lernst du — morgens oder abends?", "Was störst dich beim Lernen?"]
+      },
+      {
+        "t": "Konsum und Plastik",
+        "spine": "Weniger Plastik ist besser. Allerdings sind manche Verpackungen im Supermarkt kaum zu vermeiden.",
+        "ask": ["Trennt ihr Müll?", "Was könntest du konkret ändern?"]
       }
     ],
     "planning": [
@@ -3254,6 +3483,26 @@ registerPack("b1", {
           "Foto",
           "Wetterplan"
         ]
+      },
+      {
+        "t": "Weihnachtsmarkt oder Hoffest",
+        "points": ["Tag", "Budget", "Treffpunkt", "wer hat Kinder dabei", "Plan B bei Regen"]
+      },
+      {
+        "t": "Repair-Café im Viertel",
+        "points": ["Gerät", "Termin", "wer bringt Werkzeug", "Kaffee für Helfer", "wenn es nicht reparierbar ist"]
+      },
+      {
+        "t": "Schnupperstunde im Sportverein",
+        "points": ["Sportart", "Tag nach der Arbeit", "Beitrag", "Sportkleidung", "Absage wenn krank"]
+      },
+      {
+        "t": "Zusammen zum Amt",
+        "points": ["welcher Antrag", "Termin online", "Unterlagen", "wer übersetzt", "Café danach"]
+      },
+      {
+        "t": "Handyfreier Abend",
+        "points": ["Wochentag", "was stattdessen", "wer kocht", "wie lange ohne Handy", "Ausnahme Notfall"]
       }
     ],
     "engine": [
@@ -3296,6 +3545,18 @@ registerPack("b1", {
       {
         "role": "budget",
         "de": "Wir sollten nicht mehr als … Euro ausgeben."
+      },
+      {
+        "role": "planb",
+        "de": "Falls das Wetter schlecht ist, treffen wir uns im Café."
+      },
+      {
+        "role": "task",
+        "de": "Ich kümmere mich um die Tickets, und du schreibst der Gruppe."
+      },
+      {
+        "role": "stop",
+        "de": "Gut. Dann bleiben wir bei diesem Plan."
       }
     ]
   },
@@ -3395,18 +3656,34 @@ registerPack("b1", {
         "h-18"
       ],
       "schreiben": "b1-lost"
+    },
+    {
+      "id": "mock-7",
+      "title": "Written mock G — trap sitting",
+      "blurb": "Lesen 6 + SB mix + full trap Hören paper 7 (now with Teil 2) + neighbour letter. Then sit the official telc MP3.",
+      "lesen": "lesen-6",
+      "sb": [
+        "sb-11",
+        "sb-4"
+      ],
+      "hoeren": [
+        "h-19",
+        "h-20",
+        "h-21"
+      ],
+      "schreiben": "b1-neighbour"
     }
   ],
   "tips": [
-    "telc B1 pass: 135/225 written AND 45/75 oral. Lesen 5+5+10, SB 10+10, Hören 5 (once)+10+5, one letter with 4 Leitpunkte. The oral cannot save a failed written paper.",
+    "telc B1 pass: 135/225 written AND 45/75 oral. Lesen 5+5+10, SB 10+10, Hören 5 (once)+10+5, one letter with 4 Leitpunkte. The oral cannot save a failed written paper. Aim 80 percent here so exam day feels slow.",
     "Lesen: read the question before the text. Synonyms beat word-spotting.",
-    "Hören Teil 1: one play only. Read the statement first, then listen for the trap.",
+    "Hören Teil 1: one play only. Read the statement first, then listen for nicht/kein/erst/schon/Gleis/14 vs 40.",
     "Sprachbausteine: weil/dass/wenn → verb to the end; denn/deshalb → verb second.",
-    "Schreiben from memory: four Leitpunkte, 30 minutes, model locked. Formal letters need one Könnten / würde / wäre.",
-    "Sprechen: do the 15-minute run. Teil 3 only counts if you write a decision.",
+    "Schreiben from memory: four Leitpunkte, 30 minutes, model locked. Formal letters need one Könnten / würde / wäre. Do eight letters before exam day.",
+    "Sprechen: six 15-minute runs with new cards. 20 min prep for Teil 2–3. Teil 3 only counts if you write a decision.",
     "Weeks 7–8: Official exam ears — play the telc MP3 on this device. TTS trains method, not acoustics.",
     "Official B1 written: Reading + Language Elements (~90), Listening (~30), Writing (30).",
-    "Do mocks D–F without a dictionary. Redo any paper under 80%."
+    "Do mocks D–G without a dictionary. Redo any paper under 80%."
   ]
 }
 });

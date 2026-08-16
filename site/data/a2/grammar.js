@@ -2196,6 +2196,132 @@ registerPack("a2", {
         <li>Write a two-line landlord note: please put the form on the table; it is lying in the kitchen.</li>
       </ol>
     `,
+  },
+  {
+    id: "a2-umzu",
+    title: "zu + infinitive and um … zu",
+    level: "a2",
+    minutes: 52,
+    html: `
+      <p>A2 letters start using <span class="de">zu</span> on the second verb: <span class="de">Ich habe keine Zeit zu kommen. Es ist wichtig, pünktlich zu sein. Ich schreibe, um einen Termin zu vereinbaren.</span> Official A2 already includes infinitive clauses after verbs like <span class="de">versuchen, vergessen, hoffen</span>. telc A2 Schreiben rewards one clean <span class="de">um … zu</span> (purpose). This is not full B1 <span class="de">ohne zu / statt zu</span> production — recognise those, produce um zu and a short zu-infinitive.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Modals take a bare infinitive, <strong>no zu</strong>: <span class="de">Ich muss arbeiten. Ich kann kommen.</span></li>
+        <li>Many other verbs take <span class="de">zu</span> + infinitive: <span class="de">versuchen, vergessen, hoffen, vorhaben, brauchen, beginnen</span>. <span class="de">Ich versuche, pünktlich zu kommen.</span></li>
+        <li>Put <span class="de">zu</span> immediately before the infinitive. Separable verbs swallow zu in the middle: <span class="de">anzurufen, einkaufen → einzukaufen</span>.</li>
+        <li>Purpose “in order to”: <span class="de">um … zu</span>. <span class="de">Ich lerne Deutsch, um die Prüfung zu bestehen. Ich schreibe, um einen Termin zu ändern.</span></li>
+        <li>Same subject in both parts. If the subject changes, you need <span class="de">damit</span> (A2 recognition / light production): <span class="de">Ich rufe an, damit Sie Bescheid wissen.</span></li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “to” after almost every verb. German splits: after a modal, no zu; after versuchen/hoffen, zu; for purpose, um … zu. English “I need to work” is usually <span class="de">Ich muss arbeiten</span> (modal) or <span class="de">Ich brauche Zeit zum Lernen</span> — not a copy of “need to”. English “I call to tell you” with two people is often <span class="de">damit</span>, not um zu.</p>
+      <h3>No zu vs zu vs um zu</h3>
+      <table>
+        <tr><th>Pattern</th><th>When</th><th>Example</th></tr>
+        <tr><td>modal + infinitive</td><td>können, müssen, wollen, sollen, dürfen, möchten</td><td><span class="de">Ich muss morgen arbeiten.</span></td></tr>
+        <tr><td>verb + zu + infinitive</td><td>versuchen, vergessen, hoffen, vorhaben, beginnen</td><td><span class="de">Ich habe vergessen, dich anzurufen.</span></td></tr>
+        <tr><td>es ist + Adj + zu</td><td>easy/important/difficult</td><td><span class="de">Es ist wichtig, pünktlich zu sein.</span></td></tr>
+        <tr><td>um … zu</td><td>purpose, same person</td><td><span class="de">Ich gehe zur Bank, um Geld abzuheben.</span></td></tr>
+        <tr><td>damit (light)</td><td>purpose, often different person</td><td><span class="de">Ich schreibe, damit Sie Bescheid wissen.</span></td></tr>
+      </table>
+      <p>Separable: <span class="de">an + zu + rufen → anzurufen. ein + zu + kaufen → einzukaufen. ab + zu + heben → abzuheben</span>. Inseparable and -ieren: <span class="de">zu besuchen, zu reservieren</span> (zu stays in front, no extra ge).</p>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Ich muss zum Arzt gehen.</span> — Modal, no zu.</li>
+        <li><span class="de">Ich versuche, früher zu kommen.</span> — versuchen + zu.</li>
+        <li><span class="de">Ich habe vergessen, das Formular mitzubringen.</span> — separable mit + zu + bringen.</li>
+        <li><span class="de">Ich lerne Deutsch, um die A2-Prüfung zu bestehen.</span> — purpose, same subject.</li>
+        <li><span class="de">Ich schreibe Ihnen, um den Termin zu ändern.</span> — letter gold.</li>
+        <li><span class="de">Ich rufe an, damit Sie wissen, dass ich später komme.</span> — different “you” knows → damit.</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><em>Ich muss zu arbeiten.</em></td><td><span class="de">Ich muss arbeiten.</span></td><td>No zu after a modal.</td></tr>
+        <tr><td><em>Ich versuche kommen.</em></td><td><span class="de">Ich versuche zu kommen.</span></td><td>versuchen needs zu.</td></tr>
+        <tr><td><em>um anrufen</em></td><td><span class="de">um anzurufen</span></td><td>zu sits inside the separable verb.</td></tr>
+        <tr><td><em>Ich lerne, um du bestehst.</em></td><td><span class="de">Ich lerne, damit du bestehst.</span> / keep same subject</td><td>um zu cannot change subject.</td></tr>
+      </table>
+      <h3>Mini letter</h3>
+      <p><span class="de">Sehr geehrte Frau Lang, ich schreibe, um den Termin am Mittwoch zu verschieben. Ich habe vor, nach 16 Uhr zu kommen. Könnten Sie mir bitte eine neue Uhrzeit sagen? Mit freundlichen Grüßen</span></p>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Ich muss / kann / möchte + infinitive (no zu). Ich versuche / hoffe / habe vor, … zu … Ich habe vergessen, dich anzurufen. Es ist wichtig, pünktlich zu sein. Ich schreibe, um … zu … Ich gehe zur Bank, um Geld abzuheben. Ich rufe an, damit Sie Bescheid wissen.</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        Modal + zu is a classic fail. Separable verbs hide zu: anzurufen, nicht zu anrufen. um zu needs the same person. Hören/Lesen: purpose clauses often carry the reason you tick. One um-zu in a 60-word letter is enough; do not stack three. B1 ohne zu / statt zu: recognise, do not force at A2.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Write four modal sentences with no zu, then four versuchen/hoffen/vergessen with zu.</li>
+        <li>Build anzurufen, einzukaufen, mitzubringen, abzuheben.</li>
+        <li>Write a Sie-sentence: Ich schreibe, um …</li>
+        <li>Contrast um zu vs damit with the same idea.</li>
+        <li>Correct: Ich muss zu kommen / um anrufen / Ich lerne um du bestehst.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a2-k2",
+    title: "Polite Konjunktiv II: Könnten, würde, wäre",
+    level: "a2",
+    minutes: 50,
+    html: `
+      <p>telc A2 Schreiben to a landlord or course office needs one polite form. Official A2 lists Konjunktiv II of <span class="de">mögen, haben, können</span> as chunks: <span class="de">möchte, hätte gern, könntest du / Könnten Sie</span>. You do not need unreal if-clauses like B1. You need the letter and oral politeness set cold.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Wish now: <span class="de">ich möchte</span> or <span class="de">ich hätte gern</span> + noun. Café and shop.</li>
+        <li>Request to a stranger: <span class="de">Könnten Sie bitte …?</span> + infinitive at the end. Office, landlord, examiner.</li>
+        <li>Softer wish: <span class="de">Ich würde gern / würde gerne</span> + infinitive. <span class="de">Ich würde gern kommen.</span></li>
+        <li>Possibility: <span class="de">Wäre … möglich? Würde Ihnen … passen?</span></li>
+        <li>Friend advice (light): <span class="de">Du solltest … An deiner Stelle würde ich …</span></li>
+        <li>Do not stack: not <em>ich würde können</em>. Pick one: <span class="de">ich könnte</span> or <span class="de">ich kann</span>.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “could you” is everyday polite. German <span class="de">kannst du</span> is fine with friends; offices want <span class="de">Könnten Sie</span>. English “I would like” is <span class="de">möchte</span> or <span class="de">hätte gern</span> — not möchte + würde together. English “would” is not a future marker here; A2 future is still present + time: <span class="de">Ich komme morgen</span>.</p>
+      <h3>The A2 politeness box</h3>
+      <table>
+        <tr><th>Job</th><th>Chunk</th><th>Example</th></tr>
+        <tr><td>I would like (noun)</td><td><span class="de">ich möchte / ich hätte gern</span></td><td><span class="de">Ich hätte gern einen Termin.</span></td></tr>
+        <tr><td>I would like (to do)</td><td><span class="de">ich würde gern</span> + infinitive</td><td><span class="de">Ich würde gern am Samstag kommen.</span></td></tr>
+        <tr><td>Could you (Sie)</td><td><span class="de">Könnten Sie bitte …?</span></td><td><span class="de">Könnten Sie einen Techniker schicken?</span></td></tr>
+        <tr><td>Could you (du)</td><td><span class="de">Könntest du bitte …?</span></td><td><span class="de">Könntest du mir das Foto schicken?</span></td></tr>
+        <tr><td>Would it be possible</td><td><span class="de">Wäre … möglich?</span></td><td><span class="de">Wäre ein Termin nach 16 Uhr möglich?</span></td></tr>
+        <tr><td>Would … suit you</td><td><span class="de">Würde Ihnen … passen?</span></td><td><span class="de">Würde Ihnen Freitag passen?</span></td></tr>
+      </table>
+      <p>Forms you will see: <span class="de">ich könnte, du könntest, er könnte, wir könnten, Sie könnten</span>. <span class="de">ich wäre, es wäre, Sie wären</span>. <span class="de">ich würde, Sie würden</span> + infinitive.</p>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Könnten Sie mir bitte sagen, welchen Stoff ich nachholen muss?</span> — Course office gold.</li>
+        <li><span class="de">Die Heizung geht nicht. Könnten Sie bitte einen Techniker schicken?</span> — Landlord.</li>
+        <li><span class="de">Ich würde gern später kommen. Wäre 17 Uhr möglich?</span> — Soften a change.</li>
+        <li><span class="de">Ich hätte gern ein anderes Zimmer.</span> — Hotel, noun after hätte gern.</li>
+        <li><span class="de">An deiner Stelle würde ich absagen.</span> — Friend advice, still A2.</li>
+        <li><span class="de">Würden Sie das bitte wiederholen?</span> — Oral repair with the examiner.</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th></tr>
+        <tr><td><em>Hallo Frau Lang, kannst du …</em> (office)</td><td><span class="de">Sehr geehrte Frau Lang, könnten Sie …</span></td></tr>
+        <tr><td><em>Ich möchte würde kommen</em></td><td><span class="de">Ich möchte kommen / Ich würde gern kommen</span></td></tr>
+        <tr><td><em>Ich würde können helfen</em></td><td><span class="de">Ich könnte helfen / Ich kann helfen</span></td></tr>
+        <tr><td>A 60-word letter with zero politeness to an office</td><td>One Könnten Sie bitte is the A2 mark</td></tr>
+      </table>
+      <h3>Mini letter</h3>
+      <p><span class="de">Sehr geehrte Frau Berger, leider kann ich den Termin am Mittwoch nicht wahrnehmen. Wäre ein Termin nach 16 Uhr möglich? Ich würde gern in dieser Woche kommen. Könnten Sie mir bitte Bescheid sagen? Mit freundlichen Grüßen</span></p>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Ich möchte … Ich hätte gern … Ich würde gern … Könnten Sie bitte …? Könntest du bitte …? Wäre … möglich? Würde Ihnen … passen? Würden Sie das bitte wiederholen? An deiner Stelle würde ich …</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        One polite form per letter is enough; five würde-sentences look copied. Mix du and Sie and the register mark dies. hätte gern wants a noun; würde gern wants an infinitive. Unreal if-clauses (<span class="de">Wenn ich Zeit hätte, würde ich …</span>) are B1 production — recognise at A2, do not force them into a 60-word note. Hören: könnte vs kann is still “can”, often just softer.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Rewrite “I want a date” as hätte gern and as würde gern.</li>
+        <li>Write a three-line Sie-letter with Könnten Sie and Wäre … möglich.</li>
+        <li>Ask a friend with Könntest du bitte.</li>
+        <li>Repair in the oral: Würden Sie das bitte wiederholen?</li>
+        <li>Correct: Ich würde können / Hallo Frau Lang kannst du / möchte würde.</li>
+      </ol>
+    `,
   }
 ]
 });

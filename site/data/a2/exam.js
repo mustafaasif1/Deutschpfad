@@ -1432,6 +1432,36 @@ registerPack("a2", {
       ]
     },
     {
+      "id": "h-13",
+      "title": "A2 Paper 2 · Teil 2 — interview",
+      "once": false,
+      "paper": 2,
+      "teil": 2,
+      "intro": "Mira talks about work, the course, and shopping.",
+      "audio": "Ich arbeite vormittags im Café und nachmittags gehe ich zum A2-Kurs. Am Wochenende kaufe ich oft auf dem Markt ein, weil es frischer und nicht so teuer ist. Gestern habe ich eine Jacke bestellt. Sie war zu klein, deshalb möchte ich umtauschen. Ohne Kassenbon geht das nicht.",
+      "items": [
+        { "statement": "Mira arbeitet nur am Abend.", "answer": false },
+        { "statement": "Sie macht einen A2-Kurs.", "answer": true },
+        { "statement": "Sie kauft am Wochenende oft auf dem Markt ein.", "answer": true },
+        { "statement": "Die Jacke war zu groß.", "answer": false },
+        { "statement": "Ohne Kassenbon kein Umtausch.", "answer": true }
+      ]
+    },
+    {
+      "id": "h-14",
+      "title": "A2 Paper 2 · Teil 3 — everyday scenes",
+      "once": false,
+      "paper": 2,
+      "teil": 3,
+      "items": [
+        { "audio": "Der Termin im Bürgeramt ist nicht um 9 Uhr, sondern um 16 Uhr. Bitte Ausweis mitbringen.", "statement": "Der Termin ist um 9 Uhr.", "answer": false },
+        { "audio": "Heute fällt die Linie 12 aus. Bitte den Ersatzbus ab dem Marktplatz nehmen.", "statement": "Es gibt einen Ersatzbus.", "answer": true },
+        { "audio": "Die Lieferung kommt erst am Donnerstag, nicht schon morgen.", "statement": "Das Paket kommt morgen.", "answer": false },
+        { "audio": "Wir treffen uns um halb sieben vor dem Kino, nicht um sieben.", "statement": "Treffen um 18:30 vor dem Kino.", "answer": true },
+        { "audio": "Im Kursraum 4, nicht in Raum 14. Der Aufzug ist defekt, bitte Treppe.", "statement": "Der Kurs ist in Raum 14.", "answer": false }
+      ]
+    },
+    {
       "id": "h-5",
       "title": "A2 Paper 3 · Teil 1 (once)",
       "once": true,
@@ -1636,6 +1666,95 @@ registerPack("a2", {
           "answer": true
         }
       ]
+    },
+    {
+      "id": "h-11",
+      "title": "A2 trap paper · Teil 1 (once)",
+      "once": true,
+      "paper": 5,
+      "teil": 1,
+      "items": [
+        {
+          "audio": "Der Zug nach Köln hat erst 12 Minuten Verspätung, nicht 20. Abfahrt von Gleis 7, nicht Gleis 4.",
+          "statement": "Der Zug hat 20 Minuten Verspätung und fährt von Gleis 4.",
+          "answer": false
+        },
+        {
+          "audio": "Die Rechnung ist vierzehn Euro fünfzig, nicht vierzig.",
+          "statement": "Man zahlt 40 Euro.",
+          "answer": false
+        },
+        {
+          "audio": "Termine nur nach Vereinbarung. Ohne Termin können wir Sie heute nicht annehmen.",
+          "statement": "Man kann ohne Termin sofort kommen.",
+          "answer": false
+        },
+        {
+          "audio": "Der Kurs fällt nicht aus. Er beginnt aber erst um 18:15, nicht um 18:00.",
+          "statement": "Der Kurs beginnt um 18:15.",
+          "answer": true
+        },
+        {
+          "audio": "Wegen Inventur schließen wir schon um 16 Uhr. Morgen wieder von 9 bis 19 Uhr.",
+          "statement": "Heute ist länger geöffnet als sonst.",
+          "answer": false
+        },
+        {
+          "audio": "Ich kann Freitag nicht, weil ich arbeiten muss. Samstag Nachmittag geht.",
+          "statement": "Die Person hat am Freitag Zeit.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "h-12",
+      "title": "A2 trap paper · Teil 3",
+      "once": false,
+      "paper": 5,
+      "teil": 3,
+      "items": [
+        {
+          "audio": "Die Heizung ist seit Montag kaputt, nicht erst seit heute.",
+          "statement": "Die Heizung ist erst heute kaputt.",
+          "answer": false
+        },
+        {
+          "audio": "Bitte gelbe Tonne für Plastik, nicht die blaue.",
+          "statement": "Plastik kommt in die gelbe Tonne.",
+          "answer": true
+        },
+        {
+          "audio": "Kein Parkplatz vor dem Amt. Parken Sie in der Tiefgarage.",
+          "statement": "Man kann direkt vor dem Amt parken.",
+          "answer": false
+        },
+        {
+          "audio": "Umtausch nur mit Kassenbon, und nur in Größe M oder L, nicht XL.",
+          "statement": "Ohne Bon kann man umtauschen.",
+          "answer": false
+        },
+        {
+          "audio": "Bei Regen treffen wir uns im Café, nicht im Park. Um halb vier.",
+          "statement": "Treffen um 15:30 im Café, wenn es regnet.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "h-15",
+      "title": "A2 trap paper · Teil 2 — conversation",
+      "once": false,
+      "paper": 5,
+      "teil": 2,
+      "intro": "Two colleagues plan a return and a meeting.",
+      "audio": "Die Schuhe sind eine Nummer zu klein. Ich habe den Kassenbon. Umtausch geht nur innerhalb von 14 Tagen, nicht 40. Danach treffen wir uns nicht um acht, sondern um halb acht am Ausgang Ost.",
+      "items": [
+        { "statement": "Die Schuhe sind zu groß.", "answer": false },
+        { "statement": "Sie hat den Kassenbon.", "answer": true },
+        { "statement": "Man hat 40 Tage Zeit zum Umtausch.", "answer": false },
+        { "statement": "Treffen um 7:30 am Ausgang Ost.", "answer": true },
+        { "statement": "Treffen um 8:00 am Haupteingang.", "answer": false }
+      ]
     }
   ],
   "schreiben": [
@@ -1677,6 +1796,78 @@ registerPack("a2", {
       ],
       "model": "Mustafa Asif · Musterstraße 1, 50667 Köln · 01.01.1994 · Ausweis … · Dienstag 16 Uhr"
     },
+    {
+      "id": "a2-form-kurs",
+      "kind": "form",
+      "register": "Sie",
+      "title": "A2 Schreiben Teil 1 — Formular: Kurs / VHS",
+      "situation": "Sie möchten einen Abendkurs buchen. Füllen Sie das Formular vollständig aus.",
+      "situationEn": "You want to book an evening course. Fill in the whole form.",
+      "fields": [
+        { "id": "name", "label": "Name, Vorname" },
+        { "id": "geburt", "label": "Geburtsdatum" },
+        { "id": "adresse", "label": "Straße, PLZ, Ort" },
+        { "id": "telefon", "label": "Telefon" },
+        { "id": "kurs", "label": "Kurs (A2 Abend / Samstag)" },
+        { "id": "niveau", "label": "Ihr Niveau jetzt" }
+      ],
+      "points": ["Name", "Adresse", "Kurs", "Telefon"],
+      "model": "Hassan, Omar · 12.03.1990 · Bahnhofstraße 8, 50667 Köln · 0151 000000 · A2 Abend · A1 fertig"
+    },
+    {
+      "id": "a2-form-hotel",
+      "kind": "form",
+      "register": "Sie",
+      "title": "A2 Schreiben Teil 1 — Formular: Hotel",
+      "situation": "Sie buchen zwei Nächte. Füllen Sie das Formular aus.",
+      "situationEn": "You book two nights. Fill in the form.",
+      "fields": [
+        { "id": "name", "label": "Name, Vorname" },
+        { "id": "anreise", "label": "Anreise" },
+        { "id": "abreise", "label": "Abreise" },
+        { "id": "zimmer", "label": "Zimmer (Einzel / Doppel)" },
+        { "id": "fruehstueck", "label": "Frühstück?" },
+        { "id": "telefon", "label": "Telefon" }
+      ],
+      "points": ["Name", "Daten", "Zimmer", "Frühstück", "Telefon"],
+      "model": "Sara Ali · 14.05.–16.05. · Doppelzimmer · Frühstück ja · 0176 221100"
+    },
+    {
+      "id": "a2-form-arzt",
+      "kind": "form",
+      "register": "Sie",
+      "title": "A2 Schreiben Teil 1 — Formular: Arztpraxis",
+      "situation": "Sie brauchen einen Termin. Füllen Sie das Formular aus.",
+      "situationEn": "You need a doctor’s appointment. Fill in the form.",
+      "fields": [
+        { "id": "name", "label": "Name, Vorname" },
+        { "id": "geburt", "label": "Geburtsdatum" },
+        { "id": "kasse", "label": "Krankenkasse" },
+        { "id": "problem", "label": "Beschwerden seit wann?" },
+        { "id": "zeit", "label": "Wann können Sie? (nach 16 Uhr?)" },
+        { "id": "telefon", "label": "Telefon" }
+      ],
+      "points": ["Name", "Kasse", "Problem", "Zeit", "Telefon"],
+      "model": "Leila Nour · 04.06.1992 · AOK · Halsschmerzen seit Montag · Dienstag nach 16 Uhr · 0152 778899"
+    },
+    {
+      "id": "a2-form-umtausch",
+      "kind": "form",
+      "register": "Sie",
+      "title": "A2 Schreiben Teil 1 — Formular: Umtausch",
+      "situation": "Sie möchten Ware umtauschen. Füllen Sie das Formular aus.",
+      "situationEn": "You want to exchange goods. Fill in the form.",
+      "fields": [
+        { "id": "name", "label": "Name, Vorname" },
+        { "id": "bestell", "label": "Bestellnummer / Kassenbon" },
+        { "id": "artikel", "label": "Artikel" },
+        { "id": "problem", "label": "Problem (Größe / beschädigt / falsch)" },
+        { "id": "wunsch", "label": "Umtausch oder Geld zurück?" },
+        { "id": "telefon", "label": "Telefon" }
+      ],
+      "points": ["Name", "Bon", "Problem", "Wunsch", "Telefon"],
+      "model": "Ali Hassan · 5521 · Schuhe Größe 42 · zu klein · Umtausch Größe 43 · 0176 333333"
+    },
 
     {
       "id": "a2-invite",
@@ -1689,7 +1880,7 @@ registerPack("a2", {
         "Alternative time",
         "What you bring"
       ],
-      "model": "Liebe Sara, danke für die Einladung. Leider kann ich am Freitag nicht, weil ich arbeiten muss. Samstag Abend wäre besser. Soll ich etwas zu essen mitbringen? Liebe Grüße"
+      "model": "Liebe Sara, vielen Dank für deine Einladung zur Party am Freitag. Leider kann ich nicht kommen, weil ich bis 22 Uhr arbeiten muss. Samstag Abend wäre besser für mich. Soll ich etwas zu essen oder zu trinken mitbringen? Bitte schreib mir, ob Samstag passt. Liebe Grüße, Omar"
     },
     {
       "id": "a2-course",
@@ -1702,7 +1893,7 @@ registerPack("a2", {
         "Ask about homework",
         "Contact"
       ],
-      "model": "Sehr geehrte Frau Lang, leider kann ich nächste Woche nicht zum Kurs kommen, weil ich krank bin. Könnten Sie mir bitte sagen, welchen Stoff ich nachholen muss? Gibt es Hausaufgaben? Sie erreichen mich per E-Mail. Mit freundlichen Grüßen"
+      "model": "Sehr geehrte Frau Lang, leider kann ich nächste Woche nicht zum A2-Kurs kommen, weil ich krank bin. Könnten Sie mir bitte sagen, welchen Stoff ich nachholen muss? Gibt es Hausaufgaben oder Kopien? Ich arbeite gerne zu Hause nach. Sie erreichen mich per E-Mail oder unter 0151 000000. Mit freundlichen Grüßen"
     },
     {
       "id": "a2-problem",
@@ -1715,7 +1906,7 @@ registerPack("a2", {
         "What you tried",
         "What you want"
       ],
-      "model": "Sehr geehrter Herr Meier, die Heizung funktioniert seit Montag nicht. Ich habe den Heizkörper entlüftet, aber es hilft nicht. Könnten Sie bitte einen Techniker schicken? Am besten nach 17 Uhr. Mit freundlichen Grüßen"
+      "model": "Sehr geehrter Herr Meier, die Heizung in meiner Wohnung funktioniert seit Montag nicht. Es ist sehr kalt, und ich habe den Heizkörper schon entlüftet. Das hat nicht geholfen. Könnten Sie bitte einen Techniker schicken, am besten nach 17 Uhr? Sie erreichen mich unter 0176 000000. Vielen Dank. Mit freundlichen Grüßen"
     },
     {
       "id": "a2-info",
@@ -1728,7 +1919,7 @@ registerPack("a2", {
         "Tasks",
         "Phone"
       ],
-      "model": "Sehr geehrte Damen und Herren, ich interessiere mich für die Aushilfe in Ihrem Café. Könnten Sie mir die Arbeitszeiten nennen? Welche Aufgaben gibt es? Meine Nummer ist 0176 000000. Mit freundlichen Grüßen"
+      "model": "Sehr geehrte Damen und Herren, ich interessiere mich für die Aushilfe in Ihrem Café. Könnten Sie mir bitte die Arbeitszeiten und die Aufgaben nennen? Ist auch am Wochenende Arbeit möglich? Meine Nummer ist 0176 000000, ich bin nach 16 Uhr erreichbar. Mit freundlichen Grüßen"
     },
     {
       "id": "a2-visit",
@@ -1741,7 +1932,7 @@ registerPack("a2", {
         "Where to sleep",
         "How to meet"
       ],
-      "model": "Lieber Ken, komm am besten im Mai. Wir können die Altstadt sehen. Du kannst bei mir schlafen. Schreib mir, wann dein Zug ankommt. Bis bald"
+      "model": "Lieber Ken, komm am besten im Mai, weil das Wetter dann besser ist. Wir können die Altstadt sehen und am Rhein spazieren. Du kannst bei mir auf dem Sofa schlafen, ein Hotel ist teuer. Schreib mir, wann dein Zug ankommt, dann hole ich dich am Bahnhof ab. Bis bald"
     },
     {
       "id": "a2-thanks",
@@ -1754,7 +1945,7 @@ registerPack("a2", {
         "Suggest coffee",
         "Ask plans"
       ],
-      "model": "Liebe Nina, danke für deine Hilfe vor dem Test. Die Hörübungen waren super. Wollen wir nach der Prüfung einen Kaffee trinken? Was machst du in den Ferien? Liebe Grüße"
+      "model": "Liebe Nina, vielen Dank für deine Hilfe vor dem Test. Die Hörübungen und die weil-Sätze haben mir wirklich geholfen. Wollen wir nach der Prüfung einen Kaffee trinken, zum Beispiel am Freitag um 16 Uhr im Café Sonne? Was machst du in den Ferien? Liebe Grüße"
     },
     {
       "id": "a2-shop",
@@ -1767,7 +1958,7 @@ registerPack("a2", {
         "What you want",
         "How to return"
       ],
-      "model": "Sehr geehrte Damen und Herren, wegen Bestellung 5521: Die Schuhe sind zu klein. Ich möchte umtauschen. Wie kann ich sie zurückschicken? Mit freundlichen Grüßen"
+      "model": "Sehr geehrte Damen und Herren, ich schreibe wegen der Bestellung 5521. Die Schuhe sind eine Nummer zu klein, Größe 42 statt 43. Ich möchte umtauschen, nicht das Geld zurück. Könnten Sie mir bitte sagen, wie ich die Ware zurückschicke? Der Kassenbon liegt bei. Tel. 0176 333333. Mit freundlichen Grüßen"
     },
     {
       "id": "a2-weekend",
@@ -1780,7 +1971,7 @@ registerPack("a2", {
         "With whom",
         "Next weekend plan"
       ],
-      "model": "Hallo Luis, am Wochenende bin ich mit Freunden ins Kino gegangen. Danach haben wir Pizza gegessen. Es war lustig. Nächstes Wochenende möchte ich wandern. Und du?"
+      "model": "Hallo Luis, am Wochenende bin ich mit Freunden ins Kino gegangen. Danach haben wir Pizza gegessen, und es war sehr lustig. Sonntag habe ich für den Kurs gelernt, weil nächste Woche ein Test ist. Nächstes Wochenende möchte ich wandern, wenn das Wetter gut ist. Und du? Liebe Grüße"
     },
     {
       "id": "a2-bank",
@@ -1793,7 +1984,7 @@ registerPack("a2", {
         "When",
         "Phone"
       ],
-      "model": "Sehr geehrte Damen und Herren, ich heiße Ali Hassan und möchte ein Konto eröffnen. Donnerstag Nachmittag möglich? Tel. 0176 333333. Mit freundlichen Grüßen"
+      "model": "Sehr geehrte Damen und Herren, ich heiße Ali Hassan und möchte ein Girokonto eröffnen. Haben Sie am Donnerstag Nachmittag nach 16 Uhr noch einen Termin frei? Welche Unterlagen muss ich mitbringen? Meine Nummer ist 0176 333333. Mit freundlichen Grüßen"
     },
     {
       "id": "a2-landlord",
@@ -1806,7 +1997,7 @@ registerPack("a2", {
         "Tried",
         "Ask help"
       ],
-      "model": "Sehr geehrter Herr Lang, der Kühlschrank geht seit Sonntag nicht. Ein-/Ausschalten half nicht. Bitte Hilfe. Mit freundlichen Grüßen"
+      "model": "Sehr geehrter Herr Lang, der Kühlschrank in der Küche geht seit Sonntag nicht. Das Essen wird warm, und Ein-/Ausschalten hat nicht geholfen. Könnten Sie bitte heute oder morgen einen Techniker schicken, am besten nach 17 Uhr? Tel. 0151 221100. Mit freundlichen Grüßen"
     },
     {
       "id": "a2-cinema",
@@ -1819,7 +2010,7 @@ registerPack("a2", {
         "Meet",
         "Ask"
       ],
-      "model": "Hallo Sara, Freitag 20 Uhr Kino? Treffpunkt Eingang. Passt das? Liebe Grüße"
+      "model": "Hallo Sara, hast du am Freitag Zeit? Um 20 Uhr läuft ein guter Film im Cinenova. Wir können uns um 19:45 am Eingang treffen. Wenn es regnet, warte ich im Foyer. Passt das für dich, oder ist Samstag besser? Liebe Grüße"
     },
     {
       "id": "a2-sickchild",
@@ -1832,7 +2023,7 @@ registerPack("a2", {
         "Reason",
         "Back when"
       ],
-      "model": "Sehr geehrte Frau Keller, Mira kann Montag nicht kommen, sie hat Fieber. Voraussichtlich wieder Mittwoch. Mit freundlichen Grüßen"
+      "model": "Sehr geehrte Frau Keller, Mira kann am Montag und Dienstag nicht in den Kurs kommen, weil sie Fieber hat. Der Arzt hat Ruhe empfohlen. Voraussichtlich ist sie am Mittwoch wieder da. Könnten Sie uns bitte die Hausaufgaben schicken? Tel. 0152 110011. Mit freundlichen Grüßen"
     },
     {
       "id": "a2-train",
@@ -1845,10 +2036,74 @@ registerPack("a2", {
         "Ask options",
         "Contact"
       ],
-      "model": "Sehr geehrte Damen und Herren, mein Zug nach Köln hatte 40 Minuten Verspätung. Welche Entschädigung ist möglich? Tel. 0152 000111. Mit freundlichen Grüßen"
+      "model": "Sehr geehrte Damen und Herren, mein Zug nach Köln, Abfahrt 14:14, hatte 40 Minuten Verspätung, nicht 14. Welche Entschädigung ist möglich, und wo reiche ich das Formular ein? Meine Ticketnummer ist R-4412. Tel. 0152 000111. Mit freundlichen Grüßen"
+    },
+    {
+      "id": "a2-parcel",
+      "register": "Sie",
+      "title": "A2: missed parcel",
+      "situation": "A notice says your parcel is at the post office. You cannot go today.",
+      "points": [
+        "Name and Sendung",
+        "Why not today",
+        "When you can come",
+        "Ask them to keep it"
+      ],
+      "model": "Sehr geehrte Damen und Herren, ich habe eine Benachrichtigung für ein Paket, Sendung AB-2291. Heute kann ich nicht kommen, weil ich bis 18 Uhr arbeiten muss. Könnte ich morgen um 17 Uhr abholen? Bitte lagern Sie das Paket bis Donnerstag. Tel. 0151 334455. Mit freundlichen Grüßen"
+    },
+    {
+      "id": "a2-hours",
+      "register": "Sie",
+      "title": "A2: shop closed when you arrived",
+      "situation": "The shop closed early. You need the item this week.",
+      "points": [
+        "When you came",
+        "What you need",
+        "Ask opening hours",
+        "Ask them to reserve"
+      ],
+      "model": "Guten Tag, gestern um 17:30 war Ihr Geschäft schon zu. Ich brauche eine Jacke Größe M, schwarz, für nächste Woche. Wann haben Sie diese Woche geöffnet? Könnten Sie die Jacke bitte bis Freitag zurücklegen? Tel. 0176 221100, ich bin nach 16 Uhr erreichbar. Mit freundlichen Grüßen"
+    },
+    {
+      "id": "a2-birthday",
+      "register": "du",
+      "title": "A2: birthday — yes, but later",
+      "situation": "Friend invites you Saturday 15:00. You work until 18:00.",
+      "points": [
+        "Thanks",
+        "Cannot at 15:00 because",
+        "Suggest evening",
+        "What you bring"
+      ],
+      "model": "Liebe Nora, vielen Dank für die Einladung zu deinem Geburtstag am Samstag um 15 Uhr. Leider kann ich um 15 Uhr nicht, weil ich bis 18 Uhr arbeiten muss. Ab 19 Uhr komme ich gerne. Soll ich einen Kuchen oder etwas zu trinken mitbringen? Bitte schreib mir kurz. Liebe Grüße"
+    },
+    {
+      "id": "a2-termin",
+      "register": "Sie",
+      "title": "A2: change an Amt appointment",
+      "situation": "You have a Bürgeramt slot but your child is sick.",
+      "points": [
+        "Which appointment",
+        "Why you cannot come",
+        "Ask for a new date after 16:00",
+        "Contact"
+      ],
+      "model": "Sehr geehrte Damen und Herren, ich habe am Dienstag um 10 Uhr einen Termin im Bürgeramt. Leider kann ich nicht kommen, weil mein Kind krank ist. Könnten Sie mir bitte einen neuen Termin nach 16 Uhr geben, zum Beispiel Donnerstag? Ich bringe den Ausweis mit. Tel. 0152 778899. Mit freundlichen Grüßen"
     }
   ],
   "sprechen": {
+    "lead": "A2 is a pair oral, about 15 minutes, typically no B1 prep room. Teil 2 is Alltag + weil + Und du? Teil 3 only counts if you actually agree.",
+    "teil2Title": "Teil 2 — Alltag cards",
+    "teil2Lead": "Opinion + weil + one example + Und du? Not a B1 90-second lecture.",
+    "teil2Steps": [
+      "Ich finde … gut / praktisch, weil …",
+      "Zum Beispiel …",
+      "Allerdings …",
+      "Und du? Was meinst du?"
+    ],
+    "teil2Timer": 45,
+    "teil3Title": "Teil 3 — negotiate and agree",
+    "teil3Lead": "Cover Tag, Uhrzeit, Ort, mitbringen, Plan B. Say Einverstanden and stop. Do not keep offering new ideas.",
     "intro": "Hallo, ich heiße … Ich komme aus … und wohne seit … in … Ich arbeite als … / Ich mache eine Ausbildung. In meiner Freizeit … Ich lerne Deutsch, weil … Und du?",
     "questions": [
       "Seit wann lernst du Deutsch?",
@@ -1856,190 +2111,197 @@ registerPack("a2", {
       "Was hast du am Wochenende gemacht?",
       "Was findest du gut an deiner Stadt?",
       "Welche Hobbys hast du?",
-      "Warum machst du die A2-Prüfung?"
+      "Warum machst du die A2-Prüfung?",
+      "Wohnst du allein oder in einer WG?",
+      "Wie kommst du zur Arbeit / zum Kurs?",
+      "Was machst du, wenn es regnet?",
+      "Hast du schon einmal etwas umgetauscht?"
     ],
     "topics": [
       {
         "t": "Handy im Alltag",
-        "spine": "Praktisch für Kontakt, aber man braucht Pausen."
+        "spine": "Praktisch für Kontakt, aber man braucht Pausen.",
+        "ask": ["Wie oft bist du am Handy?", "Wann machst du das Handy aus?"]
       },
       {
         "t": "Stadt oder Land",
-        "spine": "Stadt hat Arbeit und Kultur. Land ist ruhiger."
+        "spine": "Stadt hat Arbeit und Kultur. Land ist ruhiger.",
+        "ask": ["Wohnst du lieber in der Stadt?", "Was fehlt auf dem Land?"]
       },
       {
         "t": "Gesundes Essen",
-        "spine": "Ich koche oft selbst, weil es gesünder ist."
+        "spine": "Ich koche oft selbst, weil es gesünder ist.",
+        "ask": ["Kochst du oft?", "Was isst du in der Pause?"]
       },
       {
         "t": "Öffentliche Verkehrsmittel",
-        "spine": "Bus und Bahn sind gut, aber Verspätungen nerven."
+        "spine": "Bus und Bahn sind gut, aber Verspätungen nerven.",
+        "ask": ["Fährst du mit dem Bus?", "Was machst du bei Verspätung?"]
       },
       {
         "t": "Lernen mit App vs Kurs",
-        "spine": "App ist flexibel. Kurs hilft beim Sprechen."
+        "spine": "App ist flexibel. Kurs hilft beim Sprechen.",
+        "ask": ["Lernst du mit einer App?", "Was hilft dir mehr — Kurs oder App?"]
       },
       {
         "t": "Wohnen: allein oder WG",
-        "spine": "WG ist günstiger. Allein ist ruhiger."
+        "spine": "WG ist günstiger. Allein ist ruhiger.",
+        "ask": ["Wohnst du in einer WG?", "Was ist dir wichtiger — Preis oder Ruhe?"]
+      },
+      {
+        "t": "Arbeit und Ausbildung",
+        "spine": "Ich arbeite / ich mache eine Ausbildung, weil ich Geld und Praxis brauche.",
+        "ask": ["Arbeitest du oder lernst du?", "Was machst du nach der Arbeit?"]
+      },
+      {
+        "t": "Gesundheit und Arzt",
+        "spine": "Bei Schnupfen gehe ich in die Apotheke. Bei Fieber brauche ich einen Termin.",
+        "ask": ["Gehst du oft zum Arzt?", "Was machst du bei Erkältung?"]
+      },
+      {
+        "t": "Wohnung und Vermieter",
+        "spine": "Wenn die Heizung kaputt ist, schreibe ich dem Vermieter, weil ich das nicht selbst reparieren kann.",
+        "ask": ["Was machst du, wenn etwas kaputt ist?", "Kennst du deinen Vermieter?"]
+      },
+      {
+        "t": "Wetter — Plan B",
+        "spine": "Bei Sonne Park. Bei Regen Café, weil man nicht nass werden will.",
+        "ask": ["Was machst du bei Regen?", "Gehst du trotzdem spazieren?"]
+      },
+      {
+        "t": "Online einkaufen",
+        "spine": "Bequem, aber im Laden sieht man die Größe. Umtausch nur mit Bon.",
+        "ask": ["Kaufst du oft online?", "Hast du schon einmal umgetauscht?"]
+      },
+      {
+        "t": "Feste und Einladungen",
+        "spine": "Ich gehe gern zu Geburtstagen, aber ich sage Bescheid, wenn ich arbeiten muss.",
+        "ask": ["Gehst du gern auf Feste?", "Was bringst du mit?"]
+      },
+      {
+        "t": "Amt und Termin",
+        "spine": "Ohne Termin wartet man lange. Online buchen ist praktisch, aber nicht immer frei.",
+        "ask": ["Hast du schon einen Termin beim Amt gemacht?", "Was war schwierig?"]
+      },
+      {
+        "t": "Sport und Freizeit",
+        "spine": "Ich laufe / schwimme, weil es gut für den Kopf ist. Mit Freunden macht es mehr Spaß.",
+        "ask": ["Machst du Sport?", "Allein oder mit Freunden?"]
       }
     ],
     "planning": [
       {
         "t": "Klassenfest",
-        "points": [
-          "Tag",
-          "Ort",
-          "Essen",
-          "Musik",
-          "Aufräumen"
-        ]
+        "points": ["Tag", "Ort", "Essen", "Musik", "Aufräumen"]
       },
       {
         "t": "Wochenende in anderer Stadt",
-        "points": [
-          "Zug",
-          "Hostel",
-          "zwei Aktivitäten",
-          "Budget"
-        ]
+        "points": ["Zug", "Hostel", "zwei Aktivitäten", "Budget"]
       },
       {
         "t": "Geburtstagsbrunch",
-        "points": [
-          "Zeit",
-          "Ort",
-          "Geschenk",
-          "wer kocht"
-        ]
+        "points": ["Zeit", "Ort", "Geschenk", "wer kocht"]
+      },
+      {
+        "t": "Termin beim Vermieter",
+        "points": ["Tag nach 17 Uhr", "Heizung oder Schimmel", "wer spricht", "Fotos mitnehmen"]
+      },
+      {
+        "t": "Kino — Regenplan",
+        "points": ["Film", "Uhrzeit", "Treffpunkt", "Café wenn der Film voll ist"]
+      },
+      {
+        "t": "Geschenk kaufen",
+        "points": ["Budget", "Laden oder online", "wann", "wer zahlt"]
+      },
+      {
+        "t": "Kursausflug",
+        "points": ["Ziel", "Ticket", "Treffpunkt Bahnhof", "Essen", "Wetter"]
+      },
+      {
+        "t": "Kind vom Arzt abholen",
+        "points": ["Uhrzeit", "wer hat Zeit", "Apotheke danach", "Nachricht an die Lehrerin"]
       }
     ],
     "engine": [
-      {
-        "role": "suggest",
-        "de": "Ich schlage vor, dass wir…"
-      },
-      {
-        "role": "agree",
-        "de": "Gute Idee. Einverstanden."
-      },
-      {
-        "role": "soft-no",
-        "de": "Ich bin nicht so sicher, weil…"
-      },
-      {
-        "role": "counter",
-        "de": "Stattdessen könnten wir…"
-      },
-      {
-        "role": "close",
-        "de": "Also, dann sind wir uns einig: …"
-      }
+      { "role": "suggest", "de": "Ich schlage vor, dass wir…" },
+      { "role": "suggest", "de": "Wie wäre es mit…?" },
+      { "role": "reason", "de": "…, weil das günstiger / praktischer ist." },
+      { "role": "agree", "de": "Gute Idee. Einverstanden." },
+      { "role": "soft-no", "de": "Ich bin nicht so sicher, weil…" },
+      { "role": "counter", "de": "Stattdessen könnten wir…" },
+      { "role": "bring", "de": "Was bringst du mit?" },
+      { "role": "planb", "de": "Bei Regen treffen wir uns im Café." },
+      { "role": "time", "de": "Wann passt es dir besser — Samstag oder Sonntag?" },
+      { "role": "close", "de": "Also, dann sind wir uns einig: …" }
     ]
   },
   "mocks": [
     {
       "id": "mock-1",
       "title": "A2 mock A",
-      "blurb": "Lesen 1 + SB + Hören + letter.",
+      "blurb": "Hören paper 1 · Lesen 1 + housing letter in one ~50-minute booklet. No Sprachbausteine.",
       "lesen": "lesen-1",
-      "sb": [
-        "sb-1",
-        "sb-2"
-      ],
-      "hoeren": [
-        "h-1",
-        "h-2",
-        "h-3"
-      ],
+      "hoeren": ["h-1"],
       "schreiben": "a2-problem"
     },
     {
       "id": "mock-2",
       "title": "A2 mock B",
-      "blurb": "Second paper.",
+      "blurb": "Hören paper 2 (now complete) · Lesen 2 + course letter.",
       "lesen": "lesen-2",
-      "sb": [
-        "sb-3",
-        "sb-4"
-      ],
-      "hoeren": [
-        "h-4",
-        "h-2"
-      ],
+      "hoeren": ["h-4"],
       "schreiben": "a2-course"
     },
     {
       "id": "mock-3",
       "title": "A2 mock C",
-      "blurb": "Extra training mock.",
+      "blurb": "Hören paper 3 · Lesen 1 + invite. Mix a form on another day.",
       "lesen": "lesen-1",
-      "sb": [
-        "sb-2",
-        "sb-3"
-      ],
-      "hoeren": [
-        "h-1",
-        "h-3",
-        "h-4"
-      ],
+      "hoeren": ["h-5"],
       "schreiben": "a2-invite"
     },
     {
       "id": "mock-4",
       "title": "A2 mock D",
-      "blurb": "Lesen 3 + SB + Hören 3 + letter.",
+      "blurb": "Hören paper 3 · Lesen 3 + bank letter or bank form.",
       "lesen": "lesen-3",
-      "sb": [
-        "sb-5",
-        "sb-6"
-      ],
-      "hoeren": [
-        "h-5",
-        "h-6",
-        "h-7"
-      ],
+      "hoeren": ["h-5"],
       "schreiben": "a2-bank"
     },
     {
       "id": "mock-5",
       "title": "A2 mock E",
-      "blurb": "Lesen 4 + SB + Hören 4 + letter.",
+      "blurb": "Hören paper 4 · Lesen 4 + fridge letter.",
       "lesen": "lesen-4",
-      "sb": [
-        "sb-7",
-        "sb-8"
-      ],
-      "hoeren": [
-        "h-8",
-        "h-9",
-        "h-10"
-      ],
+      "hoeren": ["h-8"],
       "schreiben": "a2-landlord"
     },
     {
       "id": "mock-6",
       "title": "A2 mock F",
-      "blurb": "Lesen 5 + more SB + mix + letter.",
+      "blurb": "Hören paper 4 · Lesen 5 + cinema invite at exam length.",
       "lesen": "lesen-5",
-      "sb": [
-        "sb-9",
-        "sb-10"
-      ],
-      "hoeren": [
-        "h-5",
-        "h-9",
-        "h-3"
-      ],
+      "hoeren": ["h-8"],
       "schreiben": "a2-cinema"
+    },
+    {
+      "id": "mock-7",
+      "title": "A2 mock G — trap sitting",
+      "blurb": "Full trap Hören (now with Teil 2) · Lesen 5 + Amt appointment letter. Then sit the official telc MP3.",
+      "lesen": "lesen-5",
+      "hoeren": ["h-11"],
+      "schreiben": "a2-termin"
     }
   ],
   "tips": [
-    "Official telc A2: Hören ~20 min, Lesen 3 parts (~50 min with language elements), Schreiben 2 parts, pair Sprechen ~15. Not the DTZ A2·B1 paper.",
+    "Official telc A2: Hören ~20 min, Lesen + Schreiben one ~50-minute booklet (form/note + ~60–80 word letter), pair Sprechen ~15. No Sprachbausteine paper. Not DTZ.",
     "Perfekt is your storytelling tense: practise 10 sentences every day.",
     "weil/dass verb-final must be automatic before B1.",
-    "Write every letter with four clear points.",
-    "Finish with official telc A2 audio."
+    "Write every letter with four clear points and 60–80 words. Hide the model. One du letter and one Sie letter every weak day. Also drill the forms.",
+    "Required: official telc A2 Modelltest PDF + MP3. Browser voice is not exam acoustics.",
+    "Oral: six pair runs. Teil 2 is weil + Und du?, not a B1 speech. Teil 3 must end with Einverstanden.",
+    "Hören traps: nicht/kein, erst/schon, 14 vs 40, Gleiswechsel. Teil 1 once — do not replay."
   ]
 }
 });

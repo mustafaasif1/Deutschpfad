@@ -86,6 +86,14 @@ tr:nth-child(even) td { background: #fafafa; }
 
 .de { font-weight: 600; }
 .en { color: #555; font-style: italic; }
+.gloss {
+  display: block;
+  font-weight: 400;
+  font-style: italic;
+  color: #555;
+  font-size: .88em;
+  margin-top: .12rem;
+}
 .tiny { font-size: .82rem; color: #555; }
 .center { text-align: center; }
 
@@ -174,21 +182,91 @@ tr { break-inside: avoid; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: .6rem;
+  flex-wrap: wrap;
 }
-.screen-bar button, .screen-bar a {
+.screen-bar a, .screen-bar button, .screen-bar select {
   background: #fff;
   color: var(--accent);
   border: 0;
   padding: .35rem .7rem;
   border-radius: 4px;
   font-weight: 700;
+  font-family: inherit;
+  font-size: .85rem;
   text-decoration: none;
   cursor: pointer;
 }
+.screen-bar select {
+  max-width: min(18rem, 70vw);
+  font-weight: 600;
+}
 
 @media screen {
-  body { padding: 0 0 4rem; }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 3.5rem;
+  }
+  body { padding: 0 0 4rem; overflow-x: hidden; }
+  .toc a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: .15em;
+  }
+}
+
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: .45rem 0 .85rem;
+}
+.table-scroll table { margin: 0; }
+
+@media screen and (max-width: 800px) {
+  html { font-size: 16px; }
+  body { padding: 0 0 2rem; }
+  .book-wrap {
+    max-width: 100%;
+    box-shadow: none;
+  }
+  .page-pad {
+    padding: 1.15rem 0.95rem 2.4rem;
+    padding-left: max(0.95rem, env(safe-area-inset-left));
+    padding-right: max(0.95rem, env(safe-area-inset-right));
+    padding-bottom: max(2.4rem, env(safe-area-inset-bottom));
+  }
+  .cover {
+    min-height: auto;
+    padding: 1.4rem 0.95rem 2rem;
+  }
+  .cover h1 { font-size: 1.85rem; }
+  .cover .subtitle { font-size: 1.05rem; }
+  .two-col { grid-template-columns: 1fr; }
+  .chapter-title { font-size: 1.4rem; }
+  th, td {
+    padding: .28rem .32rem;
+    overflow-wrap: anywhere;
+  }
+  table { font-size: .8rem; }
+  .screen-bar {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    padding: .55rem .8rem;
+    padding-top: max(.55rem, env(safe-area-inset-top));
+  }
+  .screen-bar select {
+    flex: 1 1 12rem;
+    max-width: none;
+  }
+  .screen-bar button, .screen-bar a, .screen-bar select {
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 @media print {

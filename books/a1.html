@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>telc Deutsch A1 — Deutschpfad Beginner Book</title>
   <style>
 /* telc Deutsch B1 — print-first book */
@@ -93,6 +93,14 @@ tr:nth-child(even) td { background: #fafafa; }
 
 .de { font-weight: 600; }
 .en { color: #555; font-style: italic; }
+.gloss {
+  display: block;
+  font-weight: 400;
+  font-style: italic;
+  color: #555;
+  font-size: .88em;
+  margin-top: .12rem;
+}
 .tiny { font-size: .82rem; color: #555; }
 .center { text-align: center; }
 
@@ -181,21 +189,91 @@ tr { break-inside: avoid; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: .6rem;
+  flex-wrap: wrap;
 }
-.screen-bar button, .screen-bar a {
+.screen-bar a, .screen-bar button, .screen-bar select {
   background: #fff;
   color: var(--accent);
   border: 0;
   padding: .35rem .7rem;
   border-radius: 4px;
   font-weight: 700;
+  font-family: inherit;
+  font-size: .85rem;
   text-decoration: none;
   cursor: pointer;
 }
+.screen-bar select {
+  max-width: min(18rem, 70vw);
+  font-weight: 600;
+}
 
 @media screen {
-  body { padding: 0 0 4rem; }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 3.5rem;
+  }
+  body { padding: 0 0 4rem; overflow-x: hidden; }
+  .toc a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: .15em;
+  }
+}
+
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: .45rem 0 .85rem;
+}
+.table-scroll table { margin: 0; }
+
+@media screen and (max-width: 800px) {
+  html { font-size: 16px; }
+  body { padding: 0 0 2rem; }
+  .book-wrap {
+    max-width: 100%;
+    box-shadow: none;
+  }
+  .page-pad {
+    padding: 1.15rem 0.95rem 2.4rem;
+    padding-left: max(0.95rem, env(safe-area-inset-left));
+    padding-right: max(0.95rem, env(safe-area-inset-right));
+    padding-bottom: max(2.4rem, env(safe-area-inset-bottom));
+  }
+  .cover {
+    min-height: auto;
+    padding: 1.4rem 0.95rem 2rem;
+  }
+  .cover h1 { font-size: 1.85rem; }
+  .cover .subtitle { font-size: 1.05rem; }
+  .two-col { grid-template-columns: 1fr; }
+  .chapter-title { font-size: 1.4rem; }
+  th, td {
+    padding: .28rem .32rem;
+    overflow-wrap: anywhere;
+  }
+  table { font-size: .8rem; }
+  .screen-bar {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    padding: .55rem .8rem;
+    padding-top: max(.55rem, env(safe-area-inset-top));
+  }
+  .screen-bar select {
+    flex: 1 1 12rem;
+    max-width: none;
+  }
+  .screen-bar button, .screen-bar a, .screen-bar select {
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 @media print {
@@ -219,10 +297,9 @@ tr { break-inside: avoid; }
 </head>
 <body>
   <div class="screen-bar">
-    <span>telc Deutsch A1 — Deutschpfad Beginner Book</span>
-    <span>
-      <button type="button" onclick="window.print()">Print / Save PDF</button>
-    </span>
+    <a href="/site/">Study site</a>
+    <select id="book-jump" aria-label="Jump to chapter"></select>
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
   </div>
   <div class="book-wrap">
     <div class="page-pad">
@@ -231,11 +308,14 @@ tr { break-inside: avoid; }
     <p class="chapter-kicker">Deutschpfad · Level A1 · Print me</p>
     <h1>telc Deutsch A1</h1>
     <p class="subtitle">The beginner book: sounds, survival dialogues, articles, present tense, café and shop German, and the exam map.</p>
-    <p><strong>Who:</strong> absolute beginners or false beginners. <strong>Goal:</strong> pass telc Deutsch A1 and leave with habits that make A2 easier.</p>
+    <p><strong>Who:</strong> absolute beginners or false beginners. <strong>Goal:</strong> pass telc Deutsch A1 (Start Deutsch 1) with a comfortable score, and leave with habits that make A2 easier.</p>
   </div>
   <div class="meta">
-    <p><strong>What this book is:</strong> the tables, scripts, and methods you can memorise so the exam feels familiar. Work it with the website: quizzes, flashcards with a speaker on every word, Hören exam sittings, writing tasks.</p>
+    <p><strong>This exam is:</strong> adult telc Deutsch A1 / Start Deutsch 1 — forms, ~30-word notes, group speaking, no prep room.</p>
+    <p><strong>This exam is not:</strong> Goethe modular A1 as a separate product, A1 für Zuwanderer orientation extras, or anything B1-shaped (no 100-word letter, no 20-minute oral prep, no Sprachbausteine paper).</p>
+    <p><strong>What this book is:</strong> the tables, scripts, and methods you can memorise so the booklet feels familiar. Grey boxes = say this until it is automatic. Work it with the website: quizzes, speaker on every word, Hören sittings, hide-model writing.</p>
     <p><strong>What this book cannot replace:</strong> real exam-room audio. In weeks 7–8 download the official telc A1 sample and its MP3. Speaking still needs a mouth — yours, recorded on a phone, or a partner.</p>
+    <p class="tiny">Original teaching material. Not affiliated with telc gGmbH or the Goethe-Institut. No pass guarantee.</p>
   </div>
 </section>
 
@@ -243,23 +323,27 @@ tr { break-inside: avoid; }
   <p class="chapter-kicker">Contents</p>
   <h1 class="chapter-title">What is in this book</h1>
   <ol>
-    <li>How to use this book and an 8-week plan</li>
-    <li>The telc A1 exam: timing, parts, exam-day</li>
-    <li>Sounds, spelling, survival dialogues</li>
-    <li>Core grammar with tables</li>
-    <li>Vocabulary by theme (article + word)</li>
-    <li>Official A1 topics and must-say chunks</li>
-    <li>Lesen — reading method</li>
-    <li>Hören — listening method</li>
-    <li>Schreiben — form and short message</li>
-    <li>Sprechen — intro, questions, requests</li>
-    <li>The mistakes that lose A1 points</li>
-    <li>Practice checklist</li>
-    <li>Appendix: numbers, days, high-frequency verbs</li>
+    <li><a href="#ch-01">How to use this book and an 8-week plan</a></li>
+    <li><a href="#ch-02">The telc A1 exam: timing, parts, exam-day</a></li>
+    <li><a href="#ch-03">Sounds, spelling, survival dialogues</a></li>
+    <li><a href="#ch-04">Core grammar with tables</a></li>
+    <li><a href="#ch-05">Vocabulary by theme (article + word)</a></li>
+    <li><a href="#ch-05b">Official A1 topics and must-say chunks</a></li>
+    <li><a href="#ch-06">Lesen — reading method</a></li>
+    <li><a href="#ch-07">Hören — listening method</a></li>
+    <li><a href="#ch-08">Schreiben — form and short message</a></li>
+    <li><a href="#ch-09">Sprechen — intro, questions, requests</a></li>
+    <li><a href="#ch-10">The mistakes that lose A1 points</a></li>
+    <li><a href="#ch-11">Practice checklist</a></li>
+    <li><a href="#ch-12">Appendix: numbers, days, high-frequency verbs</a></li>
   </ol>
   <div class="mem">
     <strong class="label">The deal</strong>
-    If you can (1) greet and introduce yourself for 20 seconds, (2) use sein/haben and der/die/das without thinking, (3) order in a café and ask a price, (4) fill a form and write a 30-word message with greeting and closing, (5) catch times and negation in short audio — you can pass. Pretty German is not required. Short correct German is.
+    If you can (1) greet and introduce yourself for 20 seconds, (2) use sein/haben and der/die/das without thinking, (3) order in a café and ask a price, (4) fill a form and write a 30-word message with greeting and closing, (5) catch times and negation in short audio — you can pass. Pretty German is not required. Short correct German is. Aim <strong>80% in this book and on the website</strong> so exam day feels slow.
+  </div>
+  <div class="tip">
+    <strong class="label">How to read a page</strong>
+    <span class="de">Bold grey German</span> = say it aloud. Italic English under it = meaning, not a second sentence to learn. Blue MEMORISE boxes = copy by hand. Orange Danger = the trap that steals marks. Green Trick = the shortcut examiners reward.
   </div>
 </section>
 
@@ -273,14 +357,18 @@ tr { break-inside: avoid; }
 
   <h2>How to study</h2>
   <ol>
-    <li><strong>Read a grammar section once</strong> for understanding (English is here on purpose).</li>
-    <li><strong>Copy the tables by hand.</strong> der Tisch, not Tisch.</li>
-    <li><strong>Tap the speaker on the website</strong> next to every German word, then say it yourself.</li>
-    <li><strong>20–25 vocab cards a day</strong> with the article.</li>
-    <li><strong>Write one short message every two days</strong> from Chapter 8, then check the model.</li>
+    <li><strong>Read a grammar section once</strong> for understanding (English is here on purpose — you are not “cheating”).</li>
+    <li><strong>Copy the tables by hand.</strong> Always article + noun: <span class="de">der Tisch</span>, not Tisch.</li>
+    <li><strong>Say the German, then check the English.</strong> If you can only read the English, you cannot yet produce it.</li>
+    <li><strong>20–25 vocab cards a day</strong> with the article. Tap the speaker on the website, then say it yourself.</li>
+    <li><strong>Write one short message every two days</strong> from Chapter 8 with the model covered. Unlock the model only when you have finished.</li>
     <li><strong>Speak out loud every day</strong> — even five minutes. Record your intro until you can do it with the paper covered.</li>
     <li><strong>From week 4:</strong> one Lesen or Hören set. Guessing is allowed. Blank answers are wasted — there is no penalty for wrong answers.</li>
   </ol>
+  <div class="mem">
+    <strong class="label">High marks path (do this, not extra grammar videos)</strong>
+    Pass is about 60%. Comfortable high marks come from six oral runs with new cards, eight hide-model notes, the Hören trap paper (14 vs 40, Gleis, halb acht), then the official telc MP3. The website Exam gym has the same list.
+  </div>
   <div class="warn">
     <strong class="label">Do not</strong>
     Do not binge B1 YouTube. Do not skip speaking because you feel shy. The oral is a group performance: you must say something. Train your mouth, not only your eyes.
@@ -298,9 +386,9 @@ tr { break-inside: avoid; }
       <tr><td>3</td><td><span class="de">Zeit</span> + <span class="de">Tagesablauf</span></td><td>halb/Viertel + present tense</td><td>5-sentence day + Lesen paper 1</td></tr>
       <tr><td>4</td><td><span class="de">Essen/Trinken</span> + form/message skill</td><td>keinen/nicht + café chunks</td><td>30-word café note (day, time, place)</td></tr>
       <tr><td>5</td><td><span class="de">Einkaufen</span> + <span class="de">Dienstleistungen</span> (Post, Bank, Polizei)</td><td>einen Kaffee drills</td><td>Shop roleplay + Wo ist die Post?</td></tr>
-      <tr><td>6</td><td><span class="de">Reisen</span>, <span class="de">Arbeit/Lernen</span>, <span class="de">Freizeit</span>, <span class="de">Wetter</span></td><td>modals + ticket chunk</td><td>Invitation + oral Teil 3 one plan</td></tr>
+      <tr><td>6</td><td><span class="de">Reisen</span>, <span class="de">Arbeit/Lernen</span>, <span class="de">Freizeit</span>, <span class="de">Feste</span>, <span class="de">Wetter</span></td><td>modals + ticket chunk + birthday invite</td><td>Invitation + oral Teil 3 one plan</td></tr>
       <tr><td>7</td><td><span class="de">Körper/Arzt</span> + full mock A</td><td>pain + Termin + timed mock</td><td>Form + 30-word note; group oral 10–15 min, no prep</td></tr>
-      <tr><td>8</td><td>Retick every official topic + mock B + official MP3</td><td>Redo under 80%</td><td>Two writings from memory; telc sample audio</td></tr>
+      <tr><td>8</td><td>Retick every official topic + mock B + trap Hören + official MP3</td><td>Redo under 80%</td><td>Two writings from memory; telc sample audio</td></tr>
     </tbody>
   </table>
   <p>Use the website 8-week plan to tick tasks. This book is the memory layer. There is <strong>no Sprachbausteine paper</strong> at A1 — grammar lives in the form, the note, and the oral. Official telc audio in week 8 trains the ears.</p>
@@ -310,6 +398,25 @@ tr { break-inside: avoid; }
   <p class="chapter-kicker">Chapter 2</p>
   <h1 class="chapter-title">The telc Deutsch A1 exam</h1>
   <p>Learn the map before you practise, or you will train the wrong muscle. Centres can vary slightly — always read your invitation. The shape below is the standard adult A1 (Start Deutsch 1 / telc Deutsch A1) sitting.</p>
+
+  <h2>Official names — what they mean in English</h2>
+  <p>The booklet uses German labels. Learn them once so exam day is not vocabulary panic.</p>
+  <table>
+    <thead>
+      <tr><th>On the paper</th><th>Means</th><th>What the examiner wants</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="de">Hörverstehen / Hören</span></td><td>Listening</td><td>One fact: time, platform, open/closed, name. Not every word.</td></tr>
+      <tr><td><span class="de">Leseverstehen / Lesen</span></td><td>Reading</td><td>Who, when, price, forbidden/allowed. Synonyms, not the same word.</td></tr>
+      <tr><td><span class="de">Schriftlicher Ausdruck / Schreiben</span></td><td>Writing</td><td>A complete form + a ~30-word note that hits every bullet.</td></tr>
+      <tr><td><span class="de">Mündlicher Ausdruck / Sprechen</span></td><td>Speaking</td><td>Short sentences, one question back, one small plan.</td></tr>
+      <tr><td><span class="de">Teil 1 / Teil 2 / Teil 3</span></td><td>Part 1 / 2 / 3</td><td>Each subtest is split. Follow the invigilator’s CD.</td></tr>
+      <tr><td><span class="de">Richtig / Falsch</span></td><td>True / False</td><td>Guess if unsure. No minus marking.</td></tr>
+      <tr><td><span class="de">Antwortbogen</span></td><td>Answer sheet</td><td>Only this sheet is marked. Transfer before time ends.</td></tr>
+      <tr><td><span class="de">Anrede / Gruß</span></td><td>Greeting / closing</td><td>Hallo… Bis bald · or Sehr geehrte… Mit freundlichen Grüßen</td></tr>
+      <tr><td><span class="de">du / Sie</span></td><td>informal you / formal you</td><td>Friends: du. Office, shop, examiner: Sie. Never mix in one note.</td></tr>
+    </tbody>
+  </table>
 
   <h2>About 65 minutes written + 15 minutes oral</h2>
   <p>Typical adult sitting: <strong>about 60 of 100 scaled points overall</strong>. Raw skills are often 15 points each (Hören, Lesen, Schreiben, Sprechen = 60 raw). Unlike B1, there is normally <strong>no separate written/oral 60% hurdle</strong> — confirm the rule on your invitation. Still train every part: a blank form wastes easy points.</p>
@@ -442,7 +549,7 @@ tr { break-inside: avoid; }
 <section class="chapter" id="ch-04">
   <p class="chapter-kicker">Chapter 4</p>
   <h1 class="chapter-title">Core A1 grammar</h1>
-  <p>Copy these tables into a notebook. The website lessons have a speaker on every example — tap, then say.</p>
+  <p>Copy these tables into a notebook. Grey German is what you say; italic English is only the meaning. The website lessons have a speaker on every example — tap, then say.</p>
 
   <h2>sein and haben</h2>
   <table>
@@ -511,6 +618,49 @@ tr { break-inside: avoid; }
 
   <h2>Simple prepositions</h2>
   <p><span class="de">nach Hause</span> (direction home) vs <span class="de">zu Hause</span> (location). <span class="de">mit dem Bus. aus Spanien. in Deutschland. nach Berlin. zum Arzt.</span></p>
+
+  <h2>Dative — to whom (official A1, not only A2)</h2>
+  <p>Ask <span class="de">wem?</span> — “to whom / for whom”. English “help <em>me</em>” is German <span class="de">mir helfen</span> (not <em>mich helfen</em>).</p>
+  <table>
+    <thead>
+      <tr><th></th><th>M</th><th>F</th><th>N</th><th>Pl</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>the</td><td><span class="de">dem</span></td><td><span class="de">der</span></td><td><span class="de">dem</span></td><td><span class="de">den</span> (+n on the noun)</td></tr>
+      <tr><td>a</td><td><span class="de">einem</span></td><td><span class="de">einer</span></td><td><span class="de">einem</span></td><td>—</td></tr>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr><th>ich</th><th>du</th><th>er / sie</th><th>wir</th><th>ihr</th><th>sie / Sie</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="de">mir</span></td><td><span class="de">dir</span></td><td><span class="de">ihm / ihr</span></td><td><span class="de">uns</span></td><td><span class="de">euch</span></td><td><span class="de">ihnen / Ihnen</span></td></tr>
+    </tbody>
+  </table>
+  <p>Verbs that take dative: <span class="de">helfen, danken, gehören, gefallen, geben</span>.</p>
+  <p><span class="de">Kannst du mir helfen?</span><span class="gloss">Can you help me?</span></p>
+  <p><span class="de">Das gehört mir. Wie geht es Ihnen? Geben Sie mir bitte das Formular.</span><span class="gloss">That belongs to me. How are you (formal)? Please give me the form.</span></p>
+  <p>Chunks: <span class="de">mit dem Bus, zum Arzt, zur Arbeit, bei mir</span><span class="gloss">by bus · to the doctor · to work · at my place</span></p>
+
+  <h2>Connectors for the 30-word note</h2>
+  <table>
+    <thead>
+      <tr><th>Word</th><th>English</th><th>Verb</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="de">und / oder / aber / denn</span></td><td>and / or / but / because</td><td>stays 2nd</td><td><span class="de">Ich komme nicht, denn ich bin krank.</span></td></tr>
+      <tr><td><span class="de">dann</span></td><td>then</td><td>often position 1</td><td><span class="de">Dann gehe ich nach Hause.</span></td></tr>
+      <tr><td><span class="de">wenn</span></td><td>if / when</td><td>goes last</td><td><span class="de">Wenn du Zeit hast, komm vorbei.</span></td></tr>
+    </tbody>
+  </table>
+  <p>Save heavy <span class="de">weil</span> production for A2 if the jump still feels unsafe. <span class="de">denn</span> keeps A1 word order.</p>
+
+  <h2>Adjectives and dieser</h2>
+  <p>After sein: no ending — <span class="de">Die Wohnung ist klein. Das ist zu teuer.</span><span class="gloss">The flat is small. That is too expensive.</span></p>
+  <p>Chunks: <span class="de">ein großer Kaffee, eine kleine Wohnung, billiger als, gern / lieber</span><span class="gloss">a large coffee · a small flat · cheaper than · gladly / rather</span></p>
+  <p><span class="de">dieser Mann, diese Frau, dieses Kind, diesen Bus.</span><span class="gloss">this man / this woman / this child / this bus (accusative)</span></p>
+  <p><span class="de">Hier darf man nicht … Möchten Sie etwas trinken? Welche Größe?</span><span class="gloss">You may not … here. Would you like something to drink? Which size?</span></p>
   <p>Do the website quizzes until 80%. Grammar you cannot say aloud is not exam-ready.</p>
 
   <h2>Which grammar unlocks which official topic</h2>
@@ -524,7 +674,10 @@ tr { break-inside: avoid; }
       <tr><td>Present + questions</td><td><span class="de">Tagesablauf</span>, <span class="de">Freizeit</span></td></tr>
       <tr><td>kein / nicht</td><td><span class="de">Essen</span> — Ich esse kein Fleisch</td></tr>
       <tr><td>Accusative (einen)</td><td><span class="de">Essen</span>, <span class="de">Einkaufen</span></td></tr>
+      <tr><td>Dative (mir, zum, mit dem)</td><td><span class="de">Dienstleistungen</span> — Kannst du mir helfen?</td></tr>
       <tr><td>Modals (möchten, können, müssen)</td><td><span class="de">Dienstleistungen</span>, course, tickets</td></tr>
+      <tr><td>und / aber / denn / dann / wenn</td><td>Every 30-word note and invitation</td></tr>
+      <tr><td>zu teuer, billiger als, ein großer Kaffee</td><td><span class="de">Einkaufen</span>, <span class="de">Wohnen</span></td></tr>
       <tr><td>am / um, halb, Viertel</td><td>Every Hören item and every invitation</td></tr>
       <tr><td>mit dem Bus, zu Hause / nach Hause</td><td><span class="de">Reisen</span>, <span class="de">Wohnen</span></td></tr>
     </tbody>
@@ -617,7 +770,7 @@ tr { break-inside: avoid; }
     <tbody>
       <tr><td><span class="de">Person</span></td><td>Name, Adresse, Telefon, Geburtsdatum, Alter, Herkunft, Sprachen</td><td>Oral Teil 1; every form</td></tr>
       <tr><td><span class="de">Familie / Beziehungen</span></td><td>Parents, siblings, children, ledig/verheiratet</td><td>Cards; short bios</td></tr>
-      <tr><td><span class="de">Wohnen</span></td><td>Flat/house, rooms, floor, eight city places, left/right</td><td>Ads; Wo ist …?</td></tr>
+      <tr><td><span class="de">Wohnen</span></td><td>Flat/house, rooms, Erdgeschoss vs Stock, eight city places, left/right</td><td>Ads; Wo ist …?</td></tr>
       <tr><td><span class="de">Umwelt / Wetter</span></td><td>Sun, rain, cold, jacket, cafe if the park is wet</td><td>Small talk; invitations</td></tr>
       <tr><td><span class="de">Reisen / Verkehr</span></td><td>Ticket, next bus, Gleis, Verspätung, mit dem Bus</td><td>Hören announcements</td></tr>
       <tr><td><span class="de">Essen / Trinken</span></td><td>Order, price, bill, gern / kein Fleisch</td><td>Café oral + 30-word note</td></tr>
@@ -625,18 +778,30 @@ tr { break-inside: avoid; }
       <tr><td><span class="de">Dienstleistungen</span></td><td>Post, Bank, Polizei: Ich möchte … Wo ist …? Helfen?</td><td>Teil 3 pictures</td></tr>
       <tr><td><span class="de">Erziehung / Lernen</span> + <span class="de">Arbeit / Beruf</span></td><td>Job title or Student; A1-Kurs; Wie sagt man …?</td><td>Forms; Was machen Sie?</td></tr>
       <tr><td><span class="de">Freizeit</span></td><td>Three hobbies; cinema plan with day and time</td><td>Teil 3 — agree on one plan</td></tr>
+      <tr><td><span class="de">Feste / Einladungen</span></td><td>Birthday invite: day, time, place, question</td><td>Schreiben Teil 2; party cards</td></tr>
+      <tr><td><span class="de">Zeit / Tagesablauf</span></td><td>halb, Viertel, am Montag, five present-tense sentences</td><td>Almost every Hören item</td></tr>
+      <tr><td><span class="de">Körper / Gesundheit</span></td><td>Pain + Termin + Apotheke; one sick note</td><td>Hören doctor; absent message</td></tr>
+      <tr><td><span class="de">Formulare</span></td><td>Name, Straße, PLZ, Ort, Telefon, Geburtsdatum</td><td>Schreiben Teil 1 every sitting</td></tr>
     </tbody>
   </table>
   <p>Website extras that the paper uses every time: <strong>Zeit</strong> (halb, Viertel, am Montag), <strong>Tagesablauf</strong>, <strong>Körper/Arzt</strong>, and the <strong>form + 30-word message</strong> skill. There is no Sprachbausteine paper at A1.</p>
 
-  <h2>Must-say spines (memorise)</h2>
+  <h2>Must-say spines (memorise — then cover the English)</h2>
   <div class="mem">
     <strong class="label">Person</strong>
-    <p><span class="de">Guten Tag. Ich heiße … Ich komme aus … Ich wohne in … Ich bin … Jahre alt. Ich lerne Deutsch. Und Sie? Woher kommen Sie?</span></p>
+    <p><span class="de">Guten Tag. Ich heiße … Ich komme aus … Ich wohne in … Ich bin … Jahre alt. Ich lerne Deutsch. Und Sie? Woher kommen Sie?</span><span class="gloss">Hello. My name is … I come from … I live in … I am … years old. I am learning German. And you? Where do you come from?</span></p>
   </div>
   <div class="mem">
     <strong class="label">Essen</strong>
-    <p><span class="de">Ich möchte einen Kaffee und ein Stück Kuchen. Was kostet das? Zahlen, bitte. Ich esse gern … Ich esse kein Fleisch.</span></p>
+    <p><span class="de">Ich möchte einen Kaffee und ein Stück Kuchen. Was kostet das? Zahlen, bitte. Ich esse gern … Ich esse kein Fleisch.</span><span class="gloss">I would like a coffee and a piece of cake. How much is that? The bill, please. I like to eat … I do not eat meat.</span></p>
+  </div>
+  <div class="mem">
+    <strong class="label">Wohnen</strong>
+    <p><span class="de">Ich wohne in einer Wohnung im zweiten Stock.</span><span class="gloss">I live in a flat on the second floor (UK) / third floor (US). German <span class="de">Erdgeschoss</span> is the ground floor — not the US first floor. Hören: <span class="de">dritter Stock</span> is not 13.</span></p>
+  </div>
+  <div class="mem">
+    <strong class="label">Zeit</strong>
+    <p><span class="de">Es ist halb acht.</span> = 7:30, not 8:30. <span class="de">Viertel nach acht</span> = 8:15. <span class="de">um 14 Uhr, nicht um 40.</span> Write the digits the moment you hear them.</p>
   </div>
   <div class="mem">
     <strong class="label">Form + note</strong>
@@ -644,11 +809,19 @@ tr { break-inside: avoid; }
   </div>
   <div class="mem">
     <strong class="label">Dienstleistungen</strong>
-    <p><span class="de">Ich möchte ein Paket schicken. / Ich möchte ein Konto eröffnen. / Ich habe meinen Ausweis verloren. Können Sie mir bitte helfen? Wo ist die Post?</span></p>
+    <p><span class="de">Ich möchte ein Paket schicken. / Ich möchte ein Konto eröffnen. / Ich habe meinen Ausweis verloren. Können Sie mir bitte helfen? Wo ist die Post?</span><span class="gloss">I would like to send a parcel / open an account. I have lost my ID. Can you help me please? Where is the post office?</span></p>
   </div>
   <div class="mem">
     <strong class="label">Freizeit Teil 3</strong>
-    <p><span class="de">Wir können am Samstag ins Kino gehen. Um 19 Uhr vor dem Kino. Ist das okay? Super, dann machen wir das.</span> One plan, not three open options.</p>
+    <p><span class="de">Wir können am Samstag ins Kino gehen. Um 19 Uhr vor dem Kino. Ist das okay? Super, dann machen wir das.</span><span class="gloss">We can go to the cinema on Saturday. At 7 p.m. in front of the cinema. Is that okay? Great, then let’s do that.</span> One plan, not three open options.</p>
+  </div>
+  <div class="mem">
+    <strong class="label">Feste</strong>
+    <p><span class="de">Hallo Sara, am Samstag habe ich Geburtstag. Die Party ist um 18 Uhr bei mir. Kannst du kommen? Bring bitte einen Salat mit. Bis bald</span><span class="gloss">Hi Sara, Saturday is my birthday. The party is at 6 p.m. at my place. Can you come? Please bring a salad. See you soon</span></p>
+  </div>
+  <div class="mem">
+    <strong class="label">Arzt</strong>
+    <p><span class="de">Ich habe Kopfschmerzen. Ich brauche einen Termin. Wo ist die Apotheke?</span><span class="gloss">I have a headache. I need an appointment. Where is the pharmacy?</span></p>
   </div>
 
   <h2>Exam traps that belong to topics</h2>
@@ -685,9 +858,9 @@ tr { break-inside: avoid; }
 
   <h2>Worked example</h2>
   <div class="ex">
-    <p>Notice: <span class="de">Heute geschlossen. Morgen wieder ab 9 Uhr.</span></p>
+    <p>Notice: <span class="de">Heute geschlossen. Morgen wieder ab 9 Uhr.</span><span class="gloss">Closed today. Open again from 9 a.m. tomorrow.</span></p>
     <p>Statement: The shop is open today. <strong>Falsch</strong> — <span class="de">Heute geschlossen</span>.</p>
-    <p>Email: <span class="de">Hallo, ich heiße Sara. Ich komme aus Spanien und wohne in Hamburg. Am Montag und Mittwoch gehe ich zum Kurs.</span></p>
+    <p>Email: <span class="de">Hallo, ich heiße Sara. Ich komme aus Spanien und wohne in Hamburg. Am Montag und Mittwoch gehe ich zum Kurs.</span><span class="gloss">Hello, my name is Sara. I come from Spain and live in Hamburg. On Monday and Wednesday I go to the course.</span></p>
     <p>Question: Where does she live? Not Spain — <span class="de">wohne in Hamburg</span>.</p>
   </div>
   <p>Time budget: do not spend five minutes on one sign. Guess and move. Transfer answers to the sheet with time left.</p>
@@ -717,10 +890,26 @@ tr { break-inside: avoid; }
     </thead>
     <tbody>
       <tr><td>You wait for the exact word</td><td>Listen for synonyms: <span class="de">fällt aus ≈ nicht / kein Unterricht</span></td></tr>
-      <tr><td>A number flies by</td><td>Write digits immediately. 13/30, 16/60</td></tr>
+      <tr><td>A number flies by</td><td>Write digits immediately. <strong>14 vs 40</strong> (<span class="de">vierzehn / vierzig</span>), 13/30, 16/60</td></tr>
       <tr><td>The last sentence cancels the first</td><td>The last relevant fact wins: open on Monday… closed next week</td></tr>
     </tbody>
   </table>
+
+  <h2>Trap words — the marks people give away</h2>
+  <table>
+    <thead>
+      <tr><th>You hear</th><th>Means</th><th>Statement that is Falsch</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="de">vierzehn Euro</span></td><td>14 €</td><td>It costs 40 €</td></tr>
+      <tr><td><span class="de">Gleis 2, nicht Gleis 5</span></td><td>platform 2</td><td>The train leaves from platform 5</td></tr>
+      <tr><td><span class="de">halb acht</span></td><td>7:30</td><td>Meeting at 8:30</td></tr>
+      <tr><td><span class="de">erst um 10 Uhr</span></td><td>not until 10</td><td>He comes at 8</td></tr>
+      <tr><td><span class="de">kein Unterricht / fällt aus</span></td><td>no class</td><td>Class as usual</td></tr>
+      <tr><td><span class="de">stilles Wasser, kein Wasser mit Gas</span></td><td>still water</td><td>The person wants sparkling</td></tr>
+    </tbody>
+  </table>
+  <p>Website: Hören trap paper 4. Teil 1 once. Guess every item.</p>
 
   <h2>Drill — cover the answers, then check</h2>
   <div class="ex">
@@ -736,7 +925,7 @@ tr { break-inside: avoid; }
 <section class="chapter" id="ch-08">
   <p class="chapter-kicker">Chapter 8</p>
   <h1 class="chapter-title">Schreiben — form + short message</h1>
-  <p>A1 writing is not a B1 letter. You fill a <strong>form</strong> and you write a <strong>short message</strong> (about 30 words) with greeting, content points, and closing. Short correct sentences beat long broken ones.</p>
+  <p>A1 writing is not a B1 letter. You fill a <strong>form</strong> and you write a <strong>short message</strong> (about 30 words) with greeting, content points, and closing. Short correct sentences beat long broken ones. On the website the model stays locked until you finish — train that here too: cover the models below, write, then compare.</p>
 
   <h2>Clock (about 20 minutes)</h2>
   <table>
@@ -770,8 +959,21 @@ tr { break-inside: avoid; }
     <p>Hallo Tim,</p>
     <p>ich bin 10 Minuten zu spät, weil der Bus Verspätung hat. Bitte warte im Café am Bahnhof. Ich möchte einen Kaffee.</p>
     <p>Bis gleich<br>Sara</p>
+    <p class="gloss">Hi Tim, I am 10 minutes late because the bus is delayed. Please wait in the café at the station. I would like a coffee. See you in a moment — Sara</p>
   </div>
   <p>Points covered: late + reason, where to wait, what she wants. Greeting and closing. That is an A1 pass shape.</p>
+
+  <h2>Model — birthday invite (hide this, then write yours)</h2>
+  <div class="ex">
+    <p>Hallo Lea, am Samstag ist mein Geburtstag. Um 16 Uhr bei mir. Bringst du etwas zu trinken mit? Schreib mir bitte.</p>
+    <p class="gloss">Hi Lea, Saturday is my birthday. At 4 p.m. at my place. Will you bring something to drink? Please write to me.</p>
+  </div>
+
+  <h2>Model — rain, change the plan</h2>
+  <div class="ex">
+    <p>Hallo Jan, es regnet. Sollen wir ins Café Sonne gehen, nicht in den Park? Um 15 Uhr? Schreib mir.</p>
+    <p class="gloss">Hi Jan, it is raining. Shall we go to Café Sonne, not the park? At 3 p.m.? Write to me.</p>
+  </div>
 
   <h2>Model — form + course office</h2>
   <p>Form: Name, Straße, PLZ Ort, Telefon, Datum. Message:</p>
@@ -795,8 +997,25 @@ tr { break-inside: avoid; }
   <p>Then ask the others: <span class="de">Wo wohnen Sie? Was machen Sie beruflich? Wie lange lernen Sie Deutsch?</span></p>
   <div class="warn">Do not recite at the wall. Look at the other candidates. A silent partner who only smiles loses interaction points.</div>
 
-  <h2>Teil 2 — ask and answer</h2>
-  <p>Cards with everyday topics: food, time, family, travel. Short turns. If you do not know a word, say what you <em>can</em>: <span class="de">Ich esse gern Pizza. Und du?</span></p>
+  <h2>Teil 2 — ask and answer (not a 90-second speech)</h2>
+  <p>Cards with everyday topics. Two or three short sentences, then ask the partner the same. If you miss a word: <span class="de">Wie bitte? Noch einmal, bitte.</span></p>
+  <table>
+    <thead>
+      <tr><th>Card</th><th>Say</th><th>Ask</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Familie</td><td><span class="de">Ich habe einen Bruder.</span></td><td><span class="de">Hast du Geschwister?</span></td></tr>
+      <tr><td>Mein Tag</td><td><span class="de">Am Morgen stehe ich auf.</span></td><td><span class="de">Wann stehst du auf?</span></td></tr>
+      <tr><td>Essen</td><td><span class="de">Ich esse gern Pizza.</span></td><td><span class="de">Was isst du gern?</span></td></tr>
+      <tr><td>Wohnen</td><td><span class="de">Ich wohne in einer Wohnung.</span></td><td><span class="de">Wohnst du in einem Haus?</span></td></tr>
+      <tr><td>Einkaufen</td><td><span class="de">Ich kaufe Brot und Milch.</span></td><td><span class="de">Wo kaufst du ein?</span></td></tr>
+      <tr><td>Freizeit</td><td><span class="de">Ich gehe gern ins Kino.</span></td><td><span class="de">Was machst du am Wochenende?</span></td></tr>
+      <tr><td>Wetter</td><td><span class="de">Heute ist es kalt. Ich nehme eine Jacke.</span></td><td><span class="de">Wie ist das Wetter?</span></td></tr>
+      <tr><td>Arbeit / Kurs</td><td><span class="de">Ich lerne Deutsch im A1-Kurs.</span></td><td><span class="de">Was machst du beruflich?</span></td></tr>
+      <tr><td>Bus / Bahn</td><td><span class="de">Ich fahre mit dem Bus.</span></td><td><span class="de">Fährst du mit dem Auto?</span></td></tr>
+      <tr><td>Geburtstag</td><td><span class="de">Am Samstag ist meine Party um 16 Uhr.</span></td><td><span class="de">Kommst du?</span></td></tr>
+    </tbody>
+  </table>
   <p>Question words: <span class="de">Wo? Wann? Was? Wie? Wie viel? Warum? Mit wem?</span></p>
 
   <h2>Teil 3 — requests and a tiny plan</h2>
@@ -813,12 +1032,12 @@ tr { break-inside: avoid; }
     </tbody>
   </table>
   <div class="dialogue">
-    <p><strong>A:</strong> <span class="de">Sollen wir am Samstag ins Kino?</span></p>
-    <p><strong>B:</strong> <span class="de">Ja, gerne. Um wie viel Uhr?</span></p>
-    <p><strong>A:</strong> <span class="de">Um 19 Uhr. Wo treffen wir uns?</span></p>
-    <p><strong>B:</strong> <span class="de">Am Bahnhof. Okay, bis dann.</span></p>
+    <p><strong>A:</strong> <span class="de">Sollen wir am Samstag ins Kino?</span> <span class="en">Shall we go to the cinema on Saturday?</span></p>
+    <p><strong>B:</strong> <span class="de">Ja, gerne. Um wie viel Uhr?</span> <span class="en">Yes, gladly. At what time?</span></p>
+    <p><strong>A:</strong> <span class="de">Um 19 Uhr. Wo treffen wir uns?</span> <span class="en">At 7 p.m. Where do we meet?</span></p>
+    <p><strong>B:</strong> <span class="de">Am Bahnhof. Okay, bis dann.</span> <span class="en">At the station. Okay, see you then.</span></p>
   </div>
-  <p>Record both roles on your phone three times a week. The website Sprechen page has the same phrases with a speaker beside each line.</p>
+  <p>If you cannot: <span class="de">Ich kann nicht, denn ich arbeite. Dann um 20 Uhr?</span> Record both roles on your phone. Website: Sprechen → Andere Karte six times.</p>
 </section>
 
 <section class="chapter" id="ch-10">
@@ -848,15 +1067,15 @@ tr { break-inside: avoid; }
 <section class="chapter" id="ch-11">
   <p class="chapter-kicker">Chapter 11</p>
   <h1 class="chapter-title">Practice checklist</h1>
-  <p>Do this on the website. Tick only what you can do with the book closed.</p>
+  <p>Do this on the website. Tick only what you can do with the book closed. Pass is about 60%. Train to <strong>80%</strong> so the real paper feels slow.</p>
   <ul>
-    <li>All grammar quizzes at <strong>80%+</strong> (sein/haben, articles, present, questions, kein/nicht, accusative, modals, prepositions).</li>
-    <li>Every vocab topic: speaker + type-the-German quiz.</li>
+    <li>All grammar quizzes at <strong>80%+</strong> (sein/haben, articles, present, questions, kein/nicht, accusative, dative, connectors, modals, prepositions).</li>
+    <li>Every official topic ticked only when you can say the chunks without English notes.</li>
     <li>All Lesen papers at 80%+.</li>
-    <li>All Hören papers in <strong>exam sitting</strong> (once/twice rules). Then weeks 7–8: official telc A1 MP3.</li>
-    <li>Six writing tasks from memory (form + short message). Greeting and closing every time.</li>
-    <li>Intro + six questions without notes. One shop and one café roleplay recorded.</li>
-    <li>Timed mocks A and B, then C–F if you still have time. Pause only between parts.</li>
+    <li>All Hören papers in <strong>exam sitting</strong> (once/twice rules), then trap paper 4 (14 vs 40, Gleis, halb acht). Weeks 7–8: official telc A1 MP3.</li>
+    <li>Eight writing tasks from memory (form + short message). Greeting and closing every time. Model locked until you finish.</li>
+    <li>Six oral runs: intro + new cards + one plan. No 90-second B1 speech.</li>
+    <li>Timed mocks A and B, then C–G if you still have time. Pause only between parts.</li>
   </ul>
   <div class="mem">
     <strong class="label">Exam week</strong>
@@ -872,7 +1091,19 @@ tr { break-inside: avoid; }
   <h2>Numbers 0–20, then the pattern</h2>
   <p><span class="de">null, eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf, dreizehn, vierzehn, fünfzehn, sechzehn, siebzehn, achtzehn, neunzehn, zwanzig</span></p>
   <p>21 = <span class="de">einundzwanzig</span> (ones before tens). Phone numbers: say each digit or grouped. Practise yours aloud.</p>
-  <p>Time: <span class="de">Es ist drei Uhr. Es ist halb vier</span> (15:30). <span class="de">um 8 Uhr. um 17:30.</span></p>
+  <p>Time: <span class="de">Es ist drei Uhr.</span> <span class="de">Es ist halb vier</span> = 15:30 (half <em>towards</em> four). <span class="de">um 8 Uhr. um 17:30.</span></p>
+  <table>
+    <thead>
+      <tr><th>You hear</th><th>Clock</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="de">acht Uhr</span></td><td>8:00</td></tr>
+      <tr><td><span class="de">Viertel nach acht</span></td><td>8:15</td></tr>
+      <tr><td><span class="de">halb neun</span></td><td>8:30</td></tr>
+      <tr><td><span class="de">Viertel vor neun</span></td><td>8:45</td></tr>
+      <tr><td><span class="de">vierzehn / vierzig</span></td><td>14 / 40 — write digits at once</td></tr>
+    </tbody>
+  </table>
 
   <h2>Days and months</h2>
   <p><span class="de">Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag</span> — <span class="de">am Montag, am Wochenende</span></p>
@@ -906,8 +1137,50 @@ tr { break-inside: avoid; }
   <p>ID, pencils, water, arrive early. Breathe. If audio is quiet, tell the invigilator immediately. Short correct German beats long broken German.</p>
 </section>
 
-      <p class="footer-note">Deutschpfad personal study book for A1. Original teaching material. Not affiliated with telc gGmbH. Print → Save as PDF (A4, background graphics on).</p>
+      <p class="footer-note">Deutschpfad personal study book for A1. Original teaching material. Not affiliated with telc gGmbH or the Goethe-Institut. No pass guarantee. <a href="/site/impressum.html">Impressum</a> · <a href="/site/datenschutz.html">Datenschutz</a> · <a href="/site/nutzung.html">Nutzung</a>. Print → Save as PDF (A4, background graphics on).</p>
     </div>
   </div>
+  <script>
+    document.querySelectorAll("table").forEach(function (t) {
+      if (t.parentElement && t.parentElement.classList.contains("table-scroll")) return;
+      var w = document.createElement("div");
+      w.className = "table-scroll";
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    });
+    (function () {
+      var jump = document.getElementById("book-jump");
+      if (!jump) return;
+      var chapters = [];
+      var cover = document.querySelector(".cover");
+      if (cover && cover.id) chapters.push({ id: cover.id, title: "Cover" });
+      if (document.getElementById("toc")) chapters.push({ id: "toc", title: "Contents" });
+      document.querySelectorAll("section.chapter[id]").forEach(function (s) {
+        if (s.id === "toc") return;
+        var h = s.querySelector(".chapter-title, h1");
+        var title = (h && h.textContent ? h.textContent : s.id).replace(/\s+/g, " ").trim();
+        chapters.push({ id: s.id, title: title });
+      });
+      chapters.forEach(function (c) {
+        var o = document.createElement("option");
+        o.value = c.id;
+        o.textContent = c.title;
+        jump.appendChild(o);
+      });
+      function sync() {
+        var id = (location.hash || "").replace(/^#/, "");
+        if (id) jump.value = id;
+      }
+      jump.onchange = function () {
+        var id = jump.value;
+        if (!id) return;
+        history.replaceState(null, "", "#" + id);
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView();
+      };
+      window.addEventListener("hashchange", sync);
+      sync();
+    })();
+  </script>
 </body>
 </html>

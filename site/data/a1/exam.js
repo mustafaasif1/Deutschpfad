@@ -1135,6 +1135,10 @@ registerPack("a1", {
         {
           "statement": "Zahlt mit Karte.",
           "answer": false
+        },
+        {
+          "statement": "Bestellt auch Wasser.",
+          "answer": true
         }
       ]
     },
@@ -1230,6 +1234,10 @@ registerPack("a1", {
         {
           "statement": "Nur Karte möglich.",
           "answer": false
+        },
+        {
+          "statement": "Sie nimmt die Jacke.",
+          "answer": true
         }
       ]
     },
@@ -1266,6 +1274,231 @@ registerPack("a1", {
           "answer": true
         }
       ]
+    },
+    {
+      "id": "h-10",
+      "title": "A1 trap paper · Teil 1 (once)",
+      "once": true,
+      "paper": 4,
+      "teil": 1,
+      "items": [
+        {
+          "audio": "Die Jacke kostet vierzehn Euro.",
+          "statement": "Die Jacke kostet 40 Euro.",
+          "answer": false
+        },
+        {
+          "audio": "Der Zug nach Mainz fährt von Gleis 2, nicht von Gleis 5.",
+          "statement": "Der Zug fährt von Gleis 5.",
+          "answer": false
+        },
+        {
+          "audio": "Wir treffen uns um halb acht.",
+          "statement": "Treffen um 8:30.",
+          "answer": false
+        },
+        {
+          "audio": "Der Arzt kommt erst um 10 Uhr.",
+          "statement": "Der Arzt kommt um 8 Uhr.",
+          "answer": false
+        },
+        {
+          "audio": "Das Geschäft ist montags geschlossen.",
+          "statement": "Montags ist das Geschäft zu.",
+          "answer": true
+        },
+        {
+          "audio": "Ich möchte stilles Wasser, kein Wasser mit Gas.",
+          "statement": "Die Person will Wasser mit Gas.",
+          "answer": false
+        },
+        {
+          "audio": "Heute kein Unterricht.",
+          "statement": "Heute ist Unterricht wie immer.",
+          "answer": false
+        },
+        {
+          "audio": "Ich brauche Größe M, nicht L.",
+          "statement": "Die Person braucht Größe L.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "h-11",
+      "title": "A1 trap paper · Teil 3",
+      "once": false,
+      "paper": 4,
+      "teil": 3,
+      "items": [
+        {
+          "audio": "Die Apotheke macht schon um 18 Uhr zu, nicht um 20.",
+          "statement": "Die Apotheke ist bis 20 Uhr offen.",
+          "answer": false
+        },
+        {
+          "audio": "Bitte nur bar. Keine Karte.",
+          "statement": "Man kann mit Karte zahlen.",
+          "answer": false
+        },
+        {
+          "audio": "Kursraum 4, nicht Raum 14.",
+          "statement": "Der Kurs ist in Raum 4.",
+          "answer": true
+        },
+        {
+          "audio": "Ich komme nicht um 9, sondern um Viertel nach 9.",
+          "statement": "Die Person kommt um 9:00.",
+          "answer": false
+        },
+        {
+          "audio": "Parken nur mit Ticket. Ohne Ticket 20 Euro.",
+          "statement": "Ohne Ticket muss man zahlen.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "h-12",
+      "title": "A1 trap paper · Teil 2 — shop dialogue",
+      "once": false,
+      "paper": 4,
+      "teil": 2,
+      "intro": "In a shop. Listen for size, colour, price, and how they pay.",
+      "audio": "Guten Tag. Ich suche eine Hose, Größe 40, schwarz. Die kostet vierzehn Euro, nicht vierzig. Ich nehme sie. Zahle ich mit Karte? Heute nur bar, die Kartenzahlung ist defekt.",
+      "turns": [
+        { "role": "announcer", "text": "Guten Tag. Was suchen Sie?" },
+        { "role": "guest", "text": "Ich suche eine Hose, Größe 40, schwarz." },
+        { "role": "announcer", "text": "Die kostet vierzehn Euro." },
+        { "role": "guest", "text": "Ich nehme sie. Zahle ich mit Karte?" },
+        { "role": "announcer", "text": "Heute nur bar, die Kartenzahlung ist defekt." }
+      ],
+      "items": [
+        { "statement": "Sie sucht eine Jacke.", "answer": false },
+        { "statement": "Größe 40, schwarz.", "answer": true },
+        { "statement": "Die Hose kostet 40 Euro.", "answer": false },
+        { "statement": "Sie nimmt die Hose.", "answer": true },
+        { "statement": "Heute kann man mit Karte zahlen.", "answer": false }
+      ]
+    },
+    {
+      "id": "h-13",
+      "title": "A1 Hören 5 — picture matching (once)",
+      "once": true,
+      "paper": 5,
+      "teil": 1,
+      "intro": "Which place or situation? Choose A, B or C. Real exam papers use drawings; here the labels stand in for the pictures.",
+      "items": [
+        {
+          "audio": "Der Zug nach Köln fährt von Gleis 3. Bitte einsteigen.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Bahnhof / Zug", "B Café", "C Arztpraxis"],
+          "answer": "A Bahnhof / Zug"
+        },
+        {
+          "audio": "Einen Kaffee und ein Stück Kuchen bitte. Mit Milch.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Post", "B Café", "C Schwimmbad"],
+          "answer": "B Café"
+        },
+        {
+          "audio": "Guten Tag, ich habe seit gestern Kopfschmerzen. Ich brauche einen Termin.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Supermarkt", "B Bahnhof", "C Arztpraxis"],
+          "answer": "C Arztpraxis"
+        },
+        {
+          "audio": "Ich suche eine Jacke, Größe M. Haben Sie das in Blau?",
+          "statement": "Welches Bild passt?",
+          "options": ["A Kleidergeschäft", "B Bibliothek", "C Bushaltestelle"],
+          "answer": "A Kleidergeschäft"
+        },
+        {
+          "audio": "Ein Paket für Hassan. Bitte Ausweis mitbringen.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Schwimmbad", "B Post", "C Kino"],
+          "answer": "B Post"
+        }
+      ]
+    },
+    {
+      "id": "h-14",
+      "title": "A1 Hören 5 — picture matching · Teil 2",
+      "once": false,
+      "paper": 5,
+      "teil": 2,
+      "intro": "Short dialogues. Pick the matching situation.",
+      "items": [
+        {
+          "audio": "Zwei Fahrkarten nach Mainz bitte, zweite Klasse.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Ticketautomat / Schalter", "B Restaurant", "C Schule"],
+          "answer": "A Ticketautomat / Schalter"
+        },
+        {
+          "audio": "Das T-Shirt ist zu klein. Haben Sie Größe L?",
+          "statement": "Welches Bild passt?",
+          "options": ["A Apotheke", "B Umkleide / Laden", "C Park"],
+          "answer": "B Umkleide / Laden"
+        },
+        {
+          "audio": "Hallo Tim, ich bin zehn Minuten zu spät. Warte bitte im Café.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Person kommt später", "B Person ist krank", "C Person kauft Brot"],
+          "answer": "A Person kommt später"
+        },
+        {
+          "audio": "Wo ist die Toilette, bitte? Dort hinten links.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Frage nach dem Weg im Gebäude", "B Bestellung im Restaurant", "C Anruf beim Amt"],
+          "answer": "A Frage nach dem Weg im Gebäude"
+        },
+        {
+          "audio": "Ich möchte 20 Euro auf mein Handy laden.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Tankstelle", "B Kiosk / Handy-Laden", "C Museum"],
+          "answer": "B Kiosk / Handy-Laden"
+        }
+      ]
+    },
+    {
+      "id": "h-15",
+      "title": "A1 Hören 5 — picture matching · Teil 3",
+      "once": false,
+      "paper": 5,
+      "teil": 3,
+      "items": [
+        {
+          "audio": "Morgen fällt der Deutschkurs aus. Nächster Termin ist Mittwoch.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Kurs fällt aus", "B Kurs beginnt früher", "C Prüfung heute"],
+          "answer": "A Kurs fällt aus"
+        },
+        {
+          "audio": "Die Apotheke hat mittwochs nur bis 13 Uhr auf.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Lange geöffnet", "B Mittwoch Nachmittag zu", "C 24 Stunden offen"],
+          "answer": "B Mittwoch Nachmittag zu"
+        },
+        {
+          "audio": "Wir treffen uns um halb acht am Haupteingang, nicht um acht.",
+          "statement": "Welches Bild passt?",
+          "options": ["A 7:30 am Eingang", "B 8:30 am Gleis", "C 8:00 im Café"],
+          "answer": "A 7:30 am Eingang"
+        },
+        {
+          "audio": "Bitte nur stilles Wasser, kein Wasser mit Gas.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Wasser ohne Gas", "B Cola", "C Kaffee mit Milch"],
+          "answer": "A Wasser ohne Gas"
+        },
+        {
+          "audio": "Der Bus nach Köln fährt von Haltestelle 2, nicht von Haltestelle 5.",
+          "statement": "Welches Bild passt?",
+          "options": ["A Haltestelle 5", "B Haltestelle 2", "C Gleis 14"],
+          "answer": "B Haltestelle 2"
+        }
+      ]
     }
   ],
   "schreiben": [
@@ -1286,8 +1519,16 @@ registerPack("a1", {
           "label": "Vorname"
         },
         {
+          "id": "strasse",
+          "label": "Straße, Hausnummer"
+        },
+        {
+          "id": "plzort",
+          "label": "PLZ, Ort"
+        },
+        {
           "id": "land",
-          "label": "Land"
+          "label": "Nationalität / Land"
         },
         {
           "id": "telefon",
@@ -1301,11 +1542,12 @@ registerPack("a1", {
       "points": [
         "Name",
         "Vorname",
+        "Adresse",
         "Land",
         "Telefon",
         "Kurs"
       ],
-      "model": "Mustafa Asif · Land: Pakistan · Tel. 0151 000000 · Kurs: A1 Abend"
+      "model": "Asif, Mustafa · Bahnhofstraße 12 · 50667 Köln · Pakistan · Tel. 0151 000000 · Kurs: A1 Abend"
     },
     {
       "id": "a1-form-arzt",
@@ -1345,6 +1587,63 @@ registerPack("a1", {
       ],
       "model": "Mustafa Asif · 01.01.1994 · AOK · Kopfschmerzen seit gestern · Dienstag Nachmittag"
     },
+    {
+      "id": "a1-form-anmeldung",
+      "kind": "form",
+      "register": "Sie",
+      "title": "A1 Schreiben Teil 1 — Formular: Anmeldung / Kurs",
+      "situation": "Klassisches A1-Formular. Füllen Sie alle Felder aus — so sieht Teil 1 oft aus.",
+      "situationEn": "Classic A1 form. Fill every field — this is what Teil 1 often looks like.",
+      "fields": [
+        { "id": "name", "label": "Name" },
+        { "id": "vorname", "label": "Vorname" },
+        { "id": "geburt", "label": "Geburtsdatum" },
+        { "id": "alter", "label": "Alter" },
+        { "id": "geschlecht", "label": "Geschlecht (m / w / d)" },
+        { "id": "strasse", "label": "Straße, Hausnummer" },
+        { "id": "plz", "label": "PLZ" },
+        { "id": "ort", "label": "Ort" },
+        { "id": "land", "label": "Nationalität" },
+        { "id": "telefon", "label": "Telefon" }
+      ],
+      "points": ["Name", "Adresse", "Geburtsdatum", "Nationalität", "Telefon"],
+      "model": "Asif, Mustafa · 01.01.1994 · 32 Jahre · m · Bahnhofstraße 12 · 50667 · Köln · pakistanisch · 0151 000000"
+    },
+    {
+      "id": "a1-form-hotel",
+      "kind": "form",
+      "register": "Sie",
+      "title": "A1 Schreiben Teil 1 — Formular: Hotel",
+      "situation": "Sie buchen ein Zimmer. Füllen Sie das Formular aus.",
+      "situationEn": "You book a hotel room. Fill in the form.",
+      "fields": [
+        { "id": "name", "label": "Name, Vorname" },
+        { "id": "anreise", "label": "Anreise (Datum)" },
+        { "id": "abreise", "label": "Abreise (Datum)" },
+        { "id": "zimmer", "label": "Zimmer (Einzel / Doppel)" },
+        { "id": "fruehstueck", "label": "Frühstück? (ja / nein)" },
+        { "id": "telefon", "label": "Telefon" }
+      ],
+      "points": ["Name", "Daten", "Zimmer", "Frühstück", "Telefon"],
+      "model": "Sara Ali · 02.05.–04.05. · Einzelzimmer · Frühstück ja · 0151 444444"
+    },
+    {
+      "id": "a1-form-paket",
+      "kind": "form",
+      "register": "Sie",
+      "title": "A1 Schreiben Teil 1 — Formular: Paket / Post",
+      "situation": "Sie möchten ein Paket abholen. Füllen Sie das Formular aus.",
+      "situationEn": "You want to collect a parcel. Fill in the form.",
+      "fields": [
+        { "id": "name", "label": "Name, Vorname" },
+        { "id": "sendung", "label": "Sendungsnummer / Abholcode" },
+        { "id": "ausweis", "label": "Ausweisnummer" },
+        { "id": "wann", "label": "Wann können Sie kommen?" },
+        { "id": "telefon", "label": "Telefon" }
+      ],
+      "points": ["Name", "Sendung", "Ausweis", "Zeit", "Telefon"],
+      "model": "Ali Hassan · AB-2291 · T220011 · morgen 11 Uhr · 0151 222000"
+    },
 
     {
       "id": "a1-cafe",
@@ -1357,7 +1656,7 @@ registerPack("a1", {
         "Ask the price",
         "Say thank you"
       ],
-      "model": "Guten Tag! Ich möchte einen Kaffee und ein Stück Kuchen. Was kostet das? Danke schön!"
+      "model": "Guten Tag! Ich möchte bitte einen Kaffee mit Milch und ein Stück Kuchen. Was kostet das zusammen? Ich zahle bar. Danke schön!"
     },
     {
       "id": "a1-friend",
@@ -1370,7 +1669,7 @@ registerPack("a1", {
         "Place",
         "Ask for answer"
       ],
-      "model": "Hallo Anna, hast du am Samstag Zeit? Wir können um 15 Uhr Kaffee trinken im Café Sonne. Schreib mir bitte. Bis bald"
+      "model": "Hallo Anna, hast du am Samstag Zeit? Wir können um 15 Uhr im Café Sonne Kaffee trinken. Bitte schreib mir, ob du kommst. Bis bald, Omar"
     },
     {
       "id": "a1-shop",
@@ -1383,7 +1682,7 @@ registerPack("a1", {
         "Ask for another",
         "Thank"
       ],
-      "model": "Guten Tag, das T-Shirt ist zu klein. Ich brauche Größe L. Haben Sie eine andere Größe? Vielen Dank."
+      "model": "Guten Tag, das T-Shirt ist zu klein. Ich brauche Größe L, bitte in Blau. Haben Sie das? Ich habe den Kassenbon. Vielen Dank."
     },
     {
       "id": "a1-form",
@@ -1396,7 +1695,7 @@ registerPack("a1", {
         "Which days",
         "Phone number"
       ],
-      "model": "Guten Tag, ich heiße Omar Hassan. Ich möchte einen A1-Abendkurs. Geht das am Montag und Mittwoch? Meine Nummer: 0151 000000. Mit freundlichen Grüßen"
+      "model": "Guten Tag, ich heiße Omar Hassan. Ich möchte einen A1-Abendkurs am Montag und Mittwoch. Geht das? Meine Nummer ist 0151 000000. Mit freundlichen Grüßen"
     },
     {
       "id": "a1-doctor",
@@ -1409,7 +1708,7 @@ registerPack("a1", {
         "Since when",
         "Ask for help"
       ],
-      "model": "Guten Tag, ich habe seit gestern Kopfschmerzen. Können Sie mir bitte helfen?"
+      "model": "Guten Tag, ich habe seit gestern Kopfschmerzen. Ich brauche einen Termin, bitte am Dienstag Nachmittag. Können Sie mir helfen? Vielen Dank."
     },
     {
       "id": "a1-intro",
@@ -1422,7 +1721,7 @@ registerPack("a1", {
         "Where you live",
         "Job/course"
       ],
-      "model": "Hallo, ich heiße Leila. Ich komme aus Ägypten und wohne in Köln. Ich lerne Deutsch im A1-Kurs."
+      "model": "Hallo, ich heiße Leila. Ich komme aus Ägypten und wohne in Köln. Ich lerne Deutsch im A1-Kurs. Ich arbeite im Café. Und du?"
     },
     {
       "id": "a1-form2",
@@ -1436,7 +1735,7 @@ registerPack("a1", {
         "Breakfast",
         "Phone"
       ],
-      "model": "Name: Sara Ali. 2.–4. Mai. Einzelzimmer. Frühstück ja. Tel. 0151 444444."
+      "model": "Name: Sara Ali. Anreise 2. Mai, Abreise 4. Mai. Bitte ein Einzelzimmer mit Frühstück. Tel. 0151 444444. Danke."
     },
     {
       "id": "a1-late",
@@ -1449,7 +1748,7 @@ registerPack("a1", {
         "Where",
         "Wait"
       ],
-      "model": "Hallo Tim, sorry, 10 Minuten zu spät. Ich bin im Bus. Warte bitte."
+      "model": "Hallo Tim, sorry, ich bin zehn Minuten zu spät. Ich bin im Bus. Bitte warte im Café Sonne. Bis gleich!"
     },
     {
       "id": "a1-address",
@@ -1462,7 +1761,7 @@ registerPack("a1", {
         "Update",
         "Thanks"
       ],
-      "model": "Guten Tag, neue Adresse: Bahnhofstraße 12, Köln. Bitte ändern. Danke."
+      "model": "Guten Tag, ich habe eine neue Adresse: Bahnhofstraße 12, 50667 Köln, seit dem 1. März. Bitte ändern Sie das im Formular. Vielen Dank."
     },
     {
       "id": "a1-invite",
@@ -1475,7 +1774,7 @@ registerPack("a1", {
         "Place",
         "Ask"
       ],
-      "model": "Hallo Mira, Sonntag 15 Uhr Tee bei mir? Schreib mir."
+      "model": "Hallo Mira, hast du am Sonntag Zeit? Um 15 Uhr Tee bei mir, Bahnhofstraße 12. Bitte schreib mir, ob du kommst. Bis bald"
     },
     {
       "id": "a1-absent",
@@ -1488,10 +1787,60 @@ registerPack("a1", {
         "Ask homework",
         "Contact"
       ],
-      "model": "Guten Tag, ich kann Montag nicht kommen, ich bin krank. Gibt es Hausaufgaben? Tel. 0151 555."
+      "model": "Guten Tag, ich kann am Montag nicht zum Kurs kommen, weil ich krank bin. Gibt es Hausaufgaben? Tel. 0151 555000. Mit freundlichen Grüßen"
+    },
+    {
+      "id": "a1-party",
+      "register": "du",
+      "title": "A1: birthday invite",
+      "situation": "Invite a friend to your birthday.",
+      "points": [
+        "Day and time",
+        "Place",
+        "What to bring",
+        "Ask for answer"
+      ],
+      "model": "Hallo Lea, am Samstag ist mein Geburtstag. Um 16 Uhr bei mir in der Bahnhofstraße 12. Bringst du etwas zu trinken mit? Bitte schreib mir. Liebe Grüße"
+    },
+    {
+      "id": "a1-parcel",
+      "register": "Sie",
+      "title": "A1: package at the post office",
+      "situation": "You missed a parcel. Short note to the post office.",
+      "points": [
+        "Name",
+        "Paket",
+        "When you can come",
+        "Phone"
+      ],
+      "model": "Guten Tag, ich heiße Ali Hassan. Ich habe ein Paket, Abholcode AB-2291. Kann ich morgen um 11 Uhr kommen? Tel. 0151 222000. Danke."
+    },
+    {
+      "id": "a1-rain",
+      "register": "du",
+      "title": "A1: rain — change the plan",
+      "situation": "Park is a bad idea. Suggest a café.",
+      "points": [
+        "Hello",
+        "Rain",
+        "Café instead",
+        "Ask"
+      ],
+      "model": "Hallo Jan, es regnet heute. Sollen wir ins Café Sonne gehen, nicht in den Park? Um 15 Uhr am Eingang? Bitte schreib mir."
     }
   ],
   "sprechen": {
+    "lead": "A1 is a group oral with no prep. Short sentences. Ask one question back. Teil 3 is one simple plan, not a B1 discussion.",
+    "teil2Title": "Teil 2 — word cards: ask and answer",
+    "teil2Lead": "This is not a 90-second opinion. Read the card, say two or three short sentences, then ask the partner the same.",
+    "teil2Steps": [
+      "Ich habe / Ich wohne / Ich esse gern …",
+      "Und du? / Wo wohnst du?",
+      "Wie bitte? Noch einmal, bitte."
+    ],
+    "teil2Timer": 0,
+    "teil3Title": "Teil 3 — one simple plan",
+    "teil3Lead": "Suggest, ask time and place, agree. If you cannot: Ich kann nicht, denn … Then pick one plan and stop.",
     "intro": "Hallo, ich heiße … Ich komme aus … Ich wohne in … Ich bin … Jahre alt. Ich lerne Deutsch. Und du?",
     "questions": [
       "Wie heißt du?",
@@ -1499,169 +1848,199 @@ registerPack("a1", {
       "Wo wohnst du?",
       "Was machst du?",
       "Hast du Geschwister?",
-      "Was isst du gern?"
+      "Was isst du gern?",
+      "Wie alt bist du?",
+      "Welche Sprachen sprichst du?",
+      "Was machst du am Wochenende?",
+      "Wo ist die Post?",
+      "Wie schreibt man das?",
+      "Hast du ein Handy?"
     ],
     "topics": [
       {
         "t": "Meine Familie",
-        "spine": "Ich habe einen Bruder und eine Schwester. Wir wohnen in…"
+        "spine": "Ich habe einen Bruder und eine Schwester. Wir wohnen in …",
+        "ask": ["Hast du Geschwister?", "Wohnst du mit Familie?"]
       },
       {
         "t": "Mein Tag",
-        "spine": "Am Morgen stehe ich auf. Dann gehe ich zur Arbeit / zum Kurs."
+        "spine": "Am Morgen stehe ich auf. Dann gehe ich zur Arbeit / zum Kurs.",
+        "ask": ["Wann stehst du auf?", "Was machst du am Abend?"]
       },
       {
         "t": "Essen und Trinken",
-        "spine": "Ich esse gern … Ich trinke gern …"
+        "spine": "Ich esse gern … Ich trinke gern … Ich mag kein …",
+        "ask": ["Was isst du gern?", "Trinkst du Kaffee oder Tee?"]
       },
       {
         "t": "In der Stadt",
-        "spine": "In meiner Stadt gibt es … Ich gehe oft …"
+        "spine": "In meiner Stadt gibt es einen Bahnhof und eine Post. Ich gehe oft …",
+        "ask": ["Wo ist der Bahnhof?", "Was gibt es in deiner Stadt?"]
+      },
+      {
+        "t": "Wohnen",
+        "spine": "Ich wohne in einer Wohnung. Es gibt eine Küche und ein Bad.",
+        "ask": ["Wohnst du in einer Wohnung oder in einem Haus?", "Hast du ein Zimmer?"]
+      },
+      {
+        "t": "Einkaufen",
+        "spine": "Ich kaufe Brot und Milch. Das ist zu teuer / billig.",
+        "ask": ["Wo kaufst du ein?", "Was kostet das?"]
+      },
+      {
+        "t": "Freizeit",
+        "spine": "In der Freizeit lese ich / ich gehe ins Kino / ich treffe Freunde.",
+        "ask": ["Was machst du in der Freizeit?", "Gehst du gern ins Kino?"]
+      },
+      {
+        "t": "Wetter",
+        "spine": "Heute ist es kalt / warm / es regnet. Ich nehme eine Jacke.",
+        "ask": ["Wie ist das Wetter heute?", "Was ziehst du an?"]
+      },
+      {
+        "t": "Arbeit und Kurs",
+        "spine": "Ich bin Student / ich arbeite als … Ich lerne Deutsch im A1-Kurs.",
+        "ask": ["Was machst du beruflich?", "Wann ist dein Kurs?"]
+      },
+      {
+        "t": "Bus und Bahn",
+        "spine": "Ich fahre mit dem Bus. Der Zug fährt von Gleis …",
+        "ask": ["Fährst du mit dem Bus oder mit dem Auto?", "Wo ist der Bahnhof?"]
+      },
+      {
+        "t": "Gesundheit",
+        "spine": "Ich habe Kopfschmerzen. Ich brauche einen Termin / eine Apotheke.",
+        "ask": ["Wo ist die Apotheke?", "Bist du oft krank?"]
+      },
+      {
+        "t": "Post und Amt",
+        "spine": "Ich möchte ein Paket schicken. Wo ist die Post, bitte?",
+        "ask": ["Wo ist die Post?", "Hast du ein Paket?"]
+      },
+      {
+        "t": "Geburtstag",
+        "spine": "Am Samstag ist mein Geburtstag. Um 16 Uhr bei mir.",
+        "ask": ["Wann hast du Geburtstag?", "Kommt ihr zur Party?"]
+      },
+      {
+        "t": "Sprachen",
+        "spine": "Ich spreche … und ein bisschen Deutsch. Ich lerne Deutsch.",
+        "ask": ["Welche Sprachen sprichst du?", "Seit wann lernst du Deutsch?"]
       }
     ],
     "planning": [
       {
         "t": "Kaffee treffen",
-        "points": [
-          "Tag",
-          "Uhrzeit",
-          "Ort",
-          "wer zahlt"
-        ]
+        "points": ["Tag", "Uhrzeit", "Ort", "wer zahlt"]
       },
       {
         "t": "Einkaufen",
-        "points": [
-          "Supermarkt oder Markt",
-          "was kaufen",
-          "wann"
-        ]
+        "points": ["Supermarkt oder Markt", "was kaufen", "wann"]
+      },
+      {
+        "t": "Kino",
+        "points": ["Film", "Tag", "Uhrzeit", "Treffpunkt"]
+      },
+      {
+        "t": "Park oder Café",
+        "points": ["Wetter", "Ort", "Uhrzeit", "was mitbringen"]
+      },
+      {
+        "t": "Kursfeier",
+        "points": ["Tag", "Raum oder Café", "Essen", "Uhrzeit"]
+      },
+      {
+        "t": "Geburtstag",
+        "points": ["Tag", "bei wem", "Geschenk", "Uhrzeit"]
+      },
+      {
+        "t": "Am Bahnhof treffen",
+        "points": ["Gleis oder Ausgang", "Uhrzeit", "Zug", "Plan B"]
+      },
+      {
+        "t": "Zur Apotheke",
+        "points": ["wann", "wo", "wer hat Zeit", "danach Kaffee?"]
       }
     ],
     "engine": [
-      {
-        "role": "suggest",
-        "de": "Sollen wir…?"
-      },
-      {
-        "role": "agree",
-        "de": "Ja, gerne."
-      },
-      {
-        "role": "time",
-        "de": "Um wie viel Uhr?"
-      },
-      {
-        "role": "place",
-        "de": "Wo treffen wir uns?"
-      },
-      {
-        "role": "close",
-        "de": "Okay, bis dann!"
-      }
+      { "role": "suggest", "de": "Sollen wir…?" },
+      { "role": "agree", "de": "Ja, gerne." },
+      { "role": "time", "de": "Um wie viel Uhr?" },
+      { "role": "place", "de": "Wo treffen wir uns?" },
+      { "role": "bring", "de": "Was bringst du mit?" },
+      { "role": "no", "de": "Ich kann nicht, denn ich arbeite." },
+      { "role": "other", "de": "Dann um … Uhr?" },
+      { "role": "ok", "de": "Ist das okay?" },
+      { "role": "repair", "de": "Wie bitte? Noch einmal, bitte." },
+      { "role": "close", "de": "Okay, bis dann!" }
     ]
   },
   "mocks": [
     {
       "id": "mock-1",
       "title": "A1 mock A",
-      "blurb": "Lesen 1 + SB + Hören + short writing.",
+      "blurb": "Hören paper 1 · Lesen 1 + 30-word note in one 45-minute booklet. No Sprachbausteine.",
       "lesen": "lesen-1",
-      "sb": [
-        "sb-1",
-        "sb-2"
-      ],
-      "hoeren": [
-        "h-1",
-        "h-2"
-      ],
+      "hoeren": ["h-1"],
       "schreiben": "a1-friend"
     },
     {
       "id": "mock-2",
       "title": "A1 mock B",
-      "blurb": "Second training paper.",
+      "blurb": "Hören paper 2 · Lesen 2 + classic form (Teil 1).",
       "lesen": "lesen-2",
-      "sb": [
-        "sb-3",
-        "sb-1"
-      ],
-      "hoeren": [
-        "h-3",
-        "h-1"
-      ],
-      "schreiben": "a1-form"
+      "hoeren": ["h-4"],
+      "schreiben": "a1-form-kurs"
     },
     {
       "id": "mock-3",
       "title": "A1 mock C",
-      "blurb": "Lesen 3 + cloze + Hören + writing.",
+      "blurb": "Hören paper 3 · Lesen 3 + late message.",
       "lesen": "lesen-3",
-      "sb": [
-        "sb-4",
-        "sb-5"
-      ],
-      "hoeren": [
-        "h-4",
-        "h-5"
-      ],
+      "hoeren": ["h-7"],
       "schreiben": "a1-late"
     },
     {
       "id": "mock-4",
       "title": "A1 mock D",
-      "blurb": "Lesen 4 + bank + Hören + form.",
+      "blurb": "Hören trap paper · Lesen 4 + full Anmeldung form (Straße, PLZ, Ort).",
       "lesen": "lesen-4",
-      "sb": [
-        "sb-6",
-        "sb-1"
-      ],
-      "hoeren": [
-        "h-6",
-        "h-7"
-      ],
-      "schreiben": "a1-form2"
+      "hoeren": ["h-10"],
+      "schreiben": "a1-form-anmeldung"
     },
     {
       "id": "mock-5",
       "title": "A1 mock E",
-      "blurb": "Lesen 5 + more practice.",
+      "blurb": "Picture-matching Hören · Lesen 5 + invite.",
       "lesen": "lesen-5",
-      "sb": [
-        "sb-7",
-        "sb-8"
-      ],
-      "hoeren": [
-        "h-8",
-        "h-9"
-      ],
+      "hoeren": ["h-13"],
       "schreiben": "a1-invite"
     },
     {
       "id": "mock-6",
       "title": "A1 mock F",
-      "blurb": "Stamina mix.",
+      "blurb": "Hören paper 2 again · Lesen 2 + hotel form.",
       "lesen": "lesen-2",
-      "sb": [
-        "sb-2",
-        "sb-4"
-      ],
-      "hoeren": [
-        "h-1",
-        "h-5",
-        "h-7"
-      ],
-      "schreiben": "a1-absent"
+      "hoeren": ["h-4"],
+      "schreiben": "a1-form-hotel"
+    },
+    {
+      "id": "mock-7",
+      "title": "A1 mock G — trap sitting",
+      "blurb": "Trap Hören (14 vs 40, Gleis, halb) · Lesen 5 + birthday note from memory. Then sit the official telc MP3.",
+      "lesen": "lesen-5",
+      "hoeren": ["h-10"],
+      "schreiben": "a1-party"
     }
   ],
   "tips": [
-    "Official telc A1: Hören ~20 min (15 items), Lesen+Schreiben 45 min (form + ~30-word message), group Sprechen ~15. No Sprachbausteine paper.",
+    "Official telc A1: Hören ~20 min (15 items, sometimes pictures), Lesen+Schreiben 45 min (form + ~30-word message), group Sprechen ~15. No Sprachbausteine paper.",
     "Always learn article + noun: der Tisch, not just Tisch.",
-    "Speak every day for 5 minutes — intro + 5 questions.",
-    "Pass both written and oral halves (check your centre's rules).",
-    "Use official telc A1 audio before exam day.",
-    "Official A1: Hören ~20 min, Lesen+Schreiben ~45, group Sprechen ~15.",
-    "Practise forms + ~30-word messages with greeting and closing."
+    "Speak every day for 5 minutes — intro + 5 questions. Then 6 full oral runs with new cards. A human partner still beats both roles on your phone.",
+    "Pass both written and oral halves (check your centre's rules). Aim 80 percent in this gym for a comfortable pass.",
+    "Required: official telc A1 Modelltest PDF + MP3 before exam day. Browser voice is not exam acoustics.",
+    "Hören traps: 14 vs 40, nicht/kein, erst/schon, halb acht = 7:30, Gleis. Guess every item. Teil 1 once.",
+    "Schreiben: hide the model. Form with Straße/PLZ/Ort + ~30-word message with greeting, three points, closing."
   ]
 }
 });

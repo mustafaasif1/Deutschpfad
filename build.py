@@ -25,7 +25,7 @@ def build_level(level: str) -> None:
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>{title}</title>
   <style>
 {CSS}
@@ -33,18 +33,59 @@ def build_level(level: str) -> None:
 </head>
 <body>
   <div class="screen-bar">
-    <span>{title}</span>
-    <span>
-      <button type="button" onclick="window.print()">Print / Save PDF</button>
-    </span>
+    <a href="/site/">Study site</a>
+    <select id="book-jump" aria-label="Jump to chapter"></select>
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
   </div>
   <div class="book-wrap">
     <div class="page-pad">
 """
     foot = f"""
-      <p class="footer-note">Deutschpfad personal study book for {level.upper()}. Original teaching material. Not affiliated with telc gGmbH. Print → Save as PDF (A4, background graphics on).</p>
+      <p class="footer-note">Deutschpfad personal study book for {level.upper()}. Original teaching material. Not affiliated with telc gGmbH or the Goethe-Institut. No pass guarantee. <a href="/site/impressum.html">Impressum</a> · <a href="/site/datenschutz.html">Datenschutz</a> · <a href="/site/nutzung.html">Nutzung</a>. Print → Save as PDF (A4, background graphics on).</p>
     </div>
   </div>
+  <script>
+    document.querySelectorAll("table").forEach(function (t) {{
+      if (t.parentElement && t.parentElement.classList.contains("table-scroll")) return;
+      var w = document.createElement("div");
+      w.className = "table-scroll";
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    }});
+    (function () {{
+      var jump = document.getElementById("book-jump");
+      if (!jump) return;
+      var chapters = [];
+      var cover = document.querySelector(".cover");
+      if (cover && cover.id) chapters.push({{ id: cover.id, title: "Cover" }});
+      if (document.getElementById("toc")) chapters.push({{ id: "toc", title: "Contents" }});
+      document.querySelectorAll("section.chapter[id]").forEach(function (s) {{
+        if (s.id === "toc") return;
+        var h = s.querySelector(".chapter-title, h1");
+        var title = (h && h.textContent ? h.textContent : s.id).replace(/\\s+/g, " ").trim();
+        chapters.push({{ id: s.id, title: title }});
+      }});
+      chapters.forEach(function (c) {{
+        var o = document.createElement("option");
+        o.value = c.id;
+        o.textContent = c.title;
+        jump.appendChild(o);
+      }});
+      function sync() {{
+        var id = (location.hash || "").replace(/^#/, "");
+        if (id) jump.value = id;
+      }}
+      jump.onchange = function () {{
+        var id = jump.value;
+        if (!id) return;
+        history.replaceState(null, "", "#" + id);
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView();
+      }};
+      window.addEventListener("hashchange", sync);
+      sync();
+    }})();
+  </script>
 </body>
 </html>
 """

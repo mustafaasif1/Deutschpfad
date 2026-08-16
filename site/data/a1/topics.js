@@ -2,7 +2,7 @@ registerPack("a1", {
   examFormat: {
     name: "telc Deutsch A1 / Start Deutsch 1",
     notThisExam: "This is general adult A1 — not A1 fuer Zuwanderer (that paper has extra orientation tasks) and not Goethe-only branding. Start Deutsch 1 was jointly developed; train the telc sitting.",
-    officialUrl: "https://www.telc.net/",
+    officialUrl: "https://www.telc.net/sprachpruefungen/zertifikatspruefung/deutsch/start-deutsch-1-/-telc-deutsch-a1/",
     passRule: "Typical adult sitting: about 60 of 100 scaled points overall. Raw skills are often 15 points each (Hoeren, Lesen, Schreiben, Sprechen = 60 raw). Unlike B1, there is normally no separate written/oral 60 percent hurdle — confirm the rule on your invitation.",
     points: { hoeren: 15, lesen: 15, schreiben: 15, sprechen: 15, rawTotal: 60, scaledTotal: 100, passTotal: 60 },
     written: [
@@ -15,7 +15,7 @@ registerPack("a1", {
       minutes: 15,
       prep: 0,
       points: 15,
-      note: "Usually a small group, about 15 minutes, no prep room. Teil 1: introduce yourself. Teil 2: ask and answer with word cards. Teil 3: simple requests with picture cards. No 20-minute B1 prep."
+      note: "Usually a small group, about 15 minutes, no prep room. Teil 1: introduce yourself. Teil 2: ask and answer with word cards. Teil 3: a tiny plan with pictures (when, where, what) plus short requests (Können Sie mir bitte…?). Not A2 negotiation. No 20-minute B1 prep."
     }
   },
   topics: [
@@ -50,9 +50,10 @@ registerPack("a1", {
         "Herkunftsland und Nationalitaet",
         "Sprachen",
         "Beruf oder Kurs in one sentence",
-        "du vs Sie in first contact"
+        "du vs Sie in first contact",
+        "Aussehen in two words (groß, schwarze Haare — official Person)"
       ],
-      explain: "<p>telc A1 always starts with <span class=\"de\">Person</span>. Examiners do not want a speech. They want five clean facts you can also write on a form.</p><h3>Say this spine</h3><p><span class=\"de\">Guten Tag. Ich heiße … Ich komme aus … Ich wohne in … Ich bin … Jahre alt. Ich lerne Deutsch im A1-Kurs.</span> That is enough for Teil 1. Then ask: <span class=\"de\">Und Sie? Woher kommen Sie?</span></p><h3>Forms are the same words</h3><p>On paper you will see <span class=\"de\">Name, Vorname, Straße, PLZ, Ort, Telefon, Geburtsdatum, Geschlecht, Nationalität</span>. Write dates as the form asks, often <span class=\"de\">TT.MM.JJJJ</span>. Age is <span class=\"de\">Ich bin 28 Jahre alt</span> — never <em>Ich habe 28 Jahre</em>.</p><h3>Spelling and numbers</h3><p>Practise the alphabet for your own name. Phone numbers are read digit by digit: <span class=\"de\">null eins sieben sechs …</span> Listen for <span class=\"de\">doppelt</span> (double). If you miss a number, say <span class=\"de\">Wie bitte? Können Sie das bitte wiederholen?</span></p><h3>du or Sie</h3><p>In the group oral, candidates often use <span class=\"de\">du</span> with each other and <span class=\"de\">Sie</span> with the examiner. A form and a course office use <span class=\"de\">Sie</span>. Do not mix them in one message.</p><ul><li>Keep sentences short. One fact per sentence.</li><li>Learn <span class=\"de\">Ich heiße / Ich komme aus / Ich wohne in / Ich spreche</span> as chunks, not word by word.</li></ul>",
+      explain: "<p>telc A1 always starts with <span class=\"de\">Person</span>. Examiners do not want a speech. They want five clean facts you can also write on a form. Official inventories also list <span class=\"de\">Aussehen</span> — two adjectives, not a portrait.</p><h3>Say this spine</h3><p><span class=\"de\">Guten Tag. Ich heiße … Ich komme aus … Ich wohne in … Ich bin … Jahre alt. Ich lerne Deutsch im A1-Kurs.</span> That is enough for Teil 1. Then ask: <span class=\"de\">Und Sie? Woher kommen Sie?</span></p><h3>Forms are the same words</h3><p>On paper you will see <span class=\"de\">Name, Vorname, Straße, PLZ, Ort, Telefon, Geburtsdatum, Geschlecht, Nationalität</span>. Write dates as the form asks, often <span class=\"de\">TT.MM.JJJJ</span>. Age is <span class=\"de\">Ich bin 28 Jahre alt</span> — never <em>Ich habe 28 Jahre</em>.</p><h3>Spelling and numbers</h3><p>Practise the alphabet for your own name. Phone numbers are read digit by digit: <span class=\"de\">null eins sieben sechs …</span> Listen for <span class=\"de\">doppelt</span> (double). If you miss a number, say <span class=\"de\">Wie bitte? Können Sie das bitte wiederholen?</span></p><h3>du or Sie</h3><p>In the group oral, candidates often use <span class=\"de\">du</span> with each other and <span class=\"de\">Sie</span> with the examiner. A form and a course office use <span class=\"de\">Sie</span>. Do not mix them in one message.</p><h3>Aussehen (two words)</h3><p>Official Person includes appearance. One sentence is enough: <span class=\"de\">Ich bin groß. Ich habe schwarze Haare und eine Brille.</span> Hair and glasses are the usual card. Do not describe a stranger in five colours.</p><ul><li>Keep sentences short. One fact per sentence.</li><li>Learn <span class=\"de\">Ich heiße / Ich komme aus / Ich wohne in / Ich spreche</span> as chunks, not word by word.</li></ul>",
       traps: [
         "Ich habe 25 Jahre (wrong). Say Ich bin 25 Jahre alt.",
         "Writing the surname in the Vorname box on the form.",
@@ -66,7 +67,7 @@ registerPack("a1", {
         "Give a phone number slowly, digit by digit.",
         "Fill Name, Vorname, Adresse, Telefon, Geburtsdatum without looking.",
         "Ask: Wie heißen Sie? Woher kommen Sie? Wo wohnen Sie?",
-        "Use Guten Tag / Hallo and Tschuess / Auf Wiedersehen."
+        "Use Guten Tag / Hallo and Tschüss / Auf Wiedersehen."
       ],
       chunks: [
         { de: "Guten Tag. Ich heiße … und komme aus …", en: "Hello. My name is … and I come from …" },
@@ -80,10 +81,12 @@ registerPack("a1", {
         { de: "Können Sie das bitte buchstabieren?", en: "Can you please spell that?" },
         { de: "Wie bitte? Können Sie das bitte wiederholen?", en: "Pardon? Can you please repeat that?" },
         { de: "Freut mich. / Angenehm.", en: "Pleased to meet you." },
-        { de: "Ich bin Student / ich arbeite als …", en: "I am a student / I work as …" }
+        { de: "Ich bin Student / ich arbeite als …", en: "I am a student / I work as …" },
+        { de: "Ich bin groß / klein. Ich habe dunkle Haare.", en: "I am tall / short. I have dark hair." },
+        { de: "Ich trage eine Brille.", en: "I wear glasses." }
       ],
       vocab: ["people", "greetings"],
-      grammar: ["a1-sein-haben", "a1-pronouns"],
+      grammar: ["a1-alphabet", "a1-sein-haben", "a1-pronouns", "a1-adjectives"],
       sprechen: true,
       schreiben: ["a1-intro", "a1-form"]
     },
@@ -150,7 +153,7 @@ registerPack("a1", {
         { de: "Das ist mein Freund / meine Freundin.", en: "This is my friend / partner." }
       ],
       vocab: ["people"],
-      grammar: ["a1-articles", "a1-akkusativ"]
+      grammar: ["a1-articles", "a1-akkusativ", "a1-possessives"]
     },
     {
       id: "home",
@@ -185,15 +188,16 @@ registerPack("a1", {
         "Miete at word level",
         "Nachbar (recognition)"
       ],
-      explain: "<p><span class=\"de\">Wohnen</span> is an official A1 theme. You describe where you live and you find places in town. Keep it in the present tense.</p><h3>Your home in four sentences</h3><p><span class=\"de\">Ich wohne in einer Wohnung / in einem Haus / in einer WG. Die Wohnung hat zwei Zimmer, eine Küche und ein Bad. Ich wohne im zweiten Stock. Die Wohnung ist klein, aber schön.</span> Learn <span class=\"de\">im Erdgeschoss, im ersten Stock, im zweiten Stock</span>.</p><h3>Town places</h3><p>You must recognise and say: <span class=\"de\">der Bahnhof, die Haltestelle, der Supermarkt, die Bäckerei, die Apotheke, die Bank, die Post, das Rathaus, der Park, das Krankenhaus</span>. Ask: <span class=\"de\">Wo ist der Bahnhof, bitte? Wie komme ich zur Post?</span> Answer pattern: <span class=\"de\">Gehen Sie geradeaus, dann links / rechts. Es ist dort.</span></p><h3>Ads and signs</h3><p>A room ad at A1 is tiny: <span class=\"de\">Zimmer frei, 350 Euro, nah am Bahnhof, ab 1. Mai</span>. Signs: <span class=\"de\">Eingang, Ausgang, geöffnet, geschlossen, Aufzug außer Betrieb</span>.</p><ul><li>in einer Wohnung (feminine), in einem Haus (neuter) — the article changes after <span class=\"de\">in</span> here; at A1 memorise the chunks.</li><li>Do not write a B1 complaint about mould. A1 is rooms and the way.</li></ul>",
+      explain: "<p><span class=\"de\">Wohnen</span> is an official A1 theme. You describe where you live and you find places in town. Keep it in the present tense.</p><h3>Your home in four sentences</h3><p><span class=\"de\">Ich wohne in einer Wohnung / in einem Haus / in einer WG. Die Wohnung hat zwei Zimmer, eine Küche und ein Bad. Ich wohne im zweiten Stock. Die Wohnung ist klein, aber schön.</span> Learn <span class=\"de\">im Erdgeschoss, im ersten Stock, im zweiten Stock</span>. German counting is not US counting: <span class=\"de\">Erdgeschoss</span> is the ground floor (US first floor). <span class=\"de\">erster Stock</span> is one floor up (US second). Hören loves <span class=\"de\">dritter Stock</span> vs 13.</p><h3>Town places</h3><p>You must recognise and say: <span class=\"de\">der Bahnhof, die Haltestelle, der Supermarkt, die Bäckerei, die Apotheke, die Bank, die Post, das Rathaus, der Park, das Krankenhaus</span>. Ask: <span class=\"de\">Wo ist der Bahnhof, bitte? Wie komme ich zur Post?</span> Answer pattern: <span class=\"de\">Gehen Sie geradeaus, dann links / rechts. Es ist dort.</span></p><h3>Ads and signs</h3><p>A room ad at A1 is tiny: <span class=\"de\">Zimmer frei, 350 Euro, nah am Bahnhof, ab 1. Mai</span>. Signs: <span class=\"de\">Eingang, Ausgang, geöffnet, geschlossen, Aufzug außer Betrieb</span>.</p><ul><li>in einer Wohnung (feminine), in einem Haus (neuter) — the article changes after <span class=\"de\">in</span> here; at A1 memorise the chunks.</li><li>Do not write a B1 complaint about mould. A1 is rooms and the way.</li></ul>",
       traps: [
         "Ich wohne in Wohnung (missing article).",
         "Confusing zu Hause (location) with nach Hause (direction home).",
+        "Hearing dritter Stock as 13, or translating US second floor as zweiter Stock.",
         "Giving a 2-minute furniture catalogue. Name rooms, then stop.",
         "Reading Zimmer frei as a hotel when it is a private room ad."
       ],
       youMust: [
-        "Name rooms and eight city places.",
+        "Name rooms, eight city places, and Erdgeschoss vs Stock.",
         "Ask: Wo ist …? Wie komme ich zum / zur …?",
         "Say: Gehen Sie geradeaus, dann links / rechts.",
         "Describe your home in four short sentences.",
@@ -203,7 +207,7 @@ registerPack("a1", {
       chunks: [
         { de: "Ich wohne in einer Wohnung / in einem Haus / in einer WG.", en: "I live in a flat / in a house / in a shared flat." },
         { de: "Die Wohnung hat zwei Zimmer, eine Küche und ein Bad.", en: "The flat has two rooms, a kitchen and a bathroom." },
-        { de: "Ich wohne im zweiten Stock.", en: "I live on the second floor." },
+        { de: "Ich wohne im zweiten Stock.", en: "I live on the second floor (UK) / third floor (US) — two up from the ground." },
         { de: "Die Wohnung ist klein, aber schön.", en: "The flat is small but nice." },
         { de: "Wo ist der Bahnhof, bitte?", en: "Where is the station, please?" },
         { de: "Wie komme ich zur Post / zur Bank?", en: "How do I get to the post office / the bank?" },
@@ -346,8 +350,8 @@ registerPack("a1", {
         { de: "Kann ich das umtauschen?", en: "Can I exchange that?" }
       ],
       vocab: ["shopping"],
-      grammar: ["a1-akkusativ", "a1-articles"],
-      schreiben: ["a1-shop"]
+      grammar: ["a1-akkusativ", "a1-articles", "a1-adjectives", "a1-dieser"],
+      schreiben: ["a1-shop", "a1-parcel"]
     },
     {
       id: "time",
@@ -382,7 +386,7 @@ registerPack("a1", {
         "Oeffnungszeiten",
         "Termin, Einladung"
       ],
-      explain: "<p>Time is not a separate official theme name, but every official theme uses it. If you miss <span class=\"de\">halb acht</span>, you miss the Hoeren item.</p><h3>Clock</h3><p><span class=\"de\">Es ist acht Uhr. Es ist halb acht</span> (7:30). <span class=\"de\">Es ist Viertel nach zehn</span> (10:15). <span class=\"de\">Es ist Viertel vor drei</span> (14:45). Digital times in announcements are often <span class=\"de\">acht Uhr fünfzehn</span>. Train both.</p><h3>Days and prepositions</h3><p><span class=\"de\">am Montag, am Dienstag … am Sonntag. am Wochenende. am Morgen, am Abend. um acht Uhr. heute, morgen, gestern.</span> <span class=\"de\">Am</span> + day. <span class=\"de\">Um</span> + clock time.</p><h3>Dates</h3><p>Forms: <span class=\"de\">16.08.2026</span>. Spoken: <span class=\"de\">der sechzehnte August</span>. You do not need every ordinal at A1, but you must write the digits correctly.</p><ul><li>Hoeren trap: <span class=\"de\">erst um zehn</span> vs <span class=\"de\">schon um acht</span>.</li><li>Invitation: always day + time + place or the note is incomplete.</li></ul>",
+      explain: "<p>Time is not a separate official theme name, but every official theme uses it. If you miss <span class=\"de\">halb acht</span>, you miss the Hoeren item.</p><h3>Clock</h3><p><span class=\"de\">Es ist acht Uhr. Es ist halb acht</span> (7:30 — not 8:30). <span class=\"de\">Es ist Viertel nach zehn</span> (10:15). <span class=\"de\">Es ist Viertel vor drei</span> (14:45 in a 24-hour announcement). Digital times in announcements are often <span class=\"de\">acht Uhr fünfzehn</span>. Train both. Contrast <span class=\"de\">vierzehn / vierzig</span> and <span class=\"de\">dreizehn / dreißig</span> until they feel different.</p><h3>Days and prepositions</h3><p><span class=\"de\">am Montag, am Dienstag … am Sonntag. am Wochenende. am Morgen, am Abend. um acht Uhr. heute, morgen, gestern.</span> <span class=\"de\">Am</span> + day. <span class=\"de\">Um</span> + clock time.</p><h3>Dates</h3><p>Forms: <span class=\"de\">16.08.2026</span>. Spoken: <span class=\"de\">der sechzehnte August</span>. You do not need every ordinal at A1, but you must write the digits correctly.</p><ul><li>Hoeren trap: <span class=\"de\">erst um zehn</span> vs <span class=\"de\">schon um acht</span>.</li><li>Invitation: always day + time + place or the note is incomplete.</li></ul>",
       traps: [
         "halb acht heard as 8:30. It is 7:30.",
         "am acht Uhr (wrong). Say um acht Uhr.",
@@ -448,7 +452,7 @@ registerPack("a1", {
         "trennbare Verben in the present",
         "Uhrzeiten in the day"
       ],
-      explain: "<p>A1 <span class=\"de\">Tagesablauf</span> is present tense only. You are not telling yesterday (that is A2 Perfekt). You are listing a normal day with times.</p><h3>A five-sentence day</h3><p><span class=\"de\">Am Morgen stehe ich um sieben auf. Dann frühstücke ich. Um acht gehe ich zur Arbeit / zum Kurs. Am Nachmittag kaufe ich ein. Am Abend koche ich und sehe fern.</span> Separable verbs split: <span class=\"de\">ich stehe … auf, ich kaufe … ein, ich sehe … fern</span>.</p><h3>Weekend</h3><p><span class=\"de\">Am Wochenende schlafe ich länger. Ich treffe Freunde. Ich gehe ins Kino oder in den Park.</span> That already touches Freizeit — keep hobbies short here; the leisure topic goes deeper.</p><h3>Why this is on the exam</h3><p>Examiners use the day to test verbs, times, and <span class=\"de\">am Morgen / am Abend</span>. A message like <span class=\"de\">Leider kann ich nicht kommen, weil ich arbeiten muss</span> is A1 gold if the rest of the note is complete.</p><ul><li>Do not mix Perfekt into A1 production unless a task forces a single phrase.</li><li>Learn 10 daily verbs with their present forms, not 40 weakly.</li></ul>",
+      explain: "<p>A1 <span class=\"de\">Tagesablauf</span> is present tense only. You are not telling yesterday (that is A2 Perfekt). You are listing a normal day with times.</p><h3>A five-sentence day</h3><p><span class=\"de\">Am Morgen stehe ich um sieben auf. Dann frühstücke ich. Um acht gehe ich zur Arbeit / zum Kurs. Am Nachmittag kaufe ich ein. Am Abend koche ich und sehe fern.</span> Separable verbs split: <span class=\"de\">ich stehe … auf, ich kaufe … ein, ich sehe … fern</span>.</p><h3>Weekend</h3><p><span class=\"de\">Am Wochenende schlafe ich länger. Ich treffe Freunde. Ich gehe ins Kino oder in den Park.</span> That already touches Freizeit — keep hobbies short here; the leisure topic goes deeper.</p><h3>Why this is on the exam</h3><p>Examiners use the day to test verbs, times, and <span class=\"de\">am Morgen / am Abend</span>. A cancel note needs a reason: safest A1 is <span class=\"de\">Leider kann ich nicht kommen, denn ich muss arbeiten</span> (verb stays second). <span class=\"de\">weil ich arbeiten muss</span> is also fine if the verb is last — do not write <em>weil ich muss arbeiten</em>.</p><ul><li>Do not mix Perfekt into A1 production unless a task forces a single phrase.</li><li>Learn 10 daily verbs with their present forms, not 40 weakly.</li></ul>",
       traps: [
         "Using English word order: Ich aufstehe um sieben.",
         "Telling yesterday in broken Perfekt when the card says Mein Tag.",
@@ -471,14 +475,14 @@ registerPack("a1", {
         { de: "Um zehn gehe ich schlafen.", en: "At ten I go to sleep." },
         { de: "Am Wochenende schlafe ich länger.", en: "At the weekend I sleep longer." },
         { de: "Was machst du am Morgen?", en: "What do you do in the morning?" },
-        { de: "Leider kann ich nicht kommen, weil ich arbeiten muss.", en: "Unfortunately I cannot come because I have to work." },
+        { de: "Leider kann ich nicht kommen, denn ich muss arbeiten.", en: "Unfortunately I cannot come, because I have to work (denn: verb stays second)." },
         { de: "Nach der Arbeit gehe ich nach Hause.", en: "After work I go home." },
         { de: "Ich habe um drei Uhr eine Pause.", en: "I have a break at three." },
         { de: "Unter der Woche habe ich wenig Zeit.", en: "On weekdays I have little time." },
         { de: "Samstag kaufe ich ein und treffe Freunde.", en: "On Saturday I shop and meet friends." }
       ],
       vocab: ["daily", "verbs"],
-      grammar: ["a1-present"]
+      grammar: ["a1-present", "a1-separable", "a1-connectors"]
     },
     {
       id: "travel",
@@ -578,7 +582,7 @@ registerPack("a1", {
         "Ich kann nicht kommen",
         "Notfall / Krankenhaus (recognition)"
       ],
-      explain: "<p>A1 health is pain + appointment + pharmacy. You are not discussing the Krankenkasse (that is B1).</p><h3>What hurts</h3><p><span class=\"de\">Ich habe Kopfschmerzen. Ich habe Bauchschmerzen. Ich habe Schnupfen und Husten. Ich habe Fieber. Seit wann? Seit gestern / seit zwei Tagen.</span> Pattern: <span class=\"de\">Ich habe + pain word</span>.</p><h3>At the doctor or pharmacy</h3><p><span class=\"de\">Ich brauche einen Termin, bitte. Können Sie mir helfen? Ich brauche eine Tablette / ein Pflaster.</span> Understand <span class=\"de\">Wartezimmer, Rezept, geöffnet, Notdienst</span> at sign level.</p><h3>Absent note</h3><p><span class=\"de\">Hallo, ich bin krank. Ich kann heute nicht zum Kurs kommen. Bis bald</span> — greeting, reason, closing. Add a day if the task asks when you return.</p><ul><li>Keep vocabulary small: 8 body/pain words beat a medical dictionary.</li><li>Termin + weekday + time is the Hoeren fact more often than the illness name.</li></ul>",
+      explain: "<p>A1 health is pain + appointment + pharmacy. You are not discussing the Krankenkasse (that is B1).</p><h3>What hurts</h3><p><span class=\"de\">Ich habe Kopfschmerzen. Ich habe Bauchschmerzen. Ich habe Schnupfen und Husten. Ich habe Fieber. Seit wann? — Seit gestern / seit zwei Tagen.</span> Natural order: <span class=\"de\">Ich habe seit zwei Tagen Fieber und Husten.</span> Pattern: <span class=\"de\">Ich habe + pain word</span>, not <em>Ich bin Schmerz</em>.</p><h3>At the doctor or pharmacy</h3><p><span class=\"de\">Ich brauche einen Termin, bitte. Können Sie mir helfen? Ich brauche eine Tablette / ein Pflaster.</span> Understand <span class=\"de\">Wartezimmer, Rezept, geöffnet, Notdienst</span> at sign level.</p><h3>Absent note</h3><p><span class=\"de\">Hallo, ich bin krank. Ich kann heute nicht zum Kurs kommen. Bis bald</span> — greeting, reason, closing. Add a day if the task asks when you return.</p><ul><li>Keep vocabulary small: 8 body/pain words beat a medical dictionary.</li><li>Termin + weekday + time is the Hoeren fact more often than the illness name.</li></ul>",
       traps: [
         "Inventing insurance or specialist vocabulary.",
         "Ich bin Schmerz (wrong). Say Ich habe Schmerzen / Kopfschmerzen.",
@@ -595,7 +599,7 @@ registerPack("a1", {
       ],
       chunks: [
         { de: "Ich habe Kopfschmerzen. Können Sie mir helfen?", en: "I have a headache. Can you help me?" },
-        { de: "Ich habe Fieber und Husten seit zwei Tagen.", en: "I have had a fever and a cough for two days." },
+        { de: "Ich habe seit zwei Tagen Fieber und Husten.", en: "I have had a fever and a cough for two days." },
         { de: "Ich brauche eine Tablette / ein Pflaster.", en: "I need a tablet / a plaster." },
         { de: "Ich brauche einen Termin, bitte.", en: "I need an appointment, please." },
         { de: "Der Termin ist am Dienstag um zehn Uhr.", en: "The appointment is Tuesday at ten." },
@@ -608,7 +612,7 @@ registerPack("a1", {
         { de: "Gute Besserung!", en: "Get well soon!" }
       ],
       vocab: ["health"],
-      grammar: ["a1-survival"],
+      grammar: ["a1-survival", "a1-dative", "a1-modals"],
       schreiben: ["a1-doctor", "a1-absent"]
     },
     {
@@ -674,7 +678,7 @@ registerPack("a1", {
         { de: "Was machen Sie beruflich?", en: "What do you do for a living?" }
       ],
       vocab: ["work"],
-      grammar: ["a1-modals"],
+      grammar: ["a1-modals", "a1-dative"],
       schreiben: ["a1-form", "a1-absent"]
     },
     {
@@ -710,7 +714,7 @@ registerPack("a1", {
         "Muell, sauber at word level",
         "Plan B when it rains"
       ],
-      explain: "<p>Official A1 lists <span class=\"de\">Umwelt und Wetter</span>. At this level Umwelt is tiny: park, clean, rubbish bin. Weather is the productive half.</p><h3>Today</h3><p><span class=\"de\">Heute scheint die Sonne. Es ist warm. / Es regnet. Es ist kalt. / Es schneit. / Es ist windig.</span> Question: <span class=\"de\">Wie ist das Wetter?</span></p><h3>Seasons</h3><p><span class=\"de\">Im Sommer ist es heiß. Im Winter schneit es oft. Im Herbst ist es kühl.</span> One season sentence is enough for the oral.</p><h3>Plans</h3><p>A1 does not need <span class=\"de\">wenn</span>-clauses like B1. You can still say: <span class=\"de\">Es regnet. Wir gehen ins Café, nicht in den Park. Nimm eine Jacke mit.</span></p><h3>Umwelt at word level</h3><p>Recognise <span class=\"de\">der Park, der Baum, der Fluss, der Müll, die Tonne, bitte nicht rauchen</span>. Do not write a climate essay. That is B1 Umwelt.</p><ul><li>Weather adjectives: <span class=\"de\">schön, schlecht, warm, kalt</span>.</li><li>Freizeit (hobbies) is its own topic — do not dump your whole hobby list here.</li></ul>",
+      explain: "<p>Official A1 lists <span class=\"de\">Umwelt und Wetter</span>. At this level Umwelt is tiny: park, clean, rubbish bin. Weather is the productive half.</p><h3>Today</h3><p><span class=\"de\">Heute scheint die Sonne. Es ist warm. / Es regnet. Es ist kalt. / Es schneit. / Es ist windig.</span> Question: <span class=\"de\">Wie ist das Wetter?</span></p><h3>Seasons</h3><p><span class=\"de\">Im Sommer ist es heiß. Im Winter schneit es oft. Im Herbst ist es kühl.</span> One season sentence is enough for the oral.</p><h3>Plans</h3><p>Two short sentences are enough: <span class=\"de\">Es regnet. Wir gehen ins Café, nicht in den Park. Nimm eine Jacke mit.</span> If you already own verb-last from the connectors lesson, one <span class=\"de\">wenn</span> is a bonus: <span class=\"de\">Wenn es regnet, gehen wir ins Café.</span></p><h3>Umwelt at word level</h3><p>Recognise <span class=\"de\">der Park, der Baum, der Fluss, der Müll, die Tonne, bitte nicht rauchen</span>. Do not write a climate essay. That is B1 Umwelt.</p><ul><li>Weather adjectives: <span class=\"de\">schön, schlecht, warm, kalt</span>.</li><li>Freizeit (hobbies) is its own topic — do not dump your whole hobby list here.</li></ul>",
       traps: [
         "A climate speech. A1 weather is four words and a jacket.",
         "Es ist Regen (wrong). Say Es regnet.",
@@ -737,11 +741,11 @@ registerPack("a1", {
         { de: "Der Park ist schön, aber heute ist es zu kalt.", en: "The park is nice, but today it is too cold." },
         { de: "Wo ist der Mülleimer?", en: "Where is the bin?" },
         { de: "Hier darf man nicht rauchen.", en: "You must not smoke here." },
-        { de: "Wir machen das Wetter abhängig: bei Regen ins Museum.", en: "We make it depend on the weather: if rain, to the museum." }
+        { de: "Je nach Wetter: bei Regen gehen wir ins Museum.", en: "Depending on the weather: if it rains, we go to the museum." }
       ],
       vocab: ["daily"],
       grammar: ["a1-negation"],
-      schreiben: ["a1-friend", "a1-invite"]
+      schreiben: ["a1-friend", "a1-invite", "a1-rain"]
     },
     {
       id: "forms",
@@ -873,8 +877,8 @@ registerPack("a1", {
         { de: "Bitte warten. Ziehen Sie eine Nummer.", en: "Please wait. Take a number." }
       ],
       vocab: ["home", "shopping"],
-      grammar: ["a1-survival", "a1-modals"],
-      schreiben: ["a1-form", "a1-address"]
+      grammar: ["a1-survival", "a1-modals", "a1-dative"],
+      schreiben: ["a1-form", "a1-address", "a1-parcel"]
     },
     {
       id: "leisure",
@@ -907,9 +911,10 @@ registerPack("a1", {
         "Einladung und Absage",
         "Tag, Uhrzeit, Treffpunkt",
         "Was machst du gern?",
-        "Verein / Kurs (recognition)"
+        "Verein / Kurs (recognition)",
+        "Geburtstag und Einladung (see Feste)"
       ],
-      explain: "<p><span class=\"de\">Freizeit</span> is its own official A1 theme. Weather is Umwelt/Wetter. Here you talk about hobbies and small plans.</p><h3>What you like</h3><p><span class=\"de\">In der Freizeit treffe ich Freunde. Ich spiele gern Fußball. Ich gehe gern ins Kino. Ich höre gern Musik. Ich lese gern. Ich koche gern.</span> Pattern: <span class=\"de\">ich + verb + gern</span> or <span class=\"de\">ich gehe gern + place</span>.</p><h3>Plan something</h3><p>Teil 3 is not a negotiation essay. It is: <span class=\"de\">Wir können am Samstag ins Kino gehen. Um 19 Uhr. Vor dem Kino. Ist das okay? Super.</span> If the partner says no: <span class=\"de\">Okay, dann am Sonntag. Oder wir gehen in den Park.</span></p><h3>Invitation note</h3><p><span class=\"de\">Hallo Tim, hast du am Freitag Zeit? Das Kino zeigt um 20 Uhr einen Film. Wir können uns um 19:45 vor dem Kino treffen. Schreib mir. Bis bald</span></p><ul><li>Three hobbies are enough. A list of twelve looks like a vocabulary dump.</li><li>Always add when and where or the plan is not a plan.</li></ul>",
+      explain: "<p><span class=\"de\">Freizeit</span> is its own official A1 theme. Weather is Umwelt/Wetter. Here you talk about hobbies and small plans.</p><h3>What you like</h3><p><span class=\"de\">In der Freizeit treffe ich Freunde. Ich spiele gern Fußball. Ich gehe gern ins Kino. Ich höre gern Musik. Ich lese gern. Ich koche gern.</span> Pattern: <span class=\"de\">ich + verb + gern</span> or <span class=\"de\">ich gehe gern + place</span>.</p><h3>Plan something (telc Teil 3 is a tiny plan)</h3><p>Not an A2 negotiation. It is: <span class=\"de\">Wir können am Samstag ins Kino gehen. Um 19 Uhr. Vor dem Kino. Ist das okay? Super.</span> If the partner says no: <span class=\"de\">Okay, dann am Sonntag. Oder wir gehen in den Park.</span> Picture cards can also be requests: <span class=\"de\">Können Sie mir bitte die Karte geben?</span></p><h3>Invitation note</h3><p><span class=\"de\">Hallo Tim, hast du am Freitag Zeit? Das Kino zeigt um 20 Uhr einen Film. Wir können uns um 19:45 vor dem Kino treffen. Schreib mir. Bis bald</span></p><ul><li>Three hobbies are enough. A list of twelve looks like a vocabulary dump.</li><li>Always add when and where or the plan is not a plan.</li></ul>",
       traps: [
         "Listing 15 hobbies with no time or place.",
         "Planning in English words (weekend, movie) instead of Wochenende, Kino.",
@@ -936,12 +941,80 @@ registerPack("a1", {
         { de: "Leider kann ich nicht, ich habe keine Zeit.", en: "Unfortunately I cannot, I have no time." },
         { de: "Hast du Lust auf einen Kaffee?", en: "Do you feel like a coffee?" },
         { de: "Der Film beginnt um 20 Uhr. Die Karte kostet 8 Euro.", en: "The film starts at 8 p.m. The ticket costs 8 euros." },
-        { de: "Am Wochenende mache ich Sport.", en: "At the weekend I do sport." }
+        { de: "Am Wochenende mache ich Sport.", en: "At the weekend I do sport." },
+        { de: "Heute ist mein Geburtstag. Ich habe eine kleine Party.", en: "Today is my birthday. I am having a small party." },
+        { de: "Herzlichen Glückwunsch! Alles Gute zum Geburtstag!", en: "Congratulations! Happy birthday!" }
       ],
       vocab: ["daily"],
-      grammar: ["a1-present", "a1-modals"],
+      grammar: ["a1-present", "a1-modals", "a1-connectors"],
       sprechen: true,
       schreiben: ["a1-invite", "a1-friend"]
+    },
+    {
+      id: "feste",
+      title: "Birthdays and invitations",
+      titleDe: "Feste und Einladungen",
+      weight: "high",
+      official: true,
+      blurb: "Birthday, party, congratulations. Official Freizeit includes Feste; A1 Schreiben loves a 30-word invite.",
+      exam: "Schreiben Teil 2 invitation. Sprechen Teil 3 party pictures. Lesen: party notice.",
+      canDo: [
+        "I can say when my birthday is and how old I will be.",
+        "I can invite someone with day, time, and place.",
+        "I can congratulate someone in one sentence.",
+        "I can accept or decline a party with a short reason.",
+        "I can say what I will bring.",
+        "I can understand a short party notice: time, address, RSVP."
+      ],
+      examHow: [
+        "Schreiben: Hallo … Geburtstag / Kaffee … Tag, Uhrzeit, Ort.",
+        "Sprechen Teil 3: party pictures — agree on one plan.",
+        "Lesen: Einladung, ab 18 Uhr, bitte absagen.",
+        "Hoeren: the party is Saturday, not Sunday.",
+        "Cards: Geschenk, Kuchen, kommen."
+      ],
+      subtopics: [
+        "Geburtstag und Alter",
+        "Party, Feier, Einladung",
+        "Herzlichen Glueckwunsch",
+        "Tag, Uhrzeit, Adresse",
+        "Was bringe ich mit?",
+        "Zusage und Absage",
+        "Weihnachten / Fest at word level",
+        "Bitte antworte mir"
+      ],
+      explain: "<p>A1 Feste is not culture studies. It is one invitation you can write from memory.</p><h3>Birthday facts</h3><p><span class=\"de\">Mein Geburtstag ist am 12. März. Ich werde 30. Ich mache eine kleine Party bei mir.</span> Date as the form asks. Age with <span class=\"de\">werden</span> for the next birthday is optional; <span class=\"de\">Ich bin … Jahre alt</span> is enough.</p><h3>The 30-word invite</h3><p><span class=\"de\">Hallo Sara, am Samstag habe ich Geburtstag. Die Party ist um 18 Uhr bei mir, Kirchstraße 12. Kannst du kommen? Bring bitte einen Salat mit. Bis bald</span> — greeting, what, when, where, question, closing.</p><h3>Yes / no</h3><p><span class=\"de\">Danke für die Einladung. Ich komme gern. / Leider kann ich nicht, denn ich muss arbeiten. Alles Gute!</span> One <span class=\"de\">denn</span> is the safest A1 reason (verb stays second). <span class=\"de\">weil ich arbeiten muss</span> is also correct if the verb is last.</p><ul><li>Always include time and place or the letter misses a Leitpunkt.</li><li>Do not write a B1 party-planning letter with four Konjunktiv wishes.</li></ul>",
+      traps: [
+        "Invite with no time or no address.",
+        "Mixing Sie and du in a friend invite.",
+        "A long food menu instead of one bring-item.",
+        "Forgetting to ask Kannst du kommen?"
+      ],
+      youMust: [
+        "Write a 30-word birthday invite: day, time, place, question.",
+        "Say Herzlichen Glueckwunsch / Alles Gute zum Geburtstag.",
+        "Accept or decline with denn.",
+        "Say what you will bring.",
+        "Agree on one party plan in Teil 3.",
+        "Read a notice for Uhrzeit and Adresse."
+      ],
+      chunks: [
+        { de: "Mein Geburtstag ist am …", en: "My birthday is on …" },
+        { de: "Am Samstag habe ich eine kleine Party.", en: "On Saturday I am having a small party." },
+        { de: "Die Feier ist um 18 Uhr bei mir.", en: "The party is at 6 p.m. at my place." },
+        { de: "Kannst du kommen? Bitte antworte mir.", en: "Can you come? Please reply." },
+        { de: "Bring bitte einen Salat / einen Kuchen mit.", en: "Please bring a salad / a cake." },
+        { de: "Herzlichen Glückwunsch! Alles Gute zum Geburtstag!", en: "Congratulations! Happy birthday!" },
+        { de: "Danke für die Einladung. Ich komme gern.", en: "Thanks for the invitation. I will gladly come." },
+        { de: "Leider kann ich nicht, denn ich muss arbeiten.", en: "Unfortunately I cannot, because I have to work." },
+        { de: "Wo ist die Party? In welcher Straße?", en: "Where is the party? In which street?" },
+        { de: "Wir feiern Weihnachten / Silvester in der Familie.", en: "We celebrate Christmas / New Year’s Eve with the family." },
+        { de: "Was soll ich mitbringen?", en: "What should I bring?" },
+        { de: "Super, dann sehen wir uns am Samstag.", en: "Great, then we will see each other on Saturday." }
+      ],
+      vocab: ["daily", "people"],
+      grammar: ["a1-connectors", "a1-time", "a1-modals"],
+      schreiben: ["a1-invite", "a1-friend", "a1-party"]
     }
   ]
 });

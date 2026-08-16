@@ -2221,6 +2221,11 @@ registerPack("a2", {
     "id": "connectors",
     "title": "Connector words",
     "blurb": "weil, dass, dann, deshalb."
+  },
+  {
+    "id": "shopping",
+    "title": "Shopping and returns",
+    "blurb": "Size, receipt, Umtausch, Bestellnummer."
   }
 ]
 });

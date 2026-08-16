@@ -80,9 +80,29 @@ registerPack("a2", {
 { id:"a2qg74", set:"a2-position", type:"mcq", prompt:"Die Flasche steht ___ Kühlschrank.", explain:"wo? im = in dem.", level:"a2", options:["im", "in den", "ins"], answer:"im" },
 { id:"a2qg75", set:"a2-position", type:"mcq", prompt:"Leg die Hemden in ___ Koffer.", explain:"Koffer masculine Akk = den.", level:"a2", options:["den", "dem", "die"], answer:"den" },
 { id:"a2qg76", set:"a2-position", type:"mcq", prompt:"Die Schlüssel ___ auf dem Tisch. (flat)", explain:"liegen for keys/papers.", level:"a2", options:["liegen", "legen", "stehen"], answer:"liegen" },
-{ id:"a2qg77", set:"a2-position", type:"tf", prompt:"legen/stellen/setzen answer wohin? (Akk); liegen/stehen/sitzen answer wo? (Dat).", explain:"Direction vs location pairs.", level:"a2", answer:true }
+{ id:"a2qg77", set:"a2-position", type:"tf", prompt:"legen/stellen/setzen answer wohin? (Akk); liegen/stehen/sitzen answer wo? (Dat).", explain:"Direction vs location pairs.", level:"a2", answer:true },
+
+{ id:"a2qg78", set:"a2-umzu", type:"mcq", prompt:"After müssen:", explain:"Modal: no zu.", level:"a2", options:["Ich muss arbeiten.", "Ich muss zu arbeiten.", "Ich muss um zu arbeiten."], answer:"Ich muss arbeiten." },
+{ id:"a2qg79", set:"a2-umzu", type:"mcq", prompt:"I try to come on time:", explain:"versuchen + zu.", level:"a2", options:["Ich versuche, pünktlich zu kommen.", "Ich versuche pünktlich kommen.", "Ich versuche zu pünktlich komme."], answer:"Ich versuche, pünktlich zu kommen." },
+{ id:"a2qg80", set:"a2-umzu", type:"mcq", prompt:"I forgot to call you:", explain:"an + zu + rufen.", level:"a2", options:["Ich habe vergessen, dich anzurufen.", "Ich habe vergessen, dich zu anrufen.", "Ich habe vergessen dich anrufen."], answer:"Ich habe vergessen, dich anzurufen." },
+{ id:"a2qg81", set:"a2-umzu", type:"mcq", prompt:"I write in order to change the appointment:", explain:"um … zu, same subject.", level:"a2", options:["Ich schreibe, um den Termin zu ändern.", "Ich schreibe, um den Termin ändern.", "Ich muss zu den Termin ändern."], answer:"Ich schreibe, um den Termin zu ändern." },
+{ id:"a2qg82", set:"a2-umzu", type:"tf", prompt:"Ich muss zu kommen is correct.", explain:"No zu after a modal.", level:"a2", answer:false },
+{ id:"a2qg83", set:"a2-umzu", type:"mcq", prompt:"I go to the bank in order to withdraw money:", explain:"um … abzuheben.", level:"a2", options:["Ich gehe zur Bank, um Geld abzuheben.", "Ich gehe zur Bank, um Geld zu abheben.", "Ich gehe zur Bank um Geld abheben."], answer:"Ich gehe zur Bank, um Geld abzuheben." },
+{ id:"a2qg84", set:"a2-umzu", type:"mcq", prompt:"Different person should know → use:", explain:"damit when the subject changes.", level:"a2", options:["damit Sie Bescheid wissen", "um Sie Bescheid wissen", "um Sie zu wissen Bescheid"], answer:"damit Sie Bescheid wissen" },
+{ id:"a2qg85", set:"a2-umzu", type:"gap", prompt:"Ich habe vor, dich ___ . (anrufen, zu-form)", explain:"anzurufen.", level:"a2", answer:["anzurufen"] },
+{ id:"a2qg86", set:"a2-umzu", type:"mcq", prompt:"It is important to be on time:", explain:"es ist + Adj + zu + sein.", level:"a2", options:["Es ist wichtig, pünktlich zu sein.", "Es ist wichtig pünktlich sein.", "Es ist wichtig, pünktlich sein zu."], answer:"Es ist wichtig, pünktlich zu sein." },
+
+{ id:"a2qg87", set:"a2-k2", type:"mcq", prompt:"Polite request to an office:", explain:"Könnten Sie bitte + infinitive.", level:"a2", options:["Könnten Sie bitte einen Techniker schicken?", "Kannst du einen Techniker schicken?", "Ich will einen Techniker."], answer:"Könnten Sie bitte einen Techniker schicken?" },
+{ id:"a2qg88", set:"a2-k2", type:"mcq", prompt:"I would like an appointment (noun):", explain:"hätte gern + noun.", level:"a2", options:["Ich hätte gern einen Termin.", "Ich würde gern einen Termin zu.", "Ich möchte würde einen Termin."], answer:"Ich hätte gern einen Termin." },
+{ id:"a2qg89", set:"a2-k2", type:"mcq", prompt:"I would like to come on Saturday (verb):", explain:"würde gern + infinitive.", level:"a2", options:["Ich würde gern am Samstag kommen.", "Ich hätte gern am Samstag kommen.", "Ich würde können am Samstag."], answer:"Ich würde gern am Samstag kommen." },
+{ id:"a2qg90", set:"a2-k2", type:"mcq", prompt:"Would a time after 4 be possible?", explain:"Wäre … möglich?", level:"a2", options:["Wäre ein Termin nach 16 Uhr möglich?", "War ein Termin nach 16 Uhr möglich?", "Ist würde ein Termin möglich?"], answer:"Wäre ein Termin nach 16 Uhr möglich?" },
+{ id:"a2qg91", set:"a2-k2", type:"tf", prompt:"Ich würde können helfen is good A2 politeness.", explain:"Do not stack würde + modal. Say ich könnte helfen.", level:"a2", answer:false },
+{ id:"a2qg92", set:"a2-k2", type:"mcq", prompt:"Ask a friend politely to send a photo:", explain:"Könntest du bitte.", level:"a2", options:["Könntest du mir bitte das Foto schicken?", "Könnten Sie mir das Foto schicken? (to a classmate you du)", "Ich will das Foto."], answer:"Könntest du mir bitte das Foto schicken?" },
+{ id:"a2qg93", set:"a2-k2", type:"mcq", prompt:"Would Friday suit you (Sie)?", explain:"Würde Ihnen … passen?", level:"a2", options:["Würde Ihnen Freitag passen?", "Würde Sie Freitag passen?", "Würde dir Freitag passen? (Sie letter)"], answer:"Würde Ihnen Freitag passen?" },
+{ id:"a2qg94", set:"a2-k2", type:"gap", prompt:"___ Sie das bitte wiederholen? (could, formal)", explain:"Könnten or Würden.", level:"a2", answer:["Könnten", "Würden", "könnten", "würden"] },
+{ id:"a2qg95", set:"a2-k2", type:"mcq", prompt:"Office letter opener register:", explain:"Sie + könnten.", level:"a2", options:["Sehr geehrte Frau Lang, könnten Sie …", "Hallo Frau Lang, kannst du …", "Hi, kannst du …"], answer:"Sehr geehrte Frau Lang, könnten Sie …" }
   ],
   drills: [
-    { id:"a2-new-grammar", title:"A2 new grammar mix", blurb:"Präteritum, reflexives, verb+prep, man/doch, legen/stehen.", sets:["a2-praeteritum","a2-reflexive","a2-prepverbs","a2-indefinite","a2-position"] }
+    { id:"a2-new-grammar", title:"A2 new grammar mix", blurb:"Präteritum, reflexives, verb+prep, man/doch, legen/stehen, um zu, polite K2.", sets:["a2-praeteritum","a2-reflexive","a2-prepverbs","a2-indefinite","a2-position","a2-umzu","a2-k2"] }
   ]
 });
