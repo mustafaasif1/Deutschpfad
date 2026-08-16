@@ -360,12 +360,34 @@
     });
   }
 
+  function grammarCoverageHtml() {
+    const id = (meta() && meta().id) || "";
+    const blocks = {
+      a1: {
+        kicker: "A1 coverage (Start Deutsch 1)",
+        text: "This academy now covers the full A1 grammar set used in telc/Goethe courses: articles and plurals, sein/haben plus war/hatte, present + verb second, questions, negation including doch, accusative, possessives, modals (mögen vs möchten), separable verbs, imperative, time and ordinals, prepositions, and survival dialogues. Grammar is tested through the four skills — there is no Sprachbausteine paper at A1."
+      },
+      a2: {
+        kicker: "A2 coverage (Start Deutsch 2)",
+        text: "This academy covers the A2 grammar you must control for Start Deutsch 2: Perfekt, dative, Wechselpräpositionen, connectors with verb-last, separable verbs, adjective endings, comparatives, modal Präteritum, reflexives, verbs with prepositions, ja/nein/doch, and letter/speaking patterns. Relative clauses and passive are here for recognition on signs and ads — do not force them in a 60-word letter. Not DTZ."
+      },
+      b1: {
+        kicker: "B1 coverage (Zertifikat Deutsch)",
+        text: "This academy covers the full telc A1–B1 grammar set used in Zertifikat Deutsch: cases and adjective endings, connectors including two-part pairs (zwar … aber, weder … noch), Konjunktiv II, relatives, zu / um zu / ohne zu, passive, reflexives, Plusquamperfekt, Futur I and the three jobs of werden, n-declension, genitive, da-/wo-compounds, Präteritum, lassen / brauchen zu / als ob, imperative, indefinites (man / jemand / irgend-), stellen/liegen pairs, modal particles, pronouns (ihn/ihm, dieser, meiner), negation (kein vs nicht), comparatives and ordinals, and questions (W-words, ob/wann, worauf vs auf wen). Packed participles are taught for Lesen unpack. Konjunktiv I, nominalisation, and rumour-modals stay recognition-first (B2 stretch). Vocabulary follows the official theme groups (housing, Amt, work, health, feelings, body, clothes, letter formulas, function words) — original exam sentences, not a copied wordlist."
+      }
+    };
+    const b = blocks[id];
+    if (!b) return "";
+    return '<div class="card" style="margin-bottom:1rem"><p class="kicker">' + b.kicker + "</p><p>" + b.text + "</p></div>";
+  }
+
   function renderGrammar() {
     setNav("grammar");
     crumb.textContent = "Grammar";
     const m = meta();
     view.innerHTML = "<h1>Grammar academy</h1>" +
-      '<p class="lead">These are full lessons now — tables, traps, and a produce list. Do the lesson, say every German example, then the quiz until 80%. This is ' + esc(m.title) + " grammar only.</p>" +
+      '<p class="lead">These are full lessons — tables, traps, and a produce list. Do the lesson, say every German example, then the quiz until 80%. This is ' + esc(m.title) + " grammar only.</p>" +
+      grammarCoverageHtml() +
       '<div class="grid grid-2">' +
       GRAMMAR.map(function (g) {
         const qs = Engine.bySet(g.id);

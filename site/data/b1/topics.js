@@ -83,7 +83,7 @@ registerPack("b1", {
         { de: "Können Sie die Frage bitte wiederholen?", en: "Can you please repeat the question?" }
       ],
       vocab: ["people"],
-      grammar: ["perfekt", "wordorder"],
+      grammar: ["perfekt", "wordorder", "pronouns"],
       sprechen: true,
       schreiben: ["visit-city"]
     },
@@ -219,7 +219,7 @@ registerPack("b1", {
         { de: "Wäre es möglich, die Kaution in Raten zu zahlen?", en: "Would it be possible to pay the deposit in instalments?" }
       ],
       vocab: ["home"],
-      grammar: ["dativ", "prepositions", "konjunktiv2"],
+      grammar: ["dativ", "prepositions", "konjunktiv2", "position", "nogen"],
       lesen: ["lesen-1"],
       schreiben: ["complaint", "neighbour-noise", "b1-mould"]
     },
@@ -285,8 +285,8 @@ registerPack("b1", {
         { de: "Am Feiertag bleibt das Amt geschlossen.", en: "On the public holiday the office stays closed." },
         { de: "Seit einem Monat habe ich einen festen Tagesablauf.", en: "For a month I have had a fixed daily routine." }
       ],
-      vocab: ["daily"],
-      grammar: ["separable", "modals"],
+      vocab: ["daily", "function"],
+      grammar: ["separable", "modals", "particles"],
       lesen: ["lesen-1"]
     },
     {
@@ -351,8 +351,8 @@ registerPack("b1", {
         { de: "Ich vertrage keine Nüsse. Steht das auf der Speisekarte?", en: "I cannot tolerate nuts. Is that on the menu?" },
         { de: "Die Lieferung sollte gestern ankommen, sie ist aber nicht da.", en: "The delivery was supposed to arrive yesterday, but it is not here." }
       ],
-      vocab: ["food"],
-      grammar: ["akkusativ", "adjectives"],
+      vocab: ["food", "clothing"],
+      grammar: ["akkusativ", "adjectives", "compare"],
       schreiben: ["online-shop"],
       lesen: ["lesen-1"]
     },
@@ -421,7 +421,7 @@ registerPack("b1", {
         { de: "Leider kann ich keine Nachtschicht machen, weil ich ein Kind habe.", en: "Unfortunately I cannot do night shifts because I have a child." }
       ],
       vocab: ["work"],
-      grammar: ["konjunktiv2", "relative"],
+      grammar: ["konjunktiv2", "relative", "futur"],
       schreiben: ["info-job"],
       lesen: ["lesen-1"]
     },
@@ -557,8 +557,8 @@ registerPack("b1", {
         { de: "Die Krankenkassenkarte habe ich vergessen. Geht das trotzdem?", en: "I forgot the insurance card. Is it still possible?" },
         { de: "Könnten Sie mir bitte die Aufgaben per E-Mail schicken?", en: "Could you please email me the tasks?" }
       ],
-      vocab: ["health"],
-      grammar: ["modals", "perfekt"],
+      vocab: ["health", "body"],
+      grammar: ["modals", "perfekt", "negation"],
       schreiben: ["doctor-sick"],
       lesen: ["lesen-2"]
     },
@@ -626,8 +626,8 @@ registerPack("b1", {
         { de: "Wenn es regnet, besuchen wir ein Museum statt des Parks.", en: "If it rains, we visit a museum instead of the park." },
         { de: "Die Fahrkarte gilt nicht im ICE, nur im Regionalzug.", en: "The ticket is not valid on the ICE, only on the regional train." }
       ],
-      vocab: ["travel"],
-      grammar: ["perfekt", "prepositions"],
+      vocab: ["travel", "world"],
+      grammar: ["perfekt", "prepositions", "position"],
       schreiben: ["b1-lost", "hotel-problem"],
       lesen: ["lesen-1"]
     },
@@ -695,8 +695,8 @@ registerPack("b1", {
         { de: "Wegen des Feiertags bleibt die Behörde geschlossen.", en: "Because of the public holiday the authority stays closed." },
         { de: "Ich habe den Termin online gebucht, die Bestätigung habe ich per E-Mail.", en: "I booked the appointment online; I have the confirmation by email." }
       ],
-      vocab: ["services", "examday"],
-      grammar: ["konjunktiv2", "passive"],
+      vocab: ["services", "examday", "civic"],
+      grammar: ["konjunktiv2", "passive", "imperative", "dacom", "nogen"],
       lesen: ["lesen-3"]
     },
     {
@@ -895,8 +895,8 @@ registerPack("b1", {
         { de: "Wir können uns vor dem Kino treffen, Plan B ist das Café nebenan.", en: "We can meet in front of the cinema; plan B is the cafe next door." },
         { de: "Was meinst du? Sollen wir das so machen?", en: "What do you think? Shall we do it that way?" }
       ],
-      vocab: ["daily"],
-      grammar: ["wordorder", "connectors"]
+      vocab: ["daily", "function"],
+      grammar: ["wordorder", "connectors", "imperative"]
     },
     {
       id: "environment",
@@ -962,7 +962,7 @@ registerPack("b1", {
         { de: "Meiner Meinung nach beginnt Umweltschutz in der Küche und im Keller, nicht nur in Reden.", en: "In my opinion environmental protection starts in the kitchen and the cellar, not only in speeches." }
       ],
       vocab: ["media"],
-      grammar: ["connectors"],
+      grammar: ["connectors", "partizip"],
       lesen: ["lesen-1"]
     },
     {
@@ -1028,8 +1028,8 @@ registerPack("b1", {
         { de: "Zusammenleben heißt für mich: Hallo sagen, leise sein, und einmal helfen.", en: "Living together means for me: say hello, be quiet, and help once." },
         { de: "Was könnten wir als Kurs für das Stadtteilfest machen?", en: "What could we as a course do for the neighbourhood festival?" }
       ],
-      vocab: ["opinions"],
-      grammar: ["relative"],
+      vocab: ["opinions", "civic", "feelings"],
+      grammar: ["relative", "indef", "advconn", "compare"],
       lesen: ["lesen-2"],
       schreiben: ["b1-volunteer"]
     },
@@ -1099,8 +1099,8 @@ registerPack("b1", {
         { de: "Falls Sie noch Fragen haben, rufen Sie mich an.", en: "If you have more questions, call me." },
         { de: "Ich bitte um Verständnis und um eine kurze Rückmeldung.", en: "I ask for understanding and for a short reply." }
       ],
-      vocab: ["examday"],
-      grammar: ["konjunktiv2", "wordorder"],
+      vocab: ["examday", "function", "letters"],
+      grammar: ["konjunktiv2", "wordorder", "imperative", "verbplus", "negation", "questions", "pronouns"],
       schreiben: ["complaint", "course-office", "online-shop", "info-job", "b1-bank", "b1-vhs", "b1-lost", "neighbour-noise", "doctor-sick", "informal-invite"]
     }
   ]

@@ -488,5 +488,12 @@ registerPack("b1", {
   { id: "b2-society", title: "B2 society and news", blurb: "Pension, energy, labour market." },
   { id: "verbs", title: "Power verbs", blurb: "The verbs you must produce automatically." },
   { id: "adjectives", title: "High-value adjectives", blurb: "wichtig, geeignet, zuverlässig…" },
+  { id: "function", title: "Function words (grammar vocab)", blurb: "da-/wo-compounds, jemand/niemand, two-part connectors, erst/schon." },
+  { id: "civic", title: "Society and volunteering (B1)", blurb: "Ehrenamt, Verein, Bürgeramt, house rules — personal, not theory." },
+  { id: "world", title: "World knowledge groups", blurb: "Directions, holidays, measures, school subjects, colours, article-countries." },
+  { id: "feelings", title: "Feelings and attitudes", blurb: "Angst, Sorge, sich ärgern, sich freuen auf/über — Sprechen and letters." },
+  { id: "body", title: "Body and symptoms", blurb: "Kopf, Rücken, Fieber, AU — doctor letters and Hören." },
+  { id: "clothing", title: "Clothes and shopping returns", blurb: "Jacke, Größe, umtauschen, Kassenbon." },
+  { id: "letters", title: "Letter formulas", blurb: "Anrede, weil-opener, Könnten Sie, Mit freundlichen Grüßen." },
 ]
 });

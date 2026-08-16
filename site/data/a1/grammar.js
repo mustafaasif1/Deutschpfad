@@ -370,6 +370,8 @@ registerPack("a1", {
         <li>One friend = <span class="de">du</span>. Two friends together = <span class="de">ihr</span>. A stranger or a mixed group in public = <span class="de">Sie</span>.</li>
         <li>Neuter nouns become <span class="de">es</span>: <span class="de">das Formular → es</span>, <span class="de">das Kind → es</span>.</li>
         <li>In a letter, formal you is always capital <span class="de">Sie / Ihr / Ihnen</span>. Informal you is <span class="de">du / dein</span>.</li>
+        <li>People in general: <span class="de">man</span> + er-form: <span class="de">Hier spricht man Deutsch. Hier darf man nicht rauchen.</span></li>
+        <li>Weather and “there is”: dummy <span class="de">es</span> — <span class="de">Es regnet. Es gibt ein Café.</span> Accusative objects of people: <span class="de">mich, dich, ihn, sie, es, uns, euch, sie/Sie</span>.</li>
       </ol>
       <h3>English vs German</h3>
       <table>
@@ -394,6 +396,29 @@ registerPack("a1", {
         <tr><td><span class="de">Sie</span></td><td>you formal — one person or a group</td><td><span class="de">sind, haben, wohnen</span></td></tr>
       </table>
       <p>Quick test: <span class="de">sie ist</span> = she. <span class="de">sie sind</span> = they. <span class="de">Sie sind</span> (capital S, often in the middle of a letter to one person) = formal you.</p>
+      <h3>man — people in general (not “a man”)</h3>
+      <p><span class="de">man</span> means “one / you / people”. The verb is always the <span class="de">er/sie/es</span> form. It is not <span class="de">der Mann</span>. Signs and rules love it: <span class="de">Hier spricht man Deutsch. Hier darf man nicht parken. Wie sagt man das auf Deutsch?</span></p>
+      <h3>Dummy es — weather and “there is”</h3>
+      <table>
+        <tr><th>Use</th><th>Chunk</th></tr>
+        <tr><td>Weather (no real “it”)</td><td><span class="de">Es regnet. Es schneit. Es ist kalt. Es ist warm.</span></td></tr>
+        <tr><td>There is / there are</td><td><span class="de">Es gibt ein Café. Es gibt keinen Bus. Gibt es einen Termin?</span></td></tr>
+        <tr><td>Time of day</td><td><span class="de">Es ist drei Uhr. Es ist spät.</span></td></tr>
+      </table>
+      <p><span class="de">Es gibt</span> takes accusative: <span class="de">Es gibt einen Arzt. Es gibt eine Bäckerei. Es gibt ein Amt.</span> Do not say <em>Es ist ein Café</em> when you mean “there is a café”.</p>
+      <h3>Accusative pronouns (wen? / was?)</h3>
+      <table>
+        <tr><th>Nominative</th><th>Accusative</th><th>Example</th></tr>
+        <tr><td><span class="de">ich</span></td><td><span class="de">mich</span></td><td><span class="de">Kannst du mich hören?</span></td></tr>
+        <tr><td><span class="de">du</span></td><td><span class="de">dich</span></td><td><span class="de">Ich rufe dich an.</span></td></tr>
+        <tr><td><span class="de">er</span></td><td><span class="de">ihn</span></td><td><span class="de">Ich sehe ihn. (den Mann / den Bus)</span></td></tr>
+        <tr><td><span class="de">sie</span> (she)</td><td><span class="de">sie</span></td><td><span class="de">Ich kenne sie. (die Frau)</span></td></tr>
+        <tr><td><span class="de">es</span></td><td><span class="de">es</span></td><td><span class="de">Ich habe es. (das Formular)</span></td></tr>
+        <tr><td><span class="de">wir</span></td><td><span class="de">uns</span></td><td><span class="de">Besuchst du uns?</span></td></tr>
+        <tr><td><span class="de">ihr</span></td><td><span class="de">euch</span></td><td><span class="de">Ich sehe euch.</span></td></tr>
+        <tr><td><span class="de">sie / Sie</span></td><td><span class="de">sie / Sie</span></td><td><span class="de">Ich kenne sie. Ich rufe Sie an.</span></td></tr>
+      </table>
+      <p>Only <span class="de">ich → mich</span>, <span class="de">du → dich</span>, <span class="de">er → ihn</span>, <span class="de">wir → uns</span>, <span class="de">ihr → euch</span> look different. Feminine, neuter, they, and formal you stay the same on paper. After <span class="de">sein</span> stay nominative: <span class="de">Das ist er</span>, not ihn.</p>
       <h3>Worked examples</h3>
       <ol>
         <li><span class="de">Wie heißen Sie?</span> — What is your name? (formal). Why: examiner / clerk; verb <span class="de">heißen</span> matches Sie = <span class="de">heißen</span> not heißt.</li>
@@ -404,6 +429,9 @@ registerPack("a1", {
         <li><span class="de">Seid ihr müde?</span> — Are you (guys) tired? Why: group of friends; not seid Sie, not bist du.</li>
         <li><span class="de">Wohnen Sie hier?</span> — Do you live here? Why: Sie question = verb first, infinitive-looking form <span class="de">wohnen</span>.</li>
         <li><span class="de">Ich bin neu. Und Sie?</span> — I am new. And you? Why: the exam partner-throwback with Sie.</li>
+        <li><span class="de">Hier darf man nicht rauchen.</span> — You are not allowed to smoke here. Why: man + darf (er-form); people in general, not “a man”.</li>
+        <li><span class="de">Es regnet. Es gibt ein Café um die Ecke.</span> — It is raining. There is a café around the corner. Why: dummy es for weather; es gibt + accusative for existence.</li>
+        <li><span class="de">Ich suche den Arzt. Siehst du ihn?</span> — I am looking for the doctor. Do you see him? Why: der Arzt → ihn in accusative.</li>
       </ol>
       <h3>Right vs wrong</h3>
       <table>
@@ -414,6 +442,10 @@ registerPack("a1", {
         <tr><td><em>sie hat</em> for “they have”</td><td><span class="de">sie haben</span></td></tr>
         <tr><td><em>Das Kind, sie ist klein</em></td><td><span class="de">Das Kind ist klein. Es heißt Omar.</span></td></tr>
         <tr><td>Letter: <em>Hallo du</em> to the Amt</td><td><span class="de">Sehr geehrte Damen und Herren</span> + Sie</td></tr>
+        <tr><td><em>der Mann darf nicht rauchen</em> on a sign (too specific)</td><td><span class="de">Hier darf man nicht rauchen</span></td></tr>
+        <tr><td><em>Es ist ein Café</em> for “there is a café”</td><td><span class="de">Es gibt ein Café</span></td></tr>
+        <tr><td><em>Kannst du ich hören?</em></td><td><span class="de">Kannst du mich hören?</span></td></tr>
+        <tr><td><em>Ich sehe er</em></td><td><span class="de">Ich sehe ihn</span></td></tr>
       </table>
       <h3>Mini dialogue</h3>
       <p>Bakery, then a classmate outside. Register changes — that is the point.</p>
@@ -445,9 +477,14 @@ registerPack("a1", {
         <li><span class="de">Können Sie das bitte wiederholen? Ich bin nicht sicher.</span></li>
         <li><span class="de">Das Mädchen spielt im Hof. Es ist vier Jahre alt.</span></li>
         <li><span class="de">Sie sind Herr Braun, oder? — Ja, das stimmt.</span></li>
+        <li><span class="de">Hier spricht man Deutsch. Wie sagt man das auf Deutsch?</span></li>
+        <li><span class="de">Es regnet. Es schneit. Es ist kalt.</span></li>
+        <li><span class="de">Es gibt ein Café. Gibt es einen Bus?</span></li>
+        <li><span class="de">Kannst du mich hören? Ich rufe dich später an.</span></li>
+        <li><span class="de">Wo ist der Ausweis? Ich suche ihn.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">Wie heißen Sie? Und Sie? Wohnen Sie hier? Haben Sie Zeit? Entschuldigung. Sprechen Sie …? In A1 Sprechen with a partner: Und du? Wo wohnst du? Hast du Kinder?</span> — only if the task is informal (friends, classmates).</p>
+        <p><span class="de">Wie heißen Sie? Und Sie? Wohnen Sie hier? Haben Sie Zeit? Entschuldigung. Sprechen Sie …? In A1 Sprechen with a partner: Und du? Wo wohnst du? Hast du Kinder?</span> — only if the task is informal (friends, classmates). Also: <span class="de">Hier darf man nicht … Es regnet. Es gibt … Kannst du mich …? Ich sehe ihn.</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
         In A1 Sprechen, use <span class="de">Sie</span> with the examiner unless the task clearly says friends. In shops, doctors, and letters to an office always Sie. Mixing <span class="de">du</span> and <span class="de">Sie</span> in one dialogue loses register points. Do not use <span class="de">ihr</span> for one person. Hören: <span class="de">sie hat</span> vs <span class="de">Sie haben</span> changes who is meant. Never start a formal letter with <span class="de">Hallo du</span>.
@@ -463,6 +500,8 @@ registerPack("a1", {
         <li>Say the same question twice: once du, once Sie (wohnen / Zeit / Kinder).</li>
         <li>Describe two neighbours with sie + plural verb, then one neighbour with sie + singular.</li>
         <li>Write two opening lines: a note to a friend vs a note to the office.</li>
+        <li>Say two rules with man and two weather lines with Es …</li>
+        <li>Replace der Mann / die Frau / das Formular with ihn / sie / es after sehen or suchen.</li>
       </ol>
     `,
   },
@@ -751,6 +790,16 @@ registerPack("a1", {
         <tr><td>nicht + place / time / name</td><td>before that element</td><td><span class="de">Ich arbeite nicht am Samstag. Ich heiße nicht Anna.</span></td></tr>
       </table>
       <p>Positive vs negative pairs to drill: <span class="de">ein / kein · eine / keine · jemals / nie · immer / nicht immer · alle / niemand · etwas / nichts · schon / noch nicht</span>.</p>
+      <h3>ja / nein / doch</h3>
+      <p>A1 Hören and Sprechen need three answers, not two. <span class="de">ja</span> agrees with a positive question. <span class="de">nein</span> denies. <span class="de">doch</span> pushes back against a negative: the person thought “no”, you say “yes, actually”.</p>
+      <table>
+        <tr><th>Question</th><th>If the positive is true, say</th><th>If it is not true, say</th></tr>
+        <tr><td><span class="de">Kommst du morgen?</span></td><td><span class="de">Ja, ich komme.</span></td><td><span class="de">Nein, ich komme nicht.</span></td></tr>
+        <tr><td><span class="de">Kommst du nicht?</span></td><td><span class="de">Doch, ich komme.</span></td><td><span class="de">Nein, ich komme nicht.</span></td></tr>
+        <tr><td><span class="de">Hast du keinen Hunger?</span></td><td><span class="de">Doch, ich habe Hunger.</span></td><td><span class="de">Nein, ich habe keinen Hunger.</span></td></tr>
+        <tr><td><span class="de">Ist das nicht dein Ausweis?</span></td><td><span class="de">Doch, das ist mein Ausweis.</span></td><td><span class="de">Nein, das ist nicht mein Ausweis.</span></td></tr>
+      </table>
+      <p>English “yes” after a negative question (“Aren’t you coming? — Yes I am”) is <span class="de">doch</span>, not ja. <span class="de">Ja, ich komme nicht</span> sounds confused. Chunk: <span class="de">Doch, ich komme. Doch, das stimmt. Doch, ich habe Zeit.</span></p>
       <h3>Worked examples</h3>
       <ol>
         <li><span class="de">Ich habe kein Auto.</span> — I don’t have a car. Why: Auto is a noun; ein → kein (neuter nominative/accusative look the same).</li>
@@ -771,6 +820,7 @@ registerPack("a1", {
         <tr><td><em>kein gut / kein teuer</em></td><td><span class="de">nicht gut / nicht teuer</span></td></tr>
         <tr><td><em>Ich habe nicht Zeit</em></td><td><span class="de">Ich habe keine Zeit</span></td></tr>
         <tr><td>Hearing the noun and ticking true</td><td>Wait for <span class="de">nicht / kein / nur / erst / nie</span> at the end</td></tr>
+        <tr><td><em>Ja</em> after <span class="de">Kommst du nicht?</span> when you ARE coming</td><td><span class="de">Doch, ich komme</span></td></tr>
       </table>
       <h3>Mini dialogue</h3>
       <p>Pharmacy, then a closed bakery next door.</p>
@@ -806,7 +856,7 @@ registerPack("a1", {
         <li><span class="de">Ich bin nie zu spät. Heute aber: der Zug kommt nicht.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">Ich habe keine Zeit. Das ist kein Problem. Ich verstehe das nicht. Ich wohne nicht weit. Der Kurs ist nicht teuer. Ich bin nicht sicher. Noch nicht. Nicht heute. Nur am Montag.</span></p>
+        <p><span class="de">Ich habe keine Zeit. Das ist kein Problem. Ich verstehe das nicht. Ich wohne nicht weit. Der Kurs ist nicht teuer. Ich bin nicht sicher. Noch nicht. Nicht heute. Nur am Montag. Ja. Nein. Doch, ich komme.</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
         Hören loves the swap: you hear the topic word, then <span class="de">nicht / kein / nur / schon / erst / nie</span>. Read the statement first so you know what would make it false. <span class="de">kein</span> is for nouns; <span class="de">nicht</span> is not a second article. <span class="de">nicht ein</span> is almost always wrong at A1 — use kein. <span class="de">schon</span> vs <span class="de">erst</span>: <span class="de">Der Kurs beginnt schon um 8</span> (as early as) vs <span class="de">erst um 8</span> (not until). <span class="de">nur</span> limits: <span class="de">nur am Montag</span> makes “every day” false.
@@ -822,6 +872,7 @@ registerPack("a1", {
         <li>Make a mini contrast set: schon um 8 / erst um 8 / nur um 8.</li>
         <li>Negate two masculine drinks with keinen and two foods with kein/keine.</li>
         <li>Turn a positive opening-hours sentence into a false exam statement using nicht or nur.</li>
+        <li>Answer Kommst du nicht? twice: once with Doch, ich komme and once with Nein, ich komme nicht.</li>
       </ol>
     `,
   },
@@ -977,15 +1028,37 @@ registerPack("a1", {
         <tr><td>ihr</td><td><span class="de">könnt</span></td><td><span class="de">müsst</span></td><td><span class="de">wollt</span></td><td><span class="de">möchtet</span></td></tr>
         <tr><td>sie/Sie</td><td><span class="de">können</span></td><td><span class="de">müssen</span></td><td><span class="de">wollen</span></td><td><span class="de">möchten</span></td></tr>
       </table>
-      <p>A1 also needs <span class="de">dürfen</span> (be allowed) and <span class="de">sollen</span> (be supposed to) in signs and doctor talk: <span class="de">ich darf, du darfst, er darf · ich soll, du sollst, er soll</span>.</p>
+      <p>A1 also needs <span class="de">dürfen</span> (be allowed) and <span class="de">sollen</span> (be supposed to) in signs and doctor talk. Learn the full rows — Hören will pick any person.</p>
       <table>
-        <tr><th></th><th>dürfen</th><th>sollen</th></tr>
-        <tr><td>ich / er</td><td><span class="de">darf</span></td><td><span class="de">soll</span></td></tr>
+        <tr><th></th><th>dürfen (be allowed)</th><th>sollen (be supposed to)</th></tr>
+        <tr><td>ich</td><td><span class="de">darf</span></td><td><span class="de">soll</span></td></tr>
         <tr><td>du</td><td><span class="de">darfst</span></td><td><span class="de">sollst</span></td></tr>
-        <tr><td>wir / sie / Sie</td><td><span class="de">dürfen</span></td><td><span class="de">sollen</span></td></tr>
+        <tr><td>er/sie/es</td><td><span class="de">darf</span></td><td><span class="de">soll</span></td></tr>
+        <tr><td>wir</td><td><span class="de">dürfen</span></td><td><span class="de">sollen</span></td></tr>
         <tr><td>ihr</td><td><span class="de">dürft</span></td><td><span class="de">sollt</span></td></tr>
+        <tr><td>sie/Sie</td><td><span class="de">dürfen</span></td><td><span class="de">sollen</span></td></tr>
       </table>
-      <p>Meanings: <span class="de">können</span> ability or possibility. <span class="de">müssen</span> necessity. <span class="de">wollen</span> strong want (can sound pushy). <span class="de">möchten</span> polite want — default in shops. <span class="de">nicht müssen</span> = do not have to. <span class="de">nicht dürfen</span> = must not.</p>
+      <p>Meanings: <span class="de">können</span> ability or possibility. <span class="de">müssen</span> necessity. <span class="de">wollen</span> strong want (can sound pushy). <span class="de">möchten</span> polite want — default in shops. <span class="de">nicht müssen</span> = do not have to. <span class="de">nicht dürfen</span> = must not. Drill the pair until they feel opposite: <span class="de">Du musst nicht kommen</span> (optional) vs <span class="de">Du darfst nicht kommen</span> (forbidden).</p>
+      <h3>mögen vs möchten, gern / nicht gern</h3>
+      <p><span class="de">mögen</span> = like (taste, people, things). <span class="de">möchten</span> = would like (a polite request or plan). They look related; they are not interchangeable in a café. Likes in the oral exam also use <span class="de">gern</span> after the verb: <span class="de">Ich trinke gern Tee. Ich esse nicht gern Fisch.</span></p>
+      <table>
+        <tr><th></th><th>mögen (like)</th><th>möchten (would like)</th></tr>
+        <tr><td>ich</td><td><span class="de">mag</span></td><td><span class="de">möchte</span></td></tr>
+        <tr><td>du</td><td><span class="de">magst</span></td><td><span class="de">möchtest</span></td></tr>
+        <tr><td>er/sie/es</td><td><span class="de">mag</span></td><td><span class="de">möchte</span></td></tr>
+        <tr><td>wir</td><td><span class="de">mögen</span></td><td><span class="de">möchten</span></td></tr>
+        <tr><td>ihr</td><td><span class="de">mögt</span></td><td><span class="de">möchtet</span></td></tr>
+        <tr><td>sie/Sie</td><td><span class="de">mögen</span></td><td><span class="de">möchten</span></td></tr>
+      </table>
+      <table>
+        <tr><th>English</th><th>German at A1</th></tr>
+        <tr><td>I like tea (habit / taste)</td><td><span class="de">Ich mag Tee.</span> or <span class="de">Ich trinke gern Tee.</span></td></tr>
+        <tr><td>I would like a tea (now, in a shop)</td><td><span class="de">Ich möchte einen Tee.</span> — not mag</td></tr>
+        <tr><td>I like playing football</td><td><span class="de">Ich spiele gern Fußball.</span> (gern after the verb)</td></tr>
+        <tr><td>I don’t like fish</td><td><span class="de">Ich mag keinen Fisch.</span> / <span class="de">Ich esse nicht gern Fisch.</span></td></tr>
+        <tr><td>Would you like …? (waiter)</td><td><span class="de">Möchten Sie …?</span> not Mögen Sie einen Kaffee? in the café</td></tr>
+      </table>
+      <p><span class="de">gern</span> sits after the conjugated verb: <span class="de">Ich koche gern. Wir gehen gern ins Kino. Magst du Kaffee? — Ja, sehr gern.</span> <span class="de">nicht gern</span> = dislike the activity: <span class="de">Ich fahre nicht gern Auto.</span></p>
       <h3>Worked examples</h3>
       <ol>
         <li><span class="de">Ich kann Deutsch sprechen, aber nur ein bisschen.</span> — I can speak German, but only a little. Why: kann in position 2, sprechen at the end.</li>
@@ -996,6 +1069,8 @@ registerPack("a1", {
         <li><span class="de">Du musst nicht kommen, wenn du krank bist.</span> — You don’t have to come if you are ill. Why: nicht müssen = not necessary.</li>
         <li><span class="de">Sie sollen viel Wasser trinken.</span> — You should drink a lot of water. Why: doctor’s sollen + infinitive last.</li>
         <li><span class="de">Wir wollen nach Hause gehen.</span> — We want to go home. Why: wollen is fine among friends; infinitive gehen last.</li>
+        <li><span class="de">Ich mag Pizza, aber ich möchte heute einen Salat.</span> — I like pizza, but today I would like a salad. Why: mag = taste; möchte = this order.</li>
+        <li><span class="de">Ich trinke gern Tee. Ich esse nicht gern Fisch.</span> — I like drinking tea. I don’t like eating fish. Why: gern / nicht gern after the verb for habits.</li>
       </ol>
       <h3>Right vs wrong</h3>
       <table>
@@ -1006,6 +1081,8 @@ registerPack("a1", {
         <tr><td>Mixing muss nicht and darf nicht</td><td>not necessary vs forbidden</td></tr>
         <tr><td><em>er kannst / ich kannst</em></td><td><span class="de">er kann / ich kann</span></td></tr>
         <tr><td><em>Ich möchte würde …</em></td><td>möchten is enough</td></tr>
+        <tr><td><em>Ich mag einen Kaffee</em> to the waiter</td><td><span class="de">Ich möchte einen Kaffee</span></td></tr>
+        <tr><td><em>Ich gern trinke Tee</em></td><td><span class="de">Ich trinke gern Tee</span></td></tr>
       </table>
       <h3>Mini dialogue</h3>
       <p>Doctor’s waiting room, then a sign on the door.</p>
@@ -1038,9 +1115,13 @@ registerPack("a1", {
         <li><span class="de">Ich soll um zehn im Amt sein. Ich darf nicht zu spät kommen.</span></li>
         <li><span class="de">Was möchten Sie trinken? Ich möchte einen Saft.</span></li>
         <li><span class="de">Wir müssen den Bus nehmen. Wir können nicht laufen.</span></li>
+        <li><span class="de">Ich mag Pizza. Ich möchte heute aber einen Salat.</span></li>
+        <li><span class="de">Ich trinke gern Tee. Ich esse nicht gern Fisch.</span></li>
+        <li><span class="de">Magst du Kaffee? — Ja, sehr gern. Möchtest du einen?</span></li>
+        <li><span class="de">Du musst nicht kommen. Du darfst nicht rauchen.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">Ich möchte … Ich hätte gerne … Ich kann nicht … Können Sie mir helfen? Ich muss … Hier darf man nicht … Was soll ich machen? Ich will nach Hause.</span></p>
+        <p><span class="de">Ich möchte … Ich hätte gerne … Ich kann nicht … Können Sie mir helfen? Ich muss … Hier darf man nicht … Was soll ich machen? Ich will nach Hause. Ich mag … Ich trinke gern … Ich esse nicht gern … Du musst nicht … Du darfst nicht …</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
         Infinitive at the end, not after the modal: <span class="de">Ich kann Deutsch sprechen</span>, never <em>Ich kann sprechen Deutsch</em>. No zu: not <em>zu sprechen</em> after a modal. ich/er forms look the same: <span class="de">kann, muss, will, möchte, darf, soll</span> — the pronoun tells you the person. <span class="de">wollen</span> in a café can sound rude; prefer möchten. Hören: <span class="de">muss nicht</span> (not necessary) vs <span class="de">darf nicht</span> (forbidden) is a favourite swap. <span class="de">möchten</span> is already “would like”; do not add würde.
@@ -1057,6 +1138,8 @@ registerPack("a1", {
         <li>Contrast darf nicht and muss nicht in two sentences about a course.</li>
         <li>Give a doctor three sollen/müssen instructions, then one dürfen question.</li>
         <li>Turn Ich will nach Hause into a polite Sie-sentence with möchten.</li>
+        <li>Contrast mag vs möchte in two lines (taste vs café order).</li>
+        <li>Say three hobbies with gern and one with nicht gern.</li>
       </ol>
     `,
   },
@@ -1109,6 +1192,21 @@ registerPack("a1", {
       </table>
       <h3>Months (im + month)</h3>
       <p><span class="de">im Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember</span>. Days of the month often: <span class="de">am 3. Mai</span>.</p>
+      <h3>Ordinal dates — der erste Mai / am ersten Mai</h3>
+      <p>Forms and invitations ask for the date. Nominative names the day: <span class="de">Heute ist der erste Mai.</span> When you do something <em>on</em> that day, use <span class="de">am</span> + dative: <span class="de">am ersten Mai</span>. The exam question is <span class="de">Der wievielte ist heute?</span> Answer with <span class="de">der</span> + ordinal + month.</p>
+      <table>
+        <tr><th>Number</th><th>Nominative (Heute ist …)</th><th>On that day (am …)</th></tr>
+        <tr><td>1</td><td><span class="de">der erste Mai</span></td><td><span class="de">am ersten Mai</span></td></tr>
+        <tr><td>2</td><td><span class="de">der zweite Mai</span></td><td><span class="de">am zweiten Mai</span></td></tr>
+        <tr><td>3</td><td><span class="de">der dritte Mai</span></td><td><span class="de">am dritten Mai</span></td></tr>
+        <tr><td>4</td><td><span class="de">der vierte Juni</span></td><td><span class="de">am vierten Juni</span></td></tr>
+        <tr><td>5</td><td><span class="de">der fünfte Juli</span></td><td><span class="de">am fünften Juli</span></td></tr>
+        <tr><td>7</td><td><span class="de">der siebte August</span></td><td><span class="de">am siebten August</span></td></tr>
+        <tr><td>8</td><td><span class="de">der achte September</span></td><td><span class="de">am achten September</span></td></tr>
+        <tr><td>11 / 12</td><td><span class="de">der elfte / der zwölfte</span></td><td><span class="de">am elften / am zwölften</span></td></tr>
+        <tr><td>20 / 21</td><td><span class="de">der zwanzigste / der einundzwanzigste</span></td><td><span class="de">am zwanzigsten / am einundzwanzigsten</span></td></tr>
+      </table>
+      <p>Written shorthand on forms: <span class="de">der 1. Mai, am 1. Mai, 01.05.</span> German order is day.month.year — never US month/day. Question chunks: <span class="de">Der wievielte ist heute? — Heute ist der dritte März. Wann hast du Geburtstag? — Am zwölften April.</span></p>
       <p>Time often comes early. Verb stays second: <span class="de">Am Montag gehe ich zur Schule. Um 17 Uhr beginnt der Kurs.</span> Official times in announcements are 24-hour: <span class="de">17 Uhr 30</span>.</p>
       <h3>Worked examples</h3>
       <ol>
@@ -1120,6 +1218,8 @@ registerPack("a1", {
         <li><span class="de">Montags erst ab 10.</span> — On Mondays only from 10. Why: exception that makes “opens at 9 every day” false.</li>
         <li><span class="de">Wir treffen uns um Viertel nach sechs.</span> — We meet at 6:15. Why: Viertel nach + hour you just passed.</li>
         <li><span class="de">Im Mai habe ich Prüfung. Am 12. Mai.</span> — In May I have an exam. On 12 May. Why: im month, am date.</li>
+        <li><span class="de">Der wievielte ist heute? — Heute ist der erste Mai.</span> — What date is it today? Today is the first of May. Why: question + nominative ordinal.</li>
+        <li><span class="de">Am ersten Mai habe ich frei. Am dritten nicht.</span> — On the first of May I have off. Not on the third. Why: am + dative ordinal for “on that day”.</li>
       </ol>
       <h3>Right vs wrong</h3>
       <table>
@@ -1130,6 +1230,8 @@ registerPack("a1", {
         <tr><td><em>Morgen ich komme</em></td><td><span class="de">Morgen komme ich</span></td></tr>
         <tr><td>Hearing 17 Uhr and writing 7</td><td>17:00 unless the paper says 5 pm and you convert</td></tr>
         <tr><td><em>im Wochenende</em></td><td><span class="de">am Wochenende</span></td></tr>
+        <tr><td><em>Heute ist am ersten Mai</em></td><td><span class="de">Heute ist der erste Mai</span></td></tr>
+        <tr><td><em>Ich komme der erste Mai</em></td><td><span class="de">Ich komme am ersten Mai</span></td></tr>
       </table>
       <h3>Mini dialogue</h3>
       <p>Booking a placement test at the VHS by phone.</p>
@@ -1162,9 +1264,12 @@ registerPack("a1", {
         <li><span class="de">Der Film beginnt um 20 Uhr 15. Nicht um halb acht.</span></li>
         <li><span class="de">Von Montag bis Freitag arbeite ich. Samstags habe ich frei.</span></li>
         <li><span class="de">Um Mitternacht ist der Bahnhof zu. Erst um 5 Uhr wieder auf.</span></li>
+        <li><span class="de">Der wievielte ist heute? — Heute ist der erste Mai.</span></li>
+        <li><span class="de">Am ersten Mai ist frei. Am dritten Mai arbeite ich.</span></li>
+        <li><span class="de">Mein Geburtstag ist am zwölften April.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">Wie spät ist es? Um … Uhr. am Montag. am Wochenende. heute / morgen / gestern. von … bis … Wann beginnt …? Wann haben Sie Zeit? Es ist halb … Viertel nach / Viertel vor.</span></p>
+        <p><span class="de">Wie spät ist es? Um … Uhr. am Montag. am Wochenende. heute / morgen / gestern. von … bis … Wann beginnt …? Wann haben Sie Zeit? Es ist halb … Viertel nach / Viertel vor. Der wievielte ist heute? Heute ist der erste Mai. Am ersten Mai.</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
         <span class="de">halb vier</span> is 3:30, not 4:30. Hören: 13 vs 30, 16 vs 60, 2 vs 5 if mumbled. Write digits immediately. <span class="de">am</span> + day, <span class="de">um</span> + clock time, <span class="de">im</span> + month: <span class="de">am Freitag, um 8 Uhr, im Mai</span>. Do not say <em>in Montag</em>. Word order: not <em>Morgen ich komme</em>. Official audio often uses 24-hour time; convert if the statement says 5 pm.
@@ -1180,6 +1285,8 @@ registerPack("a1", {
         <li>Convert five analogue phrases to digits, including two halb times.</li>
         <li>Say today / tomorrow / yesterday + one activity each.</li>
         <li>Give a date of birth or an appointment date with am + number + month.</li>
+        <li>Ask Der wievielte ist heute? and answer with der erste / der dritte + month.</li>
+        <li>Contrast Heute ist der erste Mai vs Am ersten Mai habe ich frei.</li>
       </ol>
     `,
   },
@@ -1439,6 +1546,637 @@ registerPack("a1", {
         <li>Pay twice: once bar, once mit Karte, and say the price aloud.</li>
         <li>Fill an Amt mini-form out loud: name, address, phone, spelling one field.</li>
         <li>Swap one detail in each of the four rooms (drink, size, symptom, hobby) and replay.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a1-separable",
+    title: "Separable verbs (Satzklammer)",
+    level: "a1",
+    minutes: 56,
+    html: `
+      <p>telc A1 Hören and Tagesablauf talk live on separable verbs. You will hear the stem in the middle and the meaning at the <strong>end</strong>: <span class="de">Ich stehe um sechs auf.</span> If you stop listening after <span class="de">stehe</span>, you think “I stand” and miss the whole morning. Start Deutsch 1 wants this Satzklammer in present tense, questions, and with modals — not a full Perfekt chapter yet.</p>
+      <p>A separable verb is prefix + core. The prefix is stressed: <span class="de">AUFstehen, EINkaufen, ANkommen</span>. In a present statement the conjugated core sits in position 2 and the prefix waits at the end. That open–close frame is the Satzklammer.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Learn the infinitive as one word: <span class="de">aufstehen, einkaufen, ankommen, anrufen, mitkommen, fernsehen, zumachen, aufmachen, einsteigen, aussteigen</span>.</li>
+        <li>In a present statement, conjugate only the core and park the prefix last: <span class="de">Ich stehe um sechs auf.</span> Time and objects sit in the middle of the bracket.</li>
+        <li>Yes/no question: verb first, prefix last. <span class="de">Stehst du um sechs auf? Kommt ihr mit?</span></li>
+        <li>W-question: W-word, then the core, then the rest, prefix last. <span class="de">Wann stehst du auf? Wo steigen wir aus?</span></li>
+        <li>With a modal, do <strong>not</strong> split. The whole infinitive stays together at the end: <span class="de">Ich muss um sechs aufstehen. Kannst du mich anrufen?</span></li>
+        <li>Imperative (next lesson) also splits: <span class="de">Steh auf! Macht die Tür zu!</span> Preview only: Perfekt puts ge- in the middle later — <span class="de">aufgestanden, eingekauft</span>.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <table>
+        <tr><th>English</th><th>German at A1</th></tr>
+        <tr><td>I get up at six (particle next to the verb)</td><td>Prefix waits: <span class="de">Ich stehe um sechs auf</span></td></tr>
+        <tr><td>I must get up at six</td><td>Modal + full infinitive: <span class="de">Ich muss um sechs aufstehen</span> — not stehe … auf</td></tr>
+        <tr><td>When do you get up?</td><td><span class="de">Wann stehst du auf?</span> — W-word + core + prefix last</td></tr>
+        <tr><td>I call you (one word “call”)</td><td><span class="de">anrufen</span> is incomplete without <span class="de">an</span>: <span class="de">Ich rufe dich an</span></td></tr>
+        <tr><td>Watch TV</td><td><span class="de">fernsehen</span> → <span class="de">Ich sehe am Abend fern</span></td></tr>
+        <tr><td>Get on / get off the train</td><td><span class="de">einsteigen / aussteigen</span> — wait for ein or aus at the end</td></tr>
+      </table>
+      <h3>High-frequency A1 list</h3>
+      <table>
+        <tr><th>Infinitive</th><th>Present (ich / du)</th><th>Meaning</th></tr>
+        <tr><td><span class="de">aufstehen</span></td><td><span class="de">ich stehe … auf / du stehst … auf</span></td><td>get up</td></tr>
+        <tr><td><span class="de">einkaufen</span></td><td><span class="de">ich kaufe … ein / du kaufst … ein</span></td><td>do the shopping</td></tr>
+        <tr><td><span class="de">ankommen</span></td><td><span class="de">ich komme … an / du kommst … an</span></td><td>arrive</td></tr>
+        <tr><td><span class="de">anrufen</span></td><td><span class="de">ich rufe … an / du rufst … an</span></td><td>phone someone</td></tr>
+        <tr><td><span class="de">mitkommen</span></td><td><span class="de">ich komme … mit / du kommst … mit</span></td><td>come along</td></tr>
+        <tr><td><span class="de">fernsehen</span></td><td><span class="de">ich sehe … fern / du siehst … fern</span></td><td>watch TV</td></tr>
+        <tr><td><span class="de">zumachen</span></td><td><span class="de">ich mache … zu / du machst … zu</span></td><td>close</td></tr>
+        <tr><td><span class="de">aufmachen</span></td><td><span class="de">ich mache … auf / du machst … auf</span></td><td>open</td></tr>
+        <tr><td><span class="de">einsteigen</span></td><td><span class="de">ich steige … ein / du steigst … ein</span></td><td>get in (train/bus)</td></tr>
+        <tr><td><span class="de">aussteigen</span></td><td><span class="de">ich steige … aus / du steigst … aus</span></td><td>get out</td></tr>
+      </table>
+      <p>wir / Sie / sie (they) keep the infinitive-looking core: <span class="de">wir stehen auf, Sie kaufen ein, sie kommen an</span>. ihr: <span class="de">ihr steht auf, ihr kauft ein</span>.</p>
+      <h3>Satzklammer with questions and modals</h3>
+      <table>
+        <tr><th>Pattern</th><th>Example</th></tr>
+        <tr><td>Statement</td><td><span class="de">Ich stehe um sechs auf.</span></td></tr>
+        <tr><td>Time first</td><td><span class="de">Um sechs stehe ich auf.</span></td></tr>
+        <tr><td>Yes/no</td><td><span class="de">Stehst du um sechs auf?</span></td></tr>
+        <tr><td>W-question</td><td><span class="de">Wann kommt der Zug an?</span></td></tr>
+        <tr><td>Modal + infinitive</td><td><span class="de">Ich muss um sechs aufstehen. Wir können mitkommen.</span></td></tr>
+        <tr><td>nicht in the middle</td><td><span class="de">Ich stehe heute nicht auf. Ich sehe nicht fern.</span></td></tr>
+      </table>
+      <p>Short Perfekt preview (recognition, not A1 production yet): helper in position 2, prefix + ge + rest at the end. <span class="de">Ich bin um sechs aufgestanden. Ich habe eingekauft. Der Zug ist angekommen.</span> You will produce this properly in the lite-past lesson and at A2.</p>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Ich stehe um sechs auf.</span> — I get up at six. Why: stehe in position 2, um sechs in the middle, auf last. Without auf it is just “I stand”.</li>
+        <li><span class="de">Um acht kaufe ich ein.</span> — At eight I do the shopping. Why: time first; kaufe stays second; ein closes the bracket.</li>
+        <li><span class="de">Wann kommt der Zug an?</span> — When does the train arrive? Why: W-word + kommt + subject + an.</li>
+        <li><span class="de">Steigst du in Mainz aus?</span> — Do you get off in Mainz? Why: yes/no = verb first; aus last.</li>
+        <li><span class="de">Ich muss um sechs aufstehen.</span> — I have to get up at six. Why: modal muss conjugated; prefix stays on the infinitive.</li>
+        <li><span class="de">Kannst du mich später anrufen?</span> — Can you call me later? Why: modal + dich/mich + full anrufen at the end.</li>
+        <li><span class="de">Wir kommen gerne mit.</span> — We’ll gladly come along. Why: kommen + mit; gern sits before the prefix.</li>
+        <li><span class="de">Machst du das Fenster auf oder zu?</span> — Are you opening or closing the window? Why: same core machen; the last syllable decides the meaning.</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Typical A1 mistake</th><th>Correct</th></tr>
+        <tr><td><em>Ich aufstehe um sechs</em></td><td><span class="de">Ich stehe um sechs auf</span></td></tr>
+        <tr><td><em>Ich muss aufstehe / Ich muss stehe auf</em></td><td><span class="de">Ich muss um sechs aufstehen</span></td></tr>
+        <tr><td><em>Wann du stehst auf?</em></td><td><span class="de">Wann stehst du auf?</span></td></tr>
+        <tr><td>Stopping at <em>Der Zug kommt um neun</em></td><td>Wait: <span class="de">Der Zug kommt um neun an</span></td></tr>
+        <tr><td><em>Ich rufe an dich</em></td><td><span class="de">Ich rufe dich an</span></td></tr>
+        <tr><td><em>Ich sehe fern TV</em></td><td><span class="de">Ich sehe fern</span> (fernsehen already means watch TV)</td></tr>
+      </table>
+      <h3>Mini dialogue</h3>
+      <p>Morning plan, then the S-Bahn.</p>
+      <p><strong>Leila:</strong> <span class="de">Wann stehst du auf?</span></p>
+      <p><strong>Omar:</strong> <span class="de">Ich stehe um sechs auf. Dann kaufe ich ein.</span></p>
+      <p><strong>Leila:</strong> <span class="de">Kommst du um acht mit? Der Kurs fängt an.</span></p>
+      <p><strong>Omar:</strong> <span class="de">Ja. Ich muss um halb acht aussteigen — in der Stadtmitte.</span></p>
+      <p><strong>Leila:</strong> <span class="de">Rufst du mich an, wenn der Zug ankommt?</span></p>
+      <p><strong>Omar:</strong> <span class="de">Ja. Kannst du das Fenster zumachen? Es ist kalt.</span></p>
+      <p><strong>Leila:</strong> <span class="de">Ich mache es zu. Steigst du hier ein?</span></p>
+      <p><strong>Omar:</strong> <span class="de">Nein, ich steige am Hauptbahnhof ein. Am Abend sehe ich fern.</span></p>
+      <h3>Examples — say them aloud</h3>
+      <ul>
+        <li><span class="de">Ich stehe um sechs auf. Um sieben frühstücke ich.</span></li>
+        <li><span class="de">Stehst du auch so früh auf? — Nein, ich stehe um acht auf.</span></li>
+        <li><span class="de">Nach der Arbeit kaufe ich ein. Kommst du mit?</span></li>
+        <li><span class="de">Der Zug kommt um 14 Uhr 10 an. Gleis drei.</span></li>
+        <li><span class="de">Wann kommt ihr an? — Wir kommen um fünf an.</span></li>
+        <li><span class="de">Ich rufe dich später an. Rufst du Frau Lang an?</span></li>
+        <li><span class="de">Wir kommen gerne mit. Kommt ihr am Samstag mit?</span></li>
+        <li><span class="de">Am Abend sehe ich fern. Siehst du auch fern?</span></li>
+        <li><span class="de">Mach bitte die Tür zu. Es zieht.</span></li>
+        <li><span class="de">Machen Sie das Fenster auf? Es ist warm.</span></li>
+        <li><span class="de">Wir steigen in Mainz ein. In Köln steigen wir aus.</span></li>
+        <li><span class="de">Ich muss um sechs aufstehen. Ich kann nicht länger schlafen.</span></li>
+        <li><span class="de">Kannst du mich um acht anrufen? Ich möchte mitkommen.</span></li>
+        <li><span class="de">Hier steigen viele Leute aus. Steigen Sie auch aus?</span></li>
+        <li><span class="de">Um wie viel Uhr kaufst du ein? — Um halb zehn.</span></li>
+        <li><span class="de">Macht ihr den Laden um acht auf? Und wann macht ihr zu?</span></li>
+        <li><span class="de">Ich sehe heute nicht fern. Ich kaufe noch ein.</span></li>
+        <li><span class="de">Der Bus kommt gleich an. Wir müssen einsteigen.</span></li>
+      </ul>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Ich stehe um … auf. Ich kaufe ein. Der Zug kommt an. Ich rufe dich an. Kommst du mit? Ich sehe fern. Mach die Tür zu / auf. Hier einsteigen / aussteigen. Ich muss aufstehen. Kannst du mich anrufen?</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        Hören: the last syllable is the meaning — <span class="de">kommt … an</span> vs <span class="de">kommt … mit</span>. Do not conjugate the prefix. With modals never split: <span class="de">Ich will einkaufen</span>, not <em>ich will kaufe ein</em>. Questions still need the prefix at the end. <span class="de">anrufen</span> takes the person in the middle: <span class="de">Ich rufe dich / Sie an</span>. Do not add TV after fernsehen. Perfekt is only a preview here; A1 speaking still lives in the present Satzklammer.
+        Hören announcements: <span class="de">Der Zug aus Mainz kommt um 9 an</span> — if you tick “the train leaves at 9” you inverted ankommen. Schreiben: a day plan with three separable verbs already looks like a real Tagesablauf. Sprechen: if you forget the prefix, add it: <span class="de">Ich stehe um sechs … auf</span>.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Describe your morning with aufstehen and einkaufen (prefix last).</li>
+        <li>Ask three W-questions: Wann stehst du auf? Wann kommt der Zug an? Wo steigst du aus?</li>
+        <li>Invite someone with mitkommen and offer to anrufen.</li>
+        <li>Put the same verb (aufstehen) in a statement, a yes/no question, and after muss.</li>
+        <li>Give a station pair: einsteigen in … / aussteigen in …</li>
+        <li>Open and close a window or a shop (aufmachen / zumachen).</li>
+        <li>Say what you watch in the evening (fernsehen) and when you do not.</li>
+        <li>Repair a wrong sentence: Ich aufstehe um sechs → the correct order.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a1-imperative",
+    title: "Imperative (du / ihr / Sie)",
+    level: "a1",
+    minutes: 54,
+    html: `
+      <p>telc A1 Lesen is full of signs: <span class="de">Bitte warten! Nicht rauchen! Kommen Sie bitte!</span> The café and the oral exam use short commands too: <span class="de">Nimm Platz! Kommen Sie herein!</span> You do not need a long grammar lecture — you need three forms (du / ihr / Sie) plus bitte and a negative.</p>
+      <p>The imperative tells someone to do something. Formal <span class="de">Sie</span> is the safest exam default with strangers. Friends and children take <span class="de">du</span>. A group of friends takes <span class="de">ihr</span>.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Decide the person: one friend → du; several friends → ihr; shop, Amt, examiner, sign → Sie.</li>
+        <li>Sie-form: infinitive + Sie. <span class="de">Kommen Sie! Warten Sie bitte! Setzen Sie sich!</span> The verb is first; Sie follows.</li>
+        <li>du-form: start from du present, drop -st. <span class="de">du kommst → Komm! du wartest → Warte!</span> Many stems keep a vowel change: <span class="de">sprich, iss, nimm, sieh, lies, fahr, hilf</span>.</li>
+        <li>ihr-form: this is the present ihr form, often without ihr: <span class="de">ihr kommt → Kommt! ihr macht → Macht die Tür zu!</span></li>
+        <li>Soften with <span class="de">bitte</span>: <span class="de">Kommen Sie bitte. Warte bitte. Macht bitte die Tür zu.</span></li>
+        <li>Negative on signs is often infinitive: <span class="de">Nicht rauchen. Nicht parken. Bitte nicht stören.</span> Full sentence: <span class="de">Rauchen Sie nicht. Parken Sie hier nicht.</span></li>
+      </ol>
+      <h3>English vs German</h3>
+      <table>
+        <tr><th>English</th><th>German at A1</th></tr>
+        <tr><td>Come here! (one “you”)</td><td>Three forms: <span class="de">Komm her! Kommt her! Kommen Sie her!</span></td></tr>
+        <tr><td>Please sit down</td><td><span class="de">Nimm Platz! / Nehmen Sie Platz! Setzen Sie sich bitte.</span></td></tr>
+        <tr><td>Don’t smoke (sign)</td><td><span class="de">Nicht rauchen</span> or <span class="de">Rauchen verboten</span> — not a full “you must not” essay</td></tr>
+        <tr><td>Speak slowly</td><td><span class="de">Sprechen Sie bitte langsam. Sprich bitte langsam.</span></td></tr>
+        <tr><td>Take a ticket / take a seat</td><td><span class="de">Nimm</span> (du) / <span class="de">Nehmen Sie</span> — nehmen is irregular</td></tr>
+        <tr><td>Close the door (group of friends)</td><td><span class="de">Macht die Tür zu!</span> — ihr form + separable prefix last</td></tr>
+      </table>
+      <h3>The three forms</h3>
+      <table>
+        <tr><th>Infinitive</th><th>du</th><th>ihr</th><th>Sie</th></tr>
+        <tr><td><span class="de">kommen</span></td><td><span class="de">Komm!</span></td><td><span class="de">Kommt!</span></td><td><span class="de">Kommen Sie!</span></td></tr>
+        <tr><td><span class="de">warten</span></td><td><span class="de">Warte!</span></td><td><span class="de">Wartet!</span></td><td><span class="de">Warten Sie!</span></td></tr>
+        <tr><td><span class="de">machen</span></td><td><span class="de">Mach!</span></td><td><span class="de">Macht!</span></td><td><span class="de">Machen Sie!</span></td></tr>
+        <tr><td><span class="de">helfen</span></td><td><span class="de">Hilf!</span></td><td><span class="de">Helft!</span></td><td><span class="de">Helfen Sie!</span></td></tr>
+        <tr><td><span class="de">nehmen</span></td><td><span class="de">Nimm!</span></td><td><span class="de">Nehmt!</span></td><td><span class="de">Nehmen Sie!</span></td></tr>
+        <tr><td><span class="de">sprechen</span></td><td><span class="de">Sprich!</span></td><td><span class="de">Sprecht!</span></td><td><span class="de">Sprechen Sie!</span></td></tr>
+        <tr><td><span class="de">essen</span></td><td><span class="de">Iss!</span></td><td><span class="de">Esst!</span></td><td><span class="de">Essen Sie!</span></td></tr>
+        <tr><td><span class="de">lesen</span></td><td><span class="de">Lies!</span></td><td><span class="de">Lest!</span></td><td><span class="de">Lesen Sie!</span></td></tr>
+        <tr><td><span class="de">sehen</span></td><td><span class="de">Sieh!</span></td><td><span class="de">Seht!</span></td><td><span class="de">Sehen Sie!</span></td></tr>
+        <tr><td><span class="de">sein</span></td><td><span class="de">Sei ruhig!</span></td><td><span class="de">Seid ruhig!</span></td><td><span class="de">Seien Sie bitte ruhig!</span></td></tr>
+      </table>
+      <p>du often drops the -e as well in speech: <span class="de">Mach! Wart! Geh!</span> Both <span class="de">Warte</span> and <span class="de">Wart</span> appear. Stem-vowel verbs keep the change and do not add -e: <span class="de">sprich</span> not spreche; <span class="de">nimm</span> not nehme.</p>
+      <h3>Signs, café, separable</h3>
+      <table>
+        <tr><th>You see / hear</th><th>Who it talks to</th></tr>
+        <tr><td><span class="de">Kommen Sie bitte!</span></td><td>formal, office, doctor, exam</td></tr>
+        <tr><td><span class="de">Nimm Platz! Setz dich!</span></td><td>one friend / informal café</td></tr>
+        <tr><td><span class="de">Macht die Tür zu!</span></td><td>ihr + separable prefix last</td></tr>
+        <tr><td><span class="de">Bitte warten. Bitte zahlen.</span></td><td>infinitive on a sign — polite and short</td></tr>
+        <tr><td><span class="de">Nicht rauchen. Rauchen verboten.</span></td><td>negative infinitive / past participle as a rule</td></tr>
+        <tr><td><span class="de">Rauchen Sie nicht. Rauchen Sie hier nicht.</span></td><td>full Sie negative</td></tr>
+        <tr><td><span class="de">Steh auf! Steigen Sie bitte ein!</span></td><td>separable: prefix last, also in the command</td></tr>
+      </table>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Kommen Sie bitte!</span> — Please come. Why: Sie-imperative = infinitive + Sie; bitte softens it. Exam and Amt default.</li>
+        <li><span class="de">Nimm Platz!</span> — Take a seat. Why: du of nehmen is nimmst → drop -st → nimm; vowel already changed.</li>
+        <li><span class="de">Macht die Tür zu!</span> — Close the door (you lot). Why: ihr macht → Macht; separable zu last.</li>
+        <li><span class="de">Sprich bitte langsam. Sprechen Sie bitte langsam.</span> — Speak slowly. Why: du keeps i from du sprichst; Sie uses the infinitive.</li>
+        <li><span class="de">Iss das Brötchen. Essen Sie bitte hier.</span> — Eat the roll / Please eat here. Why: du isst → iss; Sie = Essen Sie.</li>
+        <li><span class="de">Lies den Text. Lesen Sie das Formular.</span> — Read the text / Read the form. Why: du liest → lies.</li>
+        <li><span class="de">Nicht rauchen. Rauchen Sie nicht.</span> — No smoking / Please don’t smoke. Why: sign infinitive vs full polite sentence.</li>
+        <li><span class="de">Seien Sie bitte so nett und warten Sie einen Moment.</span> — Please be so kind and wait a moment. Why: sein has its own Sie form seien.</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Typical A1 mistake</th><th>Correct</th></tr>
+        <tr><td><em>Komm Sie bitte</em></td><td><span class="de">Kommen Sie bitte</span></td></tr>
+        <tr><td><em>Komme!</em> as the usual du form</td><td><span class="de">Komm!</span> (drop -st, usually no extra -e)</td></tr>
+        <tr><td><em>Spreche langsam!</em></td><td><span class="de">Sprich langsam!</span></td></tr>
+        <tr><td><em>Nehme Platz!</em></td><td><span class="de">Nimm Platz!</span></td></tr>
+        <tr><td><em>du Komm her</em> with the pronoun</td><td><span class="de">Komm her!</span> — du is not said</td></tr>
+        <tr><td><em>Rauchen nicht Sie</em></td><td><span class="de">Rauchen Sie nicht</span> or <span class="de">Nicht rauchen</span></td></tr>
+      </table>
+      <h3>Mini dialogue</h3>
+      <p>Café, then a sign on the terrace.</p>
+      <p><strong>Waiter:</strong> <span class="de">Guten Tag. Kommen Sie bitte. Nimmt … Entschuldigung: Nehmen Sie Platz!</span></p>
+      <p><strong>You:</strong> <span class="de">Danke. Können Sie die Karte bringen?</span></p>
+      <p><strong>Waiter:</strong> <span class="de">Natürlich. Warten Sie bitte einen Moment. Lesen Sie die Tageskarte.</span></p>
+      <p><strong>Friend (to you):</strong> <span class="de">Nimm den Stuhl da. Setz dich. Iss das Brötchen, es ist frisch.</span></p>
+      <p><strong>You:</strong> <span class="de">Sprich nicht so laut. Schau, das Schild: Nicht rauchen.</span></p>
+      <p><strong>Friend:</strong> <span class="de">Ah. Macht das Fenster zu, bitte — uns ist kalt.</span></p>
+      <p><strong>Waiter:</strong> <span class="de">Zahlen Sie bitte an der Kasse. Kommen Sie gut nach Hause!</span></p>
+      <h3>Examples — say them aloud</h3>
+      <ul>
+        <li><span class="de">Kommen Sie bitte! Setzen Sie sich.</span></li>
+        <li><span class="de">Warten Sie bitte. Einen Moment bitte.</span></li>
+        <li><span class="de">Nimm Platz! Setz dich.</span></li>
+        <li><span class="de">Macht die Tür zu! Macht das Fenster auf!</span></li>
+        <li><span class="de">Sprich bitte langsam. Sprechen Sie bitte langsamer.</span></li>
+        <li><span class="de">Iss das. Esst das Brot. Essen Sie bitte hier.</span></li>
+        <li><span class="de">Lies den Text. Lesen Sie das Formular.</span></li>
+        <li><span class="de">Sieh mal! Sehen Sie den Bus?</span></li>
+        <li><span class="de">Hilf mir bitte. Helfen Sie mir bitte.</span></li>
+        <li><span class="de">Fahr vorsichtig. Fahren Sie bitte geradeaus.</span></li>
+        <li><span class="de">Nicht rauchen. Rauchen Sie nicht.</span></li>
+        <li><span class="de">Bitte nicht stören. Bitte warten.</span></li>
+        <li><span class="de">Steh auf. Stehen Sie bitte auf.</span></li>
+        <li><span class="de">Steigen Sie bitte ein. Steig aus in Mainz.</span></li>
+        <li><span class="de">Sei ruhig. Seid leise. Seien Sie bitte so nett.</span></li>
+        <li><span class="de">Komm mit! Kommt mit! Kommen Sie mit!</span></li>
+        <li><span class="de">Mach die Tür auf. Machen Sie bitte die Tür zu.</span></li>
+        <li><span class="de">Hör zu. Hört zu. Hören Sie bitte zu.</span></li>
+      </ul>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Kommen Sie bitte. Nimm Platz. Macht die Tür zu. Warten Sie bitte. Sprechen Sie bitte langsam. Nicht rauchen. Rauchen Sie nicht. Bitte warten. Hilf mir. Lesen Sie das. Komm mit!</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        Lesen signs are often infinitive: <span class="de">Nicht parken, Bitte warten, Eingang freihalten</span> — you do not need a subject. Mixing du and Sie on a shop card loses register. du irregulars keep the vowel: <span class="de">sprich, iss, nimm, sieh, lies, hilf, lauf, trag</span> — not the ich form. Separable prefixes still go last: <span class="de">Mach die Tür zu. Stehen Sie bitte auf.</span> Negative: sign = <span class="de">Nicht rauchen</span>; polite sentence = <span class="de">Rauchen Sie nicht</span>.
+        Hören: a waiter saying <span class="de">Nehmen Sie Platz</span> is not “take this place home”. Schreiben: a note to a neighbour can use Sie + bitte. Sprechen: if the partner is a friend on the card, switch to Komm / Warte / Nimm and stay there.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Give the same command three ways: Komm / Kommt / Kommen Sie.</li>
+        <li>Role-play a café: Nehmen Sie Platz, Warten Sie bitte, Zahlen Sie bitte.</li>
+        <li>Tell a friend: Nimm Platz, iss, lies, sprich langsam.</li>
+        <li>Tell a group: Macht die Tür zu, kommt mit, seid leise.</li>
+        <li>Read five signs aloud and say whether they are infinitive or Sie-form.</li>
+        <li>Make two negatives: Nicht rauchen vs Rauchen Sie nicht.</li>
+        <li>Add bitte to every Sie command you said today.</li>
+        <li>Give two separable commands: Steh auf / Machen Sie das Fenster auf.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a1-possessives",
+    title: "Possessives: mein dein Ihr",
+    level: "a1",
+    minutes: 55,
+    html: `
+      <p>telc A1 forms and Sprechen Teil 1 are packed with possessives: <span class="de">meine Adresse, meine Telefonnummer, mein Name, mein Ausweis</span>. If you freeze on mein/meine, the form looks empty even when you know the noun. Family talk needs the same endings: <span class="de">mein Bruder, meine Schwester, meine Kinder</span>.</p>
+      <p>Possessives copy the <span class="de">ein</span> pattern. Nominative and accusative are the A1 production target. Only masculine accusative adds <span class="de">-en</span>: <span class="de">meinen Ausweis</span>.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Pick whose: <span class="de">mein</span> my, <span class="de">dein</span> your (du), <span class="de">sein</span> his/its, <span class="de">ihr</span> her/their, <span class="de">unser</span> our, <span class="de">euer</span> your (ihr), <span class="de">Ihr</span> your (formal, always capital).</li>
+        <li>Look at the noun’s gender and number, not at the owner’s gender for the ending. <span class="de">meine Schwester</span> because Schwester is feminine — even if you are a man.</li>
+        <li>Nominative endings like ein: masculine/neuter no extra -e; feminine and plural -e. <span class="de">mein Bruder, mein Kind, meine Schwester, meine Kinder</span>.</li>
+        <li>Accusative: only masculine changes. <span class="de">Ich suche meinen Ausweis. Ich habe meine Adresse. Ich brauche mein Handy.</span></li>
+        <li><span class="de">euer</span> drops e before -e/-en: <span class="de">eure Adresse, euren Hund, euer Kind</span>.</li>
+        <li>Do not mix <span class="de">Ihr</span> (formal your) with <span class="de">ihr</span> (her / their / you-plural verb). Capital letter and context decide.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <table>
+        <tr><th>English</th><th>German at A1</th></tr>
+        <tr><td>my brother / my sister / my child — same “my”</td><td><span class="de">mein Bruder, meine Schwester, mein Kind</span> — ending follows the noun</td></tr>
+        <tr><td>I am looking for my ID (no change)</td><td>Masculine object: <span class="de">meinen Ausweis</span></td></tr>
+        <tr><td>your (one English word)</td><td><span class="de">dein</span> (friend), <span class="de">euer</span> (friends), <span class="de">Ihr</span> (stranger)</td></tr>
+        <tr><td>her house / their house</td><td>Both <span class="de">ihr Haus</span> — verb and context show who</td></tr>
+        <tr><td>your address, Madam</td><td><span class="de">Ihre Adresse</span> — capital I in a letter and on forms</td></tr>
+        <tr><td>your (plural friends) car</td><td><span class="de">euer Auto</span> / <span class="de">eure Adresse</span></td></tr>
+      </table>
+      <h3>mein — nominative and accusative</h3>
+      <table>
+        <tr><th></th><th>Masculine</th><th>Feminine</th><th>Neuter</th><th>Plural</th></tr>
+        <tr><td>Nom</td><td><span class="de">mein Bruder</span></td><td><span class="de">meine Schwester</span></td><td><span class="de">mein Kind</span></td><td><span class="de">meine Kinder</span></td></tr>
+        <tr><td>Akk</td><td><span class="de">meinen Bruder</span></td><td><span class="de">meine Schwester</span></td><td><span class="de">mein Kind</span></td><td><span class="de">meine Kinder</span></td></tr>
+      </table>
+      <p>Copy this table onto dein, sein, ihr, unser, euer, Ihr. The stem changes, the endings do not.</p>
+      <h3>All A1 stems</h3>
+      <table>
+        <tr><th>Whose</th><th>M Nom</th><th>F / Pl</th><th>N Nom</th><th>M Akk</th></tr>
+        <tr><td>my</td><td><span class="de">mein</span></td><td><span class="de">meine</span></td><td><span class="de">mein</span></td><td><span class="de">meinen</span></td></tr>
+        <tr><td>your (du)</td><td><span class="de">dein</span></td><td><span class="de">deine</span></td><td><span class="de">dein</span></td><td><span class="de">deinen</span></td></tr>
+        <tr><td>his / its</td><td><span class="de">sein</span></td><td><span class="de">seine</span></td><td><span class="de">sein</span></td><td><span class="de">seinen</span></td></tr>
+        <tr><td>her / their</td><td><span class="de">ihr</span></td><td><span class="de">ihre</span></td><td><span class="de">ihr</span></td><td><span class="de">ihren</span></td></tr>
+        <tr><td>our</td><td><span class="de">unser</span></td><td><span class="de">unsere</span></td><td><span class="de">unser</span></td><td><span class="de">unseren</span></td></tr>
+        <tr><td>your (ihr)</td><td><span class="de">euer</span></td><td><span class="de">eure</span></td><td><span class="de">euer</span></td><td><span class="de">euren</span></td></tr>
+        <tr><td>your (Sie)</td><td><span class="de">Ihr</span></td><td><span class="de">Ihre</span></td><td><span class="de">Ihr</span></td><td><span class="de">Ihren</span></td></tr>
+      </table>
+      <p><span class="de">euer → eure / euren / eurem</span> (the first e drops when an ending with e is added). <span class="de">unser</span> usually keeps the e: <span class="de">unsere, unseren</span>.</p>
+      <h3>Family and forms</h3>
+      <table>
+        <tr><th>Situation</th><th>Chunk</th></tr>
+        <tr><td>Form</td><td><span class="de">Das ist meine Adresse. Meine Telefonnummer ist … Mein Name ist …</span></td></tr>
+        <tr><td>Lost ID</td><td><span class="de">Ich suche meinen Ausweis. Haben Sie meinen Ausweis gesehen?</span></td></tr>
+        <tr><td>Family</td><td><span class="de">Das ist mein Mann / meine Frau. Das sind meine Kinder. Mein Sohn ist fünf, meine Tochter ist acht.</span></td></tr>
+        <tr><td>Amt, capital Ihr</td><td><span class="de">Wie ist Ihre Adresse? Haben Sie Ihren Ausweis?</span></td></tr>
+        <tr><td>Friends’ things</td><td><span class="de">Ist das euer Auto? Wo ist eure Tasche?</span></td></tr>
+      </table>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Das ist meine Adresse.</span> — That is my address. Why: Adresse is feminine → meine. After das ist, nominative.</li>
+        <li><span class="de">Ich suche meinen Ausweis.</span> — I am looking for my ID. Why: Ausweis is masculine object → meinen.</li>
+        <li><span class="de">Hast du dein Handy? Ich habe mein Handy.</span> — Do you have your phone? I have my phone. Why: Handy is neuter; accusative looks like nominative.</li>
+        <li><span class="de">Das ist ihr Bruder. Das sind ihre Kinder.</span> — That is her brother. Those are her children. Why: ihr + masculine; ihre + plural. Same ihr-stem, different endings.</li>
+        <li><span class="de">Wie ist Ihre Adresse? Haben Sie Ihren Pass?</span> — What is your address? Do you have your passport? Why: formal Ihr-; Pass is masculine accusative → Ihren.</li>
+        <li><span class="de">Ist das euer Hund? — Ja, das ist unser Hund. Eure Katze ist süß.</span> — Is that your (you lot) dog? Yes, that is our dog. Your cat is cute. Why: euer → eure before feminine.</li>
+        <li><span class="de">Mein Bruder wohnt in Köln. Ich besuche meinen Bruder am Samstag.</span> — My brother lives in Cologne. I visit my brother on Saturday. Why: nominative mein vs accusative meinen.</li>
+        <li><span class="de">Das ist nicht mein Problem. Das ist Ihre Nummer, nicht ihre Nummer.</span> — Not my problem. That is your (formal) number, not her number. Why: Ihr vs ihr — capital vs her.</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Typical A1 mistake</th><th>Correct</th></tr>
+        <tr><td><em>mein Schwester / meine Bruder</em></td><td><span class="de">meine Schwester / mein Bruder</span></td></tr>
+        <tr><td><em>Ich suche mein Ausweis</em></td><td><span class="de">Ich suche meinen Ausweis</span></td></tr>
+        <tr><td><em>Hallo, dein Name bitte?</em> at the Amt</td><td><span class="de">Ihr Name bitte?</span></td></tr>
+        <tr><td>Mixing Ihr and ihr in a letter</td><td>Formal you = capital <span class="de">Ihr / Ihre / Ihren</span></td></tr>
+        <tr><td><em>euere Adresse</em></td><td><span class="de">eure Adresse</span></td></tr>
+        <tr><td><em>Das ist meinen Bruder</em> after das ist</td><td><span class="de">Das ist mein Bruder</span> (nominative)</td></tr>
+      </table>
+      <h3>Mini dialogue</h3>
+      <p>Bürgeramt counter, then a friend outside.</p>
+      <p><strong>Clerk:</strong> <span class="de">Guten Tag. Ihr Name bitte? Und Ihre Adresse?</span></p>
+      <p><strong>You:</strong> <span class="de">Mein Name ist Haddad. Das ist meine Adresse. Ich suche meinen Ausweis — ah, hier.</span></p>
+      <p><strong>Clerk:</strong> <span class="de">Haben Sie Ihre Telefonnummer?</span></p>
+      <p><strong>You:</strong> <span class="de">Ja. Das ist meine Nummer. Meine Frau hat eine andere Nummer — ihre Nummer ist neu.</span></p>
+      <p><strong>Friend:</strong> <span class="de">Ist das euer Formular? Unser Stift ist leer.</span></p>
+      <p><strong>You:</strong> <span class="de">Nein, das ist mein Formular. Eure Tasche steht am Stuhl.</span></p>
+      <p><strong>Friend:</strong> <span class="de">Danke. Ist das dein Stift oder sein Stift?</span></p>
+      <p><strong>You:</strong> <span class="de">Das ist sein Stift. Meinen Stift habe ich in der Tasche.</span></p>
+      <h3>Examples — say them aloud</h3>
+      <ul>
+        <li><span class="de">Das ist meine Adresse. Meine Telefonnummer ist null eins fünf …</span></li>
+        <li><span class="de">Ich suche meinen Ausweis. Haben Sie meinen Ausweis gesehen?</span></li>
+        <li><span class="de">Das ist mein Bruder. Das ist meine Schwester. Das ist mein Kind.</span></li>
+        <li><span class="de">Ich habe eine Tochter. Meine Tochter ist acht. Ich hole meine Tochter ab.</span></li>
+        <li><span class="de">Wie ist Ihre Adresse? Haben Sie Ihren Pass dabei?</span></li>
+        <li><span class="de">Ist das dein Handy? — Nein, das ist sein Handy.</span></li>
+        <li><span class="de">Das sind unsere Kinder. Unsere Wohnung ist klein.</span></li>
+        <li><span class="de">Ist das euer Auto? Eure Adresse bitte.</span></li>
+        <li><span class="de">Das ist ihr Mann. Ihre Kinder sind in der Schule.</span></li>
+        <li><span class="de">Ich brauche mein Formular und meinen Kugelschreiber.</span></li>
+        <li><span class="de">Das ist nicht mein Problem. Das ist Ihre Nummer.</span></li>
+        <li><span class="de">Wohnst du bei deinen Eltern? — Ja, bei meinen Eltern.</span></li>
+        <li><span class="de">Wir suchen unseren Hund. Habt ihr euren Hund gesehen?</span></li>
+        <li><span class="de">Frau Lang, ist das Ihr Platz? — Ja, das ist mein Platz.</span></li>
+        <li><span class="de">Mein Name hat ein ü. Meine E-Mail ist neu.</span></li>
+        <li><span class="de">Ich kenne ihren Bruder. Ich kenne Ihren Bruder nicht — Sie sind neu.</span></li>
+        <li><span class="de">Das ist unser Kurs. Unser Lehrer heißt Herr Stein.</span></li>
+        <li><span class="de">Hast du deine Schlüssel? Ich habe meine Schlüssel.</span></li>
+      </ul>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Das ist meine Adresse. Ich suche meinen Ausweis. Mein Name ist … Wie ist Ihre Adresse? Haben Sie Ihren Pass? Das ist mein Bruder / meine Schwester / mein Kind. Ist das dein Handy? Das ist unser … eure Adresse. Ihre Nummer (formal) vs ihre Nummer (her).</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        Ending follows the thing owned, not the owner. Masculine accusative is the only extra letter at A1: <span class="de">meinen, deinen, seinen, ihren, unseren, euren, Ihren</span>. After <span class="de">das ist</span> stay nominative. <span class="de">Ihr</span> on a form is formal your; <span class="de">ihr</span> is her/their — Hören will swap them. <span class="de">euer</span> becomes <span class="de">eure</span>, not euere. Do not say mein with every noun; feminine and plural need -e.
+        Hören: <span class="de">meine Tochter / mein Sohn</span> decides the child. Schreiben: copy Ihre/Ihre Adresse from the form header if it is Sie-register. Sprechen: point and name — <span class="de">Das ist meine Frau. Das sind unsere Kinder.</span>
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Fill a mini form aloud: mein Name, meine Adresse, meine Telefonnummer, mein Beruf.</li>
+        <li>Contrast mein Bruder vs ich besuche meinen Bruder.</li>
+        <li>Ask a clerk three Ihr-questions (Adresse, Ausweis, Telefonnummer).</li>
+        <li>Introduce family with mein/meine and one ihren (her) sentence.</li>
+        <li>Talk to two friends: euer Auto, eure Adresse, euren Hund.</li>
+        <li>Spell the difference: Ihre Nummer (formal) vs ihre Nummer (her).</li>
+        <li>Say four lost-item lines: Ich suche meinen/meine/mein …</li>
+        <li>Correct six wrong endings (mein Schwester, eure Auto, das ist meinen Hund).</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a1-plurals",
+    title: "Plurals, jobs with -in, compounds",
+    level: "a1",
+    minutes: 52,
+    html: `
+      <p>telc A1 Lesen and forms expect you to recognise plural nouns and job titles. Nominative plural is always <span class="de">die</span>: <span class="de">die Kinder, die Tische, die Frauen</span>. There is no der/das in nominative plural. If you learn a noun without its plural, you cannot fill <span class="de">Kinder: ___</span> or talk about colleagues.</p>
+      <p>A1 does not need every rare plural. It does need the common patterns, feminine job -in, and the compound rule: the <strong>last</strong> noun gives gender. <span class="de">der Hof + der Bahn → der Bahnhof</span>.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Store article + noun + plural as one chunk: <span class="de">der Tisch, die Tische · die Frau, die Frauen · das Kind, die Kinder</span>.</li>
+        <li>Nominative plural article is always <span class="de">die</span>, whatever the singular was.</li>
+        <li>Spot the pattern: many masculines take <span class="de">-e</span> or <span class="de">-er</span> (often with umlaut); feminines often <span class="de">-n/-en</span>; words from English often <span class="de">-s</span>; some nouns do not change.</li>
+        <li>Jobs: masculine <span class="de">der Arzt, der Lehrer, der Kollege</span>; feminine usually <span class="de">-in</span>: <span class="de">die Ärztin, die Lehrerin, die Kollegin</span>. Plural feminine often <span class="de">-innen</span>: <span class="de">die Lehrerinnen</span>.</li>
+        <li>Compounds: gender of the last piece. <span class="de">die Bahn + der Hof = der Bahnhof. das Haus + die Tür = die Haustür. der Zahn + der Arzt = der Zahnarzt.</span></li>
+        <li>ein has no plural. Say a number or keine: <span class="de">zwei Kinder, keine Kinder</span> — never ein Kinder.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <table>
+        <tr><th>English habit</th><th>German at A1</th></tr>
+        <tr><td>Add -s to almost everything</td><td>Only some words: <span class="de">das Auto → die Autos, das Café → die Cafés, das Handy → die Handys</span></td></tr>
+        <tr><td>the children / the tables — same “the”</td><td>Always <span class="de">die</span> in Nom plural, even if singular was der or das</td></tr>
+        <tr><td>teacher (one word for all genders)</td><td><span class="de">der Lehrer / die Lehrerin</span> — say the form that matches the person on the card</td></tr>
+        <tr><td>station = Bahn + Hof guessed as die</td><td>Last noun wins: <span class="de">der Bahnhof</span></td></tr>
+        <tr><td>Learn “child” then guess “childs”</td><td>Learn <span class="de">das Kind, die Kinder</span> as a set — umlaut + -er</td></tr>
+      </table>
+      <h3>Plural patterns (A1, not complete)</h3>
+      <table>
+        <tr><th>Pattern</th><th>Singular → plural</th><th>More</th></tr>
+        <tr><td><span class="de">-e</span> (often der)</td><td><span class="de">der Tisch → die Tische</span></td><td><span class="de">der Beruf → Berufe, der Tag → Tage, der Bus → Busse</span></td></tr>
+        <tr><td><span class="de">-e</span> + umlaut</td><td><span class="de">der Zug → die Züge</span></td><td><span class="de">der Stuhl → Stühle, die Hand → Hände, die Stadt → Städte</span></td></tr>
+        <tr><td><span class="de">-er</span> + umlaut (often das)</td><td><span class="de">das Kind → die Kinder</span></td><td><span class="de">das Amt → Ämter, das Haus → Häuser, das Buch → Bücher, der Mann → Männer</span></td></tr>
+        <tr><td><span class="de">-n / -en</span> (often die)</td><td><span class="de">die Frau → die Frauen</span></td><td><span class="de">die Adresse → Adressen, die Schule → Schulen, die Frage → Fragen, der Student → Studenten</span></td></tr>
+        <tr><td><span class="de">-s</span></td><td><span class="de">das Auto → die Autos</span></td><td><span class="de">das Café → Cafés, das Handy → Handys, das Hotel → Hotels, das Taxi → Taxis</span></td></tr>
+        <tr><td>no change</td><td><span class="de">der Lehrer → die Lehrer</span></td><td><span class="de">das Fenster → Fenster, der Teller → Teller, das Mädchen → Mädchen</span></td></tr>
+      </table>
+      <p>Umlaut is not decoration: <span class="de">der Zug / die Züge, die Tochter / die Töchter, der Vater / die Väter, die Mutter / die Mütter</span>. Learn those family plurals as chunks.</p>
+      <h3>Jobs: -in and mixed groups</h3>
+      <table>
+        <tr><th>Masculine</th><th>Feminine</th><th>Plural (mixed / women)</th></tr>
+        <tr><td><span class="de">der Arzt</span></td><td><span class="de">die Ärztin</span></td><td><span class="de">die Ärzte / die Ärztinnen</span></td></tr>
+        <tr><td><span class="de">der Lehrer</span></td><td><span class="de">die Lehrerin</span></td><td><span class="de">die Lehrer / die Lehrerinnen</span></td></tr>
+        <tr><td><span class="de">der Kollege</span></td><td><span class="de">die Kollegin</span></td><td><span class="de">die Kollegen / die Kolleginnen</span></td></tr>
+        <tr><td><span class="de">der Student</span></td><td><span class="de">die Studentin</span></td><td><span class="de">die Studenten / die Studentinnen</span></td></tr>
+        <tr><td><span class="de">der Koch</span></td><td><span class="de">die Köchin</span></td><td><span class="de">die Köche / die Köchinnen</span></td></tr>
+        <tr><td><span class="de">der Freund</span></td><td><span class="de">die Freundin</span></td><td><span class="de">die Freunde / die Freundinnen</span></td></tr>
+      </table>
+      <p>On a form, write the title that matches you: <span class="de">Ich bin Ärztin. Ich bin Lehrer. Ich arbeite als Köchin.</span> Do not invent English job words if a simple German noun exists.</p>
+      <h3>Compounds — last noun wins</h3>
+      <table>
+        <tr><th>Pieces</th><th>Compound</th><th>Why that article</th></tr>
+        <tr><td><span class="de">die Bahn + der Hof</span></td><td><span class="de">der Bahnhof</span></td><td>Hof is masculine</td></tr>
+        <tr><td><span class="de">der Zahn + der Arzt</span></td><td><span class="de">der Zahnarzt</span></td><td>Arzt last</td></tr>
+        <tr><td><span class="de">die Krankheit + die Schwester</span></td><td><span class="de">die Krankenschwester</span></td><td>Schwester last</td></tr>
+        <tr><td><span class="de">das Haus + die Tür</span></td><td><span class="de">die Haustür</span></td><td>Tür last</td></tr>
+        <tr><td><span class="de">die Kinder + das Zimmer</span></td><td><span class="de">das Kinderzimmer</span></td><td>Zimmer last</td></tr>
+        <tr><td><span class="de">der Haupt + der Bahnhof</span></td><td><span class="de">der Hauptbahnhof</span></td><td>Bahnhof last</td></tr>
+      </table>
+      <p>Plural of a compound follows the last noun: <span class="de">der Bahnhof → die Bahnhöfe, das Kinderzimmer → die Kinderzimmer</span>.</p>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Die Kinder sind im Garten. Das Kind ist klein.</span> — The children are in the garden. The child is small. Why: das → die + Kinder; article always die in Nom plural.</li>
+        <li><span class="de">Die Tische sind alt. Der Tisch ist neu.</span> — The tables are old. Why: -e plural, still die.</li>
+        <li><span class="de">Ich bin Ärztin. Mein Mann ist Arzt.</span> — I am a (female) doctor. My husband is a doctor. Why: -in marks the woman; umlaut in Ärztin.</li>
+        <li><span class="de">Der Bahnhof ist nicht weit. Die Bahnhöfe in der Stadt sind groß.</span> — The station is not far. Why: last noun Hof → der; plural Bahnhöfe.</li>
+        <li><span class="de">Wir haben zwei Autos. Die Autos sind blau.</span> — We have two cars. Why: -s plural; die in nominative.</li>
+        <li><span class="de">Die Frauen arbeiten im Büro. Die Lehrerinnen auch.</span> — The women work in the office. The (women) teachers too. Why: -en / -innen.</li>
+        <li><span class="de">Das Haus hat zwei Fenster. Die Fenster sind groß.</span> — The house has two windows. Why: no-change plural; article still die.</li>
+        <li><span class="de">Meine Töchter und meine Söhne sind in der Schule.</span> — My daughters and my sons are at school. Why: family umlaut plurals: Tochter → Töchter, Sohn → Söhne.</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Typical A1 mistake</th><th>Correct</th></tr>
+        <tr><td><em>der Kinder / das Tische</em> in plural</td><td><span class="de">die Kinder, die Tische</span></td></tr>
+        <tr><td><em>ein Kinder</em></td><td><span class="de">Kinder / zwei Kinder / keine Kinder</span></td></tr>
+        <tr><td><em>die Bahnhof</em> because Bahn is die</td><td><span class="de">der Bahnhof</span> (last noun)</td></tr>
+        <tr><td><em>Ich bin Arzt</em> on a card that shows a woman and asks for the title</td><td><span class="de">Ich bin Ärztin</span></td></tr>
+        <tr><td><em>die Autos</em> with der because Auto “feels” masculine</td><td>Singular <span class="de">das Auto</span>; plural still die</td></tr>
+        <tr><td>Guessing -s on Kind, Frau, Tisch</td><td>Learn the real plural with the noun</td></tr>
+      </table>
+      <h3>Mini dialogue</h3>
+      <p>Course break: jobs and a station meeting.</p>
+      <p><strong>Nora:</strong> <span class="de">Was bist du beruflich? Ich bin Lehrerin.</span></p>
+      <p><strong>Tariq:</strong> <span class="de">Ich bin Koch. Meine Frau ist Ärztin. Unsere Kinder sind klein.</span></p>
+      <p><strong>Nora:</strong> <span class="de">Wie viele Kinder? — Zwei Söhne und eine Tochter. Die Söhne sind drei, die Tochter ist fünf.</span></p>
+      <p><strong>Tariq:</strong> <span class="de">Wo treffen wir die Kollegen? Am Bahnhof?</span></p>
+      <p><strong>Nora:</strong> <span class="de">Ja. Der Hauptbahnhof. Die Bahnhöfe sind nicht weit. Zwei Busse fahren dahin.</span></p>
+      <p><strong>Tariq:</strong> <span class="de">Gut. Die Frauen aus dem Kurs kommen auch. Die Studentinnen warten am Gleis.</span></p>
+      <h3>Examples — say them aloud</h3>
+      <ul>
+        <li><span class="de">Das Kind spielt. Die Kinder spielen im Hof.</span></li>
+        <li><span class="de">Der Tisch ist groß. Die Tische sind alt.</span></li>
+        <li><span class="de">Die Frau kommt. Die Frauen kommen zusammen.</span></li>
+        <li><span class="de">Das Auto ist rot. Die Autos sind teuer.</span></li>
+        <li><span class="de">Der Lehrer ist nett. Die Lehrerin ist neu. Die Lehrer sind im Zimmer.</span></li>
+        <li><span class="de">Ich bin Ärztin. Er ist Arzt. Die Ärzte sind im Krankenhaus.</span></li>
+        <li><span class="de">Der Bahnhof ist links. Die Bahnhöfe in Berlin sind groß.</span></li>
+        <li><span class="de">Das Kinderzimmer ist klein. Die Haustür ist grün.</span></li>
+        <li><span class="de">Wir haben keine Kinder. Wir haben zwei Katzen.</span></li>
+        <li><span class="de">Die Fragen sind leicht. Die Adressen sind neu.</span></li>
+        <li><span class="de">Meine Eltern, meine Geschwister, meine Freunde.</span></li>
+        <li><span class="de">Die Städte Köln und Mainz. Die Züge sind pünktlich.</span></li>
+        <li><span class="de">Das Amt ist zu. Die Ämter haben montags lang auf.</span></li>
+        <li><span class="de">Ein Freund / eine Freundin / zwei Freunde.</span></li>
+        <li><span class="de">Der Student lernt. Die Studentinnen lernen zusammen.</span></li>
+        <li><span class="de">Die Hände, die Füße, die Augen — Körper im Plural.</span></li>
+        <li><span class="de">Die Hotels sind voll. Die Cafés sind offen.</span></li>
+        <li><span class="de">Meine Töchter heißen Lina und Sara. Meine Söhne heißen Ali und Omar.</span></li>
+      </ul>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">die Kinder, die Tische, die Frauen, die Autos, die Lehrer, die Ärztin, der Bahnhof, das Kinderzimmer. Immer die im Nominativ Plural. Letztes Nomen = Artikel. Ich bin Lehrer / Lehrerin. zwei … / keine …</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        Nominative plural is always die — never der Kinder. Compounds ignore the first noun’s gender: <span class="de">die Bahn</span> does not make <em>die Bahnhof</em>. Job cards want -in when the person is a woman. Hören: <span class="de">die Ärzte / die Ärztin</span> is one person vs many. Do not invent -s plurals for Kind, Frau, Tisch. Learn plural with the noun the same day you learn the article.
+        Hören: <span class="de">zwei Söhne</span> vs <span class="de">zwei Töchter</span> is a family trap. Schreiben: on a form, Beruf = one noun with the right -in. Sprechen: <span class="de">Ich habe zwei Kinder. Die Kinder sind in der Schule</span> is enough — do not list twelve irregular plurals.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Say five nouns with article + plural (one from each pattern).</li>
+        <li>Give your job in masculine and feminine forms (even if one is only for practice).</li>
+        <li>Build three compounds and say why the article is der/die/das.</li>
+        <li>Turn das Kind / der Tisch / die Frau / das Auto into nominative plurals.</li>
+        <li>Introduce a mixed family: Söhne, Töchter, Eltern.</li>
+        <li>Correct: die Bahnhof, ein Kinder, der Lehrerin as a woman’s title.</li>
+        <li>Name two rooms as compounds (Kinderzimmer, Wohnzimmer, Schlafzimmer).</li>
+        <li>Ask Wie viele …? and answer with a number + plural.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a1-lite-past",
+    title: "war / hatte and first Perfekt",
+    level: "a1",
+    minutes: 58,
+    html: `
+      <p>telc A1 is still a present-tense exam, but you must say yesterday in two short ways. Production target: <span class="de">ich war, du warst, er war, wir waren</span> and <span class="de">ich hatte, du hattest, er hatte</span>. Then a first Perfekt for tiny stories: <span class="de">Ich habe … gemacht. Ich bin … gegangen.</span> Do not start producing Präteritum of machen, gehen, or other full verbs — that is not A1.</p>
+      <p>Hören may already contain Perfekt. You only need to catch the Partizip at the end. Schreiben a sick note can use <span class="de">Gestern war ich krank. Ich hatte Fieber.</span> That is enough.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Yesterday with identity, location, feeling, weather: use <span class="de">war</span> (sein in the past). <span class="de">Gestern war ich krank. Ich war zu Hause. Das Wetter war schlecht.</span></li>
+        <li>Yesterday with possession, time, hunger, appointments: use <span class="de">hatte</span>. <span class="de">Ich hatte keine Zeit. Ich hatte Kopfschmerzen. Wir hatten einen Termin.</span></li>
+        <li>Memorise the A1 rows: ich/er/sie/es share <span class="de">war / hatte</span>. du: <span class="de">warst / hattest</span>. wir/sie/Sie: <span class="de">waren / hatten</span>. ihr: <span class="de">wart / hattet</span>.</li>
+        <li>First Perfekt = helper in position 2 + Partizip at the end. Helper is usually <span class="de">haben</span>. Motion and change of place often <span class="de">sein</span>: <span class="de">gegangen, gekommen, gefahren</span>.</li>
+        <li>Regular Partizip: ge- + stem + t. <span class="de">gemacht, gelernt, gekauft, gesagt, gewohnt</span>.</li>
+        <li>Irregular A1 set to recognise and slowly produce: <span class="de">gemacht, gegangen, gekommen, gesehen, gegessen, getrunken, gewesen</span>. Keep sentences short. No long Präteritum stories.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <table>
+        <tr><th>English</th><th>German at A1</th></tr>
+        <tr><td>I was ill / I was at home</td><td><span class="de">Ich war krank. Ich war zu Hause.</span> — war, not habe gewesen in simple talk</td></tr>
+        <tr><td>I had no time / I had a headache</td><td><span class="de">Ich hatte keine Zeit. Ich hatte Kopfschmerzen.</span></td></tr>
+        <tr><td>I went / I have gone (both common)</td><td>One form: <span class="de">Ich bin gegangen</span> — sein + Partizip</td></tr>
+        <tr><td>I did / I have done</td><td><span class="de">Ich habe gemacht</span></td></tr>
+        <tr><td>I saw him yesterday (simple past of see)</td><td><span class="de">Ich habe ihn gesehen</span> — not ich sah at A1</td></tr>
+        <tr><td>Yesterday I work (English speakers forget the past)</td><td>Either war/hatte or a short Perfekt — not present if the paper says gestern</td></tr>
+      </table>
+      <h3>war and hatte (A1 production)</h3>
+      <table>
+        <tr><th></th><th>sein → war</th><th>haben → hatte</th></tr>
+        <tr><td>ich</td><td><span class="de">war</span></td><td><span class="de">hatte</span></td></tr>
+        <tr><td>du</td><td><span class="de">warst</span></td><td><span class="de">hattest</span></td></tr>
+        <tr><td>er/sie/es</td><td><span class="de">war</span></td><td><span class="de">hatte</span></td></tr>
+        <tr><td>wir</td><td><span class="de">waren</span></td><td><span class="de">hatten</span></td></tr>
+        <tr><td>ihr</td><td><span class="de">wart</span></td><td><span class="de">hattet</span></td></tr>
+        <tr><td>sie/Sie</td><td><span class="de">waren</span></td><td><span class="de">hatten</span></td></tr>
+      </table>
+      <p>Chunks: <span class="de">Gestern war ich krank. Vorgestern war ich beim Arzt. Ich war nicht in der Schule. Wir waren zu Hause. Ich hatte keine Zeit. Ich hatte Hunger. Sie hatte Fieber. Wir hatten Glück.</span></p>
+      <h3>First Perfekt</h3>
+      <table>
+        <tr><th>Helper</th><th>When</th><th>Examples</th></tr>
+        <tr><td><span class="de">haben</span></td><td>most verbs; objects; machen, sehen, essen, trinken, kaufen, lernen</td><td><span class="de">Ich habe Pizza gegessen. Ich habe den Film gesehen. Wir haben Deutsch gelernt.</span></td></tr>
+        <tr><td><span class="de">sein</span></td><td>motion / arriving / going / being (Partizip gewesen)</td><td><span class="de">Ich bin gegangen. Sie ist gekommen. Wir sind gefahren. Ich bin gewesen.</span></td></tr>
+      </table>
+      <table>
+        <tr><th>Infinitive</th><th>Partizip</th><th>A1 sentence</th></tr>
+        <tr><td><span class="de">machen</span></td><td><span class="de">gemacht</span></td><td><span class="de">Was hast du gemacht? — Ich habe Hausaufgaben gemacht.</span></td></tr>
+        <tr><td><span class="de">gehen</span></td><td><span class="de">gegangen</span></td><td><span class="de">Ich bin nach Hause gegangen.</span></td></tr>
+        <tr><td><span class="de">kommen</span></td><td><span class="de">gekommen</span></td><td><span class="de">Wann bist du gekommen? — Um acht.</span></td></tr>
+        <tr><td><span class="de">sehen</span></td><td><span class="de">gesehen</span></td><td><span class="de">Ich habe den Arzt gesehen.</span></td></tr>
+        <tr><td><span class="de">essen / trinken</span></td><td><span class="de">gegessen / getrunken</span></td><td><span class="de">Ich habe Brot gegessen. Ich habe Tee getrunken.</span></td></tr>
+        <tr><td><span class="de">kaufen / lernen</span></td><td><span class="de">gekauft / gelernt</span></td><td><span class="de">Ich habe Milch gekauft. Wir haben viel gelernt.</span></td></tr>
+      </table>
+      <p>Word order: time can go first. Helper stays in position 2. Partizip last. <span class="de">Gestern bin ich zum Arzt gegangen. Gestern habe ich nichts gemacht.</span> Do not produce <em>ich machte, ich ging, ich kam</em> at A1 — those Präteritum forms are for later (except war/hatte).</p>
+      <h3>Worked examples</h3>
+      <ol>
+        <li><span class="de">Gestern war ich krank.</span> — Yesterday I was ill. Why: location/state in the past → war, not habe krank.</li>
+        <li><span class="de">Ich hatte keine Zeit.</span> — I had no time. Why: possession/time → hatte + keine Zeit (kein + noun).</li>
+        <li><span class="de">Wir waren zu Hause. Das Wetter war schlecht.</span> — We were at home. The weather was bad. Why: wir waren; es/das Wetter war.</li>
+        <li><span class="de">Ich habe Pizza gegessen.</span> — I ate pizza. Why: haben + gegessen last; short A1 story.</li>
+        <li><span class="de">Ich bin nach Hause gegangen.</span> — I went home. Why: motion → sein + gegangen.</li>
+        <li><span class="de">Wann bist du gekommen? — Ich bin um acht gekommen.</span> — When did you arrive? Why: kommen takes sein; du bist.</li>
+        <li><span class="de">Hast du den Film gesehen? — Ja, ich habe ihn gesehen.</span> — Did you see the film? Why: sehen → gesehen; haben; ihn for den Film.</li>
+        <li><span class="de">Gestern habe ich nicht gearbeitet. Ich war beim Arzt. Ich hatte Fieber.</span> — A complete sick-note trio: Perfekt + war + hatte.</li>
+      </ol>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Typical A1 mistake</th><th>Correct</th></tr>
+        <tr><td><em>Gestern ich war krank</em></td><td><span class="de">Gestern war ich krank</span></td></tr>
+        <tr><td><em>Ich habe krank / Ich bin keine Zeit</em></td><td><span class="de">Ich war krank. Ich hatte keine Zeit.</span></td></tr>
+        <tr><td><em>Ich habe nach Hause gegangen</em></td><td><span class="de">Ich bin nach Hause gegangen</span></td></tr>
+        <tr><td><em>Ich bin Pizza gegessen</em></td><td><span class="de">Ich habe Pizza gegessen</span></td></tr>
+        <tr><td><em>Ich ging / Ich machte</em> as A1 production</td><td><span class="de">Ich bin gegangen. Ich habe gemacht.</span></td></tr>
+        <tr><td><em>Ich habe gemacht Hausaufgaben</em></td><td><span class="de">Ich habe Hausaufgaben gemacht</span></td></tr>
+      </table>
+      <h3>Mini dialogue</h3>
+      <p>Monday in the course: why were you absent?</p>
+      <p><strong>Teacher:</strong> <span class="de">Wo warst du gestern? Du warst nicht im Kurs.</span></p>
+      <p><strong>You:</strong> <span class="de">Gestern war ich krank. Ich hatte Fieber und keine Kraft.</span></p>
+      <p><strong>Teacher:</strong> <span class="de">Warst du beim Arzt?</span></p>
+      <p><strong>You:</strong> <span class="de">Ja. Ich bin zum Arzt gegangen. Ich habe eine Bescheinigung.</span></p>
+      <p><strong>Friend:</strong> <span class="de">Was hast du gemacht? Hast du ferngesehen?</span></p>
+      <p><strong>You:</strong> <span class="de">Ich habe Tee getrunken. Ich habe nicht viel gemacht. Um acht bin ich ins Bett gegangen.</span></p>
+      <p><strong>Friend:</strong> <span class="de">Wir haben Deutsch gelernt. Schade. Bist du heute wieder fit?</span></p>
+      <p><strong>You:</strong> <span class="de">Ja. Gestern war schlecht. Heute geht es.</span></p>
+      <h3>Examples — say them aloud</h3>
+      <ul>
+        <li><span class="de">Gestern war ich krank. Heute bin ich wieder fit.</span></li>
+        <li><span class="de">Ich hatte keine Zeit. Ich hatte viel Arbeit.</span></li>
+        <li><span class="de">Wo warst du? — Ich war zu Hause.</span></li>
+        <li><span class="de">Wir waren im Café. Das war schön.</span></li>
+        <li><span class="de">Sie war nicht in der Schule. Sie hatte Kopfschmerzen.</span></li>
+        <li><span class="de">Ihr wart sehr nett. Danke.</span></li>
+        <li><span class="de">Was hast du gemacht? — Ich habe Hausaufgaben gemacht.</span></li>
+        <li><span class="de">Ich bin nach Hause gegangen. Dann habe ich gegessen.</span></li>
+        <li><span class="de">Wann bist du gekommen? — Ich bin um acht gekommen.</span></li>
+        <li><span class="de">Hast du den Arzt gesehen? — Ja, ich habe ihn gesehen.</span></li>
+        <li><span class="de">Wir haben Pizza gegessen und Cola getrunken.</span></li>
+        <li><span class="de">Gestern bin ich nicht gekommen. Ich war beim Arzt.</span></li>
+        <li><span class="de">Ich habe Milch gekauft. Ich habe nichts gesagt.</span></li>
+        <li><span class="de">Seid ihr gefahren? — Ja, wir sind mit dem Bus gefahren.</span></li>
+        <li><span class="de">Das Wetter war schlecht. Es war kalt.</span></li>
+        <li><span class="de">Ich hatte Hunger, aber ich hatte kein Brot.</span></li>
+        <li><span class="de">Vorgestern waren wir in Mainz. Das hat Spaß gemacht.</span></li>
+        <li><span class="de">Gestern habe ich nicht gearbeitet. Ich habe geschlafen.</span></li>
+      </ul>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Gestern war ich krank. Ich hatte keine Zeit. Wo warst du? Wir waren zu Hause. Was hast du gemacht? Ich habe … gemacht. Ich bin gegangen. Ich bin gekommen. Ich habe … gesehen. Gestern bin ich zum Arzt gegangen.</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        A1 production of the simple past is almost only <span class="de">war</span> and <span class="de">hatte</span>. Other verbs: use short Perfekt or stay in the present. Motion → sein: <span class="de">gegangen, gekommen, gefahren, gewesen</span>. Eating, seeing, making → haben. Partizip last, helper second. <span class="de">Gestern ich war</span> is wrong word order. Hören: wait for the Partizip; <span class="de">gemacht</span> vs <span class="de">nicht gemacht</span> sits at the end. Do not write ich ging / ich sah in an A1 note.
+        Hören: <span class="de">Sie war krank</span> vs <span class="de">Sie ist krank</span> is yesterday vs now. Schreiben: a three-line absent note — war + hatte + one Perfekt — already covers the Leitpunkte. Sprechen: if you only know present, add gestern war ich … ; that already scores as past.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Say the war table and the hatte table aloud, both directions.</li>
+        <li>Write a three-sentence sick note: war, hatte, bin … gegangen.</li>
+        <li>Ask a partner: Wo warst du gestern? Was hast du gemacht?</li>
+        <li>Give four Perfekt lines: gemacht, gesehen, gegessen, getrunken.</li>
+        <li>Give four sein-Perfekt lines: gegangen, gekommen, gefahren, gewesen.</li>
+        <li>Start three sentences with Gestern (verb second).</li>
+        <li>Contrast Ich war krank vs Ich habe Kopfschmerzen (past vs present).</li>
+        <li>Correct: Ich habe gegangen / Ich bin gegessen / Gestern ich hatte Zeit.</li>
       </ol>
     `,
   }

@@ -423,6 +423,19 @@ registerPack("a2", {
         <tr><td>Separable present</td><td>… full verb (no split)</td><td><span class="de">…, weil ich dich anrufe.</span></td></tr>
       </table>
       <p>The last word of a weil-clause is almost always the conjugated piece: <span class="de">bin, habe, muss, kann, anrufe</span>. If that last word is in the middle, the clause is broken.</p>
+      <h3>Indirect questions — ob, warum, wann (verb last)</h3>
+      <p>A2 Hören and letters hide information inside <span class="de">wissen / fragen / sagen / können Sie mir sagen</span>. The question word (or <span class="de">ob</span>) starts a new clause; the conjugated verb goes to the <strong>end</strong>, same family as weil/dass. This is not a new connector family — it is the same verb-last machine with a question word in front.</p>
+      <table>
+        <tr><th>Direct question</th><th>Indirect (verb last)</th></tr>
+        <tr><td><span class="de">Kommt er?</span></td><td><span class="de">Weißt du, ob er kommt?</span></td></tr>
+        <tr><td><span class="de">Ist der Laden auf?</span></td><td><span class="de">Können Sie mir sagen, ob der Laden auf ist?</span></td></tr>
+        <tr><td><span class="de">Warum bist du nicht gekommen?</span></td><td><span class="de">Ich weiß nicht, warum du nicht gekommen bist.</span></td></tr>
+        <tr><td><span class="de">Wann beginnt der Kurs?</span></td><td><span class="de">Weißt du, wann der Kurs beginnt?</span></td></tr>
+        <tr><td><span class="de">Wo treffen wir uns?</span></td><td><span class="de">Sag mir, wo wir uns treffen.</span></td></tr>
+        <tr><td><span class="de">Wie komme ich zum Amt?</span></td><td><span class="de">Können Sie mir sagen, wie ich zum Amt komme?</span></td></tr>
+      </table>
+      <p><span class="de">ob</span> = whether / if (yes-no). It is not the condition word. Conditions use <span class="de">wenn</span>: <span class="de">Wenn es regnet, bleiben wir hier.</span> Information: <span class="de">Ich weiß nicht, ob es regnet.</span> <span class="de">warum</span> asks for a reason inside the clause; you can still answer with <span class="de">weil</span> in the next sentence. In Schreiben, one clean <span class="de">Können Sie mir sagen, ob …?</span> covers the “ask a question” Leitpunkt and shows verb-last control.</p>
+      <p>Perfekt and modals follow the same end-order as in weil: <span class="de">Ich frage, ob sie schon angekommen ist. Weißt du, warum er nicht kommen konnte?</span> — helper or modal last.</p>
       <h3>Worked examples — why this connector</h3>
       <p><span class="de">Leider kann ich nicht kommen, weil ich am Samstag arbeiten muss.</span> — reason inside the letter; verb last; modal <span class="de">muss</span> is the conjugated verb, so it sits at the end and <span class="de">arbeiten</span> stands in front of it.</p>
       <p><span class="de">Der Bus kam nicht. Deshalb bin ich gelaufen.</span> — result. deshalb in position 1, then the helper <span class="de">bin</span>, then the rest, Partizip last.</p>
@@ -439,6 +452,9 @@ registerPack("a2", {
         <tr><td><em>Wann ich Zeit habe, gehe ich.</em> (meaning if)</td><td><span class="de">Wenn ich Zeit habe, gehe ich.</span></td><td>wann is the question word.</td></tr>
         <tr><td><em>Obwohl es regnet, trotzdem gehe ich.</em></td><td><span class="de">Obwohl es regnet, gehe ich. / Es regnet. Trotzdem gehe ich.</span></td><td>One contrast word is enough.</td></tr>
         <tr><td><em>Ich trinke keinen Kaffee, aber Tee.</em> (meaning rather)</td><td><span class="de">Ich trinke keinen Kaffee, sondern Tee.</span></td><td>sondern after a negation = but rather.</td></tr>
+        <tr><td><em>Weißt du, ob kommt er?</em></td><td><span class="de">Weißt du, ob er kommt?</span></td><td>ob-clause: verb last, not question order.</td></tr>
+        <tr><td><em>Ich weiß nicht, warum bist du krank.</em></td><td><span class="de">Ich weiß nicht, warum du krank bist.</span></td><td>warum + verb last.</td></tr>
+        <tr><td><em>Wenn der Laden auf ist?</em> (meaning whether)</td><td><span class="de">Weißt du, ob der Laden auf ist?</span></td><td>whether = ob, not wenn.</td></tr>
       </table>
       <h3>Mini dialogue — refuse and replan</h3>
       <p><span class="de">A: Kommst du am Samstag mit ins Museum?</span><br>
@@ -467,12 +483,15 @@ registerPack("a2", {
         <li><span class="de">Ich bin müde, trotzdem mache ich die Hausaufgaben.</span></li>
         <li><span class="de">Weißt du, wann der Zug ankommt? Ich hoffe, dass er pünktlich ist.</span></li>
         <li><span class="de">Ich gehe nicht ins Kino, sondern ins Theater.</span></li>
+        <li><span class="de">Können Sie mir sagen, ob der Termin am Dienstag bleibt?</span></li>
+        <li><span class="de">Ich weiß nicht, warum der Bus nicht gekommen ist.</span></li>
+        <li><span class="de">Frag sie, wann sie Zeit hat und wo wir uns treffen.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">…, weil ich … muss. Ich denke, dass … Wenn ich Zeit habe, … Als ich … war, … …, obwohl … Deshalb … Trotzdem … nicht …, sondern … Weißt du, ob …? Ich bleibe, denn ich bin … damit ich …</span></p>
+        <p><span class="de">…, weil ich … muss. Ich denke, dass … Wenn ich Zeit habe, … Als ich … war, … …, obwohl … Deshalb … Trotzdem … nicht …, sondern … Weißt du, ob …? Ich weiß nicht, warum … Weißt du, wann …? Können Sie mir sagen, ob …? Ich bleibe, denn ich bin … damit ich …</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        <span class="de">weil</span> vs <span class="de">denn</span> vs <span class="de">deshalb</span> — three grammars, one meaning. After deshalb do not leave the verb third: <span class="de">deshalb bleibe ich</span>, not <em>deshalb ich bleibe</em>. After weil do not keep verb second: not <em>weil ich bin krank</em>. <span class="de">als</span> is not for the future. <span class="de">wann</span> does not start a because-clause. Hören: the reason often comes after weil at the end of the sentence — wait. Schreiben: one correct weil per letter is the A2 pass trick; a wrong verb position can cancel it. In Perfekt weil-clauses the helper is last: <span class="de">weil ich gearbeitet habe</span>. After <span class="de">dass</span> the same rule: <span class="de">Ich denke, dass der Kurs gut ist</span>, not <em>dass der Kurs ist gut</em>. <span class="de">ob</span> = whether, not “if” for conditions (conditions use wenn). Do not write English “so” as a lazy deshalb with English word order.
+        <span class="de">weil</span> vs <span class="de">denn</span> vs <span class="de">deshalb</span> — three grammars, one meaning. After deshalb do not leave the verb third: <span class="de">deshalb bleibe ich</span>, not <em>deshalb ich bleibe</em>. After weil do not keep verb second: not <em>weil ich bin krank</em>. <span class="de">als</span> is not for the future. <span class="de">wann</span> does not start a because-clause. Hören: the reason often comes after weil at the end of the sentence — wait. Schreiben: one correct weil per letter is the A2 pass trick; a wrong verb position can cancel it. In Perfekt weil-clauses the helper is last: <span class="de">weil ich gearbeitet habe</span>. After <span class="de">dass</span> the same rule: <span class="de">Ich denke, dass der Kurs gut ist</span>, not <em>dass der Kurs ist gut</em>. <span class="de">ob</span> = whether, not “if” for conditions (conditions use wenn). Indirect questions keep verb last: <span class="de">ob er kommt</span>, not <em>ob kommt er</em>. <span class="de">warum</span> inside “I don’t know why …” is verb-last, not a new spoken question. Do not write English “so” as a lazy deshalb with English word order.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -485,6 +504,8 @@ registerPack("a2", {
         <li>Write the same contrast twice: obwohl (verb last) and trotzdem (verb second).</li>
         <li>Embed two dass-clauses: I think that … / I hope that …</li>
         <li>Turn a yes/no question into an ob-clause: Weißt du, ob …?</li>
+        <li>Turn Warum kommst du nicht? into Ich weiß nicht, warum … (verb last).</li>
+        <li>Write a Sie-letter question: Können Sie mir sagen, wann / ob / wo …?</li>
       </ol>
     `,
   },
@@ -530,6 +551,17 @@ registerPack("a2", {
         <tr><td>ihr</td><td><span class="de">konntet</span></td><td><span class="de">musstet</span></td><td><span class="de">wolltet</span></td><td><span class="de">solltet</span></td><td><span class="de">durftet</span></td></tr>
       </table>
       <p><span class="de">möchten</span> has no everyday past of its own at A2. Tell yesterday’s wish with <span class="de">wollte</span>: <span class="de">Ich wollte kommen, aber ich konnte nicht.</span></p>
+      <h3>sollte = advice; würde gern = polite wish</h3>
+      <p><span class="de">sollte / solltest / sollten</span> is the A2 advice form. It looks like the past of <span class="de">sollen</span>, and in a letter about yesterday it can mean “was supposed to.” In a plan or a tip it means “you should / it would be better.” Soft advice, not a landlord rule.</p>
+      <table>
+        <tr><th>Job</th><th>Form</th><th>Example</th></tr>
+        <tr><td>Instruction / someone expects it</td><td><span class="de">soll / sollen</span></td><td><span class="de">Sie sollen im Wartezimmer Platz nehmen. Du sollst den Arzt anrufen.</span></td></tr>
+        <tr><td>Advice (A2)</td><td><span class="de">sollte / solltest / sollten</span></td><td><span class="de">Du solltest mehr schlafen. Sie sollten zum Arzt gehen. Wir sollten früher losfahren.</span></td></tr>
+        <tr><td>Polite wish now</td><td><span class="de">würde gern / würde gerne</span> + infinitive</td><td><span class="de">Ich würde gern kommen. Ich würde gerne einen Termin.</span></td></tr>
+        <tr><td>Polite request</td><td><span class="de">Würden Sie …? Könnten Sie …?</span></td><td><span class="de">Würden Sie mir bitte helfen? Könnten Sie das wiederholen?</span></td></tr>
+      </table>
+      <p><span class="de">würde gern</span> is a light Konjunktiv II chunk, not a full unreal-if lesson. Use it in Schreiben and Sprechen when <span class="de">ich will</span> sounds too hard and <span class="de">ich möchte</span> is already in the last sentence. Do not stack it on a modal: not <em>ich würde können</em> — say <span class="de">ich könnte</span> or keep <span class="de">ich kann</span>. Yesterday’s wish stays <span class="de">wollte</span>.</p>
+      <p>Same person, two jobs: <span class="de">Du sollst das Formular ausfüllen</span> (the office expects it). <span class="de">Du solltest das Formular heute ausfüllen</span> (my advice). In Hören, <span class="de">soll</span> on a sign is a rule; <span class="de">sollte</span> in a friend chat is a tip.</p>
       <h3>Worked examples — why this modal</h3>
       <p><span class="de">Hier darf man nicht parken.</span> — permission denied. If you write <span class="de">hier muss man nicht parken</span>, you said parking is optional, which is the opposite.</p>
       <p><span class="de">Gestern musste ich arbeiten. Deshalb konnte ich nicht kommen.</span> — past necessity, then past ability. Both infinitives at the end. deshalb + verb second.</p>
@@ -542,6 +574,8 @@ registerPack("a2", {
         <tr><td><em>Hier muss man nicht rauchen.</em> (meaning forbidden)</td><td><span class="de">Hier darf man nicht rauchen.</span></td><td>nicht dürfen = prohibition.</td></tr>
         <tr><td><em>Ich habe gemusst arbeiten.</em></td><td><span class="de">Ich musste arbeiten.</span></td><td>A2 past of modals = Präteritum.</td></tr>
         <tr><td><em>Ich möchte gestern kommen.</em></td><td><span class="de">Ich wollte gestern kommen.</span></td><td>möchten is present/polite, not yesterday.</td></tr>
+        <tr><td><em>Ich will einen Termin.</em> (office letter)</td><td><span class="de">Ich würde gern einen Termin. / Ich möchte einen Termin.</span></td><td>würde gern / möchte = polite wish.</td></tr>
+        <tr><td><em>Du sollst mehr schlafen.</em> (friend tip)</td><td><span class="de">Du solltest mehr schlafen.</span></td><td>Advice uses sollte, not a hard soll.</td></tr>
       </table>
       <h3>Mini dialogue — office rule</h3>
       <p><span class="de">A: Darf man hier fotografieren?</span><br>
@@ -570,12 +604,16 @@ registerPack("a2", {
         <li><span class="de">Wir durften gestern nicht parken. Deshalb sind wir mit der Bahn gefahren.</span></li>
         <li><span class="de">Kannst du mir helfen? Ich muss das Amt anrufen, aber ich verstehe die Durchsage nicht.</span></li>
         <li><span class="de">Ihr sollt um 8 da sein. Ihr müsst nicht früher kommen.</span></li>
+        <li><span class="de">Du solltest mehr Wasser trinken. Das ist besser für den Kopf.</span></li>
+        <li><span class="de">Sie sollten heute zum Arzt gehen. Ich würde gern mitkommen.</span></li>
+        <li><span class="de">Ich würde gern am Samstag kommen. Würde Ihnen 15 Uhr passen?</span></li>
+        <li><span class="de">An deiner Stelle würde ich den Termin verschieben.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">Ich kann nicht … Ich muss … Hier darf man nicht … Du sollst … Gestern musste ich … Ich wollte kommen, aber ich konnte nicht. nicht müssen ≠ nicht dürfen. Sollen wir …? Darf man hier …? Ich muss nicht …</span></p>
+        <p><span class="de">Ich kann nicht … Ich muss … Hier darf man nicht … Du sollst … Du solltest … Ich würde gern … Gestern musste ich … Ich wollte kommen, aber ich konnte nicht. nicht müssen ≠ nicht dürfen. Sollen wir …? Darf man hier …? Ich muss nicht … Würden Sie mir bitte …?</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        <span class="de">nicht müssen</span> = don’t have to. <span class="de">nicht dürfen</span> = must not. Hören signs and landlords love this swap. Infinitive stays at the end. No zu after modals. <span class="de">sollen</span> in announcements is an instruction, not “maybe”. In letters, <span class="de">leider musste ich / konnte ich nicht</span> is more A2 than a naked <span class="de">ich nicht kommen</span>. Do not write <em>ich habe gemusst arbeiten</em> with the infinitive in the wrong place. <span class="de">will</span> is not English “will” (future) — it is “want”. Future at A2 is usually present + time: <span class="de">Ich komme morgen</span>. In weil-clauses the modal goes last: <span class="de">weil ich arbeiten muss</span>.
+        <span class="de">nicht müssen</span> = don’t have to. <span class="de">nicht dürfen</span> = must not. Hören signs and landlords love this swap. Infinitive stays at the end. No zu after modals. <span class="de">sollen</span> in announcements is an instruction, not “maybe”. <span class="de">sollte</span> to a friend is advice. In letters, <span class="de">leider musste ich / konnte ich nicht</span> is more A2 than a naked <span class="de">ich nicht kommen</span>. Do not write <em>ich habe gemusst arbeiten</em> with the infinitive in the wrong place. <span class="de">will</span> is not English “will” (future) — it is “want”. Future at A2 is usually present + time: <span class="de">Ich komme morgen</span>. In weil-clauses the modal goes last: <span class="de">weil ich arbeiten muss</span>. <span class="de">ich würde gern</span> is a polite now-wish; yesterday still needs <span class="de">wollte</span>. Do not write <em>ich würde können</em>.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -586,6 +624,8 @@ registerPack("a2", {
         <li>Ask permission politely and refuse permission politely.</li>
         <li>Rewrite three present modal sentences in Präteritum (ich/er and wir).</li>
         <li>Put a modal into a weil-clause (modal last): I cannot come because I have to …</li>
+        <li>Give two tips with sollte and one polite wish with würde gern.</li>
+        <li>Rewrite “I want a date” as a Sie-letter line with würde gern or möchte.</li>
       </ol>
     `,
   },
@@ -1593,6 +1633,567 @@ registerPack("a2", {
         <li>List your personal top three traps and an example sentence for each.</li>
         <li>Write two pairs: nicht müssen vs nicht dürfen; schon um 8 vs erst um 8.</li>
         <li>Say halb zwei / halb vier / halb acht as clock times, then write the digits.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a2-praeteritum",
+    title: "Präteritum: war, hatte, modals",
+    level: "a2",
+    minutes: 56,
+    html: `
+      <p>telc A2 Schreiben lives on three past lines: <span class="de">Ich war krank. Ich hatte Fieber. Ich konnte nicht kommen.</span> Hören stories still tell most events in <strong>Perfekt</strong>. If you put every verb into Präteritum, the letter sounds like a novel. If you never use <span class="de">war / hatte / konnte</span>, the excuse sounds like A1.</p>
+      <p>A2 Präteritum is a short production list: full <span class="de">sein</span> and <span class="de">haben</span>, plus the six modal pasts <span class="de">konnte, musste, wollte, sollte, durfte, mochte</span>. Add <span class="de">es gab</span>. Everything else — gehen, machen, anrufen, einkaufen — stays Perfekt in speech and in informal letters.</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>Ask: is the verb <span class="de">sein</span> or <span class="de">haben</span>? Then use Präteritum: <span class="de">ich war / ich hatte</span>.</li>
+        <li>Is it a modal (können, müssen, wollen, sollen, dürfen, mögen)? Then use Präteritum + infinitive at the end: <span class="de">ich konnte nicht kommen</span>.</li>
+        <li>Is it any other verb? Use Perfekt: <span class="de">ich bin zum Arzt gegangen. ich habe angerufen.</span></li>
+        <li>Build the exam excuse in this order: state (<span class="de">war</span>) + symptom or fact (<span class="de">hatte</span>) + ability/necessity (<span class="de">konnte / musste</span>) + one Perfekt detail.</li>
+        <li>Negate the modal in the past the same way as in the present: <span class="de">nicht</span> before the infinitive. Learn the pair: <span class="de">musste nicht</span> vs <span class="de">durfte nicht</span>.</li>
+        <li>In a <span class="de">weil</span>-clause the Präteritum form sits last: <span class="de">…, weil ich krank war. …, weil ich nicht kommen konnte.</span></li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “I was / I had / I could / I went / I called” are all simple past. German splits the list. “I was ill / I had a fever / I could not come” map to Präteritum. “I went to the doctor / I called / I stayed in bed” map to Perfekt: <span class="de">ich bin gegangen, ich habe angerufen, ich bin geblieben</span>. English “I didn’t have to come” vs “I was not allowed to come” is the same trap as in the present: <span class="de">ich musste nicht</span> vs <span class="de">ich durfte nicht</span>. English “there was / there were” is one German chunk: <span class="de">es gab</span>.</p>
+      <h3>sein and haben — full Präteritum</h3>
+      <table>
+        <tr><th></th><th>sein → war</th><th>haben → hatte</th></tr>
+        <tr><td>ich</td><td><span class="de">ich war</span></td><td><span class="de">ich hatte</span></td></tr>
+        <tr><td>du</td><td><span class="de">du warst</span></td><td><span class="de">du hattest</span></td></tr>
+        <tr><td>er/sie/es</td><td><span class="de">er war</span></td><td><span class="de">sie hatte</span></td></tr>
+        <tr><td>wir</td><td><span class="de">wir waren</span></td><td><span class="de">wir hatten</span></td></tr>
+        <tr><td>ihr</td><td><span class="de">ihr wart</span></td><td><span class="de">ihr hattet</span></td></tr>
+        <tr><td>sie/Sie</td><td><span class="de">sie waren / Sie waren</span></td><td><span class="de">sie hatten / Sie hatten</span></td></tr>
+      </table>
+      <p>Letter lines: <span class="de">Ich war krank. Ich war nicht in der Stadt. Es war schön. Ich hatte Fieber / Zeit / keine Zeit / Kopfschmerzen. Wir hatten Besuch.</span> Location and feeling often take war: <span class="de">Ich war zu Hause. Ich war beim Arzt. Das Wetter war schlecht.</span></p>
+      <h3>Modal past — produce these six</h3>
+      <table>
+        <tr><th></th><th>können</th><th>müssen</th><th>wollen</th><th>sollen</th><th>dürfen</th><th>mögen</th></tr>
+        <tr><td>ich/er</td><td><span class="de">konnte</span></td><td><span class="de">musste</span></td><td><span class="de">wollte</span></td><td><span class="de">sollte</span></td><td><span class="de">durfte</span></td><td><span class="de">mochte</span></td></tr>
+        <tr><td>du</td><td><span class="de">konntest</span></td><td><span class="de">musstest</span></td><td><span class="de">wolltest</span></td><td><span class="de">solltest</span></td><td><span class="de">durftest</span></td><td><span class="de">mochtest</span></td></tr>
+        <tr><td>wir/sie/Sie</td><td><span class="de">konnten</span></td><td><span class="de">mussten</span></td><td><span class="de">wollten</span></td><td><span class="de">sollten</span></td><td><span class="de">durften</span></td><td><span class="de">mochten</span></td></tr>
+        <tr><td>ihr</td><td><span class="de">konntet</span></td><td><span class="de">musstet</span></td><td><span class="de">wolltet</span></td><td><span class="de">solltet</span></td><td><span class="de">durftet</span></td><td><span class="de">mochtet</span></td></tr>
+      </table>
+      <p>The second verb stays an infinitive at the end: <span class="de">Gestern musste ich arbeiten. Ich wollte kommen. Als Kind durfte ich nicht allein fahren. Ich mochte den Kurs nicht.</span> <span class="de">mochte</span> = liked (past of mögen), not “would like” — that present wish is <span class="de">möchte</span>.</p>
+      <h3>When to keep Perfekt</h3>
+      <table>
+        <tr><th>Use Präteritum</th><th>Use Perfekt</th></tr>
+        <tr><td><span class="de">war, hatte, es gab</span></td><td>almost every full verb in speech</td></tr>
+        <tr><td><span class="de">konnte, musste, wollte, sollte, durfte, mochte</span></td><td>motion and errands: <span class="de">bin gegangen, habe eingekauft</span></td></tr>
+        <tr><td>set the scene: I was ill / I had no time</td><td>tell what happened: I called, I waited, I wrote</td></tr>
+      </table>
+      <p>Mixed letter that looks like A2: <span class="de">Leider konnte ich gestern nicht kommen, weil ich krank war. Ich hatte Fieber. Deshalb bin ich zum Arzt gegangen und habe den ganzen Tag im Bett gelegen.</span> Three Präteritum bricks, two Perfekt events.</p>
+      <h3>nicht müssen vs nicht dürfen — past</h3>
+      <table>
+        <tr><th>German</th><th>English</th><th>Picture</th></tr>
+        <tr><td><span class="de">Ich musste nicht kommen.</span></td><td>I did not have to come.</td><td>No obligation. Staying home was allowed.</td></tr>
+        <tr><td><span class="de">Ich durfte nicht kommen.</span></td><td>I was not allowed to come.</td><td>A ban. Someone said no.</td></tr>
+        <tr><td><span class="de">Ich konnte nicht kommen.</span></td><td>I was not able to come.</td><td>No ability (illness, train, children).</td></tr>
+        <tr><td><span class="de">Ich wollte nicht kommen.</span></td><td>I did not want to come.</td><td>Intention. Too honest for a polite letter.</td></tr>
+      </table>
+      <p>Hören loves the swap. Audio: <span class="de">Sie mussten das Formular nicht heute abgeben.</span> Statement “They were not allowed to hand it in today” is false. Letters: <span class="de">leider konnte ich nicht</span> is the safe apology. <span class="de">ich durfte nicht</span> needs a rule (work, doctor, landlord).</p>
+      <h3>Worked examples — why this past</h3>
+      <p><span class="de">Ich war krank. Ich hatte Fieber. Ich konnte nicht kommen.</span> — the three-line excuse. war = state, hatte = possession of a symptom, konnte = ability. No Perfekt needed yet.</p>
+      <p><span class="de">Gestern musste ich arbeiten. Deshalb bin ich nicht ins Kino gegangen.</span> — necessity in Präteritum; the event “not go to the cinema” is still Perfekt with sein.</p>
+      <p><span class="de">Als Kind durfte ich nicht allein mit der Bahn fahren. Ich musste immer mit meiner Mutter fahren.</span> — past ban vs past necessity. Both infinitives at the end.</p>
+      <p><span class="de">Es gab keinen Bus. Deshalb sind wir gelaufen.</span> — es gab sets the scene; laufen as motion stays Perfekt + sein.</p>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><em>Ich bin krank gewesen. Ich habe Fieber gehabt.</em> (heavy letter)</td><td><span class="de">Ich war krank. Ich hatte Fieber.</span></td><td>A2 prefers short war/hatte.</td></tr>
+        <tr><td><em>Ich gehe gestern zum Arzt.</em></td><td><span class="de">Ich bin gestern zum Arzt gegangen.</span></td><td>Full verbs still want Perfekt.</td></tr>
+        <tr><td><em>Ich habe nicht kommen gekonnt.</em></td><td><span class="de">Ich konnte nicht kommen.</span></td><td>Modal past = Präteritum.</td></tr>
+        <tr><td><em>Ich musste nicht kommen</em> (meaning banned)</td><td><span class="de">Ich durfte nicht kommen.</span></td><td>nicht dürfen = prohibition, also in the past.</td></tr>
+        <tr><td><em>Ich möchte gestern kommen.</em></td><td><span class="de">Ich wollte gestern kommen. / Ich mochte den Film.</span></td><td>möchte is now; wollte = wanted; mochte = liked.</td></tr>
+        <tr><td><em>…, weil ich war krank.</em></td><td><span class="de">…, weil ich krank war.</span></td><td>Präteritum still goes last after weil.</td></tr>
+        <tr><td><em>Es hat gegeben keinen Bus.</em></td><td><span class="de">Es gab keinen Bus.</span></td><td>es gab, not a Perfekt of geben here.</td></tr>
+      </table>
+      <h3>Mini dialogue — sick and sorry</h3>
+      <p><span class="de">A: Warum warst du gestern nicht im Kurs?</span><br>
+      <span class="de">B: Ich war krank. Ich hatte Fieber und Kopfschmerzen.</span><br>
+      <span class="de">A: Schade. Konntest du zum Arzt gehen?</span><br>
+      <span class="de">B: Ja. Ich bin zum Arzt gegangen. Ich durfte nicht arbeiten.</span><br>
+      <span class="de">A: Musstest du im Bett bleiben?</span><br>
+      <span class="de">B: Ja. Ich musste den ganzen Tag liegen. Deshalb konnte ich dich nicht anrufen — ich habe erst am Abend geschrieben.</span></p>
+      <h3>Examples</h3>
+      <ul>
+        <li><span class="de">Ich war krank. Ich hatte Fieber. Ich konnte nicht kommen.</span></li>
+        <li><span class="de">Gestern musste ich arbeiten. Deshalb konnte ich nicht kommen.</span></li>
+        <li><span class="de">Wir waren im Museum. Es war schön, aber es gab viele Leute.</span></li>
+        <li><span class="de">Als Kind durfte ich nicht allein fahren. Ich musste mit meinen Eltern fahren.</span></li>
+        <li><span class="de">Ich wollte dir helfen, aber ich hatte keine Zeit.</span></li>
+        <li><span class="de">Ihr wart nicht zu Hause. Wo wart ihr?</span></li>
+        <li><span class="de">Sie hatten gestern einen Termin. Deshalb sind sie früher gegangen.</span></li>
+        <li><span class="de">Ich mochte den Kurs, aber ich konnte nicht jede Woche kommen.</span></li>
+        <li><span class="de">Du musstest das Formular nicht heute abgeben. Bis Freitag reichte.</span></li>
+        <li><span class="de">Wir durften im Park nicht grillen. Deshalb haben wir zu Hause gegessen.</span></li>
+        <li><span class="de">Es gab keinen Zug. Deshalb sind wir mit dem Bus gefahren.</span></li>
+        <li><span class="de">Leider konnte ich nicht kommen, weil ich krank war und Fieber hatte.</span></li>
+        <li><span class="de">Am Wochenende war ich zu Hause. Ich habe viel geschlafen und einen Film gesehen.</span></li>
+        <li><span class="de">Solltest du gestern anrufen? — Ja, aber ich habe es vergessen.</span></li>
+        <li><span class="de">Wir wollten ins Kino, aber wir hatten kein Geld. Deshalb sind wir spazieren gegangen.</span></li>
+        <li><span class="de">Ich war beim Arzt. Ich hatte Halsschmerzen. Ich durfte nicht singen.</span></li>
+      </ul>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Ich war krank. Ich hatte Fieber / keine Zeit. Ich konnte nicht kommen. Gestern musste ich … Ich wollte …, aber … Als Kind durfte ich nicht … Es gab keinen … nicht müssen ≠ nicht dürfen (also past). …, weil ich krank war. Am Wochenende habe ich … gemacht.</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        Do not write a whole weekend in Präteritum (<em>ich ging, ich kaufte, ich rief an</em>) — that is written narrative, not A2 speech. Do not write <em>ich habe gewesen / ich bin gehabt</em>. <span class="de">mochte</span> is “liked”, <span class="de">möchte</span> is “would like”. <span class="de">sollte</span> can be “was supposed to” yesterday or “should” as advice — read the time word. Hören: <span class="de">musste nicht</span> is not a ban. In weil-clauses <span class="de">war / hatte / konnte</span> sit last. Letters that only say <span class="de">ich nicht kommen</span> without war/hatte/konnte look unfinished. This is Start Deutsch 2 everyday absence, not a B1 report.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Write the three-line excuse: war + hatte + konnte nicht.</li>
+        <li>Conjugate war and hatte for ich, du, er, wir, ihr, Sie.</li>
+        <li>Tell Saturday in two tenses: scene with war/hatte, events in Perfekt.</li>
+        <li>Contrast musste nicht vs durfte nicht vs konnte nicht in three sentences.</li>
+        <li>Write a childhood pair: durfte nicht + musste.</li>
+        <li>Put war and konnte into weil-clauses.</li>
+        <li>Use es gab + a Perfekt result (Deshalb sind/haben wir …).</li>
+        <li>Rewrite a present modal weekend plan into yesterday (wollte / konnte / musste).</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a2-reflexive",
+    title: "Reflexive verbs (sich)",
+    level: "a2",
+    minutes: 55,
+    html: `
+      <p>A2 everyday verbs often need an extra pronoun English does not show: <span class="de">sich treffen, sich fühlen, sich freuen, sich interessieren, sich anmelden, sich beeilen, sich setzen</span>. telc A2 Sprechen (plans, feelings) and Schreiben (course signup, “I am looking forward to …”) mark the sentence wrong if <span class="de">mich / sich</span> is missing. Hören still waits for the last word — sometimes that word is the prefix, sometimes it is the whole reflexive idea.</p>
+      <p>Most A2 reflexives take <strong>accusative</strong> <span class="de">sich</span>. Dative reflexive appears in a light pair: body part or garment is already the object, so the person is dative — <span class="de">Ich wasche mir die Haare</span>. Do not build a B1 application essay; stay in course, weekend, doctor, flat.</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>Learn the verb as a chunk with <span class="de">sich</span>: not treffen, but <span class="de">sich treffen</span>; not anmelden, but <span class="de">sich anmelden</span>.</li>
+        <li>Match the pronoun to the subject: ich → mich (or mir), du → dich (dir), er/sie → sich, wir → uns, ihr → euch, Sie → sich.</li>
+        <li>If there is no other object, use accusative: <span class="de">Ich treffe mich. Ich fühle mich gut. Ich freue mich.</span></li>
+        <li>If a body part or piece of clothing is already accusative, switch the reflexive to dative: <span class="de">Ich wasche mir die Haare. Ich kaufe mir eine Jacke.</span></li>
+        <li>Word order: the pronoun hugs the conjugated verb. Statement: <span class="de">Ich treffe mich um 6.</span> Time first: <span class="de">Heute treffe ich mich um 6.</span> Question: <span class="de">Treffen Sie sich vor dem Kino?</span></li>
+        <li>Perfekt: helper <span class="de">haben</span> + pronoun + Partizip: <span class="de">Ich habe mich angemeldet. Wir haben uns getroffen.</span></li>
+        <li>In a weil-clause the pronoun stays with the verb at the end: <span class="de">…, weil ich mich anmelde. …, weil ich mich gefreut habe.</span></li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “I meet you / we meet at 6” uses no extra self-word for the plan. German “we meet (each other)” is <span class="de">wir treffen uns</span>; “I meet him” is <span class="de">ich treffe ihn</span> — never both. English “I feel well / I am interested / I sign up / I hurry” has no myself. German does: <span class="de">ich fühle mich, ich interessiere mich, ich melde mich an, ich beeile mich</span>. English “I wash my hair” uses a possessive; A2 German prefers dative + the body part: <span class="de">ich wasche mir die Haare</span>, not <em>meine Haare</em> as the only pattern.</p>
+      <h3>Pronouns — Akk first, Dat light</h3>
+      <table>
+        <tr><th></th><th>Akk (default)</th><th>Dat (body part / thing already Akk)</th></tr>
+        <tr><td>ich</td><td><span class="de">mich</span></td><td><span class="de">mir</span></td></tr>
+        <tr><td>du</td><td><span class="de">dich</span></td><td><span class="de">dir</span></td></tr>
+        <tr><td>er/sie/es</td><td><span class="de">sich</span></td><td><span class="de">sich</span></td></tr>
+        <tr><td>wir</td><td><span class="de">uns</span></td><td><span class="de">uns</span></td></tr>
+        <tr><td>ihr</td><td><span class="de">euch</span></td><td><span class="de">euch</span></td></tr>
+        <tr><td>sie/Sie</td><td><span class="de">sich</span></td><td><span class="de">sich</span></td></tr>
+      </table>
+      <p>A2 production list: <span class="de">sich treffen, sich fühlen, sich freuen (auf/über), sich interessieren für, sich anmelden, sich beeilen, sich setzen, sich unterhalten, sich vorstellen, sich ausruhen</span>. Light dative: <span class="de">sich die Haare / die Hände waschen, sich eine Karte kaufen</span>.</p>
+      <h3>Position in present, question, Perfekt</h3>
+      <table>
+        <tr><th>Shape</th><th>Example</th></tr>
+        <tr><td>Statement</td><td><span class="de">Ich treffe mich um 18 Uhr. Ich freue mich auf Samstag.</span></td></tr>
+        <tr><td>Time in position 1</td><td><span class="de">Heute treffe ich mich mit Anna. Dann setzen wir uns ins Café.</span></td></tr>
+        <tr><td>du / Sie question</td><td><span class="de">Triffst du dich mit ihm? Treffen Sie sich vor dem Amt?</span></td></tr>
+        <tr><td>Separable + sich</td><td><span class="de">Ich melde mich online an. Melden Sie sich bitte an.</span></td></tr>
+        <tr><td>Perfekt</td><td><span class="de">Ich habe mich angemeldet. Wir haben uns gut unterhalten. Hast du dich beeilt?</span></td></tr>
+        <tr><td>weil / dass</td><td><span class="de">…, weil ich mich nicht gut fühle. Ich hoffe, dass ihr euch freut.</span></td></tr>
+      </table>
+      <p><span class="de">sich setzen</span> is the move (wohin? Akk after the preposition): <span class="de">Setzen Sie sich bitte an den Tisch.</span> After that you <span class="de">sitzen</span> (location, no sich): <span class="de">Wir sitzen am Tisch.</span> Same idea as stellen/stehen in the position lesson.</p>
+      <h3>Worked examples — why sich is there</h3>
+      <p><span class="de">Wir treffen uns am Samstag vor dem Kino.</span> — each other, so uns. Time and place after the pronoun. Not <em>wir treffen</em> and not <em>ich treffe mich dich</em>.</p>
+      <p><span class="de">Ich interessiere mich für den Kurs. Deshalb habe ich mich gestern angemeldet.</span> — sich interessieren für + Akk; sich anmelden is separable, so prefix <span class="de">an</span> at the end in the present and inside the Partizip <span class="de">angemeldet</span>.</p>
+      <p><span class="de">Ich freue mich auf das Wochenende. Ich habe mich über deine Mail gefreut.</span> — auf = something coming; über = something that already happened. Both need sich.</p>
+      <p><span class="de">Beeil dich! Ich wasche mir noch schnell die Haare und setze mich dann ins Auto.</span> — beeilen = Akk dich; Haare already Akk → mir; setzen = move yourself into the car.</p>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><em>Ich treffe um 6.</em></td><td><span class="de">Ich treffe mich um 6. / Ich treffe ihn um 6.</span></td><td>Need sich for “meet up”, or ihn for a person.</td></tr>
+        <tr><td><em>Ich treffe mich ihn.</em></td><td><span class="de">Ich treffe ihn. / Wir treffen uns.</span></td><td>Do not stack sich + a second person object.</td></tr>
+        <tr><td><em>Ich fühle gut.</em></td><td><span class="de">Ich fühle mich gut.</span></td><td>fühlen needs sich for how you are.</td></tr>
+        <tr><td><em>Ich interessiere für Musik.</em></td><td><span class="de">Ich interessiere mich für Musik.</span></td><td>Missing mich + für.</td></tr>
+        <tr><td><em>Ich habe angemeldet.</em></td><td><span class="de">Ich habe mich angemeldet.</span></td><td>Perfekt still needs the pronoun.</td></tr>
+        <tr><td><em>Heute ich mich treffe.</em></td><td><span class="de">Heute treffe ich mich …</span></td><td>Verb second; pronoun after the verb.</td></tr>
+        <tr><td><em>Ich wasche mich die Haare.</em></td><td><span class="de">Ich wasche mir die Haare.</span></td><td>Body part = dative reflexive (A2 light).</td></tr>
+        <tr><td><em>Wir sitzen uns an den Tisch.</em></td><td><span class="de">Wir setzen uns an den Tisch. / Wir sitzen am Tisch.</span></td><td>setzen = move; sitzen = location, no sich.</td></tr>
+      </table>
+      <h3>Mini dialogue — course and weekend</h3>
+      <p><span class="de">A: Treffen Sie sich am Samstag mit Freunden?</span><br>
+      <span class="de">B: Ja. Wir treffen uns um 15 Uhr. Ich freue mich schon darauf.</span><br>
+      <span class="de">A: Interessieren Sie sich auch für den neuen Kurs?</span><br>
+      <span class="de">B: Ja. Ich habe mich gestern online angemeldet. Fühlen Sie sich fit für A2?</span><br>
+      <span class="de">A: So lala. Ich beeile mich oft und setze mich dann müde aufs Sofa.</span><br>
+      <span class="de">B: Dann ruhen Sie sich am Sonntag aus. Waschen Sie sich die Haare in Ruhe — kein Stress.</span></p>
+      <h3>Examples</h3>
+      <ul>
+        <li><span class="de">Ich treffe mich um 18 Uhr mit Anna. Treffen Sie sich auch?</span></li>
+        <li><span class="de">Ich fühle mich heute besser. Gestern habe ich mich krank gefühlt.</span></li>
+        <li><span class="de">Ich freue mich auf das Wochenende. Ich habe mich über deine Nachricht gefreut.</span></li>
+        <li><span class="de">Ich interessiere mich für Sport, aber nicht für Fußball.</span></li>
+        <li><span class="de">Ich melde mich online an. Haben Sie sich schon angemeldet?</span></li>
+        <li><span class="de">Beeil dich, sonst verpassen wir den Bus.</span></li>
+        <li><span class="de">Bitte setzen Sie sich. Wir sitzen schon am Fenster.</span></li>
+        <li><span class="de">Wir haben uns gestern gut unterhalten.</span></li>
+        <li><span class="de">Ich wasche mich und wasche mir dann die Haare.</span></li>
+        <li><span class="de">Heute treffe ich mich nicht. Ich ruhe mich aus.</span></li>
+        <li><span class="de">Kannst du dich vorstellen? Ich heiße Leyla.</span></li>
+        <li><span class="de">Leider kann ich nicht, weil ich mich nicht gut fühle.</span></li>
+        <li><span class="de">Wir setzen uns ins Café und unterhalten uns über den Kurs.</span></li>
+        <li><span class="de">Ich kaufe mir eine Karte. Kaufst du dir auch eine?</span></li>
+        <li><span class="de">Melden Sie sich bitte bis Freitag an. Ich habe mich schon angemeldet.</span></li>
+        <li><span class="de">Fühlst du dich besser? Soll ich mich um 8 bei dir treffen?</span></li>
+      </ul>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Ich treffe mich … Treffen Sie sich …? Ich fühle mich … Ich freue mich auf/über … Ich interessiere mich für … Ich melde mich an. Ich habe mich angemeldet. Beeil dich! Setzen Sie sich. Ich wasche mir die Haare. Wir haben uns unterhalten.</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        Missing sich is the cheap gap: <em>ich treffe um 6 / ich interessiere für / ich habe angemeldet</em>. <span class="de">sich treffen</span> is “meet up”; a named person as object drops sich: <span class="de">ich treffe ihn</span>. Word order: after a time word the verb comes first, then subject, then pronoun — <span class="de">Heute treffe ich mich</span>, not <em>heute ich mich treffe</em>. Perfekt almost always <span class="de">haben</span> + sich + Partizip. <span class="de">freuen auf</span> vs <span class="de">freuen über</span> is a Hören/letter trap (future event vs past news). Do not mix sitzen (no sich, location) with sich setzen (move). A2 dative reflexive is light: hair, hands, a ticket — not a B1 Bewerbung paragraph.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Write four present lines: treffen, fühlen, freuen auf, interessieren für.</li>
+        <li>Ask a Sie-question: Treffen Sie sich …? Haben Sie sich angemeldet?</li>
+        <li>Tell yesterday in Perfekt: I signed up, we met, I was glad about a mail.</li>
+        <li>Contrast Ich wasche mich / Ich wasche mir die Haare.</li>
+        <li>Put two reflexives into weil-clauses.</li>
+        <li>Start three sentences with Heute / Dann / Am Samstag (verb second + pronoun).</li>
+        <li>Refuse an invite because you do not feel well (sich fühlen + weil).</li>
+        <li>Correct: Ich treffe mich ihn. / Ich habe angemeldet. / Wir sitzen uns an den Tisch.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a2-prepverbs",
+    title: "Verbs with prepositions + da/wo",
+    level: "a2",
+    minutes: 58,
+    html: `
+      <p>Some A2 verbs bring their own preposition. The case is part of the chunk, not a Wechsel test. telc A2 Hören asks <span class="de">Worauf wartest du?</span> and the answer is often a short <span class="de">Darauf</span> — if you wait for a noun you miss the item. Letters need <span class="de">ich freue mich auf / ich bitte um / ich beschwere mich über</span> as ready lines, not word-for-word English.</p>
+      <p>Learn verb + preposition + case as one brick. Then learn the question and the pointer: <span class="de">wo(r)-</span> + prep asks; <span class="de">da(r)-</span> + prep points back. Use <span class="de">r</span> when the preposition starts with a vowel: <span class="de">worauf / darauf, woran / daran, worüber / darüber</span>.</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>Memorise the chunk, not the English verb alone: <span class="de">warten auf + Akk</span>, not “wait for”.
+        </li>
+        <li>Put the preposition before its noun and give that noun the right case: <span class="de">Ich warte auf den Bus. Ich helfe bei den Hausaufgaben.</span></li>
+        <li>If the verb is also reflexive, keep sich: <span class="de">Ich freue mich auf Samstag. Ich interessiere mich für den Kurs. Ich beschwere mich über den Lärm.</span></li>
+        <li>To ask about a thing, glue <span class="de">wo(r)</span> to the preposition: <span class="de">Worauf wartest du? Worum bittest du? Worüber sprecht ihr?</span></li>
+        <li>To point at a thing already named, glue <span class="de">da(r)</span> to the same preposition: <span class="de">Darauf. Daran denke ich oft. Darüber müssen wir sprechen.</span></li>
+        <li>For a person, do not use da-/wo- with these A2 chunks. Ask <span class="de">Auf wen? An wen? Mit wem?</span> and answer with the person: <span class="de">Auf meine Schwester. An dich.</span></li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “wait for / look forward to / talk about / think of / help with / be interested in / complain about / ask for / take part in” each pick a different German preposition. Translating “for” as <span class="de">für</span> every time breaks half the list: <span class="de">warten auf</span>, not warten für; <span class="de">bitten um</span>, not bitten für. English “What are you waiting for?” keeps the preposition at the end. German moves it to the front of a wo-word: <span class="de">Worauf wartest du?</span> English “that / it” after a preposition becomes <span class="de">da(r)+prep</span>, not <em>auf das</em> when “that” is a whole idea.</p>
+      <h3>Must-know chunks (A2 production)</h3>
+      <table>
+        <tr><th>Chunk</th><th>Case</th><th>Example</th></tr>
+        <tr><td><span class="de">warten auf</span></td><td>Akk</td><td><span class="de">Ich warte auf den Bus / auf dich.</span></td></tr>
+        <tr><td><span class="de">sich freuen auf</span></td><td>Akk</td><td><span class="de">Ich freue mich auf das Wochenende.</span> (coming)</td></tr>
+        <tr><td><span class="de">sich freuen über</span></td><td>Akk</td><td><span class="de">Ich freue mich über deine Mail.</span> (already happened)</td></tr>
+        <tr><td><span class="de">sprechen über</span></td><td>Akk</td><td><span class="de">Wir sprechen über den Kurs.</span></td></tr>
+        <tr><td><span class="de">denken an</span></td><td>Akk</td><td><span class="de">Ich denke oft an meine Familie.</span></td></tr>
+        <tr><td><span class="de">helfen bei</span></td><td>Dat</td><td><span class="de">Kannst du mir bei den Hausaufgaben helfen?</span></td></tr>
+        <tr><td><span class="de">sich interessieren für</span></td><td>Akk</td><td><span class="de">Ich interessiere mich für Musik.</span></td></tr>
+        <tr><td><span class="de">sich beschweren über</span></td><td>Akk</td><td><span class="de">Wir beschweren uns über den Lärm.</span></td></tr>
+        <tr><td><span class="de">bitten um</span></td><td>Akk</td><td><span class="de">Ich bitte um einen Termin / um Entschuldigung.</span></td></tr>
+        <tr><td><span class="de">teilnehmen an</span></td><td>Dat</td><td><span class="de">Ich nehme am Kurs / an dem Ausflug teil.</span></td></tr>
+      </table>
+      <p>Two extras you will hear: <span class="de">sich anmelden zu / für</span> a course, <span class="de">sich unterhalten über</span> (like sprechen über). <span class="de">helfen</span> already takes a dative person (<span class="de">mir</span>); <span class="de">bei</span> adds the task.</p>
+      <h3>wo(r)+prep vs da(r)+prep</h3>
+      <table>
+        <tr><th>Ask (thing)</th><th>Point (thing)</th><th>Person instead</th></tr>
+        <tr><td><span class="de">Worauf …?</span></td><td><span class="de">darauf</span></td><td><span class="de">auf wen? — auf Anna</span></td></tr>
+        <tr><td><span class="de">Worüber …?</span></td><td><span class="de">darüber</span></td><td><span class="de">über wen?</span></td></tr>
+        <tr><td><span class="de">Woran …?</span></td><td><span class="de">daran</span></td><td><span class="de">an wen? — an dich</span></td></tr>
+        <tr><td><span class="de">Wofür …?</span></td><td><span class="de">dafür</span></td><td><span class="de">für wen?</span></td></tr>
+        <tr><td><span class="de">Wobei …?</span></td><td><span class="de">dabei</span></td><td>(task, not a person usually)</td></tr>
+        <tr><td><span class="de">Worum …?</span></td><td><span class="de">darum</span></td><td><span class="de">um wen?</span> rare at A2</td></tr>
+        <tr><td><span class="de">Woran</span> (teilnehmen) / <span class="de">an was</span></td><td><span class="de">daran</span></td><td>—</td></tr>
+      </table>
+      <p>Vowel rule: if the preposition starts with a vowel (an, auf, über, um), insert <span class="de">r</span>: <span class="de">woran, darauf, worüber, darum</span>. Consonant start: <span class="de">wofür, dafür, wobei, dabei, womit, damit</span>. Short Hören answers are legal: <span class="de">Worauf wartest du? — Auf den Bus. / Darauf.</span></p>
+      <h3>Worked examples — why this preposition</h3>
+      <p><span class="de">Ich warte auf den Bus. Worauf wartest du? — Darauf, der kommt gleich.</span> — auf + Akk is the chunk. The wo-question and da-answer recycle the same preposition. <em>auf dem Bus</em> would mean you are standing on the bus.</p>
+      <p><span class="de">Ich freue mich auf Samstag. Ich habe mich über deine Einladung gefreut.</span> — auf looks forward; über looks back. Same verb, two prepositions, two times.</p>
+      <p><span class="de">Sehr geehrte Frau Lang, ich bitte um einen neuen Termin. Können Sie mir sagen, worum ich das Formular ergänzen soll?</span> — bitten um in a Sie-letter. The examiner hears control, not poetry.</p>
+      <p><span class="de">Ich nehme am Kurs teil. Interessierst du dich auch dafür?</span> — teilnehmen an + Dat (am = an dem). dafür points to the course already named.</p>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><em>Ich warte für den Bus.</em></td><td><span class="de">Ich warte auf den Bus.</span></td><td>warten auf + Akk.</td></tr>
+        <tr><td><em>Ich freue mich über das Wochenende.</em> (coming Saturday)</td><td><span class="de">Ich freue mich auf das Wochenende.</span></td><td>auf = not yet; über = already happened.</td></tr>
+        <tr><td><em>Ich denke über meine Familie.</em> (meaning of them)</td><td><span class="de">Ich denke an meine Familie.</span></td><td>denken an + Akk.</td></tr>
+        <tr><td><em>Ich bitte für einen Termin.</em></td><td><span class="de">Ich bitte um einen Termin.</span></td><td>bitten um.</td></tr>
+        <tr><td><em>Ich nehme auf den Kurs teil.</em></td><td><span class="de">Ich nehme am Kurs teil.</span></td><td>teilnehmen an + Dat.</td></tr>
+        <tr><td><em>Auf was wartest du?</em> (heavy spoken)</td><td><span class="de">Worauf wartest du?</span></td><td>Exam form is wo(r)+prep.</td></tr>
+        <tr><td><em>Ich warte auf das.</em> (the idea)</td><td><span class="de">Ich warte darauf.</span></td><td>da(r)+prep for a thing/idea.</td></tr>
+        <tr><td><em>Worauf wartest du? — Auf das.</em></td><td><span class="de">— Auf den Bus. / Darauf.</span></td><td>Name the noun or use darauf.</td></tr>
+      </table>
+      <h3>Mini dialogue — Hören shape</h3>
+      <p><span class="de">A: Worauf wartest du hier?</span><br>
+      <span class="de">B: Auf den Bus. Und du? Woran denkst du?</span><br>
+      <span class="de">A: An den Kurs. Ich interessiere mich dafür, aber ich habe mich noch nicht angemeldet.</span><br>
+      <span class="de">B: Ich nehme schon daran teil. Freust du dich auf den ersten Tag?</span><br>
+      <span class="de">A: Ja. Ich möchte die Lehrerin um Informationen bitten. Worum genau, weiß ich noch nicht.</span><br>
+      <span class="de">B: Bitte um den Stundenplan. Darüber spricht sie immer am Anfang.</span></p>
+      <h3>Examples</h3>
+      <ul>
+        <li><span class="de">Ich warte auf den Arzt. Worauf wartest du? — Darauf.</span></li>
+        <li><span class="de">Ich freue mich auf das Fest. Ich habe mich über dein Geschenk gefreut.</span></li>
+        <li><span class="de">Wir sprechen über die Wohnung. Worüber sprecht ihr?</span></li>
+        <li><span class="de">Ich denke oft an dich. Daran muss ich immer denken.</span></li>
+        <li><span class="de">Kannst du mir bei dem Formular helfen? Dabei brauche ich Hilfe.</span></li>
+        <li><span class="de">Ich interessiere mich für den Job. Interessierst du dich auch dafür?</span></li>
+        <li><span class="de">Wir beschweren uns über die Heizung. Darüber habe ich schon geschrieben.</span></li>
+        <li><span class="de">Ich bitte um Entschuldigung. Ich bitte um eine Antwort.</span></li>
+        <li><span class="de">Nimmst du an dem Ausflug teil? Ja, ich nehme daran teil.</span></li>
+        <li><span class="de">Warten Sie auf mich? — Ja, wir warten auf Sie.</span></li>
+        <li><span class="de">Können Sie mir sagen, worauf ich achten soll?</span></li>
+        <li><span class="de">Ich helfe dir bei den Kofferpacken. Danach freue ich mich auf den Urlaub.</span></li>
+        <li><span class="de">Sie hat sich über den Lärm beschwert und um Ruhe gebeten.</span></li>
+        <li><span class="de">Woran denkst du? — An das Wochenende. Ich freue mich schon darauf.</span></li>
+        <li><span class="de">Wir unterhalten uns über den Film. Darüber können wir später sprechen.</span></li>
+        <li><span class="de">Bitte um einen neuen Termin, wenn Sie nicht kommen können.</span></li>
+      </ul>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">warten auf + Akk · sich freuen auf / über · sprechen über · denken an · helfen bei · sich interessieren für · sich beschweren über · bitten um · teilnehmen an + Dat · Worauf …? Darauf. Worüber …? Darüber. Woran …? Daran. Worum …? Darum. Wofür …? Dafür.</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        Hören often answers with <span class="de">darauf / darüber / daran</span> and never repeats the noun. If you hunt only for Bus/Kurs you miss the item. <span class="de">freuen auf</span> vs <span class="de">freuen über</span> flips future vs past news. <span class="de">warten auf</span> is not location <span class="de">auf dem</span>. <span class="de">teilnehmen an</span> is dative: <span class="de">am Kurs</span>, not an den Kurs. Do not use da-/wo- for people: <span class="de">an wen / auf wen</span>. In letters, <span class="de">ich bitte um</span> + noun is cleaner than English “I ask for that you …”. Separable <span class="de">teilnehmen</span> still splits: <span class="de">ich nehme … teil</span>. This is Start Deutsch 2 — course, bus, noise, appointment — not B1 politics.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Write one sentence for each chunk in the table (ten lines).</li>
+        <li>Turn five of them into Worauf/Worüber/Woran/Worum/Wofür questions.</li>
+        <li>Answer each question twice: with a noun, then with da(r)+prep.</li>
+        <li>Write a Sie-letter line: ich bitte um … and ich freue mich auf …</li>
+        <li>Contrast freuen auf vs freuen über with the same noun (Wochenende vs Einladung).</li>
+        <li>Help-sentence: dative person + bei + task.</li>
+        <li>Correct: Ich warte für den Bus. / Ich nehme auf den Kurs teil. / Ich denke über meine Mutter.</li>
+        <li>Mini Hören: write a two-line dialogue that answers only with Darauf / Darüber.</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a2-indefinite",
+    title: "man, dies-, jemand, doch",
+    level: "a2",
+    minutes: 54,
+    html: `
+      <p>A2 notices, Hören rules, and Sprechen opinions need words for “people in general”, “this one”, “somebody / nobody”, and the German yes after a negative question. telc loves <span class="de">Man darf hier nicht …</span> and the trap <span class="de">Kommst du nicht? — Doch!</span> If you answer <span class="de">ja</span> to a negative question, the examiner cannot tell whether you agree with the negation.</p>
+      <p>This lesson is a small toolkit, not a new case system. <span class="de">dies-</span> and <span class="de">welch-</span> take the same endings as <span class="de">der/die/das</span>. <span class="de">man</span> is always nominative singular and takes <span class="de">er</span>-endings on the verb: <span class="de">man spricht, man hat, man ist</span>.</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>For people in general or a rule, use <span class="de">man</span>, not “you” and not <span class="de">die Leute</span> every time: <span class="de">Man spricht hier Deutsch. Man darf nicht rauchen.</span></li>
+        <li>Point to a specific thing already in view with <span class="de">dies-</span> like a der-word: <span class="de">dieser Kurs, diese Wohnung, dieses Formular, diese Leute</span>.</li>
+        <li>For unknown people use <span class="de">jemand / niemand</span>. For groups use <span class="de">alle, viele, wenige, einige</span>.</li>
+        <li>After a negative question, pick the particle with care: <span class="de">ja</span> agrees with the negative idea, <span class="de">nein</span> is messy, <span class="de">doch</span> rejects the negation and means “yes I do / yes it is”.</li>
+        <li>Ask “which?” with <span class="de">welch-</span> (der-endings): <span class="de">Welchen Kurs möchtest du? Welche Wohnung ist frei?</span></li>
+        <li>In Hören, <span class="de">man</span> + modal is a rule for everyone. <span class="de">jemand</span> is one unknown person. Do not mix them.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “you” in “You don’t park here” is often German <span class="de">man</span>, not du. English “this / that” is one pair; German <span class="de">dies-</span> declines like der, and a short <span class="de">das</span> can point at a whole idea: <span class="de">Das ist gut.</span> English “somebody / anybody / nobody” maps to <span class="de">jemand / niemand</span> — no extra “body” word. English “Yes” after “Aren’t you coming?” is dangerous: German wants <span class="de">Doch</span> if you <em>are</em> coming. English “which” is <span class="de">welch-</span>, not was, when a noun follows.</p>
+      <h3>man</h3>
+      <table>
+        <tr><th>Use</th><th>Example</th></tr>
+        <tr><td>General habit</td><td><span class="de">Man spricht Deutsch. Man isst um 12.</span></td></tr>
+        <tr><td>Rule / notice</td><td><span class="de">Man darf hier nicht parken. Man muss einen Ausweis zeigen.</span></td></tr>
+        <tr><td>Advice without naming you</td><td><span class="de">Man sollte mehr Wasser trinken.</span></td></tr>
+        <tr><td>Not a real person</td><td>Do not give man a name. Accusative/dative forms <span class="de">einen / einem</span> exist but A2 production can stay nominative + the rule.</td></tr>
+      </table>
+      <p>Verb is 3rd person singular: <span class="de">man ist, man hat, man kann</span>, never <em>man sind</em>. Negative: <span class="de">man kann nicht / man hat keine Zeit</span>. Do not write <span class="de">du</span> on a public sign.</p>
+      <h3>dies- and welch- (der-endings)</h3>
+      <table>
+        <tr><th></th><th>m</th><th>f</th><th>n</th><th>pl</th></tr>
+        <tr><td>Nom</td><td><span class="de">dieser / welcher</span></td><td><span class="de">diese / welche</span></td><td><span class="de">dieses / welches</span></td><td><span class="de">diese / welche</span></td></tr>
+        <tr><td>Akk</td><td><span class="de">diesen / welchen</span></td><td><span class="de">diese / welche</span></td><td><span class="de">dieses / welches</span></td><td><span class="de">diese / welche</span></td></tr>
+        <tr><td>Dat</td><td><span class="de">diesem / welchem</span></td><td><span class="de">dieser / welcher</span></td><td><span class="de">diesem / welchem</span></td><td><span class="de">diesen / welchen</span></td></tr>
+      </table>
+      <p>Same pattern as der/die/das. <span class="de">Ich nehme diesen Kurs. Mit dieser Bahn. Dieses Zimmer gefällt mir. Welche Jacke ist wärmer? An welchem Tag habt ihr Zeit?</span> Short demonstrative <span class="de">der / die / das</span> can also point: <span class="de">Der da. Die Wohnung da ist zu teuer. Das verstehe ich nicht.</span></p>
+      <h3>jemand, niemand, alle, viele, wenige</h3>
+      <table>
+        <tr><th>Word</th><th>Meaning</th><th>A2 line</th></tr>
+        <tr><td><span class="de">jemand</span></td><td>somebody</td><td><span class="de">Jemand hat angerufen. Warte, jemand kommt.</span></td></tr>
+        <tr><td><span class="de">niemand</span></td><td>nobody</td><td><span class="de">Niemand war zu Hause. Ich kenne niemanden hier.</span></td></tr>
+        <tr><td><span class="de">alle</span></td><td>all / everyone</td><td><span class="de">Alle haben Zeit am Sonntag. Das ist für alle.</span></td></tr>
+        <tr><td><span class="de">viele</span></td><td>many</td><td><span class="de">Viele Leute nehmen den Bus.</span></td></tr>
+        <tr><td><span class="de">wenige</span></td><td>few</td><td><span class="de">Nur wenige Plätze sind frei.</span></td></tr>
+        <tr><td><span class="de">einige</span></td><td>some / a few</td><td><span class="de">Einige Geschäfte sind am Montag zu.</span></td></tr>
+        <tr><td><span class="de">etwas / nichts</span></td><td>something / nothing</td><td><span class="de">Ich möchte etwas essen. Ich habe nichts verstanden.</span></td></tr>
+      </table>
+      <p>A2 light: <span class="de">niemanden</span> as accusative is worth producing (<span class="de">Ich habe niemanden gesehen</span>). Do not build long genitive phrases. <span class="de">alle</span> with a noun often needs an article in Dat/Akk later; at A2 write <span class="de">alle Kurse / für alle</span>.</p>
+      <h3>ja / nein / doch after a negative question</h3>
+      <table>
+        <tr><th>Question</th><th>You mean</th><th>Say</th></tr>
+        <tr><td><span class="de">Kommst du nicht?</span></td><td>I am coming (the “not” is wrong)</td><td><span class="de">Doch. Ich komme.</span></td></tr>
+        <tr><td><span class="de">Kommst du nicht?</span></td><td>Correct, I am staying away</td><td><span class="de">Nein. Ich kann nicht.</span></td></tr>
+        <tr><td><span class="de">Ist das nicht teuer?</span></td><td>It is expensive (I agree it is)</td><td><span class="de">Ja, das ist teuer.</span></td></tr>
+        <tr><td><span class="de">Ist das nicht teuer?</span></td><td>It is not expensive</td><td><span class="de">Nein, das ist günstig. / Doch nicht — es ist okay.</span></td></tr>
+        <tr><td><span class="de">Hast du keinen Ausweis?</span></td><td>I do have one</td><td><span class="de">Doch, hier ist er.</span></td></tr>
+      </table>
+      <p>Rule of thumb: <span class="de">doch</span> fights the negation. If the question has <span class="de">nicht / kein / nie</span> and the truth is positive, say <span class="de">doch</span>. Positive questions still take <span class="de">ja / nein</span> as in English. In Sprechen, add a short sentence after the particle so the partner hears the plan: <span class="de">Doch, Sonntag geht.</span></p>
+      <h3>Worked examples — why this word</h3>
+      <p><span class="de">Man spricht hier Deutsch. Man darf im Flur nicht fotografieren.</span> — general rule. A sign with du would be rude and un-German.</p>
+      <p><span class="de">Diese Wohnung gefällt mir besser als die alte. Welches Zimmer ist ruhiger?</span> — dies- points at a known flat; welch- asks the partner to choose.</p>
+      <p><span class="de">Hat jemand meinen Schlüssel gesehen? — Niemand. Ich habe niemanden gefragt.</span> — unknown person in; nobody out; accusative niemanden after sehen/fragen.</p>
+      <p><span class="de">Kommst du am Samstag nicht mit? — Doch, ich komme. Ich würde gern mitkommen.</span> — doch cancels the nicht. ja would sound like you agree that you are not coming.</p>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><em>Man sind hier freundlich.</em></td><td><span class="de">Man ist hier freundlich.</span></td><td>man + 3rd singular.</td></tr>
+        <tr><td><em>Du darf hier nicht parken.</em> (sign)</td><td><span class="de">Man darf hier nicht parken.</span></td><td>Rules use man.</td></tr>
+        <tr><td><em>dies Kurs / dieses Wohnung</em></td><td><span class="de">dieser Kurs / diese Wohnung</span></td><td>der-endings.</td></tr>
+        <tr><td><em>Welches Kurs willst du?</em></td><td><span class="de">Welchen Kurs willst du?</span></td><td>Kurs is masculine Akk.</td></tr>
+        <tr><td><em>Kommst du nicht? — Ja.</em> (meaning I am coming)</td><td><span class="de">Doch, ich komme.</span></td><td>doch rejects the negation.</td></tr>
+        <tr><td><em>Ich habe niemand gesehen.</em></td><td><span class="de">Ich habe niemanden gesehen.</span></td><td>A2 accusative -en on niemand.</td></tr>
+        <tr><td><em>Viele ist im Kurs.</em></td><td><span class="de">Viele sind im Kurs. / Viele Leute sind im Kurs.</span></td><td>viele is plural.</td></tr>
+      </table>
+      <h3>Mini dialogue — negative question</h3>
+      <p><span class="de">A: Kommst du am Sonntag nicht mit ins Museum?</span><br>
+      <span class="de">B: Doch, ich komme. Ich würde gern mitkommen.</span><br>
+      <span class="de">A: Gut. Hat jemand die Tickets?</span><br>
+      <span class="de">B: Niemand. Man kann sie online kaufen. Welchen Tag meinst du — Sonntag, ja?</span><br>
+      <span class="de">A: Ja. Dieser Sonntag. Ist das nicht zu spät?</span><br>
+      <span class="de">B: Nein, 11 Uhr ist okay. Alle haben Zeit, nur wenige wollen früher.</span></p>
+      <h3>Examples</h3>
+      <ul>
+        <li><span class="de">Man spricht Deutsch. Man schreibt von links nach rechts.</span></li>
+        <li><span class="de">Hier darf man nicht rauchen. Man muss den Ausweis zeigen.</span></li>
+        <li><span class="de">Dieser Film ist besser. Diese Stadt gefällt mir. Dieses Brot ist frisch.</span></li>
+        <li><span class="de">Welchen Bus nehmen wir? Welche Wohnung ist frei? Welches Brot möchtest du?</span></li>
+        <li><span class="de">Jemand hat an der Tür geklingelt. Niemand öffnet.</span></li>
+        <li><span class="de">Ich kenne niemanden in diesem Kurs. Alle sind neu.</span></li>
+        <li><span class="de">Viele Leute fahren mit dem Rad. Nur wenige haben ein Auto.</span></li>
+        <li><span class="de">Hast du keinen Schlüssel? — Doch, hier ist er.</span></li>
+        <li><span class="de">Ist das nicht deine Tasche? — Ja, das ist sie. Danke.</span></li>
+        <li><span class="de">Man sollte im Wartezimmer leise sprechen.</span></li>
+        <li><span class="de">An diesem Tag habe ich Zeit. An welchem Tag kommst du?</span></li>
+        <li><span class="de">Das verstehe ich nicht. Kann das jemand erklären?</span></li>
+        <li><span class="de">Einige Läden sind zu, aber viele sind auf.</span></li>
+        <li><span class="de">Kommst du nicht? — Doch. Ich bin nur etwas spät.</span></li>
+        <li><span class="de">Für diese Prüfung braucht man Zeit. Niemand ist in einer Stunde fertig.</span></li>
+        <li><span class="de">Was ist das? — Das ist das Formular. Dieses Formular müssen Sie ausfüllen.</span></li>
+      </ul>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">Man spricht … Man darf nicht … Man muss … dieser/diese/dieses · welcher/welche/welches · jemand / niemand / niemanden · alle / viele / wenige / einige · etwas / nichts · Kommst du nicht? — Doch! Hast du keinen …? — Doch, hier.</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        Hören: a negative question plus <span class="de">ja</span> is a trap — decide whether the person is confirming the “not” or fighting it. Production: if you mean “yes I am / yes I have”, say <span class="de">doch</span> after nicht/kein. <span class="de">man</span> is not “the man” (der Mann). <span class="de">dieser</span> masculine nominative looks like feminine dative <span class="de">dieser</span> — check the job. <span class="de">welch-</span> needs the noun’s gender and case, same as der-words. Do not answer a which-question with was. <span class="de">jemand</span> is singular; <span class="de">alle / viele</span> are plural. Stay in everyday A2: signs, tickets, who has the key — not abstract philosophy.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Write three man-rules for a building or course.</li>
+        <li>Decline dies- with Kurs, Wohnung, Formular, Leute (Nom and Akk).</li>
+        <li>Ask four welch-questions (m/f/n/pl).</li>
+        <li>Write jemand / niemand / niemanden / alle / viele once each.</li>
+        <li>Answer Kommst du nicht? twice: you are coming (doch) and you are not (nein).</li>
+        <li>Answer Hast du keinen Ausweis? with doch + a sentence.</li>
+        <li>Point: Dieser Bus / diese Haltestelle / dieses Gleis — one line each.</li>
+        <li>Correct: Man sind müde. / Kommst du nicht? — Ja (meaning I come). / Welches Kurs?</li>
+      </ol>
+    `,
+  },
+  {
+    id: "a2-position",
+    title: "legen/liegen, stellen/stehen, setzen/sitzen",
+    level: "a2",
+    minutes: 57,
+    html: `
+      <p>German splits “put” and “be” for things in a room. telc A2 Lesen (ads, flat descriptions) and Schreiben (“the key is on the table / please put the form in the folder”) test the pair plus Wechselpräpositionen. If you say <span class="de">ich stehe die Tasse auf dem Tisch</span>, the picture breaks. Hören will flip one article: <span class="de">auf den / auf dem</span>.</p>
+      <p>Direction (wohin?) takes <strong>accusative</strong> and a placement verb: <span class="de">legen, stellen, setzen, hängen</span>. Location (wo?) takes <strong>dative</strong> and a position verb: <span class="de">liegen, stehen, sitzen, hängen</span>. Same preposition family as in the prepositions lesson — this lesson names the verbs that go with those cases.</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>Ask <span class="de">wohin?</span> or <span class="de">wo?</span>. Moving something somewhere = Akk. Already there = Dat.</li>
+        <li>Choose the pair by shape: flat things <span class="de">legen / liegen</span>; things that stand <span class="de">stellen / stehen</span>; people (and sitting down) <span class="de">setzen / sitzen</span>; at a hook or wall <span class="de">hängen / hängen</span>.</li>
+        <li>Placement sentence: subject + placement verb + thing + preposition + Akk: <span class="de">Ich stelle die Tasse auf den Tisch.</span></li>
+        <li>Location sentence: thing + position verb + preposition + Dat: <span class="de">Die Tasse steht auf dem Tisch.</span></li>
+        <li>People sitting down are often reflexive: <span class="de">Ich setze mich auf den Stuhl.</span> Then: <span class="de">Ich sitze auf dem Stuhl.</span></li>
+        <li>Perfekt: placement is usually <span class="de">haben</span> (<span class="de">ich habe die Tasse auf den Tisch gestellt</span>). Location of people/things that “have been lying/standing” can stay present for a scene: <span class="de">Die Schlüssel liegen auf dem Tisch.</span></li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “put / lay / set / stand / sit / hang” overlap. German wants a pair. English “The cup is on the table” uses “is”; German often uses <span class="de">steht / liegt</span>, not always <span class="de">ist</span>. English “I sit on the chair” can mean the move or the state; German splits <span class="de">ich setze mich</span> vs <span class="de">ich sitze</span>. English “in / on” does not tell you the case; <span class="de">wohin?</span> vs <span class="de">wo?</span> does: <span class="de">auf den Tisch / auf dem Tisch</span>.</p>
+      <h3>The four pairs</h3>
+      <table>
+        <tr><th>Move (wohin? Akk)</th><th>Be there (wo? Dat)</th><th>Typical things</th></tr>
+        <tr><td><span class="de">legen</span></td><td><span class="de">liegen</span></td><td>flat: book, paper, clothes, phone, key on a surface</td></tr>
+        <tr><td><span class="de">stellen</span></td><td><span class="de">stehen</span></td><td>upright: cup, bottle, chair, suitcase, lamp, car</td></tr>
+        <tr><td><span class="de">setzen (often sich)</span></td><td><span class="de">sitzen</span></td><td>people, sometimes a pot on the stove</td></tr>
+        <tr><td><span class="de">hängen</span> (ich hänge)</td><td><span class="de">hängen</span> (es hängt)</td><td>picture, jacket, bag on a hook</td></tr>
+      </table>
+      <p>Memory: the placement verb is the one you <em>do</em>; the location verb is the one the thing <em>is</em>. <span class="de">legen</span> looks like English “lay”; <span class="de">liegen</span> like “lie”. <span class="de">stellen</span> is “stand something up”; <span class="de">stehen</span> is “be standing”.</p>
+      <h3>Same preposition, two cases</h3>
+      <table>
+        <tr><th>wohin? Akk</th><th>wo? Dat</th></tr>
+        <tr><td><span class="de">Ich lege das Buch auf den Tisch.</span></td><td><span class="de">Das Buch liegt auf dem Tisch.</span></td></tr>
+        <tr><td><span class="de">Ich stelle die Tasse auf den Tisch.</span></td><td><span class="de">Die Tasse steht auf dem Tisch.</span></td></tr>
+        <tr><td><span class="de">Ich setze mich auf den Stuhl.</span></td><td><span class="de">Ich sitze auf dem Stuhl.</span></td></tr>
+        <tr><td><span class="de">Ich hänge die Jacke an den Haken.</span></td><td><span class="de">Die Jacke hängt an dem Haken.</span></td></tr>
+        <tr><td><span class="de">Ich lege die Wäsche in den Koffer.</span></td><td><span class="de">Die Wäsche liegt im Koffer.</span></td></tr>
+        <tr><td><span class="de">Ich stelle die Flasche in den Kühlschrank.</span></td><td><span class="de">Die Flasche steht im Kühlschrank.</span></td></tr>
+        <tr><td><span class="de">Stell den Stuhl neben den Tisch.</span></td><td><span class="de">Der Stuhl steht neben dem Tisch.</span></td></tr>
+        <tr><td><span class="de">Leg die Schlüssel unter die Zeitung.</span></td><td><span class="de">Die Schlüssel liegen unter der Zeitung.</span></td></tr>
+      </table>
+      <p>Wechsel list again: <span class="de">an, auf, in, über, unter, hinter, neben, vor, zwischen</span>. The verb pair does not change the rule — it only chooses the picture (flat / upright / sitting / hanging).</p>
+      <h3>Kitchen and suitcase — useful A2 nouns</h3>
+      <table>
+        <tr><th>Put (Akk)</th><th>Then it … (Dat)</th></tr>
+        <tr><td><span class="de">Stell die Teller in den Schrank.</span></td><td><span class="de">Die Teller stehen im Schrank.</span></td></tr>
+        <tr><td><span class="de">Leg das Brot auf den Teller.</span></td><td><span class="de">Das Brot liegt auf dem Teller.</span></td></tr>
+        <tr><td><span class="de">Setz den Topf auf den Herd.</span></td><td><span class="de">Der Topf steht auf dem Herd.</span></td></tr>
+        <tr><td><span class="de">Häng das Handtuch an die Heizung.</span></td><td><span class="de">Das Handtuch hängt an der Heizung.</span></td></tr>
+        <tr><td><span class="de">Leg die Hemden in den Koffer.</span></td><td><span class="de">Die Hemden liegen im Koffer.</span></td></tr>
+        <tr><td><span class="de">Stell die Schuhe unter das Bett.</span></td><td><span class="de">Die Schuhe stehen unter dem Bett.</span></td></tr>
+      </table>
+      <h3>Worked examples — why this verb and case</h3>
+      <p><span class="de">Ich stelle die Tasse auf den Tisch. Die Tasse steht auf dem Tisch.</span> — cup stands upright, so stellen/stehen, not legen/liegen. First sentence answers wohin? (den). Second answers wo? (dem).</p>
+      <p><span class="de">Wo ist mein Handy? — Es liegt auf dem Sofa. Leg es bitte in die Tasche.</span> — phone lies flat (liegen). The request is a move into the bag (legen + Akk <span class="de">in die</span>).</p>
+      <p><span class="de">Setzen Sie sich bitte. Die anderen sitzen schon am Fenster.</span> — move with sich setzen + later location sitzen + Dat <span class="de">am</span>.</p>
+      <p><span class="de">Ich habe das Bild an die Wand gehängt. Jetzt hängt es über dem Sofa.</span> — same verb hängen; case and the “already there” form tell the story.</p>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><em>Ich stehe die Tasse auf den Tisch.</em></td><td><span class="de">Ich stelle die Tasse auf den Tisch.</span></td><td>stehen is location; stellen is the move.</td></tr>
+        <tr><td><em>Die Tasse stellt auf dem Tisch.</em></td><td><span class="de">Die Tasse steht auf dem Tisch.</span></td><td>The cup does not “place” itself in A2.</td></tr>
+        <tr><td><em>Ich liege das Buch auf den Tisch.</em></td><td><span class="de">Ich lege das Buch auf den Tisch.</span></td><td>liegen = be lying; legen = lay.</td></tr>
+        <tr><td><em>Ich stelle die Tasse auf dem Tisch.</em> (meaning put onto)</td><td><span class="de">Ich stelle die Tasse auf den Tisch.</span></td><td>wohin? → Akk.</td></tr>
+        <tr><td><em>Das Buch liegt auf den Tisch.</em></td><td><span class="de">Das Buch liegt auf dem Tisch.</span></td><td>wo? → Dat.</td></tr>
+        <tr><td><em>Ich sitze mich auf den Stuhl.</em></td><td><span class="de">Ich setze mich auf den Stuhl. / Ich sitze auf dem Stuhl.</span></td><td>setzen + sich for the move.</td></tr>
+        <tr><td><em>Häng die Jacke an dem Haken.</em> (meaning hang it there now)</td><td><span class="de">Häng die Jacke an den Haken.</span></td><td>Move onto the hook = Akk.</td></tr>
+      </table>
+      <h3>Mini dialogue — suitcase and kitchen</h3>
+      <p><span class="de">A: Wo ist mein Pullover? Liegt er auf dem Bett?</span><br>
+      <span class="de">B: Nein. Leg ihn in den Koffer. Die Hose liegt schon darin.</span><br>
+      <span class="de">A: Und die Schuhe? Soll ich sie unter das Bett stellen?</span><br>
+      <span class="de">B: Stell sie neben den Koffer. Sie stehen sonst immer im Flur.</span><br>
+      <span class="de">A: Gut. Ich hänge die Jacke an den Haken und setze mich dann an den Tisch.</span><br>
+      <span class="de">B: Die Tassen stehen schon auf dem Tisch. Stell die Milch in den Kühlschrank, bitte.</span></p>
+      <h3>Examples</h3>
+      <ul>
+        <li><span class="de">Ich stelle die Tasse auf den Tisch. Die Tasse steht auf dem Tisch.</span></li>
+        <li><span class="de">Ich lege das Formular auf den Schreibtisch. Es liegt schon darauf.</span></li>
+        <li><span class="de">Setzen Sie sich bitte. Wir sitzen am Fenster.</span></li>
+        <li><span class="de">Ich hänge das Bild an die Wand. Es hängt über dem Sofa.</span></li>
+        <li><span class="de">Leg die Schlüssel nicht in die Tasche. Sie liegen sonst immer dort — und wir finden sie nicht.</span></li>
+        <li><span class="de">Stell den Stuhl hinter den Tisch. Er steht jetzt hinter dem Tisch.</span></li>
+        <li><span class="de">Die Flasche steht im Kühlschrank. Stell sie auf den Tisch.</span></li>
+        <li><span class="de">Ich lege die Hemden in den Koffer. Der Koffer steht schon in der Diele.</span></li>
+        <li><span class="de">Wo liegen meine Brille und mein Handy?</span></li>
+        <li><span class="de">Das Auto steht vor dem Haus. Stell es nicht vor die Tür.</span></li>
+        <li><span class="de">Die Kinder setzen sich auf den Teppich. Dann sitzen sie ruhig.</span></li>
+        <li><span class="de">Häng die Tasche nicht über den Stuhl. Häng sie an den Haken.</span></li>
+        <li><span class="de">Ich habe die Teller in den Schrank gestellt. Sie stehen links.</span></li>
+        <li><span class="de">Das Brot liegt auf dem Brett. Leg das Messer daneben.</span></li>
+        <li><span class="de">Wir sitzen im Garten. Kommst du auch in den Garten? Setz dich zu uns.</span></li>
+        <li><span class="de">Die Katze liegt unter dem Stuhl. Sie setzt sich nicht auf das Sofa.</span></li>
+      </ul>
+      <div class="mem"><span class="label-s">Chunks to memorise</span>
+        <p><span class="de">legen / liegen · stellen / stehen · setzen / sitzen · hängen / hängen · auf den Tisch / auf dem Tisch · in den Koffer / im Koffer · an den Haken / an dem Haken · Ich stelle … auf den … Die … steht auf dem … Setzen Sie sich. Wo liegt …? Stell … in den Kühlschrank.</span></p>
+      </div>
+      <div class="warn"><span class="label-s">Exam traps</span>
+        The article after the preposition is the cheap mark: <span class="de">den/die/das</span> vs <span class="de">dem/der/dem</span>. Swapping legen/liegen or stellen/stehen is the other cheap mark. <span class="de">stehen</span> is not a placement verb. <span class="de">sitzen</span> does not take sich. Hören: one vowel change in the article flips “put” vs “already there”. Lesen flat ads: <span class="de">Der Schrank steht im Schlafzimmer. Die Wohnung liegt im Zentrum</span> — liegen can also mean “be located” for a flat or town. Do not use English “put” as one German verb for cups, papers, and people. Keep Wechselpräpositionen; this lesson does not replace that list.
+      </div>
+      <h3>Produce now</h3>
+      <ol>
+        <li>Write four pairs: legen/liegen, stellen/stehen, setzen/sitzen, hängen — Akk then Dat.</li>
+        <li>Pack a suitcase in five commands (leg / stell / häng).</li>
+        <li>Describe a kitchen: where things stand or lie (Dat only).</li>
+        <li>Invite someone to sit, then say where you are sitting.</li>
+        <li>Correct: Ich stehe die Tasse auf dem Tisch. / Das Buch liegt auf den Tisch. / Ich sitze mich.</li>
+        <li>Ask Wo liegt …? and answer, then give the matching legen-command.</li>
+        <li>Use neben / unter / hinter once each as wohin and as wo.</li>
+        <li>Write a two-line landlord note: please put the form on the table; it is lying in the kitchen.</li>
       </ol>
     `,
   }
