@@ -557,6 +557,7 @@ registerPack("a2", {
 { id:"a2y555", de:"stattdessen", art:"", pl:"", en:"instead", topic:"connectors", level:"a2", ex:"Der Zug ist ausgefallen, stattdessen fährt ein Bus." },
 { id:"a2y556", de:"ansonsten", art:"", pl:"", en:"otherwise", topic:"connectors", level:"a2", ex:"Bitte bringen Sie den Ausweis mit, ansonsten können wir den Antrag nicht annehmen." },
 { id:"a2y557", de:"es sei denn", art:"", pl:"", en:"unless", topic:"connectors", level:"a2", ex:"Ich komme um sechs, es sei denn, der Zug hat Verspätung." },
-{ id:"a2y558", de:"vorausgesetzt, dass", art:"", pl:"", en:"provided that", topic:"connectors", level:"a2", ex:"Wir machen den Ausflug, vorausgesetzt, dass das Wetter gut bleibt." }
+{ id:"a2y558", de:"inzwischen", art:"", pl:"", en:"meanwhile / by now", topic:"connectors", level:"a2", ex:"Ich habe angerufen. Inzwischen habe ich eine neue Wohnung gefunden." },
+
   ]
 });

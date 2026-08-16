@@ -223,6 +223,11 @@ registerPack("b1", {
         <li><span class="de">Der Lärm schadet den Kindern. Wir müssen mit dem Hausmeister sprechen.</span></li>
         <li><span class="de">Antworten Sie uns bitte so schnell wie möglich.</span></li>
         <li><span class="de">Mir ist kalt. Ziehst du mir die Tür zu?</span></li>
+        <li><span class="de">Ich habe einer Kollegin die Adresse des Amts gegeben.</span></li>
+        <li><span class="de">Das gehört nicht uns. Es gehört den Vermietern.</span></li>
+        <li><span class="de">Bei meinen Schwiegereltern ist es oft laut. Trotzdem gefällt es den Kindern.</span></li>
+        <li><span class="de">Aus dem Fenster sieht man den Hof. Vom Balkon sieht man die Straße.</span></li>
+        <li><span class="de">Antworten Sie der Kundin bitte noch heute. Es ist ihr wichtig.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -303,6 +308,11 @@ registerPack("b1", {
         <li><span class="de">Wir haben uns gut unterhalten. Danach bin ich direkt nach Hause gegangen.</span></li>
         <li><span class="de">Ich habe schon zweimal nachgefragt, aber niemand hat geantwortet.</span></li>
         <li><span class="de">Gestern wurde die Straße gesperrt. Ich bin einen Umweg gefahren.</span></li>
+        <li><span class="de">Ich habe den Antrag ausgefüllt und ihn gestern abgeschickt.</span></li>
+        <li><span class="de">Wir sind umgezogen, weil uns die alte Wohnung zu teuer geworden ist.</span></li>
+        <li><span class="de">Hast du den Hausmeister gesehen? — Ja, ich habe ihn im Hof getroffen.</span></li>
+        <li><span class="de">Ich bin eingeschlafen und habe den Wecker nicht gehört.</span></li>
+        <li><span class="de">Sie hat uns empfohlen, den Kurs zu wechseln. Wir haben darüber gesprochen.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -386,6 +396,11 @@ registerPack("b1", {
         <li><span class="de">Gestern Abend habe ich noch lange an dem Text gearbeitet.</span></li>
         <li><span class="de">Im Moment suche ich eine Wohnung, die nicht so weit vom Büro liegt.</span></li>
         <li><span class="de">Sollte der Termin nicht passen, schlagen Sie bitte eine Alternative vor.</span></li>
+        <li><span class="de">Am Montag bringe ich die Unterlagen ins Amt. Danach fahre ich zur Arbeit.</span></li>
+        <li><span class="de">Trotzdem versuche ich, pünktlich zu sein.</span></li>
+        <li><span class="de">Den Hausmeister habe ich zweimal angerufen. Er hat nicht zurückgerufen.</span></li>
+        <li><span class="de">Weil der Bus ausgefallen ist, bin ich gelaufen.</span></li>
+        <li><span class="de">Erst nach der Pause verstehen wir die Aufgabe wirklich.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -522,6 +537,11 @@ registerPack("b1", {
         <li><span class="de">Ich habe angerufen, weil ich die Rechnung nicht verstehe.</span></li>
         <li><span class="de">Die Wohnung ist klein. Außerdem ist sie laut. Trotzdem nehmen wir sie, denn sie ist nah an der Arbeit.</span></li>
         <li><span class="de">Nicht die Lage ist das Problem, sondern der Preis.</span></li>
+        <li><span class="de">Ich weiß nicht, ob und wann der Techniker kommt.</span></li>
+        <li><span class="de">Als Kind habe ich oft im Hof gespielt. Wenn ich Zeit habe, mache ich das wieder.</span></li>
+        <li><span class="de">Ich schreibe langsam, damit der Sachbearbeiter alles lesen kann.</span></li>
+        <li><span class="de">Ich schreibe langsam, um keine Fehler zu machen.</span></li>
+        <li><span class="de">Das Formular, das auf dem Tisch liegt, müssen Sie unterschreiben. Ich hoffe, dass Sie Zeit haben.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -686,6 +706,11 @@ registerPack("b1", {
         <li><span class="de">Obwohl der Zug Verspätung hatte, sind wir noch pünktlich angekommen.</span></li>
         <li><span class="de">Ich mache das Fenster zu, denn es zieht.</span></li>
         <li><span class="de">Sie hat mir empfohlen, den Kurs zu wechseln.</span></li>
+        <li><span class="de">Bitte machen Sie das Licht aus, wenn Sie gehen.</span></li>
+        <li><span class="de">Ich gebe die Unterlagen ab und hole sie nächste Woche ab.</span></li>
+        <li><span class="de">Der Kurs fällt aus, weil der Lehrer krank geworden ist.</span></li>
+        <li><span class="de">Wir haben uns im Flur kennengelernt und dann im Café unterhalten.</span></li>
+        <li><span class="de">Können Sie die Nummer wiederholen? Ich habe sie nicht mitgeschrieben.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -801,6 +826,11 @@ registerPack("b1", {
         <li><span class="de">Ein älterer Herr hat uns den Weg erklärt.</span></li>
         <li><span class="de">Wir brauchen mehr praktische Übungen und klarere Regeln.</span></li>
         <li><span class="de">Im letzten Jahr war die Prüfung leichter als dieses Jahr.</span></li>
+        <li><span class="de">Wir brauchen einen zuverlässigen Babysitter und eine günstigere Kita.</span></li>
+        <li><span class="de">Nach langem Warten hat uns eine freundliche Mitarbeiterin geholfen.</span></li>
+        <li><span class="de">Das ist der kürzeste Weg zum Amt, aber nicht der schönste.</span></li>
+        <li><span class="de">Mit großem Interesse habe ich Ihre Anzeige gelesen.</span></li>
+        <li><span class="de">Kein anderes Angebot war so klar wie Ihres.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -907,6 +937,11 @@ registerPack("b1", {
         <li><span class="de">Um 8 Uhr beginnt die Schicht. Gegen 16 Uhr bin ich fertig.</span></li>
         <li><span class="de">Ohne Ihre Unterschrift können wir nichts machen.</span></li>
         <li><span class="de">Ich habe mich an das Leben hier gewöhnt, aber der Winter fällt mir noch schwer.</span></li>
+        <li><span class="de">Ich fahre nach Mainz, nicht in die Schweiz. Am Wochenende bleibe ich zu Hause.</span></li>
+        <li><span class="de">Denken Sie an den Ausweis. Ohne ihn kommen Sie nicht auf die Post.</span></li>
+        <li><span class="de">Wir treffen uns neben dem Eingang, nicht hinter dem Gebäude.</span></li>
+        <li><span class="de">Vor zwei Tagen habe ich angerufen. Für drei Tage fahre ich zu meinen Eltern.</span></li>
+        <li><span class="de">Ich interessiere mich für den Abendkurs und möchte an der Prüfung teilnehmen.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -1006,6 +1041,11 @@ registerPack("b1", {
         <li><span class="de">Ohne Ihre Hilfe wäre das nicht möglich gewesen.</span></li>
         <li><span class="de">Ich schlage vor, wir könnten uns um 17 Uhr treffen. Wäre das okay?</span></li>
         <li><span class="de">Falls Sie den Termin nicht wahrnehmen könnten, sagen Sie uns bitte Bescheid.</span></li>
+        <li><span class="de">Würden Sie so freundlich sein, mir die Rechnung noch einmal zu schicken?</span></li>
+        <li><span class="de">Wenn die Miete niedriger wäre, könnten wir bleiben.</span></li>
+        <li><span class="de">Ich hätte den Vertrag nicht unterschreiben sollen.</span></li>
+        <li><span class="de">Könnten wir uns statt um 9 um 10 treffen? Das wäre für mich besser.</span></li>
+        <li><span class="de">An deiner Stelle würde ich erst anrufen und dann schreiben.</span></li>
       </ul>
       <h3>Worked examples — three machines</h3>
       <ul>
@@ -1097,6 +1137,11 @@ registerPack("b1", {
         <li><span class="de">Das ist das Beste, was wir tun können.</span></li>
         <li><span class="de">Es gibt mehrere Gründe, aus denen ich absagen muss.</span></li>
         <li><span class="de">Die Stadt, in der ich aufgewachsen bin, liegt an einem Fluss.</span></li>
+        <li><span class="de">Der Kurs, für den ich mich angemeldet habe, beginnt im September.</span></li>
+        <li><span class="de">Die Nachbarin, deren Hund immer bellt, ist sehr nett.</span></li>
+        <li><span class="de">Nichts, was auf dem Zettel steht, ist falsch.</span></li>
+        <li><span class="de">Das Amt, wo / in dem wir den Ausweis holen, schließt um 12.</span></li>
+        <li><span class="de">Die Kollegen, mit denen ich die Schicht teile, helfen mir oft.</span></li>
       </ul>
       <h3>Worked examples — der / dem / den / dessen / wo / was</h3>
       <ul>
@@ -1199,6 +1244,11 @@ registerPack("b1", {
         <li><span class="de">Ich gehe noch schnell einkaufen. Danach versuche ich, dich anzurufen.</span></li>
         <li><span class="de">Lassen Sie uns bitte wissen, ob der Termin passt.</span></li>
         <li><span class="de">Ich lerne abends, damit meine Partnerin tagsüber das Homeoffice nutzen kann.</span></li>
+        <li><span class="de">Ich habe keine Lust, noch einmal anzurufen.</span></li>
+        <li><span class="de">Statt zu kündigen, sollten wir erst das Gespräch suchen.</span></li>
+        <li><span class="de">Sie hat den Raum verlassen, ohne das Licht auszumachen.</span></li>
+        <li><span class="de">Wir haben vor, uns nächste Woche zu bewerben.</span></li>
+        <li><span class="de">Es ist notwendig, den Antrag vollständig auszufüllen.</span></li>
       </ul>
       <h3>Worked examples — zu / um zu / ohne zu / statt zu</h3>
       <ul>
@@ -1282,6 +1332,11 @@ registerPack("b1", {
         <li><span class="de">Wenn die Heizung nicht repariert wird, werden wir uns beschweren.</span></li>
         <li><span class="de">Die Ergebnisse können online abgerufen werden.</span></li>
         <li><span class="de">Mein Fahrrad ist gestohlen worden. Ich habe Anzeige erstattet.</span></li>
+        <li><span class="de">Die Bestätigung wird Ihnen per Post geschickt.</span></li>
+        <li><span class="de">Gestern wurde uns gesagt, der Termin sei frei. Heute ist er schon vergeben.</span></li>
+        <li><span class="de">Die Fenster müssen von einer Fachfirma gewechselt werden.</span></li>
+        <li><span class="de">Durch einen Stromausfall wurde der Unterricht unterbrochen.</span></li>
+        <li><span class="de">Die Küche ist renoviert. Sie wurde im März renoviert.</span></li>
       </ul>
       <h3>Worked examples — werden + Partizip, present vs past, von/durch</h3>
       <ul>
@@ -1364,6 +1419,11 @@ registerPack("b1", {
         <li><span class="de">Wir haben uns für die kleinere Wohnung entschieden.</span></li>
         <li><span class="de">Können Sie sich bitte um den Schaden kümmern?</span></li>
         <li><span class="de">Ich habe mich an die Schichtarbeit gewöhnt.</span></li>
+        <li><span class="de">Wir haben uns für Samstag verabredet. Treffen wir uns vor dem Amt?</span></li>
+        <li><span class="de">Ich ziehe mir die Jacke an und kämme mir die Haare.</span></li>
+        <li><span class="de">Haben Sie sich schon für den Kurs entschieden?</span></li>
+        <li><span class="de">Ich erinnere mich an Ihren Anruf, aber ich erinnere mich nicht an die Uhrzeit.</span></li>
+        <li><span class="de">Beeilen Sie sich bitte. Wir müssen uns um 8 am Gleis treffen.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -1437,6 +1497,10 @@ registerPack("b1", {
         <li><span class="de">Der Arzt meinte, ich solle mehr trinken und mich schonen.</span></li>
         <li><span class="de">In dem Artikel steht, die Mieten stiegen weiter.</span></li>
         <li><span class="de">Er sagte, er komme später. Ob das stimmt, wissen wir nicht.</span></li>
+        <li><span class="de">Die Schule teilt mit, der Ausflug falle wegen des Wetters aus.</span></li>
+        <li><span class="de">Laut Aushang seien die Öffnungszeiten geändert worden.</span></li>
+        <li><span class="de">Sie behauptet, sie habe den Schlüssel nie bekommen.</span></li>
+        <li><span class="de">Der Vermieter erklärte, die Heizung werde noch diese Woche repariert.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -1511,6 +1575,11 @@ registerPack("b1", {
         <li><span class="de">Das Ausfüllen des Formulars dauert nur fünf Minuten.</span></li>
         <li><span class="de">Ohne schriftliche Begründung können wir nichts ändern.</span></li>
         <li><span class="de">Die Schließung der Filiale ärgert die Kunden im Viertel.</span></li>
+        <li><span class="de">Bei Verspätung des Zuges rufen Sie uns bitte an.</span></li>
+        <li><span class="de">Nach der Kündigung der Wohnung haben wir drei Monate Zeit.</span></li>
+        <li><span class="de">Zur Vorbereitung auf die Prüfung lerne ich jeden Abend.</span></li>
+        <li><span class="de">Die Bearbeitung des Antrags dauert in der Regel zwei Wochen.</span></li>
+        <li><span class="de">Trotz der Ablehnung unserer Bitte schreiben wir noch einmal.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -1589,6 +1658,11 @@ registerPack("b1", {
         <li><span class="de">Ich unterschreibe, sofern die Klausel zu den Nebenkosten klar ist.</span></li>
         <li><span class="de">Wir bleiben, zumal eine Alternative kurzfristig kaum zu finden ist.</span></li>
         <li><span class="de">Er erklärt alles sehr schnell, wodurch einige Teilnehmer den Anschluss verlieren.</span></li>
+        <li><span class="de">Daher schlage ich vor, dass wir uns schriftlich beschweren.</span></li>
+        <li><span class="de">Folglich müssen wir den Termin verschieben.</span></li>
+        <li><span class="de">Während die Stadt laut ist, bleibt das Dorf ruhig.</span></li>
+        <li><span class="de">Ich kündige nicht. Vielmehr möchte ich erst eine Lösung finden.</span></li>
+        <li><span class="de">Je teurer die Miete wird, desto weiter nach draußen ziehen die Familien.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -1666,6 +1740,11 @@ registerPack("b1", {
         <li><span class="de">Man soll hier nicht fotografieren. (this one is still a rule! context)</span></li>
         <li><span class="de">Sie muss die Nachricht schon gelesen haben. Sie ist online.</span></li>
         <li><span class="de">Das mag unbequem sein, aber es ist fair.</span></li>
+        <li><span class="de">Der Kurs soll schon voll sein. Das müsste man aber noch prüfen.</span></li>
+        <li><span class="de">Die Reparatur sollte gestern fertig gewesen sein. Der Keller ist aber noch nass.</span></li>
+        <li><span class="de">Sie will den Antrag schon abgegeben haben. Im System steht nichts.</span></li>
+        <li><span class="de">Das dürfte die richtige Haltestelle sein — der Name passt.</span></li>
+        <li><span class="de">Er muss den Zug verpasst haben. Sonst ist er nie so spät.</span></li>
       </ul>
       <h3>Exam killers in reports: soll / sollte / müsste</h3>
       <table>
@@ -1750,6 +1829,11 @@ registerPack("b1", {
         <li><span class="de">Die gestern beschlossene Regelung gilt ab Monatsersten.</span></li>
         <li><span class="de">Haben Sie den unterschriebenen Antrag schon abgegeben?</span></li>
         <li><span class="de">Die noch nicht geöffnete Post liegt auf meinem Schreibtisch.</span></li>
+        <li><span class="de">Die fehlende Unterschrift können wir nicht ersetzen.</span></li>
+        <li><span class="de">In der vorliegenden E-Mail finden Sie die geänderten Öffnungszeiten.</span></li>
+        <li><span class="de">Wir brauchen eine überzeugende, schriftliche Begründung.</span></li>
+        <li><span class="de">Die gestern reparierte Heizung funktioniert wieder.</span></li>
+        <li><span class="de">Bitte legen Sie die unterschriebenen und ausgefüllten Blätter zusammen.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>

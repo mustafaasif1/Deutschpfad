@@ -615,8 +615,7 @@ registerPack("a1", {
 { id:"a1y613", de:"modern", art:"", pl:"", en:"modern", topic:"adjectives", level:"a1", ex:"Die Wohnung ist modern und hell." },
 { id:"a1y614", de:"fleißig", art:"", pl:"", en:"hard-working", topic:"adjectives", level:"a1", ex:"Die Schülerin ist fleißig." },
 { id:"a1y615", de:"unpünktlich", art:"", pl:"", en:"unpunctual", topic:"adjectives", level:"a1", ex:"Der Zug ist heute unpünktlich." },
-{ id:"a1y616", de:"unglücklich", art:"", pl:"", en:"unhappy", topic:"adjectives", level:"a1", ex:"Ohne Arbeit bin ich unglücklich." },
+{ id:"a1y616", de:"gemütlich", art:"", pl:"", en:"cosy / comfortable", topic:"adjectives", level:"a1", ex:"Das Café ist klein und gemütlich." },
+
   ]
 });
-
-

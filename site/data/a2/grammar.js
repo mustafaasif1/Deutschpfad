@@ -63,6 +63,9 @@ registerPack("a2", {
         <li><span class="de">Legst du die Schlüssel auf den Tisch? Sie liegen sonst immer in der Tasche.</span></li>
         <li><span class="de">Sehr geehrte Frau Lang, ich schreibe, weil ich morgen nicht kommen kann.</span></li>
         <li><span class="de">Sollen wir uns vor dem Kino treffen? Das ist günstiger als ein Taxi.</span></li>
+        <li><span class="de">Ich habe den Brief schon geschickt, aber ich habe noch keine Antwort bekommen.</span></li>
+        <li><span class="de">Als ich in Deutschland angekommen bin, habe ich zuerst einen Kurs gesucht.</span></li>
+        <li><span class="de">Die Wohnung, die wir gestern gesehen haben, gefällt mir besser als die alte.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p>Daily A2 sentence: article + Perfekt + weil. <span class="de">Gestern bin ich … gegangen, weil … Ich habe … gemacht. Kannst du mir helfen? Leider kann ich nicht, weil … Wenn ich Zeit habe, … Deshalb … Trotzdem … mit dem Bus / in die Stadt / auf dem Tisch.</span></p>
@@ -121,6 +124,14 @@ registerPack("a2", {
         <tr><td>sie/Sie</td><td><span class="de">sie haben gemacht</span></td><td><span class="de">Sie sind gegangen</span></td></tr>
       </table>
       <p>The helper changes; the Partizip stays the same for every person. That is why you can learn <span class="de">gemacht</span> once and then only conjugate haben/sein.</p>
+      <h3>sein vs haben — a decision tree</h3>
+      <ol>
+        <li>Is there a direct object you “do something to”? → almost always <span class="de">haben</span>. <span class="de">Ich habe einen Brief geschrieben. Ich habe das Auto gefahren.</span></li>
+        <li>Does the subject move from A to B, or change state? → <span class="de">sein</span>. <span class="de">Ich bin nach Mainz gefahren. Ich bin eingeschlafen. Ich bin krank geworden.</span></li>
+        <li>Is the verb on the short sein-list even without motion? → <span class="de">sein</span>. <span class="de">bleiben, sein, werden, passieren</span>.</li>
+        <li>If you are unsure and there is no motion, choose <span class="de">haben</span>. That is the default for A2.</li>
+      </ol>
+      <p>Separable motion still follows the same tree: <span class="de">ankommen, aufstehen, einsteigen, umziehen, mitkommen</span> take sein. Separable “do something” takes haben: <span class="de">anrufen, einkaufen, einladen, aufräumen, fernsehen</span>.</p>
       <h3>How to build the Partizip</h3>
       <table>
         <tr><th>Type</th><th>Pattern</th><th>Examples</th></tr>
@@ -316,6 +327,9 @@ registerPack("a2", {
         <li><span class="de">Das Ticket gehört nicht uns. Es gehört den Gästen.</span></li>
         <li><span class="de">Ich sitze neben dem Fenster. Setzt du dich neben mich?</span></li>
         <li><span class="de">Seit einem Monat wohne ich bei einer Freundin in der Stadt.</span></li>
+        <li><span class="de">Ich habe meiner Schwester eine Karte geschrieben. Ich habe sie ihr gestern geschickt.</span></li>
+        <li><span class="de">Der Arzt hat dem Patienten das Rezept gegeben. Geht es ihm schon besser?</span></li>
+        <li><span class="de">Wir danken Ihnen für Ihre Hilfe. Das war uns sehr wichtig.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">Kannst du mir helfen? Das gefällt mir. Es gehört mir. mit dem Bus / mit der Bahn. zum Arzt / zur Arbeit. bei mir / bei meinen Eltern. auf dem Tisch / in der Stadt. seit einem Jahr. Ich danke Ihnen. Ich gebe es ihm / ihr. Wem gehört …? Mir ist kalt. für mich ≠ mit mir.</span></p>
@@ -400,6 +414,15 @@ registerPack("a2", {
         <tr><td><span class="de">als</span></td><td>one single moment in the past</td><td>last</td><td><span class="de">Als ich Kind war, habe ich in Izmir gewohnt. Als der Bus kam, sind wir eingestiegen.</span></td></tr>
       </table>
       <p>Future appointment: <span class="de">wenn</span>, never als. Childhood or “that one day”: <span class="de">als</span>. Asking the time of an event: <span class="de">wann</span>. After <span class="de">wissen / fragen</span> you can embed wann: <span class="de">Ich weiß nicht, wann er kommt</span> — here wann starts a verb-last clause because it is an indirect question.</p>
+      <h3>Verb last — Perfekt and modals inside weil/dass</h3>
+      <table>
+        <tr><th>Inside the clause</th><th>Order at the end</th><th>Example</th></tr>
+        <tr><td>Present</td><td>… conjugated verb</td><td><span class="de">…, weil ich krank bin.</span></td></tr>
+        <tr><td>Modal</td><td>… infinitive + modal</td><td><span class="de">…, weil ich arbeiten muss.</span></td></tr>
+        <tr><td>Perfekt</td><td>… Partizip + habe/bin</td><td><span class="de">…, weil ich gearbeitet habe. / …, weil ich gegangen bin.</span></td></tr>
+        <tr><td>Separable present</td><td>… full verb (no split)</td><td><span class="de">…, weil ich dich anrufe.</span></td></tr>
+      </table>
+      <p>The last word of a weil-clause is almost always the conjugated piece: <span class="de">bin, habe, muss, kann, anrufe</span>. If that last word is in the middle, the clause is broken.</p>
       <h3>Worked examples — why this connector</h3>
       <p><span class="de">Leider kann ich nicht kommen, weil ich am Samstag arbeiten muss.</span> — reason inside the letter; verb last; modal <span class="de">muss</span> is the conjugated verb, so it sits at the end and <span class="de">arbeiten</span> stands in front of it.</p>
       <p><span class="de">Der Bus kam nicht. Deshalb bin ich gelaufen.</span> — result. deshalb in position 1, then the helper <span class="de">bin</span>, then the rest, Partizip last.</p>
@@ -544,6 +567,9 @@ registerPack("a2", {
         <li><span class="de">Ich muss heute keine Überstunden machen. Ich darf um 16 Uhr gehen.</span></li>
         <li><span class="de">Sollen wir die Tickets online kaufen, oder wollen wir an der Kasse warten?</span></li>
         <li><span class="de">Sie sollen das Formular ausfüllen. Sie müssen es aber nicht heute abgeben.</span></li>
+        <li><span class="de">Wir durften gestern nicht parken. Deshalb sind wir mit der Bahn gefahren.</span></li>
+        <li><span class="de">Kannst du mir helfen? Ich muss das Amt anrufen, aber ich verstehe die Durchsage nicht.</span></li>
+        <li><span class="de">Ihr sollt um 8 da sein. Ihr müsst nicht früher kommen.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">Ich kann nicht … Ich muss … Hier darf man nicht … Du sollst … Gestern musste ich … Ich wollte kommen, aber ich konnte nicht. nicht müssen ≠ nicht dürfen. Sollen wir …? Darf man hier …? Ich muss nicht …</span></p>
@@ -718,6 +744,9 @@ registerPack("a2", {
         <li><span class="de">Leider habe ich gestern keine Zeit gehabt. Deshalb rufe ich heute an.</span></li>
         <li><span class="de">Um 9 Uhr fängt der Kurs an. Vorher trinke ich noch einen Kaffee.</span></li>
         <li><span class="de">Wohin fährst du am Freitag? — Nach Mainz, mit der Bahn.</span></li>
+        <li><span class="de">Am Abend rufe ich dich an. Vorher muss ich noch einkaufen.</span></li>
+        <li><span class="de">Die Tickets habe ich schon. Die Sitzplätze habe ich noch nicht reserviert.</span></li>
+        <li><span class="de">Wenn ich fertig bin, komme ich zu dir. Dann können wir zusammen kochen.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">Heute … ich … Am Montag … ich … Nach der Arbeit … Zuerst … dann … danach … Ich fahre morgen mit … nach … Leider kann ich … nicht … Den Brief habe ich schon … Wenn …, muss ich …</span></p>
@@ -786,6 +815,19 @@ registerPack("a2", {
         <tr><td>Dat</td><td><span class="de">-en</span></td><td><span class="de">-en</span></td><td><span class="de">-en</span></td><td><span class="de">-en</span></td></tr>
       </table>
       <p>The three “loud” ein-word endings you must not miss: Nom masculine <span class="de">ein neuer</span>, Nom/Akk neuter <span class="de">ein neues</span>. Everywhere else at A2 you can often survive with <span class="de">-en</span> after you have shown gender once.</p>
+      <h3>Same noun, two article families</h3>
+      <table>
+        <tr><th></th><th>der-word</th><th>ein-word</th></tr>
+        <tr><td>Nom M</td><td><span class="de">der neue Job</span></td><td><span class="de">ein neuer Job</span></td></tr>
+        <tr><td>Akk M</td><td><span class="de">den neuen Job</span></td><td><span class="de">einen neuen Job</span></td></tr>
+        <tr><td>Dat M</td><td><span class="de">mit dem neuen Job</span></td><td><span class="de">mit einem neuen Job</span></td></tr>
+        <tr><td>Nom F</td><td><span class="de">die neue Wohnung</span></td><td><span class="de">eine neue Wohnung</span></td></tr>
+        <tr><td>Akk F</td><td><span class="de">die neue Wohnung</span></td><td><span class="de">eine neue Wohnung</span></td></tr>
+        <tr><td>Dat F</td><td><span class="de">in der neuen Wohnung</span></td><td><span class="de">in einer neuen Wohnung</span></td></tr>
+        <tr><td>Nom/Akk N</td><td><span class="de">das neue Auto</span></td><td><span class="de">ein neues Auto</span></td></tr>
+        <tr><td>Dat N</td><td><span class="de">mit dem neuen Auto</span></td><td><span class="de">mit einem neuen Auto</span></td></tr>
+      </table>
+      <p>Read the masculine nominative pair aloud until <span class="de">der neue / ein neuer</span> feels different. That single contrast is the most common A2 ending error.</p>
       <h3>Worked examples — why this ending</h3>
       <p><span class="de">Das ist ein netter Nachbar.</span> — ein-word, masculine, nominative. The article <span class="de">ein</span> does not show gender, so the adjective takes <span class="de">-er</span>.</p>
       <p><span class="de">Ich kaufe den neuen Tisch. Ich kaufe einen neuen Tisch.</span> — masculine accusative is <span class="de">-en</span> after both families. The article changes (den/einen); the adjective ending stays -en.</p>
@@ -828,6 +870,9 @@ registerPack("a2", {
         <li><span class="de">Das ist kein gutes Angebot. Habt ihr ein günstigeres Zimmer?</span></li>
         <li><span class="de">Für den alten Laptop brauche ich ein neues Kabel.</span></li>
         <li><span class="de">Die freundliche Nachbarin hat mir den schweren Koffer getragen.</span></li>
+        <li><span class="de">Das ist ein interessanter Film. Ich habe gestern einen interessanten Film gesehen.</span></li>
+        <li><span class="de">In dem alten Haus wohnt eine nette Familie mit zwei kleinen Kindern.</span></li>
+        <li><span class="de">Haben Sie ein ruhiges Zimmer? Das laute Zimmer gefällt uns nicht.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">ein neuer Job, eine neue Stelle, ein neues Auto, eine kleine Wohnung, ein ruhiges Zimmer, den ganzen Tag, einen schwarzen Kaffee, viele nette Leute, keine gute Idee. After sein: Die Wohnung ist teuer. in der kleinen Wohnung, mit einem neuen Handy, die neuen Kollegen.</span></p>
@@ -893,6 +938,15 @@ registerPack("a2", {
         <tr><td><span class="de">zwischen</span></td><td><span class="de">Die Haltestelle ist zwischen der Bank und der Post.</span></td><td><span class="de">Stell das Regal zwischen die Tür und das Fenster.</span></td></tr>
       </table>
       <p>Two more A2 maps: <span class="de">nach</span> + city / <span class="de">nach Hause</span> (no article). <span class="de">zu</span> + person or named place with article: <span class="de">zu meinen Eltern, zum Arzt, zur Arbeit, zum Bahnhof</span>. Once you are inside the house you are <span class="de">zu Hause</span> (location, not nach).</p>
+      <h3>Always-Akk and always-Dat — extra examples</h3>
+      <table>
+        <tr><th>Always Akk</th><th>Example</th><th>Always Dat</th><th>Example</th></tr>
+        <tr><td><span class="de">durch</span></td><td><span class="de">durch den Park</span></td><td><span class="de">aus</span></td><td><span class="de">aus der Wohnung / aus der Türkei</span></td></tr>
+        <tr><td><span class="de">für</span></td><td><span class="de">für die Kinder / für mich</span></td><td><span class="de">bei</span></td><td><span class="de">bei meinen Eltern / bei einer Firma</span></td></tr>
+        <tr><td><span class="de">gegen</span></td><td><span class="de">gegen den Wind / gegen 8 Uhr</span></td><td><span class="de">mit</span></td><td><span class="de">mit dem Bus / mit einer Freundin</span></td></tr>
+        <tr><td><span class="de">ohne</span></td><td><span class="de">ohne Jacke / ohne mich</span></td><td><span class="de">nach</span></td><td><span class="de">nach dem Kurs / nach Köln</span></td></tr>
+        <tr><td><span class="de">um</span></td><td><span class="de">um den See / um 8 Uhr</span></td><td><span class="de">seit / von / zu</span></td><td><span class="de">seit einem Jahr / von meinem Bruder / zum Arzt</span></td></tr>
+      </table>
       <h3>Worked examples — why this case</h3>
       <p><span class="de">Wir treffen uns vor dem Kino. Dann gehen wir ins Kino.</span> — first sentence is location (wo? Dat). Second is direction into the building (wohin? Akk, <span class="de">ins = in das</span>).</p>
       <p><span class="de">Seit einem Jahr wohne ich in dieser Straße.</span> — <span class="de">seit</span> always Dat; continuing situation uses the <strong>present</strong>, not Perfekt.</p>
@@ -1004,6 +1058,7 @@ registerPack("a2", {
         <tr><td><span class="de">der/die/das + -ste</span></td><td>which thing — needs a noun (or a clear noun in context)</td><td><span class="de">Das ist das beste Café. Die kleinste Wohnung ist zu teuer.</span></td></tr>
       </table>
       <p>Spelling: adjectives in <span class="de">-t / -d / -s / -ß / -z / -sch</span> often take <span class="de">-esten</span>: <span class="de">am ältesten, am kürzesten, am größten</span> (groß → größten). <span class="de">teuer → teurer / am teuersten</span> (the extra e disappears in the comparative).</p>
+      <p>More A2 pairs to own: <span class="de">schnell → schneller → am schnellsten</span>, <span class="de">langsam → langsamer → am langsamsten</span>, <span class="de">früh → früher → am frühesten</span>, <span class="de">spät → später → am spätesten</span>, <span class="de">leicht → leichter → am leichtesten</span>, <span class="de">schwer → schwerer → am schwersten</span>, <span class="de">schön → schöner → am schönsten</span>, <span class="de">nah → näher → am nächsten</span>.</p>
       <h3>Worked examples — why als, wie, or am</h3>
       <p><span class="de">Um 5 ist besser als um 7.</span> — two times, unequal → comparative + als. Not wenn, not wie.</p>
       <p><span class="de">Das Café ist nicht so voll wie das andere.</span> — same kind of fullness, denied → so … wie.</p>
@@ -1131,6 +1186,9 @@ registerPack("a2", {
         <li><span class="de">Wäre Sonntag um 11 Uhr auch möglich? Das wäre besser für mich.</span></li>
         <li><span class="de">Bitte sagen Sie mir, ob der Termin am Dienstag bleibt.</span></li>
         <li><span class="de">Viele Grüße an deine Familie. Bis bald, Yusuf</span></li>
+        <li><span class="de">Ich schreibe Ihnen, weil ich den Kurs wechseln möchte.</span></li>
+        <li><span class="de">Gestern habe ich das Formular abgegeben. Haben Sie es schon bekommen?</span></li>
+        <li><span class="de">Falls der Termin nicht geht, schreiben Sie mir bitte eine kurze Nachricht.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">ich schreibe, weil … Leider kann ich nicht …, weil … Gestern habe ich … Können wir uns … treffen? Was denkst du? Vielen Dank im Voraus. Bitte schreib bald. Es tut mir leid. Mit freundlichen Grüßen · Sehr geehrte Frau … / Hallo …</span></p>
@@ -1217,6 +1275,9 @@ registerPack("a2", {
         <li><span class="de">Ich wohne seit zwei Jahren hier. Am Wochenende koche ich gern oder ich treffe Freunde.</span></li>
         <li><span class="de">Das Bild zeigt eine Familie im Park. Ich glaube, sie machen ein Picknick.</span></li>
         <li><span class="de">Einverstanden. Ich kaufe die Tickets, und du bringst das Essen mit. Okay?</span></li>
+        <li><span class="de">Ich arbeite als Verkäuferin. Der Job gefällt mir, aber ich möchte später im Büro arbeiten.</span></li>
+        <li><span class="de">Zum Beispiel können wir zuerst essen und danach ins Kino gehen. Bist du einverstanden?</span></li>
+        <li><span class="de">Ach so, ich meine die Haltestelle Markt, nicht die Haltestelle Bahnhof.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">Meiner Meinung nach… Zum Beispiel… Allerdings… Deshalb… Und du? Was denkst du? Ich schlage vor, dass wir… Gute Idee. Ich bin nicht so sicher, weil… Stattdessen könnten wir… Also, dann sind wir uns einig. Könnten Sie das bitte wiederholen? Ach so, ich meine …</span></p>
@@ -1312,6 +1373,17 @@ registerPack("a2", {
         <li><span class="de">Das ist der Zug, der nach Mainz fährt, nicht der Zug, den wir gestern genommen haben.</span></li>
         <li><span class="de">Ich brauche einen Kurs, der am Abend stattfindet und der nicht zu teuer ist.</span></li>
         <li><span class="de">Hast du die E-Mail, die ich dir geschickt habe?</span></li>
+        <li><span class="de">Das ist die Lehrerin, die den Kurs am Abend gibt.</span></li>
+        <li><span class="de">Wo ist der Schlüssel, den ich auf den Tisch gelegt habe?</span></li>
+        <li><span class="de">Die Freunde, die uns eingeladen haben, wohnen in Köln.</span></li>
+        <li><span class="de">Ich nehme den Bus, der um 8 kommt, nicht den Bus, der um 9 kommt.</span></li>
+        <li><span class="de">Das ist ein Problem, das ich nicht verstehe. Kannst du mir den Satz erklären, den der Arzt gesagt hat?</span></li>
+        <li><span class="de">Die Stadt, die wir besucht haben, war schöner als ich gedacht habe.</span></li>
+        <li><span class="de">Hast du den Mann gesehen, der vor dem Amt steht?</span></li>
+        <li><span class="de">Das Kind, das nebenan wohnt, geht in denselben Kindergarten.</span></li>
+        <li><span class="de">Wir suchen Leute, die am Samstag Zeit haben.</span></li>
+        <li><span class="de">Das ist der Termin, den ich verschieben muss.</span></li>
+        <li><span class="de">Kennst du ein Restaurant, das nicht so teuer ist wie das in der Stadt?</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">der Mann, der … die Frau, die … das Buch, das … der Bus, den … die Wohnung, die … die Leute, die … ein Café, das … der Film, den ich gesehen habe</span> Verb last. Two commas in the middle of a sentence.</p>
