@@ -958,10 +958,21 @@ registerPack("a2", {
     id: "a2-comparative",
     title: "Comparative & superlative",
     level: "a2",
-    minutes: 32,
+    minutes: 52,
     html: `
       <p>telc A2 Lesen ads compare prices, flats, and courses. Sprechen planning (“which day is better?”) needs <span class="de">besser, lieber, günstiger</span>. Schreiben can score with one clean comparison instead of repeating <span class="de">gut, gut, gut</span>.</p>
       <p>Comparative: adjective + <span class="de">-er</span> (often with umlaut on a/o/u). Than = <span class="de">als</span>, not wenn. Superlative: <span class="de">am … -sten</span> (how you do it) or <span class="de">der/die/das … -ste</span> (which one).</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>Unequal comparison: adjective + <span class="de">-er</span> + <span class="de">als</span>. <span class="de">Berlin ist größer als Mainz.</span></li>
+        <li>Equal comparison: <span class="de">so + adjective + wie</span>. <span class="de">Köln ist nicht so teuer wie München.</span></li>
+        <li>Add an umlaut on many short a/o/u adjectives: <span class="de">alt → älter, groß → größer, jung → jünger</span>.</li>
+        <li>Superlative of manner (how?): <span class="de">am</span> + adjective + <span class="de">-sten</span>. <span class="de">am besten, am liebsten, am günstigsten</span>.</li>
+        <li>Superlative of identity (which one?): article + adjective + <span class="de">-ste</span>. <span class="de">das beste Café, die kleinste Wohnung</span>.</li>
+        <li>Memorise the irregulars: <span class="de">gut/besser/am besten · viel/mehr/am meisten · gern/lieber/am liebsten · hoch/höher/am höchsten</span>.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “than” is always <span class="de">als</span> after a comparative, never <span class="de">wie</span> in careful exam German. English “as … as” is <span class="de">so … wie</span>. English “when” is a different <span class="de">als</span> (past time) — here <span class="de">als</span> means “than”. English “the best” needs an article; German <span class="de">am besten</span> is the adverb form and takes no extra article: not <em>am der besten</em>. English “I like tea more” often becomes <span class="de">ich trinke lieber Tee</span> or <span class="de">am liebsten Tee</span>.</p>
       <h3>Regular and irregular</h3>
       <table>
         <tr><th>Base</th><th>Comparative</th><th>Superlative</th></tr>
@@ -977,6 +988,43 @@ registerPack("a2", {
         <tr><td><span class="de">hoch</span></td><td><span class="de">höher</span></td><td><span class="de">am höchsten</span></td></tr>
       </table>
       <p>Equality: <span class="de">so … wie</span> — <span class="de">Berlin ist nicht so teuer wie München</span> (in your opinion). <span class="de">als</span> only for unequal comparative, never <em>besser wie</em> in careful German (you will hear it; do not write it in the exam).</p>
+      <h3>als vs wie — two jobs</h3>
+      <table>
+        <tr><th>Pattern</th><th>Meaning</th><th>Example</th></tr>
+        <tr><td>comparative + <span class="de">als</span></td><td>unequal — than</td><td><span class="de">Der Bus ist günstiger als das Taxi.</span></td></tr>
+        <tr><td><span class="de">so … wie</span></td><td>equal — as … as</td><td><span class="de">Heute ist es so kalt wie gestern.</span></td></tr>
+        <tr><td><span class="de">nicht so … wie</span></td><td>not as … as</td><td><span class="de">Mainz ist nicht so groß wie Berlin.</span></td></tr>
+        <tr><td><span class="de">lieber … als</span></td><td>prefer A to B</td><td><span class="de">Ich arbeite lieber zu Hause als im Büro.</span></td></tr>
+      </table>
+      <p>Do not mix: <em>größer wie</em> and <em>so groß als</em> are both exam errors. <span class="de">als</span> after a comparative is not the past-time <span class="de">als</span> from the connectors lesson. Context tells you: after <span class="de">-er / besser / mehr / lieber</span> it means “than”.</p>
+      <h3>am + superlative</h3>
+      <table>
+        <tr><th>Form</th><th>Use</th><th>Example</th></tr>
+        <tr><td><span class="de">am + -sten</span></td><td>how you do it / which degree — no extra article</td><td><span class="de">Ich trinke am liebsten Tee. Dieser Kurs ist am interessantesten.</span></td></tr>
+        <tr><td><span class="de">der/die/das + -ste</span></td><td>which thing — needs a noun (or a clear noun in context)</td><td><span class="de">Das ist das beste Café. Die kleinste Wohnung ist zu teuer.</span></td></tr>
+      </table>
+      <p>Spelling: adjectives in <span class="de">-t / -d / -s / -ß / -z / -sch</span> often take <span class="de">-esten</span>: <span class="de">am ältesten, am kürzesten, am größten</span> (groß → größten). <span class="de">teuer → teurer / am teuersten</span> (the extra e disappears in the comparative).</p>
+      <h3>Worked examples — why als, wie, or am</h3>
+      <p><span class="de">Um 5 ist besser als um 7.</span> — two times, unequal → comparative + als. Not wenn, not wie.</p>
+      <p><span class="de">Das Café ist nicht so voll wie das andere.</span> — same kind of fullness, denied → so … wie.</p>
+      <p><span class="de">Ich trinke am liebsten Tee.</span> — of all options, this is the top preference. <span class="de">am</span> + superlative, no article.</p>
+      <p><span class="de">Das ist das beste Café in der Stadt.</span> — which café? Identity superlative with <span class="de">das</span>.</p>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><em>besser wie</em></td><td><span class="de">besser als</span></td><td>Unequal → als.</td></tr>
+        <tr><td><em>so groß als</em></td><td><span class="de">so groß wie</span></td><td>Equal → wie.</td></tr>
+        <tr><td><em>am der besten</em></td><td><span class="de">am besten</span></td><td>am-superlative has no extra article.</td></tr>
+        <tr><td><em>mehr gut</em></td><td><span class="de">besser</span></td><td>gut is irregular.</td></tr>
+        <tr><td><em>teuerer</em></td><td><span class="de">teurer</span></td><td>Drop the extra e.</td></tr>
+        <tr><td><em>günstiger wenn das Taxi</em></td><td><span class="de">günstiger als das Taxi</span></td><td>Than = als. wenn means if.</td></tr>
+        <tr><td><em>Ich mag Tee am lieber.</em></td><td><span class="de">Ich mag Tee am liebsten. / Ich trinke lieber Tee.</span></td><td>lieber = comparative; am liebsten = superlative.</td></tr>
+      </table>
+      <h3>Mini dialogue — which ticket?</h3>
+      <p><span class="de">A: Welches Ticket sollen wir nehmen? Das teure oder das günstige?</span><br>
+      <span class="de">B: Das günstigere ist besser. Es ist nicht so schnell wie das andere, aber viel billiger.</span><br>
+      <span class="de">A: Ich fahre lieber mit der Bahn als mit dem Bus.</span><br>
+      <span class="de">B: Einverstanden. Am besten kaufen wir die Tickets heute online. Das ist am einfachsten.</span></p>
       <h3>Examples</h3>
       <ul>
         <li><span class="de">Berlin ist größer als Mainz. Mainz ist ruhiger.</span></li>
@@ -991,12 +1039,16 @@ registerPack("a2", {
         <li><span class="de">Ich arbeite lieber zu Hause als im Büro.</span></li>
         <li><span class="de">Die neue Straße ist breiter, aber auch lauter.</span></li>
         <li><span class="de">Heute geht es mir besser als gestern.</span></li>
+        <li><span class="de">Diese Tasche ist so schwer wie die andere, aber sie ist schöner.</span></li>
+        <li><span class="de">Im Winter muss man mehr anziehen. Im Sommer ist es am wärmsten.</span></li>
+        <li><span class="de">Welcher Tag ist am besten für dich? Freitag ist besser als Montag.</span></li>
+        <li><span class="de">Ich habe weniger Zeit als du, deshalb müssen wir uns früher treffen.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">größer als · günstiger als · besser als · so … wie · am besten · am liebsten · der beste / die beste Wohnung · lieber … als … · mehr Zeit / weniger Stress</span></p>
+        <p><span class="de">größer als · günstiger als · besser als · so … wie · nicht so … wie · am besten · am liebsten · am einfachsten · der beste / die beste Wohnung · lieber … als … · mehr Zeit / weniger Stress · so früh wie möglich</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        <span class="de">als</span> after a comparative is not the past “when”. <span class="de">wenn</span> is wrong here. Superlative with am does not take an extra article: <span class="de">am besten</span>, not <em>am der besten</em>. <span class="de">teuer → teurer</span> (the e of -er eats the extra e). Hören shopping dialogues: <span class="de">zu teuer / günstiger / das billigste</span> decide which product they buy. In planning talk, <span class="de">Ich hätte lieber …</span> is comparative preference, not Konjunktiv drama.
+        <span class="de">als</span> after a comparative is not the past “when”. <span class="de">wenn</span> is wrong here. Superlative with am does not take an extra article: <span class="de">am besten</span>, not <em>am der besten</em>. <span class="de">teuer → teurer</span> (the e of -er eats the extra e). Hören shopping dialogues: <span class="de">zu teuer / günstiger / das billigste</span> decide which product they buy. In planning talk, <span class="de">Ich hätte lieber …</span> is comparative preference, not Konjunktiv drama. Do not write <em>mehr gut / mehr gern</em>. After a noun superlative the adjective still needs a case ending later (B1); at A2 stick to <span class="de">das beste Café / die kleinste Wohnung</span> in nominative.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1005,6 +1057,8 @@ registerPack("a2", {
         <li>Choose a meeting time with besser als and so früh wie möglich.</li>
         <li>Describe prices: too expensive / cheaper / the cheapest.</li>
         <li>Use so … wie once and als once — do not mix them.</li>
+        <li>Write two am-superlatives (am besten / am liebsten) and one der/die/das-superlative.</li>
+        <li>Prefer A to B with lieber … als … (home vs office, bus vs taxi).</li>
       </ol>
     `,
   },
@@ -1012,9 +1066,19 @@ registerPack("a2", {
     id: "a2-letters",
     title: "Informal & semi-formal writing",
     level: "a2",
-    minutes: 40,
+    minutes: 58,
     html: `
-      <p>telc A2 Schreiben is a short message: invitation, apology, information, or a note to a course office. You pass by covering every content point (Leitpunkte) in full sentences, with a matching greeting and closing. Fancy vocabulary does not compensate for a missing question or mixed du/Sie.</p>
+      <p>telc A2 Schreiben is a short message: invitation, apology, information, or a note to a course office. You pass by covering every content point (Leitpunkte) in full sentences, with a matching greeting and closing. Fancy vocabulary does not compensate for a missing question or mixed du/Sie. This is Start Deutsch 2 / telc A2 — a short everyday letter, not a DTZ essay.</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>Read the task twice. Underline every Leitpunkt and the person you write to (friend vs office).</li>
+        <li>Choose register first: du + Hallo / Liebe … or Sie + Sehr geehrte/r … Never mix.</li>
+        <li>Write a reason you are writing, then one full sentence per bullet. If the task says “ask”, you must ask.</li>
+        <li>Put one <span class="de">weil</span> (verb last) and one Perfekt in the letter. That is the A2 control signal.</li>
+        <li>Close with a matching formula and a name. Count: greeting, all points, a question if required, closing.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “Dear Mrs Berger” plus “Best regards” is not a German letter. Formal German wants <span class="de">Sehr geehrte Frau Berger,</span> and <span class="de">Mit freundlichen Grüßen</span>. English can start mid-thought; German A2 letters need a why-I-write line. English “I can’t come Saturday work” is a text message; the exam wants <span class="de">Leider kann ich am Samstag nicht kommen, weil ich arbeiten muss.</span></p>
       <h3>Register</h3>
       <table>
         <tr><th></th><th>Friend / classmate</th><th>Course / landlord / office</th></tr>
@@ -1031,6 +1095,24 @@ registerPack("a2", {
         <li>Cover point 3 (a question back — this is often forgotten).</li>
         <li>Polite close: <span class="de">Bitte schreib mir bald. / Ich hoffe, das ist in Ordnung.</span></li>
       </ol>
+      <h3>Worked example — why this sentence earns the point</h3>
+      <p>Task: apologise to a friend, give a reason, suggest a new time, ask what to bring.</p>
+      <p><span class="de">Hallo Marek, vielen Dank für deine Einladung.</span> — greeting + du, so the rest must stay du.</p>
+      <p><span class="de">Leider kann ich am Samstag nicht kommen, weil ich arbeiten muss.</span> — apology + reason; weil sends <span class="de">muss</span> last. This covers two Leitpunkte in one clean sentence.</p>
+      <p><span class="de">Können wir uns am Sonntag um 15 Uhr im Café treffen?</span> — alternative time and place; a question mark shows you asked.</p>
+      <p><span class="de">Was soll ich mitbringen?</span> — the forgotten question. Without it, that bullet is 0.</p>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><em>Hallo Frau Berger, kannst du …</em></td><td><span class="de">Sehr geehrte Frau Berger, können Sie …</span></td><td>Office = Sie, full greeting.</td></tr>
+        <tr><td><em>Samstag nicht. Arbeit.</em></td><td><span class="de">Leider kann ich am Samstag nicht kommen, weil ich arbeiten muss.</span></td><td>Full sentence, not keywords.</td></tr>
+        <tr><td><em>Ich bleibe, weil ich bin krank.</em></td><td><span class="de">Ich bleibe, weil ich krank bin.</span></td><td>A broken weil can cancel the “reason” point.</td></tr>
+        <tr><td>No question in the letter</td><td><span class="de">Was denkst du? / Können Sie mir … schicken?</span></td><td>If the task says ask, you must ask.</td></tr>
+        <tr><td><em>Best regards, Sara</em></td><td><span class="de">Liebe Grüße, Sara / Mit freundlichen Grüßen</span></td><td>German closings only.</td></tr>
+      </table>
+      <h3>Mini dialogue — the same news, two registers</h3>
+      <p><span class="de">An eine Freundin: Hallo Anna, ich bin krank und kann morgen nicht kommen. Können wir uns am Freitag treffen? Liebe Grüße, Lea</span></p>
+      <p><span class="de">An die Kursleiterin: Sehr geehrte Frau Lang, ich bin krank und kann morgen nicht zum Unterricht kommen. Können Sie mir bitte die Hausaufgaben per E-Mail schicken? Vielen Dank im Voraus. Mit freundlichen Grüßen Lea Hofmann</span></p>
       <h3>Examples (pieces you can reuse, not a whole stolen letter)</h3>
       <ul>
         <li><span class="de">Hallo Marek, vielen Dank für deine Einladung.</span></li>
@@ -1045,12 +1127,16 @@ registerPack("a2", {
         <li><span class="de">Vielen Dank im Voraus. Mit freundlichen Grüßen</span></li>
         <li><span class="de">Bitte antworte mir bis Freitag. Liebe Grüße, Sara</span></li>
         <li><span class="de">Es tut mir leid. Nächstes Mal komme ich auf jeden Fall.</span></li>
+        <li><span class="de">Ich habe gestern schon geschrieben, aber ich habe keine Antwort bekommen.</span></li>
+        <li><span class="de">Wäre Sonntag um 11 Uhr auch möglich? Das wäre besser für mich.</span></li>
+        <li><span class="de">Bitte sagen Sie mir, ob der Termin am Dienstag bleibt.</span></li>
+        <li><span class="de">Viele Grüße an deine Familie. Bis bald, Yusuf</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">ich schreibe, weil … Leider kann ich nicht …, weil … Gestern habe ich … Können wir uns … treffen? Was denkst du? Vielen Dank im Voraus. Bitte schreib bald. Es tut mir leid. Mit freundlichen Grüßen</span></p>
+        <p><span class="de">ich schreibe, weil … Leider kann ich nicht …, weil … Gestern habe ich … Können wir uns … treffen? Was denkst du? Vielen Dank im Voraus. Bitte schreib bald. Es tut mir leid. Mit freundlichen Grüßen · Sehr geehrte Frau … / Hallo …</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        Every Leitpunkt needs a sentence, not a keyword. Never mix du and Sie. Never skip greeting or closing. One weil and one Perfekt is the A2 control trick — but verb last after weil. Informal letters can use <span class="de">Hallo</span>; a complaint to an office cannot. Questions in the task mean you must ask, not only answer. Do not copy a memorised letter that ignores this paper’s points — markers notice.
+        Every Leitpunkt needs a sentence, not a keyword. Never mix du and Sie. Never skip greeting or closing. One weil and one Perfekt is the A2 control trick — but verb last after weil. Informal letters can use <span class="de">Hallo</span>; a complaint to an office cannot. Questions in the task mean you must ask, not only answer. Do not copy a memorised letter that ignores this paper’s points — markers notice. A beautiful extra sentence that does not hit a bullet does not rescue a missing bullet. After <span class="de">Sehr geehrte …</span> start a new line; do not write the first sentence on the same line as the name.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1059,6 +1145,8 @@ registerPack("a2", {
         <li>Check: opening, every bullet, a question, closing, no mixed pronouns.</li>
         <li>Replace three short sentences with one weil and one deshalb.</li>
         <li>Read it aloud: if a point is only a word, expand it.</li>
+        <li>Rewrite the friend letter as a Sie-letter without changing the facts.</li>
+        <li>Add one Perfekt sentence that is not “I have written” — what happened yesterday.</li>
       </ol>
     `,
   },
@@ -1066,10 +1154,20 @@ registerPack("a2", {
     id: "a2-speaking",
     title: "Speaking strategies",
     level: "a2",
-    minutes: 32,
+    minutes: 50,
     html: `
       <p>telc A2 Sprechen rewards clear, slow German and interaction. Fast chaos with missing verbs scores lower than simple sentences plus questions. Teil 1 is contact (you and the partner). Teil 2 is talking from pictures or a topic. Teil 3 is planning: you must agree on a plan, not just say <span class="de">ja, genau</span>.</p>
       <p>Silence is expensive. Fill it with thinking chunks, then a real sentence. If you do not understand, asking for a repeat is A2 competence, not failure.</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>Teil 1: name, origin, work/course, weekend. Then ask the partner the same questions. Do not give a monologue.</li>
+        <li>Teil 2: say what you see or think in three short sentences: fact, opinion + weil, example.</li>
+        <li>Teil 3: propose (who / when / where / how), listen, disagree once if needed, then confirm the plan out loud.</li>
+        <li>If you stall, use a German filler, not English: <span class="de">Also … Ich überlege. Einen Moment.</span></li>
+        <li>If you miss a word, repair: <span class="de">Wie bitte? Könnten Sie das bitte wiederholen? Wie sagt man …?</span></li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English speakers often plan in English and then translate too late. The exam clock does not wait. A short German sentence with a question beats a perfect English idea. English “yeah, exactly” is not a plan; German examiners want the details repeated: <span class="de">Also, dann sind wir uns einig: Sonntag, 11 Uhr, vor dem Café.</span> English “sorry, what?” is fine socially; in the exam use <span class="de">Wie bitte?</span> or the Sie-form with the examiner.</p>
       <h3>Move types</h3>
       <table>
         <tr><th>Job</th><th>Chunks</th></tr>
@@ -1082,6 +1180,26 @@ registerPack("a2", {
         <tr><td>Plan</td><td><span class="de">Ich schlage vor, dass wir … Stattdessen könnten wir …</span></td></tr>
         <tr><td>Agree / close</td><td><span class="de">Gute Idee. Also, dann sind wir uns einig. Super, machen wir das.</span></td></tr>
       </table>
+      <h3>Worked example — a 30-second plan</h3>
+      <p><span class="de">Ich schlage vor, dass wir am Samstag ins Museum gehen, weil es da nicht so voll ist.</span> — proposal + reason.</p>
+      <p><span class="de">Allerdings ist das Museum am Montag zu. Deshalb nehmen wir Samstag.</span> — you show you heard a problem and solved it.</p>
+      <p><span class="de">Was denkst du? Sollen wir uns um 14 Uhr am Bahnhof treffen?</span> — invite the partner; add when and where.</p>
+      <p><span class="de">Also, dann sind wir uns einig: Samstag, 14 Uhr, Bahnhof, mit der Bahn.</span> — close with the four details. This is the score.</p>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><em>Ja, genau.</em> (and stop)</td><td><span class="de">Ja, genau. Also Sonntag, 11 Uhr, vor dem Café.</span></td><td>A plan needs details plus confirmation.</td></tr>
+        <tr><td>Long English thinking</td><td><span class="de">Also … Ich überlege. Einen Moment.</span></td><td>Stay in German.</td></tr>
+        <tr><td>Only you talk</td><td><span class="de">Und du? Was denkst du?</span></td><td>Interaction is part of the mark.</td></tr>
+        <tr><td>Freeze after a mistake</td><td><span class="de">Ach so, ich meine Samstag, nicht Sonntag.</span></td><td>Correct and continue.</td></tr>
+        <tr><td>du to the examiner</td><td><span class="de">Könnten Sie das bitte wiederholen?</span></td><td>Examiner = Sie unless the task says friends.</td></tr>
+      </table>
+      <h3>Mini dialogue — Teil 3</h3>
+      <p><span class="de">A: Ich schlage vor, dass wir am Sonntag wandern. Was denkst du?</span><br>
+      <span class="de">B: Ich bin nicht so sicher, weil das Wetter schlecht ist. Stattdessen könnten wir ins Kino gehen.</span><br>
+      <span class="de">A: Gute Idee. Wann? Um 15 Uhr?</span><br>
+      <span class="de">B: Um 15 Uhr ist besser als um 18 Uhr. Treffen wir uns vor dem Kino?</span><br>
+      <span class="de">A: Ja. Also, dann sind wir uns einig: Sonntag, 15 Uhr, vor dem Kino, zu Fuß.</span></p>
       <h3>Examples</h3>
       <ul>
         <li><span class="de">Meiner Meinung nach ist der Samstag besser, weil ich am Sonntag arbeiten muss.</span></li>
@@ -1096,12 +1214,15 @@ registerPack("a2", {
         <li><span class="de">Also, dann sind wir uns einig: Sonntag, 11 Uhr, vor dem Café.</span></li>
         <li><span class="de">Ich erzähle kurz: Ich wohne in … Ich arbeite als … Am Wochenende …</span></li>
         <li><span class="de">Entschuldigung, wie sagt man das auf Deutsch? Ach ja: die Haltestelle.</span></li>
+        <li><span class="de">Ich wohne seit zwei Jahren hier. Am Wochenende koche ich gern oder ich treffe Freunde.</span></li>
+        <li><span class="de">Das Bild zeigt eine Familie im Park. Ich glaube, sie machen ein Picknick.</span></li>
+        <li><span class="de">Einverstanden. Ich kaufe die Tickets, und du bringst das Essen mit. Okay?</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">Meiner Meinung nach… Zum Beispiel… Allerdings… Deshalb… Und du? Was denkst du? Ich schlage vor, dass wir… Gute Idee. Ich bin nicht so sicher, weil… Stattdessen könnten wir… Also, dann sind wir uns einig. Könnten Sie das bitte wiederholen?</span></p>
+        <p><span class="de">Meiner Meinung nach… Zum Beispiel… Allerdings… Deshalb… Und du? Was denkst du? Ich schlage vor, dass wir… Gute Idee. Ich bin nicht so sicher, weil… Stattdessen könnten wir… Also, dann sind wir uns einig. Könnten Sie das bitte wiederholen? Ach so, ich meine …</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        A plan needs who / when / where / how, then confirmation. <span class="de">Ja, genau</span> alone is not a plan. Do not dominate — invite the partner. Do not freeze after a mistake; correct with <span class="de">Ach so, ich meine …</span> and continue. Mixing Sie with the partner in an informal pair task is odd; mixing du with the examiner is worse. Long English thinking is worse than a short German stall phrase.
+        A plan needs who / when / where / how, then confirmation. <span class="de">Ja, genau</span> alone is not a plan. Do not dominate — invite the partner. Do not freeze after a mistake; correct with <span class="de">Ach so, ich meine …</span> and continue. Mixing Sie with the partner in an informal pair task is odd; mixing du with the examiner is worse. Long English thinking is worse than a short German stall phrase. If the partner is quiet, ask a simple question rather than filling every second yourself. Do not switch the day at the end without saying the new plan aloud.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1110,6 +1231,8 @@ registerPack("a2", {
         <li>Close a plan: day, time, place, transport, “we agree”.</li>
         <li>Practise two repair lines until they are automatic.</li>
         <li>Introduce yourself in 40 seconds without reading notes.</li>
+        <li>Describe a photo in three sentences: what you see, what you think, a question.</li>
+        <li>Role-play: you want Saturday, the partner wants Sunday — land on one plan.</li>
       </ol>
     `,
   },
@@ -1117,10 +1240,20 @@ registerPack("a2", {
     id: "a2-relative",
     title: "Relative clauses (start)",
     level: "a2",
-    minutes: 35,
+    minutes: 55,
     html: `
       <p>You do not need perfect relative clauses to pass telc A2, but you must <strong>recognise</strong> them in Lesen. Ads and messages pack extra information after a comma: <span class="de">die Wohnung, die im Zentrum liegt</span>. One correct <span class="de">der/die/das</span> clause in Sprechen is a bonus point for complexity.</p>
       <p>The relative pronoun matches <strong>gender and number</strong> of the noun it follows. Its <strong>case</strong> comes from the job inside the extra clause. The verb of that clause goes to the <strong>end</strong>. Commas are required in German.</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>Find the noun you want to describe. That noun’s gender and number decide <span class="de">der / die / das / die</span>.</li>
+        <li>Look inside the extra clause: is the noun the subject (who does it) or the object (who you see / take)? Subject → nominative. Object → accusative.</li>
+        <li>Masculine is the only gender that changes from der to <span class="de">den</span> in accusative. Feminine and neuter look the same as the article you already know.</li>
+        <li>Put a comma, then the relative pronoun, then the rest of the clause, then the <strong>verb last</strong>, then another comma if the sentence continues.</li>
+        <li>Read it as two sentences first: <span class="de">Der Mann steht dort. Er ist mein Lehrer.</span> → <span class="de">Der Mann, der dort steht, ist mein Lehrer.</span></li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “who / which / that” do not show gender. German reuses the article: the man <span class="de">der</span>, the woman <span class="de">die</span>, the book <span class="de">das</span>. English often drops “that” (“the book I read”); German never drops the relative pronoun. English keeps the verb in the middle (“the man who is standing there”); German sends it last: <span class="de">der Mann, der dort steht</span>. English “who” is for people; German still uses <span class="de">der/die</span> after a person-noun, not <span class="de">wer</span>.</p>
       <h3>Nominative and accusative (A2 core)</h3>
       <table>
         <tr><th></th><th>M</th><th>F</th><th>N</th><th>Pl</th></tr>
@@ -1128,6 +1261,39 @@ registerPack("a2", {
         <tr><td>Akk (who/which you see)</td><td><span class="de">den</span></td><td><span class="de">die</span></td><td><span class="de">das</span></td><td><span class="de">die</span></td></tr>
       </table>
       <p>Test: if you could replace the pronoun with er/sie/es, it is nominative. If with ihn/sie/es (object), accusative. <span class="de">Der Mann, der dort steht</span> (he stands). <span class="de">Der Mann, den ich kenne</span> (I know him).</p>
+      <h3>Extra paradigm — same words as the article, new job</h3>
+      <table>
+        <tr><th>Noun</th><th>Nom relative</th><th>Akk relative</th><th>Think</th></tr>
+        <tr><td><span class="de">der Bus</span></td><td><span class="de">der Bus, der … fährt</span></td><td><span class="de">der Bus, den wir nehmen</span></td><td>er fährt / wir nehmen ihn</td></tr>
+        <tr><td><span class="de">die Wohnung</span></td><td><span class="de">die Wohnung, die … liegt</span></td><td><span class="de">die Wohnung, die ich suche</span></td><td>sie liegt / ich suche sie</td></tr>
+        <tr><td><span class="de">das Buch</span></td><td><span class="de">das Buch, das … hilft</span></td><td><span class="de">das Buch, das ich lese</span></td><td>es hilft / ich lese es</td></tr>
+        <tr><td><span class="de">die Leute</span></td><td><span class="de">die Leute, die … wohnen</span></td><td><span class="de">die Leute, die ich kenne</span></td><td>sie wohnen / ich kenne sie</td></tr>
+      </table>
+      <p>Feminine and neuter look identical in Nom and Akk. That is why masculine <span class="de">der/den</span> is the form you must practise aloud. Dative relatives (<span class="de">der Freund, mit dem ich arbeite</span>) are recognition at A2 — produce them only if you are calm.</p>
+      <h3>Worked examples — why der, die, das, or den</h3>
+      <p><span class="de">Der Mann, der dort steht, ist mein Lehrer.</span> — noun is masculine. Inside the clause he is the subject (he stands) → <span class="de">der</span>. Verb <span class="de">steht</span> is last. Two commas, because the main sentence continues.</p>
+      <p><span class="de">Der Mann, den ich kenne, wohnt in Köln.</span> — same noun, but now “I know him” → accusative <span class="de">den</span>. The verb of the relative clause is <span class="de">kenne</span>, last before the comma.</p>
+      <p><span class="de">Das ist der Bus, den wir nehmen müssen.</span> — bus = masculine object of nehmen → <span class="de">den</span>. Modal <span class="de">müssen</span> is the conjugated verb, so it is last; <span class="de">nehmen</span> stands in front of it.</p>
+      <p><span class="de">Ich habe eine Wohnung gefunden, die nicht teuer ist.</span> — Wohnung is feminine. It is the subject of “is not expensive” → <span class="de">die</span>. Verb last: <span class="de">ist</span>.</p>
+      <p><span class="de">Wo ist das Formular, das ich gestern bekommen habe?</span> — Formular is neuter object of bekommen → <span class="de">das</span>. Perfekt: Partizip then auxiliary last.</p>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><em>der Mann, wer dort steht</em></td><td><span class="de">der Mann, der dort steht</span></td><td>After a noun use der/die/das, not wer.</td></tr>
+        <tr><td><em>der Mann der dort steht ist …</em> (no commas)</td><td><span class="de">Der Mann, der dort steht, ist …</span></td><td>German relative clauses need commas.</td></tr>
+        <tr><td><em>der Mann, der ist dort steht</em></td><td><span class="de">der Mann, der dort steht</span></td><td>Verb last; do not keep verb second.</td></tr>
+        <tr><td><em>der Bus, der wir nehmen</em></td><td><span class="de">der Bus, den wir nehmen</span></td><td>We take him → Akk den.</td></tr>
+        <tr><td><em>die Wohnung, das im Zentrum liegt</em></td><td><span class="de">die Wohnung, die im Zentrum liegt</span></td><td>Gender from the noun, not from English “which”.</td></tr>
+        <tr><td><em>das Buch ich lese</em></td><td><span class="de">das Buch, das ich lese</span></td><td>Never drop the pronoun.</td></tr>
+        <tr><td><em>die Leute, die wohnen nebenan sind nett</em></td><td><span class="de">Die Leute, die nebenan wohnen, sind nett.</span></td><td>Verb last + commas.</td></tr>
+      </table>
+      <h3>Mini dialogue — finding a flat</h3>
+      <p><span class="de">A: Hast du eine Wohnung gefunden, die nicht zu teuer ist?</span><br>
+      <span class="de">B: Ja. Die Wohnung, die im Zentrum liegt, ist klein, aber schön.</span><br>
+      <span class="de">A: Und der Nachbar, den du gestern gesehen hast?</span><br>
+      <span class="de">B: Der Mann, der nebenan wohnt, heißt Herr Koch. Er ist nett.</span><br>
+      <span class="de">A: Gibt es ein Café, das am Wochenende auf hat?</span><br>
+      <span class="de">B: Ja, das Café, das an der Ecke ist. Das ist das Café, das ich immer nehme.</span></p>
       <h3>Examples</h3>
       <ul>
         <li><span class="de">Der Mann, der dort steht, ist mein Lehrer.</span></li>
@@ -1142,12 +1308,16 @@ registerPack("a2", {
         <li><span class="de">Wir treffen die Freundin, die uns helfen kann.</span></li>
         <li><span class="de">Ich suche ein Café, das am Wochenende geöffnet hat.</span></li>
         <li><span class="de">Der Nachbar, den du gestern gesehen hast, heißt Herr Koch.</span></li>
+        <li><span class="de">Kennst du die Frau, die uns gestern geholfen hat?</span></li>
+        <li><span class="de">Das ist der Zug, der nach Mainz fährt, nicht der Zug, den wir gestern genommen haben.</span></li>
+        <li><span class="de">Ich brauche einen Kurs, der am Abend stattfindet und der nicht zu teuer ist.</span></li>
+        <li><span class="de">Hast du die E-Mail, die ich dir geschickt habe?</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">der Mann, der … die Frau, die … das Buch, das … der Bus, den … die Wohnung, die … die Leute, die … ein Café, das …</span> Verb last. Two commas in the middle of a sentence.</p>
+        <p><span class="de">der Mann, der … die Frau, die … das Buch, das … der Bus, den … die Wohnung, die … die Leute, die … ein Café, das … der Film, den ich gesehen habe</span> Verb last. Two commas in the middle of a sentence.</p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        Do not use <span class="de">wer</span> as a relative after a noun. Do not drop the comma. Verb last: not <em>der Mann, der ist mein Lehrer dort steht</em>. Gender comes from the noun, not from the English “who”. At A2, skip dative/preposition relatives in production if they scare you; recognition is enough: <span class="de">der Freund, mit dem ich arbeite</span>. After <span class="de">alles, etwas, nichts</span> you may see <span class="de">was</span> — notice it in Lesen.
+        Do not use <span class="de">wer</span> as a relative after a noun. Do not drop the comma. Verb last: not <em>der Mann, der ist mein Lehrer dort steht</em>. Gender comes from the noun, not from the English “who”. At A2, skip dative/preposition relatives in production if they scare you; recognition is enough: <span class="de">der Freund, mit dem ich arbeite</span>. After <span class="de">alles, etwas, nichts</span> you may see <span class="de">was</span> — notice it in Lesen. In Perfekt relatives the helper is last: <span class="de">das Formular, das ich bekommen habe</span>. If the relative clause sits in the middle, the main verb still belongs to the outer sentence: <span class="de">Der Mann, der dort steht, ist mein Lehrer</span> — <span class="de">ist</span> is not inside the relative clause.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1156,6 +1326,8 @@ registerPack("a2", {
         <li>Find three relative clauses in any A2 reading text and mark der/die/das/den.</li>
         <li>Say one bonus sentence in speaking: that’s the café that …</li>
         <li>Check commas and verb-last in everything you wrote.</li>
+        <li>Turn two short sentence pairs into one sentence with a relative (he stands there / I know him).</li>
+        <li>Write one Perfekt relative: the e-mail that I sent / the film that we saw.</li>
       </ol>
     `,
   },
@@ -1163,10 +1335,20 @@ registerPack("a2", {
     id: "a2-passive",
     title: "Passive recognition",
     level: "a2",
-    minutes: 30,
+    minutes: 48,
     html: `
       <p>You must <strong>recognise</strong> the passive in telc A2 Lesen (notices, museum signs, workplace rules). You do not need to produce it well yet. If a sentence has <span class="de">wird / werden / wurde</span> + a Partizip, someone does the action and the thing is the subject. English “is opened / is spoken” is the same idea.</p>
       <p>Form: <span class="de">werden</span> (conjugated) + Partizip II. Present: <span class="de">wird geöffnet</span>. Past: <span class="de">wurde geöffnet</span> or Perfekt <span class="de">ist geöffnet worden</span> (rare at A2). Modal: <span class="de">muss ausgefüllt werden</span>.</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>Spot <span class="de">werden</span> in any form: <span class="de">wird, werden, wurde, worden</span>.</li>
+        <li>Look at the end for a Partizip: <span class="de">geöffnet, gesprochen, geschickt, ausgefüllt</span>. If you see werden + Partizip, it is passive (process).</li>
+        <li>If you see <span class="de">sein</span> + Partizip, it is often a state: how it is now. <span class="de">Die Tür ist geschlossen.</span></li>
+        <li>Rewrite mentally with <span class="de">man</span> if that helps: <span class="de">Hier wird Deutsch gesprochen</span> ≈ <span class="de">Hier spricht man Deutsch</span>.</li>
+        <li>Do not confuse future: <span class="de">Er wird kommen</span> is werden + infinitive, not a Partizip.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “is opened” and “is closed” look the same. German often splits process and state: <span class="de">wird geöffnet</span> (someone is opening it / it gets opened) vs <span class="de">ist geschlossen</span> (it is in a closed state). English “they speak German here” is the natural rewrite of <span class="de">Hier wird Deutsch gesprochen</span>. You do not need to produce the German passive in A2 Schreiben — active or <span class="de">man</span> is safer.</p>
       <h3>werden vs sein</h3>
       <table>
         <tr><th></th><th>Form</th><th>Meaning</th></tr>
@@ -1174,6 +1356,35 @@ registerPack("a2", {
         <tr><td>State (Zustand)</td><td><span class="de">sein</span> + Partizip</td><td>how it is now: <span class="de">Die Tür ist geschlossen.</span></td></tr>
       </table>
       <p>werden present: <span class="de">ich werde, du wirst, er wird, wir werden, ihr werdet, sie werden</span>. Do not confuse with future <span class="de">ich werde kommen</span> (werden + infinitive, not Partizip).</p>
+      <h3>Extra paradigm — notice forms</h3>
+      <table>
+        <tr><th>Time / type</th><th>Form</th><th>Example</th></tr>
+        <tr><td>Present process</td><td>wird/werden + Partizip</td><td><span class="de">Das Museum wird um 18 Uhr geschlossen.</span></td></tr>
+        <tr><td>Past process</td><td>wurde/wurden + Partizip</td><td><span class="de">Der Termin wurde auf Dienstag verschoben.</span></td></tr>
+        <tr><td>State now</td><td>ist/sind + Partizip</td><td><span class="de">Die Straße ist gesperrt. Die Tür ist offen / geschlossen.</span></td></tr>
+        <tr><td>Modal + passive</td><td>modal + Partizip + werden</td><td><span class="de">Das Formular muss ausgefüllt werden.</span></td></tr>
+        <tr><td>Future lookalike</td><td>werden + infinitive</td><td><span class="de">Er wird morgen kommen.</span> — not passive.</td></tr>
+      </table>
+      <h3>Worked examples — process, state, or future?</h3>
+      <p><span class="de">Hier wird Deutsch gesprochen.</span> — wird + Partizip → process. Someone speaks German here. Rewrite: <span class="de">Man spricht hier Deutsch.</span></p>
+      <p><span class="de">Die Straße ist gesperrt.</span> — ist + Partizip → state. You cannot drive through now. Nobody is necessarily closing it at this second.</p>
+      <p><span class="de">Das Formular muss vollständig ausgefüllt werden.</span> — modal + Partizip + werden. The form is the subject; you must fill it in.</p>
+      <p><span class="de">Er wird um 9 kommen.</span> — wird + infinitive → future (or intention), not passive. No Partizip.</p>
+      <h3>Right vs wrong (recognition)</h3>
+      <table>
+        <tr><th>You might think</th><th>It actually means</th></tr>
+        <tr><td><span class="de">wird geöffnet</span> = “is already open”</td><td>The opening happens (process). Open now is often <span class="de">ist geöffnet / hat auf</span>.</td></tr>
+        <tr><td><span class="de">ist geschlossen</span> = someone is closing it now</td><td>State: it is closed. Process would be <span class="de">wird geschlossen</span>.</td></tr>
+        <tr><td><span class="de">Er wird kommen</span> = he is being come</td><td>Future / will come. Infinitive, not Partizip.</td></tr>
+        <tr><td>I must write passive in the letter</td><td>No. <span class="de">Man muss das Formular ausfüllen</span> is enough at A2.</td></tr>
+      </table>
+      <h3>Mini dialogue — at the museum desk</h3>
+      <p><span class="de">A: Wann wird das Museum geschlossen?</span><br>
+      <span class="de">B: Es wird um 18 Uhr geschlossen. Jetzt ist es noch geöffnet.</span><br>
+      <span class="de">A: Wird hier auch Englisch gesprochen?</span><br>
+      <span class="de">B: An der Kasse ja. Die Tickets können online gebucht werden.</span><br>
+      <span class="de">A: Und die Ausstellung?</span><br>
+      <span class="de">B: Sie wurde letzte Woche verlängert. Die Straße daneben ist leider gesperrt.</span></p>
       <h3>Examples</h3>
       <ul>
         <li><span class="de">Hier wird Deutsch gesprochen. English is not the office language.</span></li>
@@ -1188,12 +1399,14 @@ registerPack("a2", {
         <li><span class="de">Die Wohnung wird renoviert. Deshalb ist sie leer.</span></li>
         <li><span class="de">Wie wird das geschrieben? Mit ß oder ss?</span></li>
         <li><span class="de">Die Tickets können online gebucht werden.</span></li>
+        <li><span class="de">Die Hausaufgaben werden am Freitag eingesammelt.</span></li>
+        <tr></tr>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">Hier wird … gesprochen. … wird um … geschlossen. Die Straße ist gesperrt. Das Formular muss … werden. Sie werden aufgerufen. wurde verschoben. ist geöffnet / ist geschlossen.</span></p>
+        <p><span class="de">Hier wird … gesprochen. … wird um … geschlossen. Die Straße ist gesperrt. Das Formular muss … werden. Sie werden aufgerufen. wurde verschoben. ist geöffnet / ist geschlossen. Man spricht / man öffnet …</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        <span class="de">wird</span> + infinitive is often future, not passive: <span class="de">Er wird kommen</span>. Passive needs a Partizip: <span class="de">wird geöffnet</span>. <span class="de">ist geschlossen</span> is a state, not “someone is closing it right now”. Lesen synonyms: <span class="de">geschlossen ≈ nicht geöffnet / macht zu</span>. You can often rewrite mentally as <span class="de">man öffnet / man spricht</span> if that helps. Do not force passive in A2 Schreiben — active is safer.
+        <span class="de">wird</span> + infinitive is often future, not passive: <span class="de">Er wird kommen</span>. Passive needs a Partizip: <span class="de">wird geöffnet</span>. <span class="de">ist geschlossen</span> is a state, not “someone is closing it right now”. Lesen synonyms: <span class="de">geschlossen ≈ nicht geöffnet / macht zu</span>. You can often rewrite mentally as <span class="de">man öffnet / man spricht</span> if that helps. Do not force passive in A2 Schreiben — active is safer. <span class="de">Sie werden aufgerufen</span> is passive (you will be called), not “you will call”. Word order with a modal: Partizip then <span class="de">werden</span> at the end: <span class="de">muss ausgefüllt werden</span>.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1202,6 +1415,8 @@ registerPack("a2", {
         <li>Spot wird + Partizip vs wird + infinitive in two example sentences.</li>
         <li>Read a building sign and say whether it is process or state.</li>
         <li>Optional: one production sentence with muss … werden (a form must be filled in).</li>
+        <li>Match: wird geschlossen / ist geschlossen / wird kommen — process, state, or future?</li>
+        <li>Turn Hier spricht man Deutsch into a passive notice.</li>
       </ol>
     `,
   },

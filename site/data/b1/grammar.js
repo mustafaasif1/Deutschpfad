@@ -893,11 +893,29 @@ registerPack("b1", {
         <li><span class="de">Ohne Ihre Unterschrift können wir nichts machen.</span></li>
         <li><span class="de">Ich habe mich an das Leben hier gewöhnt, aber der Winter fällt mir noch schwer.</span></li>
       </ul>
+      <h3>Worked examples</h3>
+      <ul>
+        <li><span class="de">Bitte legen Sie den Ausweis auf den Tisch. Er liegt schon auf dem Tisch.</span> — Please put the ID on the table. It is already lying on the table. — wohin? Akk; wo? Dat.</li>
+        <li><span class="de">Seit drei Monaten warte ich auf eine schriftliche Antwort.</span> — I have been waiting for a written answer for three months. — seit + present; warten auf + Akk.</li>
+        <li><span class="de">Ich freue mich auf das Gespräch. Ich habe mich über Ihre Einladung gefreut.</span> — I am looking forward to the interview. I was pleased about your invitation. — future pleasure = auf; fact already true = über.</li>
+        <li><span class="de">Wegen der Bauarbeiten ist die Straße gesperrt. Trotz des Lärms müssen wir arbeiten.</span> — Because of the building work the street is closed. Despite the noise we have to work. — both genitive in exam German.</li>
+      </ul>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><span class="de">Ich warte für den Bus.</span></td><td><span class="de">Ich warte auf den Bus.</span></td><td>warten auf + Akk.</td></tr>
+        <tr><td><span class="de">Ich fahre nach der Stadt / zu Berlin.</span></td><td><span class="de">Ich fahre in die Stadt / nach Berlin.</span></td><td>nach + bare city; in + article place.</td></tr>
+        <tr><td><span class="de">Ich habe seit einem Jahr gewartet. (still waiting)</span></td><td><span class="de">Ich warte seit einem Jahr.</span></td><td>seit + present.</td></tr>
+        <tr><td><span class="de">Ich freue mich über das Wochenende. (not yet here)</span></td><td><span class="de">Ich freue mich auf das Wochenende.</span></td><td>Future pleasure = auf.</td></tr>
+      </table>
+      <h3>Mini letter — complaint to the landlord</h3>
+      <p><span class="de">Sehr geehrter Herr Vogel, seit sechs Wochen warten wir auf die Reparatur der Heizung. Wir beschweren uns über den Lärm aus der Wohnung über uns. Wegen der Kälte können die Kinder nicht in ihren Zimmern lernen. Trotz mehrerer Anrufe ist niemand gekommen. Bitte kümmern Sie sich um den Schaden. Mit freundlichen Grüßen</span></p>
+      <p>Gloss: For six weeks we have been waiting for the heating repair. We are complaining about the noise from the flat above. Because of the cold the children cannot study in their rooms. Despite several calls nobody has come.</p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">warten auf + Akk · sich freuen auf / über · sich bewerben um · sich interessieren für · Angst haben vor + Dat · sich beschweren über · teilnehmen an + Dat · es geht um · nach Hause / zu Hause · zum Arzt · in die Stadt / in der Stadt · auf die Post · am Montag · um 8 Uhr · seit einem Jahr + present · wegen des / trotz des</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        <span class="de">seit</span> + present. <span class="de">vor drei Tagen</span> = ago (past). <span class="de">für drei Tage</span> = duration planned. <span class="de">wegen</span> genitive in careful German: <span class="de">wegen des Lärms</span> (spoken wegen dem is common; exam prefers genitive). <span class="de">sich freuen auf</span> vs <span class="de">über</span> is a classic gap. <span class="de">denken an</span> not über for “remember to”. Hören: meeting point <span class="de">vor / in / hinter / neben</span>. Do not use nach + article city. <span class="de">zu</span> never with bare city names.
+        <span class="de">seit</span> + present. <span class="de">vor drei Tagen</span> = ago (past). <span class="de">für drei Tage</span> = duration planned. <span class="de">wegen</span> genitive in careful German: <span class="de">wegen des Lärms</span> (spoken wegen dem is common; exam prefers genitive). <span class="de">sich freuen auf</span> vs <span class="de">über</span> is a classic gap. <span class="de">denken an</span> not über for “remember to”. Hören: meeting point <span class="de">vor / in / hinter / neben</span>. Do not use nach + article city. <span class="de">zu</span> never with bare city names. Sprachbausteine: wo/wohin is the whole item. Schreiben: <span class="de">sich bewerben um, sich beschweren über, warten auf</span> must be automatic. Sprechen: if you mix auf die Post / auf der Post, the partner goes to the wrong place.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -907,6 +925,8 @@ registerPack("b1", {
         <li>Contrast freuen auf vs über, and warten auf vs helfen bei.</li>
         <li>Give a week’s time phrases: am, um, im, seit, vor, für, nach.</li>
         <li>Directions to your exam centre in four sentences.</li>
+        <li>Write nach Hause / zu Hause / zum Arzt / in die Schweiz / nach Spanien — each in a sentence.</li>
+        <li>Correct: Ich warte für den Bus. / Ich fahre zu Berlin. / Ich freue mich über das Wochenende (future).</li>
       </ol>
     `,
   },
@@ -914,10 +934,21 @@ registerPack("b1", {
     id: "konjunktiv2",
     level: "b1",
     title: "Konjunktiv II",
-    minutes: 50,
+    minutes: 68,
     html: `
       <p>Konjunktiv II is high-value telc B1. Schreiben (polite requests, unreal wishes, advice to a friend, “what would you do?”) and Sprechen (planning: <span class="de">ich würde vorschlagen … könnten wir …?</span>) use it constantly. Sprachbausteine tests <span class="de">wäre, hätte, würde, könnte, sollte</span> vs indicative. If you only know present tense, letters sound rude or childish.</p>
       <p>Two jobs: (1) politeness now, (2) unreal / hypothetical (present or past). Form: either a special form (<span class="de">wäre, hätte, würde, könnte …</span>) or <span class="de">würde</span> + infinitive — the second is your default for almost all full verbs at B1.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Decide the job: polite request now, or unreal situation (present or past).</li>
+        <li>For almost every full verb, use <span class="de">würde</span> + infinitive: <span class="de">ich würde vorschlagen, ich würde umziehen</span>.</li>
+        <li>Never stack würde on a modal or on sein/haben. Use the short forms: <span class="de">könnte, müsste, sollte, dürfte, wäre, hätte</span> — not <em>ich würde können / ich würde sein</em>.</li>
+        <li>Unreal present: both sides usually K II — <span class="de">Wenn ich Zeit hätte, würde ich dich besuchen.</span></li>
+        <li>Unreal past (regret): <span class="de">hätte / wäre</span> + Partizip — <span class="de">Wenn ich das gewusst hätte, wäre ich früher gekommen.</span> Advice about the past: <span class="de">Ich hätte früher anrufen sollen.</span></li>
+        <li>In a letter, rewrite every <span class="de">ich will / machen Sie</span> as hätte gerne / könnten Sie / es wäre wichtig.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “would” is one word; German splits würde + infinitive (default) from wäre/hätte/könnte (special verbs). English “If I were you” is <span class="de">Wenn ich Sie wäre / An Ihrer Stelle würde ich</span> — not Konjunktiv I <span class="de">sei</span>. English “could you” is already polite; German needs <span class="de">Könnten Sie</span>, not Kannst du, in a formal letter. English “I should have called” is <span class="de">Ich hätte anrufen sollen</span> (hätte + infinitive + modal), not ich sollte angerufen.</p>
       <h3>The forms you must own cold</h3>
       <table>
         <tr><th></th><th>sein</th><th>haben</th><th>werden</th><th>können</th><th>müssen</th><th>sollen</th><th>dürfen</th><th>wollen</th></tr>
@@ -961,11 +992,30 @@ registerPack("b1", {
         <li><span class="de">Ich schlage vor, wir könnten uns um 17 Uhr treffen. Wäre das okay?</span></li>
         <li><span class="de">Falls Sie den Termin nicht wahrnehmen könnten, sagen Sie uns bitte Bescheid.</span></li>
       </ul>
+      <h3>Worked examples — three machines</h3>
+      <ul>
+        <li><span class="de">Könnten Sie mir bitte die Nebenkosten erklären? Ich hätte gerne einen Termin.</span> — Could you please explain the service charges? I would like an appointment. — Politeness now: könnte / hätte gerne, not will.</li>
+        <li><span class="de">Wenn ich mehr Geld hätte, würde ich umziehen. Hätte ich ein Auto, müsste ich nicht so früh losfahren.</span> — If I had more money, I would move. If I had a car, I would not have to leave so early. — Unreal present: hätte / würde / müsste. No würde können, no würde sein.</li>
+        <li><span class="de">Wenn ich das gewusst hätte, hätte ich mich früher beworben. Ich hätte früher anrufen sollen.</span> — If I had known that, I would have applied earlier. I should have called earlier. — Unreal past: hätte + Partizip; past advice: hätte + infinitive + sollen.</li>
+        <li><span class="de">An Ihrer Stelle würde ich den Vertrag nicht so unterschreiben.</span> — If I were you, I would not sign the contract like that. — Advice formula; würde + infinitive on the full verb.</li>
+      </ul>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><span class="de">Ich würde können morgen kommen.</span></td><td><span class="de">Ich könnte morgen kommen.</span></td><td>No würde + modal.</td></tr>
+        <tr><td><span class="de">Wenn ich Zeit habe, würde ich kommen. (unreal meaning)</span></td><td><span class="de">Wenn ich Zeit hätte, würde ich kommen.</span></td><td>Both sides K II for unreal present.</td></tr>
+        <tr><td><span class="de">Ich sollte früher angerufen. (regret)</span></td><td><span class="de">Ich hätte früher anrufen sollen.</span></td><td>Past regret needs hätte + infinitive + modal.</td></tr>
+        <tr><td><span class="de">Bitte sei so nett und schicken Sie …</span></td><td><span class="de">Es wäre nett, wenn Sie … schicken könnten.</span></td><td>sei is K I (report), not politeness.</td></tr>
+        <tr><td><span class="de">Ich will einen neuen Termin. Machen Sie das sofort.</span></td><td><span class="de">Ich hätte gerne einen neuen Termin. Könnten Sie das bitte bald machen?</span></td><td>Register: formal letter needs K II.</td></tr>
+      </table>
+      <h3>Mini letter — polite complaint</h3>
+      <p><span class="de">Sehr geehrte Damen und Herren, ich würde gerne wissen, wann die Heizung repariert wird. Es wäre mir sehr wichtig, dass jemand noch diese Woche kommt. Könnten Sie mir bitte Bescheid sagen? Wenn ich früher Bescheid gewusst hätte, hätte ich die Kinder nicht zu Hause gelassen. Ich wäre Ihnen dankbar, wenn Sie den Termin schriftlich bestätigen könnten. Mit freundlichen Grüßen</span></p>
+      <p>Gloss: I would like to know when the heating will be repaired. It would be very important to me that someone still comes this week. Could you please let me know? If I had known earlier, I would not have left the children at home. I would be grateful if you could confirm the appointment in writing.</p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">Ich würde gerne … Könnten Sie bitte …? Ich hätte gerne … Es wäre nett, wenn … Ich wäre Ihnen dankbar, wenn … Wenn ich Zeit hätte, würde ich … An Ihrer Stelle würde ich … Wenn ich das gewusst hätte, wäre ich … Ich hätte … sollen. Wäre das möglich?</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        <span class="de">würde können</span> is clumsy — use könnte. Mix of tenses: unreal present is wäre/hätte/würde, not Perfekt. Unreal past needs hätte/wäre + Partizip in <em>both</em> typical clauses. <span class="de">sollte</span> is both “should” (advice) and Konjunktiv of sollen — context. Do not use Konjunktiv I (<span class="de">er sei</span>) for politeness; that is reported speech. Hören: a polite hypothetical is not a done deal — <span class="de">wir könnten Samstag</span> is not yet an agreement. Schreiben: one rude <span class="de">ich will / machen Sie</span> in a complaint letter costs register marks; rewrite with K II.
+        <span class="de">würde können</span> is clumsy — use könnte. Mix of tenses: unreal present is wäre/hätte/würde, not Perfekt. Unreal past needs hätte/wäre + Partizip in <em>both</em> typical clauses. <span class="de">sollte</span> is both “should” (advice) and Konjunktiv of sollen — context. Do not use Konjunktiv I (<span class="de">er sei</span>) for politeness; that is reported speech. Hören: a polite hypothetical is not a done deal — <span class="de">wir könnten Samstag</span> is not yet an agreement. Schreiben: one rude <span class="de">ich will / machen Sie</span> in a complaint letter costs register marks; rewrite with K II. Sprechen Teil 2: plan with <span class="de">ich würde vorschlagen / könnten wir / wäre das okay</span> — that is the whole task. Sprachbausteine: wäre vs wurde vs würde are lookalikes; wurde is past passive/indicative “became”.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -975,6 +1025,9 @@ registerPack("b1", {
         <li>Build two past unreal regrets (hätte … sollen / wenn ich gewusst hätte).</li>
         <li>Plan with a partner using nur Konjunktiv II questions (könnten wir, würde dir … passen).</li>
         <li>Say what you would do if you passed telc B1 next month.</li>
+        <li>Write five polite office lines that never use ich will or machen Sie.</li>
+        <li>Contrast: Wenn ich Zeit habe, komme ich. vs Wenn ich Zeit hätte, würde ich kommen.</li>
+        <li>Correct: Ich würde können. / Ich sollte früher angerufen. / Bitte sei so nett und schicken Sie.</li>
       </ol>
     `,
   },
@@ -982,9 +1035,20 @@ registerPack("b1", {
     id: "relative",
     level: "b1",
     title: "Relative clauses",
-    minutes: 48,
+    minutes: 66,
     html: `
       <p>Relative clauses pack information — exactly what B1 Lesen and Sprachbausteine do. Schreiben that can produce one or two correct relatives (<span class="de">die Wohnung, die ich besichtigt habe</span>) looks controlled. The pronoun matches gender/number of the noun; case comes from the role <em>inside</em> the extra clause. Verb last. Commas required.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Find the noun before the comma. That noun gives gender and number of the pronoun.</li>
+        <li>Read the extra clause as if the pronoun were er/sie/es/ihn/ihm. The job inside that clause gives the case: subject → der/die/das; object → den/die/das; “to whom” → dem/der/dem/denen; “whose” → dessen/deren.</li>
+        <li>If a preposition belongs to the inner verb, put it first: <span class="de">der Kollege, mit dem ich arbeite</span>.</li>
+        <li>After <span class="de">alles, etwas, nichts, das Beste</span>, or after a whole sentence, use <span class="de">was</span>.</li>
+        <li>For a place, <span class="de">in der / in dem</span> is safer in exams than <span class="de">wo</span>, but wo is common after cities: <span class="de">die Stadt, wo ich wohne</span>.</li>
+        <li>Verb last. Two commas if the clause sits in the middle of the sentence.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “who / which / that” barely shows case. German relative pronouns look like der/die/das and must show case. English “whose” is one word; German splits <span class="de">dessen</span> (m/n) and <span class="de">deren</span> (f/pl). English “the man I saw” can drop the pronoun; German never drops it. English “what I need” after everything is <span class="de">alles, was</span>, not das. English “where” after a noun is often <span class="de">in der / in dem</span> in careful German.</p>
       <h3>Full pronoun table</h3>
       <table>
         <tr><th></th><th>M</th><th>F</th><th>N</th><th>Pl</th></tr>
@@ -1019,11 +1083,30 @@ registerPack("b1", {
         <li><span class="de">Es gibt mehrere Gründe, aus denen ich absagen muss.</span></li>
         <li><span class="de">Die Stadt, in der ich aufgewachsen bin, liegt an einem Fluss.</span></li>
       </ul>
+      <h3>Worked examples — der / dem / den / dessen / wo / was</h3>
+      <ul>
+        <li><span class="de">Das ist der Mann, den ich gestern gesehen habe.</span> — That is the man I saw yesterday. — Mann is masculine; inside the clause he is the object of sehen → den.</li>
+        <li><span class="de">Das ist der Mann, dem ich das Buch gegeben habe.</span> — That is the man I gave the book to. — geben: person = dative → dem.</li>
+        <li><span class="de">Das ist der Mann, dessen Tochter in meinem Kurs ist.</span> — That is the man whose daughter is in my course. — dessen = whose (m); no extra article before Tochter.</li>
+        <li><span class="de">Die Stadt, in der / wo ich wohne, ist teuer. Alles, was ich brauche, ist eine ruhige Ecke.</span> — The city where I live is expensive. All I need is a quiet corner. — place: in der is safer; alles takes was, not das.</li>
+      </ul>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><span class="de">der Mann, der ich gesehen habe</span></td><td><span class="de">der Mann, den ich gesehen habe</span></td><td>Inner job is object → Akk.</td></tr>
+        <tr><td><span class="de">die Leute, den wir geschrieben haben</span></td><td><span class="de">die Leute, denen wir geschrieben haben</span></td><td>Plural dative = denen.</td></tr>
+        <tr><td><span class="de">der Mann, dessen die Tochter …</span></td><td><span class="de">der Mann, dessen Tochter …</span></td><td>No second article after dessen.</td></tr>
+        <tr><td><span class="de">alles, das ich brauche</span></td><td><span class="de">alles, was ich brauche</span></td><td>alles/etwas/nichts take was.</td></tr>
+        <tr><td><span class="de">die Wohnung die ich gesehen habe war teuer</span></td><td><span class="de">Die Wohnung, die ich gesehen habe, war teuer.</span></td><td>Two commas; verb last.</td></tr>
+      </table>
+      <h3>Mini letter — housing</h3>
+      <p><span class="de">Sehr geehrte Frau Klein, die Wohnung, die wir am Samstag besichtigt haben, gefällt uns. Der Balkon, auf dem die Kinder spielen könnten, ist ein großer Vorteil. Alles, was uns stört, ist der Lärm der Straße, an der das Haus liegt. Gibt es eine andere Wohnung, deren Hof ruhiger ist?</span></p>
+      <p>Gloss: The flat we viewed on Saturday appeals to us. The balcony on which the children could play is a big plus. All that bothers us is the noise of the street the house is on. Is there another flat whose yard is quieter?</p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">der Mann, der / den / dem / mit dem / dessen … die Frau, die / der / mit der / deren … das Problem, das / mit dem / über das … die Leute, die / denen / deren … alles, was … eine Stelle, bei der … die Wohnung, die ich … habe</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        Gender from the noun, case from the inner clause — never the other way around. Plural dative is <span class="de">denen</span>, not den. <span class="de">dessen/deren</span> do not add an extra article: <span class="de">dessen Tochter</span>, not dessen die Tochter. After prepositions do not drop the preposition. <span class="de">was</span> after alles/etwas/nichts, not das. Do not use <span class="de">wer</span> as a relative after a noun. Verb last, two commas if the clause sits in the middle. Hören rarely needs you to produce this; Lesen gaps do.
+        Gender from the noun, case from the inner clause — never the other way around. Plural dative is <span class="de">denen</span>, not den. <span class="de">dessen/deren</span> do not add an extra article: <span class="de">dessen Tochter</span>, not dessen die Tochter. After prepositions do not drop the preposition. <span class="de">was</span> after alles/etwas/nichts, not das. Do not use <span class="de">wer</span> as a relative after a noun. Verb last, two commas if the clause sits in the middle. Hören rarely needs you to produce this; Lesen gaps do. Sprachbausteine: the gap after the comma is often dem/den/dessen, not a random der. Schreiben: one correct relative beats three broken ones. Sprechen: a short <span class="de">die Kollegin, mit der ich arbeite</span> is enough.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1033,6 +1116,9 @@ registerPack("b1", {
         <li>Write everything/was and the best/was.</li>
         <li>Combine two short sentences into one relative — five times from a topic text.</li>
         <li>In speaking, add one relative when you describe a person in a photo.</li>
+        <li>Write die Frau with die / der / mit der / deren — four full sentences.</li>
+        <li>Contrast wo vs in der after die Stadt, and was vs das after alles.</li>
+        <li>Correct: der Mann, der ich gesehen habe / alles, das ich brauche / die Leute, den wir geschrieben haben.</li>
       </ol>
     `,
   },
@@ -1040,9 +1126,20 @@ registerPack("b1", {
     id: "zu",
     level: "b1",
     title: "zu + infinitive",
-    minutes: 46,
+    minutes: 64,
     html: `
       <p>zu-infinitives are everywhere in B1: <span class="de">es ist wichtig zu …, ich habe vor zu …, anstatt zu …, um zu …</span>. Sprachbausteine tests whether <span class="de">zu</span> is needed at all (not after modals) and where it sits in separable verbs (<span class="de">aufzustehen</span>). Schreiben loves <span class="de">um … zu</span> for purpose in letters.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Ask: is there a new conjugated verb and a new subject? If yes, you need a full clause (dass/damit/weil), not only zu.</li>
+        <li>If the subject stays the same, many verbs and adjectives take <span class="de">zu</span> + infinitive: <span class="de">Ich versuche, pünktlich zu kommen.</span></li>
+        <li>Purpose, same subject → <span class="de">um … zu</span>. Purpose, new subject → <span class="de">damit</span> + verb last.</li>
+        <li>Without doing → <span class="de">ohne … zu</span>. Instead of doing → <span class="de">statt / anstatt … zu</span>.</li>
+        <li>Separable: tuck zu in — <span class="de">aufzustehen, anzurufen, sich anzumelden</span>. Never <em>zu aufstehen</em>.</li>
+        <li>No zu after modals, sehen/hören/lassen, gehen + activity, or werden (future).</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “to” is almost automatic after try/hope/important, but English also drops “to” after can/must. German does the same split: try → zu, can → no zu. English “in order to” is <span class="de">um … zu</span> only when the subject is the same; English often keeps “so that” for a new subject — that is <span class="de">damit</span>. English “without saying goodbye” uses -ing; German uses <span class="de">ohne sich zu verabschieden</span>. English “instead of complaining” is <span class="de">statt sich zu beschweren</span>.</p>
       <h3>The basic pattern</h3>
       <p>Main verb or adjective + comma + (object) + <span class="de">zu</span> + infinitive. <span class="de">Ich versuche, pünktlich zu kommen. Es ist wichtig, Deutsch zu lernen.</span> The zu-clause has no new conjugated verb and usually no new subject.</p>
       <table>
@@ -1088,11 +1185,31 @@ registerPack("b1", {
         <li><span class="de">Lassen Sie uns bitte wissen, ob der Termin passt.</span></li>
         <li><span class="de">Ich lerne abends, damit meine Partnerin tagsüber das Homeoffice nutzen kann.</span></li>
       </ul>
+      <h3>Worked examples — zu / um zu / ohne zu / statt zu</h3>
+      <ul>
+        <li><span class="de">Ich rufe an, um den Termin zu verschieben.</span> — I am calling in order to postpone the appointment. — Same subject ich → um … zu.</li>
+        <li><span class="de">Ich lerne abends, damit meine Partnerin tagsüber das Homeoffice nutzen kann.</span> — I study in the evening so that my partner can use the home office during the day. — New subject → damit, not um zu.</li>
+        <li><span class="de">Sie ist gegangen, ohne sich zu verabschieden.</span> — She left without saying goodbye. — ohne … zu + reflexive.</li>
+        <li><span class="de">Anstatt sich zu beschweren, sollten wir erst mit dem Hausmeister sprechen.</span> — Instead of complaining, we should first speak to the caretaker. — statt/anstatt … zu.</li>
+        <li><span class="de">Es fällt mir schwer, morgens aufzustehen und Sie anzurufen.</span> — I find it hard to get up in the morning and to call you. — zu tucked into separable verbs.</li>
+      </ul>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><span class="de">Ich kann zu kommen.</span></td><td><span class="de">Ich kann kommen. / Ich versuche zu kommen.</span></td><td>No zu after a modal.</td></tr>
+        <tr><td><span class="de">Ich lerne, um meine Kinder nicht stören.</span></td><td><span class="de">Ich lerne, damit meine Kinder mich nicht stören. / …, um in Ruhe zu lernen.</span></td><td>New subject → damit; um zu needs zu + same subject.</td></tr>
+        <tr><td><span class="de">Es ist schwer, zu aufstehen.</span></td><td><span class="de">Es ist schwer, aufzustehen.</span></td><td>zu sits inside the separable verb.</td></tr>
+        <tr><td><span class="de">Sie ist gegangen, ohne sie verabschiedet.</span></td><td><span class="de">Sie ist gegangen, ohne sich zu verabschieden.</span></td><td>ohne + zu + infinitive.</td></tr>
+        <tr><td><span class="de">Ich gehe zu einkaufen.</span></td><td><span class="de">Ich gehe einkaufen. / Ich versuche einzukaufen.</span></td><td>gehen + activity: no zu.</td></tr>
+      </table>
+      <h3>Mini letter — Amt</h3>
+      <p><span class="de">Sehr geehrte Damen und Herren, ich schreibe, um einen neuen Termin zu vereinbaren. Es ist wichtig, die Unterlagen rechtzeitig einzureichen. Leider bin ich gegangen, ohne die Nummer zu ziehen, weil der Automat defekt war. Anstatt noch einmal zu warten, bitte ich Sie, mir den nächsten freien Termin zu schicken. Mit freundlichen Grüßen</span></p>
+      <p>Gloss: I am writing in order to arrange a new appointment. It is important to hand in the documents on time. Unfortunately I left without taking a number because the machine was broken. Instead of waiting again, I ask you to send me the next free appointment.</p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">Ich versuche zu … Es ist wichtig zu … Ich habe vor zu … um … zu … ohne … zu … anstatt … zu … sich anzumelden · aufzustehen · anzurufen · vergessen zu … Ich gehe schwimmen (kein zu). Lassen Sie uns wissen …</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        No zu after modals, sehen/hören/lassen, gehen + sport/errand. Separable: <span class="de">zu aufstehen</span> is wrong; <span class="de">aufzustehen</span> is right. um zu needs the same subject; if the baby sleeps and you whisper, that is often damit. Comma before zu-clauses is standard when they are long or after es ist … . Sprachbausteine may offer zu vs um vs damit vs dass — pick by subject and meaning (purpose vs content vs result). <span class="de">brauchen</span> in the negative can take zu: <span class="de">Du brauchst nicht zu kommen</span> (you needn’t).
+        No zu after modals, sehen/hören/lassen, gehen + sport/errand. Separable: <span class="de">zu aufstehen</span> is wrong; <span class="de">aufzustehen</span> is right. um zu needs the same subject; if the baby sleeps and you whisper, that is often damit. Comma before zu-clauses is standard when they are long or after es ist … . Sprachbausteine may offer zu vs um vs damit vs dass — pick by subject and meaning (purpose vs content vs result). <span class="de">brauchen</span> in the negative can take zu: <span class="de">Du brauchst nicht zu kommen</span> (you needn’t). Schreiben: one um … zu in a letter is gold; three in a row look mechanical. Sprechen: <span class="de">Ich rufe an, um zu fragen, ob …</span> is a perfect opener.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1102,6 +1219,8 @@ registerPack("b1", {
         <li>Put zu inside three separable verbs (anrufen, aufstehen, sich anmelden).</li>
         <li>Write three sentences that must NOT have zu (modal, gehen schwimmen, lassen Sie uns wissen).</li>
         <li>Turn “I want a new appointment” into ich würde gerne + zu + infinitive.</li>
+        <li>Write one Amt paragraph that uses um zu, ohne zu, and statt zu.</li>
+        <li>Correct: Ich kann zu kommen. / zu aufstehen / Ich gehe zu einkaufen / um die Kinder schlafen.</li>
       </ol>
     `,
   },
@@ -1109,10 +1228,21 @@ registerPack("b1", {
     id: "passive",
     level: "b1",
     title: "Passive",
-    minutes: 36,
+    minutes: 54,
     html: `
       <p>B1 Lesen (notices, company mails) and Sprachbausteine use werden + Partizip. You should produce a little in Schreiben when the actor does not matter: <span class="de">Die Heizung wird nächste Woche repariert.</span> Overusing it looks unnatural; one or two process passives are enough.</p>
       <p>Process: <span class="de">werden</span> + Partizip II. Agent optional: <span class="de">von</span> + Dat. State: <span class="de">sein</span> + Partizip — how it is now. Modal: <span class="de">muss / soll / kann … werden</span>.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Start from an active sentence with man or a clear object: <span class="de">Man öffnet die Tür um 9.</span></li>
+        <li>Make the object the new subject: <span class="de">Die Tür …</span></li>
+        <li>Add the right form of <span class="de">werden</span> in the verb slot, and put the Partizip at the end: <span class="de">Die Tür wird um 9 geöffnet.</span></li>
+        <li>Present = wird + Partizip (it happens now / as a rule). Past process = wurde + Partizip (it happened). Perfekt passive = ist … worden.</li>
+        <li>Name the agent with <span class="de">von</span> + Dat for a person/company: <span class="de">von der Firma, vom Hausmeister</span>. Use <span class="de">durch</span> for a means or cause: <span class="de">durch einen Sturm, durch einen Fehler</span>.</li>
+        <li>State passive uses sein: <span class="de">Der Laden ist geschlossen</span> = it is in the closed state now, not “someone is closing it”.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “is opened / was opened / has been opened” maps onto wird / wurde / ist … worden — but English “is closed” is often a state, which is German <span class="de">ist geschlossen</span>, not wird geschlossen. English “will come” is werden + infinitive, not passive. English “by” is usually <span class="de">von</span> for people and <span class="de">durch</span> for instruments or impersonal causes. English “he is being helped” keeps he as subject; German dative verbs keep dative: <span class="de">Ihm wird geholfen</span>.</p>
       <h3>Tense sketch</h3>
       <table>
         <tr><th>Tense</th><th>Form</th><th>Example</th></tr>
@@ -1138,11 +1268,30 @@ registerPack("b1", {
         <li><span class="de">Die Ergebnisse können online abgerufen werden.</span></li>
         <li><span class="de">Mein Fahrrad ist gestohlen worden. Ich habe Anzeige erstattet.</span></li>
       </ul>
+      <h3>Worked examples — werden + Partizip, present vs past, von/durch</h3>
+      <ul>
+        <li><span class="de">Die Tür wird um 9 Uhr geöffnet.</span> — The door is opened at 9. — Present process: wird + Partizip. Rule or timetable.</li>
+        <li><span class="de">Der Termin wurde auf Donnerstag verschoben.</span> — The appointment was postponed to Thursday. — Past process: wurde + Partizip.</li>
+        <li><span class="de">Die E-Mail ist gestern abgeschickt worden.</span> — The email was sent yesterday. — Perfekt passive: ist … worden, not geworden.</li>
+        <li><span class="de">Die Straße wurde von der Stadt gesperrt. Das Dach wurde durch den Sturm beschädigt.</span> — The street was closed by the city. The roof was damaged by the storm. — von + person/institution; durch + cause/means.</li>
+        <li><span class="de">Der Laden ist geschlossen. Er wird um 18 Uhr geschlossen.</span> — The shop is closed (state now). It is closed at 6 (the closing happens then).</li>
+      </ul>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><span class="de">Die Tür wird öffnen.</span></td><td><span class="de">Die Tür wird geöffnet. / Er wird kommen.</span></td><td>Passive needs a Partizip; wird + infinitive is future.</td></tr>
+        <tr><td><span class="de">Die Mail ist abgeschickt geworden.</span></td><td><span class="de">Die Mail ist abgeschickt worden.</span></td><td>worden = passive Perfekt; geworden = become.</td></tr>
+        <tr><td><span class="de">Er wird geholfen.</span></td><td><span class="de">Ihm wird geholfen.</span></td><td>helfen keeps dative.</td></tr>
+        <tr><td><span class="de">Die Straße ist von einem Sturm gesperrt. (cause)</span></td><td><span class="de">Die Straße wurde durch einen Sturm / von der Polizei gesperrt.</span></td><td>durch = cause; von = agent.</td></tr>
+      </table>
+      <h3>Mini notice — Amt / Haus</h3>
+      <p><span class="de">Achtung: Das Bürgeramt wird am Freitag um 12 Uhr geschlossen. Anträge müssen bis 11 Uhr abgegeben werden. Die Heizung wird nächste Woche von einer Firma repariert. Der Hof ist wegen Bauarbeiten gesperrt. Hier darf nicht geparkt werden.</span></p>
+      <p>Gloss: The citizens’ office will be closed on Friday at 12. Applications must be handed in by 11. The heating will be repaired next week by a company. The yard is closed because of building work. Parking is not allowed here.</p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">… wird geöffnet / geschlossen / repariert. Das muss … werden. wurde verschoben. ist … worden. Die Straße ist gesperrt. Ihnen wird geholfen. Hier darf nicht … werden.</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        State vs process: <span class="de">ist geschlossen</span> (now shut) vs <span class="de">wird um 18 geschlossen</span> (the closing happens then). Perfekt passive uses <span class="de">worden</span>, not geworden (geworden = become). Dative verbs keep dative: <span class="de">Ihm wird geholfen</span>, not er wird geholfen. man-rewrite is a good check: <span class="de">man öffnet die Tür</span>. Do not force passive in personal letters about your weekend.
+        State vs process: <span class="de">ist geschlossen</span> (now shut) vs <span class="de">wird um 18 geschlossen</span> (the closing happens then). Perfekt passive uses <span class="de">worden</span>, not geworden (geworden = become). Dative verbs keep dative: <span class="de">Ihm wird geholfen</span>, not er wird geholfen. man-rewrite is a good check: <span class="de">man öffnet die Tür</span>. Do not force passive in personal letters about your weekend. Sprachbausteine: wurde vs würde vs worden. Schreiben: one process passive in a complaint (<span class="de">Die Heizung wird nicht repariert</span>) is enough. Sprechen: prefer man if the passive form is shaky.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1151,6 +1300,9 @@ registerPack("b1", {
         <li>Use one modal passive in a letter (muss … werden).</li>
         <li>Contrast wird kommen vs wird geöffnet.</li>
         <li>Tell a complaint: the appointment was postponed / nothing has been repaired.</li>
+        <li>Write one von-agent and one durch-cause sentence about the same damage.</li>
+        <li>Contrast: Der Laden ist geschlossen. vs Der Laden wird um 18 geschlossen.</li>
+        <li>Correct: Die Tür wird öffnen. / Die Mail ist geworden abgeschickt. / Er wird geholfen.</li>
       </ol>
     `,
   },
@@ -1158,10 +1310,20 @@ registerPack("b1", {
     id: "reflexive",
     level: "b1",
     title: "Reflexive verbs",
-    minutes: 30,
+    minutes: 48,
     html: `
       <p>German everyday verbs are often reflexive: <span class="de">sich freuen, sich erinnern, sich bewerben, sich anmelden, sich beschweren</span>. telc B1 Schreiben (complaints, applications) and Sprechen (feelings, daily routine) need the right <span class="de">mich/mir</span>. Sprachbausteine tests whether the pronoun is there at all.</p>
       <p>Akk if there is no other object: <span class="de">Ich freue mich. Ich wasche mich.</span> Dat if there is already an Akk object (body part, clothing, thing): <span class="de">Ich wasche mir die Hände. Ich kaufe mir eine Jacke.</span></p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Learn the verb as a chunk with sich: not bewerben, but <span class="de">sich bewerben um</span>.</li>
+        <li>Match the pronoun to the subject: ich → mich/mir, wir → uns, Sie → sich.</li>
+        <li>If there is no other object, use accusative reflexive: <span class="de">Ich freue mich. Ich dusche mich.</span></li>
+        <li>If a body part, garment, or thing is already the accusative object, the reflexive is dative: <span class="de">Ich wasche mir die Hände. Ich kaufe mir eine Karte.</span></li>
+        <li>Word order: the pronoun hugs the conjugated verb: <span class="de">Heute treffe ich mich … / …, weil ich mich bewerbe</span>.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “I apply / I remember / I complain” has no extra pronoun. German often does. English “I meet him” is <span class="de">Ich treffe ihn</span>; “we meet (each other)” is <span class="de">Wir treffen uns</span> — do not write <em>ich treffe mich ihn</em>. English “I wash my hands” uses a possessive; German prefers dative reflexive + the body part: <span class="de">Ich wasche mir die Hände</span>.</p>
       <h3>Pronouns</h3>
       <table>
         <tr><th></th><th>Akk</th><th>Dat</th></tr>
@@ -1188,11 +1350,29 @@ registerPack("b1", {
         <li><span class="de">Können Sie sich bitte um den Schaden kümmern?</span></li>
         <li><span class="de">Ich habe mich an die Schichtarbeit gewöhnt.</span></li>
       </ul>
+      <h3>Worked examples</h3>
+      <ul>
+        <li><span class="de">Ich möchte mich um die Stelle bewerben und mich online anmelden.</span> — I would like to apply for the post and register online. — both verbs need sich; um + Akk belongs to bewerben.</li>
+        <li><span class="de">Ich wasche mich. Danach wasche ich mir die Hände.</span> — I wash (myself). Then I wash my hands. — no other object → mich; body part already Akk → mir.</li>
+        <li><span class="de">Wir haben uns über den Lärm beschwert.</span> — We complained about the noise. — sich beschweren über + Akk.</li>
+        <li><span class="de">Können Sie sich bitte um den Schaden kümmern?</span> — Could you please take care of the damage? — sich kümmern um.</li>
+      </ul>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><span class="de">Ich bewerbe um die Stelle.</span></td><td><span class="de">Ich bewerbe mich um die Stelle.</span></td><td>Missing sich.</td></tr>
+        <tr><td><span class="de">Ich treffe mich ihn um 6.</span></td><td><span class="de">Ich treffe ihn um 6. / Wir treffen uns um 6.</span></td><td>Do not mix sich + a second person object.</td></tr>
+        <tr><td><span class="de">Ich wasche mich die Hände.</span></td><td><span class="de">Ich wasche mir die Hände.</span></td><td>Body part = dative reflexive.</td></tr>
+        <tr><td><span class="de">Heute ich mich treffe vor dem Amt.</span></td><td><span class="de">Heute treffe ich mich vor dem Amt.</span></td><td>Verb second; pronoun after the verb.</td></tr>
+      </table>
+      <h3>Mini letter — Bewerbung</h3>
+      <p><span class="de">Sehr geehrte Frau Lorenz, ich bewerbe mich um die Teilzeitstelle in Ihrem Team. Ich möchte mich kurz vorstellen: ich arbeite seit zwei Jahren im Verkauf und habe mich an unregelmäßige Schichten gewöhnt. Über eine Einladung zum Gespräch würde ich mich sehr freuen. Mit freundlichen Grüßen</span></p>
+      <p>Gloss: I am applying for the part-time post. I would like to introduce myself: I have been working in sales for two years and have got used to irregular shifts. I would be very pleased about an invitation to an interview.</p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">Ich freue mich auf/über … Ich erinnere mich an … Ich bewerbe mich um … Ich melde mich an. Wir treffen uns … Wir beschweren uns über … Ich wasche mir die Hände. Beeil dich! Ich fühle mich …</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        Missing sich is a typical gap: <span class="de">Ich bewerbe um</span> is incomplete. <span class="de">sich treffen</span> needs a place/time, not “I meet him” with sich plus a second Akk of the same person — <span class="de">Ich treffe ihn</span> vs <span class="de">Wir treffen uns</span>. mir/mich: if a body part or garment is the object, use dative reflexive. Word order: pronoun hugs the verb: <span class="de">Heute treffe ich mich …</span> In weil: <span class="de">weil ich mich bewerbe</span>.
+        Missing sich is a typical gap: <span class="de">Ich bewerbe um</span> is incomplete. <span class="de">sich treffen</span> needs a place/time, not “I meet him” with sich plus a second Akk of the same person — <span class="de">Ich treffe ihn</span> vs <span class="de">Wir treffen uns</span>. mir/mich: if a body part or garment is the object, use dative reflexive. Word order: pronoun hugs the verb: <span class="de">Heute treffe ich mich …</span> In weil: <span class="de">weil ich mich bewerbe</span>. Sprachbausteine: the tiny gap is often mich/mir/sich. Schreiben: every Bewerbung needs sich bewerben / sich vorstellen / sich freuen. Sprechen: <span class="de">Ich fühle mich …</span> is the feelings question.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1201,6 +1381,8 @@ registerPack("b1", {
         <li>Contrast mich vs mir with waschen and kaufen.</li>
         <li>Complaint: we met, we complained, we have not heard back.</li>
         <li>Feelings: freuen auf, sich fühlen, sich gewöhnen an.</li>
+        <li>Write five chunks with the matching preposition (auf, über, um, an, für).</li>
+        <li>Correct: Ich bewerbe um die Stelle. / Ich wasche mich die Hände. / Ich treffe mich ihn.</li>
       </ol>
     `,
   },
@@ -1208,10 +1390,20 @@ registerPack("b1", {
     id: "k1",
     level: "b2",
     title: "B2: Konjunktiv I (indirect speech)",
-    minutes: 30,
+    minutes: 48,
     html: `
       <p>Newspapers report speech with Konjunktiv I: <span class="de">er sei, sie habe, sie komme, sie würden</span>. For telc B1 you only need to <strong>recognise</strong> this in Lesen (a quote is not a proven fact). For B2 you produce it in summaries. Do not use it for politeness — that is Konjunktiv II.</p>
       <p>If Konjunktiv I looks identical to the indicative (wir haben, sie haben), German switches to Konjunktiv II: <span class="de">sie hätten</span>, not sie haben, so the reader still hears “reported”.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Spot a reporting verb or signal: <span class="de">sagte, erklärte, behauptet, laut, in dem Artikel steht</span>.</li>
+        <li>The next verb may be Konjunktiv I: <span class="de">sei, habe, werde, komme, gehe</span>. That means “this is what they said”, not “this is a proven fact”.</li>
+        <li>If the K I form looks like normal present (<span class="de">sie haben</span>), writers switch to K II (<span class="de">sie hätten</span>) so you still hear “reported”.</li>
+        <li>Do not copy sei into a polite letter. Politeness is <span class="de">wäre / könnte / würde</span>.</li>
+        <li>In a true/false item, a reported claim can make a statement false if the task asks what is definitely true.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English reported speech often just shifts tense (“She said the problem was solved”). German can keep the same tense and mark the report with Konjunktiv I. English “if I were” is not sei — that is wäre (K II). English “he is said to be ill” is closer to subjective <span class="de">soll</span> than to K I, but Lesen treats both as “not yet proven”.</p>
       <h3>Recognition table</h3>
       <table>
         <tr><th></th><th>sein</th><th>haben</th><th>typical weak verb</th></tr>
@@ -1231,11 +1423,28 @@ registerPack("b1", {
         <li><span class="de">In dem Artikel steht, die Mieten stiegen weiter.</span></li>
         <li><span class="de">Er sagte, er komme später. Ob das stimmt, wissen wir nicht.</span></li>
       </ul>
+      <h3>Worked examples</h3>
+      <ul>
+        <li><span class="de">Die Ministerin sagte, das Problem sei gelöst.</span> — The minister said the problem was solved. — sei = reported, not proven.</li>
+        <li><span class="de">Sie sagten, sie hätten den Brief nie bekommen.</span> — They said they had never received the letter. — hätten replaces haben so you still hear “reported”.</li>
+        <li><span class="de">Der Arzt meinte, ich solle mehr trinken.</span> — The doctor said I should drink more. — solle is reported advice, not your own sollte in a letter of request.</li>
+        <li><span class="de">Laut E-Mail seien alle Plätze schon vergeben.</span> — According to the email all places are already taken. — Laut + K I = treat as a claim.</li>
+      </ul>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong use</th><th>Right</th><th>Why</th></tr>
+        <tr><td><span class="de">Könnten Sie so nett sei und …</span></td><td><span class="de">Es wäre nett, wenn Sie …</span></td><td>sei is not politeness.</td></tr>
+        <tr><td>True/false: “The problem is solved” after sagte, sei gelöst</td><td>Not proven — only reported</td><td>Lesen: claim ≠ fact.</td></tr>
+        <tr><td><span class="de">Wenn ich Sie sei, …</span></td><td><span class="de">Wenn ich Sie wäre, …</span></td><td>Unreal = K II wäre.</td></tr>
+      </table>
+      <h3>Mini news snippet (Lesen skill)</h3>
+      <p><span class="de">Der Sprecher der Stadt erklärte, die Straße werde nächste Woche gesperrt. Anwohner sagten, sie hätten davon nichts gewusst. Ob die Umleitung wirklich funktioniert, ist noch unklar.</span></p>
+      <p>Gloss: The city spokesman said the street would be closed next week. Residents said they had known nothing about it. Whether the diversion really works is still unclear. — Two reports, one open question. None of this is a hard fact yet.</p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">… sagte, … sei / habe / werde / komme. Laut … seien … Sie sagten, sie hätten … Für B1 Lesen: das ist behauptet, nicht bewiesen.</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        Konjunktiv I is not a polite request. <span class="de">sei</span> is not subjunctive English “if I were” (that is wäre). In B1 true/false, a reported claim can make a statement false if the task asks what is definitely true. Substitute K II (hätten, würden) still means reported speech. Do not invent full K I paradigms for the oral exam.
+        Konjunktiv I is not a polite request. <span class="de">sei</span> is not subjunctive English “if I were” (that is wäre). In B1 true/false, a reported claim can make a statement false if the task asks what is definitely true. Substitute K II (hätten, würden) still means reported speech. Do not invent full K I paradigms for the oral exam. Sprachbausteine: sei vs wäre vs ist. Schreiben: never open a complaint with sei. Sprechen: if you hear sei in a partner text, treat it as “they said”.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1243,6 +1452,8 @@ registerPack("b1", {
         <li>Read a news sentence and mark whether it is fact or report.</li>
         <li>Explain in English why hätten might appear instead of haben.</li>
         <li>Do not use K I in your B1 letter — rewrite any accidental sei as wäre if you meant politeness.</li>
+        <li>Contrast: Er ist krank. / Er sei krank. / Er soll krank sein. / Er wäre gern gesund.</li>
+        <li>In a Lesen item, underline every reporting verb before you answer true/false.</li>
       </ol>
     `,
   },
@@ -1250,10 +1461,20 @@ registerPack("b1", {
     id: "nominal",
     level: "b2",
     title: "B2: Nominalisation",
-    minutes: 30,
+    minutes: 48,
     html: `
       <p>B2 texts pack verbs into nouns: <span class="de">entscheiden → die Entscheidung; entwickeln → die Entwicklung; teilnehmen → die Teilnahme</span>. Useful for Lesen at B1 already: if you see <span class="de">die Lösung des Problems</span>, unpack it as <span class="de">man löst das Problem</span>. Sprachbausteine sometimes wants a noun where you expected a weil-clause.</p>
       <p>Typical signals: <span class="de">-ung, -heit, -keit, -tion, -schaft, Ge- + -e, das + infinitive</span>. Prepositions shift: weil → <span class="de">wegen</span> + genitive; wenn → <span class="de">bei</span>; nachdem → <span class="de">nach</span>; um zu → <span class="de">zur / zum</span> + noun.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Find the noun ending: -ung, -heit, -keit, -tion, -schaft, or a bare infinitive used as a noun (<span class="de">das Ausfüllen</span>).</li>
+        <li>Name the hidden verb: Entscheidung → entscheiden, Teilnahme → teilnehmen, Erhöhung → erhöhen.</li>
+        <li>Unpack the preposition: wegen ≈ weil, bei ≈ wenn, nach ≈ nachdem, zur/zum ≈ um zu.</li>
+        <li>The “owner” is often genitive: <span class="de">die Lösung des Problems</span> = man löst das Problem.</li>
+        <li>In a friend letter, unpack officialese back into simple clauses. In Lesen, do the reverse so headings make sense.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English also packs verbs (“the decision of the company”), but German does it more, and the packed form often takes genitive where English uses of. English “after receiving your mail” is a participle; German official style uses <span class="de">nach Erhalt Ihrer Mail</span>. English learners invent -ung on every verb; only existing nouns count.</p>
       <h3>Unpack table</h3>
       <table>
         <tr><th>Noun phrase</th><th>Clause meaning</th></tr>
@@ -1276,11 +1497,28 @@ registerPack("b1", {
         <li><span class="de">Ohne schriftliche Begründung können wir nichts ändern.</span></li>
         <li><span class="de">Die Schließung der Filiale ärgert die Kunden im Viertel.</span></li>
       </ul>
+      <h3>Worked examples</h3>
+      <ul>
+        <li><span class="de">Wegen der Erhöhung der Miete suchen wir eine kleinere Wohnung.</span> — Because of the rent increase we are looking for a smaller flat. — wegen + genitive unpacks to weil die Miete erhöht wird.</li>
+        <li><span class="de">Nach der Anmeldung bekommen Sie eine Bestätigung.</span> — After registration you will receive a confirmation. — nach + noun ≈ nachdem Sie sich angemeldet haben.</li>
+        <li><span class="de">Zur Lösung des Problems brauchen wir mehr Zeit.</span> — To solve the problem we need more time. — zur + noun ≈ um das Problem zu lösen.</li>
+        <li><span class="de">Das Ausfüllen des Formulars dauert nur fünf Minuten.</span> — Filling in the form takes only five minutes. — das + infinitive as a noun; des Formulars is genitive.</li>
+      </ul>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><span class="de">wegen die Erhöhung die Miete</span></td><td><span class="de">wegen der Erhöhung der Miete</span></td><td>wegen + genitive; owner also genitive.</td></tr>
+        <tr><td>Friend letter packed with Erhalt/Teilnahme/Begründung</td><td>Unpack: nachdem ich … bekommen habe</td><td>B1 friend letters should stay verbal.</td></tr>
+        <tr><td>Invented: die Kommenung</td><td><span class="de">die Ankunft / dass er kommt</span></td><td>Only real nouns.</td></tr>
+      </table>
+      <h3>Mini Amt sentence vs B1 rewrite</h3>
+      <p>Official: <span class="de">Nach Erhalt Ihrer Unterlagen erfolgt die Bearbeitung zur Entscheidung über die Teilnahme.</span></p>
+      <p>B1: <span class="de">Nachdem wir Ihre Unterlagen bekommen haben, bearbeiten wir sie. Dann entscheiden wir, ob Sie teilnehmen können.</span></p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">wegen + Gen · nach Erhalt · bei Fragen / bei Krankheit · zur Verbesserung · die Entscheidung · die Teilnahme an · das Ausfüllen · trotz der Verspätung</span>. Unpack nouns back into verbs when reading.</p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        A noun phrase is not automatically genitive on every word — only the “owner” is: <span class="de">die Lösung des Problems</span>. B1 Schreiben should not imitate officialese for a friend letter. Lesen: the heading may use a noun, the paragraph uses the verb (or the reverse). Do not invent -ung on every English word.
+        A noun phrase is not automatically genitive on every word — only the “owner” is: <span class="de">die Lösung des Problems</span>. B1 Schreiben should not imitate officialese for a friend letter. Lesen: the heading may use a noun, the paragraph uses the verb (or the reverse). Do not invent -ung on every English word. Sprachbausteine: the gap may be wegen/bei/nach/zur where you wanted weil/wenn. Sprechen: unpack; do not perform B2 style aloud.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1288,6 +1526,8 @@ registerPack("b1", {
         <li>Pack five of your own clauses into wegen/nach/bei/zur + noun (for recognition practice).</li>
         <li>Rewrite an official sentence in simple B1 German, then compare.</li>
         <li>Spot three nominalisations in a news paragraph and name the hidden verb.</li>
+        <li>Turn zur Verbesserung / bei Krankheit / nach der Anmeldung back into um zu / wenn / nachdem.</li>
+        <li>Write a friend letter that avoids official nouns, then a formal line that uses one on purpose.</li>
       </ol>
     `,
   },
@@ -1295,9 +1535,19 @@ registerPack("b1", {
     id: "advconn",
     level: "b2",
     title: "B2: Advanced connectors",
-    minutes: 35,
+    minutes: 52,
     html: `
       <p>These connectors appear in B1 Lesen already and in stronger Schreiben. You do not need all of them in the oral exam, but recognising verb-last vs verb-second here prevents Sprachbausteine disasters. Use two or three in a formal B1 letter if they fit; do not sprinkle them for decoration.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>First decide the family: verb last (subordinating) or verb second (adverb in slot 1). A wrong family is a wrong answer even if the meaning is close.</li>
+        <li>Verb last: <span class="de">indem, sodass, zumal, sofern, während, wodurch, obwohl, damit</span>.</li>
+        <li>Verb second: <span class="de">dennoch, infolgedessen, hingegen, stattdessen, allerdings, daher, folglich, vielmehr</span>.</li>
+        <li><span class="de">je … desto</span> is special: both halves have verb second and a comparative adjective.</li>
+        <li>If you cannot control the slot, use a connector you already own (weil, deshalb, obwohl). A correct weil beats a broken zumal.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “by doing” is <span class="de">indem</span> + verb last, not in dem. English “the more … the more” is <span class="de">je … desto</span> with inversion in both halves. English “however / nevertheless” often sits in the middle; German <span class="de">dennoch / allerdings</span> usually take slot 1. English “while” is both time and contrast — same as <span class="de">während</span>.</p>
       <h3>Verb last</h3>
       <p><span class="de">sofern, zumal, während</span> (whereas), <span class="de">indem, wodurch, sodass, je … desto, damit, obwohl</span> you already know.</p>
       <h3>Verb second (the connector takes slot 1)</h3>
@@ -1325,11 +1575,28 @@ registerPack("b1", {
         <li><span class="de">Wir bleiben, zumal eine Alternative kurzfristig kaum zu finden ist.</span></li>
         <li><span class="de">Er erklärt alles sehr schnell, wodurch einige Teilnehmer den Anschluss verlieren.</span></li>
       </ul>
+      <h3>Worked examples</h3>
+      <ul>
+        <li><span class="de">Je früher wir uns beschweren, desto größer ist die Chance auf eine Lösung.</span> — The earlier we complain, the greater the chance of a solution. — verb second in both halves; comparatives früher / größer.</li>
+        <li><span class="de">Man spart Zeit, indem man die Unterlagen vorher hochlädt.</span> — You save time by uploading the documents beforehand. — indem = by doing, verb last.</li>
+        <li><span class="de">Die Miete ist gestiegen. Infolgedessen suchen viele eine WG.</span> — The rent has risen. As a result many people look for a shared flat. — infolgedessen takes slot 1.</li>
+        <li><span class="de">Ich unterschreibe, sofern die Klausel klar ist. Allerdings ist der Raum klein.</span> — I will sign provided the clause is clear. However, the room is small. — sofern verb last; allerdings slot 1.</li>
+      </ul>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><span class="de">Je mehr ich lerne, desto ich werde sicherer.</span></td><td><span class="de">Je mehr ich lerne, desto sicherer werde ich.</span></td><td>Both halves invert.</td></tr>
+        <tr><td><span class="de">Ich spare, indem ich fahre weniger Auto. (verb second after indem)</span></td><td><span class="de">Ich spare, indem ich weniger Auto fahre.</span></td><td>indem = verb last.</td></tr>
+        <tr><td><span class="de">Dennoch ich bleibe.</span></td><td><span class="de">Dennoch bleibe ich.</span></td><td>dennoch occupies slot 1.</td></tr>
+      </table>
+      <h3>Mini letter — opinion to a friend (careful B1+)</h3>
+      <p><span class="de">Liebe Anna, je länger ich über die WG nachdenke, desto unsicherer bin ich. Die Lage ist gut. Allerdings ist das Zimmer klein, sodass ich kaum einen Schreibtisch hätte. Stattdessen könnte ich eine Wohnung am Stadtrand nehmen, zumal sie ruhiger ist. Ich komme, sofern du am Samstag Zeit hast.</span></p>
+      <p>Gloss: The longer I think about the shared flat, the less sure I am. The location is good. However the room is small, so I would hardly have a desk. Instead I could take a flat on the edge of town, especially since it is quieter. I’ll come provided you have time on Saturday.</p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">Je mehr …, desto … indem … während … dennoch … stattdessen … allerdings … infolgedessen … sofern … zumal … sodass …</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        <span class="de">je … desto</span>: verb second in both halves, comparatives on the adjectives. <span class="de">während</span> is not nur “while time” — it can contrast. <span class="de">indem</span> is not “in that” English filler; it means by means of. dennoch/trotzdem take position 1. Do not use B2 connectors if you cannot control the verb slot — a correct weil beats a broken zumal.
+        <span class="de">je … desto</span>: verb second in both halves, comparatives on the adjectives. <span class="de">während</span> is not nur “while time” — it can contrast. <span class="de">indem</span> is not “in that” English filler; it means by means of. dennoch/trotzdem take position 1. Do not use B2 connectors if you cannot control the verb slot — a correct weil beats a broken zumal. Sprachbausteine: look at the verb position already printed. Schreiben: two advanced connectors in a formal letter are enough. Sprechen: stay with deshalb / trotzdem / obwohl unless you are sure.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1338,6 +1605,8 @@ registerPack("b1", {
         <li>Contrast two options with während or hingegen plus stattdessen.</li>
         <li>Add allerdings and dennoch to a short opinion.</li>
         <li>Rewrite a trotzdem sentence as obwohl and as dennoch.</li>
+        <li>Write sofern and zumal in two formal lines about a contract.</li>
+        <li>Correct: Dennoch ich bleibe. / Je mehr ich lerne, desto ich werde sicher. / indem ich fahre weniger.</li>
       </ol>
     `,
   },
@@ -1345,9 +1614,20 @@ registerPack("b1", {
     id: "subjmodals",
     level: "b2",
     title: "B2: Subjective modals (rumour / deduction)",
-    minutes: 30,
+    minutes: 48,
     html: `
       <p>Same modal verbs, new meaning: not ability/permission, but the speaker’s attitude to a claim. B1 Lesen already uses this in messages and news. You rarely need to produce it at B1; you must not misread it as a normal modal. <span class="de">Er soll krank sein</span> is not “he is supposed to get ill as a duty” — it is “they say he is ill”.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Ask: is this a rule/ability, or a claim about what is true? Rules stay objective. Claims about rumours and deductions are subjective.</li>
+        <li><span class="de">soll + infinitive</span> in a report = they say / it is said: <span class="de">Er soll krank sein.</span></li>
+        <li><span class="de">sollte / sollten</span> is usually advice or a softer duty: <span class="de">Sie sollten den Hausmeister informieren.</span> In a report it can also be a careful “it is said that … would …”. Context decides.</li>
+        <li><span class="de">müsste</span> in a report is a logical deduction (“it would have to be / it must be, I infer”): <span class="de">Das müsste ein Irrtum sein.</span> Softer than muss.</li>
+        <li>Past rumour: infinitive + sein/haben at the end: <span class="de">Er soll gestern angekommen sein. Sie will das nicht gesagt haben.</span></li>
+        <li>True/false: a rumour is not a confirmed fact. Do not tick “he is ill” if the text only says er soll krank sein.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “is said to / is supposed to / must be / might be” are different verbs. German recycles the same modals. English “should” is almost always advice (<span class="de">sollte</span>); German <span class="de">soll</span> in a news line is rumour. English “he will have seen it” (deduction) is often <span class="de">Er muss / müsste es gesehen haben</span>. English “she claims she didn’t see anything” is <span class="de">Sie will nichts gesehen haben</span> — will is not “wants to” here.</p>
       <h3>Attitude map</h3>
       <table>
         <tr><th>Modal</th><th>Subjective meaning</th><th>Example</th></tr>
@@ -1372,18 +1652,47 @@ registerPack("b1", {
         <li><span class="de">Sie muss die Nachricht schon gelesen haben. Sie ist online.</span></li>
         <li><span class="de">Das mag unbequem sein, aber es ist fair.</span></li>
       </ul>
+      <h3>Exam killers in reports: soll / sollte / müsste</h3>
+      <table>
+        <tr><th>Form</th><th>In a report</th><th>Not a report</th></tr>
+        <tr><td><span class="de">soll + inf</span></td><td>rumour: <span class="de">Der Nachbar soll umgezogen sein.</span> (they say he has moved)</td><td>instruction: <span class="de">Sie sollen im Flur warten.</span></td></tr>
+        <tr><td><span class="de">sollte / sollten</span></td><td>careful reported expectation: <span class="de">Die Reparatur sollte diese Woche fertig sein.</span> (it is supposed to be done — we are not sure)</td><td>advice: <span class="de">Sie sollten den Hausmeister informieren.</span></td></tr>
+        <tr><td><span class="de">müsste</span></td><td>inference: <span class="de">Das müsste die neue Rechnung sein.</span> (I deduce it is)</td><td>unreal duty: <span class="de">Ich müsste früher kommen, wenn ich Zeit hätte.</span></td></tr>
+      </table>
+      <p>Gloss the report uses: they say he has moved / the repair is supposed to be finished this week / that would have to be the new bill. In Lesen, none of these three is a hard fact.</p>
+      <h3>Worked examples</h3>
+      <ul>
+        <li><span class="de">Die Wohnung soll sehr laut sein. Deshalb schauen wir sie abends an.</span> — The flat is said to be very noisy. That is why we will view it in the evening. — soll = rumour, not a duty to be loud.</li>
+        <li><span class="de">Er will den Brief abgeschickt haben. Angekommen ist er nicht.</span> — He claims to have sent the letter. It has not arrived. — will + past infinitive = doubtful claim.</li>
+        <li><span class="de">Das müsste ein Irrtum sein. Die Miete ist schon da.</span> — That would have to be a mistake. The rent is already there. — müsste = soft deduction.</li>
+        <li><span class="de">Man soll hier nicht fotografieren.</span> — You are not supposed to take photos here. — still a rule, because man + place rule. Contrast: <span class="de">Er soll hier fotografiert haben</span> = they say he took photos here.</li>
+      </ul>
+      <h3>Right vs wrong (Lesen logic)</h3>
+      <table>
+        <tr><th>Text</th><th>False conclusion</th><th>Safe conclusion</th></tr>
+        <tr><td><span class="de">Er soll krank sein.</span></td><td>He is ill. (fact)</td><td>People say he is ill.</td></tr>
+        <tr><td><span class="de">Sie will nichts gesehen haben.</span></td><td>She saw nothing. (fact)</td><td>She claims she saw nothing.</td></tr>
+        <tr><td><span class="de">Das müsste die richtige Adresse sein.</span></td><td>This is definitely the address.</td><td>The speaker infers it is probably the address.</td></tr>
+        <tr><td><span class="de">Sie sollen im Flur warten.</span></td><td>Rumour that they are waiting</td><td>Instruction: wait in the corridor.</td></tr>
+      </table>
+      <h3>Mini news snippet</h3>
+      <p><span class="de">Der Hausmeister soll die Heizung schon repariert haben. Mieter sagen, das könne nicht stimmen, die Wohnung sei noch kalt. Das müsste man nachprüfen. Die Verwaltung sollte sich dazu heute äußern.</span></p>
+      <p>Gloss: The caretaker is said to have already repaired the heating. Tenants say that cannot be true; the flat is still cold. That would have to be checked. The management is supposed to comment on it today. — Chain of rumour, claim, inference, expectation. Nothing is proven.</p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">soll = man sagt · will = behauptet (Zweifel) · muss = logisch · könnte = vielleicht · … gewesen sein / … gemacht haben. Das mag sein, aber …</span></p>
+        <p><span class="de">soll = man sagt · sollte = soll wohl / Rat · müsste = logisch, etwas weicher als muss · will = behauptet (Zweifel) · muss = logisch · könnte = vielleicht · … gewesen sein / … gemacht haben. Das mag sein, aber …</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        Context decides: <span class="de">Sie sollen im Flur warten</span> is an instruction; <span class="de">Er soll im Flur warten</span> in a gossip text may be rumour. Look at who is speaking. <span class="de">will</span> as “wants to” vs “claims to” — a second clause of doubt is the clue. True/false items: a rumour is not a confirmed fact. Do not produce subjective will in your own B1 letter; it sounds accusatory.
+        Context decides: <span class="de">Sie sollen im Flur warten</span> is an instruction; <span class="de">Er soll im Flur warten</span> in a gossip text may be rumour. Look at who is speaking. <span class="de">will</span> as “wants to” vs “claims to” — a second clause of doubt is the clue. True/false items: a rumour is not a confirmed fact. Do not produce subjective will in your own B1 letter; it sounds accusatory. Sprachbausteine: soll vs sollte vs müsste vs muss. Schreiben: keep soll as instruction (“please wait”); do not write gossip. Sprechen: if you report a rumour, add <span class="de">man sagt / ich weiß nicht, ob das stimmt</span> so the examiner hears that you know it is not a fact.
       </div>
       <h3>Produce now</h3>
       <ol>
         <li>Rewrite four facts as rumours with soll … sein/haben.</li>
-        <li>Write a deduction with muss and a softer one with könnte.</li>
+        <li>Write a deduction with muss and a softer one with könnte / müsste.</li>
         <li>Contrast instruction sollen vs rumour soll using the same verb.</li>
         <li>Mark subjective modals in a short news paragraph.</li>
+        <li>Write three report lines: soll (rumour), sollte (expectation), müsste (inference).</li>
+        <li>True/false drill: Er soll krank sein. — Is he ill? Answer in one sentence.</li>
+        <li>Contrast: Sie will nach Hause. vs Sie will nichts gesehen haben.</li>
       </ol>
     `,
   },
@@ -1391,10 +1700,20 @@ registerPack("b1", {
     id: "partizip",
     level: "b2",
     title: "B2: Participles as adjectives",
-    minutes: 30,
+    minutes: 48,
     html: `
       <p>This is how denser German packs relative clauses into a phrase: <span class="de">die steigenden Mieten</span> = the rents that are rising. For B1 Lesen: strip it to a verb. <span class="de">die im Zentrum gelegene Wohnung</span> = the flat that lies in the centre. You do not need to produce long participle phrases at B1; you must not panic when you see them.</p>
       <p>Present participle: infinitive + d (<span class="de">steigend, überzeugend, vorliegend</span>) — ongoing. Past participle as adjective: <span class="de">geschrieben, geschlossen, renoviert</span> — already done. Then it takes normal adjective endings.</p>
+      <h3>How it works, step by step</h3>
+      <ol>
+        <li>Find the head noun at the end of the phrase: <span class="de">… Wohnung, … Unterlagen, … Mieten</span>.</li>
+        <li>Find the participle just before it: -end = ongoing (present); ge- … -t/-en or inseparable Partizip = already done.</li>
+        <li>Unpack to a relative: <span class="de">die steigenden Mieten</span> → <span class="de">die Mieten, die steigen</span>. <span class="de">die ausgefüllten Unterlagen</span> → <span class="de">die Unterlagen, die ausgefüllt wurden</span>.</li>
+        <li>Give the participle a normal adjective ending: <span class="de">ein renoviertes Bad, die ausgefüllten Formulare</span>.</li>
+        <li>In B1 Schreiben, prefer a relative clause. Use a short packed form only if you are sure of the ending (<span class="de">ausgefüllte Unterlagen</span>).</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “rising rents / a written letter / the attached file” works the same way, but German then adds adjective endings. English can stack a long modifier after the noun; German stacks it before: <span class="de">die im Zentrum gelegene Wohnung</span>. English “the not-yet-opened post” is rare; German <span class="de">die noch nicht geöffnete Post</span> is normal official style.</p>
       <h3>Unpack method</h3>
       <table>
         <tr><th>Packed</th><th>Unpack</th></tr>
