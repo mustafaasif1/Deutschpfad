@@ -1400,7 +1400,7 @@ registerPack("a2", {
         <li><span class="de">Wie wird das geschrieben? Mit ß oder ss?</span></li>
         <li><span class="de">Die Tickets können online gebucht werden.</span></li>
         <li><span class="de">Die Hausaufgaben werden am Freitag eingesammelt.</span></li>
-        <tr></tr>
+        <li><span class="de">Bitte warten Sie, bis Sie aufgerufen werden.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p><span class="de">Hier wird … gesprochen. … wird um … geschlossen. Die Straße ist gesperrt. Das Formular muss … werden. Sie werden aufgerufen. wurde verschoben. ist geöffnet / ist geschlossen. Man spricht / man öffnet …</span></p>
@@ -1424,9 +1424,19 @@ registerPack("a2", {
     id: "a2-traps",
     title: "A2 exam traps",
     level: "a2",
-    minutes: 35,
+    minutes: 53,
     html: `
-      <p>telc A2 is less about rare grammar than about not falling for the same five tricks. This lesson is a checklist. Use it the week of the exam. Every trap below appears in Hören, Lesen, Schreiben, or Sprechen with boring regularity.</p>
+      <p>telc A2 is less about rare grammar than about not falling for the same five tricks. This lesson is a checklist. Use it the week of the exam. Every trap below appears in Hören, Lesen, Schreiben, or Sprechen with boring regularity. This is Start Deutsch 2 / telc A2 — everyday notices, letters, and plans, not DTZ.</p>
+      <h3>How it works step by step</h3>
+      <ol>
+        <li>Before Hören: read the statement and decide what would make it false (a time, a negation, a person).</li>
+        <li>During Hören: wait for the last word. Prefixes, <span class="de">aber</span>, <span class="de">trotzdem</span>, and <span class="de">erst</span> live there.</li>
+        <li>In Lesen: hunt synonyms, not the same noun. Conditions hide at the end of ads.</li>
+        <li>In Schreiben: tick greeting, every Leitpunkt, a question if asked, closing, one register.</li>
+        <li>In Sprechen: land a plan with four details and say <span class="de">wir sind uns einig</span>.</li>
+      </ol>
+      <h3>English vs German</h3>
+      <p>English “half four” is 4:30; German <span class="de">halb vier</span> is 3:30. English “must not” vs “don’t have to” maps to <span class="de">nicht dürfen</span> vs <span class="de">nicht müssen</span>. English “closed” in a statement that repeats the audio noun is often the false item — the true one says <span class="de">nicht geöffnet / macht zu</span>. English “yes, exactly” is not a German speaking plan.</p>
       <h3>Hören</h3>
       <ul>
         <li>Read the statement first. Know what would make it false before the audio starts.</li>
@@ -1455,6 +1465,28 @@ registerPack("a2", {
         <li>Ask the partner questions. Repair: <span class="de">Wie bitte? Könnten Sie das bitte wiederholen?</span></li>
         <li>Slow and clear beats fast and wrong.</li>
       </ul>
+      <h3>Worked examples — why the obvious answer is wrong</h3>
+      <p>Audio: <span class="de">Der Kurs beginnt nicht um 8, sondern erst um 9.</span> Statement: “The course starts at 8.” False. The same noun <span class="de">Kurs</span> is in both; the trap is <span class="de">nicht / erst</span>.</p>
+      <p>Ad: <span class="de">Das Museum ist günstig, aber am Montag zu.</span> Statement: “You can visit the museum every day.” False. The condition is at the end.</p>
+      <p>Notice: <span class="de">Man muss das Formular nicht heute abgeben. Bis Freitag reicht.</span> Statement: “You are not allowed to hand it in today.” False. <span class="de">nicht müssen</span> is not a ban.</p>
+      <p>Letter task says “ask a question” and you only apologise. The apology can be perfect — that bullet is still 0.</p>
+      <h3>Right vs wrong (exam behaviour)</h3>
+      <table>
+        <tr><th>Trap behaviour</th><th>A2 behaviour</th></tr>
+        <tr><td>Tick the sentence that repeats a noun from the audio</td><td>Tick the synonym; check nicht/kein/erst/nur</td></tr>
+        <tr><td>Write keywords for Leitpunkte</td><td>Full sentences: greeting, reason, Perfekt, question, closing</td></tr>
+        <tr><td><span class="de">Ja, genau</span> and sit back</td><td>Say day, time, place, transport, then confirm</td></tr>
+        <tr><td>Mix du and Sie because you are nervous</td><td>Choose register before the first word</td></tr>
+        <tr><td>Translate “half four” as 4:30</td><td><span class="de">halb vier</span> = 3:30</td></tr>
+        <tr><td>Stop listening at the verb</td><td>Wait for the prefix / aber / trotzdem</td></tr>
+      </table>
+      <h3>Mini dialogue — last-word flip</h3>
+      <p><span class="de">A: Der Kurs ist um 8, oder?</span><br>
+      <span class="de">B: Nein. Er beginnt nicht um 8, sondern erst um 9.</span><br>
+      <span class="de">A: Und die Praxis? Ist sie auf?</span><br>
+      <span class="de">B: Heute ist sie geschlossen. Nur Notfälle.</span><br>
+      <span class="de">A: Dann treffen wir uns vor dem Kino, nicht im Kino. Einig?</span><br>
+      <span class="de">B: Einig: Sonntag, 11 Uhr, Buslinie 5, Haltestelle Markt.</span></p>
       <h3>Examples of trap sentences</h3>
       <ul>
         <li><span class="de">Der Kurs beginnt nicht um 8, sondern erst um 9.</span></li>
@@ -1469,12 +1501,16 @@ registerPack("a2", {
         <li><span class="de">Schreibst du mir, oder soll ich dich anrufen?</span></li>
         <li><span class="de">Man muss das Formular nicht heute abgeben. Bis Freitag reicht.</span></li>
         <li><span class="de">Also einig: Sonntag, 11 Uhr, Buslinie 5, Haltestelle Markt.</span></li>
+        <li><span class="de">Ich habe kein Auto, ich fahre nur mit dem Bus — nicht: ich fahre nicht mit dem Bus.</span></li>
+        <li><span class="de">Der Laden macht um 18 Uhr zu. Er ist dann geschlossen, nicht den ganzen Tag zu.</span></li>
+        <li><span class="de">Wir können Samstag. Sonntag muss ich arbeiten — der freie Tag ist also Samstag.</span></li>
+        <li><span class="de">Sie dürfen hier nicht parken. Eine Stunde mit Parkscheibe gilt nur dort, wo es steht.</span></li>
       </ul>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
-        <p><span class="de">nicht / kein / nur / schon / erst · geschlossen = nicht geöffnet · leider …, weil … · Ich schlage vor, dass wir … · Also, dann sind wir uns einig · Wie bitte?</span></p>
+        <p><span class="de">nicht / kein / nur / schon / erst · geschlossen = nicht geöffnet · leider …, weil … · Ich schlage vor, dass wir … · Also, dann sind wir uns einig · Wie bitte? · nicht müssen ≠ nicht dürfen · halb vier = 3:30</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        The statement that uses the same noun as the audio is often false. The true one uses a synonym. <span class="de">nicht müssen</span> is not a prohibition. <span class="de">als</span> comparative vs <span class="de">als</span> past vs <span class="de">wenn</span> — read the whole clause. In letters, a beautiful sentence that ignores a Leitpunkt scores 0 for that point. In speaking, do not switch to English to “save” the task.
+        The statement that uses the same noun as the audio is often false. The true one uses a synonym. <span class="de">nicht müssen</span> is not a prohibition. <span class="de">als</span> comparative vs <span class="de">als</span> past vs <span class="de">wenn</span> — read the whole clause. In letters, a beautiful sentence that ignores a Leitpunkt scores 0 for that point. In speaking, do not switch to English to “save” the task. <span class="de">kein</span> negates a noun; <span class="de">nicht</span> negates a verb or a whole idea — Hören items swap them. <span class="de">schon</span> vs <span class="de">erst</span> with the same clock time flips “already” vs “only then”. Write numbers as digits the moment you hear them. Do not invent DTZ-style integration answers; stay in everyday A2 situations.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1483,6 +1519,8 @@ registerPack("a2", {
         <li>Draft a 4-bullet letter and tick greeting, points, question, closing, register.</li>
         <li>Role-play a plan that you disagree with first, then agree.</li>
         <li>List your personal top three traps and an example sentence for each.</li>
+        <li>Write two pairs: nicht müssen vs nicht dürfen; schon um 8 vs erst um 8.</li>
+        <li>Say halb zwei / halb vier / halb acht as clock times, then write the digits.</li>
       </ol>
     `,
   }

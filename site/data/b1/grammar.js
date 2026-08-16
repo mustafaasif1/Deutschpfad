@@ -57,6 +57,11 @@ registerPack("b1", {
         <li><span class="de">Unsere Nachbarn sind nett. Ihre Kinder spielen im Hof.</span></li>
         <li><span class="de">Welcher Zug fährt nach Mainz? Welches Gleis?</span></li>
         <li><span class="de">Jeder Teilnehmer braucht einen Ausweis und das Anmeldeformular.</span></li>
+        <li><span class="de">Die Anmeldung des Kindes dauert länger als gedacht.</span></li>
+        <li><span class="de">Im Keller der Nachbarn steht ein altes Fahrrad.</span></li>
+        <li><span class="de">Welches Formular meinen Sie — das gelbe oder das weiße?</span></li>
+        <li><span class="de">Keiner der Kollegen hatte die Nummer des Hausmeisters.</span></li>
+        <li><span class="de">Unser Sohn geht in den Kindergarten. Seine Jacke hängt an der Tür.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -135,6 +140,11 @@ registerPack("b1", {
         <li><span class="de">Gegen den Lärm können wir leider wenig machen.</span></li>
         <li><span class="de">Nimmst du den Zug oder den Bus? Ich nehme den früheren Zug.</span></li>
         <li><span class="de">Bitte schicken Sie uns die Unterlagen bis Freitag.</span></li>
+        <li><span class="de">Ich brauche einen neuen Ausweis, eine Meldebescheinigung und das Passfoto.</span></li>
+        <li><span class="de">Haben Sie meinen Anruf gehört? Ich habe ihn zweimal versucht.</span></li>
+        <li><span class="de">Wir nehmen den späteren Bus. Den früheren haben wir verpasst.</span></li>
+        <li><span class="de">Ohne Ihre Unterschrift können wir den Vertrag nicht schicken.</span></li>
+        <li><span class="de">Jeden Morgen kaufe ich eine Zeitung und lese sie im Zug.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -591,6 +601,11 @@ registerPack("b1", {
         <li><span class="de">Ich habe den Zug nicht mehr erreichen können.</span></li>
         <li><span class="de">Falls Sie nicht kommen können, sagen Sie uns bitte Bescheid.</span></li>
         <li><span class="de">Ich mag meine Kollegen, aber ich möchte nicht jedes Wochenende arbeiten.</span></li>
+        <li><span class="de">Dürfen die Kinder im Hof spielen? — Ja, aber sie dürfen nicht schreien.</span></li>
+        <li><span class="de">Sie müssen nicht bar bezahlen. Sie können überweisen.</span></li>
+        <li><span class="de">Ich sollte früher schreiben, aber ich wollte erst die Unterlagen suchen.</span></li>
+        <li><span class="de">Könnten wir den Termin auf 16 Uhr legen? Um 15 Uhr kann ich nicht.</span></li>
+        <li><span class="de">Man hat uns gesagt, wir dürften den Keller nicht als Lager benutzen.</span></li>
       </ul>
       <h3>Worked examples</h3>
       <ul>
@@ -1736,11 +1751,28 @@ registerPack("b1", {
         <li><span class="de">Haben Sie den unterschriebenen Antrag schon abgegeben?</span></li>
         <li><span class="de">Die noch nicht geöffnete Post liegt auf meinem Schreibtisch.</span></li>
       </ul>
+      <h3>Worked examples</h3>
+      <ul>
+        <li><span class="de">Die steigenden Mieten belasten viele Familien.</span> — The rising rents put a strain on many families. — steigend = ongoing; unpack: die Mieten, die steigen.</li>
+        <li><span class="de">Bitte schicken Sie die ausgefüllten Unterlagen zurück.</span> — Please send the completed documents back. — past participle + weak plural ending -en.</li>
+        <li><span class="de">Wir suchen eine ruhig gelegene Wohnung mit renoviertem Bad.</span> — We are looking for a quietly situated flat with a renovated bathroom. — gelegen / renoviert already done; endings follow ein- vs no-article rules.</li>
+        <li><span class="de">Die noch nicht geöffnete Post liegt auf meinem Schreibtisch.</span> — The not-yet-opened post is on my desk. — negation sits inside the packed phrase.</li>
+      </ul>
+      <h3>Right vs wrong</h3>
+      <table>
+        <tr><th>Wrong</th><th>Right</th><th>Why</th></tr>
+        <tr><td><span class="de">die ausgefüllt Unterlagen</span></td><td><span class="de">die ausgefüllten Unterlagen</span></td><td>Participle needs an adjective ending.</td></tr>
+        <tr><td><span class="de">ein renoviert Bad</span></td><td><span class="de">ein renoviertes Bad</span></td><td>ein + neuter Nom/Akk → -es.</td></tr>
+        <tr><td>B1 letter: die im Zentrum ruhig und nah am Bahnhof gelegene von uns gestern besichtigte Wohnung</td><td><span class="de">die Wohnung, die im Zentrum liegt und die wir gestern besichtigt haben</span></td><td>A relative is safer at B1.</td></tr>
+      </table>
+      <h3>Mini Amt email (Lesen unpack)</h3>
+      <p><span class="de">In der beigefügten Datei finden Sie den unterschriebenen Vertrag und die fehlenden Anlagen. Die gestern abgeschickte Bestätigung gilt als verbindlich.</span></p>
+      <p>Unpack: the file that is attached / the contract that was signed / the documents that are missing / the confirmation that was sent yesterday. Head nouns: Datei, Vertrag, Anlagen, Bestätigung.</p>
       <div class="mem"><span class="label-s">Chunks to memorise</span>
         <p>Unpack: participle + noun → der/die/das + noun + relative + verb. Chunks: <span class="de">ausgefüllte Unterlagen · beigefügte Datei · steigende Preise · ruhig gelegene Wohnung · fehlende Papiere · unterschriebener Antrag</span></p>
       </div>
       <div class="warn"><span class="label-s">Exam traps</span>
-        The participle still needs an adjective ending: <span class="de">die ausgefüllten Formulare, ein renoviertes Bad</span>. A present participle is not a conjugated verb in position 2. Negation can sit inside: <span class="de">die nicht geöffnete Post</span>. For B1 Schreiben, a relative clause is safer than a long packed phrase. Lesen: ignore the decoration, find the head noun.
+        The participle still needs an adjective ending: <span class="de">die ausgefüllten Formulare, ein renoviertes Bad</span>. A present participle is not a conjugated verb in position 2. Negation can sit inside: <span class="de">die nicht geöffnete Post</span>. For B1 Schreiben, a relative clause is safer than a long packed phrase. Lesen: ignore the decoration, find the head noun. Sprachbausteine: the gap is often the ending on a participle, not a new verb. Sprechen: do not improvise packed phrases; say die Wohnung, die im Zentrum liegt.
       </div>
       <h3>Produce now</h3>
       <ol>
@@ -1748,6 +1780,8 @@ registerPack("b1", {
         <li>Pack five simple relatives the other way (recognition drill only).</li>
         <li>Add correct endings to: ein renoviert__ Bad, die steigend__ Kosten, ausgefüllt__ Formulare.</li>
         <li>In a B1 letter, prefer one relative clause over a packed B2 phrase.</li>
+        <li>Underline the head noun in four long official phrases, then say the sentence in simple German.</li>
+        <li>Write: die beigefügte Datei / ein überzeugender Grund / bei anhaltendem Regen.</li>
       </ol>
     `,
   },
