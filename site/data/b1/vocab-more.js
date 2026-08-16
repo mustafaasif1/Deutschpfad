@@ -749,7 +749,7 @@ registerPack("b1", {
 { id:"b1y747", de:"verständlich", art:"", pl:"", en:"understandable / clear", topic:"adjectives", level:"b1", ex:"Die Erklärung im Bescheid ist nicht verständlich, bitte formulieren Sie einfacher." },
 { id:"b1y748", de:"deutlich", art:"", pl:"", en:"clear / distinct", topic:"adjectives", level:"b1", ex:"Bitte schreiben Sie deutlich, sonst kann die Aufsicht die Antworten nicht lesen." },
 { id:"b1y749", de:"ausführlich", art:"", pl:"", en:"detailed", topic:"adjectives", level:"b1", ex:"In dem Brief beschreibe ich den Schaden ausführlich und nenne Daten." },
-{ id:"b1y750", de:"nachvollziehbar", art:"", pl:"", en:"comprehensible / easy to follow", topic:"adjectives", level:"b1", ex:"Ihre Entscheidung ist nachvollziehbar, aber ich bitte trotzdem um eine Prüfung des Falls." },
+{ id:"b1y750", de:"übersichtlich", art:"", pl:"", en:"clearly laid out / easy to overview", topic:"adjectives", level:"b1", ex:"Bitte machen Sie die Rechnung übersichtlich, mit Datum und Betrag in einer Tabelle." },
 
   ]
 });
