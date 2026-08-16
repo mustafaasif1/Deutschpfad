@@ -985,6 +985,8 @@ registerPack("a1", {
       "id": "h-1",
       "title": "A1 Hören 1 — short announcements (once)",
       "once": true,
+      "paper": 1,
+      "teil": 1,
       "items": [
         {
           "audio": "Der Zug nach Köln fährt von Gleis 3.",
@@ -1017,8 +1019,17 @@ registerPack("a1", {
       "id": "h-2",
       "title": "A1 Hören 2 — dialogue shop",
       "once": false,
+      "paper": 1,
+      "teil": 2,
       "intro": "In a shop.",
       "audio": "Guten Tag. Ich suche eine Jacke, Größe 38, bitte. Die blaue kostet 40 Euro, die rote 55. Ich nehme die blaue. Zahle ich bar oder mit Karte? Beides ist möglich.",
+      "turns": [
+        { "role": "announcer", "text": "Guten Tag. Was darf es sein?" },
+        { "role": "guest", "text": "Ich suche eine Jacke, Größe 38, bitte." },
+        { "role": "announcer", "text": "Die blaue kostet 40 Euro, die rote 55." },
+        { "role": "guest", "text": "Ich nehme die blaue. Zahle ich bar oder mit Karte?" },
+        { "role": "announcer", "text": "Beides ist möglich." }
+      ],
       "items": [
         {
           "statement": "Sie sucht Schuhe.",
@@ -1046,6 +1057,8 @@ registerPack("a1", {
       "id": "h-3",
       "title": "A1 Hören 3 — messages",
       "once": false,
+      "paper": 1,
+      "teil": 3,
       "items": [
         {
           "audio": "Hallo Tim, ich bin 10 Minuten zu spät. Warte bitte im Café.",
@@ -1116,6 +1129,14 @@ registerPack("a1", {
       "teil": 2,
       "intro": "Short café order.",
       "audio": "Guten Tag. Einen Kaffee und ein Wasser bitte. Mit Milch? Ja. Das macht 4 Euro 50. Bar oder Karte? Bar.",
+      "turns": [
+        { "role": "announcer", "text": "Guten Tag. Was möchten Sie?" },
+        { "role": "guest", "text": "Einen Kaffee und ein Wasser bitte." },
+        { "role": "announcer", "text": "Mit Milch?" },
+        { "role": "guest", "text": "Ja." },
+        { "role": "announcer", "text": "Das macht 4 Euro 50. Bar oder Karte?" },
+        { "role": "guest", "text": "Bar." }
+      ],
       "items": [
         {
           "statement": "Bestellt Tee.",

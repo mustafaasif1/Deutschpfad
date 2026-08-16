@@ -2029,6 +2029,18 @@ registerPack("b1", {
       "teil": 2,
       "intro": "Herr Yilmaz hat ein Café eröffnet. Listen twice if you want — in the real exam you usually hear Teil 2 twice.",
       "audio": "Ich habe viele Jahre als Koch gearbeitet, aber ich wollte etwas Eigenes. Meine Frau hat mich unterstützt, obwohl wir am Anfang wenig Geld hatten. Die erste Lage war zu teuer. Dann haben wir diesen Laden in der Nebenstraße gefunden. Am Anfang kamen wenig Gäste, weil niemand uns kannte. Heute haben wir Stammkunden. Am Wochenende sind fast alle Tische reserviert. Unter der Woche ist es ruhiger, deshalb machen wir Kuchen für Bestellungen. Milch und Eier kommen vom Bauernhof in der Nähe. Das ist etwas teurer, aber die Gäste schmecken den Unterschied. Nächstes Jahr möchten wir zwei Mitarbeiter mehr einstellen. Eine Filiale plane ich noch nicht. Und ich will abends früher Schluss machen, weil die Familie wichtig ist.",
+      "turns": [
+        { "role": "announcer", "text": "Herr Yilmaz, Sie haben vor einem Jahr ein Café eröffnet. Warum?" },
+        { "role": "guest", "text": "Ich habe viele Jahre als Koch gearbeitet, aber ich wollte etwas Eigenes. Meine Frau hat mich unterstützt, obwohl wir am Anfang wenig Geld hatten." },
+        { "role": "announcer", "text": "War die Lage sofort gut?" },
+        { "role": "guest", "text": "Nein. Die erste Lage war zu teuer. Dann haben wir diesen Laden in der Nebenstraße gefunden. Am Anfang kamen wenig Gäste, weil niemand uns kannte." },
+        { "role": "announcer", "text": "Und heute?" },
+        { "role": "guest", "text": "Heute haben wir Stammkunden. Am Wochenende sind fast alle Tische reserviert. Unter der Woche ist es ruhiger, deshalb machen wir Kuchen für Bestellungen." },
+        { "role": "announcer", "text": "Arbeiten Sie auch mit lokalen Produkten?" },
+        { "role": "guest", "text": "Ja, Milch und Eier kommen vom Bauernhof in der Nähe. Das ist etwas teurer, aber die Gäste schmecken den Unterschied." },
+        { "role": "announcer", "text": "Was ist Ihr nächster Plan?" },
+        { "role": "guest", "text": "Nächstes Jahr möchten wir zwei Mitarbeiter mehr einstellen. Eine Filiale plane ich noch nicht. Und ich will abends früher Schluss machen, weil die Familie wichtig ist." }
+      ],
       "items": [
         {
           "statement": "Seine Frau war gegen die Idee.",
@@ -2148,6 +2160,16 @@ registerPack("b1", {
       "teil": 2,
       "intro": "Frau Kowalski spricht über ihren Job im Krankenhaus.",
       "audio": "Ich arbeite seit acht Jahren als Krankenschwester in der Notaufnahme. Die Schichten sind anstrengend, besonders nachts. Trotzdem mag ich den Beruf, weil man Menschen wirklich hilft. Am Anfang war mein Deutsch nicht gut genug. Deshalb habe ich einen Fachsprachenkurs gemacht. Heute erkläre ich Patienten die Untersuchungen und beruhige Angehörige. Wir haben zu wenig Personal, deshalb bleiben Überstunden oft nicht aus. Mein Mann kocht, wenn ich Spätschicht habe. Nächstes Jahr möchte ich eine Weiterbildung zur Stationsleitung machen. Ins Ausland will ich nicht gehen. Freizeit habe ich wenig, aber am Sonntag gehe ich schwimmen, wenn ich frei habe.",
+      "turns": [
+        { "role": "announcer", "text": "Frau Kowalski, wo arbeiten Sie?" },
+        { "role": "guest", "text": "Ich arbeite seit acht Jahren als Krankenschwester in der Notaufnahme. Die Schichten sind anstrengend, besonders nachts. Trotzdem mag ich den Beruf, weil man Menschen wirklich hilft." },
+        { "role": "announcer", "text": "War Deutsch am Anfang ein Problem?" },
+        { "role": "guest", "text": "Ja. Am Anfang war mein Deutsch nicht gut genug. Deshalb habe ich einen Fachsprachenkurs gemacht. Heute erkläre ich Patienten die Untersuchungen und beruhige Angehörige." },
+        { "role": "announcer", "text": "Wie ist die Arbeit im Team?" },
+        { "role": "guest", "text": "Wir haben zu wenig Personal, deshalb bleiben Überstunden oft nicht aus. Mein Mann kocht, wenn ich Spätschicht habe." },
+        { "role": "announcer", "text": "Und Ihre Pläne?" },
+        { "role": "guest", "text": "Nächstes Jahr möchte ich eine Weiterbildung zur Stationsleitung machen. Ins Ausland will ich nicht gehen. Freizeit habe ich wenig, aber am Sonntag gehe ich schwimmen, wenn ich frei habe." }
+      ],
       "items": [
         {
           "statement": "Sie arbeitet in der Notaufnahme.",

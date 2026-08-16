@@ -11,6 +11,42 @@
       .replace(/"/g, "&quot;");
   }
 
+  const SPEAK_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.3-3.9v7.8A4.5 4.5 0 0 0 16.5 12zM14 3.2v2.1A7.8 7.8 0 0 1 19.8 12 7.8 7.8 0 0 1 14 18.7v2.1A9.9 9.9 0 0 0 21.9 12 9.9 9.9 0 0 0 14 3.2z"/></svg>';
+
+  function enhanceGerman(root) {
+    root = root || view;
+    if (!root) return;
+    root.querySelectorAll(".de").forEach(function (el) {
+      if (el.closest("button, a.card, a[href^='#']")) return;
+      if (el.closest(".speak-wrap") && el.parentNode.classList.contains("speak-wrap") && el.parentNode.querySelector(".speak-btn")) return;
+      if (el.querySelector(".speak-btn")) return;
+      const text = (el.textContent || "").replace(/\s+/g, " ").trim();
+      if (!text || text.length < 2 || text.length > 400) return;
+      const wrap = document.createElement("span");
+      wrap.className = "speak-wrap";
+      el.parentNode.insertBefore(wrap, el);
+      wrap.appendChild(el);
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "speak-btn";
+      btn.setAttribute("data-speak", text);
+      btn.title = "Speak German";
+      btn.setAttribute("aria-label", "Speak German");
+      btn.innerHTML = SPEAK_SVG;
+      wrap.appendChild(btn);
+    });
+    root.querySelectorAll("[data-speak]").forEach(function (b) {
+      if (b.getAttribute("data-speak-bound") === "1") return;
+      b.setAttribute("data-speak-bound", "1");
+      b.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const t = b.getAttribute("data-speak");
+        if (t && Engine.speak) Engine.speak(t);
+      });
+    });
+  }
+
   function toast(msg) {
     const t = document.getElementById("toast");
     t.hidden = false;
@@ -34,11 +70,15 @@
       if (brand) brand.textContent = "Choose your level";
       if (sw) sw.hidden = true;
       if (navB2) navB2.style.display = "none";
+      if (bookOpen) bookOpen.hidden = true;
       return;
     }
     if (brand) brand.textContent = m.exam + " · 8 weeks";
     if (goal) goal.innerHTML = "Pass <strong>" + esc(m.exam) + "</strong>. Progress for this level is saved separately.";
-    if (bookOpen) bookOpen.href = m.book;
+    if (bookOpen) {
+      bookOpen.hidden = false;
+      bookOpen.href = m.book;
+    }
     if (navB2) navB2.style.display = m.id === "b1" ? "" : "none";
     if (sw) {
       sw.hidden = false;
@@ -113,6 +153,19 @@
   }
 
   function route() {
+    try {
+      routeInner();
+    } catch (err) {
+      console.error(err);
+      if (view) {
+        view.innerHTML = "<h1>Could not open this page</h1>" +
+          '<p class="lead">' + esc(err && err.message ? err.message : err) + "</p>" +
+          '<div class="btn-row"><a class="btn" href="#/">Back to Today</a></div>';
+      }
+    }
+  }
+
+  function routeInner() {
     sidebar.classList.remove("open");
     stopHoerenRun();
     const p = hashParts();
@@ -120,39 +173,44 @@
     if (a === "levels" || a === "level") {
       paintChrome();
       refreshStats();
-      return renderLevels();
+      renderLevels();
+      enhanceGerman(view);
+      return;
     }
     if (!DP.level) {
       ensureLevel();
       if (!DP.level) {
         paintChrome();
         refreshStats();
-        return renderLevels();
+        renderLevels();
+        enhanceGerman(view);
+        return;
       }
     }
     paintChrome();
     refreshStats();
-    if (a === "plan") return renderPlan();
-    if (a === "grammar" && p[1]) return renderGrammarLesson(p[1]);
-    if (a === "grammar") return renderGrammar();
-    if (a === "vocab" && p[1] && p[2] === "quiz") return startVocabQuiz(p[1]);
-    if (a === "vocab" && p[1]) return renderVocabTopic(p[1]);
-    if (a === "vocab") return renderVocab();
-    if (a === "drill" && p[1]) return startDrill(p[1]);
-    if (a === "exam" && p[1] === "lesen" && p[2]) return renderLesen(p[2]);
-    if (a === "exam" && p[1] === "lesen") return renderLesenList();
-    if (a === "exam" && p[1] === "sprachbausteine") return renderSB();
-    if (a === "exam" && p[1] === "hoeren" && p[2]) return renderHoerenPaper(p[2], p[3]);
-    if (a === "exam" && p[1] === "hoeren") return renderHoeren();
-    if (a === "exam" && p[1] === "schreiben") return renderSchreibenList();
-    if (a === "exam" && p[1] === "sprechen") return renderSprechen();
-    if (a === "exam" && p[1] === "mock" && p[2]) return renderMock(p[2]);
-    if (a === "exam" && p[1] === "mock") return renderMockList();
-    if (a === "exam") return renderExamHub();
-    if (a === "schreiben" && p[1]) return renderSchreiben(p[1]);
-    if (a === "b2") return renderB2();
-    if (a === "progress") return renderProgress();
-    return renderHome();
+    if (a === "plan") renderPlan();
+    else if (a === "grammar" && p[1]) renderGrammarLesson(p[1]);
+    else if (a === "grammar") renderGrammar();
+    else if (a === "vocab" && p[1] && p[2] === "quiz") startVocabQuiz(p[1]);
+    else if (a === "vocab" && p[1]) renderVocabTopic(p[1]);
+    else if (a === "vocab") renderVocab();
+    else if (a === "drill" && p[1]) startDrill(p[1]);
+    else if (a === "exam" && p[1] === "lesen" && p[2]) renderLesen(p[2]);
+    else if (a === "exam" && p[1] === "lesen") renderLesenList();
+    else if (a === "exam" && p[1] === "sprachbausteine") renderSB();
+    else if (a === "exam" && p[1] === "hoeren" && p[2]) renderHoerenPaper(p[2], p[3]);
+    else if (a === "exam" && p[1] === "hoeren") renderHoeren();
+    else if (a === "exam" && p[1] === "schreiben") renderSchreibenList();
+    else if (a === "exam" && p[1] === "sprechen") renderSprechen();
+    else if (a === "exam" && p[1] === "mock" && p[2]) renderMock(p[2]);
+    else if (a === "exam" && p[1] === "mock") renderMockList();
+    else if (a === "exam") renderExamHub();
+    else if (a === "schreiben" && p[1]) renderSchreiben(p[1]);
+    else if (a === "b2") renderB2();
+    else if (a === "progress") renderProgress();
+    else renderHome();
+    enhanceGerman(view);
   }
 
   function renderLevels() {
@@ -193,7 +251,7 @@
     const start = new Date(s.started + "T12:00:00");
     const day = Math.min(56, Math.max(1, Math.floor((Date.now() - start.getTime()) / 86400000) + 1));
     const weekN = Math.min(8, Math.ceil(day / 7));
-    const week = WEEKS[weekN - 1];
+    const week = (WEEKS && WEEKS[weekN - 1]) || { title: "Your plan", goal: "Pick a task from the plan.", tasks: [] };
     const openTasks = week.tasks.filter(function (t) { return !s.checks[t.id]; });
     const pack = getPack();
     view.innerHTML =
@@ -214,7 +272,7 @@
       '<div class="grid grid-3">' +
         '<a class="card clickable" href="#/grammar"><h3>Grammar</h3><p>Lessons + quizzes for ' + m.title + ".</p></a>" +
         '<a class="card clickable" href="#/vocab"><h3>Vocabulary</h3><p>Flashcards with articles + quizzes.</p></a>' +
-        '<a class="card clickable" href="#/exam"><h3>Exam gym</h3><p>Lesen, Hören (German voice), letters, speaking.</p></a>' +
+        '<a class="card clickable" href="#/exam"><h3>Exam gym</h3><p>Lesen, Hören exam sitting (German audio), letters, speaking.</p></a>' +
       "</div>" +
       "<h2>Daily minimum</h2>" +
       '<div class="card"><ol>' +
@@ -255,8 +313,9 @@
   function renderGrammar() {
     setNav("grammar");
     crumb.textContent = "Grammar";
+    const m = meta();
     view.innerHTML = "<h1>Grammar academy</h1>" +
-      '<p class="lead">Do the lesson, then the quiz. B1 exam items live in the first block. B2 is extra range.</p>' +
+      '<p class="lead">Do the lesson, then the quiz until 80%. Every example has a speaker — tap it and repeat aloud. This is ' + esc(m.title) + " grammar only.</p>" +
       '<div class="grid grid-2">' +
       GRAMMAR.map(function (g) {
         const qs = Engine.bySet(g.id);
@@ -295,8 +354,9 @@
   function renderVocab() {
     setNav("vocab");
     crumb.textContent = "Vocabulary";
+    const m = meta();
     view.innerHTML = "<h1>Vocabulary trainer</h1>" +
-      '<p class="lead">Always learn article + word. B2 topics make B1 reading feel ordinary.</p>' +
+      '<p class="lead">Always learn <strong>article + word</strong>. Tap the speaker next to every German word. ' + esc(m.title) + " words only — do not skip to another level’s list.</p>" +
       '<div class="grid grid-2">' +
       VOCAB_TOPICS.map(function (t) {
         const n = Engine.vocabByTopic(t.id).length;
@@ -306,10 +366,10 @@
 
   function renderVocabTopic(id) {
     setNav("vocab");
-    const meta = VOCAB_TOPICS.find(function (t) { return t.id === id; });
+    const topic = VOCAB_TOPICS.find(function (t) { return t.id === id; });
     const words = Engine.vocabByTopic(id);
-    if (!meta) { view.innerHTML = "<p>Topic not found.</p>"; return; }
-    crumb.textContent = meta.title;
+    if (!topic) { view.innerHTML = "<p>Topic not found.</p>"; return; }
+    crumb.textContent = topic.title;
     let i = 0;
     let front = true;
     function cardHtml() {
@@ -317,32 +377,42 @@
       const label = (w.art ? w.art + " " : "") + w.de;
       return '<div class="card flash" id="flash">' +
         (front
-          ? '<div><div class="big">' + esc(label) + '</div><div class="sub">Tap to see English' + (w.pl ? " · " + esc(w.pl) : "") + "</div></div>"
-          : '<div><div class="big">' + esc(w.en) + '</div><div class="sub">' + esc(label) + "</div></div>") +
+          ? '<div class="flash-head"><div class="big de">' + esc(label) + "</div></div><div class=\"sub\">Tap card for English · tap speaker to hear it" + (w.pl ? " · " + esc(w.pl) : "") + "</div>"
+          : '<div><div class="big">' + esc(w.en) + '</div><div class="sub"><span class="de">' + esc(label) + "</span></div></div>") +
         "</div>" +
         '<p class="q-meta">' + (i + 1) + " / " + words.length + " " + badge(w.level) + "</p>";
     }
-    view.innerHTML = "<h1>" + esc(meta.title) + "</h1>" +
-      '<p class="lead">Tap the card. Then quiz yourself by typing the German.</p>' +
+    function listHtml() {
+      return '<h2>All words in this topic</h2><p class="lead">Speaker beside each German word. Learn article + noun as one chunk.</p>' +
+        words.map(function (w) {
+          const label = (w.art ? w.art + " " : "") + w.de;
+          return '<div class="vocab-row">' +
+            '<span class="de">' + esc(label) + "</span>" +
+            '<span class="vocab-en">' + esc(w.en) + (w.pl ? " · " + esc(w.pl) : "") + "</span></div>";
+        }).join("");
+    }
+    view.innerHTML = "<h1>" + esc(topic.title) + "</h1>" +
+      '<p class="lead">Tap the card to flip. Tap the speaker to hear German. Then quiz yourself by typing.</p>' +
       '<div id="flash-wrap">' + cardHtml() + "</div>" +
       '<div class="btn-row">' +
         '<button class="btn" id="prev">Previous</button>' +
         '<button class="btn" id="next">Next</button>' +
         '<button class="btn btn-primary" id="quiz">Quiz 12</button>' +
-        '<button class="btn" id="speak">Speak German</button>' +
-      "</div>";
+      "</div>" +
+      '<div class="card" style="margin-top:1.2rem" id="word-list">' + listHtml() + "</div>";
     function paint() {
       document.getElementById("flash-wrap").innerHTML = cardHtml();
-      document.getElementById("flash").onclick = function () { front = !front; paint(); };
+      document.getElementById("flash").onclick = function (e) {
+        if (e.target.closest(".speak-btn")) return;
+        front = !front;
+        paint();
+      };
+      enhanceGerman(document.getElementById("flash-wrap"));
     }
     paint();
     document.getElementById("next").onclick = function () { i = (i + 1) % words.length; front = true; Progress.markVocab(words[i].id); paint(); };
     document.getElementById("prev").onclick = function () { i = (i - 1 + words.length) % words.length; front = true; paint(); };
     document.getElementById("quiz").onclick = function () { location.hash = "#/vocab/" + id + "/quiz"; };
-    document.getElementById("speak").onclick = function () {
-      const w = words[i];
-      Engine.speak((w.art ? w.art + " " : "") + w.de);
-    };
   }
 
   function startVocabQuiz(topic) {
@@ -459,6 +529,7 @@
       const nextBtn = document.getElementById("next-q");
       nextBtn.focus();
       nextBtn.onclick = goNext;
+      enhanceGerman(box);
     }
 
     view.querySelectorAll(".opt").forEach(function (b) {
@@ -514,6 +585,7 @@
         finishQ(Engine.check(q, quiz.built.join(" ")), quiz.built.join(" "));
       };
     }
+    enhanceGerman(view);
   }
 
   function renderQuizDone() {
@@ -653,7 +725,8 @@
       '<div class="grid grid-2">' +
         '<a class="card clickable" href="#/exam/mock"><h3>Timed mocks</h3><p>' + (EXAM.mocks || []).length + " training papers (Lesen + SB + Hören + letter).</p></a>" +
         '<a class="card clickable" href="#/exam/lesen"><h3>Lesen</h3><p>' + (EXAM.lesen || []).length + " papers.</p></a>" +
-        '<a class="card clickable" href="#/exam/sprachbausteine"><h3>Sprachbausteine</h3><p>' + (EXAM.sprachbausteine || []).length + " cloze / bank sets.</p></a>" +
+        '<a class="card clickable" href="#/exam/sprachbausteine"><h3>Sprachbausteine</h3><p>' + (EXAM.sprachbausteine || []).length +
+          (DP.level === "a1" ? " extra grammar drills (not a separate A1 exam part)." : " cloze / bank sets.") + "</p></a>" +
         '<a class="card clickable" href="#/exam/hoeren"><h3>Hören</h3><p>' + papers.length + " full papers · ~" + hm.minutes + " min · exam-mode audio.</p></a>" +
         '<a class="card clickable" href="#/exam/schreiben"><h3>Schreiben</h3><p>' + (EXAM.schreiben || []).length + " guided letters with models.</p></a>" +
         '<a class="card clickable" href="#/exam/sprechen"><h3>Sprechen</h3><p>Intro, Teil 2 spines, Teil 3 engine.</p></a>' +
@@ -731,7 +804,7 @@
     setNav("exam");
     crumb.textContent = "Lesen";
     view.innerHTML = "<h1>Lesen papers</h1>" +
-      '<p class="lead">Three full training papers. Aim for 80%+ before exam week.</p>' +
+      '<p class="lead">' + EXAM.lesen.length + " training papers. Aim for 80%+ before exam week.</p>" +
       '<div class="grid grid-2">' +
       EXAM.lesen.map(function (set) {
         const n = Object.keys(set.parts[0].answer).length + set.parts[1].items.length + Object.keys(set.parts[2].answer).length;
@@ -886,7 +959,7 @@
     const it = set.items[ii];
     const name = "h-" + set.id + "-" + ii;
     let html = '<div class="hoeren-item" data-h="' + esc(set.id) + "-" + ii + '">';
-    html += '<p class="hoeren-q"><span class="hoeren-num">' + (ii + 1) + ".</span> " + esc(it.statement) + "</p>";
+    html += '<p class="hoeren-q"><span class="hoeren-num">' + (ii + 1) + ".</span> <span class=\"de\">" + esc(it.statement) + "</span></p>";
     html += '<div class="rf-row">' +
       '<label class="rf"><input type="radio" name="' + name + '" value="true" /> Richtig</label>' +
       '<label class="rf"><input type="radio" name="' + name + '" value="false" /> Falsch</label>' +
@@ -963,7 +1036,7 @@
     });
 
     html += '<div class="btn-row"><button type="button" class="btn btn-warm" id="mark-hoeren-paper"' +
-      (practice ? "" : " disabled") + ">Mark paper</button></div><div id="h-paper-res"></div>";
+      (practice ? "" : " disabled") + '>Mark paper</button></div><div id="h-paper-res"></div>';
     view.innerHTML = html;
 
     function setStatus(title, sub) {
@@ -989,35 +1062,30 @@
     function readCountdown(sec, token) {
       return new Promise(function (resolve) {
         let left = sec;
+        let settled = false;
         const bar = document.getElementById("exam-bar");
         const skip = document.getElementById("hoeren-skip");
+        function done() {
+          if (settled) return;
+          settled = true;
+          if (token.timer) clearInterval(token.timer);
+          token.timer = null;
+          if (skip) skip.hidden = true;
+          resolve();
+        }
         if (skip) skip.hidden = false;
         if (bar) bar.style.width = "0%";
         setStatus("Aussagen lesen", left + " s");
         token.timer = setInterval(function () {
-          if (token.aborted) {
-            clearInterval(token.timer);
-            token.timer = null;
-            if (skip) skip.hidden = true;
-            resolve();
-            return;
-          }
+          if (token.aborted) { done(); return; }
           left -= 1;
           if (bar) bar.style.width = Math.max(0, (1 - left / sec) * 100) + "%";
           setStatus("Aussagen lesen", left + " s");
-          if (left <= 0) {
-            clearInterval(token.timer);
-            token.timer = null;
-            if (skip) skip.hidden = true;
-            resolve();
-          }
+          if (left <= 0) done();
         }, 1000);
         token.skipRead = function () {
-          if (token.timer) clearInterval(token.timer);
-          token.timer = null;
-          if (skip) skip.hidden = true;
           if (bar) bar.style.width = "100%";
-          resolve();
+          done();
         };
       });
     }
@@ -1035,6 +1103,7 @@
       function still() { return hoerenRun === token && !token.aborted; }
 
       function finishRun(label) {
+        if (hoerenRun !== token && hoerenRun !== null) return;
         if (hoerenRun === token) hoerenRun = null;
         if (startBtn) { startBtn.disabled = false; startBtn.textContent = "Start exam audio"; }
         if (markBtn) markBtn.disabled = false;
@@ -1046,6 +1115,8 @@
 
       (async function run() {
         setStatus("Prüfung startet", "Bitte nicht unterbrechen.");
+        await Engine.pauseMs(150);
+        if (!still()) return finishRun("Gestoppt");
         await Engine.speakAsync("Hörverstehen.", { rate: 0.92, role: "announcer" });
         if (!still()) return finishRun("Gestoppt");
 
@@ -1209,11 +1280,14 @@
   function renderSchreibenList() {
     setNav("exam");
     crumb.textContent = "Schreiben";
-    view.innerHTML = "<h1>Schreiben — 30 minutes, four points</h1>" +
-      '<p class="lead">Open a task, write in the box, then tick the checklist and compare the model.</p>' +
+    const hm = hoerenMeta();
+    const aim = DP.level === "a1" ? "about 30 words, greeting + closing" : DP.level === "a2" ? "about 60–80 words, all points" : "30 minutes, four Leitpunkte, 100–120 words";
+    view.innerHTML = "<h1>Schreiben — " + aim + "</h1>" +
+      '<p class="lead">Open a task, write in the box, then tick the checklist and compare the model. Aim ~' + hm.writeMin + " minutes.</p>" +
       '<div class="grid grid-2">' +
       EXAM.schreiben.map(function (t) {
-        return '<a class="card clickable" href="#/schreiben/' + t.id + '"><h3>' + esc(t.title) + "</h3><p>" + badge(t.register === "Sie" ? "b1" : "a2") + " " + esc(t.register) + "</p></a>";
+        const lv = t.register === "Sie" ? (DP.level === "a1" ? "a1" : DP.level) : "a2";
+        return '<a class="card clickable" href="#/schreiben/' + t.id + '"><h3>' + esc(t.title) + "</h3><p>" + badge(lv) + " " + esc(t.register) + "</p></a>";
       }).join("") + "</div>";
   }
 
@@ -1222,18 +1296,20 @@
     const t = EXAM.schreiben.find(function (x) { return x.id === id; });
     if (!t) { view.innerHTML = "<p>Task not found.</p>"; return; }
     crumb.textContent = t.title;
+    const wordAim = DP.level === "a1" ? "Aim ~30 words. Timer is on you: about 15–20 minutes." : DP.level === "a2" ? "Aim ~60–80 words. Timer is on you: about 25–30 minutes." : "Aim 100–120 words. Timer is on you: 30 minutes.";
+    const checks = DP.level === "a1"
+      ? ["Greeting + closing", "Every content point in a short sentence", "sein / haben / present tense", "Nouns capitalised", "du or Sie — pick one and stay"]
+      : DP.level === "a2"
+      ? ["Greeting + closing match " + t.register, "All points covered in full sentences", "At least one weil or dann", "At least one Perfekt sentence", "Nouns capitalised, du/Sie consistent"]
+      : ["Greeting + closing match " + t.register, "All four Leitpunkte are full sentences", "At least one weil / dass / wenn", "Formal letters: one Könnten / würde / wäre", "Nouns capitalised, Sie/du consistent"];
     view.innerHTML = '<p class="kicker">' + esc(t.register) + "</p><h1>" + esc(t.title) + "</h1>" +
       "<p>" + esc(t.situation) + "</p>" +
       "<ol>" + t.points.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ol>" +
-      '<p class="q-meta">Aim 100–120 words. Timer is on you: 30 minutes.</p>' +
+      '<p class="q-meta">' + wordAim + "</p>" +
       '<textarea id="letter" placeholder="Write the letter here…"></textarea>' +
       '<p id="wc" class="q-meta">0 words</p>' +
       '<div class="checklist card">' +
-        '<label><input type="checkbox" /> Greeting + closing match ' + esc(t.register) + "</label>" +
-        '<label><input type="checkbox" /> All four Leitpunkte are full sentences</label>' +
-        '<label><input type="checkbox" /> At least one weil / dass / wenn</label>' +
-        '<label><input type="checkbox" /> Formal letters: one Könnten / würde / wäre</label>' +
-        '<label><input type="checkbox" /> Nouns capitalised, Sie/du consistent</label>' +
+        checks.map(function (c) { return '<label><input type="checkbox" /> ' + esc(c) + "</label>"; }).join("") +
       "</div>" +
       '<div class="btn-row"><button class="btn" id="show-model">Show model</button>' +
       '<button class="btn btn-primary" id="save-letter">Mark task done</button></div>' +
@@ -1245,6 +1321,7 @@
     });
     document.getElementById("show-model").onclick = function () {
       document.getElementById("model").hidden = false;
+      enhanceGerman(document.getElementById("model"));
     };
     document.getElementById("save-letter").onclick = function () {
       Progress.markDone("schreiben-" + id);
@@ -1261,30 +1338,30 @@
       '<p class="lead">Talk to a partner if you can. If not, record both roles on your phone.</p>' +
       '<div class="card"><h3>Teil 1 — intro (memorise, then throw the paper away)</h3>' +
       '<p class="de">' + esc(sp.intro) + "</p>" +
-      '<button class="btn" id="say-intro">Speak this</button>' +
-      "<p>Follow-up questions</p><ul>" + sp.questions.map(function (q) { return "<li>" + esc(q) + "</li>"; }).join("") + "</ul></div>" +
+      "<p>Follow-up questions — tap the speaker, then answer aloud.</p><ul>" + sp.questions.map(function (q) {
+        return "<li><span class=\"de\">" + esc(q) + "</span></li>";
+      }).join("") + "</ul></div>" +
       '<div class="card" style="margin-top:0.8rem"><h3>Teil 2 — 90-second spine</h3>' +
-      "<ol><li>Hier geht es um…</li><li>Meiner Meinung nach…, weil…</li><li>Zum Beispiel…</li><li>Allerdings…</li><li>Deshalb… Und du?</li></ol>" +
+      "<ol>" +
+        '<li><span class="de">Hier geht es um…</span></li>' +
+        '<li><span class="de">Meiner Meinung nach…, weil…</span></li>' +
+        '<li><span class="de">Zum Beispiel…</span></li>' +
+        '<li><span class="de">Allerdings…</span></li>' +
+        '<li><span class="de">Deshalb… Und du?</span></li>' +
+      "</ol>" +
       sp.topics.map(function (t) {
         return "<p><strong>" + esc(t.t) + "</strong> — <span class='de'>" + esc(t.spine) + "</span></p>";
       }).join("") + "</div>" +
       '<div class="card" style="margin-top:0.8rem"><h3>Teil 3 — plan and agree</h3>' +
       "<p>You must reach a decision in the last 45 seconds.</p>" +
-      '<div class="chips">' + sp.engine.map(function (e) {
-        return '<button class="chip" data-phrase="' + esc(e.de) + '">' + esc(e.de) + "</button>";
+      '<div class="phrase-list">' + sp.engine.map(function (e) {
+        return '<div class="phrase-line"><span class="de">' + esc(e.de) + "</span></div>";
       }).join("") + "</div>" +
       '<p id="said" class="de"></p>' +
       "<h4>Practice cards</h4>" +
       sp.planning.map(function (p) {
         return "<p><strong>" + esc(p.t) + "</strong> — " + p.points.map(esc).join(" · ") + "</p>";
       }).join("") + "</div>";
-    document.getElementById("say-intro").onclick = function () { Engine.speak(sp.intro); };
-    view.querySelectorAll("[data-phrase]").forEach(function (b) {
-      b.onclick = function () {
-        document.getElementById("said").textContent = b.getAttribute("data-phrase");
-        Engine.speak(b.getAttribute("data-phrase"));
-      };
-    });
   }
 
   function renderB2() {
@@ -1352,13 +1429,16 @@
     sidebar.classList.toggle("open");
   };
 
-  document.getElementById("btn-book").onclick = function () {
-    const m = getMeta();
-    const href = m ? m.book : "../books/b1.html";
-    const w = window.open(href, "_blank");
-    toast((m ? m.title : "B1") + " book opened. Print → Save as PDF · A4 · background graphics on.");
-    if (w) setTimeout(function () { try { w.focus(); } catch (e) {} }, 400);
-  };
+  document.addEventListener("click", function (e) {
+    const a = e.target.closest("a[href^='#/']");
+    if (!a || a.getAttribute("target") === "_blank") return;
+    const href = a.getAttribute("href");
+    if (!href) return;
+    e.preventDefault();
+    sidebar.classList.remove("open");
+    if (location.hash === href) route();
+    else location.hash = href;
+  });
 
   const styleBoost = document.createElement("style");
   styleBoost.textContent = "button.card { font: inherit; text-align: left; width: 100%; border: 1px solid var(--line); background: var(--paper); }";

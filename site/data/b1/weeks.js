@@ -114,7 +114,7 @@ registerPack("b1", {
       { id: "w8-v2", label: "B2 vocabulary block 2", href: "#/vocab/b2-society" },
       { id: "w8-letters", label: "Two more letters from memory", href: "#/exam/schreiben" },
       { id: "w8-speak", label: "Full oral run (15 min)", href: "#/exam/sprechen" },
-      { id: "w8-book", label: "Skim the printable book cheat sheets", href: "../book.html" },
+      { id: "w8-book", label: "Skim the printable book cheat sheets", href: "/books/b1.html" },
       { id: "w8-telc", label: "Official telc sample with real MP3 (external)", href: "https://www.telc.net/en/language-examinations/certificate-exams/german/certificate-german-telc-german-b1/" },
     ],
   },

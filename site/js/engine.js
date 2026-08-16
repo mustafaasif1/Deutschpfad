@@ -234,8 +234,20 @@
   function speakLong(text, opts) {
     opts = opts || {};
     const gen = speakGen;
-    const parts = String(text || "").split(/(?<=[.!?])\s+/).filter(Boolean);
-    const chunks = parts.length ? parts : [String(text || "")];
+    const s = String(text || "").trim();
+    const chunks = [];
+    let buf = "";
+    for (let i = 0; i < s.length; i++) {
+      buf += s[i];
+      if (/[.!?]/.test(s[i]) && (s[i + 1] === " " || i === s.length - 1)) {
+        const piece = buf.trim();
+        if (piece) chunks.push(piece);
+        buf = "";
+        if (s[i + 1] === " ") i++;
+      }
+    }
+    if (buf.trim()) chunks.push(buf.trim());
+    if (!chunks.length) chunks.push(s || "");
     let chain = Promise.resolve(true);
     chunks.forEach(function (part, i) {
       chain = chain.then(function () {

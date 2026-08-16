@@ -12,7 +12,7 @@ registerPack("a1", {
   {
     "id": "a1v2",
     "de": "Guten Tag",
-    "art": "der",
+    "art": "",
     "pl": "",
     "en": "good day",
     "topic": "greetings",
@@ -21,7 +21,7 @@ registerPack("a1", {
   {
     "id": "a1v3",
     "de": "Guten Morgen",
-    "art": "der",
+    "art": "",
     "pl": "",
     "en": "good morning",
     "topic": "greetings",
@@ -30,7 +30,7 @@ registerPack("a1", {
   {
     "id": "a1v4",
     "de": "Guten Abend",
-    "art": "der",
+    "art": "",
     "pl": "",
     "en": "good evening",
     "topic": "greetings",

@@ -287,7 +287,7 @@ registerPack("a1", {
       {
         "id": "a1w8-book",
         "label": "Skim A1 book",
-        "href": "../books/a1.html"
+        "href": "/books/a1.html"
       },
       {
         "id": "a1w8-telc",

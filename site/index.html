@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="/site/css/app.css" />
 </head>
 <body>
   <div class="shell">
@@ -36,8 +36,7 @@
         <p id="goal-text">Pick A1, A2, or B1. Each level has its own book, plan, exam gym, and progress.</p>
       </div>
       <div class="sidebar-actions">
-        <button type="button" class="btn btn-primary" id="btn-book">Download book (PDF)</button>
-        <a class="btn btn-ghost" id="btn-book-open" href="../books/b1.html" target="_blank" rel="noopener">Open book</a>
+        <a class="btn btn-primary" id="btn-book-open" href="/books/b1.html" target="_blank" rel="noopener" hidden>Open book</a>
         <p class="voice-meta" id="voice-meta"></p>
       </div>
     </aside>
@@ -54,24 +53,24 @@
 
   <div class="toast" id="toast" hidden></div>
 
-  <script src="js/pack.js"></script>
-  <script src="data/a1/weeks.js"></script>
-  <script src="data/a1/vocab.js"></script>
-  <script src="data/a1/grammar.js"></script>
-  <script src="data/a1/questions.js"></script>
-  <script src="data/a1/exam.js"></script>
-  <script src="data/a2/weeks.js"></script>
-  <script src="data/a2/vocab.js"></script>
-  <script src="data/a2/grammar.js"></script>
-  <script src="data/a2/questions.js"></script>
-  <script src="data/a2/exam.js"></script>
-  <script src="data/b1/weeks.js"></script>
-  <script src="data/b1/vocab.js"></script>
-  <script src="data/b1/grammar.js"></script>
-  <script src="data/b1/questions.js"></script>
-  <script src="data/b1/exam.js"></script>
-  <script src="js/progress.js"></script>
-  <script src="js/engine.js"></script>
-  <script src="js/app.js"></script>
+  <script src="/site/js/pack.js"></script>
+  <script src="/site/data/a1/weeks.js"></script>
+  <script src="/site/data/a1/vocab.js"></script>
+  <script src="/site/data/a1/grammar.js"></script>
+  <script src="/site/data/a1/questions.js"></script>
+  <script src="/site/data/a1/exam.js"></script>
+  <script src="/site/data/a2/weeks.js"></script>
+  <script src="/site/data/a2/vocab.js"></script>
+  <script src="/site/data/a2/grammar.js"></script>
+  <script src="/site/data/a2/questions.js"></script>
+  <script src="/site/data/a2/exam.js"></script>
+  <script src="/site/data/b1/weeks.js"></script>
+  <script src="/site/data/b1/vocab.js"></script>
+  <script src="/site/data/b1/grammar.js"></script>
+  <script src="/site/data/b1/questions.js"></script>
+  <script src="/site/data/b1/exam.js"></script>
+  <script src="/site/js/progress.js"></script>
+  <script src="/site/js/engine.js"></script>
+  <script src="/site/js/app.js"></script>
 </body>
 </html>

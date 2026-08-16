@@ -1288,6 +1288,8 @@ registerPack("a2", {
       "id": "h-1",
       "title": "A2 Hören Teil 1 (once)",
       "once": true,
+      "paper": 1,
+      "teil": 1,
       "items": [
         {
           "audio": "Der Regionalzug nach Leipzig hat 15 Minuten Verspätung. Abfahrt jetzt um 12:50 von Gleis 2.",
@@ -1320,8 +1322,20 @@ registerPack("a2", {
       "id": "h-2",
       "title": "A2 Hören Teil 2 — interview",
       "once": false,
+      "paper": 1,
+      "teil": 2,
       "intro": "Frau Keller about her new flat.",
       "audio": "Ich bin letzte Woche umgezogen. Die alte Wohnung war zu teuer und zu laut. Jetzt wohne ich etwas außerhalb, aber die Bahn braucht nur zwanzig Minuten. Die Nachbarn sind freundlich. Ein Balkon war mir wichtig, weil ich gerne Pflanzen habe. Am Wochenende richte ich noch die Küche ein. Meine Katze musste zuerst im Bad bleiben, jetzt darf sie die ganze Wohnung sehen. Die Kaution waren zwei Mieten. Das war viel, aber ich bin zufrieden.",
+      "turns": [
+        { "role": "announcer", "text": "Frau Keller, Sie sind umgezogen. Wann genau?" },
+        { "role": "guest", "text": "Ich bin letzte Woche umgezogen. Die alte Wohnung war zu teuer und zu laut." },
+        { "role": "announcer", "text": "Und die neue Lage?" },
+        { "role": "guest", "text": "Jetzt wohne ich etwas außerhalb, aber die Bahn braucht nur zwanzig Minuten. Die Nachbarn sind freundlich." },
+        { "role": "announcer", "text": "Was war Ihnen besonders wichtig?" },
+        { "role": "guest", "text": "Ein Balkon war mir wichtig, weil ich gerne Pflanzen habe. Am Wochenende richte ich noch die Küche ein." },
+        { "role": "announcer", "text": "Haben Sie Tiere?" },
+        { "role": "guest", "text": "Meine Katze musste zuerst im Bad bleiben, jetzt darf sie die ganze Wohnung sehen. Die Kaution waren zwei Mieten. Das war viel, aber ich bin zufrieden." }
+      ],
       "items": [
         {
           "statement": "Sie ist vor einem Jahr umgezogen.",
@@ -1353,6 +1367,8 @@ registerPack("a2", {
       "id": "h-3",
       "title": "A2 Hören Teil 3",
       "once": false,
+      "paper": 1,
+      "teil": 3,
       "items": [
         {
           "audio": "Apotheke Nord: samstags nur bis 13 Uhr, sonntags geschlossen.",
@@ -1385,6 +1401,8 @@ registerPack("a2", {
       "id": "h-4",
       "title": "A2 Hören extra — announcements",
       "once": true,
+      "paper": 2,
+      "teil": 1,
       "items": [
         {
           "audio": "Linie 8 fährt heute nicht. Bitte Ersatzbus ab Marktplatz.",
