@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>telc Deutsch A2 — Deutschpfad Builder Book</title>
+  <style>
+/* telc Deutsch B1 — print-first book */
+:root {
+  --ink: #1a1a1a;
+  --muted: #444;
+  --rule: #ccc;
+  --tip: #eef5ea;
+  --warn: #f8eee6;
+  --mem: #eef2f8;
+  --ex: #f6f4ef;
+  --accent: #1f4d3a;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 11.5pt; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #f3efe6;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  line-height: 1.45;
+}
+
+.book-wrap {
+  max-width: 210mm;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 0 24px rgba(0,0,0,.12);
+}
+
+.page-pad { padding: 18mm 16mm 20mm; }
+
+h1, h2, h3, h4 {
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+h1.chapter-title {
+  font-size: 1.7rem;
+  margin: 0 0 .4rem;
+  padding-bottom: .35rem;
+  border-bottom: 3px solid var(--accent);
+}
+
+.chapter-kicker {
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .72rem;
+  color: #666;
+  margin: 0 0 .25rem;
+}
+
+h2 { font-size: 1.15rem; margin: 1.3rem 0 .45rem; }
+h3 { font-size: 1rem; margin: 1rem 0 .35rem; }
+h4 { font-size: .92rem; margin: .8rem 0 .25rem; }
+
+p { margin: .4rem 0 .55rem; }
+ul, ol { margin: .3rem 0 .7rem; padding-left: 1.25rem; }
+li { margin: .18rem 0; }
+
+.lead { font-size: 1.05rem; color: var(--muted); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .86rem;
+  margin: .45rem 0 .85rem;
+}
+th, td {
+  border: 1px solid #d5d5d5;
+  padding: .22rem .38rem;
+  vertical-align: top;
+  text-align: left;
+}
+th {
+  background: #e8eee9;
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: .78rem;
+  letter-spacing: .02em;
+}
+tr:nth-child(even) td { background: #fafafa; }
+
+.de { font-weight: 600; }
+.en { color: #555; font-style: italic; }
+.tiny { font-size: .82rem; color: #555; }
+.center { text-align: center; }
+
+.box, .tip, .warn, .mem, .ex {
+  border: 1px solid #d8d8d8;
+  padding: .55rem .7rem .5rem;
+  margin: .7rem 0;
+  border-radius: 3px;
+  break-inside: avoid;
+}
+.tip { background: var(--tip); border-left: 4px solid #3d7a52; }
+.warn { background: var(--warn); border-left: 4px solid #c46b2d; }
+.mem { background: var(--mem); border-left: 4px solid #355a8a; }
+.ex { background: var(--ex); }
+.box { background: #f7f7f7; }
+
+.box strong.label,
+.tip strong.label,
+.warn strong.label,
+.mem strong.label,
+.ex strong.label {
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  display: block;
+  margin-bottom: .2rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+}
+.two-col table { font-size: .8rem; }
+
+.cover {
+  min-height: 250mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22mm 16mm;
+}
+.cover h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  border: 0;
+  margin: 0 0 .6rem;
+}
+.cover .subtitle { font-size: 1.2rem; color: #333; margin: 0 0 1.5rem; }
+.cover .meta { font-size: .95rem; color: #555; }
+
+.toc ol { padding-left: 1.4rem; }
+.toc li { margin: .28rem 0; }
+.toc a { color: inherit; text-decoration: none; }
+
+.chapter { break-before: page; padding-top: .2rem; }
+.chapter:first-of-type { break-before: auto; }
+
+.no-break { break-inside: avoid; }
+tr { break-inside: avoid; }
+
+.dialogue {
+  font-size: .92rem;
+  margin: .4rem 0 .8rem;
+}
+.dialogue p { margin: .15rem 0; }
+
+.footer-note {
+  margin-top: 1.5rem;
+  font-size: .8rem;
+  color: #666;
+  border-top: 1px solid var(--rule);
+  padding-top: .5rem;
+}
+
+.screen-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--accent);
+  color: #fff;
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: .85rem;
+  padding: .55rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.screen-bar button, .screen-bar a {
+  background: #fff;
+  color: var(--accent);
+  border: 0;
+  padding: .35rem .7rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen {
+  body { padding: 0 0 4rem; }
+}
+
+@media print {
+  html { font-size: 10.4pt; }
+  body { background: #fff; }
+  .book-wrap { box-shadow: none; max-width: none; }
+  .page-pad { padding: 0; }
+  .screen-bar { display: none !important; }
+  a { color: inherit; text-decoration: none; }
+  .chapter { break-before: page; }
+  .cover { min-height: auto; }
+  h2, h3 { break-after: avoid; }
+  table, .box, .tip, .warn, .mem, .ex { break-inside: avoid; }
+  @page {
+    size: A4;
+    margin: 14mm 12mm 16mm 12mm;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="screen-bar">
+    <span>telc Deutsch A2 — Deutschpfad Builder Book</span>
+    <span>
+      <button type="button" onclick="window.print()">Print / Save PDF</button>
+    </span>
+  </div>
+  <div class="book-wrap">
+    <div class="page-pad">
+<section class="cover" id="cover">
+  <div>
+    <p class="chapter-kicker">Deutschpfad · Level A2 · Print me</p>
+    <h1>telc Deutsch A2</h1>
+    <p class="subtitle">The builder book: Perfekt, dative, connectors, letters, listening stamina, and exam mocks.</p>
+    <p><strong>Who:</strong> solid A1 or weak A2. <strong>Goal:</strong> pass telc A2 and arrive ready for B1.</p>
+  </div>
+</section>
+<section class="chapter">
+  <h1>1 · Eight weeks to A2</h1>
+  <p>Pair this book with the website plan. Target 90 minutes most days.</p>
+  <ul>
+    <li>Weeks 1–2: Perfekt + dative</li>
+    <li>Weeks 3–4: connectors + separable verbs</li>
+    <li>Weeks 5–6: adjectives, work/travel vocab, letters</li>
+    <li>Weeks 7–8: mocks + official audio</li>
+  </ul>
+</section>
+<section class="chapter">
+  <h1>2 · telc A2 exam map</h1>
+  <p>Longer than A1: more reading, denser listening, multi-point writing, structured speaking.</p>
+  <ul>
+    <li>Lesen: notices, emails, ads</li>
+    <li>Sprachbausteine-style grammar gaps appear in many practice packs</li>
+    <li>Hören: announcements + dialogues</li>
+    <li>Schreiben: informal + simple formal messages with Leitpunkte</li>
+    <li>Sprechen: intro, topic, simple planning</li>
+  </ul>
+</section>
+<section class="chapter">
+  <h1>3 · Perfekt deeply</h1>
+  <p>Spoken past. haben vs sein. Regular ge-t vs irregular ge-en. Separable: aufgestanden.</p>
+  <p>Write 10 true sentences about yesterday every day for two weeks.</p>
+</section>
+<section class="chapter">
+  <h1>4 · Accusative + dative</h1>
+  <p>Akk: den/einen. Dat: dem/einem, der/einer, den (+n on many nouns in plural).</p>
+  <p>Prepositions: für/ohne/durch/um (Akk); mit/zu/von/aus/nach/bei (Dat); Wechsel verbs of place.</p>
+</section>
+<section class="chapter">
+  <h1>5 · Connectors &amp; word order</h1>
+  <p>weil/dass/wenn/als → verb end. denn/deshalb/dann → verb second.</p>
+  <p>Time–Manner–Place is a helpful default, not a prison.</p>
+</section>
+<section class="chapter">
+  <h1>6 · A2 vocabulary</h1>
+  <p>Themes on the site: people, home, daily, food, work, health, travel, services, opinions, media, verbs, connectors.</p>
+  <p>Collocations: eine Frage stellen, Sport treiben, einen Termin vereinbaren.</p>
+</section>
+<section class="chapter">
+  <h1>7 · Skills &amp; templates</h1>
+  <h2>Letter skeleton (du)</h2>
+  <p>Hallo/Liebe … · thanks/reason · four points · Viele Grüße</p>
+  <h2>Letter skeleton (Sie)</h2>
+  <p>Sehr geehrte … · reason · Könnten Sie bitte … · Mit freundlichen Grüßen</p>
+  <h2>Speaking</h2>
+  <p>Meiner Meinung nach… Zum Beispiel… Allerdings… Und du?</p>
+</section>
+<section class="chapter">
+  <h1>8 · Mocks &amp; appendix</h1>
+  <p>Do mocks A–C on the site. Then one official telc A2 sample with real audio.</p>
+  <p>Before B1: connectors and Perfekt must feel boringly easy.</p>
+</section>
+      <p class="footer-note">Deutschpfad personal study book for A2. Original teaching material. Not affiliated with telc gGmbH. Print → Save as PDF (A4, background graphics on).</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>telc Deutsch A1 — Deutschpfad Beginner Book</title>
+  <style>
+/* telc Deutsch B1 — print-first book */
+:root {
+  --ink: #1a1a1a;
+  --muted: #444;
+  --rule: #ccc;
+  --tip: #eef5ea;
+  --warn: #f8eee6;
+  --mem: #eef2f8;
+  --ex: #f6f4ef;
+  --accent: #1f4d3a;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 11.5pt; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #f3efe6;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  line-height: 1.45;
+}
+
+.book-wrap {
+  max-width: 210mm;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 0 24px rgba(0,0,0,.12);
+}
+
+.page-pad { padding: 18mm 16mm 20mm; }
+
+h1, h2, h3, h4 {
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+h1.chapter-title {
+  font-size: 1.7rem;
+  margin: 0 0 .4rem;
+  padding-bottom: .35rem;
+  border-bottom: 3px solid var(--accent);
+}
+
+.chapter-kicker {
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .72rem;
+  color: #666;
+  margin: 0 0 .25rem;
+}
+
+h2 { font-size: 1.15rem; margin: 1.3rem 0 .45rem; }
+h3 { font-size: 1rem; margin: 1rem 0 .35rem; }
+h4 { font-size: .92rem; margin: .8rem 0 .25rem; }
+
+p { margin: .4rem 0 .55rem; }
+ul, ol { margin: .3rem 0 .7rem; padding-left: 1.25rem; }
+li { margin: .18rem 0; }
+
+.lead { font-size: 1.05rem; color: var(--muted); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .86rem;
+  margin: .45rem 0 .85rem;
+}
+th, td {
+  border: 1px solid #d5d5d5;
+  padding: .22rem .38rem;
+  vertical-align: top;
+  text-align: left;
+}
+th {
+  background: #e8eee9;
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: .78rem;
+  letter-spacing: .02em;
+}
+tr:nth-child(even) td { background: #fafafa; }
+
+.de { font-weight: 600; }
+.en { color: #555; font-style: italic; }
+.tiny { font-size: .82rem; color: #555; }
+.center { text-align: center; }
+
+.box, .tip, .warn, .mem, .ex {
+  border: 1px solid #d8d8d8;
+  padding: .55rem .7rem .5rem;
+  margin: .7rem 0;
+  border-radius: 3px;
+  break-inside: avoid;
+}
+.tip { background: var(--tip); border-left: 4px solid #3d7a52; }
+.warn { background: var(--warn); border-left: 4px solid #c46b2d; }
+.mem { background: var(--mem); border-left: 4px solid #355a8a; }
+.ex { background: var(--ex); }
+.box { background: #f7f7f7; }
+
+.box strong.label,
+.tip strong.label,
+.warn strong.label,
+.mem strong.label,
+.ex strong.label {
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  display: block;
+  margin-bottom: .2rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+}
+.two-col table { font-size: .8rem; }
+
+.cover {
+  min-height: 250mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22mm 16mm;
+}
+.cover h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  border: 0;
+  margin: 0 0 .6rem;
+}
+.cover .subtitle { font-size: 1.2rem; color: #333; margin: 0 0 1.5rem; }
+.cover .meta { font-size: .95rem; color: #555; }
+
+.toc ol { padding-left: 1.4rem; }
+.toc li { margin: .28rem 0; }
+.toc a { color: inherit; text-decoration: none; }
+
+.chapter { break-before: page; padding-top: .2rem; }
+.chapter:first-of-type { break-before: auto; }
+
+.no-break { break-inside: avoid; }
+tr { break-inside: avoid; }
+
+.dialogue {
+  font-size: .92rem;
+  margin: .4rem 0 .8rem;
+}
+.dialogue p { margin: .15rem 0; }
+
+.footer-note {
+  margin-top: 1.5rem;
+  font-size: .8rem;
+  color: #666;
+  border-top: 1px solid var(--rule);
+  padding-top: .5rem;
+}
+
+.screen-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--accent);
+  color: #fff;
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: .85rem;
+  padding: .55rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.screen-bar button, .screen-bar a {
+  background: #fff;
+  color: var(--accent);
+  border: 0;
+  padding: .35rem .7rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen {
+  body { padding: 0 0 4rem; }
+}
+
+@media print {
+  html { font-size: 10.4pt; }
+  body { background: #fff; }
+  .book-wrap { box-shadow: none; max-width: none; }
+  .page-pad { padding: 0; }
+  .screen-bar { display: none !important; }
+  a { color: inherit; text-decoration: none; }
+  .chapter { break-before: page; }
+  .cover { min-height: auto; }
+  h2, h3 { break-after: avoid; }
+  table, .box, .tip, .warn, .mem, .ex { break-inside: avoid; }
+  @page {
+    size: A4;
+    margin: 14mm 12mm 16mm 12mm;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="screen-bar">
+    <span>telc Deutsch A1 — Deutschpfad Beginner Book</span>
+    <span>
+      <button type="button" onclick="window.print()">Print / Save PDF</button>
+    </span>
+  </div>
+  <div class="book-wrap">
+    <div class="page-pad">
+<section class="cover" id="cover">
+  <div>
+    <p class="chapter-kicker">Deutschpfad · Level A1 · Print me</p>
+    <h1>telc Deutsch A1</h1>
+    <p class="subtitle">The beginner book: sounds, survival phrases, articles, present tense, café &amp; shop dialogues, and exam practice.</p>
+    <p><strong>Who:</strong> absolute beginners or false beginners. <strong>Goal:</strong> pass telc A1 and build habits for A2.</p>
+  </div>
+</section>
+<section class="chapter">
+  <h1>1 · How to use this A1 book</h1>
+  <p>Work with the website: 8-week plan, quizzes, listening voice, writing tasks. The book is for tables and memory. Speak out loud every day — even 5 minutes.</p>
+  <ul>
+    <li>Week 1–2: greetings, sein/haben, articles</li>
+    <li>Week 3–4: present tense, questions, café German</li>
+    <li>Week 5–6: accusative, modals, shopping</li>
+    <li>Week 7–8: mocks + weak spots</li>
+  </ul>
+  <p>Daily minimum: 20 vocab cards with articles · one grammar quiz to 80% · 5 minutes speaking.</p>
+</section>
+<section class="chapter">
+  <h1>2 · telc A1 exam map</h1>
+  <p>Parts typically include reading short notices, listening to announcements/dialogues, short writing, and a brief oral. Exact timing varies by centre — always check your invitation.</p>
+  <ul>
+    <li><strong>Lesen:</strong> signs, emails, ads — match and choose</li>
+    <li><strong>Hören:</strong> short texts; some played once</li>
+    <li><strong>Schreiben:</strong> forms, messages, short notes</li>
+    <li><strong>Sprechen:</strong> introduce yourself, ask/answer, simple planning</li>
+  </ul>
+  <p>Bring passport/ID. Write clearly on the answer sheet. Guess intelligently — never leave blanks if unsure.</p>
+</section>
+<section class="chapter">
+  <h1>3 · Sounds, spelling, survival phrases</h1>
+  <p>ä ö ü ß. W ≈ English v. Z ≈ ts. ich-Laut vs ach-Laut.</p>
+  <h2>Must phrases</h2>
+  <ul>
+    <li>Guten Tag / Hallo / Tschüss</li>
+    <li>Wie bitte? / Langsamer bitte.</li>
+    <li>Ich verstehe das nicht.</li>
+    <li>Sprechen Sie Englisch? — better: Können Sie das bitte wiederholen?</li>
+    <li>Danke / Bitte / Entschuldigung</li>
+  </ul>
+</section>
+<section class="chapter">
+  <h1>4 · Core A1 grammar</h1>
+  <h2>sein / haben</h2>
+  <p>ich bin, du bist, er ist, wir sind… · ich habe, du hast, er hat…</p>
+  <h2>Articles</h2>
+  <p>der / die / das · ein / eine · Plural often die. Learn noun + article as one chunk.</p>
+  <h2>Accusative</h2>
+  <p>Masculine: der→den, ein→einen. Ich möchte einen Kaffee.</p>
+  <h2>Present + word order</h2>
+  <p>Verb second: Ich wohne in Berlin. Question: Wohnst du in Berlin?</p>
+  <h2>kein / nicht</h2>
+  <p>kein before nouns; nicht for verbs/adjectives.</p>
+  <h2>Modals</h2>
+  <p>können, müssen, wollen, möchten + infinitive at end.</p>
+</section>
+<section class="chapter">
+  <h1>5 · A1 vocabulary themes</h1>
+  <p>Use the website flashcards. Themes: greetings, people, numbers/time, home, food, daily verbs, travel, work/school, health, shopping, adjectives.</p>
+  <p><strong>Golden rule:</strong> never write a noun without its article. der Bahnhof, die Wohnung, das Ticket.</p>
+</section>
+<section class="chapter">
+  <h1>6 · Reading, listening, writing, speaking</h1>
+  <h2>Lesen</h2>
+  <p>Read the question first. Look for synonyms (geschlossen ≈ not open).</p>
+  <h2>Hören</h2>
+  <p>Read the statement first. Listen for numbers, negation, times.</p>
+  <h2>Schreiben</h2>
+  <p>Greeting → points → closing. Keep sentences short and correct.</p>
+  <h2>Sprechen</h2>
+  <p>Memorise a 20-second intro. Ask one question back every time.</p>
+</section>
+<section class="chapter">
+  <h1>7 · Practice checklist</h1>
+  <ul>
+    <li>Two Lesen papers on the site at 80%+</li>
+    <li>All Hören sets with German voice / then official audio</li>
+    <li>Six writing tasks from memory</li>
+    <li>Intro + 6 questions without notes</li>
+    <li>Mocks A and B under time</li>
+  </ul>
+</section>
+<section class="chapter">
+  <h1>8 · A1 appendix</h1>
+  <h2>Numbers 0–100</h2>
+  <p>Practice phone numbers aloud. 21 = einundzwanzig (ones before tens).</p>
+  <h2>Days</h2>
+  <p>Montag–Sonntag. am Montag. am Wochenende.</p>
+  <h2>Exam day</h2>
+  <p>ID, pencils, water, arrive early. Breathe. Short correct German beats long broken German.</p>
+</section>
+      <p class="footer-note">Deutschpfad personal study book for A1. Original teaching material. Not affiliated with telc gGmbH. Print → Save as PDF (A4, background graphics on).</p>
+    </div>
+  </div>
+</body>
+</html>

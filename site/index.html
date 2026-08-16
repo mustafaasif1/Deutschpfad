@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deutschpfad — telc A1 · A2 · B1</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%231b4d47'/><text x='8' y='12' text-anchor='middle' fill='white' font-size='9' font-family='sans-serif'>Dp</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#/">
+        <span class="brand-mark">Dp</span>
+        <span>
+          <strong>Deutschpfad</strong>
+          <small id="brand-sub">Choose your level</small>
+        </span>
+      </a>
+      <div id="level-switch" class="level-switch" hidden></div>
+      <nav class="nav" id="main-nav">
+        <a href="#/" data-nav="home">Today</a>
+        <a href="#/plan" data-nav="plan">8-week plan</a>
+        <a href="#/grammar" data-nav="grammar">Grammar</a>
+        <a href="#/vocab" data-nav="vocab">Vocabulary</a>
+        <a href="#/exam" data-nav="exam">Exam gym</a>
+        <a href="#/b2" data-nav="b2" id="nav-b2">B2 stretch</a>
+        <a href="#/levels" data-nav="levels">Switch level</a>
+        <a href="#/progress" data-nav="progress">Progress</a>
+      </nav>
+      <div class="sidebar-card" id="goal-card">
+        <p class="kicker">Goal</p>
+        <p id="goal-text">Pick A1, A2, or B1. Each level has its own book, plan, exam gym, and progress.</p>
+      </div>
+      <div class="sidebar-actions">
+        <button type="button" class="btn btn-primary" id="btn-book">Download book (PDF)</button>
+        <a class="btn btn-ghost" id="btn-book-open" href="../books/b1.html" target="_blank" rel="noopener">Open book</a>
+        <p class="voice-meta" id="voice-meta"></p>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+        <div id="crumb" class="crumb">Today</div>
+        <div class="top-stats" id="top-stats"></div>
+      </header>
+      <main id="view" class="view"></main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="js/pack.js"></script>
+  <script src="data/a1/weeks.js"></script>
+  <script src="data/a1/vocab.js"></script>
+  <script src="data/a1/grammar.js"></script>
+  <script src="data/a1/questions.js"></script>
+  <script src="data/a1/exam.js"></script>
+  <script src="data/a2/weeks.js"></script>
+  <script src="data/a2/vocab.js"></script>
+  <script src="data/a2/grammar.js"></script>
+  <script src="data/a2/questions.js"></script>
+  <script src="data/a2/exam.js"></script>
+  <script src="data/b1/weeks.js"></script>
+  <script src="data/b1/vocab.js"></script>
+  <script src="data/b1/grammar.js"></script>
+  <script src="data/b1/questions.js"></script>
+  <script src="data/b1/exam.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
