@@ -1,7 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
-  "cleanUrls": true,
   "redirects": [
     { "source": "/site", "destination": "/", "permanent": false },
     { "source": "/site/", "destination": "/", "permanent": false },
@@ -11,6 +10,6 @@
     { "source": "/site/:path*", "destination": "/", "permanent": false }
   ],
   "rewrites": [
-    { "source": "/((?!assets/|books/|legal-config).*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
