@@ -137,6 +137,15 @@
     return result === undefined ? state : result;
   }
 
+  const listeners = [];
+
+  function emit(event) {
+    for (let i = 0; i < listeners.length; i++) {
+      try { listeners[i](event); }
+      catch (err) { console.error(err); }
+    }
+  }
+
   window.Progress = {
     today: localYmd,
     parseYmd: parseYmd,
@@ -145,6 +154,14 @@
     nextInterval: nextInterval,
     getRoot: loadRoot,
     write: withLevel,
+    subscribe: function (fn) {
+      if (typeof fn !== "function") return function () {};
+      listeners.push(fn);
+      return function () {
+        const i = listeners.indexOf(fn);
+        if (i >= 0) listeners.splice(i, 1);
+      };
+    },
     getLevel: function () {
       return loadRoot().level;
     },
@@ -162,14 +179,24 @@
     setExamDate: function (ymd) {
       return withLevel(function (s) {
         s.examDate = ymd && parseYmd(ymd) ? ymd : null;
-        if (s.session && !s.session.started) s.session = null;
+        s.session = null;
       });
     },
-    markDone: function (id) {
-      return withLevel(function (s) {
-        s.done[id] = true;
-        touchStreak(s);
+    setDone: function (id, on) {
+      const value = !!on;
+      const out = withLevel(function (s) {
+        if (value) {
+          s.done[id] = true;
+          touchStreak(s);
+        } else {
+          delete s.done[id];
+        }
       });
+      emit({ type: "done", id: id, on: value });
+      return out;
+    },
+    markDone: function (id) {
+      return this.setDone(id, true);
     },
     isDone: function (id) {
       return !!Progress.get().done[id];
@@ -181,23 +208,31 @@
       });
     },
     record: function (setId, correct, total) {
-      return withLevel(function (s) {
+      const out = withLevel(function (s) {
         s.results[setId] = { correct: correct, total: total, at: Date.now() };
         s.xp += correct * 8 + 4;
         touchStreak(s);
         applySchedule(s, setId, total ? Math.round((correct / total) * 100) : 0);
       });
+      emit({ type: "quiz", id: setId, correct: correct, total: total });
+      return out;
     },
     review: function (setId, pct) {
-      return withLevel(function (s) {
+      const out = withLevel(function (s) {
         applySchedule(s, setId, pct == null ? 100 : pct);
         touchStreak(s);
       });
+      emit({ type: "quiz", id: setId });
+      return out;
     },
     toggleCheck: function (id, on) {
-      return withLevel(function (s) {
-        s.checks[id] = on;
+      const value = !!on;
+      const out = withLevel(function (s) {
+        if (value) s.checks[id] = true;
+        else delete s.checks[id];
       });
+      emit({ type: "check", id: id, on: value });
+      return out;
     },
     markVocab: function (id) {
       return withLevel(function (s) {
@@ -220,6 +255,19 @@
     },
     reset: function () {
       localStorage.removeItem(KEY);
+    },
+    exportJson: function () {
+      return JSON.stringify(loadRoot(), null, 2);
+    },
+    importJson: function (raw) {
+      const parsed = JSON.parse(raw);
+      const root = emptyRoot();
+      root.level = parsed && parsed.level ? parsed.level : null;
+      ["a1", "a2", "b1"].forEach(function (id) {
+        root.levels[id] = hydrateLevel(parsed && parsed.levels && parsed.levels[id]);
+      });
+      saveRoot(root);
+      return root;
     },
     summaryAll: function () {
       const root = loadRoot();

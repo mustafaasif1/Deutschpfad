@@ -87,9 +87,55 @@
 
   function toast(msg) {
     const t = document.getElementById("toast");
+    if (!t) return;
     t.hidden = false;
     t.textContent = msg;
-    setTimeout(function () { t.hidden = true; }, 2200);
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(function () { t.hidden = true; }, 2200);
+  }
+
+  function mastery(setId) {
+    const s = Progress.get();
+    const r = s.results && s.results[setId];
+    const sched = s.schedule && s.schedule[setId];
+    const pct = r && r.total ? Math.round((r.correct / r.total) * 100) : null;
+    const due = !!(sched && sched.due && sched.due <= Progress.today());
+    return {
+      pct: pct,
+      due: due,
+      weak: pct != null && pct < 80,
+      interval: sched && sched.interval
+    };
+  }
+
+  function masteryRank(setId) {
+    const m = mastery(setId);
+    if (m.due && m.weak) return 0;
+    if (m.due) return 1;
+    if (m.weak) return 2;
+    if (m.pct == null) return 3;
+    return 4;
+  }
+
+  function masteryLine(setId) {
+    const m = mastery(setId);
+    if (m.pct == null) return "Not sat";
+    if (m.due) return m.pct + "% · due";
+    if (m.weak) return m.pct + "% · drill again";
+    return m.pct + "%";
+  }
+
+  function sortByMastery(list, setIdFn) {
+    return (list || []).slice().sort(function (a, b) {
+      const ra = masteryRank(setIdFn(a));
+      const rb = masteryRank(setIdFn(b));
+      if (ra !== rb) return ra - rb;
+      const ta = (a.title || "").toLowerCase();
+      const tb = (b.title || "").toLowerCase();
+      if (ta < tb) return -1;
+      if (ta > tb) return 1;
+      return 0;
+    });
   }
 
   function meta() {
@@ -138,12 +184,27 @@
   }
 
   function switchToLevel(id) {
-    if (!activateLevel(id)) return;
-    paintChrome();
-    refreshStats();
-    toast("Switched to " + id.toUpperCase());
-    if ((location.hash || "").indexOf("levels") >= 0) location.hash = "#/";
-    else route();
+    function apply() {
+      if (!activateLevel(id)) return;
+      paintChrome();
+      refreshStats();
+      toast("Switched to " + id.toUpperCase());
+      if ((location.hash || "").indexOf("levels") >= 0) location.hash = "#/";
+      else route();
+    }
+    if (window.levelPackReady && levelPackReady(id)) {
+      apply();
+      return;
+    }
+    if (view) {
+      view.innerHTML = "<h1>Loading " + esc(String(id).toUpperCase()) + "…</h1><p class=\"lead\">One moment.</p>";
+    }
+    loadLevelPack(id).then(apply).catch(function (err) {
+      if (!view) return;
+      view.innerHTML = "<h1>Could not load " + esc(String(id).toUpperCase()) + "</h1>" +
+        '<p class="lead">' + esc(err && err.message ? err.message : err) + "</p>" +
+        '<div class="btn-row"><a class="btn" href="#/levels">Choose level</a></div>';
+    });
   }
 
   function refreshStats() {
@@ -165,12 +226,12 @@
   }
 
   function setNav(id) {
-    const practice = { practice: 1, grammar: 1, vocab: 1, plan: 1, drill: 1 };
-    const sideId = practice[id] ? "practice" : id;
+    const practice = { practice: 1, grammar: 1, vocab: 1, drill: 1 };
+    const sideId = id === "plan" ? "plan" : (practice[id] ? "practice" : id);
     document.querySelectorAll(".nav a").forEach(function (a) {
       a.classList.toggle("active", a.getAttribute("data-nav") === sideId);
     });
-    const dockId = practice[id] ? "practice" : id;
+    const dockId = (id === "plan" || practice[id]) ? "practice" : id;
     document.querySelectorAll(".dock a").forEach(function (a) {
       a.classList.toggle("active", a.getAttribute("data-nav") === dockId);
     });
@@ -214,12 +275,34 @@
   function bindListFilter(inputId) {
     const input = document.getElementById(inputId);
     if (!input || !view) return;
-    input.addEventListener("input", function () {
+    const empty = document.getElementById("filter-empty");
+    function apply() {
       const q = (input.value || "").toLowerCase().trim();
+      let shown = 0;
       view.querySelectorAll(".filter-item").forEach(function (el) {
-        el.hidden = !!(q && (el.getAttribute("data-filter") || el.textContent || "").toLowerCase().indexOf(q) < 0);
+        const hide = !!(q && (el.getAttribute("data-filter") || el.textContent || "").toLowerCase().indexOf(q) < 0);
+        el.hidden = hide;
+        if (!hide) shown += 1;
       });
-    });
+      if (empty) {
+        if (q && shown === 0) {
+          empty.hidden = false;
+          empty.textContent = "No matches for “" + input.value.trim() + "”.";
+        } else {
+          empty.hidden = true;
+          empty.textContent = "";
+        }
+      }
+    }
+    input.addEventListener("input", apply);
+    const clear = document.getElementById("filter-clear");
+    if (clear) {
+      clear.onclick = function () {
+        input.value = "";
+        apply();
+        input.focus();
+      };
+    }
   }
 
   function practiceTabs(active) {
@@ -233,24 +316,61 @@
     }).join("") + "</nav>";
   }
 
+  function filterBar(placeholder) {
+    return '<label class="filter-label" for="list-filter">Filter</label>' +
+      '<div class="filter-row">' +
+        '<input class="list-filter" id="list-filter" type="search" placeholder="' + esc(placeholder) + '" autocomplete="off" />' +
+        '<button type="button" class="btn" id="filter-clear">Clear</button>' +
+      "</div>" +
+      '<p class="filter-empty" id="filter-empty" hidden></p>';
+  }
+
+  function goHash(href) {
+    const dest = href || "#/";
+    if ((location.hash || "#/") === dest) route();
+    else location.hash = dest;
+  }
+
+  function runAdvance() {
+    if (!window.Session) return;
+    const result = Session.advance(location.hash || "#/");
+    if (result.toast) toast(result.toast);
+    refreshStats();
+    goHash(result.href);
+  }
+
   function paintSessionRail() {
     const rail = document.getElementById("session-rail");
     if (!rail || !window.Session) return;
     const p = hashParts();
     const a = p[0] || "home";
     const hide = !DP.level || a === "home" || a === "levels" || a === "level" || (quiz && !quiz.done);
-    if (hide || !Session.isActive()) {
+    if (hide) {
+      rail.hidden = true;
+      rail.innerHTML = "";
+      return;
+    }
+    Session.ensure();
+    if (!Session.isActive()) {
       rail.hidden = true;
       rail.innerHTML = "";
       return;
     }
     const session = Session.ensure();
-    const next = Session.next();
+    const action = Session.cta(location.hash || "#/");
     const total = session.steps.length;
     const doneN = total - Session.remaining();
+    const now = action
+      ? (action.on ? "This step: " : "Next: ") + action.title
+      : "";
     rail.hidden = false;
-    rail.innerHTML = "<p>Today’s session · <strong>" + doneN + " of " + total + "</strong> done</p>" +
-      (next ? '<a class="btn btn-primary" href="' + next.href + '">Continue</a>' : "");
+    rail.innerHTML = '<div class="session-rail-copy">' +
+      "<p>Today · <strong>" + doneN + " of " + total + "</strong></p>" +
+      (now ? '<p class="session-rail-now">' + esc(now) + "</p>" : "") +
+      "</div>" +
+      (action ? '<button type="button" class="btn btn-primary" id="session-continue">' + esc(action.label) + "</button>" : "");
+    const btn = document.getElementById("session-continue");
+    if (btn) btn.onclick = function () { runAdvance(); };
   }
 
   function focusMainHeading() {
@@ -263,10 +383,11 @@
     catch (e) { h.focus(); }
   }
 
-  function afterPaint() {
+  function afterPaint(opts) {
+    opts = opts || {};
     enhanceGerman(view);
     paintSessionRail();
-    focusMainHeading();
+    if (opts.focus !== false) focusMainHeading();
   }
 
   function bindExamDate(inputId, clearId) {
@@ -294,9 +415,16 @@
       '<span class="pass-meta">Optional. Sets week from the sitting, not from first visit.</span></div>';
   }
 
+  function confirmLeaveQuiz() {
+    if (!quiz || quiz.done) return true;
+    const answered = quiz.verdicts && quiz.verdicts.some(Boolean);
+    if (quiz.i <= 0 && !answered) return true;
+    return window.confirm("Leave this quiz? Score so far will not be saved.");
+  }
+
   function exitQuiz() {
     if (!quiz) return;
-    if (!quiz.done && quiz.i > 0 && !window.confirm("Leave this quiz? Score so far will not be saved.")) return;
+    if (!confirmLeaveQuiz()) return;
     const dest = quiz.exitHash || "#/grammar";
     quiz = null;
     if (location.hash === dest) route();
@@ -366,7 +494,35 @@
     return h.split("/").filter(Boolean);
   }
 
+  function quizKeeps(p) {
+    if (!quiz || quiz.done) return false;
+    const a = p[0] || "home";
+    const keepVocab = a === "vocab" && p[2] === "quiz" && quiz.setId === "vocab-" + p[1];
+    const keepTopic = a === "topics" && p[2] === "quiz" && quiz.setId === "topic-" + p[1];
+    const keepGrammar = a === "grammar" && p[2] === "quiz" && quiz.setId === "g-" + p[1];
+    const keepDrill = a === "drill" && p[1] && quiz.setId === "drill-" + p[1];
+    return keepVocab || keepTopic || keepGrammar || keepDrill;
+  }
+
+  let revertingHash = false;
+
   function route() {
+    if (revertingHash) {
+      revertingHash = false;
+      return;
+    }
+    const p = hashParts();
+    if (quiz && !quiz.done && !quizKeeps(p)) {
+      if (!confirmLeaveQuiz()) {
+        const stay = quiz.stayHash || "#/";
+        if ((location.hash || "#/") !== stay) {
+          revertingHash = true;
+          location.hash = stay;
+        }
+        return;
+      }
+      quiz = null;
+    }
     try {
       routeInner();
     } catch (err) {
@@ -385,11 +541,7 @@
     const p = hashParts();
     const a = p[0] || "home";
     if (quiz && !quiz.done) {
-      const keepVocab = a === "vocab" && p[2] === "quiz" && quiz.setId === "vocab-" + p[1];
-      const keepTopic = a === "topics" && p[2] === "quiz" && quiz.setId === "topic-" + p[1];
-      const keepGrammar = a === "grammar" && p[1] && quiz.setId === "g-" + p[1];
-      const keepDrill = a === "drill" && p[1] && quiz.setId === "drill-" + p[1];
-      if (keepVocab || keepTopic || keepGrammar || keepDrill) return;
+      if (quizKeeps(p)) return;
       quiz = null;
     }
     if (a === "levels" || a === "level") {
@@ -413,6 +565,7 @@
     refreshStats();
     if (a === "plan") renderPlan();
     else if (a === "practice") renderGrammar();
+    else if (a === "grammar" && p[1] && p[2] === "quiz") startGrammarQuiz(p[1]);
     else if (a === "grammar" && p[1]) renderGrammarLesson(p[1]);
     else if (a === "grammar") renderGrammar();
     else if (a === "vocab" && p[1] && p[2] === "quiz") startVocabQuiz(p[1]);
@@ -458,16 +611,10 @@
           "<p>" + esc(lv.blurb) + "</p>" +
           '<p class="q-meta">' + sum.topics + " topics ticked · " + sum.checks + " plan ticks</p></button>";
       }).join("") + "</div>" +
-      '<div class="structure-note"><h3>Structure (yes, this is right)</h3><ol>' +
-        "<li><strong>Pick one level</strong> and stay there until mocks feel easy.</li>" +
-        "<li><strong>Book</strong> = knowledge tables. <strong>Site</strong> = drills + exam shape.</li>" +
-        "<li><strong>A1 → A2 → B1</strong> is the normal path. B2 stretch lives inside B1 for overshoot.</li>" +
-        "<li>Full <strong>telc B2 exam gym</strong> can come later — not required to ace B1.</li>" +
-      "</ol></div>";
+      '<div class="structure-note"><p>Pick one level and stay there until mocks feel easy. The book is the tables; this site is drills and exam shape.</p></div>';
     view.querySelectorAll("[data-pick]").forEach(function (btn) {
       btn.onclick = function () {
         switchToLevel(btn.getAttribute("data-pick"));
-        location.hash = "#/";
       };
     });
   }
@@ -479,60 +626,81 @@
     const c = Session.clock();
     const session = Session.ensure();
     const w = Session.week(c);
-    const s = Progress.get();
     const open = Session.next();
     const complete = Session.isComplete();
-    const started = !!(session.started && open);
-    let cta;
-    if (!session.steps.length) {
-      cta = '<a class="btn btn-warm" href="#/exam/mock">Sit a mock</a>';
-    } else if (complete) {
-      cta = '<a class="btn" href="#/progress">Open pass map</a>';
-    } else {
-      cta = '<button type="button" class="btn btn-warm" id="start-session">' +
-        (started ? "Continue session" : "Start session") + "</button>";
+    const dueN = (Session.dueItems() || []).length;
+    const dueShown = session.steps.filter(function (st) { return st.kind === "review"; }).length;
+    const extraDue = Math.max(0, dueN - dueShown);
+    let cta = "";
+    if (session.steps.length && !complete) {
+      cta = '<button type="button" class="btn btn-warm" id="start-session">Start</button>';
     }
     const stepsHtml = session.steps.length
-      ? '<ol class="session-steps">' + session.steps.map(function (st, i) {
+      ? '<ol class="session-steps">' + session.steps.map(function (st) {
           const current = open && st.id === open.id;
+          const keys = st.keys || {};
+          const topicId = keys.topicId || (st.id.indexOf("topic-") === 0 ? st.id.slice(6) : "");
+          const produceBlocked = st.kind === "produce" && topicId && window.Session && !Session.produceReady(topicId);
+          let blurb = st.done ? "Done" : (current ? "Do this next" : "Then this");
+          if (produceBlocked && !st.done) blurb = "Quiz the chunks to 80% first";
           return '<li class="' + (st.done ? "is-done" : current ? "is-current" : "") + '">' +
-            "<div><span class=\"session-title\">" + esc(st.title) + "</span>" +
-            '<span class="session-blurb">' + esc(st.blurb) + "</span></div></li>";
+            '<input class="check" type="checkbox" data-step="' + esc(st.id) + '"' + (st.done ? " checked" : "") +
+            (produceBlocked && !st.done ? " disabled" : "") +
+            ' aria-label="Mark done: ' + esc(st.title) + '" />' +
+            '<a href="' + (produceBlocked ? "#/topics/" + esc(topicId) + "/quiz" : st.href) + '">' +
+            '<span class="session-title">' + esc(st.title) + "</span>" +
+            '<span class="session-blurb">' + esc(blurb) + "</span></a></li>";
         }).join("") + "</ol>"
-      : "<p>Nothing is due. Optional: a mock, or rest.</p>";
+      : "<p>Nothing queued. Open this week’s plan when you want more.</p>";
     const status = complete
-      ? "<p>Today is done. Reviews come back on a 1-, 3-, or 7-day list — not because one score was weak, but because that box is due.</p>"
-      : "<p>Due reviews first, then this week’s next task, then production. One button. Stop when the list is empty.</p>";
+      ? "<p>That’s all for today. Come back tomorrow. Reviews return on a 1 / 3 / 7 schedule.</p>"
+      : (session.steps.length ? "" : "");
+    const extraHtml = extraDue
+      ? '<p class="pass-meta"><a href="#/progress">' + extraDue + " more review" + (extraDue === 1 ? "" : "s") + " on Progress</a></p>"
+      : "";
+    const emptyLink = !session.steps.length
+      ? '<div class="btn-row"><a class="btn" href="#/plan">This week’s plan</a></div>'
+      : "";
     view.innerHTML =
       '<p class="kicker">' + esc(m.exam) + "</p>" +
       "<h1>Today</h1>" +
       '<p class="lead">' + Session.leadCopy(c) + "</p>" +
       '<div class="session-card">' +
-        "<h2>Today’s session</h2>" +
-        '<p class="session-week"><strong>' + esc(w.title) + "</strong> — " + esc(w.goal) +
-        " · " + w.tasks.filter(function (t) { return s.checks[t.id]; }).length + "/" + w.tasks.length + " ticks this week.</p>" +
-        stepsHtml + status +
-        '<div class="btn-row">' + cta +
-        '<a class="btn" href="#/plan">Full plan</a></div>' +
-      "</div>" +
-      examDateRow();
-    bindExamDate("exam-date", "exam-date-clear");
+        '<p class="session-week"><a href="#/plan"><strong>' + esc(w.title) + "</strong></a> — " + esc(w.goal) + "</p>" +
+        stepsHtml + status + extraHtml +
+        (cta ? '<div class="btn-row">' + cta + "</div>" : emptyLink) +
+      "</div>";
+    view.querySelectorAll("[data-step]").forEach(function (box) {
+      box.addEventListener("click", function (e) { e.stopPropagation(); });
+      box.addEventListener("change", function () {
+        Session.setStep(box.getAttribute("data-step"), box.checked);
+        refreshStats();
+        renderHome();
+        afterPaint({ focus: false });
+      });
+    });
     const startBtn = document.getElementById("start-session");
     if (startBtn) {
       startBtn.onclick = function () {
         const step = Session.start();
         if (!step) {
-          location.hash = "#/exam/mock";
+          location.hash = "#/plan";
           return;
         }
-        if (location.hash === step.href) route();
-        else location.hash = step.href;
+        const keys = step.keys || {};
+        let href = step.href;
+        if (step.kind === "produce" && keys.topicId && !Session.produceReady(keys.topicId)) {
+          href = "#/topics/" + keys.topicId + "/quiz";
+        }
+        if (location.hash === href) route();
+        else location.hash = href;
       };
     }
   }
 
-  function renderPlan() {
-    setNav("practice");
+  function renderPlan(opts) {
+    opts = opts || {};
+    setNav("plan");
     setTrail([{ label: "Practice", href: "#/grammar" }, { label: "Plan" }]);
     const m = meta();
     const s = Progress.get();
@@ -540,7 +708,7 @@
     const weekN = c.weekN;
     view.innerHTML = practiceTabs("plan") +
       "<h1>Eight weeks · " + esc(m.exam) + "</h1>" +
-      '<p class="lead">' + Session.leadCopy(c) + " Ticks save under <strong>" + m.title + "</strong> only.</p>" +
+      '<p class="lead">' + Session.leadCopy(c) + "</p>" +
       WEEKS.map(function (w) {
         const n = w.tasks.filter(function (t) { return s.checks[t.id]; }).length;
         const current = w.id === weekN;
@@ -549,7 +717,8 @@
           "<p>" + esc(w.goal) + "</p>" + pctBar(n, w.tasks.length) +
           w.tasks.map(function (t) {
             return '<div class="week-item">' +
-              '<input class="check" type="checkbox" data-check="' + t.id + '"' + (s.checks[t.id] ? " checked" : "") + " />" +
+              '<input class="check" type="checkbox" data-check="' + t.id + '"' + (s.checks[t.id] ? " checked" : "") +
+              ' aria-label="Mark done: ' + esc(t.label) + '" />' +
               "<div><a href=\"" + t.href + "\">" + esc(t.label) + "</a></div>" +
               "<div>" + (s.checks[t.id] ? "✓" : "") + "</div></div>";
           }).join("") +
@@ -559,12 +728,18 @@
       box.addEventListener("change", function () {
         Progress.toggleCheck(box.getAttribute("data-check"), box.checked);
         refreshStats();
+        const y = window.scrollY;
+        renderPlan({ keepScroll: true });
+        afterPaint({ focus: false });
+        window.scrollTo(0, y);
       });
     });
-    const currentEl = document.getElementById("week-" + weekN);
-    if (currentEl && currentEl.scrollIntoView) {
-      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      currentEl.scrollIntoView({ block: "nearest", behavior: reduce ? "auto" : "smooth" });
+    if (!opts.keepScroll) {
+      const currentEl = document.getElementById("week-" + weekN);
+      if (currentEl && currentEl.scrollIntoView) {
+        const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        currentEl.scrollIntoView({ block: "nearest", behavior: reduce ? "auto" : "smooth" });
+      }
     }
   }
 
@@ -601,20 +776,22 @@
       "<h1>Grammar academy</h1>" +
       '<p class="lead">These are full lessons — tables, traps, and a produce list. Do the lesson, say every German example, then the quiz until 80%. This is ' + esc(m.title) + " grammar only.</p>" +
       grammarCoverageHtml() +
-      '<label class="filter-label" for="list-filter">Filter lessons</label>' +
-      '<input class="list-filter" id="list-filter" type="search" placeholder="Filter lessons…" autocomplete="off" />' +
+      filterBar("Filter lessons…") +
       '<div class="grid grid-2">' +
-      GRAMMAR.map(function (g) {
+      sortByMastery(GRAMMAR, function (g) { return "g-" + g.id; }).map(function (g) {
         const qs = Engine.bySet(g.id);
         const n = qs.length;
+        const setId = "g-" + g.id;
         return '<a class="card clickable filter-item" data-filter="' + esc(g.title) + '" href="#/grammar/' + g.id + '">' +
           "<h3>" + esc(g.title) + " " + badge(g.level) + "</h3>" +
-          "<p>" + g.minutes + " min" + (n ? " · " + n + " quiz items" : "") + "</p></a>";
+          "<p>" + g.minutes + " min" + (n ? " · " + n + " quiz items" : "") +
+          " · " + esc(masteryLine(setId)) + "</p></a>";
       }).join("") + "</div>" +
       "<h2>Mixed drills</h2>" +
       '<div class="grid grid-2">' +
-      DRILLS.map(function (d) {
-        return '<a class="card clickable filter-item" data-filter="' + esc(d.title + " " + (d.blurb || "")) + '" href="#/drill/' + d.id + '"><h3>' + esc(d.title) + "</h3><p>" + esc(d.blurb) + "</p></a>";
+      sortByMastery(DRILLS, function (d) { return "drill-" + d.id; }).map(function (d) {
+        return '<a class="card clickable filter-item" data-filter="' + esc(d.title + " " + (d.blurb || "")) + '" href="#/drill/' + d.id + '"><h3>' + esc(d.title) + "</h3><p>" + esc(d.blurb) +
+          " · " + esc(masteryLine("drill-" + d.id)) + "</p></a>";
       }).join("") + "</div>";
     bindListFilter("list-filter");
   }
@@ -627,20 +804,21 @@
     const n = Engine.bySet(g.id).length;
     view.innerHTML = '<p class="kicker">Grammar · ' + g.level.toUpperCase() + " · ~" + g.minutes + " min</p>" +
       "<h1>" + esc(g.title) + "</h1>" +
-      '<p class="lead">Read the whole lesson, say every <span class="de">grey German</span> example aloud, then take the quiz to 80%. This is the grammar telc ' + esc(meta().title) + " actually uses.</p>" +
+      '<p class="lead">Read the whole lesson, say every <span class="de">German</span> example aloud, then take the quiz to 80%. This is the grammar telc ' + esc(meta().title) + " actually uses.</p>" +
       '<article class="lesson">' + g.html + "</article>" +
       '<div class="btn-row">' +
-        (n ? '<button class="btn btn-primary" id="start-q">Quiz this topic (' + n + ")</button>" : "") +
+        (n ? '<a class="btn btn-primary" href="#/grammar/' + id + '/quiz">Quiz this topic (' + n + ")</a>" : "") +
         '<a class="btn" href="#/grammar">All lessons</a></div>';
-    const btn = document.getElementById("start-q");
-    if (btn) btn.onclick = function () {
-      Progress.markDone("lesson-" + id);
-      beginQuiz(Engine.shuffle(Engine.bySet(id)), g.title + " quiz", "g-" + id, {
-        exitHash: "#/grammar/" + id,
-        parentLabel: g.title,
-        navId: "practice"
-      });
-    };
+  }
+
+  function startGrammarQuiz(id) {
+    const g = GRAMMAR.find(function (x) { return x.id === id; });
+    if (!g) { view.innerHTML = "<p>Lesson not found.</p>"; return; }
+    beginQuiz(Engine.shuffle(Engine.bySet(id)), g.title + " quiz", "g-" + id, {
+      exitHash: "#/grammar/" + id,
+      parentLabel: g.title,
+      navId: "practice"
+    });
   }
 
   function renderVocab() {
@@ -651,12 +829,12 @@
       "<h1>Vocabulary trainer</h1>" +
       '<p class="lead">Always learn <strong>article + word</strong>. Tap the speaker. This list is built around official telc ' + esc(m.title) + " topic areas — " +
       (VOCAB || []).length + " words and phrases. Do not skip to another level.</p>" +
-      '<label class="filter-label" for="list-filter">Filter packs</label>' +
-      '<input class="list-filter" id="list-filter" type="search" placeholder="Filter packs…" autocomplete="off" />' +
+      filterBar("Filter packs…") +
       '<div class="grid grid-2">' +
-      VOCAB_TOPICS.map(function (t) {
+      sortByMastery(VOCAB_TOPICS, function (t) { return "vocab-" + t.id; }).map(function (t) {
         const n = Engine.vocabByTopic(t.id).length;
-        return '<a class="card clickable filter-item" data-filter="' + esc(t.title + " " + (t.blurb || "")) + '" href="#/vocab/' + t.id + '"><h3>' + esc(t.title) + "</h3><p>" + esc(t.blurb) + " · " + n + " words</p></a>";
+        return '<a class="card clickable filter-item" data-filter="' + esc(t.title + " " + (t.blurb || "")) + '" href="#/vocab/' + t.id + '"><h3>' + esc(t.title) + "</h3><p>" + esc(t.blurb) + " · " + n + " words · " +
+          esc(masteryLine("vocab-" + t.id)) + "</p></a>";
       }).join("") + "</div>";
     bindListFilter("list-filter");
   }
@@ -674,7 +852,7 @@
       const label = (w.art ? w.art + " " : "") + w.de;
       const ex = w.ex ? '<p class="vocab-ex de">' + esc(w.ex) + "</p>" : "";
       const note = w.note ? '<p class="q-meta">' + esc(w.note) + "</p>" : "";
-      return '<div class="card flash" id="flash">' +
+      return '<div class="card flash" id="flash" role="button" tabindex="0" aria-label="Flip card">' +
         (front
           ? '<div class="flash-head"><div class="big de">' + esc(label) + "</div></div><div class=\"sub\">Tap card for English · tap speaker to hear it" + (w.pl ? " · plural: " + esc(w.pl) : "") + "</div>" + ex + note
           : '<div><div class="big">' + esc(w.en) + '</div><div class="sub"><span class="de">' + esc(label) + "</span>" + (w.pl ? " · " + esc(w.pl) : "") + "</div>" + ex + note + "</div>") +
@@ -682,7 +860,7 @@
         '<p class="q-meta">' + (i + 1) + " / " + words.length + " " + badge(w.level) + "</p>";
     }
     function listHtml() {
-      return '<h2>All words in this topic</h2><p class="lead">Speaker beside each German word. Learn article + noun as one chunk.</p>' +
+      return '<p class="lead">Speaker beside each German word. Learn article + noun as one chunk.</p>' +
         words.map(function (w) {
           const label = (w.art ? w.art + " " : "") + w.de;
           return '<div class="vocab-row">' +
@@ -693,18 +871,32 @@
         }).join("");
     }
     view.innerHTML = "<h1>" + esc(topic.title) + "</h1>" +
-      '<p class="lead">Tap the card to flip. Tap the speaker to hear German. Then quiz yourself by typing.</p>' +
+      '<p class="lead">Flip the card (tap, Space, or Enter). Arrows move. Speaker plays German. Then quiz yourself by typing.</p>' +
       '<div id="flash-wrap">' + cardHtml() + "</div>" +
       '<div class="btn-row">' +
-        '<button class="btn" id="prev">Previous</button>' +
-        '<button class="btn" id="next">Next</button>' +
-        '<button class="btn btn-primary" id="quiz">Quiz ' + Math.min(20, words.length) + "</button>" +
+        '<button type="button" class="btn" id="prev">Previous</button>' +
+        '<button type="button" class="btn" id="next">Next</button>' +
+        '<a class="btn btn-primary" href="#/vocab/' + id + '/quiz">Quiz ' + Math.min(20, words.length) + "</a>" +
         '<a class="btn" href="#/vocab">All packs</a>' +
       "</div>" +
-      '<div class="card" style="margin-top:1.2rem" id="word-list">' + listHtml() + "</div>";
+      '<details class="word-list" id="word-list"><summary>All words in this topic</summary>' + listHtml() + "</details>";
+    function goNext() {
+      Progress.markVocab(words[i].id);
+      const last = i === words.length - 1;
+      if (last && window.Session) Session.reviewVocab(id);
+      i = (i + 1) % words.length;
+      front = true;
+      paint();
+    }
+    function goPrev() {
+      i = (i - 1 + words.length) % words.length;
+      front = true;
+      paint();
+    }
     function paint() {
       document.getElementById("flash-wrap").innerHTML = cardHtml();
-      document.getElementById("flash").onclick = function (e) {
+      const flash = document.getElementById("flash");
+      flash.onclick = function (e) {
         if (e.target.closest(".speak-btn")) return;
         front = !front;
         paint();
@@ -712,16 +904,23 @@
       enhanceGerman(document.getElementById("flash-wrap"));
     }
     paint();
-    document.getElementById("next").onclick = function () {
-      const last = i === words.length - 1;
-      i = (i + 1) % words.length;
-      front = true;
-      Progress.markVocab(words[i].id);
-      if (last && window.Session) Session.reviewVocab(id);
-      paint();
-    };
-    document.getElementById("prev").onclick = function () { i = (i - 1 + words.length) % words.length; front = true; paint(); };
-    document.getElementById("quiz").onclick = function () { location.hash = "#/vocab/" + id + "/quiz"; };
+    document.getElementById("next").onclick = goNext;
+    document.getElementById("prev").onclick = goPrev;
+    const wrap = document.getElementById("flash-wrap");
+    wrap.addEventListener("keydown", function (e) {
+      if (e.target.closest(".speak-btn")) return;
+      if (e.key === " " || e.key === "Enter") {
+        e.preventDefault();
+        front = !front;
+        paint();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goNext();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goPrev();
+      }
+    });
   }
 
   function topicList() {
@@ -756,17 +955,16 @@
     const m = meta();
     const list = topicList();
     view.innerHTML = "<h1>Official " + esc(m.title) + " topics</h1>" +
-      '<p class="lead">These are the official theme areas ' + esc(m.exam) + " tests (GER inventories used by telc). Each topic is a short course: can-do statements, how the paper tests it, traps, chunks, then vocab/grammar/letters. Tick a topic only when you can produce it without English notes.</p>" +
+      '<p class="lead">Official themes for ' + esc(m.exam) + ". Mark a topic done when you finish it.</p>" +
       formatCardHtml() +
-      '<label class="filter-label" for="list-filter">Filter topics</label>' +
-      '<input class="list-filter" id="list-filter" type="search" placeholder="Filter topics…" autocomplete="off" />' +
+      filterBar("Filter topics…") +
       '<div class="grid grid-2">' +
       list.map(function (t) {
         const done = Progress.isDone("topic-" + t.id);
         const core = t.weight === "exam-core" || t.weight === "always";
         return '<a class="card clickable filter-item" data-filter="' + esc((t.titleDe || "") + " " + (t.title || "") + " " + (t.blurb || "")) + '" href="#/topics/' + t.id + '">' +
           '<p class="kicker"><span class="weight-pill' + (core ? " is-core" : "") + '">' + esc(t.weight || "topic") + "</span>" +
-          (done ? " · can produce" : "") + "</p>" +
+          (done ? " · done" : "") + "</p>" +
           "<h3>" + esc(t.titleDe) + "</h3><p>" + esc(t.title) + " — " + esc(t.blurb) + "</p></a>";
       }).join("") + "</div>";
     bindListFilter("list-filter");
@@ -803,38 +1001,62 @@
     const lesenHtml = (t.lesen || []).map(function (lid) {
       return linkCard("#/exam/lesen/" + lid, "Lesen " + lid, "Paper in exam shape");
     }).join("");
-    view.innerHTML = '<p class="kicker">' + esc(t.weight || "topic") + (t.official ? " · official inventory" : "") + "</p>" +
-      "<h1>" + esc(t.titleDe) + "</h1>" +
-      "<p class='lead'>" + esc(t.blurb) + "</p>" +
-      (t.exam ? "<p><strong>In the exam:</strong> " + esc(t.exam) + "</p>" : "") +
+    const quizOk = window.Session ? Session.produceReady(t.id) : true;
+    const hasChunks = !!(t.chunks && t.chunks.length);
+    const chunkBlock = hasChunks
+      ? "<h2>Say these without looking</h2>" +
+        t.chunks.map(function (c) {
+          return '<div class="chunk-row"><div class="de">' + esc(c.de) + '</div><div class="en-hint">' + esc(c.en || "") + "</div></div>";
+        }).join("") +
+        '<div class="btn-row" style="margin-top:1rem">' +
+          '<a class="btn btn-primary" href="#/topics/' + t.id + '/quiz">Quiz these chunks</a>' +
+          (t.sprechen ? '<a class="btn" href="#/exam/sprechen/run">Oral run</a>' : "") +
+        "</div>"
+      : (t.sprechen ? '<div class="btn-row"><a class="btn" href="#/exam/sprechen/run">Oral run</a></div>' : "");
+    const lecture = (t.exam ? "<p><strong>In the exam:</strong> " + esc(t.exam) + "</p>" : "") +
       (t.explain ? '<article class="lesson topic-explain">' + t.explain + "</article>" : "") +
       ((t.canDo && t.canDo.length) ? "<h2>GER / telc can-do (this topic)</h2><ul>" + t.canDo.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "") +
       ((t.examHow && t.examHow.length) ? "<h2>How it appears in telc " + esc(m.title) + "</h2><ul>" + t.examHow.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "") +
       ((t.subtopics && t.subtopics.length) ? "<h2>Cover these subtopics</h2><ul>" + t.subtopics.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "") +
-      "<h2>You must be able to</h2><ul>" + (t.youMust || []).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" +
-      ((t.traps && t.traps.length) ? '<div class="warn" style="margin:1rem 0"><span class="label-s">Exam traps</span><ul>' + t.traps.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>" : "") +
-      "<h2>Say these without looking</h2>" +
-      (t.chunks || []).map(function (c) {
-        return '<div class="chunk-row"><div class="de">' + esc(c.de) + '</div><div class="en-hint">' + esc(c.en || "") + "</div></div>";
-      }).join("") +
-      '<div class="btn-row" style="margin-top:1rem">' +
-        ((t.chunks && t.chunks.length) ? '<a class="btn btn-primary" href="#/topics/' + t.id + '/quiz">Quiz these chunks</a>' : "") +
-        (t.sprechen ? '<a class="btn" href="#/exam/sprechen/run">Oral run</a>' : "") +
-      "</div>" +
+      ((t.youMust && t.youMust.length) ? "<h2>You must be able to</h2><ul>" + t.youMust.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "") +
+      ((t.traps && t.traps.length) ? '<div class="warn" style="margin:1rem 0"><span class="label-s">Exam traps</span><ul>' + t.traps.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>" : "");
+    view.innerHTML = '<p class="kicker">' + esc(t.weight || "topic") + (t.official ? " · official inventory" : "") + "</p>" +
+      "<h1>" + esc(t.titleDe) + "</h1>" +
+      "<p class='lead'>" + esc(t.blurb) + "</p>" +
+      chunkBlock +
+      lecture +
       (vocabHtml ? "<h2>Vocabulary</h2><div class='grid grid-2'>" + vocabHtml + "</div>" : "") +
       (grammarHtml ? "<h2>Grammar that unlocks this topic</h2><div class='grid grid-2'>" + grammarHtml + "</div>" : "") +
       (writeHtml ? "<h2>Write it</h2><div class='grid grid-2'>" + writeHtml + "</div>" : "") +
       (lesenHtml ? "<h2>Read it</h2><div class='grid grid-2'>" + lesenHtml + "</div>" : "") +
-      '<div class="card" style="margin-top:1.2rem"><p>Tick only when you can speak and write this topic without English notes.</p>' +
-      '<div class="btn-row"><button class="btn btn-warm" id="topic-done">' + (Progress.isDone("topic-" + t.id) ? "Ticked — I can produce this" : "I can produce this topic") + "</button>" +
-      '<a class="btn" href="#/topics">All topics</a></div></div>';
+      '<div class="card" style="margin-top:1.2rem">' +
+        '<label class="week-item topic-tick">' +
+          '<input class="check" type="checkbox" id="topic-done"' +
+          (Progress.isDone("topic-" + t.id) ? " checked" : "") +
+          (hasChunks && !quizOk && !Progress.isDone("topic-" + t.id) ? " disabled" : "") +
+          ' />' +
+          "<div>Mark as done" +
+            (hasChunks && !quizOk ? '<span class="session-blurb"> Quiz the chunks to 80% first.</span>' : "") +
+          "</div></label>" +
+      '<div class="btn-row"><a class="btn" href="#/topics">All topics</a></div></div>';
     enhanceGerman(view);
-    document.getElementById("topic-done").onclick = function () {
-      Progress.markDone("topic-" + t.id);
-      toast("Topic ticked. Next: a letter or oral run on the same theme.");
-      refreshStats();
-      renderTopic(id);
-    };
+    const topicBox = document.getElementById("topic-done");
+    if (topicBox) {
+      topicBox.onchange = function () {
+        if (hasChunks && topicBox.checked && !Session.produceReady(t.id)) {
+          topicBox.checked = false;
+          toast("Quiz the chunks to 80% first.");
+          location.hash = "#/topics/" + t.id + "/quiz";
+          return;
+        }
+        const on = topicBox.checked;
+        Progress.setDone("topic-" + t.id, on);
+        toast(on ? "Marked done." : "Unchecked.");
+        refreshStats();
+        renderTopic(id);
+        afterPaint({ focus: false });
+      };
+    }
   }
 
   function startTopicChunkQuiz(id) {
@@ -898,6 +1120,8 @@
       locked: false,
       done: false,
       missed: [],
+      verdicts: [],
+      stayHash: location.hash || "#/",
       exitHash: opts.exitHash || "#/grammar",
       parentLabel: opts.parentLabel || "Practice",
       navId: opts.navId || "practice"
@@ -930,8 +1154,10 @@
     else if (q.type === "order") hint = "Tap the words in the correct order, then Check.";
     else if (q.type === "gap" || q.type === "type") hint = "Type your answer, then Check.";
 
+    const scored = (quiz.verdicts || []).filter(Boolean);
+    const scoreN = scored.filter(function (v) { return v.ok; }).length;
     let body = '<p class="q-meta">Question <strong>' + step + "</strong> of " + n +
-      " · score so far " + quiz.correct + " " + (q.level ? badge(q.level) : "") + "</p>" +
+      " · score so far " + scoreN + " " + (q.level ? badge(q.level) : "") + "</p>" +
       pctBar(step - 1, n) +
       '<p class="q-hint">' + hint + "</p>" +
       '<h2 class="q-prompt">' + (q.de ? '<span class="de">' + esc(q.de) + "</span><br>" : "") + formatPrompt(q.prompt) + "</h2>";
@@ -954,7 +1180,10 @@
         '<button type="button" class="btn btn-primary" id="submit">Check answer</button></div>';
     }
     body += '<div id="explain" class="explain-wrap" hidden></div>';
-    view.innerHTML = '<div class="quiz-toolbar"><button type="button" class="btn" id="quiz-exit">Exit quiz</button></div>' +
+    view.innerHTML = '<div class="quiz-toolbar">' +
+      '<button type="button" class="btn" id="quiz-exit">Exit quiz</button>' +
+      (quiz.i > 0 ? '<button type="button" class="btn" id="quiz-prev">Previous</button>' : "") +
+      "</div>" +
       '<div class="card q-card">' + body + "</div>";
 
     quiz.locked = false;
@@ -966,13 +1195,20 @@
       else renderQuiz();
     }
 
-    function finishQ(ok, picked) {
-      if (quiz.locked) return;
-      quiz.locked = true;
-      if (ok) quiz.correct += 1;
-      else {
-        if (!quiz.missed) quiz.missed = [];
-        quiz.missed.push({ prompt: q.de || q.prompt, answer: answerLabel(q), explain: q.explain || "" });
+    function finishQ(ok, picked, replay) {
+      if (!replay) {
+        if (quiz.locked) return;
+        quiz.locked = true;
+        quiz.verdicts[quiz.i] = { ok: ok, picked: picked };
+        if (ok) quiz.correct += 1;
+        else {
+          if (!quiz.missed) quiz.missed = [];
+          quiz.missed.push({ prompt: q.de || q.prompt, answer: answerLabel(q), explain: q.explain || "" });
+        }
+      } else {
+        quiz.locked = true;
+        ok = quiz.verdicts[quiz.i].ok;
+        picked = quiz.verdicts[quiz.i].picked;
       }
 
       const typed = document.getElementById("typed");
@@ -1066,13 +1302,21 @@
     }
     const exitBtn = document.getElementById("quiz-exit");
     if (exitBtn) exitBtn.onclick = function () { exitQuiz(); };
+    const prevBtn = document.getElementById("quiz-prev");
+    if (prevBtn) {
+      prevBtn.onclick = function () {
+        if (quiz.i <= 0) return;
+        quiz.i -= 1;
+        renderQuiz();
+      };
+    }
     enhanceGerman(view);
+    if (quiz.verdicts[quiz.i]) finishQ(true, quiz.verdicts[quiz.i].picked, true);
   }
 
   function renderQuizDone() {
     quiz.done = true;
     Progress.record(quiz.setId, quiz.correct, quiz.questions.length);
-    Progress.markDone(quiz.setId);
     refreshStats();
     const p = Math.round((quiz.correct / quiz.questions.length) * 100);
     const backHref = quiz.exitHash || "#/grammar";
@@ -1093,15 +1337,19 @@
     } else {
       missedHtml = "<p>Every item was right. The answer was the one marked green on each question.</p>";
     }
-    const sessionNext = window.Session && Session.isActive() ? Session.next() : null;
-    const sessionCta = sessionNext
-      ? '<button type="button" class="btn btn-primary" id="session-next">Continue session</button>'
+    const action = window.Session && Session.isActive() ? Session.cta(location.hash || "#/") : null;
+    const sessionCta = action
+      ? '<button type="button" class="btn btn-primary" id="session-next">' + esc(action.label) + "</button>"
       : (window.Session && Session.isComplete()
-        ? '<a class="btn btn-primary" href="#/">Today — session complete</a>'
+        ? '<a class="btn btn-primary" href="#/">Today — list clear</a>'
         : "");
+    const topicTickNote = String(quiz.setId).indexOf("topic-") === 0
+      ? "<p>Quiz saved. Mark the topic done when you have finished.</p>"
+      : "";
     view.innerHTML = '<div class="card"><h1>' + (p >= 80 ? "Strong." : p >= 60 ? "Passable — drill again." : "Repeat this set today.") + "</h1>" +
       "<p>You scored <strong>" + quiz.correct + " / " + quiz.questions.length + "</strong> (" + p + "%). " +
       (p >= 80 ? "This set returns in 3 days, then 7 if it holds." : "This set returns tomorrow on the 1-day list.") + "</p>" +
+      topicTickNote +
       pctBar(quiz.correct, quiz.questions.length) +
       missedHtml +
       '<div class="btn-row">' + sessionCta +
@@ -1115,11 +1363,8 @@
       });
     };
     const sessionBtn = document.getElementById("session-next");
-    if (sessionBtn && sessionNext) {
-      sessionBtn.onclick = function () {
-        if (location.hash === sessionNext.href) route();
-        else location.hash = sessionNext.href;
-      };
+    if (sessionBtn) {
+      sessionBtn.onclick = function () { runAdvance(); };
     }
     afterPaint();
   }
@@ -2461,17 +2706,17 @@
         }).join("") + "</div>"
       : "<p>Nothing due. Passed quizzes return in 3 days, then 7 if they hold at 80%.</p>";
     view.innerHTML = "<h1>Pass map · " + esc(m.title) + "</h1>" +
-      '<p class="lead">' + Session.leadCopy(c) + (c.examDate ? "" : " Add an exam date on Today so this week matches the sitting.") + "</p>" +
+      '<p class="lead">' + Session.leadCopy(c) + (c.examDate ? "" : " Add an exam date below so this week matches the sitting.") + "</p>" +
       '<div class="readiness" data-level="' + r.level + '"><h2>' +
       (r.level === "ready" ? "Ready enough to sit." : r.level === "gap" ? "Gaps before the paper." : r.level === "shape" ? "Shape is forming." : "Will you pass?") +
       "</h2><p>" + esc(r.text) + "</p>" +
-      "<p class=\"pass-meta\">" + map.produce + " / " + map.topics.length + " topics you can produce · " +
+      "<p class=\"pass-meta\">" + map.produce + " / " + map.topics.length + " topics done · " +
       map.weak.length + " quiz" + (map.weak.length === 1 ? "" : "zes") + " under 80% · " +
       map.mocksDone + " / " + map.mocks.length + " mocks · " +
       (map.oral ? "oral run done" : "no oral run yet") +
       " · streak " + ((Progress.get().streak && Progress.get().streak.count) || 0) + "</p></div>" +
-      "<h2>Topics you can produce</h2>" +
-      rows(map.topics, "can produce", "open", false) +
+      "<h2>Topics</h2>" +
+      rows(map.topics, "done", "open", false) +
       "<h2>Due review (1 / 3 / 7)</h2>" + dueHtml +
       "<h2>Weak quizzes</h2>" +
       (map.weak.length
@@ -2480,25 +2725,62 @@
       "<h2>Mocks</h2>" +
       (map.mocks.length ? rows(map.mocks, "done", "not sat", false) : "<p>No mocks in this level pack.</p>") +
       examDateRow() +
-      '<div class="btn-row"><button class="btn" id="reset-level">Reset ' + esc(m.title) + " progress</button>" +
-      '<button class="btn" id="reset">Reset all levels</button></div>' +
-      '<p class="lead">Reset keeps the exam date. Scores, ticks, and the due list are erased for this level.</p>';
+      "<h2>This browser only</h2>" +
+      "<p class=\"lead\">Progress is saved on this device, not in an account. Download a copy before you reset or switch phones.</p>" +
+      '<div class="btn-row">' +
+        '<button type="button" class="btn btn-primary" id="backup-export">Download backup</button>' +
+        '<label class="btn" for="backup-import">Import backup</label>' +
+        '<input id="backup-import" type="file" accept="application/json,.json" hidden />' +
+      "</div>" +
+      '<div class="btn-row"><button type="button" class="btn" id="reset-level">Reset ' + esc(m.title) + " progress</button>" +
+      '<button type="button" class="btn" id="reset">Reset all levels</button></div>' +
+      '<p class="pass-meta">Reset this level keeps the exam date. Scores, ticks, and the due list are erased.</p>';
     bindExamDate("exam-date", "exam-date-clear");
+    document.getElementById("backup-export").onclick = function () {
+      const blob = new Blob([Progress.exportJson()], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "deutschpfad-progress.json";
+      a.click();
+      URL.revokeObjectURL(a.href);
+      toast("Backup downloaded.");
+    };
+    document.getElementById("backup-import").addEventListener("change", function (ev) {
+      const file = ev.target.files && ev.target.files[0];
+      ev.target.value = "";
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function () {
+        try {
+          Progress.importJson(String(reader.result || ""));
+          const lv = Progress.getLevel();
+          if (lv) switchToLevel(lv);
+          else {
+            DP.level = null;
+            location.hash = "#/levels";
+          }
+          toast("Backup imported.");
+        } catch (err) {
+          toast("Could not import that file.");
+        }
+      };
+      reader.readAsText(file);
+    });
     document.getElementById("reset-level").onclick = function () {
       if (confirm("Erase ticks, scores, and the due list for " + m.title + " only? The exam date stays.")) {
         Progress.resetLevel();
         Session.rebuild();
         refreshStats();
         renderProgress();
-        afterPaint();
+        afterPaint({ focus: false });
       }
     };
     document.getElementById("reset").onclick = function () {
-      if (confirm("Erase progress for A1, A2, and B1 on this browser?")) {
-        Progress.reset();
-        DP.level = null;
-        location.hash = "#/levels";
-      }
+      const typed = window.prompt("This erases A1, A2, and B1 on this browser. Type RESET to confirm.");
+      if (typed !== "RESET") return;
+      Progress.reset();
+      DP.level = null;
+      location.hash = "#/levels";
     };
   }
 
@@ -2525,27 +2807,38 @@
     if (!a || a.getAttribute("target") === "_blank") return;
     const href = a.getAttribute("href");
     if (!href) return;
-    if (quiz && !quiz.done && quiz.i > 0) {
-      if (!window.confirm("Leave this quiz? Score so far will not be saved.")) {
-        e.preventDefault();
-        return;
-      }
-      quiz = null;
-    }
     e.preventDefault();
     setNavOpen(false);
     if (location.hash === href) route();
     else location.hash = href;
   });
 
-  const styleBoost = document.createElement("style");
-  styleBoost.textContent = "button.card { font: inherit; text-align: left; width: 100%; border: 1px solid var(--line); background: var(--paper); }";
-  document.head.appendChild(styleBoost);
-
   window.addEventListener("hashchange", route);
   window.speechSynthesis && window.speechSynthesis.getVoices();
   Engine.warmVoices && Engine.warmVoices();
-  ensureLevel();
-  paintChrome();
-  route();
+
+  function boot() {
+    const saved = Progress.getLevel && Progress.getLevel();
+    function start() {
+      ensureLevel();
+      paintChrome();
+      route();
+    }
+    if (!saved) {
+      start();
+      return;
+    }
+    if (view) {
+      view.innerHTML = "<h1>Loading " + esc(String(saved).toUpperCase()) + "…</h1>";
+    }
+    loadLevelPack(saved).then(start).catch(function (err) {
+      if (view) {
+        view.innerHTML = "<h1>Could not load your level</h1>" +
+          '<p class="lead">' + esc(err && err.message ? err.message : err) + "</p>" +
+          '<div class="btn-row"><a class="btn" href="#/levels">Choose level</a></div>';
+      }
+      paintChrome();
+    });
+  }
+  boot();
 })();

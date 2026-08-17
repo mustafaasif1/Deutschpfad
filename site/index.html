@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,500&display=swap" />
-  <link rel="stylesheet" href="/site/css/app.css" />
+  <link rel="stylesheet" href="/site/css/app.css?v=10" />
 </head>
 <body>
   <a class="skip-link" href="#view">Skip to content</a>
@@ -31,6 +31,7 @@
         <a href="#/" data-nav="home">Today</a>
         <a href="#/grammar" data-nav="practice">Practice</a>
         <a href="#/topics" data-nav="topics">Topics</a>
+        <a href="#/plan" data-nav="plan">Plan</a>
         <p class="nav-label">Exam</p>
         <a href="#/exam" data-nav="exam">Exam</a>
         <a href="#/b2" data-nav="b2" id="nav-b2">B2 stretch</a>
@@ -72,43 +73,12 @@
     <button type="button" class="dock-more" id="dock-menu" aria-controls="sidebar" aria-expanded="false" aria-label="Open menu">More</button>
   </nav>
 
-  <div class="toast" id="toast" hidden></div>
+  <div class="toast" id="toast" hidden role="status" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="/site/js/pack.js"></script>
-  <script src="/site/data/a1/weeks.js"></script>
-  <script src="/site/data/a1/vocab.js"></script>
-  <script src="/site/data/a1/vocab-extra.js"></script>
-  <script src="/site/data/a1/vocab-more.js"></script>
-  <script src="/site/data/a1/grammar.js"></script>
-  <script src="/site/data/a1/questions.js"></script>
-  <script src="/site/data/a1/questions-extra.js"></script>
-  <script src="/site/data/a1/questions-grammar.js"></script>
-  <script src="/site/data/a1/exam.js"></script>
-  <script src="/site/data/a1/topics.js"></script>
-  <script src="/site/data/a2/weeks.js"></script>
-  <script src="/site/data/a2/vocab.js"></script>
-  <script src="/site/data/a2/vocab-extra.js"></script>
-  <script src="/site/data/a2/vocab-more.js"></script>
-  <script src="/site/data/a2/grammar.js"></script>
-  <script src="/site/data/a2/questions.js"></script>
-  <script src="/site/data/a2/questions-extra.js"></script>
-  <script src="/site/data/a2/questions-grammar.js"></script>
-  <script src="/site/data/a2/exam.js"></script>
-  <script src="/site/data/a2/topics.js"></script>
-  <script src="/site/data/b1/weeks.js"></script>
-  <script src="/site/data/b1/vocab.js"></script>
-  <script src="/site/data/b1/vocab-extra.js"></script>
-  <script src="/site/data/b1/vocab-more.js"></script>
-  <script src="/site/data/b1/vocab-telc.js"></script>
-  <script src="/site/data/b1/grammar.js"></script>
-  <script src="/site/data/b1/questions.js"></script>
-  <script src="/site/data/b1/questions-extra.js"></script>
-  <script src="/site/data/b1/questions-grammar.js"></script>
-  <script src="/site/data/b1/exam.js"></script>
-  <script src="/site/data/b1/topics.js"></script>
-  <script src="/site/js/progress.js?v=3"></script>
+  <script src="/site/js/pack.js?v=9"></script>
+  <script src="/site/js/progress.js?v=9"></script>
   <script src="/site/js/engine.js"></script>
-  <script src="/site/js/session.js?v=3"></script>
-  <script src="/site/js/app.js?v=3"></script>
+  <script src="/site/js/session.js?v=9"></script>
+  <script src="/site/js/app.js?v=9"></script>
 </body>
 </html>

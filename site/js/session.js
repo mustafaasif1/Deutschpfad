@@ -3,36 +3,8 @@
   const MAX_STEPS = 4;
   const DUE_CAP = 2;
 
-  function pad2(n) {
-    return (n < 10 ? "0" : "") + n;
-  }
-
   function ymd(d) {
-    d = d || new Date();
-    return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
-  }
-
-  function parseYmd(value) {
-    const p = String(value || "").split("-");
-    const y = Number(p[0]);
-    const m = Number(p[1]);
-    const day = Number(p[2]);
-    if (!y || !m || !day) return null;
-    return new Date(y, m - 1, day);
-  }
-
-  function addDays(value, n) {
-    const d = parseYmd(value);
-    if (!d) return ymd();
-    d.setDate(d.getDate() + n);
-    return ymd(d);
-  }
-
-  function daysBetween(a, b) {
-    const da = parseYmd(a);
-    const db = parseYmd(b);
-    if (!da || !db) return 0;
-    return Math.round((db.getTime() - da.getTime()) / 86400000);
+    return Progress.today(d);
   }
 
   function clock() {
@@ -47,12 +19,12 @@
     let source = "start";
 
     if (examDate) {
-      daysLeft = daysBetween(today, examDate);
+      daysLeft = Progress.daysBetween(today, examDate);
       weekN = Math.max(1, Math.min(8, 9 - Math.ceil(Math.max(daysLeft, 1) / 7)));
       day = Math.max(1, Math.min(56, 57 - Math.max(daysLeft, 0)));
       source = "exam";
     } else {
-      day = Math.min(56, Math.max(1, daysBetween(started, today) + 1));
+      day = Math.min(56, Math.max(1, Progress.daysBetween(started, today) + 1));
       weekN = Math.min(8, Math.max(1, Math.ceil(day / 7)));
     }
 
@@ -132,7 +104,7 @@
       const passed = pct >= PASS;
       const interval = passed ? 3 : 1;
       const from = r.at ? ymd(new Date(r.at)) : (state.started || today);
-      const due = addDays(from, interval);
+      const due = Progress.addDays(from, interval);
       state.schedule[id] = {
         interval: interval,
         due: due < today ? today : due,
@@ -147,7 +119,7 @@
 
   function dueItems() {
     const s = Progress.get();
-    if (!s.scheduleSeeded && typeof Progress.write === "function") {
+    if (!s.scheduleSeeded) {
       Progress.write(function (state) { seedSchedule(state); });
     }
     const fresh = Progress.get();
@@ -177,6 +149,48 @@
     return list;
   }
 
+  function hashPath(h) {
+    return String(h || "").replace(/^#/, "").replace(/\/+$/, "") || "/";
+  }
+
+  function onHref(here, href) {
+    const a = hashPath(here);
+    const b = hashPath(href);
+    if (!b || b === "/") return false;
+    return a === b || a.indexOf(b + "/") === 0;
+  }
+
+  function kindLabel(kind) {
+    if (kind === "review") return "Review";
+    if (kind === "plan") return "Week plan";
+    if (kind === "produce") return "Produce";
+    if (kind === "exam") return "Exam";
+    return "Step";
+  }
+
+  function keysFromStep(step) {
+    if (step.keys) return step.keys;
+    const href = step.href || "";
+    if (step.kind === "plan" && step.id.indexOf("plan-") === 0) {
+      return { planId: step.id.slice(5), hrefs: href ? [href] : [] };
+    }
+    if (step.kind === "produce" && step.id.indexOf("topic-") === 0) {
+      const topicId = step.id.slice(6);
+      return { topicId: topicId, hrefs: ["#/topics/" + topicId] };
+    }
+    if (step.kind === "review" && step.id.indexOf("due-") === 0) {
+      return { quizIds: [step.id.slice(4)], hrefs: href ? [href] : [] };
+    }
+    if (step.kind === "exam") {
+      const prefixes = [];
+      if (href.indexOf("/exam/mock") >= 0) prefixes.push("mock-");
+      if (href.indexOf("schreiben") >= 0) prefixes.push("schreiben-");
+      if (href.indexOf("sprechen") >= 0) prefixes.push("sprechen-");
+      return { hrefs: href ? [href] : [], donePrefixes: prefixes };
+    }
+    return { hrefs: href ? [href] : [] };
+  }
+
   function examSkillStep(c) {
     if (c.weekN >= 7) {
       return {
@@ -193,7 +207,7 @@
       { href: "#/exam/sprechen/run", title: "Timed oral run", blurb: "Same clock as the group exam." },
       { href: "#/exam/lesen", title: "Lesen paper", blurb: "Guess, never blank. Mark and check the key." }
     ];
-    const d = parseYmd(c.today);
+    const d = Progress.parseYmd(c.today);
     const skill = skills[(d ? d.getDay() : 0) % skills.length];
     return {
       id: "exam-skill-" + skill.href,
@@ -204,22 +218,28 @@
     };
   }
 
+  function makeStep(partial) {
+    const step = {
+      id: partial.id,
+      kind: partial.kind,
+      title: partial.title,
+      blurb: partial.blurb || "",
+      href: partial.href,
+      done: false
+    };
+    step.keys = keysFromStep(step);
+    return step;
+  }
+
   function buildSteps(c, state) {
     const steps = [];
     const seenHref = {};
 
-    function add(step) {
-      if (!step || !step.href || seenHref[step.href]) return;
+    function add(partial) {
+      if (!partial || !partial.href || seenHref[partial.href]) return;
       if (steps.length >= MAX_STEPS) return;
-      seenHref[step.href] = true;
-      steps.push({
-        id: step.id,
-        kind: step.kind,
-        title: step.title,
-        blurb: step.blurb || "",
-        href: step.href,
-        done: false
-      });
+      seenHref[partial.href] = true;
+      steps.push(makeStep(partial));
     }
 
     dueItems().slice(0, DUE_CAP).forEach(function (item) {
@@ -255,7 +275,7 @@
         id: "topic-" + openTopic.id,
         kind: "produce",
         title: "Produce " + (openTopic.titleDe || openTopic.title),
-        blurb: "Say the chunks, then tick the topic when you can do it without English notes.",
+        blurb: "Say the chunks, then mark it done.",
         href: "#/topics/" + openTopic.id
       });
     }
@@ -264,25 +284,31 @@
     return steps;
   }
 
-  function ensureSession() {
-    const c = clock();
-    const saved = Progress.get().session;
-    if (saved && saved.date === c.today && Array.isArray(saved.steps)) {
-      return saved;
-    }
-    const steps = buildSteps(c, Progress.get());
-    const session = {
-      date: c.today,
-      steps: steps,
-      started: false
-    };
+  function saveSession(session) {
     Progress.setSession(session);
     return session;
   }
 
-  function saveSession(session) {
-    Progress.setSession(session);
-    return session;
+  function ensureSession() {
+    const c = clock();
+    const state = Progress.get();
+    const saved = state.session;
+    if (saved && saved.date === c.today && Array.isArray(saved.steps) && saved.steps.length) {
+      let dirty = false;
+      saved.steps.forEach(function (st) {
+        if (st.keys) return;
+        st.keys = keysFromStep(st);
+        dirty = true;
+      });
+      if (dirty) saveSession(saved);
+      return saved;
+    }
+    const session = {
+      date: c.today,
+      steps: buildSteps(c, state),
+      started: false
+    };
+    return saveSession(session);
   }
 
   function firstOpen(session) {
@@ -301,65 +327,49 @@
     return !!(session && session.steps && session.steps.length && remaining(session) === 0);
   }
 
-  function quizMatchesHref(quizId, href) {
-    if (!quizId || !href) return false;
-    const h = String(href).replace(/^#/, "");
-    if (quizId.indexOf("g-") === 0 && h === "/grammar/" + quizId.slice(2)) return true;
-    if (quizId.indexOf("vocab-") === 0) {
-      const vid = quizId.slice(6);
-      return h === "/vocab/" + vid || h === "/vocab/" + vid + "/quiz";
-    }
-    if (quizId.indexOf("topic-") === 0) {
-      const tid = quizId.slice(6);
-      return h === "/topics/" + tid || h === "/topics/" + tid + "/quiz";
-    }
-    if (quizId.indexOf("drill-") === 0 && h === "/drill/" + quizId.slice(6)) return true;
-    if (h === "/exam/lesen/" + quizId) return true;
-    if (h === "/exam/lesen" && quizId.indexOf("lesen") === 0) return true;
-    if (quizId.indexOf("hoeren-paper-") === 0 && h.indexOf("/exam/hoeren/" + quizId.slice(13)) === 0) return true;
-    if (h.indexOf("/exam/hoeren") === 0 && quizId.indexOf("hoeren") === 0) return true;
-    if (h === "/exam/sprachbausteine" && ((window.EXAM && EXAM.sprachbausteine) || []).some(function (x) { return x.id === quizId; })) return true;
-    return false;
-  }
+  function eventMatches(step, event) {
+    const keys = step.keys || keysFromStep(step);
 
-  function stepMatches(step, act) {
-    if (!step || step.done) return false;
-    const href = step.href || "";
-    if (act.quizId && (quizMatchesHref(act.quizId, href) || step.id === "due-" + act.quizId)) return true;
-    if (act.vocabId && (href === "#/vocab/" + act.vocabId || href === "#/vocab/" + act.vocabId + "/quiz")) return true;
-    if (act.planId && step.id === "plan-" + act.planId) return true;
-    if (act.topicId && (href === "#/topics/" + act.topicId || step.id === "topic-" + act.topicId)) return true;
-    if (act.href && href === act.href) return true;
-    if (act.doneId) {
-      const d = act.doneId;
-      if (d.indexOf("topic-") === 0 && (href === "#/topics/" + d.slice(6) || step.id === d)) return true;
-      if (d.indexOf("mock-") === 0 && (href === "#/exam/mock/" + d.slice(5) || href === "#/exam/mock")) return true;
-      if (d.indexOf("schreiben-") === 0 && href.indexOf("schreiben") >= 0) return true;
-      if (d === "sprechen-run" && href.indexOf("sprechen") >= 0) return true;
-    }
-    return false;
-  }
-
-  function completeMatch(act) {
-    const session = Progress.get().session;
-    if (!session || session.date !== ymd() || !session.steps) return null;
-    let changed = false;
-    let planId = null;
-    for (let i = 0; i < session.steps.length; i++) {
-      if (!stepMatches(session.steps[i], act)) continue;
-      session.steps[i].done = true;
-      changed = true;
-      if (session.steps[i].id.indexOf("plan-") === 0) {
-        planId = session.steps[i].id.slice(5);
+    if (event.type === "quiz") {
+      if (step.kind === "review") {
+        return !!(keys.quizIds && keys.quizIds.indexOf(event.id) >= 0);
       }
-      break;
+      if (step.kind === "exam") {
+        const meta = describeSet(event.id);
+        return !!(meta && meta.href && keys.hrefs && keys.hrefs.some(function (h) {
+          return onHref(meta.href, h);
+        }));
+      }
+      return false;
     }
-    if (!changed) return session;
-    saveSession(session);
-    if (planId && !Progress.get().checks[planId]) {
-      Progress.toggleCheck(planId, true);
+
+    if (event.type === "check") {
+      return step.kind === "plan" && keys.planId === event.id;
     }
-    return session;
+
+    if (event.type === "done") {
+      if (step.kind === "produce" && keys.topicId && event.id === "topic-" + keys.topicId) return true;
+      if (step.kind === "exam" && keys.donePrefixes && keys.donePrefixes.some(function (prefix) {
+        return event.id.indexOf(prefix) === 0;
+      })) return true;
+      return false;
+    }
+
+    return false;
+  }
+
+  function applyEvent(event) {
+    const session = Progress.get().session;
+    if (!session || session.date !== ymd() || !session.steps) return;
+    const on = event.on !== false;
+    let changed = false;
+    session.steps.forEach(function (step) {
+      if (!eventMatches(step, event)) return;
+      if (step.done === on) return;
+      step.done = on;
+      changed = true;
+    });
+    if (changed) saveSession(session);
   }
 
   function start() {
@@ -367,6 +377,117 @@
     session.started = true;
     saveSession(session);
     return firstOpen(session);
+  }
+
+  function lastingFor(step, on) {
+    const keys = step.keys || keysFromStep(step);
+    if (step.kind === "produce" && keys.topicId) {
+      Progress.setDone("topic-" + keys.topicId, on);
+    }
+    if (step.kind === "plan" && keys.planId) {
+      Progress.toggleCheck(keys.planId, on);
+    }
+  }
+
+  function produceReady(topicId) {
+    const t = (window.TOPICS || []).find(function (x) { return x.id === topicId; });
+    if (!t || !t.chunks || !t.chunks.length) return true;
+    const r = Progress.get().results["topic-" + topicId];
+    return !!(r && r.total && Math.round((r.correct / r.total) * 100) >= PASS);
+  }
+
+  function produceQuizHref(topicId) {
+    return "#/topics/" + topicId + "/quiz";
+  }
+
+  function shortTitle(step) {
+    return String(step.title || "").replace(/^Produce\s+/, "");
+  }
+
+  function setStep(id, on) {
+    const session = ensureSession();
+    let step = null;
+    session.steps.forEach(function (st) {
+      if (st.id !== id) return;
+      st.done = !!on;
+      step = st;
+    });
+    if (!step) return firstOpen(session);
+    if (on && step.kind === "produce") {
+      const keys = step.keys || keysFromStep(step);
+      if (keys.topicId && !produceReady(keys.topicId)) {
+        step.done = false;
+        saveSession(session);
+        return firstOpen(session);
+      }
+    }
+    session.started = true;
+    saveSession(session);
+    lastingFor(step, on);
+    return firstOpen(ensureSession());
+  }
+
+  function completeOpen() {
+    const step = firstOpen(ensureSession());
+    if (!step) return null;
+    setStep(step.id, true);
+    return firstOpen(ensureSession());
+  }
+
+  function cta(here) {
+    const step = firstOpen(ensureSession());
+    if (!step) return null;
+    const on = onHref(here, step.href);
+    const keys = step.keys || keysFromStep(step);
+    if (step.kind === "produce" && keys.topicId && !produceReady(keys.topicId)) {
+      const quizHref = produceQuizHref(keys.topicId);
+      return {
+        on: on,
+        href: quizHref,
+        title: step.title,
+        kind: step.kind,
+        label: on ? "Quiz chunks" : "Open " + shortTitle(step)
+      };
+    }
+    return {
+      on: on,
+      href: step.href,
+      title: step.title,
+      kind: step.kind,
+      label: on ? "Mark done" : "Open " + shortTitle(step)
+    };
+  }
+
+  function advance(here) {
+    const session = ensureSession();
+    session.started = true;
+    saveSession(session);
+    const step = firstOpen(session);
+    if (!step) {
+      return { mode: "home", href: "#/", toast: "That’s all for today." };
+    }
+    if (onHref(here, step.href)) {
+      const keys = step.keys || keysFromStep(step);
+      if (step.kind === "produce" && keys.topicId && !produceReady(keys.topicId)) {
+        return {
+          mode: "open",
+          href: produceQuizHref(keys.topicId),
+          toast: "Quiz the chunks to 80% first."
+        };
+      }
+      const next = completeOpen();
+      if (!next) {
+        return { mode: "home", href: "#/", toast: "That’s all for today." };
+      }
+      return { mode: "next", href: next.href, toast: "Next: " + next.title };
+    }
+    return { mode: "open", href: step.href };
+  }
+
+  function pageStep(here) {
+    const step = firstOpen(ensureSession());
+    if (!step || !onHref(here, step.href)) return null;
+    return step;
   }
 
   function leadCopy(c) {
@@ -414,20 +535,20 @@
     const weak = quizzes.filter(function (q) { return q.weak; });
     const mocksDone = mocks.filter(function (m) { return m.done; }).length;
     let level = "start";
-    let text = "No production yet. Start today’s session.";
+    let text = "No production yet. Start today’s list.";
     if (quizzes.length || produce) {
       if (weak.length || (topics.length && produce / topics.length < 0.5)) {
         level = "gap";
-        text = "Not exam-ready yet. Clear due reviews and tick topics you can produce without English notes.";
+        text = "Not exam-ready yet. Clear due reviews and mark topics done.";
       } else if (mocks.length && mocksDone === 0) {
         level = "shape";
         text = "Topics and quizzes are holding. Sit a written mock before exam week.";
       } else if (topics.length && produce / topics.length >= 0.8 && weak.length === 0 && mocksDone >= 1) {
         level = "ready";
-        text = "Pass map looks solid: most topics ticked, quizzes at 80%+, and a mock is done.";
+        text = "Pass map looks solid: most topics done, quizzes at 80%+, and a mock is done.";
       } else {
         level = "work";
-        text = "Keep the 1/3/7 reviews. Tick a topic only when you can speak it cold.";
+        text = "Keep the 1/3/7 reviews. Mark a topic done when you can speak it cold.";
       }
     }
     return {
@@ -444,33 +565,13 @@
     };
   }
 
-  function bindProgress() {
-    if (!window.Progress || Progress._sessionBound) return;
-    Progress._sessionBound = true;
-    const rec = Progress.record;
-    Progress.record = function (setId, correct, total) {
-      const out = rec(setId, correct, total);
-      completeMatch({ quizId: setId });
-      return out;
-    };
-    const done = Progress.markDone;
-    Progress.markDone = function (id) {
-      const out = done(id);
-      completeMatch({ doneId: id });
-      return out;
-    };
-    const chk = Progress.toggleCheck;
-    Progress.toggleCheck = function (id, on) {
-      const out = chk(id, on);
-      if (on) completeMatch({ planId: id });
-      return out;
-    };
+  if (window.Progress && Progress.subscribe) {
+    Progress.subscribe(applyEvent);
   }
-
-  bindProgress();
 
   window.Session = {
     PASS: PASS,
+    DUE_CAP: DUE_CAP,
     clock: clock,
     week: week,
     leadCopy: leadCopy,
@@ -488,16 +589,20 @@
       return isComplete(ensureSession());
     },
     isActive: function () {
-      const session = Progress.get().session;
-      return !!(session && session.date === ymd() && session.started && remaining(session) > 0);
+      return remaining(ensureSession()) > 0;
     },
-    completeMatch: completeMatch,
+    onHref: onHref,
+    kindLabel: kindLabel,
+    cta: cta,
+    produceReady: produceReady,
+    setStep: setStep,
+    advance: advance,
+    pageStep: pageStep,
     reviewVocab: function (topicId) {
       const id = "vocab-" + topicId;
       const row = (Progress.get().schedule || {})[id];
       const alreadyToday = row && row.lastAt && ymd(new Date(row.lastAt)) === ymd();
       if (!alreadyToday) Progress.review(id, 100);
-      completeMatch({ vocabId: topicId, quizId: id });
     },
     passMap: passMap,
     rebuild: function () {
