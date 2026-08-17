@@ -47,7 +47,7 @@ describe("quiz", () => {
     expect(forDrill(qs, { id: "g1", title: "d" })).toHaveLength(1);
   });
 
-  it("builds a vocab quiz with articles on typed answers", () => {
+  it("builds a production-first vocab quiz that requires the article", () => {
     const words = [
       { id: "tisch", de: "Tisch", art: "der", en: "table", topic: "home", level: "a1" },
       { id: "lampe", de: "Lampe", art: "die", en: "lamp", topic: "home", level: "a1" },
@@ -56,12 +56,30 @@ describe("quiz", () => {
     ];
     const quiz = makeVocabQuiz(words, words, 4);
     expect(quiz).toHaveLength(4);
-    const typed = quiz.filter((q) => q.type === "type");
-    expect(typed.length).toBeGreaterThan(0);
-    for (const q of typed) {
-    expect(Array.isArray(q.answer)).toBe(true);
-    const answers = q.answer as string[];
-    expect(answers[0]).toMatch(/^(der|die|das) /);
+    expect(quiz.every((q) => q.type === "type")).toBe(true);
+    for (const q of quiz) {
+      expect(Array.isArray(q.answer)).toBe(true);
+      const answers = q.answer as string[];
+      expect(answers[0]).toMatch(/^(der|die|das) /);
+      expect(answers.some((a) => /^(der|die|das) /i.test(a) === false)).toBe(false);
     }
+    const tisch = quiz.find((q) => (q.answer as string[])[0] === "der Tisch");
+    expect(tisch).toBeTruthy();
+    expect(checkAnswer(tisch!, "der Tisch")).toBe(true);
+    expect(checkAnswer(tisch!, "Tisch")).toBe(false);
+  });
+
+  it("starts a longer vocab quiz with a short multiple-choice warmup", () => {
+    const words = Array.from({ length: 8 }, (_, i) => ({
+      id: `w${i}`,
+      de: `Wort${i}`,
+      art: "das",
+      en: `word ${i}`,
+      topic: "home",
+      level: "a1",
+    }));
+    const quiz = makeVocabQuiz(words, words, 8);
+    expect(quiz.filter((q) => q.type === "mcq")).toHaveLength(2);
+    expect(quiz.filter((q) => q.type === "type")).toHaveLength(6);
   });
 });

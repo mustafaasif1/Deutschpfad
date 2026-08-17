@@ -44,21 +44,37 @@ export function vocabByTopic(vocab: VocabWord[], topic: string): VocabWord[] {
 export function makeVocabQuiz(words: VocabWord[], allVocab: VocabWord[], n?: number): Question[] {
   const pool = words.length >= 4 ? words : allVocab;
   const pick = shuffle(pool).slice(0, Math.min(n || 12, pool.length));
+  const warmup = pick.length >= 8 ? 2 : pick.length >= 5 ? 1 : 0;
   return pick.map((w, i) => {
-    const label = `${w.art ? `${w.art} ` : ""}${w.de}`;
-    const distract = shuffle(pool.filter((x) => x.id !== w.id)).slice(0, 3);
-    const options = shuffle([w.en, ...distract.map((d) => d.en)]);
+    const arts = String(w.art || "")
+      .split("/")
+      .map((a) => a.trim())
+      .filter((a) => /^(der|die|das)$/i.test(a));
+    const hasArt = arts.length > 0;
+    const typedAnswers = hasArt ? arts.map((a) => `${a} ${w.de}`) : [w.de];
+    const label = typedAnswers[0] || w.de;
+    const explain = `German: ${label}${w.pl ? ` · plural: ${w.pl}` : ""} — English: ${w.en}${w.ex ? ` · e.g. ${w.ex}` : ""}`;
+    if (i < warmup) {
+      const distract = shuffle(pool.filter((x) => x.id !== w.id)).slice(0, 3);
+      return {
+        id: `vq-${w.id}-${i}`,
+        set: `vocab-${w.topic}`,
+        type: "mcq",
+        prompt: `What does “${label}” mean?`,
+        options: shuffle([w.en, ...distract.map((d) => d.en)]),
+        answer: w.en,
+        explain,
+        level: w.level,
+        vocabId: w.id,
+      };
+    }
     return {
       id: `vq-${w.id}-${i}`,
       set: `vocab-${w.topic}`,
-      type: i % 3 === 0 ? "type" : "mcq",
-      prompt:
-        i % 3 === 0
-          ? `Type the German${w.art ? " (with article if it has one)" : ""} for: “${w.en}”`
-          : `What does “${label}” mean?`,
-      options,
-      answer: i % 3 === 0 ? [label.trim(), w.de] : w.en,
-      explain: `German: ${label}${w.pl ? ` · plural hint: ${w.pl}` : ""} — English: ${w.en}${w.ex ? ` · e.g. ${w.ex}` : ""}`,
+      type: "type",
+      prompt: hasArt ? `Type the German with article for: “${w.en}”` : `Type the German for: “${w.en}”`,
+      answer: typedAnswers,
+      explain,
       level: w.level,
       vocabId: w.id,
     };

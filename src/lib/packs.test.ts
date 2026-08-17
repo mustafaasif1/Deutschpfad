@@ -64,4 +64,15 @@ describe("level pack links", () => {
     }
     expect(missing).toEqual([]);
   });
+
+  it("gives every vocab word an example sentence", async () => {
+    const missing: string[] = [];
+    for (const id of LEVEL_IDS) {
+      const pack = await loadLevelPack(id);
+      for (const word of pack.vocab) {
+        if (!word.ex || !String(word.ex).trim()) missing.push(`${id} ${word.id} ${word.de}`);
+      }
+    }
+    expect(missing).toEqual([]);
+  });
 });

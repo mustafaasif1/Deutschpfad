@@ -7,7 +7,9 @@ export default {
     "pl": "",
     "en": "hello",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Hallo, ich heiße Anna.",
+    "exEn": "Hello, my name is Anna."
   },
   {
     "id": "a1v2",
@@ -16,7 +18,9 @@ export default {
     "pl": "",
     "en": "good day",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Guten Tag, ich suche das Rathaus.",
+    "exEn": "Good day, I am looking for the town hall."
   },
   {
     "id": "a1v3",
@@ -25,7 +29,9 @@ export default {
     "pl": "",
     "en": "good morning",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Guten Morgen, der Kurs beginnt um neun.",
+    "exEn": "Good morning, the course starts at nine."
   },
   {
     "id": "a1v4",
@@ -34,7 +40,9 @@ export default {
     "pl": "",
     "en": "good evening",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Guten Abend, ein Tisch für zwei bitte.",
+    "exEn": "Good evening, a table for two please."
   },
   {
     "id": "a1v5",
@@ -43,7 +51,9 @@ export default {
     "pl": "",
     "en": "bye",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Tschüss, bis morgen im Kurs.",
+    "exEn": "Bye, see you tomorrow in class."
   },
   {
     "id": "a1v6",
@@ -52,7 +62,9 @@ export default {
     "pl": "",
     "en": "goodbye",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Auf Wiedersehen und vielen Dank für Ihre Hilfe.",
+    "exEn": "Goodbye and thank you for your help."
   },
   {
     "id": "a1v7",
@@ -61,7 +73,9 @@ export default {
     "pl": "",
     "en": "please / you're welcome",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Einen Kaffee bitte.",
+    "exEn": "A coffee please."
   },
   {
     "id": "a1v8",
@@ -70,7 +84,9 @@ export default {
     "pl": "",
     "en": "thank you",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Danke für den Kaffee.",
+    "exEn": "Thank you for the coffee."
   },
   {
     "id": "a1v9",
@@ -79,7 +95,9 @@ export default {
     "pl": "",
     "en": "excuse me / sorry",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Entschuldigung, wo ist der Bahnhof?",
+    "exEn": "Excuse me, where is the station?"
   },
   {
     "id": "a1v10",
@@ -88,7 +106,9 @@ export default {
     "pl": "",
     "en": "yes",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ja — bis morgen im Kurs.",
+    "exEn": "Yes — see you tomorrow in class."
   },
   {
     "id": "a1v11",
@@ -97,7 +117,9 @@ export default {
     "pl": "",
     "en": "no",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Nein — bis morgen im Kurs.",
+    "exEn": "No — see you tomorrow in class."
   },
   {
     "id": "a1v12",
@@ -106,7 +128,9 @@ export default {
     "pl": "",
     "en": "maybe",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Vielleicht — bis morgen im Kurs.",
+    "exEn": "Maybe — see you tomorrow in class."
   },
   {
     "id": "a1v13",
@@ -115,7 +139,9 @@ export default {
     "pl": "",
     "en": "how are you?",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wie geht's?",
+    "exEn": "How are you?"
   },
   {
     "id": "a1v14",
@@ -124,7 +150,9 @@ export default {
     "pl": "",
     "en": "good / well",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Gut — bis morgen im Kurs.",
+    "exEn": "Good / well — see you tomorrow in class."
   },
   {
     "id": "a1v15",
@@ -133,7 +161,9 @@ export default {
     "pl": "",
     "en": "bad",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Schlecht — bis morgen im Kurs.",
+    "exEn": "Bad — see you tomorrow in class."
   },
   {
     "id": "a1v16",
@@ -142,7 +172,9 @@ export default {
     "pl": "",
     "en": "welcome",
     "topic": "greetings",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Willkommen — bis morgen im Kurs.",
+    "exEn": "Welcome — see you tomorrow in class."
   },
   {
     "id": "a1v17",
@@ -151,7 +183,9 @@ export default {
     "pl": "-n",
     "en": "name",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist der Name.",
+    "exEn": "This is name."
   },
   {
     "id": "a1v18",
@@ -160,7 +194,9 @@ export default {
     "pl": "-n",
     "en": "first name",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist der Vorname.",
+    "exEn": "This is first name."
   },
   {
     "id": "a1v19",
@@ -169,7 +205,9 @@ export default {
     "pl": "-n",
     "en": "surname",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist der Nachname.",
+    "exEn": "This is surname."
   },
   {
     "id": "a1v20",
@@ -178,7 +216,9 @@ export default {
     "pl": "Männer",
     "en": "man",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist der Mann.",
+    "exEn": "This is man."
   },
   {
     "id": "a1v21",
@@ -187,7 +227,9 @@ export default {
     "pl": "-en",
     "en": "woman / Mrs",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist die Frau.",
+    "exEn": "This is woman / Mrs."
   },
   {
     "id": "a1v22",
@@ -196,7 +238,9 @@ export default {
     "pl": "-er",
     "en": "child",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist das Kind.",
+    "exEn": "This is child."
   },
   {
     "id": "a1v23",
@@ -205,7 +249,9 @@ export default {
     "pl": "-e",
     "en": "friend (m)",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist der Freund.",
+    "exEn": "This is friend (m)."
   },
   {
     "id": "a1v24",
@@ -214,7 +260,9 @@ export default {
     "pl": "-nen",
     "en": "friend (f)",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist die Freundin.",
+    "exEn": "This is friend (f)."
   },
   {
     "id": "a1v25",
@@ -223,7 +271,9 @@ export default {
     "pl": "-n",
     "en": "family",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist die Familie.",
+    "exEn": "This is family."
   },
   {
     "id": "a1v26",
@@ -232,7 +282,9 @@ export default {
     "pl": "Mütter",
     "en": "mother",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist die Mutter.",
+    "exEn": "This is mother."
   },
   {
     "id": "a1v27",
@@ -241,7 +293,9 @@ export default {
     "pl": "Väter",
     "en": "father",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist der Vater.",
+    "exEn": "This is father."
   },
   {
     "id": "a1v28",
@@ -250,7 +304,9 @@ export default {
     "pl": "-n",
     "en": "sister",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist die Schwester.",
+    "exEn": "This is sister."
   },
   {
     "id": "a1v29",
@@ -259,7 +315,9 @@ export default {
     "pl": "Brüder",
     "en": "brother",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist der Bruder.",
+    "exEn": "This is brother."
   },
   {
     "id": "a1v30",
@@ -268,7 +326,9 @@ export default {
     "pl": "Töchter",
     "en": "daughter",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist die Tochter.",
+    "exEn": "This is daughter."
   },
   {
     "id": "a1v31",
@@ -277,7 +337,9 @@ export default {
     "pl": "Söhne",
     "en": "son",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist der Sohn.",
+    "exEn": "This is son."
   },
   {
     "id": "a1v32",
@@ -286,7 +348,9 @@ export default {
     "pl": "-s",
     "en": "baby",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist das Baby.",
+    "exEn": "This is baby."
   },
   {
     "id": "a1v33",
@@ -295,7 +359,9 @@ export default {
     "pl": "-en",
     "en": "Mr",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist der Herr.",
+    "exEn": "This is Mr."
   },
   {
     "id": "a1v34",
@@ -304,7 +370,9 @@ export default {
     "pl": "-en",
     "en": "person",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist die Person.",
+    "exEn": "This is person."
   },
   {
     "id": "a1v35",
@@ -313,7 +381,9 @@ export default {
     "pl": "",
     "en": "people",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Hier sind die Leute.",
+    "exEn": "Here are the people."
   },
   {
     "id": "a1v36",
@@ -322,7 +392,9 @@ export default {
     "pl": "-n",
     "en": "neighbour",
     "topic": "people",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das ist der Nachbar.",
+    "exEn": "This is neighbour."
   },
   {
     "id": "a1v37",
@@ -331,7 +403,9 @@ export default {
     "pl": "",
     "en": "zero",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Die Hausnummer ist Null? Nein, das ist zwölf.",
+    "exEn": "The house number is zero? No, it is twelve."
   },
   {
     "id": "a1v38",
@@ -340,7 +414,9 @@ export default {
     "pl": "",
     "en": "one",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte eins, bitte — das kleine Brot.",
+    "exEn": "I would like one, please — the small loaf."
   },
   {
     "id": "a1v39",
@@ -349,7 +425,9 @@ export default {
     "pl": "",
     "en": "two",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe zwei Fahrkarten nach Köln.",
+    "exEn": "I am buying two tickets to Cologne."
   },
   {
     "id": "a1v40",
@@ -358,7 +436,9 @@ export default {
     "pl": "",
     "en": "three",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche drei Fahrkarten bitte.",
+    "exEn": "I need three tickets please."
   },
   {
     "id": "a1v41",
@@ -367,7 +447,9 @@ export default {
     "pl": "",
     "en": "four",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche vier Fahrkarten bitte.",
+    "exEn": "I need four tickets please."
   },
   {
     "id": "a1v42",
@@ -376,7 +458,9 @@ export default {
     "pl": "",
     "en": "five",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche fünf Fahrkarten bitte.",
+    "exEn": "I need five tickets please."
   },
   {
     "id": "a1v43",
@@ -385,7 +469,9 @@ export default {
     "pl": "",
     "en": "six",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche sechs Fahrkarten bitte.",
+    "exEn": "I need six tickets please."
   },
   {
     "id": "a1v44",
@@ -394,7 +480,9 @@ export default {
     "pl": "",
     "en": "seven",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche sieben Fahrkarten bitte.",
+    "exEn": "I need seven tickets please."
   },
   {
     "id": "a1v45",
@@ -403,7 +491,9 @@ export default {
     "pl": "",
     "en": "eight",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche acht Fahrkarten bitte.",
+    "exEn": "I need eight tickets please."
   },
   {
     "id": "a1v46",
@@ -412,7 +502,9 @@ export default {
     "pl": "",
     "en": "nine",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche neun Fahrkarten bitte.",
+    "exEn": "I need nine tickets please."
   },
   {
     "id": "a1v47",
@@ -421,7 +513,9 @@ export default {
     "pl": "",
     "en": "ten",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche zehn Fahrkarten bitte.",
+    "exEn": "I need ten tickets please."
   },
   {
     "id": "a1v48",
@@ -430,7 +524,9 @@ export default {
     "pl": "",
     "en": "hundred",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche hundert Fahrkarten bitte.",
+    "exEn": "I need hundred tickets please."
   },
   {
     "id": "a1v49",
@@ -439,7 +535,9 @@ export default {
     "pl": "-en",
     "en": "o'clock / clock",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Hier ist die Uhr.",
+    "exEn": "Here is the o'clock / clock."
   },
   {
     "id": "a1v50",
@@ -448,7 +546,9 @@ export default {
     "pl": "-n",
     "en": "minute",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Hier ist die Minute.",
+    "exEn": "Here is the minute."
   },
   {
     "id": "a1v51",
@@ -457,7 +557,9 @@ export default {
     "pl": "-n",
     "en": "hour",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Hier ist die Stunde.",
+    "exEn": "Here is the hour."
   },
   {
     "id": "a1v52",
@@ -466,7 +568,9 @@ export default {
     "pl": "-e",
     "en": "day",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Hier ist der Tag.",
+    "exEn": "Here is the day."
   },
   {
     "id": "a1v53",
@@ -475,7 +579,9 @@ export default {
     "pl": "-n",
     "en": "week",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Hier ist die Woche.",
+    "exEn": "Here is the week."
   },
   {
     "id": "a1v54",
@@ -484,7 +590,9 @@ export default {
     "pl": "-e",
     "en": "month",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Hier ist der Monat.",
+    "exEn": "Here is the month."
   },
   {
     "id": "a1v55",
@@ -493,7 +601,9 @@ export default {
     "pl": "-e",
     "en": "year",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Hier ist das Jahr.",
+    "exEn": "Here is the year."
   },
   {
     "id": "a1v56",
@@ -502,7 +612,9 @@ export default {
     "pl": "",
     "en": "today",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche heute Fahrkarten bitte.",
+    "exEn": "I need today tickets please."
   },
   {
     "id": "a1v57",
@@ -511,7 +623,9 @@ export default {
     "pl": "",
     "en": "tomorrow",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche morgen Fahrkarten bitte.",
+    "exEn": "I need tomorrow tickets please."
   },
   {
     "id": "a1v58",
@@ -520,7 +634,9 @@ export default {
     "pl": "",
     "en": "yesterday",
     "topic": "numbers",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche gestern Fahrkarten bitte.",
+    "exEn": "I need yesterday tickets please."
   },
   {
     "id": "a1v59",
@@ -529,7 +645,9 @@ export default {
     "pl": "Häuser",
     "en": "house",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Haus?",
+    "exEn": "Where is the house?"
   },
   {
     "id": "a1v60",
@@ -538,7 +656,9 @@ export default {
     "pl": "-en",
     "en": "apartment",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist die Wohnung?",
+    "exEn": "Where is the apartment?"
   },
   {
     "id": "a1v61",
@@ -547,7 +667,9 @@ export default {
     "pl": "-",
     "en": "room",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Zimmer?",
+    "exEn": "Where is the room?"
   },
   {
     "id": "a1v62",
@@ -556,7 +678,9 @@ export default {
     "pl": "-n",
     "en": "kitchen",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist die Küche?",
+    "exEn": "Where is the kitchen?"
   },
   {
     "id": "a1v63",
@@ -565,7 +689,9 @@ export default {
     "pl": "Bäder",
     "en": "bathroom",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Bad?",
+    "exEn": "Where is the bathroom?"
   },
   {
     "id": "a1v64",
@@ -574,7 +700,9 @@ export default {
     "pl": "-",
     "en": "bedroom",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Schlafzimmer?",
+    "exEn": "Where is the bedroom?"
   },
   {
     "id": "a1v65",
@@ -583,7 +711,9 @@ export default {
     "pl": "-",
     "en": "living room",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Wohnzimmer?",
+    "exEn": "Where is the living room?"
   },
   {
     "id": "a1v66",
@@ -592,7 +722,9 @@ export default {
     "pl": "-en",
     "en": "door",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist die Tür?",
+    "exEn": "Where is the door?"
   },
   {
     "id": "a1v67",
@@ -601,7 +733,9 @@ export default {
     "pl": "-",
     "en": "window",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Fenster?",
+    "exEn": "Where is the window?"
   },
   {
     "id": "a1v68",
@@ -610,7 +744,9 @@ export default {
     "pl": "-e",
     "en": "table",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist der Tisch?",
+    "exEn": "Where is the table?"
   },
   {
     "id": "a1v69",
@@ -619,7 +755,9 @@ export default {
     "pl": "Stühle",
     "en": "chair",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist der Stuhl?",
+    "exEn": "Where is the chair?"
   },
   {
     "id": "a1v70",
@@ -628,7 +766,9 @@ export default {
     "pl": "-en",
     "en": "bed",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Bett?",
+    "exEn": "Where is the bed?"
   },
   {
     "id": "a1v71",
@@ -637,7 +777,9 @@ export default {
     "pl": "-n",
     "en": "address",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist die Adresse?",
+    "exEn": "Where is the address?"
   },
   {
     "id": "a1v72",
@@ -646,7 +788,9 @@ export default {
     "pl": "-n",
     "en": "street",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist die Straße?",
+    "exEn": "Where is the street?"
   },
   {
     "id": "a1v73",
@@ -655,7 +799,9 @@ export default {
     "pl": "Städte",
     "en": "city",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist die Stadt?",
+    "exEn": "Where is the city?"
   },
   {
     "id": "a1v74",
@@ -664,7 +810,9 @@ export default {
     "pl": "Dörfer",
     "en": "village",
     "topic": "home",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Dorf?",
+    "exEn": "Where is the village?"
   },
   {
     "id": "a1v75",
@@ -673,7 +821,9 @@ export default {
     "pl": "-e",
     "en": "bread",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe das Brot.",
+    "exEn": "I am buying the bread."
   },
   {
     "id": "a1v76",
@@ -682,7 +832,9 @@ export default {
     "pl": "",
     "en": "water",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe das Wasser.",
+    "exEn": "I am buying the water."
   },
   {
     "id": "a1v77",
@@ -691,7 +843,9 @@ export default {
     "pl": "-s",
     "en": "coffee",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe den Kaffee.",
+    "exEn": "I am buying the coffee."
   },
   {
     "id": "a1v78",
@@ -700,7 +854,9 @@ export default {
     "pl": "-s",
     "en": "tea",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe den Tee.",
+    "exEn": "I am buying the tea."
   },
   {
     "id": "a1v79",
@@ -709,7 +865,9 @@ export default {
     "pl": "",
     "en": "milk",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe die Milch.",
+    "exEn": "I am buying the milk."
   },
   {
     "id": "a1v80",
@@ -718,7 +876,9 @@ export default {
     "pl": "Äpfel",
     "en": "apple",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe den Apfel.",
+    "exEn": "I am buying the apple."
   },
   {
     "id": "a1v81",
@@ -727,7 +887,9 @@ export default {
     "pl": "-n",
     "en": "banana",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe die Banane.",
+    "exEn": "I am buying the banana."
   },
   {
     "id": "a1v82",
@@ -736,7 +898,9 @@ export default {
     "pl": "",
     "en": "cheese",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe den Käse.",
+    "exEn": "I am buying the cheese."
   },
   {
     "id": "a1v83",
@@ -745,7 +909,9 @@ export default {
     "pl": "",
     "en": "meat",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe das Fleisch.",
+    "exEn": "I am buying the meat."
   },
   {
     "id": "a1v84",
@@ -754,7 +920,9 @@ export default {
     "pl": "-e",
     "en": "fish",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe den Fisch.",
+    "exEn": "I am buying the fish."
   },
   {
     "id": "a1v85",
@@ -763,7 +931,9 @@ export default {
     "pl": "",
     "en": "vegetables",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe das Gemüse.",
+    "exEn": "I am buying the vegetables."
   },
   {
     "id": "a1v86",
@@ -772,7 +942,9 @@ export default {
     "pl": "",
     "en": "fruit",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe das Obst.",
+    "exEn": "I am buying the fruit."
   },
   {
     "id": "a1v87",
@@ -781,7 +953,9 @@ export default {
     "pl": "-e",
     "en": "breakfast",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe das Frühstück.",
+    "exEn": "I am buying the breakfast."
   },
   {
     "id": "a1v88",
@@ -790,7 +964,9 @@ export default {
     "pl": "-",
     "en": "lunch",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe das Mittagessen.",
+    "exEn": "I am buying the lunch."
   },
   {
     "id": "a1v89",
@@ -799,7 +975,9 @@ export default {
     "pl": "-",
     "en": "dinner",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe das Abendessen.",
+    "exEn": "I am buying the dinner."
   },
   {
     "id": "a1v90",
@@ -808,7 +986,9 @@ export default {
     "pl": "-en",
     "en": "bill",
     "topic": "food",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe die Rechnung.",
+    "exEn": "I am buying the bill."
   },
   {
     "id": "a1v91",
@@ -817,7 +997,9 @@ export default {
     "pl": "",
     "en": "morning",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um den Morgen.",
+    "exEn": "Today it is about the morning."
   },
   {
     "id": "a1v92",
@@ -826,7 +1008,9 @@ export default {
     "pl": "",
     "en": "midday",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um den Mittag.",
+    "exEn": "Today it is about the midday."
   },
   {
     "id": "a1v93",
@@ -835,7 +1019,9 @@ export default {
     "pl": "-e",
     "en": "evening",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um den Abend.",
+    "exEn": "Today it is about the evening."
   },
   {
     "id": "a1v94",
@@ -844,7 +1030,9 @@ export default {
     "pl": "Nächte",
     "en": "night",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um die Nacht.",
+    "exEn": "Today it is about the night."
   },
   {
     "id": "a1v95",
@@ -853,7 +1041,9 @@ export default {
     "pl": "-en",
     "en": "work",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um die Arbeit.",
+    "exEn": "Today it is about the work."
   },
   {
     "id": "a1v96",
@@ -862,7 +1052,9 @@ export default {
     "pl": "-n",
     "en": "break",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um die Pause.",
+    "exEn": "Today it is about the break."
   },
   {
     "id": "a1v97",
@@ -871,7 +1063,9 @@ export default {
     "pl": "",
     "en": "free time",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um die Freizeit.",
+    "exEn": "Today it is about the free time."
   },
   {
     "id": "a1v98",
@@ -880,7 +1074,9 @@ export default {
     "pl": "-s",
     "en": "hobby",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um das Hobby.",
+    "exEn": "Today it is about the hobby."
   },
   {
     "id": "a1v99",
@@ -889,7 +1085,9 @@ export default {
     "pl": "-",
     "en": "TV",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um den Fernseher.",
+    "exEn": "Today it is about the TV."
   },
   {
     "id": "a1v100",
@@ -898,7 +1096,9 @@ export default {
     "pl": "-s",
     "en": "mobile phone",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um das Handy.",
+    "exEn": "Today it is about the mobile phone."
   },
   {
     "id": "a1v101",
@@ -907,7 +1107,9 @@ export default {
     "pl": "-",
     "en": "computer",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um den Computer.",
+    "exEn": "Today it is about the computer."
   },
   {
     "id": "a1v102",
@@ -916,7 +1118,9 @@ export default {
     "pl": "Bücher",
     "en": "book",
     "topic": "daily",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Heute geht es um das Buch.",
+    "exEn": "Today it is about the book."
   },
   {
     "id": "a1v103",
@@ -925,7 +1129,9 @@ export default {
     "pl": "Bahnhöfe",
     "en": "train station",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist der Bahnhof?",
+    "exEn": "Where is the train station?"
   },
   {
     "id": "a1v104",
@@ -934,7 +1140,9 @@ export default {
     "pl": "Züge",
     "en": "train",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist der Zug?",
+    "exEn": "Where is the train?"
   },
   {
     "id": "a1v105",
@@ -943,7 +1151,9 @@ export default {
     "pl": "-se",
     "en": "bus",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist der Bus?",
+    "exEn": "Where is the bus?"
   },
   {
     "id": "a1v106",
@@ -952,7 +1162,9 @@ export default {
     "pl": "-s",
     "en": "ticket",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Ticket?",
+    "exEn": "Where is the ticket?"
   },
   {
     "id": "a1v107",
@@ -961,7 +1173,9 @@ export default {
     "pl": "-n",
     "en": "ticket",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist die Fahrkarte?",
+    "exEn": "Where is the ticket?"
   },
   {
     "id": "a1v108",
@@ -970,7 +1184,9 @@ export default {
     "pl": "-e",
     "en": "plane",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Flugzeug?",
+    "exEn": "Where is the plane?"
   },
   {
     "id": "a1v109",
@@ -979,7 +1195,9 @@ export default {
     "pl": "-s",
     "en": "hotel",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist das Hotel?",
+    "exEn": "Where is the hotel?"
   },
   {
     "id": "a1v110",
@@ -988,7 +1206,9 @@ export default {
     "pl": "-n",
     "en": "map / card",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo ist die Karte?",
+    "exEn": "Where is the map / card?"
   },
   {
     "id": "a1v111",
@@ -997,7 +1217,9 @@ export default {
     "pl": "",
     "en": "left",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist links.",
+    "exEn": "The appointment is left."
   },
   {
     "id": "a1v112",
@@ -1006,7 +1228,9 @@ export default {
     "pl": "",
     "en": "right",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist rechts.",
+    "exEn": "The appointment is right."
   },
   {
     "id": "a1v113",
@@ -1015,7 +1239,9 @@ export default {
     "pl": "",
     "en": "straight ahead",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist geradeaus.",
+    "exEn": "The appointment is straight ahead."
   },
   {
     "id": "a1v114",
@@ -1024,7 +1250,9 @@ export default {
     "pl": "",
     "en": "where",
     "topic": "travel",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist wo.",
+    "exEn": "The appointment is where."
   },
   {
     "id": "a1v115",
@@ -1033,7 +1261,9 @@ export default {
     "pl": "-e",
     "en": "profession",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche den Beruf morgen.",
+    "exEn": "I need the profession tomorrow."
   },
   {
     "id": "a1v116",
@@ -1042,7 +1272,9 @@ export default {
     "pl": "-",
     "en": "teacher (m)",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche den Lehrer morgen.",
+    "exEn": "I need the teacher (m) tomorrow."
   },
   {
     "id": "a1v117",
@@ -1051,7 +1283,9 @@ export default {
     "pl": "-nen",
     "en": "teacher (f)",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche die Lehrerin morgen.",
+    "exEn": "I need the teacher (f) tomorrow."
   },
   {
     "id": "a1v118",
@@ -1060,7 +1294,9 @@ export default {
     "pl": "-",
     "en": "pupil (m)",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche den Schüler morgen.",
+    "exEn": "I need the pupil (m) tomorrow."
   },
   {
     "id": "a1v119",
@@ -1069,7 +1305,9 @@ export default {
     "pl": "-en",
     "en": "student (m)",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche den Student morgen.",
+    "exEn": "I need the student (m) tomorrow."
   },
   {
     "id": "a1v120",
@@ -1078,7 +1316,9 @@ export default {
     "pl": "-s",
     "en": "office",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche das Büro morgen.",
+    "exEn": "I need the office tomorrow."
   },
   {
     "id": "a1v121",
@@ -1087,7 +1327,9 @@ export default {
     "pl": "Firmen",
     "en": "company",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche die Firma morgen.",
+    "exEn": "I need the company tomorrow."
   },
   {
     "id": "a1v122",
@@ -1096,7 +1338,9 @@ export default {
     "pl": "-e",
     "en": "course",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche den Kurs morgen.",
+    "exEn": "I need the course tomorrow."
   },
   {
     "id": "a1v123",
@@ -1105,7 +1349,9 @@ export default {
     "pl": "-n",
     "en": "school",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche die Schule morgen.",
+    "exEn": "I need the school tomorrow."
   },
   {
     "id": "a1v124",
@@ -1114,7 +1360,9 @@ export default {
     "pl": "-en",
     "en": "university",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche die Universität morgen.",
+    "exEn": "I need the university tomorrow."
   },
   {
     "id": "a1v125",
@@ -1123,7 +1371,9 @@ export default {
     "pl": "-n",
     "en": "break",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche die Pause morgen.",
+    "exEn": "I need the break tomorrow."
   },
   {
     "id": "a1v126",
@@ -1132,7 +1382,9 @@ export default {
     "pl": "-n",
     "en": "colleague",
     "topic": "work",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche den Kollege morgen.",
+    "exEn": "I need the colleague tomorrow."
   },
   {
     "id": "a1v127",
@@ -1141,7 +1393,9 @@ export default {
     "pl": "Ärzte",
     "en": "doctor (m)",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich suche den Arzt.",
+    "exEn": "I am looking for the doctor (m)."
   },
   {
     "id": "a1v128",
@@ -1150,7 +1404,9 @@ export default {
     "pl": "-nen",
     "en": "doctor (f)",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich suche die Ärztin.",
+    "exEn": "I am looking for the doctor (f)."
   },
   {
     "id": "a1v129",
@@ -1159,7 +1415,9 @@ export default {
     "pl": "-häuser",
     "en": "hospital",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich suche das Krankenhaus.",
+    "exEn": "I am looking for the hospital."
   },
   {
     "id": "a1v130",
@@ -1168,7 +1426,9 @@ export default {
     "pl": "-n",
     "en": "pharmacy",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich suche die Apotheke.",
+    "exEn": "I am looking for the pharmacy."
   },
   {
     "id": "a1v131",
@@ -1177,7 +1437,9 @@ export default {
     "pl": "Köpfe",
     "en": "head",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich suche den Kopf.",
+    "exEn": "I am looking for the head."
   },
   {
     "id": "a1v132",
@@ -1186,7 +1448,9 @@ export default {
     "pl": "Bäuche",
     "en": "stomach",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich suche den Bauch.",
+    "exEn": "I am looking for the stomach."
   },
   {
     "id": "a1v133",
@@ -1195,7 +1459,9 @@ export default {
     "pl": "-en",
     "en": "pain",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich suche den Schmerz.",
+    "exEn": "I am looking for the pain."
   },
   {
     "id": "a1v134",
@@ -1204,7 +1470,9 @@ export default {
     "pl": "",
     "en": "ill",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist krank.",
+    "exEn": "The appointment is ill."
   },
   {
     "id": "a1v135",
@@ -1213,7 +1481,9 @@ export default {
     "pl": "",
     "en": "healthy",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist gesund.",
+    "exEn": "The appointment is healthy."
   },
   {
     "id": "a1v136",
@@ -1222,7 +1492,9 @@ export default {
     "pl": "",
     "en": "tired",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich suche Müde.",
+    "exEn": "I am looking for the tired."
   },
   {
     "id": "a1v137",
@@ -1231,7 +1503,9 @@ export default {
     "pl": "-e",
     "en": "medicine",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich suche das Medikament.",
+    "exEn": "I am looking for the medicine."
   },
   {
     "id": "a1v138",
@@ -1240,7 +1514,9 @@ export default {
     "pl": "-e",
     "en": "appointment",
     "topic": "health",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich suche den Termin.",
+    "exEn": "I am looking for the appointment."
   },
   {
     "id": "a1v139",
@@ -1249,7 +1525,9 @@ export default {
     "pl": "-e",
     "en": "shop",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe das Geschäft.",
+    "exEn": "I am buying the shop."
   },
   {
     "id": "a1v140",
@@ -1258,7 +1536,9 @@ export default {
     "pl": "-märkte",
     "en": "supermarket",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe den Supermarkt.",
+    "exEn": "I am buying the supermarket."
   },
   {
     "id": "a1v141",
@@ -1267,7 +1547,9 @@ export default {
     "pl": "-e",
     "en": "price",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe den Preis.",
+    "exEn": "I am buying the price."
   },
   {
     "id": "a1v142",
@@ -1276,7 +1558,9 @@ export default {
     "pl": "-",
     "en": "euro",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe den Euro.",
+    "exEn": "I am buying the euro."
   },
   {
     "id": "a1v143",
@@ -1285,7 +1569,9 @@ export default {
     "pl": "",
     "en": "cheap",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist billig.",
+    "exEn": "The appointment is cheap."
   },
   {
     "id": "a1v144",
@@ -1294,7 +1580,9 @@ export default {
     "pl": "",
     "en": "expensive",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist teuer.",
+    "exEn": "The appointment is expensive."
   },
   {
     "id": "a1v145",
@@ -1303,7 +1591,9 @@ export default {
     "pl": "-n",
     "en": "colour",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe die Farbe.",
+    "exEn": "I am buying the colour."
   },
   {
     "id": "a1v146",
@@ -1312,7 +1602,9 @@ export default {
     "pl": "-n",
     "en": "size",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe die Größe.",
+    "exEn": "I am buying the size."
   },
   {
     "id": "a1v147",
@@ -1321,7 +1613,9 @@ export default {
     "pl": "-n",
     "en": "jacket",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe die Jacke.",
+    "exEn": "I am buying the jacket."
   },
   {
     "id": "a1v148",
@@ -1330,7 +1624,9 @@ export default {
     "pl": "-n",
     "en": "trousers",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe die Hose.",
+    "exEn": "I am buying the trousers."
   },
   {
     "id": "a1v149",
@@ -1339,7 +1635,9 @@ export default {
     "pl": "-e",
     "en": "shoe",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe den Schuh.",
+    "exEn": "I am buying the shoe."
   },
   {
     "id": "a1v150",
@@ -1348,7 +1646,9 @@ export default {
     "pl": "-n",
     "en": "bag",
     "topic": "shopping",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich kaufe die Tasche.",
+    "exEn": "I am buying the bag."
   },
   {
     "id": "a1v151",
@@ -1357,7 +1657,9 @@ export default {
     "pl": "",
     "en": "to be",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte pünktlich sein.",
+    "exEn": "I want to be on time."
   },
   {
     "id": "a1v152",
@@ -1366,7 +1668,9 @@ export default {
     "pl": "",
     "en": "to have",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Haben Sie Zeit? Ich möchte einen Termin haben.",
+    "exEn": "Do you have time? I would like to have an appointment."
   },
   {
     "id": "a1v153",
@@ -1375,7 +1679,9 @@ export default {
     "pl": "",
     "en": "to be called",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wie heißen Sie? Ich heiße Anna.",
+    "exEn": "What is your name? My name is Anna."
   },
   {
     "id": "a1v154",
@@ -1384,7 +1690,9 @@ export default {
     "pl": "",
     "en": "to come",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Können Sie bitte um drei kommen?",
+    "exEn": "Can you please come at three?"
   },
   {
     "id": "a1v155",
@@ -1393,7 +1701,9 @@ export default {
     "pl": "",
     "en": "to go",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich muss jetzt gehen, der Bus kommt.",
+    "exEn": "I have to go now, the bus is coming."
   },
   {
     "id": "a1v156",
@@ -1402,7 +1712,9 @@ export default {
     "pl": "",
     "en": "to do / make",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Kann ich bitte ein Foto machen?",
+    "exEn": "Can I take a photo please?"
   },
   {
     "id": "a1v157",
@@ -1411,7 +1723,9 @@ export default {
     "pl": "",
     "en": "to live",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo wohnen Sie in der Stadt?",
+    "exEn": "Where do you live in the city?"
   },
   {
     "id": "a1v158",
@@ -1420,7 +1734,9 @@ export default {
     "pl": "",
     "en": "to work",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wo arbeiten Sie — im Büro oder zu Hause?",
+    "exEn": "Where do you work — in the office or at home?"
   },
   {
     "id": "a1v159",
@@ -1429,7 +1745,9 @@ export default {
     "pl": "",
     "en": "to learn",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte heute lernen.",
+    "exEn": "I would like to learn today."
   },
   {
     "id": "a1v160",
@@ -1438,7 +1756,9 @@ export default {
     "pl": "",
     "en": "to speak",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte heute sprechen.",
+    "exEn": "I would like to speak today."
   },
   {
     "id": "a1v161",
@@ -1447,7 +1767,9 @@ export default {
     "pl": "",
     "en": "to eat",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte heute essen.",
+    "exEn": "I would like to eat today."
   },
   {
     "id": "a1v162",
@@ -1456,7 +1778,9 @@ export default {
     "pl": "",
     "en": "to drink",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte heute trinken.",
+    "exEn": "I would like to drink today."
   },
   {
     "id": "a1v163",
@@ -1465,7 +1789,9 @@ export default {
     "pl": "",
     "en": "to buy",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte heute kaufen.",
+    "exEn": "I would like to buy today."
   },
   {
     "id": "a1v164",
@@ -1474,7 +1800,9 @@ export default {
     "pl": "",
     "en": "to need",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte heute brauchen.",
+    "exEn": "I would like to need today."
   },
   {
     "id": "a1v165",
@@ -1483,7 +1811,9 @@ export default {
     "pl": "",
     "en": "to find",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Wie finden Sie den Kurs?",
+    "exEn": "How do you find the course?"
   },
   {
     "id": "a1v166",
@@ -1492,7 +1822,9 @@ export default {
     "pl": "",
     "en": "to understand",
     "topic": "verbs",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte heute verstehen.",
+    "exEn": "I would like to understand today."
   },
   {
     "id": "a1v167",
@@ -1501,7 +1833,9 @@ export default {
     "pl": "",
     "en": "good",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Kurs ist gut, ich lerne viel.",
+    "exEn": "The course is good, I am learning a lot."
   },
   {
     "id": "a1v168",
@@ -1510,7 +1844,9 @@ export default {
     "pl": "",
     "en": "bad",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Die Verbindung ist schlecht, ich rufe später an.",
+    "exEn": "The connection is bad, I will call later."
   },
   {
     "id": "a1v169",
@@ -1519,7 +1855,9 @@ export default {
     "pl": "",
     "en": "big",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Die Wohnung ist groß genug für uns.",
+    "exEn": "The flat is big enough for us."
   },
   {
     "id": "a1v170",
@@ -1528,7 +1866,9 @@ export default {
     "pl": "",
     "en": "small",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Das Zimmer ist klein, aber hell.",
+    "exEn": "The room is small but bright."
   },
   {
     "id": "a1v171",
@@ -1537,7 +1877,9 @@ export default {
     "pl": "",
     "en": "new",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich brauche eine neue Meldebescheinigung.",
+    "exEn": "I need a new registration certificate."
   },
   {
     "id": "a1v172",
@@ -1546,7 +1888,9 @@ export default {
     "pl": "",
     "en": "old",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Pass ist alt, ich beantrage einen neuen.",
+    "exEn": "The passport is old, I am applying for a new one."
   },
   {
     "id": "a1v173",
@@ -1555,7 +1899,9 @@ export default {
     "pl": "",
     "en": "beautiful",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Die Lage ist schön, nah am Park.",
+    "exEn": "The location is nice, close to the park."
   },
   {
     "id": "a1v174",
@@ -1564,7 +1910,9 @@ export default {
     "pl": "",
     "en": "ugly",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist hässlich.",
+    "exEn": "The appointment is ugly."
   },
   {
     "id": "a1v175",
@@ -1573,7 +1921,9 @@ export default {
     "pl": "",
     "en": "warm",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist warm.",
+    "exEn": "The appointment is warm."
   },
   {
     "id": "a1v176",
@@ -1582,7 +1932,9 @@ export default {
     "pl": "",
     "en": "cold",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist kalt.",
+    "exEn": "The appointment is cold."
   },
   {
     "id": "a1v177",
@@ -1591,7 +1943,9 @@ export default {
     "pl": "",
     "en": "fast",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist schnell.",
+    "exEn": "The appointment is fast."
   },
   {
     "id": "a1v178",
@@ -1600,7 +1954,9 @@ export default {
     "pl": "",
     "en": "slow",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist langsam.",
+    "exEn": "The appointment is slow."
   },
   {
     "id": "a1v179",
@@ -1609,7 +1965,9 @@ export default {
     "pl": "",
     "en": "easy / light",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist leicht.",
+    "exEn": "The appointment is easy / light."
   },
   {
     "id": "a1v180",
@@ -1618,7 +1976,9 @@ export default {
     "pl": "",
     "en": "difficult",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Der Termin ist schwierig.",
+    "exEn": "The appointment is difficult."
   },
   {
     "id": "a1v181",
@@ -1627,7 +1987,9 @@ export default {
     "pl": "",
     "en": "open",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte heute offen.",
+    "exEn": "I would like open today."
   },
   {
     "id": "a1v182",
@@ -1636,7 +1998,9 @@ export default {
     "pl": "",
     "en": "closed",
     "topic": "adjectives",
-    "level": "a1"
+    "level": "a1",
+    "ex": "Ich möchte heute geschlossen.",
+    "exEn": "I would like closed today."
   }
 ],
   vocabTopics: [

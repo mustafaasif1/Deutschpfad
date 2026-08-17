@@ -2,16 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AppLink } from "@/components/ui/AppLink";
 import { Badge } from "@/components/ui/Progress";
-import { PracticeTabs } from "@/components/ui/PracticeTabs";
+import { PracticeTabs, VocabPackTabs } from "@/components/ui/PracticeTabs";
 import { StudyPath } from "@/components/ui/StudyPath";
-import { EnhanceRoot, SpeakButton } from "@/components/ui/German";
+import { EnhanceRoot } from "@/components/ui/German";
+import { VocabRow, VocabStudyCard } from "@/components/ui/VocabPeek";
 import { QuizView } from "@/components/quiz/QuizView";
 import { useApp } from "@/context/AppContext";
 import { vocabByWeek, VOCAB_PATH } from "@/lib/course";
-import { progressStore } from "@/state/progress";
 import { makeVocabQuiz, vocabByTopic } from "@/lib/quiz";
 import { masteryLine } from "@/lib/mastery";
-import { reviewVocab } from "@/state/session";
 import { useDocumentTitle } from "@/hooks/useUi";
 import type { VocabTopic } from "@/types/content";
 
@@ -54,9 +53,8 @@ export function VocabListPage() {
       <PracticeTabs />
       <h1>Vocabulary trainer</h1>
       <p className="lead">
-        Packs follow the 8-week plan. Always learn <strong>article + word</strong>. Tap the speaker. This list is built
-        around official telc {meta.title} topic areas — {pack.vocab.length} words and phrases. Do not skip to another
-        level.
+        Learn one word, then quiz by typing <strong>article + word</strong>. Browse is only for lookup. Packs follow the
+        8-week {meta.title} plan — {pack.vocab.length} words and phrases.
       </p>
       <StudyPath title="How to learn a vocab pack" steps={VOCAB_PATH} />
       <label className="filter-label" htmlFor="list-filter">
@@ -109,18 +107,21 @@ export function VocabListPage() {
   );
 }
 
-export function VocabTopicPage() {
+function useVocabPack() {
   const { id = "" } = useParams();
   const { pack, meta } = useApp();
   const topic = pack?.vocabTopics.find((t) => t.id === id);
   const words = pack ? vocabByTopic(pack.vocab, id) : [];
+  return { id, pack, meta, topic, words };
+}
+
+export function VocabTopicPage() {
+  const { id, pack, meta, topic, words } = useVocabPack();
   const [i, setI] = useState(0);
-  const [front, setFront] = useState(true);
   useDocumentTitle(topic ? `${topic.title} · ${meta?.title || "Deutschpfad"}` : "Vocabulary · Deutschpfad");
 
   useEffect(() => {
     setI(0);
-    setFront(true);
   }, [id]);
 
   if (!pack) return null;
@@ -128,139 +129,126 @@ export function VocabTopicPage() {
   if (!words.length) return <p>No words in this pack.</p>;
 
   const w = words[i];
-  const label = `${w.art ? `${w.art} ` : ""}${w.de}`;
-
-  function goNext() {
-    progressStore.markVocab(words[i].id);
-    const last = i === words.length - 1;
-    if (last) reviewVocab(progressStore, id);
-    setI((i + 1) % words.length);
-    setFront(true);
-  }
-
-  function goPrev() {
-    setI((i - 1 + words.length) % words.length);
-    setFront(true);
-  }
+  const last = i === words.length - 1;
 
   return (
     <EnhanceRoot>
+      <VocabPackTabs id={id} />
       <h1>{topic.title}</h1>
-      <p className="lead">
-        Flip the card (tap, Space, or Enter). Hear the German first. Learn article + noun as one chunk. Then type the
-        quiz to 80% — do not stop at flipping.
-      </p>
+      <p className="lead">Hear it. Say article + word. Tap the German only if you need English.</p>
       <div
         id="flash-wrap"
+        tabIndex={0}
         onKeyDown={(e) => {
-          if ((e.target as HTMLElement).closest(".speak-btn")) return;
-          if (e.key === " " || e.key === "Enter") {
+          if ((e.target as HTMLElement).closest("button, a, input")) return;
+          if (e.key === "ArrowRight") {
             e.preventDefault();
-            setFront((f) => !f);
-          } else if (e.key === "ArrowRight") {
-            e.preventDefault();
-            goNext();
+            setI((n) => (n + 1) % words.length);
           } else if (e.key === "ArrowLeft") {
             e.preventDefault();
-            goPrev();
+            setI((n) => (n - 1 + words.length) % words.length);
           }
         }}
       >
-        <div
-          className="card flash"
-          role="button"
-          tabIndex={0}
-          aria-label="Flip card"
-          onClick={(e) => {
-            if ((e.target as HTMLElement).closest(".speak-btn")) return;
-            setFront((f) => !f);
-          }}
-        >
-          {front ? (
-            <>
-              <div className="flash-head">
-                <div className="big de">
-                  {label}
-                  <SpeakButton text={label} />
-                </div>
-              </div>
-              <div className="sub">
-                Tap card for English · tap speaker to hear it
-                {w.pl ? ` · plural: ${w.pl}` : ""}
-              </div>
-              {w.ex ? <p className="vocab-ex de">{w.ex}</p> : null}
-              {w.note ? <p className="q-meta">{w.note}</p> : null}
-            </>
-          ) : (
-            <div>
-              <div className="big">{w.en}</div>
-              <div className="sub">
-                <span className="de">{label}</span>
-                {w.pl ? ` · ${w.pl}` : ""}
-              </div>
-              {w.ex ? <p className="vocab-ex de">{w.ex}</p> : null}
-              {w.note ? <p className="q-meta">{w.note}</p> : null}
-            </div>
-          )}
+        <VocabStudyCard key={w.id} word={w} />
+        <div className="vocab-card-bar">
+          <p className="q-meta">
+            {i + 1} / {words.length} <Badge level={w.level} />
+          </p>
+          <div className="btn-row">
+            <button type="button" className="btn" onClick={() => setI((n) => (n - 1 + words.length) % words.length)}>
+              Previous
+            </button>
+            {last ? (
+              <>
+                <button type="button" className="btn" onClick={() => setI(0)}>
+                  Again
+                </button>
+                <AppLink className="btn btn-primary" to={`/vocab/${id}/quiz`}>
+                  Quiz
+                </AppLink>
+              </>
+            ) : (
+              <button type="button" className="btn btn-primary" onClick={() => setI((n) => n + 1)}>
+                Next
+              </button>
+            )}
+          </div>
         </div>
-        <p className="q-meta">
-          {i + 1} / {words.length} <Badge level={w.level} />
-        </p>
       </div>
-      <div className="btn-row">
-        <button type="button" className="btn" onClick={goPrev}>
-          Previous
+    </EnhanceRoot>
+  );
+}
+
+export function VocabBrowsePage() {
+  const { id, pack, meta, topic, words } = useVocabPack();
+  const [q, setQ] = useState("");
+  const [openId, setOpenId] = useState<string | null>(null);
+  const [showAllEn, setShowAllEn] = useState(false);
+  useDocumentTitle(topic ? `${topic.title} · ${meta?.title || "Deutschpfad"}` : "Vocabulary · Deutschpfad");
+
+  useEffect(() => {
+    setQ("");
+    setOpenId(null);
+    setShowAllEn(false);
+  }, [id]);
+
+  if (!pack) return null;
+  if (!topic) return <p>Topic not found.</p>;
+  if (!words.length) return <p>No words in this pack.</p>;
+
+  const needle = q.toLowerCase().trim();
+  const shown = needle
+    ? words.filter((w) => `${w.de} ${w.art || ""} ${w.en} ${w.ex || ""}`.toLowerCase().includes(needle))
+    : words;
+
+  return (
+    <EnhanceRoot>
+      <VocabPackTabs id={id} />
+      <h1>{topic.title}</h1>
+      <p className="lead">Lookup only. Tap a word for English. Study happens on Learn, then Quiz.</p>
+      <div className="vocab-list-tools">
+        <input
+          className="list-filter"
+          type="search"
+          placeholder="Filter words…"
+          autoComplete="off"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          aria-label="Filter words"
+        />
+        <button type="button" className="btn" onClick={() => setShowAllEn((v) => !v)}>
+          {showAllEn ? "Hide English" : "Show English"}
         </button>
-        <button type="button" className="btn" onClick={goNext}>
-          Next
-        </button>
-        <AppLink className="btn btn-primary" to={`/vocab/${id}/quiz`}>
-          Quiz {Math.min(20, words.length)}
-        </AppLink>
-        <AppLink className="btn" to="/vocab">
-          All packs
-        </AppLink>
       </div>
-      <details className="word-list">
-        <summary>All words in this topic</summary>
-        <p className="lead">Speaker beside each German word. Learn article + noun as one chunk.</p>
-        {words.map((word) => {
-          const lab = `${word.art ? `${word.art} ` : ""}${word.de}`;
-          return (
-            <div className="vocab-row" key={word.id}>
-              <span className="de">
-                {lab}
-                <SpeakButton text={lab} />
-              </span>
-              <span className="vocab-en">
-                {word.en}
-                {word.pl ? ` · ${word.pl}` : ""}
-                {word.ex ? (
-                  <>
-                    <br />
-                    <em className="de">{word.ex}</em>
-                  </>
-                ) : null}
-              </span>
-            </div>
-          );
-        })}
-      </details>
+      {needle && !shown.length ? <p className="filter-empty">No matches for “{q.trim()}”.</p> : null}
+      {shown.map((word) => (
+        <VocabRow
+          key={word.id}
+          word={word}
+          words={pack.vocab}
+          open={showAllEn || openId === word.id}
+          onToggle={() => setOpenId((cur) => (cur === word.id ? null : word.id))}
+        />
+      ))}
     </EnhanceRoot>
   );
 }
 
 export function VocabQuizPage() {
-  const { id = "" } = useParams();
-  const { pack } = useApp();
+  const { id, pack, topic, words } = useVocabPack();
   if (!pack) return null;
-  const words = vocabByTopic(pack.vocab, id);
+  if (!topic) return <p>Topic not found.</p>;
+  const n = Math.min(20, Math.max(12, words.length));
   return (
-    <QuizView
-      questions={makeVocabQuiz(words, pack.vocab, Math.min(20, Math.max(12, words.length)))}
-      title="Vocab quiz"
-      setId={`vocab-${id}`}
-      opts={{ exitPath: `/vocab/${id}`, parentLabel: "Vocabulary" }}
-    />
+    <>
+      <VocabPackTabs id={id} />
+      <QuizView
+        questions={makeVocabQuiz(words, pack.vocab, n)}
+        title="Vocab quiz"
+        setId={`vocab-${id}`}
+        opts={{ exitPath: `/vocab/${id}`, parentLabel: "Learn" }}
+      />
+    </>
   );
 }

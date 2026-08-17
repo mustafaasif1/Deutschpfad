@@ -37,10 +37,10 @@ export const LESSON_PATH = [
 ] as const;
 
 export const VOCAB_PATH = [
-  { title: "Learn article + word", body: "Never learn Tisch. Learn der Tisch. Gender is part of the word." },
-  { title: "Hear it, then say it", body: "Tap the speaker. Repeat the German aloud before you flip for English." },
-  { title: "Quiz by typing", body: "Multiple choice is a check. Typing with the article is the exam skill." },
-  { title: "80% before you leave", body: "Weak vocab is what fails Hören numbers and Schreiben forms. Do not skip the quiz." },
+  { title: "Learn one word", body: "Stay on Learn. Hear it, say article + word, tap English only if you are stuck." },
+  { title: "Then quiz by typing", body: "The check is producing German with the article, not picking an English meaning." },
+  { title: "Browse is a dictionary", body: "Use Browse to look a word up. It is not the study session." },
+  { title: "80% before you leave", body: "Weak vocab fails Hören numbers and Schreiben forms. Do not skip the quiz." },
 ] as const;
 
 export const TOPIC_PATH = [

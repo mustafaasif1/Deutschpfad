@@ -5,7 +5,7 @@ import { HomePage } from "@/pages/HomePage";
 import { LevelsPage } from "@/pages/LevelsPage";
 import { PlanPage } from "@/pages/PlanPage";
 import { DrillPage, GrammarLessonPage, GrammarListPage, GrammarQuizPage } from "@/pages/GrammarPages";
-import { VocabListPage, VocabQuizPage, VocabTopicPage } from "@/pages/VocabPages";
+import { VocabBrowsePage, VocabListPage, VocabQuizPage, VocabTopicPage } from "@/pages/VocabPages";
 import { TopicPage, TopicQuizPage, TopicsListPage } from "@/pages/TopicPages";
 import { ExamHubPage } from "@/pages/ExamHubPage";
 import { LesenListPage, LesenPaperPage } from "@/pages/LesenPages";
@@ -36,6 +36,7 @@ export function AppRoutes() {
           <Route path="/grammar/:id/quiz" element={<GrammarQuizPage />} />
           <Route path="/vocab" element={<VocabListPage />} />
           <Route path="/vocab/:id" element={<VocabTopicPage />} />
+          <Route path="/vocab/:id/browse" element={<VocabBrowsePage />} />
           <Route path="/vocab/:id/quiz" element={<VocabQuizPage />} />
           <Route path="/topics" element={<TopicsListPage />} />
           <Route path="/topics/:id" element={<TopicPage />} />

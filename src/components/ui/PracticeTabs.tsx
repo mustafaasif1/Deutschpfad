@@ -18,3 +18,15 @@ export function PracticeTabs() {
     </nav>
   );
 }
+
+export function VocabPackTabs({ id }: { id: string }) {
+  return (
+    <nav className="seg" aria-label="Vocabulary pack">
+      <NavLink to={`/vocab/${id}`} end>
+        Learn
+      </NavLink>
+      <NavLink to={`/vocab/${id}/browse`}>Browse</NavLink>
+      <NavLink to={`/vocab/${id}/quiz`}>Quiz</NavLink>
+    </nav>
+  );
+}

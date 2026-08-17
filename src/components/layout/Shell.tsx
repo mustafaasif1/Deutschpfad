@@ -17,6 +17,7 @@ import {
 } from "@/state/session";
 import { progressStore } from "@/state/progress";
 import { useFocusHeading } from "@/hooks/useUi";
+import type { LevelPack } from "@/types/content";
 
 const MQ_NAV = "(max-width: 860px)";
 
@@ -118,7 +119,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
     navigate(toPath(result.href));
   }
 
-  const crumbs = useCrumbs(location.pathname);
+  const crumbs = useCrumbs(location.pathname, pack);
   const pageTitle = crumbs[crumbs.length - 1]?.label || "Deutschpfad";
 
   useEffect(() => {
@@ -345,21 +346,40 @@ function navSection(pathname: string): string {
   return "home";
 }
 
-function useCrumbs(pathname: string): { label: string; to?: string }[] {
+function useCrumbs(pathname: string, pack: LevelPack | null): { label: string; to?: string }[] {
   const parts = pathname.split("/").filter(Boolean);
   const a = parts[0] || "home";
+  const practice = { label: "Practice", to: "/grammar" };
+  const vocabHub = { label: "Vocabulary", to: "/vocab" };
+  const topicsHub = { label: "Topics", to: "/topics" };
+  const vocabPack = pack?.vocabTopics.find((t) => t.id === parts[1]);
+  const grammar = pack?.grammar.find((g) => g.id === parts[1]);
+  const topic = pack?.topics.find((t) => t.id === parts[1]);
+  const drill = pack?.drills.find((d) => d.id === parts[1]);
+
   if (a === "levels" || a === "level") return [{ label: "Choose level" }];
   if (!a || a === "home") return [{ label: "Today" }];
-  if (a === "plan") return [{ label: "Practice", to: "/grammar" }, { label: "Plan" }];
-  if (a === "grammar" && parts[2] === "quiz") return [{ label: "Practice", to: "/grammar" }, { label: "Quiz" }];
-  if (a === "grammar" && parts[1]) return [{ label: "Practice", to: "/grammar" }, { label: "Lesson" }];
+  if (a === "plan") return [practice, { label: "Plan" }];
+  if (a === "grammar" && parts[2] === "quiz") {
+    return [practice, { label: grammar?.title || "Lesson", to: `/grammar/${parts[1]}` }, { label: "Quiz" }];
+  }
+  if (a === "grammar" && parts[1]) return [practice, { label: grammar?.title || "Lesson" }];
   if (a === "grammar") return [{ label: "Practice" }];
-  if (a === "vocab" && parts[1]) return [{ label: "Practice", to: "/vocab" }, { label: "Vocabulary" }];
-  if (a === "vocab") return [{ label: "Practice", to: "/grammar" }, { label: "Vocabulary" }];
-  if (a === "topics" && parts[2] === "quiz") return [{ label: "Practice", to: "/grammar" }, { label: "Topics", to: "/topics" }, { label: "Quiz" }];
-  if (a === "topics" && parts[1]) return [{ label: "Practice", to: "/grammar" }, { label: "Topics", to: "/topics" }, { label: "Topic" }];
-  if (a === "topics") return [{ label: "Practice", to: "/grammar" }, { label: "Topics" }];
-  if (a === "drill") return [{ label: "Practice", to: "/grammar" }, { label: "Drill" }];
+  if (a === "vocab" && parts[2] === "quiz") {
+    return [practice, vocabHub, { label: vocabPack?.title || "Pack", to: `/vocab/${parts[1]}` }, { label: "Quiz" }];
+  }
+  if (a === "vocab" && parts[2] === "browse") {
+    return [practice, vocabHub, { label: vocabPack?.title || "Pack", to: `/vocab/${parts[1]}` }, { label: "Browse" }];
+  }
+  if (a === "vocab" && parts[1]) return [practice, vocabHub, { label: vocabPack?.title || "Pack" }];
+  if (a === "vocab") return [practice, { label: "Vocabulary" }];
+  if (a === "topics" && parts[2] === "quiz") {
+    return [practice, topicsHub, { label: topic?.titleDe || topic?.title || "Topic", to: `/topics/${parts[1]}` }, { label: "Quiz" }];
+  }
+  if (a === "topics" && parts[1]) return [practice, topicsHub, { label: topic?.titleDe || topic?.title || "Topic" }];
+  if (a === "topics") return [practice, { label: "Topics" }];
+  if (a === "drill" && parts[1]) return [practice, { label: drill?.title || "Drill" }];
+  if (a === "drill") return [practice, { label: "Drill" }];
   if (a === "exam" && parts[1] === "lesen" && parts[2]) return [{ label: "Exam", to: "/exam" }, { label: "Lesen", to: "/exam/lesen" }, { label: "Paper" }];
   if (a === "exam" && parts[1] === "lesen") return [{ label: "Exam", to: "/exam" }, { label: "Lesen" }];
   if (a === "exam" && parts[1] === "sprachbausteine") return [{ label: "Exam", to: "/exam" }, { label: "Sprachbausteine" }];

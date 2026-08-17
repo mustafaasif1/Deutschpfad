@@ -6,6 +6,8 @@ The study site is a **React** app (Vite). Progress still lives in this browser o
 
 ## Open the website
 
+Live site: [https://deutschpfad-six.vercel.app/](https://deutschpfad-six.vercel.app/)
+
 ```bash
 pnpm install
 pnpm dev

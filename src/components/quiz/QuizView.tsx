@@ -245,6 +245,7 @@ export function QuizView({
         {q.type === "gap" || q.type === "type" ? (
           <div className="gap-row">
             <input
+              key={q.id}
               type="text"
               value={typed}
               disabled={showExplain}

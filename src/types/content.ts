@@ -33,6 +33,7 @@ export type VocabWord = {
   topic: string;
   level: string;
   ex?: string;
+  exEn?: string;
   note?: string;
 };
 
