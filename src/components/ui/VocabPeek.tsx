@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { SpeakButton } from "@/components/ui/German";
 import { peekSpans, wordLabel } from "@/lib/vocabText";
 import type { VocabWord } from "@/types/content";
@@ -58,8 +58,8 @@ export function VocabExample({
   onPeek: (id: string | null) => void;
   showSentenceEn: boolean;
 }) {
+  const spans = useMemo(() => (word.ex ? peekSpans(word.ex, words, word) : []), [word, words]);
   if (!word.ex) return null;
-  const spans = peekSpans(word.ex, words, word);
   return (
     <div className="vocab-ex-block">
       <p className="vocab-ex" lang="de">

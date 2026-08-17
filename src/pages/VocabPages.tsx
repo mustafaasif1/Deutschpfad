@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AppLink } from "@/components/ui/AppLink";
 import { Badge } from "@/components/ui/Progress";
 import { PracticeTabs, VocabPackTabs } from "@/components/ui/PracticeTabs";
 import { StudyPath } from "@/components/ui/StudyPath";
-import { EnhanceRoot } from "@/components/ui/German";
 import { VocabRow, VocabStudyCard } from "@/components/ui/VocabPeek";
 import { QuizView } from "@/components/quiz/QuizView";
 import { useApp } from "@/context/AppContext";
@@ -111,7 +110,7 @@ function useVocabPack() {
   const { id = "" } = useParams();
   const { pack, meta } = useApp();
   const topic = pack?.vocabTopics.find((t) => t.id === id);
-  const words = pack ? vocabByTopic(pack.vocab, id) : [];
+  const words = useMemo(() => (pack ? vocabByTopic(pack.vocab, id) : []), [pack, id]);
   return { id, pack, meta, topic, words };
 }
 
@@ -132,7 +131,7 @@ export function VocabTopicPage() {
   const last = i === words.length - 1;
 
   return (
-    <EnhanceRoot>
+    <>
       <VocabPackTabs id={id} />
       <h1>{topic.title}</h1>
       <p className="lead">Hear it. Say article + word. Tap the German only if you need English.</p>
@@ -176,7 +175,7 @@ export function VocabTopicPage() {
           </div>
         </div>
       </div>
-    </EnhanceRoot>
+    </>
   );
 }
 
@@ -203,7 +202,7 @@ export function VocabBrowsePage() {
     : words;
 
   return (
-    <EnhanceRoot>
+    <>
       <VocabPackTabs id={id} />
       <h1>{topic.title}</h1>
       <p className="lead">Lookup only. Tap a word for English. Study happens on Learn, then Quiz.</p>
@@ -226,12 +225,12 @@ export function VocabBrowsePage() {
         <VocabRow
           key={word.id}
           word={word}
-          words={pack.vocab}
+          words={words}
           open={showAllEn || openId === word.id}
           onToggle={() => setOpenId((cur) => (cur === word.id ? null : word.id))}
         />
       ))}
-    </EnhanceRoot>
+    </>
   );
 }
 

@@ -47,7 +47,7 @@ export function EnhanceRoot({ children, className }: { children: ReactNode; clas
   const ref = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
     enhanceGerman(ref.current);
-  });
+  }, []);
   return (
     <div ref={ref} className={className}>
       {children}

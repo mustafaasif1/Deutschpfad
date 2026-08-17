@@ -23,46 +23,62 @@ export type PeekSpan = {
   word?: VocabWord;
 };
 
+type Needle = {
+  word: VocabWord;
+  needle: string;
+  len: number;
+};
+
+function needlesFor(word: VocabWord): string[] {
+  const needles = [word.de];
+  const lemma = lemmaOf(word);
+  if (lemma && lemma.toLowerCase() !== word.de.toLowerCase()) needles.push(lemma);
+  return needles.filter((n) => n.length >= 3).sort((a, b) => b.length - a.length);
+}
+
+function addNeedles(byFirst: Map<string, Needle[]>, word: VocabWord, seen: Set<string>) {
+  if (!word?.de || seen.has(word.id)) return;
+  seen.add(word.id);
+  for (const needle of needlesFor(word)) {
+    const key = needle[0].toLowerCase();
+    const list = byFirst.get(key) || [];
+    list.push({ word, needle: needle.toLowerCase(), len: needle.length });
+    byFirst.set(key, list);
+  }
+}
+
+function buildBuckets(words: VocabWord[], prefer?: VocabWord | null): Map<string, Needle[]> {
+  const seen = new Set<string>();
+  const byFirst = new Map<string, Needle[]>();
+  if (prefer) addNeedles(byFirst, prefer, seen);
+  for (const word of words) {
+    if (word.id === prefer?.id) continue;
+    if (lemmaOf(word).length < 5) continue;
+    addNeedles(byFirst, word, seen);
+  }
+  for (const list of byFirst.values()) {
+    list.sort((a, b) => b.len - a.len);
+  }
+  return byFirst;
+}
+
 export function peekSpans(ex: string, words: VocabWord[], prefer?: VocabWord | null): PeekSpan[] {
   const sentence = String(ex || "");
   if (!sentence) return [];
-  const seen = new Set<string>();
-  const dict: { word: VocabWord; needles: string[] }[] = [];
-
-  const add = (word: VocabWord) => {
-    if (!word?.de || seen.has(word.id)) return;
-    seen.add(word.id);
-    const needles = [word.de];
-    const lemma = lemmaOf(word);
-    if (lemma && lemma.toLowerCase() !== word.de.toLowerCase()) needles.push(lemma);
-    const usable = needles.filter((n) => n.length >= 3).sort((a, b) => b.length - a.length);
-    if (!usable.length) return;
-    dict.push({ word, needles: usable });
-  };
-
-  if (prefer) add(prefer);
-  for (const word of words) {
-    if (word.id === prefer?.id) continue;
-    const lemma = lemmaOf(word);
-    if (lemma.length < 5 && word.id !== prefer?.id) continue;
-    add(word);
-  }
-  dict.sort((a, b) => Math.max(...b.needles.map((n) => n.length)) - Math.max(...a.needles.map((n) => n.length)));
-
+  const lower = sentence.toLowerCase();
+  const byFirst = buildBuckets(words, prefer);
   const spans: PeekSpan[] = [];
   let i = 0;
   while (i < sentence.length) {
-    let hit: { len: number; word: VocabWord } | null = null;
-    for (const entry of dict) {
-      for (const needle of entry.needles) {
-        const slice = sentence.slice(i, i + needle.length);
-        if (slice.length !== needle.length) continue;
-        if (slice.toLowerCase() !== needle.toLowerCase()) continue;
-        if (!isBoundary(sentence, i, i + needle.length)) continue;
-        hit = { len: needle.length, word: entry.word };
+    const bucket = byFirst.get(lower[i]);
+    let hit: Needle | null = null;
+    if (bucket) {
+      for (const entry of bucket) {
+        if (lower.slice(i, i + entry.len) !== entry.needle) continue;
+        if (!isBoundary(sentence, i, i + entry.len)) continue;
+        hit = entry;
         break;
       }
-      if (hit) break;
     }
     if (hit) {
       spans.push({ text: sentence.slice(i, i + hit.len), word: hit.word });

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { PageErrorBoundary } from "@/components/layout/PageErrorBoundary";
 import { AppLink } from "@/components/ui/AppLink";
@@ -6,6 +6,7 @@ import { useApp } from "@/context/AppContext";
 import { LEVEL_META } from "@/lib/levels";
 import { bookHrefForRoute } from "@/lib/exam";
 import { toPath } from "@/lib/href";
+import { pathNeedsHeavyPack } from "@/lib/packs";
 import { germanVoiceName, germanVoicePair } from "@/lib/speech";
 import {
   advanceSession,
@@ -22,10 +23,18 @@ import type { LevelPack } from "@/types/content";
 const MQ_NAV = "(max-width: 860px)";
 
 export function StudyLayout() {
-  const { loading, loadError, levelId } = useApp();
+  const { loading, loadError, levelId, pack } = useApp();
+  const location = useLocation();
+  const waitingHeavy =
+    !loading &&
+    !!pack &&
+    pathNeedsHeavyPack(location.pathname) &&
+    !pack.grammar.length &&
+    !pack.exam.lesen.length &&
+    !pack.exam.hoeren.length;
   return (
     <Shell>
-      {loading ? (
+      {loading || waitingHeavy ? (
         <div>
           <h1>Loading {levelId ? levelId.toUpperCase() : "Deutschpfad"}…</h1>
           <p className="lead">One moment.</p>
@@ -42,7 +51,16 @@ export function StudyLayout() {
         </div>
       ) : (
         <PageErrorBoundary>
-          <Outlet />
+          <Suspense
+            fallback={
+              <div>
+                <h1>Loading…</h1>
+                <p className="lead">One moment.</p>
+              </div>
+            }
+          >
+            <Outlet />
+          </Suspense>
         </PageErrorBoundary>
       )}
     </Shell>

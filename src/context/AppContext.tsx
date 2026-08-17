@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import type { LevelId, LevelMeta, LevelPack } from "@/types/content";
 import { getMeta } from "@/lib/levels";
-import { loadLevelPack } from "@/lib/packs";
+import { loadLevelPack, pathNeedsHeavyPack } from "@/lib/packs";
 import { progressStore, type LevelState, type ProgressRoot } from "@/state/progress";
 import { persistTodaySession, seedIfNeeded } from "@/state/session";
 import { warmVoices } from "@/lib/speech";
@@ -48,7 +48,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setLoadError(null);
     setLoading(true);
     try {
-      const next = await loadLevelPack(id);
+      const next = await loadLevelPack(id, (partial, { done }) => {
+        if (loadGen.current !== gen) return;
+        progressStore.setLevel(id);
+        setPack(partial);
+        setPackLevel(id);
+        const wait = !done && pathNeedsHeavyPack(window.location.pathname);
+        if (!wait) setLoading(false);
+        seedIfNeeded(progressStore);
+        if (done) persistTodaySession(partial, progressStore, getMeta(id));
+      });
       if (loadGen.current !== gen) return;
       progressStore.setLevel(id);
       setPack(next);
@@ -85,6 +94,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!activePack || !meta) return;
     seedIfNeeded(progressStore);
+    if (!activePack.grammar.length) return;
     persistTodaySession(activePack, progressStore, meta);
   }, [activePack, meta, progress.session?.date]);
 

@@ -3,7 +3,7 @@ import { parseCourseHref } from "@/lib/course";
 import { groupHoerenPapers } from "@/lib/exam";
 import { toPath } from "@/lib/href";
 import { LEVEL_IDS } from "@/lib/levels";
-import { loadLevelPack } from "@/lib/packs";
+import { loadLevelPack, resetPackCache } from "@/lib/packs";
 
 const LIST_PATHS = new Set([
   "/grammar",
@@ -25,6 +25,19 @@ const LIST_PATHS = new Set([
 ]);
 
 describe("level pack links", () => {
+  it("surfaces weeks before grammar HTML", async () => {
+    resetPackCache();
+    const grammarCounts: number[] = [];
+    const pack = await loadLevelPack("b1", (partial) => {
+      grammarCounts.push(partial.grammar.length);
+    });
+    expect(grammarCounts[0]).toBe(0);
+    expect(pack.weeks.length).toBeGreaterThan(0);
+    expect(pack.grammar.length).toBeGreaterThan(0);
+    expect(grammarCounts.at(-1)).toBe(pack.grammar.length);
+    resetPackCache();
+  });
+
   it("resolves every week task href to real content", async () => {
     const missing: string[] = [];
     for (const id of LEVEL_IDS) {

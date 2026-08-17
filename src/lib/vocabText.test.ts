@@ -26,4 +26,17 @@ describe("vocab text", () => {
     expect(spans.some((s) => s.word?.id === "str" && s.text.toLowerCase() === "streiten")).toBe(true);
     expect(exampleHasLemma("Bitte nicht streiten.", streiten)).toBe(true);
   });
+
+  it("matches umlauts without scanning every dictionary word at each letter", () => {
+    const filler: VocabWord[] = Array.from({ length: 80 }, (_, i) => ({
+      id: `f${i}`,
+      de: `Wohnung${i}`,
+      art: "die",
+      en: "flat",
+      topic: "home",
+      level: "a1",
+    }));
+    const spans = peekSpans("Die Küche ist hell.", [tisch, kueche, ...filler], kueche);
+    expect(spans.some((s) => s.word?.id === "kueche" && s.text === "Küche")).toBe(true);
+  });
 });
