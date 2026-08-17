@@ -372,7 +372,7 @@ export function HoerenPaperPage() {
                   : "Sie hören jeden Text zweimal."}
             </p>
             {practice && isLong ? (
-              <div className="audio-box">
+              <div className="audio-box btn-row">
                 <button
                   type="button"
                   className="btn btn-primary"
@@ -391,6 +391,9 @@ export function HoerenPaperPage() {
                   }}
                 >
                   Play interview
+                </button>
+                <button type="button" className="btn" onClick={() => stopSpeak()}>
+                  Stop
                 </button>
               </div>
             ) : null}
@@ -446,17 +449,22 @@ export function HoerenPaperPage() {
                     </div>
                   )}
                   {practice && it.audio && !isLong ? (
-                    <button
-                      type="button"
-                      className="btn"
-                      disabled={!!(set.once && playedOnce[key])}
-                      onClick={() => {
-                        void speak(it.audio || "", { rate, role: "announcer" });
-                        if (set.once) setPlayedOnce((p) => ({ ...p, [key]: true }));
-                      }}
-                    >
-                      {set.once && playedOnce[key] ? "Played" : set.once ? "Play (once)" : "Play"}
-                    </button>
+                    <div className="btn-row">
+                      <button
+                        type="button"
+                        className="btn"
+                        disabled={!!(set.once && playedOnce[key])}
+                        onClick={() => {
+                          void speak(it.audio || "", { rate, role: "announcer" });
+                          if (set.once) setPlayedOnce((p) => ({ ...p, [key]: true }));
+                        }}
+                      >
+                        {set.once && playedOnce[key] ? "Played" : set.once ? "Play (once)" : "Play"}
+                      </button>
+                      <button type="button" className="btn" onClick={() => stopSpeak()}>
+                        Stop
+                      </button>
+                    </div>
                   ) : null}
                   {it.audio ? (
                     <p className="transcript" hidden={!marked}>

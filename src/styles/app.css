@@ -914,6 +914,16 @@ label.key-bad, .pic-choice.key-bad { background: var(--bad-bg); }
   border-color: var(--ink);
   outline: none;
 }
+.speak-btn.is-playing {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.speak-stop {
+  font-size: 0.78rem;
+  padding: 0.28rem 0.7rem;
+  flex-shrink: 0;
+}
 .flash-head .speak-btn, .big .speak-btn { margin-left: 0.35rem; vertical-align: middle; }
 .vocab-row {
   display: grid;

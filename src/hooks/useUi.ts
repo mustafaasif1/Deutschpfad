@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { getSpeechState, onSpeechChange, type SpeechState } from "@/lib/speech";
+
+export function useSpeechState(): SpeechState {
+  const [state, setState] = useState(getSpeechState);
+  useEffect(() => onSpeechChange(setState), []);
+  return state;
+}
 
 export function useDocumentTitle(title: string) {
   useEffect(() => {

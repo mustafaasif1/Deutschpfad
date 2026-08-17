@@ -7,7 +7,7 @@ import { LEVEL_META } from "@/lib/levels";
 import { bookHrefForRoute } from "@/lib/exam";
 import { toPath } from "@/lib/href";
 import { pathNeedsHeavyPack } from "@/lib/packs";
-import { germanVoiceName, germanVoicePair } from "@/lib/speech";
+import { germanVoiceName, germanVoicePair, stopSpeak } from "@/lib/speech";
 import {
   advanceSession,
   clock,
@@ -17,7 +17,7 @@ import {
   nextStep,
 } from "@/state/session";
 import { progressStore } from "@/state/progress";
-import { useFocusHeading } from "@/hooks/useUi";
+import { useFocusHeading, useSpeechState } from "@/hooks/useUi";
 import type { LevelPack } from "@/types/content";
 
 const MQ_NAV = "(max-width: 860px)";
@@ -73,10 +73,12 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate();
   const [navOpen, setNavOpen] = useState(false);
   const [voiceLabel, setVoiceLabel] = useState("");
+  const speech = useSpeechState();
   useFocusHeading();
 
   useEffect(() => {
     setNavOpen(false);
+    stopSpeak();
   }, [location.pathname]);
 
   useEffect(() => {
@@ -99,7 +101,10 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setNavOpen(false);
+      if (e.key === "Escape") {
+        setNavOpen(false);
+        stopSpeak();
+      }
     };
     const onResize = () => {
       if (!window.matchMedia(MQ_NAV).matches) setNavOpen(false);
@@ -279,6 +284,11 @@ export function Shell({ children }: { children: React.ReactNode }) {
               })}
             </nav>
             <div className="top-stats">
+              {speech.speaking ? (
+                <button type="button" className="btn speak-stop" onClick={() => stopSpeak()}>
+                  Stop audio
+                </button>
+              ) : null}
               {levelId ? (
                 <span className="stat-pill">
                   {levelId.toUpperCase()}

@@ -45,6 +45,8 @@ function germanVoices(): SpeechSynthesisVoice[] {
     .sort((a, b) => scoreGermanVoice(b) - scoreGermanVoice(a));
 }
 
+export type SpeechState = { speaking: boolean; text: string };
+
 let voicesReady = false;
 let cachedDeVoice: SpeechSynthesisVoice | null = null;
 let cachedVoicePack: VoicePack | null = null;
@@ -53,6 +55,55 @@ let currentUtterance: SpeechSynthesisUtterance | null = null;
 let activeFinish: (() => void) | null = null;
 let warnedNoVoice = false;
 let warnedNoSynth = false;
+let speechState: SpeechState = { speaking: false, text: "" };
+const speechListeners = new Set<(state: SpeechState) => void>();
+
+function setSpeechState(next: SpeechState): void {
+  speechState = next;
+  speechListeners.forEach((fn) => fn(speechState));
+}
+
+function startPlay(text: string): number {
+  setSpeechState({ speaking: true, text });
+  return speakGen;
+}
+
+function endPlay(id: number): void {
+  if (id !== speakGen) return;
+  setSpeechState({ speaking: false, text: "" });
+}
+
+export function getSpeechState(): SpeechState {
+  return speechState;
+}
+
+export function onSpeechChange(fn: (state: SpeechState) => void): () => void {
+  speechListeners.add(fn);
+  fn(speechState);
+  return () => {
+    speechListeners.delete(fn);
+  };
+}
+
+function cancelSynth(): void {
+  if (typeof window === "undefined" || !window.speechSynthesis) return;
+  const synth = window.speechSynthesis;
+  try {
+    if (synth.paused) synth.resume();
+  } catch {
+    /* ignore */
+  }
+  try {
+    synth.cancel();
+  } catch {
+    /* ignore */
+  }
+  try {
+    if (synth.speaking || synth.pending) synth.cancel();
+  } catch {
+    /* ignore */
+  }
+}
 
 function voicePack(): VoicePack {
   const list = germanVoices();
@@ -119,13 +170,8 @@ function prepGermanSpeech(text: string): string {
 export function stopSpeak(): void {
   speakGen += 1;
   currentUtterance = null;
-  if (typeof window !== "undefined" && window.speechSynthesis) {
-    try {
-      window.speechSynthesis.cancel();
-    } catch {
-      /* ignore */
-    }
-  }
+  setSpeechState({ speaking: false, text: "" });
+  cancelSynth();
   if (activeFinish) {
     const f = activeFinish;
     activeFinish = null;
@@ -148,8 +194,11 @@ export function pauseMs(ms: number): Promise<void> {
 
 export function speakAsync(text: string, opts: SpeakOpts = {}): Promise<boolean> {
   const gen = speakGen;
+  const owned = !speechState.speaking;
+  const playId = owned ? startPlay(text) : speakGen;
   return new Promise((resolve) => {
     if (gen !== speakGen) {
+      if (owned) endPlay(playId);
       resolve(false);
       return;
     }
@@ -158,6 +207,7 @@ export function speakAsync(text: string, opts: SpeakOpts = {}): Promise<boolean>
         warnedNoSynth = true;
         window.alert("This browser has no speech synthesis. Use Safari or Chrome with a German voice installed.");
       }
+      if (owned) endPlay(playId);
       resolve(false);
       return;
     }
@@ -177,6 +227,7 @@ export function speakAsync(text: string, opts: SpeakOpts = {}): Promise<boolean>
       if (activeFinish === finish) activeFinish = null;
       if (currentUtterance === u) currentUtterance = null;
       resolve(gen === speakGen);
+      if (owned) endPlay(playId);
     };
     activeFinish = finish;
     u.onend = finish;
@@ -195,6 +246,8 @@ export function speakAsync(text: string, opts: SpeakOpts = {}): Promise<boolean>
 
 export function speakLong(text: string, opts: SpeakOpts = {}): Promise<boolean> {
   const gen = speakGen;
+  const owned = !speechState.speaking;
+  const playId = owned ? startPlay(text) : speakGen;
   const s = String(text || "").trim();
   const chunks: string[] = [];
   let buf = "";
@@ -219,12 +272,19 @@ export function speakLong(text: string, opts: SpeakOpts = {}): Promise<boolean> 
       });
     });
   });
-  return chain;
+  return chain.finally(() => {
+    if (owned) endPlay(playId);
+  });
 }
 
 export function speak(text: string, opts: SpeakOpts = {}): Promise<boolean> {
+  if (speechState.speaking && speechState.text === text) {
+    stopSpeak();
+    return Promise.resolve(false);
+  }
   stopSpeak();
-  return speakAsync(text, opts);
+  const playId = startPlay(text);
+  return speakAsync(text, opts).finally(() => endPlay(playId));
 }
 
 export function germanVoiceName(): string | null {
