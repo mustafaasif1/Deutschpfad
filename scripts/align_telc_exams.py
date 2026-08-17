@@ -6,7 +6,7 @@ import json
 import pathlib
 import re
 
-ROOT = pathlib.Path("/Users/mustafa/Documents/Deutschpfad/site/data")
+ROOT = pathlib.Path("/Users/mustafa/Documents/Deutschpfad/src/content")
 
 
 def dump_array(data) -> str:

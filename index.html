@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script>location.replace("/site/" + location.search + location.hash);</script>
-  <meta http-equiv="refresh" content="0; url=/site/" />
-  <title>Deutschpfad</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>D</text></svg>" />
-</head>
-<body>
-  <p>Open <a href="/site/">the study site</a> or books: <a href="/books/a1.html">A1</a> · <a href="/books/a2.html">A2</a> · <a href="/books/b1.html">B1</a>.</p>
-  <p><a href="/site/impressum.html">Impressum</a> · <a href="/site/datenschutz.html">Datenschutz</a> · <a href="/site/nutzung.html">Nutzung &amp; Haftung</a></p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Deutschpfad — telc A1 · A2 · B1</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%231b4d47'/><text x='8' y='13' text-anchor='middle' fill='%23fffaf2' font-size='12' font-family='Georgia,serif'>»</text></svg>" />
+    <script src="/legal-config.example.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

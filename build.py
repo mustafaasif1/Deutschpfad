@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CHAPTERS = ROOT / "chapters"
 BOOKS = ROOT / "books"
+PUBLIC_BOOKS = ROOT / "public" / "books"
 CSS = (ROOT / "css" / "book.css").read_text(encoding="utf-8")
 
 TITLES = {
@@ -33,7 +34,7 @@ def build_level(level: str) -> None:
 </head>
 <body>
   <div class="screen-bar">
-    <a href="/site/">Study site</a>
+    <a href="/">Study site</a>
     <select id="book-jump" aria-label="Jump to chapter"></select>
     <button type="button" onclick="window.print()">Print / Save PDF</button>
   </div>
@@ -41,7 +42,7 @@ def build_level(level: str) -> None:
     <div class="page-pad">
 """
     foot = f"""
-      <p class="footer-note">Deutschpfad personal study book for {level.upper()}. Original teaching material. Not affiliated with telc gGmbH or the Goethe-Institut. No pass guarantee. <a href="/site/impressum.html">Impressum</a> · <a href="/site/datenschutz.html">Datenschutz</a> · <a href="/site/nutzung.html">Nutzung</a>. Print → Save as PDF (A4, background graphics on).</p>
+      <p class="footer-note">Deutschpfad personal study book for {level.upper()}. Original teaching material. Not affiliated with telc gGmbH or the Goethe-Institut. No pass guarantee. <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · <a href="/nutzung">Nutzung</a>. Print → Save as PDF (A4, background graphics on).</p>
     </div>
   </div>
   <script>
@@ -90,10 +91,14 @@ def build_level(level: str) -> None:
 </html>
 """
     body = "\n".join(p.read_text(encoding="utf-8") for p in files)
+    html = head + body + foot
     BOOKS.mkdir(exist_ok=True)
+    PUBLIC_BOOKS.mkdir(parents=True, exist_ok=True)
     out = BOOKS / f"{level}.html"
-    out.write_text(head + body + foot, encoding="utf-8")
-    print(f"Wrote {out} from {len(files)} chapters ({out.stat().st_size // 1024} KB)")
+    public_out = PUBLIC_BOOKS / f"{level}.html"
+    out.write_text(html, encoding="utf-8")
+    public_out.write_text(html, encoding="utf-8")
+    print(f"Wrote {out} and {public_out} from {len(files)} chapters ({out.stat().st_size // 1024} KB)")
 
 
 def main() -> None:

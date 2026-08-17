@@ -1,9 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
+  "framework": "vite",
   "cleanUrls": true,
-  "trailingSlash": true,
   "redirects": [
-    { "source": "/", "destination": "/site/", "permanent": false }
+    { "source": "/site", "destination": "/", "permanent": false },
+    { "source": "/site/", "destination": "/", "permanent": false },
+    { "source": "/site/impressum.html", "destination": "/impressum", "permanent": true },
+    { "source": "/site/datenschutz.html", "destination": "/datenschutz", "permanent": true },
+    { "source": "/site/nutzung.html", "destination": "/nutzung", "permanent": true },
+    { "source": "/site/:path*", "destination": "/", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/((?!assets/|books/|legal-config).*)", "destination": "/index.html" }
   ]
 }
