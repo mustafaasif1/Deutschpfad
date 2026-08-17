@@ -3,6 +3,12 @@ export function toPath(href: string | null | undefined): string {
   if (raw.startsWith("http://") || raw.startsWith("https://") || raw.startsWith("mailto:")) {
     return raw;
   }
+  // Leftover hash-router: "#/topics/personal" or "/grammar#/topics/personal"
+  const hashRoute = raw.match(/#(\/[^?#]*)/);
+  if (hashRoute) {
+    const path = hashRoute[1] || "/";
+    return path.startsWith("/") ? path : `/${path}`;
+  }
   if (raw.startsWith("#")) {
     const path = raw.slice(1) || "/";
     return path.startsWith("/") ? path : `/${path}`;
@@ -12,6 +18,11 @@ export function toPath(href: string | null | undefined): string {
 
 export function isExternalHref(href: string): boolean {
   return href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:");
+}
+
+export function isStaticHref(href: string): boolean {
+  const path = (href.split("#")[0] || href).split("?")[0];
+  return path.startsWith("/books/") || /\.(html?|pdf|mp3)$/i.test(path);
 }
 
 export function hashPath(h: string): string {
@@ -27,9 +38,7 @@ export function onHref(here: string, href: string): boolean {
 
 export function migrateLegacyLocation(): void {
   if (typeof window === "undefined") return;
-  const { pathname, hash, search } = window.location;
-  if ((pathname === "/" || pathname === "/index.html" || pathname === "/site" || pathname === "/site/") && hash.startsWith("#/")) {
-    const next = hash.slice(1) + search;
-    window.history.replaceState(null, "", next);
-  }
+  const { hash, search } = window.location;
+  if (!hash.startsWith("#/")) return;
+  window.history.replaceState(null, "", toPath(hash) + search);
 }

@@ -72,7 +72,7 @@ export function MockPage() {
             </li>
             <li>
               Hören{hPaper ? ` paper ${hPaper.id}` : ""} →{" "}
-              <AppLink to={`/exam/hoeren/${hPaper ? hPaper.id : ""}`}>exam sitting with audio</AppLink> (~{hm.minutes} min)
+              <AppLink to={hPaper ? `/exam/hoeren/${hPaper.id}` : "/exam/hoeren"}>exam sitting with audio</AppLink> (~{hm.minutes} min)
             </li>
             <li>
               <AppLink to={`/schreiben/${m.schreiben}`}>Schreiben</AppLink> (30 min · four Leitpunkte · 100–120 words)
@@ -82,7 +82,7 @@ export function MockPage() {
           <>
             <li>
               Hören{hPaper ? ` paper ${hPaper.id}` : ""} →{" "}
-              <AppLink to={`/exam/hoeren/${hPaper ? hPaper.id : ""}`}>exam sitting</AppLink> (~{hm.minutes} min). Then the
+              <AppLink to={hPaper ? `/exam/hoeren/${hPaper.id}` : "/exam/hoeren"}>exam sitting</AppLink> (~{hm.minutes} min). Then the
               official telc MP3 once before exam day.
             </li>
             <li>

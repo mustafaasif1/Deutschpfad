@@ -3,6 +3,7 @@ import { AppLink } from "@/components/ui/AppLink";
 import { StudyPath } from "@/components/ui/StudyPath";
 import { useApp } from "@/context/AppContext";
 import { remainingWeekTasks, SITE_PATH, taskAlreadyOnToday } from "@/lib/course";
+import { toPath } from "@/lib/href";
 import { progressStore } from "@/state/progress";
 import {
   clock,
@@ -129,7 +130,7 @@ export function HomePage() {
                 if (step.kind === "produce" && keys.topicId && !produceReady(pack, progressStore.get(), keys.topicId)) {
                   href = produceQuizHref(keys.topicId);
                 }
-                navigate(href);
+                navigate(toPath(href));
               }}
             >
               Start the next step

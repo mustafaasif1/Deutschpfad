@@ -5,6 +5,7 @@ import { AppLink } from "@/components/ui/AppLink";
 import { useApp } from "@/context/AppContext";
 import { LEVEL_META } from "@/lib/levels";
 import { bookHrefForRoute } from "@/lib/exam";
+import { toPath } from "@/lib/href";
 import { germanVoiceName, germanVoicePair } from "@/lib/speech";
 import {
   advanceSession,
@@ -60,6 +61,12 @@ export function Shell({ children }: { children: React.ReactNode }) {
   }, [location.pathname]);
 
   useEffect(() => {
+    if (location.hash.startsWith("#/")) {
+      navigate(toPath(location.hash), { replace: true });
+    }
+  }, [location.hash, navigate]);
+
+  useEffect(() => {
     document.body.classList.toggle("nav-open", navOpen);
     return () => document.body.classList.remove("nav-open");
   }, [navOpen]);
@@ -108,7 +115,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
     if (!pack || !meta) return;
     const result = advanceSession(pack, progressStore, meta, location.pathname);
     if (result.toast) toast(result.toast);
-    navigate(result.href);
+    navigate(toPath(result.href));
   }
 
   const crumbs = useCrumbs(location.pathname);

@@ -38,7 +38,7 @@ export function LesenListPage() {
 export function LesenPaperPage() {
   const { id = "" } = useParams();
   const { pack, meta } = useApp();
-  const set = pack?.exam.lesen.find((x) => x.id === id) || pack?.exam.lesen[0];
+  const set = pack?.exam.lesen.find((x) => x.id === id);
   useDocumentTitle(set ? `${set.title} · ${meta?.title || "Deutschpfad"}` : "Lesen · Deutschpfad");
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [marked, setMarked] = useState<{ right: number; total: number; unused: string[] } | null>(null);
@@ -46,7 +46,14 @@ export function LesenPaperPage() {
     setAnswers({});
     setMarked(null);
   }, [id]);
-  if (!pack || !set) return <p>Paper not found.</p>;
+  if (!pack) return null;
+  if (!set) {
+    return (
+      <p>
+        Paper not found. <AppLink to="/exam/lesen">All Lesen papers</AppLink>
+      </p>
+    );
+  }
 
   function mark(current: LesenSet) {
     let right = 0;

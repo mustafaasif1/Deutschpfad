@@ -8,6 +8,7 @@ import { EnhanceRoot } from "@/components/ui/German";
 import { useApp } from "@/context/AppContext";
 import { answerLabel, checkAnswer, shuffle } from "@/lib/quiz";
 import { enrichExplain } from "@/lib/explain";
+import { toPath } from "@/lib/href";
 import { progressStore } from "@/state/progress";
 import {
   advanceSession,
@@ -157,7 +158,7 @@ export function QuizView({
           className="btn"
           onClick={() => {
             if (dirty && !window.confirm("Leave this quiz? Score so far will not be saved.")) return;
-            navigate(opts.exitPath);
+            navigate(toPath(opts.exitPath));
           }}
         >
           Exit quiz
@@ -482,7 +483,7 @@ function QuizDone({
                 navigate("/");
                 return;
               }
-              navigate(result.href);
+              navigate(toPath(result.href));
             }}
           >
             {action.label}

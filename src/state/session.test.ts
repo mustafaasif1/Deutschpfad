@@ -134,6 +134,39 @@ describe("session", () => {
     expect(todaySession(pack, store.get(), meta).steps.find((s) => s.id === first.id)?.done).toBe(false);
   });
 
+  it("opens a real path when today's session still has a hash href", () => {
+    const pack = miniPack({
+      weeks: [
+        {
+          id: 1,
+          title: "Week 1",
+          goal: "Survive",
+          tasks: [{ id: "w1-t1", label: "Topic Wohnen", href: "/topics/wohn" }],
+        },
+      ],
+    });
+    const store = storeAt("2026-08-17");
+    store.write((s) => {
+      s.session = {
+        date: "2026-08-17",
+        started: false,
+        steps: [
+          {
+            id: "plan-w1-t1",
+            kind: "plan",
+            title: "Topic Wohnen",
+            blurb: "",
+            href: "#/topics/wohn",
+            keys: { planId: "w1-t1", hrefs: ["#/topics/wohn"] },
+          },
+        ],
+      };
+    });
+    const result = advanceSession(pack, store, meta, "/grammar");
+    expect(result.mode).toBe("open");
+    expect(result.href).toBe("/topics/wohn");
+  });
+
   it("does not auto-tick when you are already on the step", () => {
     const pack = miniPack();
     const store = storeAt("2026-08-17");

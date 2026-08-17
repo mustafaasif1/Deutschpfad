@@ -137,7 +137,13 @@ export function GrammarLessonPage() {
   const week = pack && g ? weekOfGrammar(pack, g.id) : null;
   useDocumentTitle(g ? `${g.title} · ${meta?.title || "Deutschpfad"}` : "Lesson · Deutschpfad");
   if (!pack || !meta) return null;
-  if (!g) return <p>Lesson not found.</p>;
+  if (!g) {
+    return (
+      <p>
+        Lesson not found. <AppLink to="/grammar">All lessons</AppLink>
+      </p>
+    );
+  }
   const n = bySet(pack.questions, g.id).length;
   return (
     <>

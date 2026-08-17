@@ -199,17 +199,16 @@ export function kindLabel(kind: string): string {
 }
 
 export function keysFromStep(step: Pick<SessionStep, "id" | "kind" | "href" | "keys">): SessionStepKeys {
-  if (step.keys) return step.keys;
   const href = toPath(step.href || "");
   if (step.kind === "plan" && step.id.startsWith("plan-")) {
-    return { planId: step.id.slice(5), hrefs: href ? [href] : [] };
+    return { planId: step.keys?.planId || step.id.slice(5), hrefs: href ? [href] : [] };
   }
   if (step.kind === "produce" && step.id.startsWith("topic-")) {
-    const topicId = step.id.slice(6);
+    const topicId = step.keys?.topicId || step.id.slice(6);
     return { topicId, hrefs: [`/topics/${topicId}`] };
   }
   if (step.kind === "review" && step.id.startsWith("due-")) {
-    return { quizIds: [step.id.slice(4)], hrefs: href ? [href] : [] };
+    return { quizIds: step.keys?.quizIds || [step.id.slice(4)], hrefs: href ? [href] : [] };
   }
   if (step.kind === "exam") {
     const hrefs = href ? [href] : [];
@@ -222,6 +221,19 @@ export function keysFromStep(step: Pick<SessionStep, "id" | "kind" | "href" | "k
     return { hrefs };
   }
   return { hrefs: href ? [href] : [] };
+}
+
+export function normalizeStep(step: SessionStep): SessionStep {
+  const href = toPath(step.href);
+  const next: SessionStep = {
+    id: step.id,
+    kind: step.kind,
+    title: step.title,
+    blurb: step.blurb || "",
+    href,
+  };
+  next.keys = keysFromStep(next);
+  return next;
 }
 
 function examSkillStep(c: Clock): Omit<SessionStep, "keys"> {
@@ -363,10 +375,11 @@ export function withDone(pack: LevelPack, state: LevelState, session: StudySessi
 export function todaySession(pack: LevelPack, state: LevelState, meta: LevelMeta | null): SessionView {
   const c = clock(state, meta);
   const saved = state.session;
-  const steps =
+  const steps = (
     saved && saved.date === c.today && saved.steps.length
       ? saved.steps
-      : buildSteps(pack, c, state, dueItems(pack, state));
+      : buildSteps(pack, c, state, dueItems(pack, state))
+  ).map(normalizeStep);
   return withDone(pack, state, {
     date: c.today,
     started: saved?.date === c.today ? !!saved.started : false,
@@ -379,11 +392,19 @@ export function persistTodaySession(pack: LevelPack, progress: ProgressStore, me
   const state = progress.get();
   const c = clock(state, meta);
   const saved = state.session;
-  if (saved && saved.date === c.today && saved.steps.length) return;
+  if (saved && saved.date === c.today && saved.steps.length) {
+    const steps = saved.steps.map(normalizeStep);
+    if (steps.some((st, i) => st.href !== saved.steps[i].href)) {
+      progress.write((s) => {
+        if (s.session) s.session.steps = steps;
+      });
+    }
+    return;
+  }
   progress.setSession({
     date: c.today,
     started: false,
-    steps: buildSteps(pack, c, state, dueItems(pack, state)),
+    steps: buildSteps(pack, c, state, dueItems(pack, state)).map(normalizeStep),
   });
 }
 
@@ -427,11 +448,12 @@ export function sessionCta(pack: LevelPack, state: LevelState, meta: LevelMeta |
   const step = firstOpen(session);
   if (!step) return null;
   const keys = keysFromStep(step);
-  let href = step.href;
+  let href = toPath(step.href);
   if (step.kind === "produce" && keys.topicId && !produceReady(pack, state, keys.topicId)) {
     href = produceQuizHref(keys.topicId);
   }
-  if (onHref(here, step.href) || onHref(here, href)) return null;
+  const herePath = toPath(here);
+  if (onHref(herePath, step.href) || onHref(herePath, href)) return null;
   return {
     on: false,
     href,
@@ -506,12 +528,13 @@ export function advanceSession(pack: LevelPack, progress: ProgressStore, meta: L
     return { mode: "home" as const, href: "/", toast: "That’s all for today." };
   }
   const keys = keysFromStep(step);
-  let href = step.href;
+  let href = toPath(step.href);
   if (step.kind === "produce" && keys.topicId && !produceReady(pack, progress.get(), keys.topicId)) {
     href = produceQuizHref(keys.topicId);
   }
-  if (onHref(here, step.href) || onHref(here, href)) {
-    return { mode: "stay" as const, href: here, toast: "Tick this step on Today when you have finished." };
+  const herePath = toPath(here);
+  if (onHref(herePath, step.href) || onHref(herePath, href)) {
+    return { mode: "stay" as const, href: herePath, toast: "Tick this step on Today when you have finished." };
   }
   return { mode: "open" as const, href };
 }

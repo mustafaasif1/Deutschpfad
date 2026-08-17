@@ -66,6 +66,34 @@ describe("progress store", () => {
     expect(store.get("b1").done["topic-wohn"]).toBe(true);
   });
 
+  it("rewrites leftover hash hrefs on hydrate", () => {
+    const root = hydrateRoot({
+      level: "a1",
+      levels: {
+        a1: {
+          session: {
+            date: "2026-08-17",
+            started: false,
+            steps: [
+              {
+                id: "plan-a1w1-topic-person",
+                kind: "plan",
+                title: "Topic Person",
+                blurb: "",
+                href: "#/topics/personal",
+                keys: { planId: "a1w1-topic-person", hrefs: ["#/topics/personal"] },
+              },
+            ],
+          },
+        } as never,
+        a2: emptyLevel(),
+        b1: emptyLevel(),
+      },
+    });
+    expect(root.levels.a1.session?.steps[0].href).toBe("/topics/personal");
+    expect(root.levels.a1.session?.steps[0].keys?.hrefs).toEqual(["/topics/personal"]);
+  });
+
   it("hydrates corrupt exam dates to null", () => {
     const root = hydrateRoot({
       level: "nope" as never,

@@ -1,5 +1,6 @@
 import type { LevelId } from "@/types/content";
 import { addDays, localYmd, parseYmd } from "@/lib/dates";
+import { toPath } from "@/lib/href";
 import { LEVEL_IDS, isLevelId } from "@/lib/levels";
 
 export const PROGRESS_KEY = "deutschpfad-progress-v2";
@@ -128,14 +129,20 @@ export function hydrateLevel(raw: Partial<LevelState> | undefined): LevelState {
     state.session = {
       date: state.session.date,
       started: !!state.session.started,
-      steps: state.session.steps.map((step) => ({
-        id: step.id,
-        kind: step.kind,
-        title: step.title,
-        blurb: step.blurb || "",
-        href: step.href,
-        keys: step.keys,
-      })),
+      steps: state.session.steps.map((step) => {
+        const href = toPath(step.href);
+        const keys = step.keys
+          ? { ...step.keys, hrefs: (step.keys.hrefs || []).map(toPath) }
+          : step.keys;
+        return {
+          id: step.id,
+          kind: step.kind,
+          title: step.title,
+          blurb: step.blurb || "",
+          href,
+          keys,
+        };
+      }),
     };
   } else {
     state.session = null;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
-import { isExternalHref, toPath } from "@/lib/href";
+import { isExternalHref, isStaticHref, toPath } from "@/lib/href";
 
 type Props = {
   to: string;
@@ -13,7 +13,7 @@ type Props = {
 
 export function AppLink({ to, className, children, ...rest }: Props) {
   const href = toPath(to);
-  if (isExternalHref(href)) {
+  if (isExternalHref(href) || isStaticHref(href)) {
     return (
       <a href={href} className={className} target="_blank" rel="noopener" {...rest}>
         {children}
